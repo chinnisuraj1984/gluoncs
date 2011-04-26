@@ -1,0 +1,48 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GluonCS.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HomeLatitude" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">50.852091014908446</Value>
+    </Setting>
+    <Setting Name="HomeLongitude" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">3.6707854270935059</Value>
+    </Setting>
+    <Setting Name="MapZoomLevel" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">17</Value>
+    </Setting>
+    <Setting Name="Setting" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="MapPositionLongitude" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">3.6704957485198975</Value>
+    </Setting>
+    <Setting Name="MapPositionLatitude" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">50.851738797975194</Value>
+    </Setting>
+    <Setting Name="LastComPortName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="LastComBaudrate" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="UseProxy" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ProxyUsername" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ProxyPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MapType" Type="GMap.NET.MapType" Scope="User">
+      <Value Profile="(Default)">GoogleHybrid</Value>
+    </Setting>
+    <Setting Name="ProxyAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ShowUavSpeedAltitude" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
