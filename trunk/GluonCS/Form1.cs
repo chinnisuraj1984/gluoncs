@@ -90,7 +90,7 @@ namespace GluonCS
             if (Properties.Settings.Default.UseProxy)
             {
                 int port = 80;
-                string[] add = Properties.Settings.Default.ProxyAddress.Split(';');
+                string[] add = Properties.Settings.Default.ProxyAddress.Split(':');
                 if (add.Length == 2)
                 {
                     int.TryParse(add[1], out port);

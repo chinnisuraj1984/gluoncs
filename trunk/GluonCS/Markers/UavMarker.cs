@@ -15,7 +15,7 @@ namespace GluonCS.Markers
     public class UavMarker : GMapMarker
     {
         public double Yaw = 80;
-        public double AltitudeM = 0;
+        public double AltitudeAglM = 0;
         public double SpeedMS = 0;
         public string AlarmMessage = "";
 
@@ -50,31 +50,37 @@ namespace GluonCS.Markers
 
             
             sf1 = g.MeasureString("Gluonpilot", new Font(FontFamily.GenericSansSerif, 7));
-            DrawContrastString("Gluonpilot", g, LocalPosition.X - (int)sf1.Width / 2, LocalPosition.Y + Size.Height / 2 + 5, 7);
+            DrawContrastString("Gluonpilot", g, LocalPosition.X - (int)sf1.Width / 2, LocalPosition.Y + Size.Height / 2 + 5, 7, Brushes.White);
 
             if (Properties.Settings.Default.ShowUavSpeedAltitude)
             {
                 string speed = ((int)(SpeedMS * 3.6)).ToString();
                 sf1 = g.MeasureString(speed, new Font(FontFamily.GenericSansSerif, 8));
                 sf2 = g.MeasureString("km/h", new Font(FontFamily.GenericSansSerif, 7));
-                DrawContrastString(speed, g, LocalPosition.X - (int)(sf1.Width / 2 + sf2.Width / 2), LocalPosition.Y - Size.Height / 2 - (int)sf1.Height - 5, 8);
-                DrawContrastString("km/h", g, LocalPosition.X - (int)(-sf1.Width / 2 + sf2.Width / 2), LocalPosition.Y - Size.Height / 2 - (int)sf1.Height - 5, 7);
+                DrawContrastString(speed, g, LocalPosition.X - (int)(sf1.Width / 2 + sf2.Width / 2), LocalPosition.Y - Size.Height / 2 - (int)sf1.Height - 5, 8, Brushes.White);
+                DrawContrastString("km/h", g, LocalPosition.X - (int)(-sf1.Width / 2 + sf2.Width / 2), LocalPosition.Y - Size.Height / 2 - (int)sf1.Height - 5, 7, Brushes.White);
 
-                string altitude = AltitudeM.ToString();
+                string altitude = AltitudeAglM.ToString();
                 sf1 = g.MeasureString(altitude, new Font(FontFamily.GenericSansSerif, 8));
                 sf2 = g.MeasureString("m AGL", new Font(FontFamily.GenericSansSerif, 7));
-                DrawContrastString(altitude, g, LocalPosition.X + Size.Width / 2 - 5, LocalPosition.Y - (int)sf1.Height / 2, 8);
-                DrawContrastString("m AGL", g, LocalPosition.X + Size.Width / 2 - 5 + (int)sf1.Width, LocalPosition.Y - (int)sf1.Height / 2 + (int)sf1.Height - (int)sf2.Height - 1, 7);
+                DrawContrastString(altitude, g, LocalPosition.X + Size.Width / 2 - 5, LocalPosition.Y - (int)sf1.Height / 2, 8, Brushes.White);
+                DrawContrastString("m AGL", g, LocalPosition.X + Size.Width / 2 - 5 + (int)sf1.Width, LocalPosition.Y - (int)sf1.Height / 2 + (int)sf1.Height - (int)sf2.Height - 1, 7, Brushes.White);
+            }
+
+            if (AlarmMessage.Length > 0)
+            {
+                sf1 = g.MeasureString(AlarmMessage, new Font(FontFamily.GenericSansSerif, 7));
+                DrawContrastString(AlarmMessage, g, LocalPosition.X - (int)sf1.Width / 2, LocalPosition.Y + Size.Height / 2 + 5 + (int)sf1.Height + 5, 7, Brushes.Red);
             }
         }
 
-        private void DrawContrastString(string s, Graphics g, int x, int y, int fontsize)
+        private void DrawContrastString(string s, Graphics g, int x, int y, int fontsize, Brush fontColor)
         {
             g.DrawString(s, new Font(FontFamily.GenericSansSerif, fontsize), Brushes.Black, x + 1, y);
             g.DrawString(s, new Font(FontFamily.GenericSansSerif, fontsize), Brushes.Black, x - 1, y);
             g.DrawString(s, new Font(FontFamily.GenericSansSerif, fontsize), Brushes.Black, x, y + 1);
             g.DrawString(s, new Font(FontFamily.GenericSansSerif, fontsize), Brushes.Black, x, y - 1);
-            g.DrawString(s, new Font(FontFamily.GenericSansSerif, fontsize), Brushes.White, x, y);
+            g.DrawString(s, new Font(FontFamily.GenericSansSerif, fontsize), fontColor, x, y);
         }
     }
 }
