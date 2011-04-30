@@ -20,13 +20,18 @@ namespace GluonCS.LiveUavLayer
         public event ChangedEventHandler HomeChanged;
         public event ChangedEventHandler UavPositionChanged;
         public event ChangedEventHandler UavAttitudeChanged;
+        public event ChangedEventHandler CommunicationLost;
+        public event ChangedEventHandler CommunicationEstablished;
 
         private AutoResetEvent navigationLineReceived = new AutoResetEvent(false);  // used to wait for acknowledgement when a navigation instruction has been written
 
         public double Pitch = 0, Roll = 0, Yaw = 0;
         public PointLatLng UavPosition = new PointLatLng();
-        public double Heading = 0, Altitude = 0, SpeedMS = 0;
+        public double Heading = 0, AltitudeGps = 0, SpeedMS = 0, AltitudeAglM = 0;
         public int NumberOfGpsSatellites = 0;
+        public double BatteryVoltage = 0;
+        public ControlInfo.FlightModes FlightMode = ControlInfo.FlightModes.AUTOPILOT;
+        public bool CommunicationAlive = false;
 
         private List<NavigationInstruction> navigation_local = new List<NavigationInstruction>(36);
         private List<NavigationInstruction> navigation_remote = new List<NavigationInstruction>(36);
@@ -59,6 +64,9 @@ namespace GluonCS.LiveUavLayer
                 value.AttitudeCommunicationReceived += new SerialCommunication.ReceiveAttitudeCommunicationFrame(connection_AttitudeCommunicationReceived);
                 value.NavigationInstructionCommunicationReceived += new SerialCommunication.ReceiveNavigationInstructionCommunicationFrame(connection_NavigationInstructionCommunicationReceived);
                 value.GpsBasicCommunicationReceived += new SerialCommunication.ReceiveGpsBasicCommunicationFrame(connection_GpsBasicCommunicationReceived);
+                value.ControlInfoCommunicationReceived += new SerialCommunication.ReceiveControlInfoCommunicationFrame(connection_ControlInfoCommunicationReceived);
+                value.CommunicationEstablished += new SerialCommunication.EstablishedCommunication(connection_CommunicationEstablished);
+                value.CommunicationLost += new SerialCommunication.LostCommunication(connection_CommunicationLost);
                 uavSynchronizer = new UavNavigationSynchronize(this, serial);
                 uavSynchronizer.StartThread();
             }
@@ -92,6 +100,21 @@ namespace GluonCS.LiveUavLayer
             {
                 //base.Finalize();
             }
+        }
+
+
+        void connection_CommunicationLost()
+        {
+            CommunicationAlive = false;
+            if (CommunicationLost != null)
+                CommunicationLost(this, EventArgs.Empty);
+        }
+
+        void connection_CommunicationEstablished()
+        {
+            CommunicationAlive = true;
+            if (CommunicationEstablished != null)
+                CommunicationEstablished(this, EventArgs.Empty);
         }
 
         void connection_NavigationInstructionCommunicationReceived(NavigationInstruction ni)
@@ -144,6 +167,13 @@ namespace GluonCS.LiveUavLayer
             Yaw = attitude.YawDeg;
             if (UavAttitudeChanged != null)
                 UavAttitudeChanged(this, EventArgs.Empty);
+        }
+
+        void connection_ControlInfoCommunicationReceived(ControlInfo ci)
+        {
+            AltitudeAglM = ci.HeightAboveStartGround;
+            BatteryVoltage = ci.BattVoltage;
+            FlightMode = ci.FlightMode;
         }
 
         public void ReadNavigation()

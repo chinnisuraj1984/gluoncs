@@ -401,7 +401,7 @@
             this._lblGpsSat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._lblGpsSat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._lblGpsSat.ImageKey = "ERROR";
-            this._lblGpsSat.Location = new System.Drawing.Point(6, 71);
+            this._lblGpsSat.Location = new System.Drawing.Point(13, 71);
             this._lblGpsSat.Name = "_lblGpsSat";
             this._lblGpsSat.Size = new System.Drawing.Size(65, 15);
             this._lblGpsSat.TabIndex = 1;

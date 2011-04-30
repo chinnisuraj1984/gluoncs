@@ -61,14 +61,16 @@ namespace GluonCS
                 {
                     _lblGpsSat.Text = "GPS: " + model.NumberOfGpsSatellites;
                     if (model.NumberOfGpsSatellites > 5)
-                        _lblGpsSat.ForeColor = Color.Green;
+                        _lblGpsSat.BackColor = Color.Green;
                     else if (model.NumberOfGpsSatellites > 3)
-                        _lblGpsSat.ForeColor = Color.Orange;
+                        _lblGpsSat.BackColor = Color.Orange;
                     else
-                        _lblGpsSat.ForeColor = Color.Red;
+                        _lblGpsSat.BackColor = Color.Red;
                 }
                 _lblSpeed.Text = ((int)(model.SpeedMS * 3.6)).ToString() + " km/h";
                 _lblGpsSat.Text = "GPS: " + model.NumberOfGpsSatellites;
+                _lblAltitude.Text = model.AltitudeAglM + " m";
+                _lblVoltage.Text = "Bat: " + model.BatteryVoltage + " V";
             };
 
             try

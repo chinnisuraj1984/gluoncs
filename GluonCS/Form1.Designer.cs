@@ -43,7 +43,6 @@
             this._layersPanel = new BSE.Windows.Forms.Panel();
             this._layersPanelList = new BSE.Windows.Forms.XPanderPanelList();
             this._liveUavPanel = new BSE.Windows.Forms.XPanderPanel();
-            this.liveUavPanel1 = new GluonCS.LiveUavPanel();
             this.splitter1 = new BSE.Windows.Forms.Splitter();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +51,7 @@
             this.zoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zoomoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.liveUavPanel1 = new GluonCS.LiveUavPanel();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -66,7 +66,7 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 602);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 722);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(849, 22);
             this.statusStrip1.TabIndex = 0;
@@ -83,11 +83,11 @@
             this.toolStripContainer1.ContentPanel.Controls.Add(this.panel4);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.splitter2);
             this.toolStripContainer1.ContentPanel.Controls.Add(this._layersPanel);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(849, 578);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(849, 698);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(849, 602);
+            this.toolStripContainer1.Size = new System.Drawing.Size(849, 722);
             this.toolStripContainer1.TabIndex = 1;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -148,7 +148,7 @@
             this._gMapControl.RetryLoadTile = 0;
             this._gMapControl.RoutesEnabled = true;
             this._gMapControl.ShowTileGridLines = false;
-            this._gMapControl.Size = new System.Drawing.Size(507, 475);
+            this._gMapControl.Size = new System.Drawing.Size(507, 595);
             this._gMapControl.TabIndex = 4;
             this._gMapControl.Zoom = 0D;
             // 
@@ -156,7 +156,7 @@
             // 
             this.splitter3.BackColor = System.Drawing.Color.Transparent;
             this.splitter3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter3.Location = new System.Drawing.Point(0, 475);
+            this.splitter3.Location = new System.Drawing.Point(0, 595);
             this.splitter3.Name = "splitter3";
             this.splitter3.Size = new System.Drawing.Size(507, 3);
             this.splitter3.TabIndex = 3;
@@ -186,7 +186,7 @@
             this.panel4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel4.Image = null;
             this.panel4.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.panel4.Location = new System.Drawing.Point(0, 478);
+            this.panel4.Location = new System.Drawing.Point(0, 598);
             this.panel4.MinimumSize = new System.Drawing.Size(27, 27);
             this.panel4.Name = "panel4";
             this.panel4.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
@@ -213,7 +213,7 @@
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Right;
             this.splitter2.Location = new System.Drawing.Point(507, 0);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(3, 578);
+            this.splitter2.Size = new System.Drawing.Size(3, 698);
             this.splitter2.TabIndex = 1;
             this.splitter2.TabStop = false;
             // 
@@ -247,7 +247,7 @@
             this._layersPanel.Name = "_layersPanel";
             this._layersPanel.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
             this._layersPanel.ShowExpandIcon = true;
-            this._layersPanel.Size = new System.Drawing.Size(339, 578);
+            this._layersPanel.Size = new System.Drawing.Size(339, 698);
             this._layersPanel.TabIndex = 0;
             this._layersPanel.Text = "Layers";
             this._layersPanel.ToolTipTextCloseIcon = null;
@@ -263,7 +263,7 @@
             this._layersPanelList.Location = new System.Drawing.Point(0, 31);
             this._layersPanelList.Name = "_layersPanelList";
             this._layersPanelList.PanelColors = null;
-            this._layersPanelList.Size = new System.Drawing.Size(339, 546);
+            this._layersPanelList.Size = new System.Drawing.Size(339, 666);
             this._layersPanelList.TabIndex = 2;
             this._layersPanelList.Text = "_layersPanelList";
             // 
@@ -298,20 +298,12 @@
             this._liveUavPanel.Name = "_liveUavPanel";
             this._liveUavPanel.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this._liveUavPanel.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
-            this._liveUavPanel.Size = new System.Drawing.Size(339, 546);
+            this._liveUavPanel.Size = new System.Drawing.Size(339, 666);
             this._liveUavPanel.TabIndex = 1;
             this._liveUavPanel.Text = "Live uav 1";
             this._liveUavPanel.ToolTipTextCloseIcon = null;
             this._liveUavPanel.ToolTipTextExpandIconPanelCollapsed = null;
             this._liveUavPanel.ToolTipTextExpandIconPanelExpanded = null;
-            // 
-            // liveUavPanel1
-            // 
-            this.liveUavPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.liveUavPanel1.Location = new System.Drawing.Point(4, 25);
-            this.liveUavPanel1.Name = "liveUavPanel1";
-            this.liveUavPanel1.Size = new System.Drawing.Size(334, 521);
-            this.liveUavPanel1.TabIndex = 0;
             // 
             // splitter1
             // 
@@ -375,16 +367,24 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(124, 6);
             // 
+            // liveUavPanel1
+            // 
+            this.liveUavPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.liveUavPanel1.Location = new System.Drawing.Point(4, 25);
+            this.liveUavPanel1.Name = "liveUavPanel1";
+            this.liveUavPanel1.Size = new System.Drawing.Size(334, 641);
+            this.liveUavPanel1.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(849, 624);
+            this.ClientSize = new System.Drawing.Size(849, 744);
             this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.statusStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Gluon Control Station";
             this.Activated += new System.EventHandler(this.Form1_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);

@@ -136,6 +136,13 @@
     <Compile Include="LiveUavLayer\LiveUavPanel.Designer.cs">
       <DependentUpon>LiveUavPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="LiveUavLayer\UavPropertiesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LiveUavLayer\UavPropertiesControl.Designer.cs">
+      <DependentUpon>UavPropertiesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiveUavLayer\UavPropertiesModel.cs" />
     <Compile Include="Markers\AbsoluteMarker.cs" />
     <Compile Include="Markers\GluonHomeMarker.cs" />
     <Compile Include="Markers\MoveableMarker.cs" />
@@ -164,6 +171,9 @@
     <EmbeddedResource Include="LiveUavLayer\LiveUavPanel.resx">
       <DependentUpon>LiveUavPanel.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\UavPropertiesControl.resx">
+      <DependentUpon>UavPropertiesControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

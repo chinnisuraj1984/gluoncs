@@ -26,6 +26,10 @@ namespace Communication
         private int bytes_read = 0;
         private double download_speed_kb_s;
         private DateTime last_throughput_calculation;
+        private int FramesReceived = 0;
+        private bool CommunicationAlive = false;
+        private DateTime LastValidFrame;
+        //private Timer CheckCommunicationReceived = new Timer();
 
         // General: all lines received will be broadcasted by this event
         public override event ReceiveCommunication CommunicationReceived;
@@ -50,11 +54,15 @@ namespace Communication
         public override event ReceiveNavigationInstructionCommunicationFrame NavigationInstructionCommunicationReceived;
         // ControlInfo
         public override event ReceiveControlInfoCommunicationFrame ControlInfoCommunicationReceived;
+        // Communication status
+        public override event LostCommunication CommunicationLost;
+        public override event EstablishedCommunication CommunicationEstablished;
 
         private string[] DatalogHeader;
 
         public SerialCommunication_CSV()
         {
+            LastValidFrame = DateTime.Now;
             _serialPort = new SerialPort();
             last_throughput_calculation = DateTime.Now;
         }
@@ -112,8 +120,17 @@ namespace Communication
             {
                 try
                 {
+                    // A bit extra logic to set communication lost after 1 second of no data 
                     while (_serialPort == null || !_serialPort.IsOpen || _serialPort.BytesToRead < 3)
-                        Thread.Sleep(100);
+                    {
+                        if (CommunicationAlive && (DateTime.Now - LastValidFrame).TotalMilliseconds > 1000)
+                        {
+                            CommunicationAlive = false;
+                            if (CommunicationLost != null)
+                                CommunicationLost();
+                        }
+                        Thread.Sleep(50);
+                    }
 
                     string line = _serialPort.ReadLine();
 
@@ -127,6 +144,7 @@ namespace Communication
                     string[] lines = line.Split(';');
                     //Console.WriteLine(line + "\n\r");
                     // TR: Gyro & Acc raw
+                    bool recognised_frame = true;
                     if (lines[0].EndsWith("TR") && lines.Length >= 6)
                     {
                         double acc_x_raw = double.Parse(lines[1]);
@@ -370,14 +388,32 @@ namespace Communication
                     }
                     else
                     {
+                        recognised_frame = false;
                         if (NonParsedCommunicationReceived != null)
                             NonParsedCommunicationReceived(line);
+                    }
+                    if (recognised_frame)
+                    {
+                        LastValidFrame = DateTime.Now;
+                        FramesReceived++;
+                        if (!CommunicationAlive)
+                        {
+                            CommunicationAlive = true;
+                            if (CommunicationEstablished != null)
+                                CommunicationEstablished();
+                        }
                     }
                     if (CommunicationReceived != null)
                         CommunicationReceived(line);
                 }
                 catch (TimeoutException toe)
                 {
+                    if (CommunicationAlive)
+                    {
+                        CommunicationAlive = false;
+                        if (CommunicationLost != null)
+                            CommunicationLost();
+                    }
                 }
                 catch (IOException ioe)
                 {

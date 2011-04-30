@@ -37,6 +37,9 @@ namespace Communication
         public delegate void ReceiveNavigationInstructionCommunicationFrame(NavigationInstruction ni);
         public delegate void ReceiveControlInfoCommunicationFrame(ControlInfo ci);
 
+        public delegate void LostCommunication();
+        public delegate void EstablishedCommunication();
+
 
         // General: all lines received will be broadcasted by this event
         public abstract event ReceiveCommunication CommunicationReceived;
@@ -61,6 +64,10 @@ namespace Communication
         public abstract event ReceiveNavigationInstructionCommunicationFrame NavigationInstructionCommunicationReceived;
         // ControlInfo
         public abstract event ReceiveControlInfoCommunicationFrame ControlInfoCommunicationReceived;
+        // Communication status
+        public abstract event LostCommunication CommunicationLost;
+        public abstract event EstablishedCommunication CommunicationEstablished;
+
 
         public static string[] GetPorts()
         {

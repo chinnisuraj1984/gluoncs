@@ -84,6 +84,9 @@ namespace GluonCS.LiveUavLayer
             model.HomeChanged += new LiveUavModel.ChangedEventHandler(model_HomeChanged);
             model.UavPositionChanged += new LiveUavModel.ChangedEventHandler(model_UavPositionChanged);
             model.UavAttitudeChanged += new LiveUavModel.ChangedEventHandler(model_UavAttitudeChanged);
+            model.CommunicationLost += new LiveUavModel.ChangedEventHandler(model_CommunicationLost);
+            model.CommunicationEstablished += new LiveUavModel.ChangedEventHandler(model_CommunicationEstablished);
+
             // context menu strips
             ToolStripItem i = general_menustrip.Items.Add("Set &home");
             i.Click += new EventHandler(SetHome_Click);
@@ -150,6 +153,18 @@ namespace GluonCS.LiveUavLayer
 
 #region Model events
 
+        void model_CommunicationEstablished(object sender, EventArgs e)
+        {
+            gmap.GrayScaleMode = false;
+            uavMarker.AlarmMessage = "";
+        }
+
+        void model_CommunicationLost(object sender, EventArgs e)
+        {
+            gmap.GrayScaleMode = true;
+            uavMarker.AlarmMessage = "Connection lost!";
+        }
+
         void model_UavAttitudeChanged(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
@@ -167,7 +182,7 @@ namespace GluonCS.LiveUavLayer
                     gmap.UpdateRouteLocalPosition(uavRoute);
 
                     uavMarker.Yaw = model.Heading; // model.Yaw;
-                    uavMarker.AltitudeM = model.Altitude;
+                    uavMarker.AltitudeAglM = model.AltitudeAglM;
                     uavMarker.SpeedMS = model.SpeedMS;
                     uavMarker.Position = new PointLatLng(model.UavPosition.Lat, model.UavPosition.Lng);
                     gmap.UpdateMarkerLocalPosition(uavMarker);
@@ -175,6 +190,7 @@ namespace GluonCS.LiveUavLayer
                     if (!hasReceivedGps)  // first gps position? center on UAV
                     {
                         gmap.Position = new PointLatLng(model.UavPosition.Lat, model.UavPosition.Lng);
+                        home.Position = new PointLatLng(model.UavPosition.Lat, model.UavPosition.Lng);
                         hasReceivedGps = true;
                     }
 
