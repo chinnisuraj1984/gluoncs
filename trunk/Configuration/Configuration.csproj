@@ -114,6 +114,12 @@
     <Compile Include="DistanceTextBox.Designer.cs">
       <DependentUpon>DistanceTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationCommands\Block.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationCommands\Block.Designer.cs">
+      <DependentUpon>Block.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationCommands\CircleAbs.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -294,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DistanceTextBox.resx">
       <DependentUpon>DistanceTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationCommands\Block.resx">
+      <DependentUpon>Block.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationCommands\CircleAbs.resx">
       <DependentUpon>CircleAbs.cs</DependentUpon>

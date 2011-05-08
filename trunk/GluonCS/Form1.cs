@@ -148,6 +148,10 @@ namespace GluonCS
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Console.WriteLine("Closing serial...");
+            if (model.Serial != null)
+                model.Serial.Close();
+            Console.WriteLine("done...");
             Properties.Settings.Default.MapPositionLatitude = _gMapControl.Position.Lat;
             Properties.Settings.Default.MapPositionLongitude = _gMapControl.Position.Lng;
             Properties.Settings.Default.MapZoomLevel = _gMapControl.Zoom;

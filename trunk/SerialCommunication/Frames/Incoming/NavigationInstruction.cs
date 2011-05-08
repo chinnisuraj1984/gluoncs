@@ -31,7 +31,8 @@ namespace Communication.Frames.Incoming
             UNTIL_GR = 15,
             UNTIL_SM = 16,
             SERVO_SET = 17,
-            SERVO_TRIGGER = 18
+            SERVO_TRIGGER = 18,
+            BLOCK = 19
         };
 
         public navigation_command opcode;
@@ -167,12 +168,55 @@ namespace Communication.Frames.Incoming
             case navigation_command.SERVO_TRIGGER:
                 s += "ServoTrigger(channel: " + (a + 1) + ", position: " + b + "us, hold: " + x + "s)";
                 break;
+            case navigation_command.BLOCK:
+                s += "Block (" + GetStringArgument() + ")";
+                break;
             default:
                 s += "Unknown/Unsupported (" + (int)opcode + " : " +  x + ", " + y + ", " + a + ", " + b + ")";
                 break;
             }
 
             return s;
+        }
+
+        public string GetStringArgument()
+        {
+            string s = "";
+            s = s + Convert.ToChar((int)(a / 256));
+            s = s + Convert.ToChar((int)(a % 256));
+            s = s + Convert.ToChar((int)(b / 256));
+            s = s + Convert.ToChar((int)(b % 256));
+            int c = (int)x;
+            int d = (int)y;
+            s = s + Convert.ToChar((int)(c / 256));
+            s = s + Convert.ToChar((int)(c % 256));
+            s = s + Convert.ToChar((int)(d / 256));
+            s = s + Convert.ToChar((int)(d % 256));
+            return s;
+        }
+
+        public void StringToArgument(string s)
+        {
+            char[] c2 = s.ToCharArray();
+            char[] c1 = new char[8] { '\n', '\n', '\n', '\n', '\n', '\n', '\n', '\n' };
+            for (int i = 0; i < 8; i++)
+                if (i < c2.Length)
+                    c1[i] = c2[i];
+            a = (int)c1[0];
+            a *= 256;
+            a += (int)c1[1];
+            b = (int)c1[2];
+            b *= 256;
+            b += (int)c1[3];
+            int d;
+            d = (int)c1[4];
+            d *= 256;
+            d += (int)c1[5];
+            x = d;
+            d = (int)c1[6];
+            d *= 256;
+            d += (int)c1[7];
+            y = d;
         }
 
         public string GetVariableText(int a)
