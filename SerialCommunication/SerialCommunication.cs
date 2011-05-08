@@ -92,6 +92,8 @@ namespace Communication
             }
         }
 
+        public abstract void Close();
+
         public abstract void Send(AllConfig ac);
 
         public abstract void ReadAllConfig();

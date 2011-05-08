@@ -41,9 +41,7 @@
             this.m_cboToolStripRenderer = new System.Windows.Forms.ComboBox();
             this.splitter2 = new BSE.Windows.Forms.Splitter();
             this._layersPanel = new BSE.Windows.Forms.Panel();
-            this._layersPanelList = new BSE.Windows.Forms.XPanderPanelList();
-            this._liveUavPanel = new BSE.Windows.Forms.XPanderPanel();
-            this.splitter1 = new BSE.Windows.Forms.Splitter();
+            this.liveUavPanel1 = new GluonCS.LiveUavPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._btnOptions = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,15 +49,12 @@
             this.zoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zoomoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.liveUavPanel1 = new GluonCS.LiveUavPanel();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel4.SuspendLayout();
             this._layersPanel.SuspendLayout();
-            this._layersPanelList.SuspendLayout();
-            this._liveUavPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this._gmapContextStrip.SuspendLayout();
             this.SuspendLayout();
@@ -223,8 +218,7 @@
             this._layersPanel.BackColor = System.Drawing.Color.Transparent;
             this._layersPanel.CaptionFont = new System.Drawing.Font("Trebuchet MS", 12.5F, System.Drawing.FontStyle.Bold);
             this._layersPanel.CaptionHeight = 27;
-            this._layersPanel.Controls.Add(this._layersPanelList);
-            this._layersPanel.Controls.Add(this.splitter1);
+            this._layersPanel.Controls.Add(this.liveUavPanel1);
             this._layersPanel.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(65)))), ((int)(((byte)(118)))));
             this._layersPanel.CustomColors.CaptionCloseIcon = System.Drawing.SystemColors.ControlText;
             this._layersPanel.CustomColors.CaptionExpandIcon = System.Drawing.SystemColors.ControlText;
@@ -249,71 +243,18 @@
             this._layersPanel.ShowExpandIcon = true;
             this._layersPanel.Size = new System.Drawing.Size(339, 698);
             this._layersPanel.TabIndex = 0;
-            this._layersPanel.Text = "Layers";
+            this._layersPanel.Text = "Uav information";
             this._layersPanel.ToolTipTextCloseIcon = null;
             this._layersPanel.ToolTipTextExpandIconPanelCollapsed = null;
             this._layersPanel.ToolTipTextExpandIconPanelExpanded = null;
             // 
-            // _layersPanelList
+            // liveUavPanel1
             // 
-            this._layersPanelList.CaptionStyle = BSE.Windows.Forms.CaptionStyle.Normal;
-            this._layersPanelList.Controls.Add(this._liveUavPanel);
-            this._layersPanelList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._layersPanelList.GradientBackground = System.Drawing.Color.Empty;
-            this._layersPanelList.Location = new System.Drawing.Point(0, 31);
-            this._layersPanelList.Name = "_layersPanelList";
-            this._layersPanelList.PanelColors = null;
-            this._layersPanelList.Size = new System.Drawing.Size(339, 666);
-            this._layersPanelList.TabIndex = 2;
-            this._layersPanelList.Text = "_layersPanelList";
-            // 
-            // _liveUavPanel
-            // 
-            this._liveUavPanel.CaptionFont = new System.Drawing.Font("Trebuchet MS", 8.75F, System.Drawing.FontStyle.Bold);
-            this._liveUavPanel.Controls.Add(this.liveUavPanel1);
-            this._liveUavPanel.CustomColors.BackColor = System.Drawing.SystemColors.Control;
-            this._liveUavPanel.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(65)))), ((int)(((byte)(118)))));
-            this._liveUavPanel.CustomColors.CaptionCheckedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(223)))), ((int)(((byte)(154)))));
-            this._liveUavPanel.CustomColors.CaptionCheckedGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(166)))), ((int)(((byte)(76)))));
-            this._liveUavPanel.CustomColors.CaptionCheckedGradientMiddle = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(116)))));
-            this._liveUavPanel.CustomColors.CaptionCloseIcon = System.Drawing.SystemColors.ControlText;
-            this._liveUavPanel.CustomColors.CaptionExpandIcon = System.Drawing.SystemColors.ControlText;
-            this._liveUavPanel.CustomColors.CaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this._liveUavPanel.CustomColors.CaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(164)))), ((int)(((byte)(224)))));
-            this._liveUavPanel.CustomColors.CaptionGradientMiddle = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(225)))), ((int)(((byte)(252)))));
-            this._liveUavPanel.CustomColors.CaptionPressedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(128)))), ((int)(((byte)(62)))));
-            this._liveUavPanel.CustomColors.CaptionPressedGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(223)))), ((int)(((byte)(154)))));
-            this._liveUavPanel.CustomColors.CaptionPressedGradientMiddle = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(177)))), ((int)(((byte)(109)))));
-            this._liveUavPanel.CustomColors.CaptionSelectedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(222)))));
-            this._liveUavPanel.CustomColors.CaptionSelectedGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(203)))), ((int)(((byte)(136)))));
-            this._liveUavPanel.CustomColors.CaptionSelectedGradientMiddle = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(225)))), ((int)(((byte)(172)))));
-            this._liveUavPanel.CustomColors.CaptionSelectedText = System.Drawing.SystemColors.ControlText;
-            this._liveUavPanel.CustomColors.CaptionText = System.Drawing.SystemColors.ControlText;
-            this._liveUavPanel.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(225)))), ((int)(((byte)(252)))));
-            this._liveUavPanel.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this._liveUavPanel.CustomColors.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this._liveUavPanel.Expand = true;
-            this._liveUavPanel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this._liveUavPanel.Image = null;
-            this._liveUavPanel.Name = "_liveUavPanel";
-            this._liveUavPanel.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this._liveUavPanel.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
-            this._liveUavPanel.Size = new System.Drawing.Size(339, 666);
-            this._liveUavPanel.TabIndex = 1;
-            this._liveUavPanel.Text = "Live uav 1";
-            this._liveUavPanel.ToolTipTextCloseIcon = null;
-            this._liveUavPanel.ToolTipTextExpandIconPanelCollapsed = null;
-            this._liveUavPanel.ToolTipTextExpandIconPanelExpanded = null;
-            // 
-            // splitter1
-            // 
-            this.splitter1.BackColor = System.Drawing.Color.Transparent;
-            this.splitter1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitter1.Location = new System.Drawing.Point(0, 28);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(339, 3);
-            this.splitter1.TabIndex = 1;
-            this.splitter1.TabStop = false;
+            this.liveUavPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.liveUavPanel1.Location = new System.Drawing.Point(1, 28);
+            this.liveUavPanel1.Name = "liveUavPanel1";
+            this.liveUavPanel1.Size = new System.Drawing.Size(337, 669);
+            this.liveUavPanel1.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -367,14 +308,6 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(124, 6);
             // 
-            // liveUavPanel1
-            // 
-            this.liveUavPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.liveUavPanel1.Location = new System.Drawing.Point(4, 25);
-            this.liveUavPanel1.Name = "liveUavPanel1";
-            this.liveUavPanel1.Size = new System.Drawing.Size(334, 641);
-            this.liveUavPanel1.TabIndex = 0;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -382,6 +315,7 @@
             this.ClientSize = new System.Drawing.Size(849, 744);
             this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.statusStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Gluon Control Station";
@@ -397,8 +331,6 @@
             this.toolStrip1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this._layersPanel.ResumeLayout(false);
-            this._layersPanelList.ResumeLayout(false);
-            this._liveUavPanel.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this._gmapContextStrip.ResumeLayout(false);
@@ -418,9 +350,6 @@
         private BSE.Windows.Forms.Splitter splitter2;
         private GMap.NET.WindowsForms.GMapControl _gMapControl;
         private BSE.Windows.Forms.Panel _layersPanel;
-        private BSE.Windows.Forms.XPanderPanelList _layersPanelList;
-        private BSE.Windows.Forms.XPanderPanel _liveUavPanel;
-        private BSE.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.ContextMenuStrip _gmapContextStrip;
         private System.Windows.Forms.ToolStripMenuItem zoomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zoomoutToolStripMenuItem;

@@ -13,18 +13,18 @@ namespace GluonCS
         [STAThread]
         static void Main()
         {
-            try
-            {
+            //try
+            //{
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new Form1());
 
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show((string)e.Message + "\n" + e.InnerException,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //}
+            //catch (Exception e)
+            //{
+            //    MessageBox.Show((string)e.Message + "\n" + e.InnerException,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
     }
 }

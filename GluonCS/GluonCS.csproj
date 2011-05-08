@@ -79,6 +79,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libs\BSE.Windows.Forms.dll</HintPath>
     </Reference>
+    <Reference Include="CommonTools">
+      <HintPath>..\..\..\Downloads\TreeWithColumn.exe\CommonTools.dll</HintPath>
+    </Reference>
     <Reference Include="GMap.NET.Core, Version=1.5.4.3, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libs\GMap.NET.Core.dll</HintPath>
@@ -86,6 +89,10 @@
     <Reference Include="GMap.NET.WindowsForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libs\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Renderer">
+      <HintPath>..\..\..\Downloads\Ai\Ai\Test\bin\Debug\Renderer.dll</HintPath>
     </Reference>
     <Reference Include="SmartThreadPool, Version=1.0.2235.39078, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -136,6 +143,12 @@
     <Compile Include="LiveUavLayer\LiveUavPanel.Designer.cs">
       <DependentUpon>LiveUavPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="LiveUavLayer\NavigationOverview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LiveUavLayer\NavigationOverview.Designer.cs">
+      <DependentUpon>NavigationOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="LiveUavLayer\UavPropertiesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -158,6 +171,9 @@
     <Compile Include="Setup.Designer.cs">
       <DependentUpon>Setup.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransparentLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -171,6 +187,9 @@
     <EmbeddedResource Include="LiveUavLayer\LiveUavPanel.resx">
       <DependentUpon>LiveUavPanel.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\NavigationOverview.resx">
+      <DependentUpon>NavigationOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\UavPropertiesControl.resx">
       <DependentUpon>UavPropertiesControl.cs</DependentUpon>

@@ -61,6 +61,7 @@ namespace GluonCS.LiveUavLayer
             set
             {
                 serial = value;
+                value.PressureTempCommunicationReceived += new SerialCommunication.ReceivePressureTempCommunicationFrame(connection_PressureTempCommunicationReceived);
                 value.AttitudeCommunicationReceived += new SerialCommunication.ReceiveAttitudeCommunicationFrame(connection_AttitudeCommunicationReceived);
                 value.NavigationInstructionCommunicationReceived += new SerialCommunication.ReceiveNavigationInstructionCommunicationFrame(connection_NavigationInstructionCommunicationReceived);
                 value.GpsBasicCommunicationReceived += new SerialCommunication.ReceiveGpsBasicCommunicationFrame(connection_GpsBasicCommunicationReceived);
@@ -115,6 +116,11 @@ namespace GluonCS.LiveUavLayer
             CommunicationAlive = true;
             if (CommunicationEstablished != null)
                 CommunicationEstablished(this, EventArgs.Empty);
+        }
+
+        void connection_PressureTempCommunicationReceived(PressureTemp info)
+        {
+            //this.AltitudeAglM = info.Height;
         }
 
         void connection_NavigationInstructionCommunicationReceived(NavigationInstruction ni)
@@ -287,6 +293,7 @@ namespace GluonCS.LiveUavLayer
         public void StartThread()
         {
             smartThreadPool = new SmartThreadPool();
+            smartThreadPool.Name = "SynchronizeNavigation";
             IWorkItemResult wir =
                 smartThreadPool.QueueWorkItem(new WorkItemCallback(SynchronizeNavigation), null);
             smartThreadPool.Start();
@@ -301,13 +308,13 @@ namespace GluonCS.LiveUavLayer
         {
             Console.WriteLine("Thread for synchro started");
 
-            while (maxLineNumberReceived == -1)
+            while (maxLineNumberReceived == -1 && model.Serial.IsOpen)
             {
                 Console.WriteLine("Waiting for NI...");
                 Thread.Sleep(1000);
             }
 
-            while (/*!SmartThreadPool.IsWorkItemCanceled*/true)
+            while (/*!SmartThreadPool.IsWorkItemCanceled*/model.Serial.IsOpen)
             {
                 for (int i = 0; i < model.MaxNumberOfNavigationInstructions() && i < maxLineNumberReceived; i++)
                 {
@@ -324,6 +331,7 @@ namespace GluonCS.LiveUavLayer
                     }
                 }
                 Thread.Sleep(500);
+                Console.WriteLine("Waiting for NI...");
             }
             return null;
         }

@@ -13,12 +13,17 @@ using GluonCS.Markers;
 using System.IO;
 using System.Xml.Serialization;
 using Configuration.NavigationCommands;
+using ZedGraph;
 
 namespace GluonCS
 {
     public partial class LiveUavPanel : LayerPropertiesPanel
     {
         private LiveUavModel model;
+        private LineItem altitudeLineItem;
+        private LineItem speedLineItem;
+        private LineItem batteryVLineItem;
+        private DateTime startDateTime = DateTime.Now;
 
         public LiveUavPanel()
             : base()
@@ -31,6 +36,39 @@ namespace GluonCS
             _artificialHorizon.BackColor = c.BackColor;
 
             _zgAlt.GraphPane.IsFontsScaled = false;
+
+            _zgAlt.GraphPane.Title.IsVisible = false;
+            _zgAlt.GraphPane.YAxis.MajorGrid.IsVisible = true;
+            _zgAlt.GraphPane.XAxis.Title.IsVisible = false;
+            _zgAlt.AxisChange();
+            _zgAlt.GraphPane.Legend.IsVisible = false;
+            _zgAlt.GraphPane.IsFontsScaled = false;
+            _zgAlt.GraphPane.XAxis.IsVisible = false;
+            _zgAlt.GraphPane.YAxis.Title.Text = "AGL [m]";
+            altitudeLineItem = _zgAlt.GraphPane.AddCurve("AGL", new PointPairList(), Color.Blue, SymbolType.None);
+
+            _zgVel.GraphPane.Title.IsVisible = false;
+            _zgVel.GraphPane.YAxis.MajorGrid.IsVisible = true;
+            _zgVel.GraphPane.XAxis.Title.IsVisible = false;
+            _zgVel.AxisChange();
+            _zgVel.GraphPane.Legend.IsVisible = false;
+            _zgVel.GraphPane.IsFontsScaled = false;
+            _zgVel.GraphPane.XAxis.IsVisible = false;
+            _zgVel.GraphPane.YAxis.Title.Text = "GS [km/h]";
+            speedLineItem = _zgVel.GraphPane.AddCurve("GS", new PointPairList(), Color.Blue, SymbolType.None);
+
+            _zgBatV.GraphPane.Title.IsVisible = false;
+            _zgBatV.GraphPane.YAxis.MajorGrid.IsVisible = true;
+            _zgBatV.GraphPane.XAxis.Title.IsVisible = false;
+            _zgBatV.AxisChange();
+            _zgBatV.GraphPane.Legend.IsVisible = false;
+            _zgBatV.GraphPane.IsFontsScaled = false;
+            _zgBatV.GraphPane.XAxis.IsVisible = false;
+            _zgBatV.GraphPane.YAxis.Title.Text = "Bat [V]";
+            batteryVLineItem = _zgVel.GraphPane.AddCurve("Bat", new PointPairList(), Color.Blue, SymbolType.None);
+
+            //zedGraphControl1.MasterPane.Add(_zgAlt.GraphPane.Clone());
+            //zedGraphControl1.MasterPane.Add(_zgBatV.GraphPane.Clone());
         }
 
         public void SetModel(LiveUavModel model)
@@ -69,8 +107,42 @@ namespace GluonCS
                 }
                 _lblSpeed.Text = ((int)(model.SpeedMS * 3.6)).ToString() + " km/h";
                 _lblGpsSat.Text = "GPS: " + model.NumberOfGpsSatellites;
-                _lblAltitude.Text = model.AltitudeAglM + " m";
+                //_lblDistNextWp.Text = "";
                 _lblVoltage.Text = "Bat: " + model.BatteryVoltage + " V";
+                _lblAltitudeAgl.Text = model.AltitudeAglM + " m / ? m";
+
+                // Update graphs
+                double time = (DateTime.Now - startDateTime).TotalSeconds;
+                altitudeLineItem.AddPoint(time, model.AltitudeAglM);
+                Scale xScale = _zgAlt.GraphPane.XAxis.Scale;
+                if (time > xScale.Max - xScale.MajorStep)
+                {
+                    xScale.Max = time + xScale.MajorStep;
+                    xScale.Min = xScale.Max - 180; // 180 seconden
+                }
+                _zgAlt.AxisChange();
+                _zgAlt.Invalidate();
+
+                
+                speedLineItem.AddPoint(time, model.SpeedMS * 3.6);
+                xScale = _zgVel.GraphPane.XAxis.Scale;
+                if (time > xScale.Max - xScale.MajorStep)
+                {
+                    xScale.Max = time + xScale.MajorStep;
+                    xScale.Min = xScale.Max - 180; // 180 seconden
+                }
+                _zgVel.AxisChange();
+                _zgVel.Invalidate();
+
+                batteryVLineItem.AddPoint(time, model.BatteryVoltage);
+                xScale = _zgBatV.GraphPane.XAxis.Scale;
+                if (time > xScale.Max - xScale.MajorStep)
+                {
+                    xScale.Max = time + xScale.MajorStep;
+                    xScale.Min = xScale.Max - 180; // 180 seconden
+                }
+                _zgBatV.AxisChange();
+                _zgBatV.Invalidate();
             };
 
             try
@@ -270,6 +342,11 @@ namespace GluonCS
             {
                 MessageBox.Show(this, "There was an error when writing the navigation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void _cockpitPanel_CloseClick(object sender, EventArgs e)
+        {
+
         }
 
     }

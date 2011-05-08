@@ -49,14 +49,14 @@ namespace GluonCS.Markers
             g.Restore(s);
 
             
-            sf1 = g.MeasureString("Gluonpilot", new Font(FontFamily.GenericSansSerif, 7));
-            DrawContrastString("Gluonpilot", g, LocalPosition.X - (int)sf1.Width / 2, LocalPosition.Y + Size.Height / 2 + 5, 7, Brushes.White);
+            sf1 = g.MeasureString("Gluonpilot", new Font(FontFamily.GenericSansSerif, 8));
+            DrawContrastString("Gluonpilot", g, LocalPosition.X - (int)sf1.Width / 2, LocalPosition.Y + Size.Height / 2 + 5, 8, Brushes.White);
 
             if (Properties.Settings.Default.ShowUavSpeedAltitude)
             {
                 string speed = ((int)(SpeedMS * 3.6)).ToString();
                 sf1 = g.MeasureString(speed, new Font(FontFamily.GenericSansSerif, 8));
-                sf2 = g.MeasureString("km/h", new Font(FontFamily.GenericSansSerif, 7));
+                sf2 = g.MeasureString("km/h", new Font(FontFamily.GenericSansSerif, 8));
                 DrawContrastString(speed, g, LocalPosition.X - (int)(sf1.Width / 2 + sf2.Width / 2), LocalPosition.Y - Size.Height / 2 - (int)sf1.Height - 5, 8, Brushes.White);
                 DrawContrastString("km/h", g, LocalPosition.X - (int)(-sf1.Width / 2 + sf2.Width / 2), LocalPosition.Y - Size.Height / 2 - (int)sf1.Height - 5, 7, Brushes.White);
 
@@ -69,8 +69,8 @@ namespace GluonCS.Markers
 
             if (AlarmMessage.Length > 0)
             {
-                sf1 = g.MeasureString(AlarmMessage, new Font(FontFamily.GenericSansSerif, 7));
-                DrawContrastString(AlarmMessage, g, LocalPosition.X - (int)sf1.Width / 2, LocalPosition.Y + Size.Height / 2 + 5 + (int)sf1.Height + 5, 7, Brushes.Red);
+                sf1 = g.MeasureString(AlarmMessage, new Font(FontFamily.GenericSansSerif, 8));
+                DrawContrastString(AlarmMessage, g, LocalPosition.X - (int)sf1.Width / 2, LocalPosition.Y + Size.Height / 2 + 5 + (int)sf1.Height + 5, 8, Brushes.Red);
             }
         }
 

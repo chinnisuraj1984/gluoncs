@@ -96,16 +96,16 @@ namespace Communication
             _serialPort.PortName = portName;
             _serialPort.BaudRate = baudrate;
             _serialPort.Open();
-
+            _smartThreadPool.Name = "ReceiveThreadedData";
             IWorkItemResult wir =
                         _smartThreadPool.QueueWorkItem(
                             new WorkItemCallback(this.ReceiveThreadedData), _serialPort);
         }
 
-        public void Close()
+        public override void Close()
         {
-            _smartThreadPool.Shutdown(false, 300);
             _serialPort.Close();
+            _smartThreadPool.Shutdown(false, 100);
         }
 
         /*!
@@ -121,7 +121,7 @@ namespace Communication
                 try
                 {
                     // A bit extra logic to set communication lost after 1 second of no data 
-                    while (_serialPort == null || !_serialPort.IsOpen || _serialPort.BytesToRead < 3)
+                    while (/*_serialPort == null || !_serialPort.IsOpen ||*/ _serialPort.BytesToRead < 3)
                     {
                         if (CommunicationAlive && (DateTime.Now - LastValidFrame).TotalMilliseconds > 1000)
                         {
@@ -130,6 +130,7 @@ namespace Communication
                                 CommunicationLost();
                         }
                         Thread.Sleep(50);
+                        //Console.WriteLine("Waiting for communication...");
                     }
 
                     string line = _serialPort.ReadLine();
