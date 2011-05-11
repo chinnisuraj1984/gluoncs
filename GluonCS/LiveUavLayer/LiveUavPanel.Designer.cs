@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiveUavPanel));
             this._cockpitPanel = new BSE.Windows.Forms.Panel();
             this.splitter1 = new BSE.Windows.Forms.Splitter();
+            this._lblBlockname = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
@@ -45,8 +46,6 @@
             this._zgVel = new ZedGraph.ZedGraphControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this._zgBatV = new ZedGraph.ZedGraphControl();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this._lblAltitudeAgl = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -93,7 +92,6 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this._navigationPanel.SuspendLayout();
@@ -107,6 +105,7 @@
             this._cockpitPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this._cockpitPanel.CaptionFont = new System.Drawing.Font("Trebuchet MS", 8.75F, System.Drawing.FontStyle.Bold);
             this._cockpitPanel.CaptionHeight = 20;
+            this._cockpitPanel.Controls.Add(this._lblBlockname);
             this._cockpitPanel.Controls.Add(this.tableLayoutPanel3);
             this._cockpitPanel.Controls.Add(this._lblAltitudeAgl);
             this._cockpitPanel.Controls.Add(this.label9);
@@ -161,6 +160,16 @@
             this.splitter1.Size = new System.Drawing.Size(341, 3);
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
+            // 
+            // _lblBlockname
+            // 
+            this._lblBlockname.AutoSize = true;
+            this._lblBlockname.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._lblBlockname.Location = new System.Drawing.Point(239, 121);
+            this._lblBlockname.Name = "_lblBlockname";
+            this._lblBlockname.Size = new System.Drawing.Size(73, 13);
+            this._lblBlockname.TabIndex = 36;
+            this._lblBlockname.Text = "Block name";
             // 
             // tableLayoutPanel3
             // 
@@ -232,7 +241,6 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(3, 50);
             this.tabControl1.Name = "tabControl1";
@@ -295,7 +303,7 @@
             this._zgVel.ScrollMinX = 0D;
             this._zgVel.ScrollMinY = 0D;
             this._zgVel.ScrollMinY2 = 0D;
-            this._zgVel.Size = new System.Drawing.Size(321, 89);
+            this._zgVel.Size = new System.Drawing.Size(321, 92);
             this._zgVel.TabIndex = 1;
             // 
             // tabPage3
@@ -324,37 +332,8 @@
             this._zgBatV.ScrollMinX = 0D;
             this._zgBatV.ScrollMinY = 0D;
             this._zgBatV.ScrollMinY2 = 0D;
-            this._zgBatV.Size = new System.Drawing.Size(321, 89);
+            this._zgBatV.Size = new System.Drawing.Size(321, 92);
             this._zgBatV.TabIndex = 1;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.zedGraphControl1);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(327, 98);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // zedGraphControl1
-            // 
-            this.zedGraphControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.zedGraphControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.zedGraphControl1.IsAntiAlias = true;
-            this.zedGraphControl1.Location = new System.Drawing.Point(3, 3);
-            this.zedGraphControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.zedGraphControl1.Name = "zedGraphControl1";
-            this.zedGraphControl1.ScrollGrace = 0D;
-            this.zedGraphControl1.ScrollMaxX = 0D;
-            this.zedGraphControl1.ScrollMaxY = 0D;
-            this.zedGraphControl1.ScrollMaxY2 = 0D;
-            this.zedGraphControl1.ScrollMinX = 0D;
-            this.zedGraphControl1.ScrollMinY = 0D;
-            this.zedGraphControl1.ScrollMinY2 = 0D;
-            this.zedGraphControl1.Size = new System.Drawing.Size(321, 92);
-            this.zedGraphControl1.TabIndex = 2;
             // 
             // _lblAltitudeAgl
             // 
@@ -386,7 +365,7 @@
             // _lblFlightTime
             // 
             this._lblFlightTime.AutoSize = true;
-            this._lblFlightTime.Location = new System.Drawing.Point(239, 76);
+            this._lblFlightTime.Location = new System.Drawing.Point(239, 78);
             this._lblFlightTime.Name = "_lblFlightTime";
             this._lblFlightTime.Size = new System.Drawing.Size(71, 13);
             this._lblFlightTime.TabIndex = 29;
@@ -395,7 +374,7 @@
             // _lblTimeInBlock
             // 
             this._lblTimeInBlock.AutoSize = true;
-            this._lblTimeInBlock.Location = new System.Drawing.Point(239, 176);
+            this._lblTimeInBlock.Location = new System.Drawing.Point(240, 140);
             this._lblTimeInBlock.Name = "_lblTimeInBlock";
             this._lblTimeInBlock.Size = new System.Drawing.Size(87, 13);
             this._lblTimeInBlock.TabIndex = 28;
@@ -404,7 +383,7 @@
             // _lblTimeToWp
             // 
             this._lblTimeToWp.AutoSize = true;
-            this._lblTimeToWp.Location = new System.Drawing.Point(239, 151);
+            this._lblTimeToWp.Location = new System.Drawing.Point(240, 182);
             this._lblTimeToWp.Name = "_lblTimeToWp";
             this._lblTimeToWp.Size = new System.Drawing.Size(80, 13);
             this._lblTimeToWp.TabIndex = 27;
@@ -413,7 +392,7 @@
             // _lblHomeDistance
             // 
             this._lblHomeDistance.AutoSize = true;
-            this._lblHomeDistance.Location = new System.Drawing.Point(239, 101);
+            this._lblHomeDistance.Location = new System.Drawing.Point(239, 98);
             this._lblHomeDistance.Name = "_lblHomeDistance";
             this._lblHomeDistance.Size = new System.Drawing.Size(55, 13);
             this._lblHomeDistance.TabIndex = 26;
@@ -529,7 +508,7 @@
             // _lblDistNextWp
             // 
             this._lblDistNextWp.AutoSize = true;
-            this._lblDistNextWp.Location = new System.Drawing.Point(239, 126);
+            this._lblDistNextWp.Location = new System.Drawing.Point(240, 161);
             this._lblDistNextWp.Name = "_lblDistNextWp";
             this._lblDistNextWp.Size = new System.Drawing.Size(73, 13);
             this._lblDistNextWp.TabIndex = 4;
@@ -766,7 +745,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Command";
-            this.columnHeader2.Width = 276;
+            this.columnHeader2.Width = 272;
             // 
             // _imageListGps
             // 
@@ -799,7 +778,6 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -867,7 +845,6 @@
         private ZedGraph.ZedGraphControl _zgBatV;
         private BSE.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private ZedGraph.ZedGraphControl zedGraphControl1;
+        private System.Windows.Forms.Label _lblBlockname;
     }
 }

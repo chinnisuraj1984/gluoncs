@@ -25,6 +25,8 @@ namespace GluonCS
         private LineItem batteryVLineItem;
         private DateTime startDateTime = DateTime.Now;
 
+        private Timer redrawNavigationTable;
+
         public LiveUavPanel()
             : base()
         {
@@ -69,7 +71,12 @@ namespace GluonCS
 
             //zedGraphControl1.MasterPane.Add(_zgAlt.GraphPane.Clone());
             //zedGraphControl1.MasterPane.Add(_zgBatV.GraphPane.Clone());
+
+            redrawNavigationTable = new Timer();
+            redrawNavigationTable.Interval = 400;
+            redrawNavigationTable.Tick += new EventHandler(redrawNavigationTable_Tick);
         }
+
 
         public void SetModel(LiveUavModel model)
         {
@@ -85,9 +92,11 @@ namespace GluonCS
             }
 
             model.NavigationLocalListChanged += new LiveUavModel.ChangedEventHandler(model_NavigationLocalListChanged);
+            model.NavigationRemoteListChanged += new LiveUavModel.ChangedEventHandler(model_NavigationRemoteListChanged);
             model.UavAttitudeChanged += new LiveUavModel.ChangedEventHandler(model_UavAttitudeChanged);
             model.UavPositionChanged += new LiveUavModel.ChangedEventHandler(model_UavPositionChanged);
         }
+
 
 #region model events
 
@@ -110,6 +119,21 @@ namespace GluonCS
                 //_lblDistNextWp.Text = "";
                 _lblVoltage.Text = "Bat: " + model.BatteryVoltage + " V";
                 _lblAltitudeAgl.Text = model.AltitudeAglM + " m / ? m";
+                _lblDistNextWp.Text = "Next WP: " + model.DistanceNextWaypoint().ToString("F0") +" m";
+                _lblHomeDistance.Text = "Home: " + model.DistanceHome().ToString("F0") + " m";
+                
+                _lblBlockname.Text = model.NavigationModel.Commands[model.CurrentNavigationLine].BlockName;
+                _lblFlightTime.Text = "Flight time: " + (int)((DateTime.Now - model.TakeoffTime).TotalMinutes) + ":" + (DateTime.Now - model.TakeoffTime).Seconds;
+                _lblTimeInBlock.Text = "Time in block: " + (int)((DateTime.Now - model.BlockStartTime).TotalMinutes) + ":" + (DateTime.Now - model.BlockStartTime).Seconds;
+                _lv_navigation.Items[model.CurrentNavigationLine].BackColor = Color.Yellow;
+
+                if (model.SpeedMS < 0.001)
+                    _lblTimeToWp.Text = "Time to WP: oo s";
+                else
+                {
+                    TimeSpan ts = new TimeSpan(0, 0, (int)(model.DistanceNextWaypoint() / model.SpeedMS));
+                    _lblTimeToWp.Text = "Time to WP: " + (int)ts.TotalMinutes + ":" + ts.Seconds;
+                }
 
                 // Update graphs
                 double time = (DateTime.Now - startDateTime).TotalSeconds;
@@ -164,20 +188,8 @@ namespace GluonCS
         {
             MethodInvoker m = delegate()
             {
-                for (int i = 0; i < model.MaxNumberOfNavigationInstructions(); i++)
-                {
-                    // Add items to list if there are not enough
-                    while(_lv_navigation.Items.Count <= i)
-                        _lv_navigation.Items.Add(""+(i+1)).SubItems.Add("");
-
-                    if (model.GetNavigationInstructionLocal(i) != model.GetNavigationInstructionRemote(i))
-                        _lv_navigation.Items[i].SubItems[1].Text = "* ";
-                    else
-                        _lv_navigation.Items[i].SubItems[1].Text = "";
-
-                    _lv_navigation.Items[i].SubItems[1].Text +=
-                        model.GetNavigationInstructionLocal(i).ToString();
-                }
+                redrawNavigationTable.Stop();
+                redrawNavigationTable.Start();
             };
 
             try
@@ -187,6 +199,108 @@ namespace GluonCS
             catch
             {
             } 
+        }
+
+        void model_NavigationRemoteListChanged(object sender, EventArgs e)
+        {
+            MethodInvoker m = delegate()
+            {
+                redrawNavigationTable.Stop();
+                redrawNavigationTable.Start();
+            };
+
+            try
+            {
+                BeginInvoke(m);
+            }
+            catch
+            {
+            } 
+        }
+
+
+        void redrawNavigationTable_Tick(object sender, EventArgs e)
+        {
+            RedrawNavigationtable();
+            RedrawBlockButtons();
+            redrawNavigationTable.Stop();
+        }
+
+        private void RedrawBlockButtons()   // from GUI thread
+        {
+
+        }
+
+        private void RedrawNavigationtable()   // from GUI thread
+        {
+            Console.WriteLine("Redraw list");
+            ListViewItem lvi;
+            ListViewGroup lvg = new ListViewGroup("EMPTY");
+            string lvg_name = "";
+            int topitem = 0;
+            for (int i = 0; i < _lv_navigation.Items.Count; i++)
+            {
+                if (_lv_navigation.ClientRectangle.Contains(_lv_navigation.Items[i].Bounds))
+                {
+                    topitem = i;
+                    continue;
+                }
+            }
+
+            _lv_navigation.Groups.Clear();
+            lock (model.NavigationModel.Commands)
+            {
+                for (int i = 0; i < model.MaxNumberOfNavigationInstructions(); i++)
+                {
+                    if (lvg_name != model.NavigationModel.Commands[i].BlockName)
+                    {
+                        lvg_name = model.NavigationModel.Commands[i].BlockName;
+                        lvg = new ListViewGroup(lvg_name);
+                        _lv_navigation.Groups.Add(lvg);
+                        //Console.WriteLine("Added group " + lvg_name + "(" + model.NavigationModel.Commands[i].BlockName + ")");
+                    }
+
+                    // Add items to list if there are not enough
+                    while (_lv_navigation.Items.Count <= i)
+                        _lv_navigation.Items.Add("" + (i + 1)).SubItems.Add("");
+
+                    if (model.GetNavigationInstructionLocal(i) != model.GetNavigationInstructionRemote(i))
+                        _lv_navigation.Items[i].SubItems[1].Text = "* ";
+                    else
+                        _lv_navigation.Items[i].SubItems[1].Text = "";
+
+                    lvi = _lv_navigation.Items[i];
+
+                    if (i > 0)   // add indent
+                    {
+                        NavigationInstruction ni = model.GetNavigationInstructionRemote(i - 1);
+                        if (ni.opcode == NavigationInstruction.navigation_command.IF_EQ ||
+                            ni.opcode == NavigationInstruction.navigation_command.IF_GR ||
+                            ni.opcode == NavigationInstruction.navigation_command.IF_NE ||
+                            ni.opcode == NavigationInstruction.navigation_command.IF_SM)
+                            lvi.SubItems[1].Text += "   ";
+                    }
+                    if (i+1 < model.MaxNumberOfNavigationInstructions())   // add indent
+                    {
+                        NavigationInstruction ni = model.GetNavigationInstructionRemote(i + 1);
+                        if (ni.opcode == NavigationInstruction.navigation_command.UNTIL_EQ ||
+                            ni.opcode == NavigationInstruction.navigation_command.UNTIL_GR ||
+                            ni.opcode == NavigationInstruction.navigation_command.UNTIL_NE ||
+                            ni.opcode == NavigationInstruction.navigation_command.UNTIL_SM)
+                            lvi.SubItems[1].Text += "   ";
+                    }
+
+                    lvi.SubItems[1].Text +=
+                        model.GetNavigationInstructionLocal(i).ToString();
+
+                    lvi.Group = lvg;
+                }
+            }
+
+            //_lv_navigation.TopItem = topitem;
+            _lv_navigation.EnsureVisible(topitem);
+            _lv_navigation.Items[topitem].EnsureVisible();
+            Console.WriteLine("Ensure visible " + topitem);
         }
 #endregion
 
