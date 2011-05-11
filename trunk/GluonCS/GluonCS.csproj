@@ -137,6 +137,7 @@
     </Compile>
     <Compile Include="LiveUavLayer\GMapController.cs" />
     <Compile Include="LiveUavLayer\LiveUavModel.cs" />
+    <Compile Include="LiveUavLayer\LiveUavNavigationModel.cs" />
     <Compile Include="LiveUavLayer\LiveUavPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>

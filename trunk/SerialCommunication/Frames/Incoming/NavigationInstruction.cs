@@ -192,7 +192,7 @@ namespace Communication.Frames.Incoming
             s = s + Convert.ToChar((int)(c % 256));
             s = s + Convert.ToChar((int)(d / 256));
             s = s + Convert.ToChar((int)(d % 256));
-            return s;
+            return s.TrimEnd(new char[] { '\n' });
         }
 
         public void StringToArgument(string s)

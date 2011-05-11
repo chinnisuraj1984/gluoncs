@@ -32,6 +32,13 @@ namespace GluonCS.LiveUavLayer
         public double BatteryVoltage = 0;
         public ControlInfo.FlightModes FlightMode = ControlInfo.FlightModes.AUTOPILOT;
         public bool CommunicationAlive = false;
+        public int CurrentNavigationLine = 0;
+
+        public LiveUavNavigationModel NavigationModel;
+        public DateTime TakeoffTime = DateTime.Now;
+        public DateTime BlockStartTime = DateTime.Now;
+        private string lastBlockname = "";
+        private bool hasTakenOff = false;
 
         private List<NavigationInstruction> navigation_local = new List<NavigationInstruction>(36);
         private List<NavigationInstruction> navigation_remote = new List<NavigationInstruction>(36);
@@ -88,6 +95,9 @@ namespace GluonCS.LiveUavLayer
                     navigation_remote.Insert(i, new NavigationInstruction(i, NavigationInstruction.navigation_command.EMPTY, 0, 0, 0, 0));
                 }
             }
+            NavigationModel = new LiveUavNavigationModel(this);
+            home = new PointLatLng(Properties.Settings.Default.HomeLatitude, Properties.Settings.Default.HomeLongitude);
+            UavPosition = new PointLatLng(Properties.Settings.Default.HomeLatitude, Properties.Settings.Default.HomeLongitude);
         }
 
         ~LiveUavModel()
@@ -103,6 +113,36 @@ namespace GluonCS.LiveUavLayer
             }
         }
 
+        public double DistanceNextWaypoint()
+        {
+            if (!NavigationModel.Commands.ContainsKey(NavigationModel.Commands[CurrentNavigationLine].TargetWp))
+                return 0.0;
+            NavigationInstruction ni = NavigationModel.Commands[NavigationModel.Commands[CurrentNavigationLine].TargetWp].Instruction;
+            double latitude_meter_per_degree = 6363057.32484 / 180.0 * Math.PI;
+            double longitude_meter_per_degree = latitude_meter_per_degree * Math.Cos(home.Lat / 180.0 * Math.PI);
+
+            if (ni.opcode == NavigationInstruction.navigation_command.FLY_TO_REL ||
+                ni.opcode == NavigationInstruction.navigation_command.FROM_TO_REL ||
+                ni.opcode == NavigationInstruction.navigation_command.CIRCLE_REL)
+            {
+                double clon = home.Lng + ni.y / longitude_meter_per_degree;
+                double clat = home.Lat + ni.x / latitude_meter_per_degree;
+
+                return Math.Sqrt((UavPosition.Lat - clat) * (UavPosition.Lat - clat) * latitude_meter_per_degree * latitude_meter_per_degree + (UavPosition.Lng - clon) * (UavPosition.Lng - clon) * longitude_meter_per_degree * longitude_meter_per_degree);
+            }
+            else
+            {
+                return Math.Sqrt((UavPosition.Lat - ni.x / Math.PI * 180.0) * (UavPosition.Lat - ni.x / Math.PI * 180.0) * latitude_meter_per_degree * latitude_meter_per_degree + (UavPosition.Lng - ni.y / Math.PI * 180.0) * (UavPosition.Lng - ni.y / Math.PI * 180.0) * longitude_meter_per_degree * longitude_meter_per_degree);
+            }
+        }
+
+        public double DistanceHome()
+        {
+            double latitude_meter_per_degree = 6363057.32484 / 180.0 * Math.PI;
+            double longitude_meter_per_degree = latitude_meter_per_degree * Math.Cos(home.Lat / 180.0 * Math.PI);
+
+            return Math.Sqrt((UavPosition.Lat - home.Lat) * (UavPosition.Lat - home.Lat) * latitude_meter_per_degree * latitude_meter_per_degree + (UavPosition.Lng - home.Lng) * (UavPosition.Lng - home.Lng) * longitude_meter_per_degree * longitude_meter_per_degree);
+        }
 
         void connection_CommunicationLost()
         {
@@ -157,13 +197,20 @@ namespace GluonCS.LiveUavLayer
         void connection_GpsBasicCommunicationReceived(GpsBasic gpsbasic)
         {
             //uavPath.Add(new PointLatLng(gpsbasic.Latitude / Math.PI * 180.0, gpsbasic.Longitude / Math.PI * 180.0));
-            UavPosition = new PointLatLng(gpsbasic.Latitude / Math.PI * 180.0, gpsbasic.Longitude / Math.PI * 180.0);
+            if (gpsbasic.NumberOfSatellites > 3)
+                UavPosition = new PointLatLng(gpsbasic.Latitude / Math.PI * 180.0, gpsbasic.Longitude / Math.PI * 180.0);
             Heading = gpsbasic.Heading_deg;
             SpeedMS = gpsbasic.Speed_ms;
             NumberOfGpsSatellites = gpsbasic.NumberOfSatellites;
 
             if (UavPositionChanged != null)
                 UavPositionChanged(this, EventArgs.Empty);
+
+            if (!hasTakenOff && gpsbasic.Speed_ms > 1)
+            {
+                hasTakenOff = true;
+                TakeoffTime = DateTime.Now;
+            }
         }
 
         void connection_AttitudeCommunicationReceived(Attitude attitude)
@@ -180,6 +227,13 @@ namespace GluonCS.LiveUavLayer
             AltitudeAglM = ci.HeightAboveStartGround;
             BatteryVoltage = ci.BattVoltage;
             FlightMode = ci.FlightMode;
+            CurrentNavigationLine = ci.CurrentNavigationLine;
+
+            if (NavigationModel.Commands[CurrentNavigationLine].BlockName != lastBlockname)
+            {
+                lastBlockname = NavigationModel.Commands[CurrentNavigationLine].BlockName;
+                BlockStartTime = DateTime.Now;
+            }
         }
 
         public void ReadNavigation()
@@ -301,6 +355,7 @@ namespace GluonCS.LiveUavLayer
 
         public void Pause()
         {
+            smartThreadPool.Cancel();
             smartThreadPool.Shutdown();
         }
 
@@ -330,8 +385,8 @@ namespace GluonCS.LiveUavLayer
                         }
                     }
                 }
-                Thread.Sleep(500);
-                Console.WriteLine("Waiting for NI...");
+                Thread.Sleep(350);
+                //Console.WriteLine("Waiting for NI...");
             }
             return null;
         }
