@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiveUavPanel));
             this._cockpitPanel = new BSE.Windows.Forms.Panel();
             this.splitter1 = new BSE.Windows.Forms.Splitter();
+            this.label1 = new System.Windows.Forms.Label();
+            this._lblThrottle = new GluonCS.TransparentLabel();
+            this._pbThrottle = new System.Windows.Forms.ProgressBar();
             this._lblBlockname = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -105,6 +108,9 @@
             this._cockpitPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this._cockpitPanel.CaptionFont = new System.Drawing.Font("Trebuchet MS", 8.75F, System.Drawing.FontStyle.Bold);
             this._cockpitPanel.CaptionHeight = 20;
+            this._cockpitPanel.Controls.Add(this.label1);
+            this._cockpitPanel.Controls.Add(this._lblThrottle);
+            this._cockpitPanel.Controls.Add(this._pbThrottle);
             this._cockpitPanel.Controls.Add(this._lblBlockname);
             this._cockpitPanel.Controls.Add(this.tableLayoutPanel3);
             this._cockpitPanel.Controls.Add(this._lblAltitudeAgl);
@@ -149,7 +155,6 @@
             this._cockpitPanel.ToolTipTextCloseIcon = null;
             this._cockpitPanel.ToolTipTextExpandIconPanelCollapsed = null;
             this._cockpitPanel.ToolTipTextExpandIconPanelExpanded = null;
-            this._cockpitPanel.CloseClick += new System.EventHandler<System.EventArgs>(this._cockpitPanel_CloseClick);
             // 
             // splitter1
             // 
@@ -160,6 +165,35 @@
             this.splitter1.Size = new System.Drawing.Size(341, 3);
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(11, 123);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Throttle:";
+            // 
+            // _lblThrottle
+            // 
+            this._lblThrottle.Location = new System.Drawing.Point(14, 142);
+            this._lblThrottle.Name = "_lblThrottle";
+            this._lblThrottle.Size = new System.Drawing.Size(62, 13);
+            this._lblThrottle.TabIndex = 38;
+            this._lblThrottle.TabStop = false;
+            this._lblThrottle.Text = "0%";
+            this._lblThrottle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // _pbThrottle
+            // 
+            this._pbThrottle.Location = new System.Drawing.Point(14, 143);
+            this._pbThrottle.Name = "_pbThrottle";
+            this._pbThrottle.Size = new System.Drawing.Size(62, 12);
+            this._pbThrottle.Step = 1;
+            this._pbThrottle.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this._pbThrottle.TabIndex = 37;
             // 
             // _lblBlockname
             // 
@@ -374,7 +408,7 @@
             // _lblTimeInBlock
             // 
             this._lblTimeInBlock.AutoSize = true;
-            this._lblTimeInBlock.Location = new System.Drawing.Point(240, 140);
+            this._lblTimeInBlock.Location = new System.Drawing.Point(239, 140);
             this._lblTimeInBlock.Name = "_lblTimeInBlock";
             this._lblTimeInBlock.Size = new System.Drawing.Size(87, 13);
             this._lblTimeInBlock.TabIndex = 28;
@@ -383,7 +417,7 @@
             // _lblTimeToWp
             // 
             this._lblTimeToWp.AutoSize = true;
-            this._lblTimeToWp.Location = new System.Drawing.Point(240, 182);
+            this._lblTimeToWp.Location = new System.Drawing.Point(239, 182);
             this._lblTimeToWp.Name = "_lblTimeToWp";
             this._lblTimeToWp.Size = new System.Drawing.Size(80, 13);
             this._lblTimeToWp.TabIndex = 27;
@@ -508,7 +542,7 @@
             // _lblDistNextWp
             // 
             this._lblDistNextWp.AutoSize = true;
-            this._lblDistNextWp.Location = new System.Drawing.Point(240, 161);
+            this._lblDistNextWp.Location = new System.Drawing.Point(239, 161);
             this._lblDistNextWp.Name = "_lblDistNextWp";
             this._lblDistNextWp.Size = new System.Drawing.Size(73, 13);
             this._lblDistNextWp.TabIndex = 4;
@@ -520,9 +554,9 @@
             this._lblVoltage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._lblVoltage.Location = new System.Drawing.Point(11, 99);
             this._lblVoltage.Name = "_lblVoltage";
-            this._lblVoltage.Size = new System.Drawing.Size(60, 15);
+            this._lblVoltage.Size = new System.Drawing.Size(56, 15);
             this._lblVoltage.TabIndex = 3;
-            this._lblVoltage.Text = "BAT: 0 V";
+            this._lblVoltage.Text = "Bat: 0 V";
             // 
             // _lblSpeed
             // 
@@ -540,9 +574,9 @@
             this._lblGpsSat.ImageKey = "ERROR";
             this._lblGpsSat.Location = new System.Drawing.Point(11, 76);
             this._lblGpsSat.Name = "_lblGpsSat";
-            this._lblGpsSat.Size = new System.Drawing.Size(65, 15);
+            this._lblGpsSat.Size = new System.Drawing.Size(62, 15);
             this._lblGpsSat.TabIndex = 1;
-            this._lblGpsSat.Text = "GPS: N/A";
+            this._lblGpsSat.Text = "Gps: N/A";
             // 
             // _artificialHorizon
             // 
@@ -846,5 +880,8 @@
         private BSE.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label _lblBlockname;
+        private System.Windows.Forms.Label label1;
+        private TransparentLabel _lblThrottle;
+        private System.Windows.Forms.ProgressBar _pbThrottle;
     }
 }
