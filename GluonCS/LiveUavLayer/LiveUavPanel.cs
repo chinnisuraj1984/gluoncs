@@ -458,10 +458,6 @@ namespace GluonCS
             }
         }
 
-        private void _cockpitPanel_CloseClick(object sender, EventArgs e)
-        {
-
-        }
 
     }
 }
