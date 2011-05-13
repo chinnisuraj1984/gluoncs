@@ -115,17 +115,47 @@ namespace GluonCS
                         _lblGpsSat.BackColor = Color.Red;
                 }
                 _lblSpeed.Text = ((int)(model.SpeedMS * 3.6)).ToString() + " km/h";
-                _lblGpsSat.Text = "GPS: " + model.NumberOfGpsSatellites;
-                //_lblDistNextWp.Text = "";
-                _lblVoltage.Text = "Bat: " + model.BatteryVoltage + " V";
-                _lblAltitudeAgl.Text = model.AltitudeAglM + " m / ? m";
+
+                //_lblGpsSat.Text = "GPS: " + model.NumberOfGpsSatellites;
+                if (model.NumberOfGpsSatellites == -1)
+                {
+                    _pbGps.Value = 0;
+                    _pbGps.Text = "Not found";
+                    _lblGpsSat.BackColor = Color.Red;
+                }
+                else
+                {
+                    if (model.NumberOfGpsSatellites < 6)
+                    {
+                        _pbGps.ForeColor = Color.Red;
+                        _lblGpsSat.BackColor = Color.Red;
+                    }
+                    else
+                    {
+                        _pbGps.ForeColor = Color.Green;
+                        _lblGpsSat.BackColor = _lblGpsSat.Parent.BackColor;
+                    }
+                    _pbGps.Value = model.NumberOfGpsSatellites;
+                }
+
+                //_lblVoltage.Text = "Bat: " + model.BatteryVoltage + " V";
+                _pbBattery.Value = (int)(model.BatteryVoltage*10.0);
+                _pbBattery.Text = model.BatteryVoltage.ToString() + " V";
+
+                _lblAltitudeAgl.Text = model.AltitudeAglM + " m / " + model.TargetAltitudeAglM() + " m";
                 _lblDistNextWp.Text = "Next WP: " + model.DistanceNextWaypoint().ToString("F0") +" m";
                 _lblHomeDistance.Text = "Home: " + model.DistanceHome().ToString("F0") + " m";
                 
                 _lblBlockname.Text = model.NavigationModel.Commands[model.CurrentNavigationLine].BlockName;
                 _lblFlightTime.Text = "Flight time: " + (int)((DateTime.Now - model.TakeoffTime).TotalMinutes) + ":" + (DateTime.Now - model.TakeoffTime).Seconds;
                 _lblTimeInBlock.Text = "Time in block: " + (int)((DateTime.Now - model.BlockStartTime).TotalMinutes) + ":" + (DateTime.Now - model.BlockStartTime).Seconds;
-                _lv_navigation.Items[model.CurrentNavigationLine].BackColor = Color.Yellow;
+
+                // update listview with current navigation line selection
+                foreach (ListViewItem lvi in _lv_navigation.Items)
+                    if (lvi.BackColor == Color.Yellow && lvi.Index != model.CurrentNavigationLine)
+                        lvi.BackColor = _lv_navigation.Parent.BackColor;
+                if (_lv_navigation.Items[model.CurrentNavigationLine].BackColor != Color.Yellow)
+                    _lv_navigation.Items[model.CurrentNavigationLine].BackColor = Color.Yellow;
 
                 if (model.SpeedMS < 0.001)
                     _lblTimeToWp.Text = "Time to WP: oo s";
@@ -301,6 +331,26 @@ namespace GluonCS
             _lv_navigation.EnsureVisible(topitem);
             _lv_navigation.Items[topitem].EnsureVisible();
             Console.WriteLine("Ensure visible " + topitem);
+
+            _panelStrip.Controls.Clear();
+            foreach (KeyValuePair<string, int> block in model.NavigationModel.Blocks)
+            {
+                Button b = new Button();
+                b.Text = block.Key;
+                b.Click += new EventHandler(CommandButton_Click);
+                _panelStrip.Controls.Add(b);
+            }
+
+        }
+
+        void CommandButton_Click(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            if (model.NavigationModel.Blocks.ContainsKey(b.Text))
+            {
+                model.SendToNavigationLine(model.NavigationModel.Blocks[b.Text]);
+            }
+            //throw new NotImplementedException();
         }
 #endregion
 

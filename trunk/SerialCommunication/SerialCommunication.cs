@@ -112,6 +112,8 @@ namespace Communication
 
         public abstract void SendNavigationInstruction(NavigationInstruction ni);
 
+        public abstract void SendJumpToNavigationLine(int line);
+
         public abstract void SendNavigationBurn();
 
         public abstract void SendNavigationRead();

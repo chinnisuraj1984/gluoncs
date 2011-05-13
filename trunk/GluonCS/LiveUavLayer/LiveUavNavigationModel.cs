@@ -14,6 +14,8 @@ namespace GluonCS.LiveUavLayer
         private LiveUavModel model;
         private Timer reSync;
         public Dictionary<int, NavigationCommand> Commands = new Dictionary<int, NavigationCommand>(1);
+        public Dictionary<string,int> Blocks = new Dictionary<string,int>(5);
+
 
         public LiveUavNavigationModel(LiveUavModel model)
         {
@@ -34,7 +36,7 @@ namespace GluonCS.LiveUavLayer
 
         void model_NavigationRemoteListChanged(object sender, EventArgs e)
         {
-            reSync.Interval = 500;
+            reSync.Interval = 100;
             // if (zoomtowaypoints.Enabled)
             reSync.Stop();
             reSync.Start();
@@ -42,7 +44,7 @@ namespace GluonCS.LiveUavLayer
 
         void model_NavigationLocalListChanged(object sender, EventArgs e)
         {
-            reSync.Interval = 500;
+            reSync.Interval = 100;
             // if (zoomtowaypoints.Enabled)
             reSync.Stop();
             reSync.Start();
@@ -54,11 +56,15 @@ namespace GluonCS.LiveUavLayer
             string blockname = "Start";
             lock (Commands)
             {
+                Blocks.Clear();
                 for (int i = 0; i < model.MaxNumberOfNavigationInstructions(); i++)
                 {
                     NavigationInstruction ni = model.GetNavigationInstructionLocal(i);
                     if (ni.opcode == NavigationInstruction.navigation_command.BLOCK)
+                    {
                         blockname = ni.GetStringArgument();
+                        Blocks.Add(ni.GetStringArgument(), ni.line);
+                    }
                     
                     NavigationCommand nc = new NavigationCommand();
                     nc.BlockName = blockname;

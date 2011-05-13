@@ -13,7 +13,7 @@ namespace Communication.Frames.Incoming
         private double heading_deg;
         private double speed_ms;
         private int numberOfSatellites;
-        private int status;
+        private int status; // 2=not found
 
         public double Longitude
         {
