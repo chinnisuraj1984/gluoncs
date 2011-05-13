@@ -390,11 +390,13 @@ namespace Communication
                     else
                     {
                         recognised_frame = false;
+                        Console.WriteLine(line);
                         if (NonParsedCommunicationReceived != null)
                             NonParsedCommunicationReceived(line);
                     }
                     if (recognised_frame)
                     {
+                        //Console.WriteLine(line);
                         LastValidFrame = DateTime.Now;
                         FramesReceived++;
                         if (!CommunicationAlive)
@@ -645,7 +647,12 @@ namespace Communication
             Console.WriteLine("\nWN;" + ni.line.ToString() + ";" +
                 ni.x.ToString(CultureInfo.InvariantCulture) + ";" + ni.y.ToString(CultureInfo.InvariantCulture) + ";" +
                 ni.a.ToString() + ";" + ni.b.ToString() + "\n");
+        }
 
+        public override void SendJumpToNavigationLine(int line)
+        {
+            _serialPort.WriteLine("\nJN;" + line + "\n");
+            Console.WriteLine("\nJN;" + line + "\n");
         }
 
         public override void SendNavigationBurn()

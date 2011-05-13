@@ -136,6 +136,21 @@ namespace GluonCS.LiveUavLayer
             }
         }
 
+        public double TargetAltitudeAglM()  // taken from next waypoint
+        {
+            if (!NavigationModel.Commands.ContainsKey(NavigationModel.Commands[CurrentNavigationLine].TargetWp))
+                return 0.0;
+            NavigationInstruction ni = NavigationModel.Commands[NavigationModel.Commands[CurrentNavigationLine].TargetWp].Instruction;
+            if (ni.opcode == NavigationInstruction.navigation_command.CLIMB)
+                return ni.x;
+            else if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_ABS ||
+                     ni.opcode == NavigationInstruction.navigation_command.CIRCLE_REL)
+                return (double)ni.b;
+            else
+                return (double)ni.a;
+
+        }
+
         public double DistanceHome()
         {
             double latitude_meter_per_degree = 6363057.32484 / 180.0 * Math.PI;
@@ -197,12 +212,16 @@ namespace GluonCS.LiveUavLayer
         void connection_GpsBasicCommunicationReceived(GpsBasic gpsbasic)
         {
             //uavPath.Add(new PointLatLng(gpsbasic.Latitude / Math.PI * 180.0, gpsbasic.Longitude / Math.PI * 180.0));
+            if (gpsbasic.Status == 2)
+                NumberOfGpsSatellites = -1;
+            else
+                NumberOfGpsSatellites = gpsbasic.NumberOfSatellites;
+
             if (gpsbasic.NumberOfSatellites > 3)
                 UavPosition = new PointLatLng(gpsbasic.Latitude / Math.PI * 180.0, gpsbasic.Longitude / Math.PI * 180.0);
             Heading = gpsbasic.Heading_deg;
             SpeedMS = gpsbasic.Speed_ms;
-            NumberOfGpsSatellites = gpsbasic.NumberOfSatellites;
-
+            
             if (UavPositionChanged != null)
                 UavPositionChanged(this, EventArgs.Empty);
 
@@ -234,6 +253,11 @@ namespace GluonCS.LiveUavLayer
                 lastBlockname = NavigationModel.Commands[CurrentNavigationLine].BlockName;
                 BlockStartTime = DateTime.Now;
             }
+        }
+
+        public void SendToNavigationLine(int line)
+        {
+            serial.SendJumpToNavigationLine(line);
         }
 
         public void ReadNavigation()
@@ -355,8 +379,16 @@ namespace GluonCS.LiveUavLayer
 
         public void Pause()
         {
-            smartThreadPool.Cancel();
-            smartThreadPool.Shutdown();
+            try
+            {
+                smartThreadPool.Cancel();
+                if (smartThreadPool != null && smartThreadPool.InUseThreads > 0)
+                    smartThreadPool.Shutdown();
+            }
+            catch (ObjectDisposedException e)
+            {
+
+            }
         }
 
         private object SynchronizeNavigation(object x)
