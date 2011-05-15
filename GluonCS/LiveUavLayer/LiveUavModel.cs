@@ -257,7 +257,8 @@ namespace GluonCS.LiveUavLayer
 
         public void SendToNavigationLine(int line)
         {
-            serial.SendJumpToNavigationLine(line);
+            if (serial != null)
+                serial.SendJumpToNavigationLine(line);
         }
 
         public void ReadNavigation()
