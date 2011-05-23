@@ -66,7 +66,7 @@ namespace GluonCS.LiveUavLayer
             uavRoute = new GMapRoute(new List<PointLatLng>(), "uav");
             uavRoute.Stroke.Color = Color.FromArgb(255, Color.Red);
             uavRoute.Stroke.Brush = Brushes.Red;
-            uavRoute.Stroke.Width = 1;
+            uavRoute.Stroke.Width = 2;
             Overlay.Routes.Add(uavRoute);
             //uavRoute.Points.Add(new PointLatLng(um.Position.Lat - 0.0001, um.Position.Lng - 0.0001));
             //uavRoute.Points.Add(new PointLatLng(um.Position.Lat - 0.0001, um.Position.Lng));

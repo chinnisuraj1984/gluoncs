@@ -173,6 +173,14 @@ namespace GluonCS.LiveUavLayer
                 CommunicationEstablished(this, EventArgs.Empty);
         }
 
+        public double SecondsConnectionLost()
+        {
+            if (serial == null)
+                return 999;
+            else
+                return serial.SecondsConnectionLost();
+        }
+
         void connection_PressureTempCommunicationReceived(PressureTemp info)
         {
             //this.AltitudeAglM = info.Height;
@@ -288,7 +296,7 @@ namespace GluonCS.LiveUavLayer
                 if (navigation_local.Count <= ni.line)
                     navigation_local.Insert(ni.line, ni);
                 else
-                    navigation_local[ni.line] = ni;
+                    navigation_local[ni.line] = new NavigationInstruction(ni);
             }
 
             if (NavigationLocalListChanged != null)

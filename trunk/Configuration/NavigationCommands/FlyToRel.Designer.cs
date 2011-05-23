@@ -61,13 +61,13 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(1, 57);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 17;
-            this.label4.Text = "Height";
+            this.label4.Text = "Altitude";
             // 
             // distanceTextBoxHeight
             // 
-            this.distanceTextBoxHeight.DistanceM = 0;
+            this.distanceTextBoxHeight.DistanceM = 0D;
             this.distanceTextBoxHeight.Location = new System.Drawing.Point(59, 54);
             this.distanceTextBoxHeight.Name = "distanceTextBoxHeight";
             this.distanceTextBoxHeight.ReadOnly = false;
@@ -76,7 +76,7 @@
             // 
             // distanceTextBoxEast
             // 
-            this.distanceTextBoxEast.DistanceM = 0;
+            this.distanceTextBoxEast.DistanceM = 0D;
             this.distanceTextBoxEast.Location = new System.Drawing.Point(59, 27);
             this.distanceTextBoxEast.Name = "distanceTextBoxEast";
             this.distanceTextBoxEast.ReadOnly = false;
@@ -85,7 +85,7 @@
             // 
             // distanceTextBoxNorth
             // 
-            this.distanceTextBoxNorth.DistanceM = 0;
+            this.distanceTextBoxNorth.DistanceM = 0D;
             this.distanceTextBoxNorth.Location = new System.Drawing.Point(59, 0);
             this.distanceTextBoxNorth.Name = "distanceTextBoxNorth";
             this.distanceTextBoxNorth.ReadOnly = false;

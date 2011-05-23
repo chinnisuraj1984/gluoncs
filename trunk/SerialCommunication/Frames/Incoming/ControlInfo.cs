@@ -15,5 +15,9 @@ namespace Communication.Frames.Incoming
         public double HeightAboveStartGround;
         public int CurrentNavigationLine;
         public double BattVoltage;
+        public int FlightTime;
+        public int BlockTime;
+        public int Throttle;
+        public int RcLink;
     }
 }

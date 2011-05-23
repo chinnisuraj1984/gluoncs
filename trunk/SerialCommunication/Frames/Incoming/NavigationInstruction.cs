@@ -78,7 +78,7 @@ namespace Communication.Frames.Incoming
             }
 
             // Return true if the fields match:
-            return (x == p.x) && (y == p.y) && (a == p.a) && (b == p.b);  // line??
+            return (x == p.x) && (y == p.y) && (a == p.a) && (b == p.b) && (opcode == p.opcode);  // line??
         }
 
         public static bool operator ==(NavigationInstruction a, NavigationInstruction b)
@@ -253,6 +253,8 @@ namespace Communication.Frames.Incoming
                 return "Channel 8";
             else if (a == 16)
                 return "Battery voltage (V)";
+            else if (a == 17)
+                return "Time in block (s)";
             else
                 return "?";
         }

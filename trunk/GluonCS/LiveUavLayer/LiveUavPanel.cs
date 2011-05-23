@@ -26,6 +26,7 @@ namespace GluonCS
         private DateTime startDateTime = DateTime.Now;
 
         private Timer redrawNavigationTable;
+        private Timer updatePanel;
 
         public LiveUavPanel()
             : base()
@@ -95,6 +96,112 @@ namespace GluonCS
             model.NavigationRemoteListChanged += new LiveUavModel.ChangedEventHandler(model_NavigationRemoteListChanged);
             model.UavAttitudeChanged += new LiveUavModel.ChangedEventHandler(model_UavAttitudeChanged);
             model.UavPositionChanged += new LiveUavModel.ChangedEventHandler(model_UavPositionChanged);
+
+            updatePanel = new Timer();
+            updatePanel.Interval = 200;
+            updatePanel.Tick += new EventHandler(updatePanel_Tick);
+            updatePanel.Enabled = true;
+        }
+
+        // Update the panel's labels. Not based on the events.
+        void updatePanel_Tick(object sender, EventArgs e)
+        {
+            if (model.NumberOfGpsSatellites >= 0)
+            {
+                _lblGpsSat.Text = "GPS: " + model.NumberOfGpsSatellites;
+                if (model.NumberOfGpsSatellites > 5)
+                    _lblGpsSat.BackColor = Color.Green;
+                else if (model.NumberOfGpsSatellites > 3)
+                    _lblGpsSat.BackColor = Color.Orange;
+                else
+                    _lblGpsSat.BackColor = Color.Red;
+            }
+
+            if (model.NumberOfGpsSatellites == -1)
+            {
+                _pbGps.Value = 0;
+                _pbGps.Text = "Not found";
+                _lblGpsSat.BackColor = Color.Red;
+            }
+            else
+            {
+                if (model.NumberOfGpsSatellites < 6)
+                {
+                    _pbGps.ForeColor = Color.Red;
+                    _lblGpsSat.BackColor = Color.Red;
+                }
+                else
+                {
+                    _pbGps.ForeColor = Color.Green;
+                    _lblGpsSat.BackColor = _lblGpsSat.Parent.BackColor;
+                }
+                _pbGps.Value = model.NumberOfGpsSatellites;
+            }
+
+            _pbBattery.Value = (int)(model.BatteryVoltage * 10.0);
+            _pbBattery.Text = model.BatteryVoltage.ToString() + " V";
+            _pbLink.Value = (int)Math.Max(0.0, Math.Min(100.0, 110.0 - model.SecondsConnectionLost() * 20.0));  // 5 seconds without connection = 0%
+            if (model.SecondsConnectionLost() > 1)
+                _lblLink.BackColor = Color.Red;
+            else
+                _lblLink.BackColor = _lblLink.Parent.BackColor;
+
+            _lblAltitudeAgl.Text = model.AltitudeAglM + " m / " + model.TargetAltitudeAglM() + " m";
+            _lblDistNextWp.Text = "Next WP: " + model.DistanceNextWaypoint().ToString("F0") + " m";
+            _lblHomeDistance.Text = "Home: " + model.DistanceHome().ToString("F0") + " m";
+
+            _lblBlockname.Text = model.NavigationModel.Commands[model.CurrentNavigationLine].BlockName;
+            _lblFlightTime.Text = "Flight time: " + (int)((DateTime.Now - model.TakeoffTime).TotalMinutes) + ":" + (DateTime.Now - model.TakeoffTime).Seconds;
+            _lblTimeInBlock.Text = "Time in block: " + (int)((DateTime.Now - model.BlockStartTime).TotalMinutes) + ":" + (DateTime.Now - model.BlockStartTime).Seconds;
+
+            // update listview with current navigation line selection
+            foreach (ListViewItem lvi in _lv_navigation.Items)
+                if (lvi.BackColor == Color.Yellow && lvi.Index != model.CurrentNavigationLine)
+                    lvi.BackColor = _lv_navigation.Parent.BackColor;
+            if (_lv_navigation.Items[model.CurrentNavigationLine].BackColor != Color.Yellow)
+                _lv_navigation.Items[model.CurrentNavigationLine].BackColor = Color.Yellow;
+
+            if (model.SpeedMS < 0.001)
+                _lblTimeToWp.Text = "Time to WP: oo s";
+            else
+            {
+                TimeSpan ts = new TimeSpan(0, 0, (int)(model.DistanceNextWaypoint() / model.SpeedMS));
+                _lblTimeToWp.Text = "Time to WP: " + (int)ts.TotalMinutes + ":" + ts.Seconds;
+            }
+            _lblSpeed.Text = ((int)(model.SpeedMS * 3.6)).ToString() + " km/h";
+
+            // Update graphs
+            double time = (DateTime.Now - startDateTime).TotalSeconds;
+            altitudeLineItem.AddPoint(time, model.AltitudeAglM);
+            Scale xScale = _zgAlt.GraphPane.XAxis.Scale;
+            if (time > xScale.Max - xScale.MajorStep)
+            {
+                xScale.Max = time + xScale.MajorStep;
+                xScale.Min = xScale.Max - 180; // 180 seconden
+            }
+            _zgAlt.AxisChange();
+            _zgAlt.Invalidate();
+
+
+            speedLineItem.AddPoint(time, model.SpeedMS * 3.6);
+            xScale = _zgVel.GraphPane.XAxis.Scale;
+            if (time > xScale.Max - xScale.MajorStep)
+            {
+                xScale.Max = time + xScale.MajorStep;
+                xScale.Min = xScale.Max - 180; // 180 seconden
+            }
+            _zgVel.AxisChange();
+            _zgVel.Invalidate();
+
+            batteryVLineItem.AddPoint(time, model.BatteryVoltage);
+            xScale = _zgBatV.GraphPane.XAxis.Scale;
+            if (time > xScale.Max - xScale.MajorStep)
+            {
+                xScale.Max = time + xScale.MajorStep;
+                xScale.Min = xScale.Max - 180; // 180 seconden
+            }
+            _zgBatV.AxisChange();
+            _zgBatV.Invalidate();
         }
 
 
@@ -102,116 +209,20 @@ namespace GluonCS
 
         void model_UavPositionChanged(object sender, EventArgs e)
         {
-            MethodInvoker m = delegate()
+            if (!updatePanel.Enabled)
             {
-                if (model.NumberOfGpsSatellites >= 0)
-                {
-                    _lblGpsSat.Text = "GPS: " + model.NumberOfGpsSatellites;
-                    if (model.NumberOfGpsSatellites > 5)
-                        _lblGpsSat.BackColor = Color.Green;
-                    else if (model.NumberOfGpsSatellites > 3)
-                        _lblGpsSat.BackColor = Color.Orange;
-                    else
-                        _lblGpsSat.BackColor = Color.Red;
-                }
-                _lblSpeed.Text = ((int)(model.SpeedMS * 3.6)).ToString() + " km/h";
-
-                //_lblGpsSat.Text = "GPS: " + model.NumberOfGpsSatellites;
-                if (model.NumberOfGpsSatellites == -1)
-                {
-                    _pbGps.Value = 0;
-                    _pbGps.Text = "Not found";
-                    _lblGpsSat.BackColor = Color.Red;
-                }
-                else
-                {
-                    if (model.NumberOfGpsSatellites < 6)
-                    {
-                        _pbGps.ForeColor = Color.Red;
-                        _lblGpsSat.BackColor = Color.Red;
-                    }
-                    else
-                    {
-                        _pbGps.ForeColor = Color.Green;
-                        _lblGpsSat.BackColor = _lblGpsSat.Parent.BackColor;
-                    }
-                    _pbGps.Value = model.NumberOfGpsSatellites;
-                }
-
-                //_lblVoltage.Text = "Bat: " + model.BatteryVoltage + " V";
-                _pbBattery.Value = (int)(model.BatteryVoltage*10.0);
-                _pbBattery.Text = model.BatteryVoltage.ToString() + " V";
-
-                _lblAltitudeAgl.Text = model.AltitudeAglM + " m / " + model.TargetAltitudeAglM() + " m";
-                _lblDistNextWp.Text = "Next WP: " + model.DistanceNextWaypoint().ToString("F0") +" m";
-                _lblHomeDistance.Text = "Home: " + model.DistanceHome().ToString("F0") + " m";
-                
-                _lblBlockname.Text = model.NavigationModel.Commands[model.CurrentNavigationLine].BlockName;
-                _lblFlightTime.Text = "Flight time: " + (int)((DateTime.Now - model.TakeoffTime).TotalMinutes) + ":" + (DateTime.Now - model.TakeoffTime).Seconds;
-                _lblTimeInBlock.Text = "Time in block: " + (int)((DateTime.Now - model.BlockStartTime).TotalMinutes) + ":" + (DateTime.Now - model.BlockStartTime).Seconds;
-
-                // update listview with current navigation line selection
-                foreach (ListViewItem lvi in _lv_navigation.Items)
-                    if (lvi.BackColor == Color.Yellow && lvi.Index != model.CurrentNavigationLine)
-                        lvi.BackColor = _lv_navigation.Parent.BackColor;
-                if (_lv_navigation.Items[model.CurrentNavigationLine].BackColor != Color.Yellow)
-                    _lv_navigation.Items[model.CurrentNavigationLine].BackColor = Color.Yellow;
-
-                if (model.SpeedMS < 0.001)
-                    _lblTimeToWp.Text = "Time to WP: oo s";
-                else
-                {
-                    TimeSpan ts = new TimeSpan(0, 0, (int)(model.DistanceNextWaypoint() / model.SpeedMS));
-                    _lblTimeToWp.Text = "Time to WP: " + (int)ts.TotalMinutes + ":" + ts.Seconds;
-                }
-
-                // Update graphs
-                double time = (DateTime.Now - startDateTime).TotalSeconds;
-                altitudeLineItem.AddPoint(time, model.AltitudeAglM);
-                Scale xScale = _zgAlt.GraphPane.XAxis.Scale;
-                if (time > xScale.Max - xScale.MajorStep)
-                {
-                    xScale.Max = time + xScale.MajorStep;
-                    xScale.Min = xScale.Max - 180; // 180 seconden
-                }
-                _zgAlt.AxisChange();
-                _zgAlt.Invalidate();
-
-                
-                speedLineItem.AddPoint(time, model.SpeedMS * 3.6);
-                xScale = _zgVel.GraphPane.XAxis.Scale;
-                if (time > xScale.Max - xScale.MajorStep)
-                {
-                    xScale.Max = time + xScale.MajorStep;
-                    xScale.Min = xScale.Max - 180; // 180 seconden
-                }
-                _zgVel.AxisChange();
-                _zgVel.Invalidate();
-
-                batteryVLineItem.AddPoint(time, model.BatteryVoltage);
-                xScale = _zgBatV.GraphPane.XAxis.Scale;
-                if (time > xScale.Max - xScale.MajorStep)
-                {
-                    xScale.Max = time + xScale.MajorStep;
-                    xScale.Min = xScale.Max - 180; // 180 seconden
-                }
-                _zgBatV.AxisChange();
-                _zgBatV.Invalidate();
-            };
-
-            try
-            {
-                BeginInvoke(m);
+                updatePanel.Enabled = true;
             }
-            catch
-            {
-            } 
         }
 
         void model_UavAttitudeChanged(object sender, EventArgs e)
         {
             _artificialHorizon.pitch_angle = model.Pitch;
             _artificialHorizon.roll_angle = -model.Roll;
+            if (!updatePanel.Enabled)
+            {
+                updatePanel.Enabled = true;
+            }
         }
 
         void model_NavigationLocalListChanged(object sender, EventArgs e)
@@ -356,16 +367,20 @@ namespace GluonCS
 
         private void _lv_navigation_ItemActivate(object sender, EventArgs e)
         {
-            NavigationCommandEditor nce =
-                new NavigationCommandEditor(model.GetNavigationInstructionLocal(_lv_navigation.SelectedIndices[0]));
-            nce.ShowDialog(this);
-            model.UpdateLocalNavigationInstruction(nce.GetNavigationInstruction());
-
+            NavigationInstructionEdit nie = new NavigationInstructionEdit(model.GetNavigationInstructionLocal(_lv_navigation.SelectedIndices[0]), model.Home.Lat, model.Home.Lng);
+            //NavigationCommandEditor nce =
+            //    new NavigationCommandEditor(model.GetNavigationInstructionLocal(_lv_navigation.SelectedIndices[0]));
+            if (nie.ShowDialog(this) == DialogResult.OK)
+            {
+                model.UpdateLocalNavigationInstruction(new NavigationInstruction(nie.NavigationInstr));
+                Console.WriteLine(model.GetNavigationInstructionLocal(0));
+                Console.WriteLine(model.GetNavigationInstructionRemote(0));
+            }
 
             //_lv_navigation.SelectedItems[0].SubItems[1].Text = "* " +
             //    ((NavigationInstruction)_lv_navigation.SelectedItems[0].Tag).ToString();
             //dirty_list.Add(((NavigationInstruction)_lv_navigation.SelectedItems[0].Tag).line);
-            //model.UpdateNavigationInstruction(nce.GetNavigationInstruction());
+            //model.UpdateLocalNavigationInstruction(nce.GetNavigationInstruction());
         }
 
         private void _nav_save_Click(object sender, EventArgs e)
@@ -449,31 +464,6 @@ namespace GluonCS
                     model.UpdateLocalNavigationInstruction(ni1);
                     model.UpdateLocalNavigationInstruction(ni2);
                     _lv_navigation.Items[ni2.line].Selected = true;
-                }
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ToolStripProfessionalRenderer renderer = ToolStripManager.Renderer as ToolStripProfessionalRenderer;
-            if (renderer != null)
-            {
-                BSE.Windows.Forms.ProfessionalColorTable colorTable = renderer.ColorTable as BSE.Windows.Forms.ProfessionalColorTable;
-                if (colorTable != null)
-                {
-                    colorTable.UseSystemColors = !colorTable.UseSystemColors;
-                    renderer = Activator.CreateInstance(renderer.GetType(), new object[] { colorTable }) as ToolStripProfessionalRenderer;
-
-                    BSE.Windows.Forms.PanelColors panelColors = colorTable.PanelColorTable;
-                    if (panelColors != null)
-                    {
-                        panelColors.UseSystemColors = colorTable.UseSystemColors;
-                        BSE.Windows.Forms.PanelSettingsManager.SetPanelProperties(
-                            this.Controls,
-                            panelColors);
-                    }
-
-                    ToolStripManager.Renderer = renderer;
                 }
             }
         }
