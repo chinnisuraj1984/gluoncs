@@ -68,6 +68,7 @@ namespace Communication
         public abstract event LostCommunication CommunicationLost;
         public abstract event EstablishedCommunication CommunicationEstablished;
 
+        public abstract double SecondsConnectionLost();
 
         public static string[] GetPorts()
         {

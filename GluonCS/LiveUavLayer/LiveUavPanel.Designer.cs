@@ -33,7 +33,7 @@
             this._cockpitPanel = new BSE.Windows.Forms.Panel();
             this.splitter1 = new BSE.Windows.Forms.Splitter();
             this._pbLink = new ProgressBarColored();
-            this.label2 = new System.Windows.Forms.Label();
+            this._lblLink = new System.Windows.Forms.Label();
             this._pbGps = new ProgressBarColored();
             this._pbBattery = new ProgressBarColored();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,10 +41,6 @@
             this._lblBlockname = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this._panelStrip = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this._zgAlt = new ZedGraph.ZedGraphControl();
@@ -93,7 +89,6 @@
             this._gmapContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this._cockpitPanel.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this._panelStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -112,7 +107,7 @@
             this._cockpitPanel.CaptionFont = new System.Drawing.Font("Trebuchet MS", 8.75F, System.Drawing.FontStyle.Bold);
             this._cockpitPanel.CaptionHeight = 20;
             this._cockpitPanel.Controls.Add(this._pbLink);
-            this._cockpitPanel.Controls.Add(this.label2);
+            this._cockpitPanel.Controls.Add(this._lblLink);
             this._cockpitPanel.Controls.Add(this._pbGps);
             this._cockpitPanel.Controls.Add(this._pbBattery);
             this._cockpitPanel.Controls.Add(this.label1);
@@ -183,15 +178,15 @@
             this._pbLink.TabIndex = 44;
             this._pbLink.Value = 100;
             // 
-            // label2
+            // _lblLink
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 145);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
-            this.label2.TabIndex = 43;
-            this.label2.Text = "Link: ";
+            this._lblLink.AutoSize = true;
+            this._lblLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._lblLink.Location = new System.Drawing.Point(9, 145);
+            this._lblLink.Name = "_lblLink";
+            this._lblLink.Size = new System.Drawing.Size(39, 13);
+            this._lblLink.TabIndex = 43;
+            this._lblLink.Text = "Link: ";
             // 
             // _pbGps
             // 
@@ -267,50 +262,10 @@
             // _panelStrip
             // 
             this._panelStrip.AutoSize = true;
-            this._panelStrip.Controls.Add(this.button1);
-            this._panelStrip.Controls.Add(this.button2);
-            this._panelStrip.Controls.Add(this.button3);
-            this._panelStrip.Controls.Add(this.button5);
             this._panelStrip.Location = new System.Drawing.Point(3, 3);
             this._panelStrip.Name = "_panelStrip";
-            this._panelStrip.Size = new System.Drawing.Size(324, 41);
+            this._panelStrip.Size = new System.Drawing.Size(0, 0);
             this._panelStrip.TabIndex = 33;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 35);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "RTH";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(84, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 35);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Loiter";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(165, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 35);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(246, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 35);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
@@ -318,10 +273,10 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(3, 50);
+            this.tabControl1.Location = new System.Drawing.Point(3, 9);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(335, 124);
+            this.tabControl1.Size = new System.Drawing.Size(335, 165);
             this.tabControl1.TabIndex = 25;
             // 
             // tabPage1
@@ -330,7 +285,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(327, 98);
+            this.tabPage1.Size = new System.Drawing.Size(327, 139);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Altitude";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -350,7 +305,7 @@
             this._zgAlt.ScrollMinX = 0D;
             this._zgAlt.ScrollMinY = 0D;
             this._zgAlt.ScrollMinY2 = 0D;
-            this._zgAlt.Size = new System.Drawing.Size(321, 92);
+            this._zgAlt.Size = new System.Drawing.Size(321, 133);
             this._zgAlt.TabIndex = 0;
             // 
             // tabPage2
@@ -849,7 +804,6 @@
             this._cockpitPanel.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            this._panelStrip.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -900,9 +854,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ToolStripButton _btnNaviBurn;
         private System.Windows.Forms.ToolStripMenuItem _btnNaviReload;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -914,7 +865,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.FlowLayoutPanel _panelStrip;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label _lblAltitudeAgl;
         private ZedGraph.ZedGraphControl _zgVel;
         private System.Windows.Forms.TabPage tabPage3;
@@ -926,7 +876,7 @@
         private ProgressBarColored _pbThrottle;
         private ProgressBarColored _pbGps;
         private ProgressBarColored _pbBattery;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label _lblLink;
         private ProgressBarColored _pbLink;
     }
 }

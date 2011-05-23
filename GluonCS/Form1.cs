@@ -83,6 +83,8 @@ namespace GluonCS
             liveUavPanel1.SetModel(model);
 
             activeOverlay = controller.Overlay;
+
+            _gMapControl.MapType = Properties.Settings.Default.MapType;
         }
 
         private void SetProxy()

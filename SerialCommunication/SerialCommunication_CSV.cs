@@ -58,6 +58,11 @@ namespace Communication
         public override event LostCommunication CommunicationLost;
         public override event EstablishedCommunication CommunicationEstablished;
 
+        public override double SecondsConnectionLost()
+        {
+            return (DateTime.Now - LastValidFrame).TotalSeconds;
+        }
+
         private string[] DatalogHeader;
 
         public SerialCommunication_CSV()
@@ -123,10 +128,10 @@ namespace Communication
                     // A bit extra logic to set communication lost after 1 second of no data 
                     while (/*_serialPort == null || !_serialPort.IsOpen ||*/ _serialPort.BytesToRead < 3)
                     {
-                        if (CommunicationAlive && (DateTime.Now - LastValidFrame).TotalMilliseconds > 1000)
+                        if (CommunicationAlive && SecondsConnectionLost() > 1.0)
                         {
                             CommunicationAlive = false;
-                            if (CommunicationLost != null)
+                            if (CommunicationLost != null && SecondsConnectionLost() >= 5.0)
                                 CommunicationLost();
                         }
                         Thread.Sleep(50);
@@ -414,7 +419,7 @@ namespace Communication
                     if (CommunicationAlive)
                     {
                         CommunicationAlive = false;
-                        if (CommunicationLost != null)
+                        if (CommunicationLost != null && SecondsConnectionLost() >= 10.0)
                             CommunicationLost();
                     }
                 }

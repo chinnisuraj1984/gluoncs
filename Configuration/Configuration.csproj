@@ -120,6 +120,12 @@
     <Compile Include="NavigationCommands\Block.Designer.cs">
       <DependentUpon>Block.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationCommands\Circle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationCommands\Circle.Designer.cs">
+      <DependentUpon>Circle.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationCommands\CircleAbs.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,6 +145,24 @@
       <DependentUpon>Climb.cs</DependentUpon>
     </Compile>
     <Compile Include="NavigationCommands\Common.cs" />
+    <Compile Include="NavigationCommands\FlyTo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationCommands\FlyTo.Designer.cs">
+      <DependentUpon>FlyTo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationCommands\FromTo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationCommands\FromTo.Designer.cs">
+      <DependentUpon>FromTo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationCommands\If.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationCommands\If.Designer.cs">
+      <DependentUpon>If.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationCommands\IfSm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -304,6 +328,9 @@
     <EmbeddedResource Include="NavigationCommands\Block.resx">
       <DependentUpon>Block.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NavigationCommands\Circle.resx">
+      <DependentUpon>Circle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NavigationCommands\CircleAbs.resx">
       <DependentUpon>CircleAbs.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,6 +339,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationCommands\Climb.resx">
       <DependentUpon>Climb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationCommands\FlyTo.resx">
+      <DependentUpon>FlyTo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationCommands\FromTo.resx">
+      <DependentUpon>FromTo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationCommands\If.resx">
+      <DependentUpon>If.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationCommands\IfSm.resx">
       <DependentUpon>IfSm.cs</DependentUpon>

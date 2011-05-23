@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 using Communication.Frames.Incoming;
 using System.Globalization;
+using Configuration.NavigationCommands;
 
 
 namespace Configuration
@@ -16,134 +17,145 @@ namespace Configuration
     public partial class NavigationInstructionEdit : Form
     {
         NavigationInstruction ni;
-        NavigationInstruction copy_ni;
 
-        public NavigationInstructionEdit(NavigationInstruction ni)
+        public NavigationInstruction NavigationInstr
+        {
+            get { return ni; }
+
+        }
+
+        public NavigationInstructionEdit(NavigationInstruction ni, double homelat, double homelng)
         {
             InitializeComponent();
             this.ni = ni;
-            copy_ni = new NavigationInstruction(ni);
 
             if ((int)ni.opcode > 25)
                 ni.opcode = 0;
-            _cb_opcode.SelectedIndex = (int)ni.opcode;
 
-            _tb_a.Text = ni.a.ToString();
-            _tb_b.Text = ni.b.ToString();
-            _tb_x.Text = ni.x.ToString(CultureInfo.InvariantCulture);
-            _tb_y.Text = ni.y.ToString(CultureInfo.InvariantCulture);
-
-            if (ni.opcode == NavigationInstruction.navigation_command.FROM_TO_ABS ||
-                ni.opcode == NavigationInstruction.navigation_command.FLY_TO_ABS ||
-                ni.opcode == NavigationInstruction.navigation_command.CIRCLE_ABS)
-            {
-                _tb_x.Text = RAD2DEG(ni.x).ToString("F5", CultureInfo.InvariantCulture);
-                _tb_y.Text = RAD2DEG(ni.y).ToString("F5", CultureInfo.InvariantCulture);
-            }
-
-            // index normally starts at 0
-            if (ni.opcode == NavigationInstruction.navigation_command.GOTO)
-                _tb_a.Text = (ni.a + 1).ToString();
-        }
-
-        private double RAD2DEG(double x)
-        {
-            return x / 3.14159 * 180.0;
-        }
-        private double DEG2RAD(double x)
-        {
-            return x / 180.0 * 3.14159;
+                /*
+                    0. EMPTY
+                    GOTO
+                    CLIMB
+                    FROM_TO
+                    FLY_TO
+                    5. CIRCLE
+                    IF()
+                    UNTIL()
+                    SERVO_SET(channel, position_us)
+                    SERVO_TRIGGER(channel, position_us, hold_sec)
+                    10 BLOCK
+                    */
+            if (ni.opcode == NavigationInstruction.navigation_command.BLOCK)
+                _cb_opcode.SelectedIndex = 10;
+            else if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_ABS ||
+                     ni.opcode == NavigationInstruction.navigation_command.CIRCLE_REL)
+                _cb_opcode.SelectedIndex = 5;
+            else if (ni.opcode == NavigationInstruction.navigation_command.CLIMB)
+                _cb_opcode.SelectedIndex = 2;
+            else if (ni.opcode == NavigationInstruction.navigation_command.EMPTY)
+                _cb_opcode.SelectedIndex = 0;
+            else if (ni.opcode == NavigationInstruction.navigation_command.FLY_TO_ABS ||
+                     ni.opcode == NavigationInstruction.navigation_command.FLY_TO_REL)
+                _cb_opcode.SelectedIndex = 4;
+            else if (ni.opcode == NavigationInstruction.navigation_command.FROM_TO_ABS ||
+                        ni.opcode == NavigationInstruction.navigation_command.FROM_TO_REL)
+                _cb_opcode.SelectedIndex = 3;
+            else if (ni.opcode == NavigationInstruction.navigation_command.GOTO)
+                _cb_opcode.SelectedIndex = 1;
+            else if (ni.opcode == NavigationInstruction.navigation_command.SERVO_SET)
+                _cb_opcode.SelectedIndex = 8;
+            else if (ni.opcode == NavigationInstruction.navigation_command.SERVO_TRIGGER)
+                _cb_opcode.SelectedIndex = 9;
+            else if (ni.opcode == NavigationInstruction.navigation_command.IF_EQ ||
+                     ni.opcode == NavigationInstruction.navigation_command.IF_NE ||
+                     ni.opcode == NavigationInstruction.navigation_command.IF_GR ||
+                     ni.opcode == NavigationInstruction.navigation_command.IF_SM)
+                _cb_opcode.SelectedIndex = 6;
+            //_cb_opcode.SelectedIndex = (int)ni.opcode;
         }
 
 
         private void _btn_cancel_Click(object sender, EventArgs e)
         {
             //this.ni = copy_ni;
+            this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Close();
         }
 
         private void _btn_ok_Click(object sender, EventArgs e)
         {
-            ni.a = int.Parse(_tb_a.Text);
-            ni.b = int.Parse(_tb_b.Text);
-            ni.x = double.Parse(_tb_x.Text, CultureInfo.InvariantCulture);
-            ni.y = double.Parse(_tb_y.Text, CultureInfo.InvariantCulture);
-            ni.opcode = (NavigationInstruction.navigation_command)_cb_opcode.SelectedIndex;
-
-
-            if (ni.opcode == NavigationInstruction.navigation_command.FROM_TO_ABS ||
-                ni.opcode == NavigationInstruction.navigation_command.FLY_TO_ABS ||
-                ni.opcode == NavigationInstruction.navigation_command.CIRCLE_ABS)
-            {
-                ni.x = DEG2RAD(ni.x);
-                ni.y = DEG2RAD(ni.y);
-            }
-
-            // index normally starts at 0
-            if (ni.opcode == NavigationInstruction.navigation_command.GOTO)
-                ni.a -= 1;
-
+            ni = ((INavigationCommandViewer)tableLayoutPanel.Controls[0]).GetNavigationInstruction();
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
         }
 
         private void _cb_opcode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _tb_x.Enabled = true;
-            _tb_y.Enabled = true;
-            _tb_a.Enabled = true;
-            _tb_b.Enabled = true;
+            //_gb_edit.Enabled = true;
 
-            switch ((NavigationInstruction.navigation_command)_cb_opcode.SelectedIndex)
-            {
-                case NavigationInstruction.navigation_command.CIRCLE_ABS:
-                    _lbl_x.Text = "Latitude (°)";
-                    _lbl_y.Text = "Longitude (°)";
-                    _lbl_a.Text = "Radius (m)";
-                    _lbl_b.Text = "Height (m)";
-                    break;
-                case NavigationInstruction.navigation_command.CIRCLE_REL:
-                    _lbl_x.Text = "Latitude (m)";
-                    _lbl_y.Text = "Longitude (m)";
-                    _lbl_a.Text = "Radius (m)";
-                    _lbl_b.Text = "Height (m)";
-                    break;
-                case NavigationInstruction.navigation_command.CLIMB:
-                    _lbl_x.Text = "Height (m)";
-                    _lbl_y.Text = "";
-                    _lbl_a.Text = "";
-                    _lbl_b.Text = "";
-                    _tb_y.Enabled = false;
-                    _tb_a.Enabled = false;
-                    _tb_b.Enabled = false;
-                    break;
-                case NavigationInstruction.navigation_command.FLY_TO_ABS:
-                    _lbl_x.Text = "Latitude (°)";
-                    _lbl_y.Text = "Longitude (°)";
-                    _lbl_a.Text = "Height (m)";
-                    _tb_b.Enabled = false;
-                    _lbl_b.Text = "";
-                    break;
-                case NavigationInstruction.navigation_command.FLY_TO_REL:
-                    _lbl_x.Text = "Latitude (m)";
-                    _lbl_y.Text = "Longitude (m)";
-                    _lbl_a.Text = "Height (m)";
-                    _tb_b.Enabled = false;
-                    _lbl_b.Text = "";
-                    break;
-                case NavigationInstruction.navigation_command.GOTO:
-                    _tb_x.Enabled = false;
-                    _tb_y.Enabled = false;
-                    _tb_b.Enabled = false;
-                    _lbl_x.Text = "";
-                    _lbl_y.Text = "";
-                    _lbl_a.Text = "Line #";
-                    _lbl_b.Text = "";
-                    break;
-                default:
-                    break;
-            }
+            //ni.opcode = (NavigationInstruction.navigation_command)_cb_opcode.SelectedIndex;
 
+            // already a navigationcommand on the panel? delete it so we can add a new one.
+            if (tableLayoutPanel.Controls.Count > 0)
+                tableLayoutPanel.Controls.RemoveAt(tableLayoutPanel.Controls.Count-1);
 
+            // Add the correct usercontrol
+            Control c;
+            if (_cb_opcode.Text == "CIRCLE")
+                c = new NavigationCommands.Circle(ni);
+            else if (_cb_opcode.Text.StartsWith("GOTO"))
+                c = new NavigationCommands.Goto(ni);
+            else if (_cb_opcode.Text.StartsWith("CLIMB"))
+                c = new NavigationCommands.Climb(ni);
+            else if (_cb_opcode.Text.StartsWith("SERVO_SET"))
+                c = new NavigationCommands.ServoSet(ni);
+            else if (_cb_opcode.Text.StartsWith("SERVO_TRIGGER"))
+                c = new NavigationCommands.ServoTrigger(ni);
+            else if (_cb_opcode.Text.StartsWith("FLY_TO"))
+                c = new NavigationCommands.FlyTo(ni);
+            else if (_cb_opcode.Text.StartsWith("FROM_TO"))
+                c = new NavigationCommands.FromTo(ni);
+            else if (_cb_opcode.Text.StartsWith("IF"))
+                c = new NavigationCommands.If(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.FLY_TO_REL)
+                c = new NavigationCommands.FlyToRel(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.CIRCLE_ABS)
+                c = new NavigationCommands.CircleAbs(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.FLY_TO_ABS)
+                c = new NavigationCommands.FlyToAbs(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.FROM_TO_REL)
+                c = new NavigationCommands.FromToRel(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.FROM_TO_ABS)
+                c = new NavigationCommands.FromToAbs(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.UNTIL_GR)
+                c = new NavigationCommands.UntilGr(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.UNTIL_SM)
+                c = new NavigationCommands.UntilSm(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.UNTIL_EQ)
+                c = new NavigationCommands.UntilEq(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.UNTIL_NE)
+                c = new NavigationCommands.UntilNe(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.IF_GR)
+                c = new NavigationCommands.IfGr(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.IF_SM)
+                c = new NavigationCommands.IfSm(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.IF_EQ)
+                c = new NavigationCommands.IfEq(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.IF_NE)
+                c = new NavigationCommands.IfNe(ni);
+            else //if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.EMPTY)
+                c = new NavigationCommands.Empty(ni);
+
+            // add our edit-control
+            tableLayoutPanel.Controls.Add(c);
+            tableLayoutPanel.SetCellPosition(c, new TableLayoutPanelCellPosition(0, 1));
+
+            // Do some lay-outin'
+            c.Anchor = AnchorStyles.None;
+            //tableLayoutPanel.RowStyles[0].Height = c.Height;
+            //tableLayoutPanel.Height = c.Height + 30;
+            //this.Height = tableLayoutPanel.Height;
         }
+
     }
 }

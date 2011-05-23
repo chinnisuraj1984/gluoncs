@@ -8,7 +8,7 @@ namespace Configuration.NavigationCommands
     public static class Common
     {
         public static string[] Variables = {
-            "Height [m]",
+            "Altitude [m]",
             "Speed [m/s]",
             "Heading [deg]",
             "Flight time [sec]",
@@ -23,6 +23,7 @@ namespace Configuration.NavigationCommands
             "Channel 6 [us]",
             "Channel 7 [us]",
             "Channel 8 [us]",
-            "Battery voltage [V]"};
+            "Battery voltage [V]",
+            "Time in block [s]" };
     }
 }

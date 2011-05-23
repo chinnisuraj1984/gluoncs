@@ -43,13 +43,13 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(1, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Height";
+            this.label1.Text = "Altitude";
             // 
             // _dtb_height
             // 
-            this._dtb_height.DistanceM = 0;
+            this._dtb_height.DistanceM = 0D;
             this._dtb_height.Location = new System.Drawing.Point(73, 55);
             this._dtb_height.Name = "_dtb_height";
             this._dtb_height.ReadOnly = false;
@@ -76,7 +76,7 @@
             // 
             // _dtb_east
             // 
-            this._dtb_east.DistanceM = 0;
+            this._dtb_east.DistanceM = 0D;
             this._dtb_east.Location = new System.Drawing.Point(73, 28);
             this._dtb_east.Name = "_dtb_east";
             this._dtb_east.ReadOnly = false;
@@ -85,7 +85,7 @@
             // 
             // _dtb_north
             // 
-            this._dtb_north.DistanceM = 0;
+            this._dtb_north.DistanceM = 0D;
             this._dtb_north.Location = new System.Drawing.Point(73, 1);
             this._dtb_north.Name = "_dtb_north";
             this._dtb_north.ReadOnly = false;
