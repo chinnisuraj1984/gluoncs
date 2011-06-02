@@ -117,6 +117,8 @@ namespace Configuration
                 c = new NavigationCommands.FromTo(ni);
             else if (_cb_opcode.Text.StartsWith("IF"))
                 c = new NavigationCommands.If(ni);
+            else if (_cb_opcode.Text.StartsWith("BLOCK"))
+                c = new NavigationCommands.Block(ni);
             else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.FLY_TO_REL)
                 c = new NavigationCommands.FlyToRel(ni);
             else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.CIRCLE_ABS)

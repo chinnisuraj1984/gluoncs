@@ -41,7 +41,6 @@
             this.m_cboToolStripRenderer = new System.Windows.Forms.ComboBox();
             this.splitter2 = new BSE.Windows.Forms.Splitter();
             this._layersPanel = new BSE.Windows.Forms.Panel();
-            this.liveUavPanel1 = new GluonCS.LiveUavPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._btnOptions = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +48,7 @@
             this.zoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zoomoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.liveUavPanel1 = new GluonCS.LiveUavPanel();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -248,14 +248,6 @@
             this._layersPanel.ToolTipTextExpandIconPanelCollapsed = null;
             this._layersPanel.ToolTipTextExpandIconPanelExpanded = null;
             // 
-            // liveUavPanel1
-            // 
-            this.liveUavPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.liveUavPanel1.Location = new System.Drawing.Point(1, 28);
-            this.liveUavPanel1.Name = "liveUavPanel1";
-            this.liveUavPanel1.Size = new System.Drawing.Size(337, 669);
-            this.liveUavPanel1.TabIndex = 0;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
@@ -307,6 +299,14 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(124, 6);
+            // 
+            // liveUavPanel1
+            // 
+            this.liveUavPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.liveUavPanel1.Location = new System.Drawing.Point(1, 28);
+            this.liveUavPanel1.Name = "liveUavPanel1";
+            this.liveUavPanel1.Size = new System.Drawing.Size(337, 669);
+            this.liveUavPanel1.TabIndex = 0;
             // 
             // Form1
             // 

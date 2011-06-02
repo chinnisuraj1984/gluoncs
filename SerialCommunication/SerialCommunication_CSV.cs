@@ -22,6 +22,24 @@ namespace Communication
 {
     public class SerialCommunication_CSV : SerialCommunication
     {
+        private string filename;
+        public string LogToFilename
+        {
+            set
+            {
+                filename = value;
+                logfile = new System.IO.StreamWriter(filename);
+            }
+            get
+            {
+                if (logfile == null)
+                    return "";
+                else
+                    return filename;
+            }
+        }
+        private System.IO.StreamWriter logfile;
+
         private SmartThreadPool _smartThreadPool = new SmartThreadPool();
         private int bytes_read = 0;
         private double download_speed_kb_s;
@@ -111,6 +129,8 @@ namespace Communication
         {
             _serialPort.Close();
             _smartThreadPool.Shutdown(false, 100);
+            if (logfile != null)
+                logfile.Close();
         }
 
         /*!
@@ -139,6 +159,9 @@ namespace Communication
                     }
 
                     string line = _serialPort.ReadLine();
+
+                    if (logfile != null)
+                        logfile.WriteLine("[" + DateTime.Now.ToString("g") + "] " + line);
 
                     lock (this)
                     {
@@ -386,9 +409,16 @@ namespace Communication
                         ci.FlightMode = (ControlInfo.FlightModes)int.Parse(lines[1]);
                         ci.CurrentNavigationLine = int.Parse(lines[2]);
                         ci.HeightAboveStartGround = int.Parse(lines[3]);
-                        if (lines.Length == 5)
+                        if (lines.Length >= 5)
+                        {
                             ci.BattVoltage = double.Parse(lines[4]) / 10.0;
-
+                            if (lines.Length >= 6)
+                            {
+                                ci.FlightTime = int.Parse(lines[5]);
+                                ci.BlockTime = int.Parse(lines[6]);
+                                ci.RcLink = int.Parse(lines[7]);
+                            }
+                        }
                         if (ControlInfoCommunicationReceived != null)
                             ControlInfoCommunicationReceived(ci);
                     }

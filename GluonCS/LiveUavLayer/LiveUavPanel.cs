@@ -68,7 +68,7 @@ namespace GluonCS
             _zgBatV.GraphPane.IsFontsScaled = false;
             _zgBatV.GraphPane.XAxis.IsVisible = false;
             _zgBatV.GraphPane.YAxis.Title.Text = "Bat [V]";
-            batteryVLineItem = _zgVel.GraphPane.AddCurve("Bat", new PointPairList(), Color.Blue, SymbolType.None);
+            batteryVLineItem = _zgBatV.GraphPane.AddCurve("Bat", new PointPairList(), Color.Blue, SymbolType.None);
 
             //zedGraphControl1.MasterPane.Add(_zgAlt.GraphPane.Clone());
             //zedGraphControl1.MasterPane.Add(_zgBatV.GraphPane.Clone());
@@ -136,6 +136,7 @@ namespace GluonCS
                     _lblGpsSat.BackColor = _lblGpsSat.Parent.BackColor;
                 }
                 _pbGps.Value = model.NumberOfGpsSatellites;
+                _pbGps.Text = model.NumberOfGpsSatellites.ToString();
             }
 
             _pbBattery.Value = (int)(model.BatteryVoltage * 10.0);
@@ -145,14 +146,15 @@ namespace GluonCS
                 _lblLink.BackColor = Color.Red;
             else
                 _lblLink.BackColor = _lblLink.Parent.BackColor;
+            _pbRcLink.Value = model.RcLink;
 
             _lblAltitudeAgl.Text = model.AltitudeAglM + " m / " + model.TargetAltitudeAglM() + " m";
             _lblDistNextWp.Text = "Next WP: " + model.DistanceNextWaypoint().ToString("F0") + " m";
             _lblHomeDistance.Text = "Home: " + model.DistanceHome().ToString("F0") + " m";
 
             _lblBlockname.Text = model.NavigationModel.Commands[model.CurrentNavigationLine].BlockName;
-            _lblFlightTime.Text = "Flight time: " + (int)((DateTime.Now - model.TakeoffTime).TotalMinutes) + ":" + (DateTime.Now - model.TakeoffTime).Seconds;
-            _lblTimeInBlock.Text = "Time in block: " + (int)((DateTime.Now - model.BlockStartTime).TotalMinutes) + ":" + (DateTime.Now - model.BlockStartTime).Seconds;
+            _lblFlightTime.Text = "Flight time: " + (int)(model.FlightTime.TotalMinutes) + ":" + model.FlightTime.Seconds;
+            _lblTimeInBlock.Text = "Time in block: " + (int)(model.BlockTime.TotalMinutes) + ":" + model.BlockTime.Seconds;
 
             // update listview with current navigation line selection
             foreach (ListViewItem lvi in _lv_navigation.Items)

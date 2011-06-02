@@ -18,6 +18,11 @@ namespace GluonCS
     public TransparentLabel()
     {
       TabStop = false;
+
+      //this.SetStyle(
+      //    ControlStyles.UserPaint |
+      //    ControlStyles.AllPaintingInWmPaint |
+      //    ControlStyles.OptimizedDoubleBuffer, true);
     }
 
     /// <summary>
@@ -40,6 +45,7 @@ namespace GluonCS
     protected override void OnPaintBackground(PaintEventArgs e)
     {
       // do nothing
+      //e.Graphics.DrawImageUnscaled(_backBuffer, 0, 0);
     }
 
     /// <summary>
@@ -51,22 +57,44 @@ namespace GluonCS
       DrawText();
     }
 
+    public const int WM_ERASEBKGND = 0x0014;
+    public const int WM_PAINT = 0x000F;
+    public const int WM_NCPAINT = 0x0085;
     protected override void WndProc(ref Message m)
     {
       base.WndProc(ref m);
-      if (m.Msg == 0x000F)
+
+      if (m.Msg == WM_PAINT || m.Msg == WM_ERASEBKGND || m.Msg == WM_NCPAINT)
       {
         DrawText();
       }
     }
 
+    private Bitmap _backBuffer;
     private void DrawText()
     {
+        //if ((DateTime.Now - lastUpdate).TotalMilliseconds > 500)
+        //    lastUpdate = DateTime.Now;
+        //else
+        //{
+        //    CreateGraphics().DrawImageUnscaled(_backBuffer, 0, 0);
+        //    return;
+        //}
+
+        //if (_backBuffer == null)
+        //{
+        //    _backBuffer = new Bitmap(this.ClientSize.Width, this.ClientSize.Height);
+        //}
+        //Graphics graphics = Graphics.FromImage(_backBuffer);
+
+        //graphics.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceOver;
+        //graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.Default;
+        //graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
       using (Graphics graphics = CreateGraphics())
       using (SolidBrush brush = new SolidBrush(ForeColor))
       {
-        SizeF size = graphics.MeasureString(Text, Font);
-
+          SizeF size = graphics.MeasureString(_text, Font);
         // first figure out the top
         float top = 0;
         switch (textAlign)
@@ -108,8 +136,9 @@ namespace GluonCS
               left = Width - size.Width;
             break;
         }
-        graphics.DrawString(Text, Font, brush, left, top);
+        graphics.DrawString(_text, Font, brush, left, top);
       }
+      //CreateGraphics().DrawImageUnscaled(_backBuffer, 0, 0);
     }
 
     /// <summary>
@@ -118,6 +147,10 @@ namespace GluonCS
     /// <returns>
     /// The text associated with this control.
     /// </returns>
+    /// 
+    private DateTime lastUpdate = DateTime.Now;
+    private DateTime lastUpdate2 = DateTime.Now;
+    private string _text;
     public override string Text
     {
       get
@@ -126,8 +159,11 @@ namespace GluonCS
       }
       set
       {
-        base.Text = value;
-        RecreateHandle();
+          _text = Text;
+          base.Text = value;
+
+          RecreateHandle();
+
       }
     }
 

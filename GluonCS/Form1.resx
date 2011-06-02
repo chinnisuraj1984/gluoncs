@@ -127,7 +127,7 @@
   <data name="_btnZoomin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJJSURBVDhPY2DAA+JbX2uktL2em9z8+r5v/dNfIBrEB4nj
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJJSURBVDhPY2DAA+JbX2uktL2em9z8+r5P/dNfIBrEB4nj
         0weWi6i6Hxhd/fB+0/ynJzaffLvrztPPJ45c+XCgd+nLUyBxkDxOQ9xyzmh4Z1+8P3Xjgx2Hrr8+9Ozt
         l1vvv/18/vrTz9uP3nw7O3/b410geZA6rIZYxeyfm9N78cTuCy8OXHrw7gRIs1XMgf8gGmjAuWtPPp0o
         6b14CqQOqwHa3pvuz912d/vp228u3Hz56cG7L98+6Pht+g+iQXyQ+NI99/aA1GE1QNJt9a8d558fAClW
@@ -137,13 +137,13 @@
         DmxsbLRcXd1rduzY819UVLRZ1bLZzj752VzH5Mf3HX2e/gLRIL59/FNMm4G2WgQGBrcdOXLmv4KCUg8b
         G5sqweQKU2Bra+sdH5884eLFu/91dPSnsbKyGhOtGaTQzMys5NatV/9tbZ3nMTMzu5CkGaiYQ0xMzEVY
         WLiFhYUlG8jXB2IdIAb5UwWI5YFYGojFgFgQiHlAeoCYFYiZQJaxQCWlgLQkEEtA+SJAWgiIBYCYD4i5
-        gZgTiNmgepiBNCMAuIxRhEGlhA4AAAAASUVORK5CYII=
+        gZgTiNmgepiBNCMAtKVRg28FOm8AAAAASUVORK5CYII=
 </value>
   </data>
   <data name="_btnZoomout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIeSURBVDhPY2DAA+JbX2uktL2em9z8+r5v/dNfIBrEB4nj
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIeSURBVDhPY2DAA+JbX2uktL2em9z8+r5P/dNfIBrEB4nj
         0weWi6i6Hxhd/fB+0/ynJzaffLvrztPPJ45c+XCgd+nLUyBxkDxOQ9xyzmh4Z1+8P3Xjgx2Hrr8+9OjN
         t7NAfA6Kz87f9ngXSB6kDqshVjH75+b0Xjyx+8KLA5cevDuBpBlsyLUnn06U9F48BVKH1QBt70335267
         u/307TcXbr789AAdg8SX7rm3B6QOqwGSbqt/7Tj//ABIo4rb6v/o+P23n88OXXl1DKQOqwFKzqvvz996
@@ -152,7 +152,7 @@
         Vz6daZ378pp19K37phHXMNOBjY2Nlqure82OHXv+i4qKNqtaNtvZJz+b65j8+L6jz9NfIBrEt49/imkz
         0FaLwMDgtiNHzvxXUFDqYWNjUyWYXGEKbG1tvePjkydcvHj3v46O/jRWVlZjojWDFJqZmZXcuvXqv62t
         8zxmZmYXkjQDFXOIiYm5CAsLt7CwsGQD+fpArAPEIH+qALE8EEsDsRgQCwIxD0gPELMCMRPIMhaopBSQ
-        lgRiCShfBEgLAbEAEPMBMTcQcwIxG1QPM5BmBAApI1UtInxFvAAAAABJRU5ErkJggg==
+        lgRiCShfBEgLAbEAEPMBMTcQcwIxG1QPM5BmBAAlPFUsTQs9WwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="_gMapControl.Position" mimetype="application/x-microsoft.net.object.binary.base64">
