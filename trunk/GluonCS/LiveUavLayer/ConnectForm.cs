@@ -16,6 +16,9 @@ namespace GluonCS.LiveUavLayer
     {
         private Hashtable comPortNames;
         public SerialPort SerialPort;
+        private string Filename = DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".log";
+
+        public string LogPath { get { return _cbLogToFile.Checked ? _lblFilename.Text : ""; } }
 
         public ConnectForm()
         {
@@ -106,6 +109,27 @@ namespace GluonCS.LiveUavLayer
             Properties.Settings.Default.Save();
             this.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.Close();
+        }
+
+        private void _cbLogToFile_CheckedChanged(object sender, EventArgs e)
+        {
+            if (_cbLogToFile.Checked == true)
+            {
+                _lblFilename.Text = Filename;
+                _btnChangeFilename.Enabled = true;
+            }
+            else
+            {
+                _lblFilename.Text = "...";
+                _btnChangeFilename.Enabled = false;
+            }
+        }
+
+        private void _btnChangeFilename_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                _lblFilename.Text = fbd.SelectedPath + "\\" + Filename;
         }
     }
 }

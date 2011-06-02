@@ -47,10 +47,10 @@
             this.xPanderPanel1 = new BSE.Windows.Forms.XPanderPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this._lblFilename = new System.Windows.Forms.Label();
+            this._btnChangeFilename = new System.Windows.Forms.Button();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this._cbLogToFile = new System.Windows.Forms.CheckBox();
             this._btn_connect = new System.Windows.Forms.Button();
             this._btn_connectionless = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -248,10 +248,10 @@
             this.xPanderPanel1.CaptionFont = new System.Drawing.Font("Trebuchet MS", 8.75F, System.Drawing.FontStyle.Bold);
             this.xPanderPanel1.Controls.Add(this.label2);
             this.xPanderPanel1.Controls.Add(this.numericUpDown1);
-            this.xPanderPanel1.Controls.Add(this.label1);
-            this.xPanderPanel1.Controls.Add(this.button1);
+            this.xPanderPanel1.Controls.Add(this._lblFilename);
+            this.xPanderPanel1.Controls.Add(this._btnChangeFilename);
             this.xPanderPanel1.Controls.Add(this.checkBox2);
-            this.xPanderPanel1.Controls.Add(this.checkBox1);
+            this.xPanderPanel1.Controls.Add(this._cbLogToFile);
             this.xPanderPanel1.CustomColors.BackColor = System.Drawing.SystemColors.Control;
             this.xPanderPanel1.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(65)))), ((int)(((byte)(118)))));
             this.xPanderPanel1.CustomColors.CaptionCheckedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(223)))), ((int)(((byte)(154)))));
@@ -316,24 +316,25 @@
             0,
             0});
             // 
-            // label1
+            // _lblFilename
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(63, 66);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
+            this._lblFilename.AutoSize = true;
+            this._lblFilename.Location = new System.Drawing.Point(63, 66);
+            this._lblFilename.Name = "_lblFilename";
+            this._lblFilename.Size = new System.Drawing.Size(16, 13);
+            this._lblFilename.TabIndex = 3;
+            this._lblFilename.Text = "...";
             // 
-            // button1
+            // _btnChangeFilename
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(32, 61);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
+            this._btnChangeFilename.Enabled = false;
+            this._btnChangeFilename.Location = new System.Drawing.Point(32, 61);
+            this._btnChangeFilename.Name = "_btnChangeFilename";
+            this._btnChangeFilename.Size = new System.Drawing.Size(25, 23);
+            this._btnChangeFilename.TabIndex = 2;
+            this._btnChangeFilename.Text = "...";
+            this._btnChangeFilename.UseVisualStyleBackColor = true;
+            this._btnChangeFilename.Click += new System.EventHandler(this._btnChangeFilename_Click);
             // 
             // checkBox2
             // 
@@ -346,16 +347,16 @@
             this.checkBox2.Text = "Proxy read-only connection to TCP/IP port";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // _cbLogToFile
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(13, 38);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(96, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Log data to file";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this._cbLogToFile.AutoSize = true;
+            this._cbLogToFile.Location = new System.Drawing.Point(13, 38);
+            this._cbLogToFile.Name = "_cbLogToFile";
+            this._cbLogToFile.Size = new System.Drawing.Size(96, 17);
+            this._cbLogToFile.TabIndex = 0;
+            this._cbLogToFile.Text = "Log data to file";
+            this._cbLogToFile.UseVisualStyleBackColor = true;
+            this._cbLogToFile.CheckedChanged += new System.EventHandler(this._cbLogToFile_CheckedChanged);
             // 
             // _btn_connect
             // 
@@ -427,10 +428,10 @@
         private BSE.Windows.Forms.XPanderPanel xPanderPanel2;
         private BSE.Windows.Forms.XPanderPanel xPanderPanel1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label _lblFilename;
+        private System.Windows.Forms.Button _btnChangeFilename;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox _cbLogToFile;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.GroupBox groupBox2;

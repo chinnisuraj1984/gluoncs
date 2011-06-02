@@ -32,15 +32,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiveUavPanel));
             this._cockpitPanel = new BSE.Windows.Forms.Panel();
             this.splitter1 = new BSE.Windows.Forms.Splitter();
+            this._pbRcLink = new ProgressBarColored();
+            this.label3 = new System.Windows.Forms.Label();
             this._pbLink = new ProgressBarColored();
             this._lblLink = new System.Windows.Forms.Label();
             this._pbGps = new ProgressBarColored();
             this._pbBattery = new ProgressBarColored();
             this.label1 = new System.Windows.Forms.Label();
             this._pbThrottle = new ProgressBarColored();
-            this._lblBlockname = new System.Windows.Forms.Label();
+            this._lblBlockname = new GluonCS.TransparentLabel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this._panelStrip = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this._zgAlt = new ZedGraph.ZedGraphControl();
@@ -51,10 +54,10 @@
             this._lblAltitudeAgl = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this._lblFlightTime = new System.Windows.Forms.Label();
-            this._lblTimeInBlock = new System.Windows.Forms.Label();
-            this._lblTimeToWp = new System.Windows.Forms.Label();
-            this._lblHomeDistance = new System.Windows.Forms.Label();
+            this._lblFlightTime = new GluonCS.TransparentLabel();
+            this._lblTimeInBlock = new GluonCS.TransparentLabel();
+            this._lblTimeToWp = new GluonCS.TransparentLabel();
+            this._lblHomeDistance = new GluonCS.TransparentLabel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,7 +66,7 @@
             this._cbAltitudeMode = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this._lblDistNextWp = new System.Windows.Forms.Label();
+            this._lblDistNextWp = new GluonCS.TransparentLabel();
             this._lblVoltage = new System.Windows.Forms.Label();
             this._lblSpeed = new System.Windows.Forms.Label();
             this._lblGpsSat = new System.Windows.Forms.Label();
@@ -89,6 +92,7 @@
             this._gmapContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this._cockpitPanel.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this._panelStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -106,6 +110,8 @@
             this._cockpitPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this._cockpitPanel.CaptionFont = new System.Drawing.Font("Trebuchet MS", 8.75F, System.Drawing.FontStyle.Bold);
             this._cockpitPanel.CaptionHeight = 20;
+            this._cockpitPanel.Controls.Add(this._pbRcLink);
+            this._cockpitPanel.Controls.Add(this.label3);
             this._cockpitPanel.Controls.Add(this._pbLink);
             this._cockpitPanel.Controls.Add(this._lblLink);
             this._cockpitPanel.Controls.Add(this._pbGps);
@@ -150,7 +156,7 @@
             this._cockpitPanel.Name = "_cockpitPanel";
             this._cockpitPanel.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
             this._cockpitPanel.ShowExpandIcon = true;
-            this._cockpitPanel.Size = new System.Drawing.Size(341, 425);
+            this._cockpitPanel.Size = new System.Drawing.Size(343, 425);
             this._cockpitPanel.TabIndex = 0;
             this._cockpitPanel.Text = "Cockpit";
             this._cockpitPanel.ToolTipTextCloseIcon = null;
@@ -163,14 +169,34 @@
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter1.Location = new System.Drawing.Point(0, 425);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(341, 3);
+            this.splitter1.Size = new System.Drawing.Size(343, 3);
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
+            // 
+            // _pbRcLink
+            // 
+            this._pbRcLink.ForeColor = System.Drawing.Color.LimeGreen;
+            this._pbRcLink.Location = new System.Drawing.Point(12, 197);
+            this._pbRcLink.Name = "_pbRcLink";
+            this._pbRcLink.Size = new System.Drawing.Size(62, 15);
+            this._pbRcLink.Step = 1;
+            this._pbRcLink.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this._pbRcLink.TabIndex = 46;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(9, 181);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.TabIndex = 45;
+            this.label3.Text = "Rc link:";
             // 
             // _pbLink
             // 
             this._pbLink.ForeColor = System.Drawing.Color.LimeGreen;
-            this._pbLink.Location = new System.Drawing.Point(12, 161);
+            this._pbLink.Location = new System.Drawing.Point(12, 162);
             this._pbLink.Name = "_pbLink";
             this._pbLink.Size = new System.Drawing.Size(62, 15);
             this._pbLink.Step = 1;
@@ -182,7 +208,7 @@
             // 
             this._lblLink.AutoSize = true;
             this._lblLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblLink.Location = new System.Drawing.Point(9, 145);
+            this._lblLink.Location = new System.Drawing.Point(9, 146);
             this._lblLink.Name = "_lblLink";
             this._lblLink.Size = new System.Drawing.Size(39, 13);
             this._lblLink.TabIndex = 43;
@@ -216,7 +242,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 180);
+            this.label1.Location = new System.Drawing.Point(9, 223);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 39;
@@ -225,7 +251,7 @@
             // _pbThrottle
             // 
             this._pbThrottle.ForeColor = System.Drawing.Color.LimeGreen;
-            this._pbThrottle.Location = new System.Drawing.Point(12, 196);
+            this._pbThrottle.Location = new System.Drawing.Point(70, 223);
             this._pbThrottle.Name = "_pbThrottle";
             this._pbThrottle.Size = new System.Drawing.Size(62, 15);
             this._pbThrottle.Step = 1;
@@ -234,13 +260,14 @@
             // 
             // _lblBlockname
             // 
-            this._lblBlockname.AutoSize = true;
             this._lblBlockname.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblBlockname.Location = new System.Drawing.Point(239, 121);
+            this._lblBlockname.Location = new System.Drawing.Point(236, 125);
             this._lblBlockname.Name = "_lblBlockname";
-            this._lblBlockname.Size = new System.Drawing.Size(73, 13);
+            this._lblBlockname.Size = new System.Drawing.Size(97, 13);
             this._lblBlockname.TabIndex = 36;
+            this._lblBlockname.TabStop = false;
             this._lblBlockname.Text = "Block name";
+            this._lblBlockname.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
             // tableLayoutPanel3
             // 
@@ -254,18 +281,34 @@
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 248);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(341, 177);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(343, 177);
             this.tableLayoutPanel3.TabIndex = 35;
             // 
             // _panelStrip
             // 
             this._panelStrip.AutoSize = true;
+            this._panelStrip.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this._panelStrip.Controls.Add(this.label2);
+            this._panelStrip.Dock = System.Windows.Forms.DockStyle.Fill;
             this._panelStrip.Location = new System.Drawing.Point(3, 3);
             this._panelStrip.Name = "_panelStrip";
-            this._panelStrip.Size = new System.Drawing.Size(0, 0);
+            this._panelStrip.Size = new System.Drawing.Size(337, 32);
             this._panelStrip.TabIndex = 33;
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(333, 35);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Block commands created in the Navigation list will be automatically \r\nadded as bu" +
+                "ttons to this strip.";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabControl1
             // 
@@ -273,10 +316,10 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(3, 9);
+            this.tabControl1.Location = new System.Drawing.Point(3, 41);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(335, 165);
+            this.tabControl1.Size = new System.Drawing.Size(337, 135);
             this.tabControl1.TabIndex = 25;
             // 
             // tabPage1
@@ -285,7 +328,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(327, 139);
+            this.tabPage1.Size = new System.Drawing.Size(329, 109);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Altitude";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -305,7 +348,7 @@
             this._zgAlt.ScrollMinX = 0D;
             this._zgAlt.ScrollMinY = 0D;
             this._zgAlt.ScrollMinY2 = 0D;
-            this._zgAlt.Size = new System.Drawing.Size(321, 133);
+            this._zgAlt.Size = new System.Drawing.Size(323, 103);
             this._zgAlt.TabIndex = 0;
             // 
             // tabPage2
@@ -314,7 +357,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(327, 98);
+            this.tabPage2.Size = new System.Drawing.Size(329, 109);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Speed";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -334,7 +377,7 @@
             this._zgVel.ScrollMinX = 0D;
             this._zgVel.ScrollMinY = 0D;
             this._zgVel.ScrollMinY2 = 0D;
-            this._zgVel.Size = new System.Drawing.Size(321, 92);
+            this._zgVel.Size = new System.Drawing.Size(323, 103);
             this._zgVel.TabIndex = 1;
             // 
             // tabPage3
@@ -343,7 +386,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(327, 98);
+            this.tabPage3.Size = new System.Drawing.Size(329, 109);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Battery voltage";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -363,13 +406,13 @@
             this._zgBatV.ScrollMinX = 0D;
             this._zgBatV.ScrollMinY = 0D;
             this._zgBatV.ScrollMinY2 = 0D;
-            this._zgBatV.Size = new System.Drawing.Size(321, 92);
+            this._zgBatV.Size = new System.Drawing.Size(323, 103);
             this._zgBatV.TabIndex = 1;
             // 
             // _lblAltitudeAgl
             // 
             this._lblAltitudeAgl.AutoSize = true;
-            this._lblAltitudeAgl.Location = new System.Drawing.Point(250, 221);
+            this._lblAltitudeAgl.Location = new System.Drawing.Point(250, 233);
             this._lblAltitudeAgl.Name = "_lblAltitudeAgl";
             this._lblAltitudeAgl.Size = new System.Drawing.Size(52, 13);
             this._lblAltitudeAgl.TabIndex = 32;
@@ -378,7 +421,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(175, 221);
+            this.label9.Location = new System.Drawing.Point(175, 233);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 13);
             this.label9.TabIndex = 31;
@@ -387,7 +430,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(7, 221);
+            this.label14.Location = new System.Drawing.Point(175, 214);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(77, 13);
             this.label14.TabIndex = 30;
@@ -395,39 +438,43 @@
             // 
             // _lblFlightTime
             // 
-            this._lblFlightTime.AutoSize = true;
-            this._lblFlightTime.Location = new System.Drawing.Point(239, 78);
+            this._lblFlightTime.Location = new System.Drawing.Point(236, 82);
             this._lblFlightTime.Name = "_lblFlightTime";
-            this._lblFlightTime.Size = new System.Drawing.Size(71, 13);
+            this._lblFlightTime.Size = new System.Drawing.Size(100, 14);
             this._lblFlightTime.TabIndex = 29;
+            this._lblFlightTime.TabStop = false;
             this._lblFlightTime.Text = "Flight time: 0s";
+            this._lblFlightTime.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
             // _lblTimeInBlock
             // 
-            this._lblTimeInBlock.AutoSize = true;
-            this._lblTimeInBlock.Location = new System.Drawing.Point(239, 140);
+            this._lblTimeInBlock.Location = new System.Drawing.Point(236, 144);
             this._lblTimeInBlock.Name = "_lblTimeInBlock";
-            this._lblTimeInBlock.Size = new System.Drawing.Size(87, 13);
+            this._lblTimeInBlock.Size = new System.Drawing.Size(100, 15);
             this._lblTimeInBlock.TabIndex = 28;
+            this._lblTimeInBlock.TabStop = false;
             this._lblTimeInBlock.Text = "Time in block: 0s";
+            this._lblTimeInBlock.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
             // _lblTimeToWp
             // 
-            this._lblTimeToWp.AutoSize = true;
-            this._lblTimeToWp.Location = new System.Drawing.Point(239, 182);
+            this._lblTimeToWp.Location = new System.Drawing.Point(236, 186);
             this._lblTimeToWp.Name = "_lblTimeToWp";
-            this._lblTimeToWp.Size = new System.Drawing.Size(80, 13);
+            this._lblTimeToWp.Size = new System.Drawing.Size(97, 19);
             this._lblTimeToWp.TabIndex = 27;
+            this._lblTimeToWp.TabStop = false;
             this._lblTimeToWp.Text = "Time to WP: 0s";
+            this._lblTimeToWp.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
             // _lblHomeDistance
             // 
-            this._lblHomeDistance.AutoSize = true;
-            this._lblHomeDistance.Location = new System.Drawing.Point(239, 98);
+            this._lblHomeDistance.Location = new System.Drawing.Point(236, 102);
             this._lblHomeDistance.Name = "_lblHomeDistance";
-            this._lblHomeDistance.Size = new System.Drawing.Size(55, 13);
+            this._lblHomeDistance.Size = new System.Drawing.Size(97, 17);
             this._lblHomeDistance.TabIndex = 26;
+            this._lblHomeDistance.TabStop = false;
             this._lblHomeDistance.Text = "Home: 0m";
+            this._lblHomeDistance.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
             // tableLayoutPanel2
             // 
@@ -444,7 +491,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(331, 16);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(333, 16);
             this.tableLayoutPanel2.TabIndex = 15;
             // 
             // label7
@@ -459,7 +506,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(113, 0);
+            this.label6.Location = new System.Drawing.Point(114, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 13);
             this.label6.TabIndex = 6;
@@ -468,7 +515,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(223, 0);
+            this.label5.Location = new System.Drawing.Point(225, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 13);
             this.label5.TabIndex = 5;
@@ -489,7 +536,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(331, 24);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(333, 24);
             this.tableLayoutPanel1.TabIndex = 14;
             // 
             // _cbAltitudeMode
@@ -514,7 +561,7 @@
             "RC-transmitter",
             "GCS (None)",
             "GCS (Joystick)"});
-            this.comboBox1.Location = new System.Drawing.Point(223, 3);
+            this.comboBox1.Location = new System.Drawing.Point(225, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(89, 21);
             this.comboBox1.TabIndex = 13;
@@ -530,7 +577,7 @@
             "Autopilot",
             "Return home",
             "Loiter"});
-            this.comboBox2.Location = new System.Drawing.Point(113, 3);
+            this.comboBox2.Location = new System.Drawing.Point(114, 3);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(86, 21);
             this.comboBox2.TabIndex = 12;
@@ -538,12 +585,13 @@
             // 
             // _lblDistNextWp
             // 
-            this._lblDistNextWp.AutoSize = true;
-            this._lblDistNextWp.Location = new System.Drawing.Point(239, 161);
+            this._lblDistNextWp.Location = new System.Drawing.Point(236, 165);
             this._lblDistNextWp.Name = "_lblDistNextWp";
-            this._lblDistNextWp.Size = new System.Drawing.Size(73, 13);
+            this._lblDistNextWp.Size = new System.Drawing.Size(97, 15);
             this._lblDistNextWp.TabIndex = 4;
+            this._lblDistNextWp.TabStop = false;
             this._lblDistNextWp.Text = "Next WP: 0 m";
+            this._lblDistNextWp.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
             // _lblVoltage
             // 
@@ -557,7 +605,7 @@
             // 
             // _lblSpeed
             // 
-            this._lblSpeed.Location = new System.Drawing.Point(90, 221);
+            this._lblSpeed.Location = new System.Drawing.Point(250, 215);
             this._lblSpeed.Name = "_lblSpeed";
             this._lblSpeed.Size = new System.Drawing.Size(44, 12);
             this._lblSpeed.TabIndex = 2;
@@ -581,11 +629,12 @@
             this._artificialHorizon.AutoScroll = true;
             this._artificialHorizon.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this._artificialHorizon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this._artificialHorizon.Location = new System.Drawing.Point(85, 75);
+            this._artificialHorizon.CornersRadius = 20F;
+            this._artificialHorizon.Location = new System.Drawing.Point(80, 75);
             this._artificialHorizon.Name = "_artificialHorizon";
             this._artificialHorizon.pitch_angle = 0D;
             this._artificialHorizon.roll_angle = 0D;
-            this._artificialHorizon.Size = new System.Drawing.Size(149, 136);
+            this._artificialHorizon.Size = new System.Drawing.Size(150, 130);
             this._artificialHorizon.TabIndex = 0;
             // 
             // _navigationPanel
@@ -618,7 +667,7 @@
             this._navigationPanel.Name = "_navigationPanel";
             this._navigationPanel.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
             this._navigationPanel.ShowExpandIcon = true;
-            this._navigationPanel.Size = new System.Drawing.Size(341, 211);
+            this._navigationPanel.Size = new System.Drawing.Size(343, 211);
             this._navigationPanel.TabIndex = 2;
             this._navigationPanel.Text = "Navigation";
             this._navigationPanel.ToolTipTextCloseIcon = null;
@@ -637,7 +686,7 @@
             this._btnNaviBurn});
             this.toolStrip1.Location = new System.Drawing.Point(1, 22);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(339, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(341, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -728,9 +777,7 @@
             // 
             // _btnAutoSync
             // 
-            this._btnAutoSync.Checked = true;
             this._btnAutoSync.CheckOnClick = true;
-            this._btnAutoSync.CheckState = System.Windows.Forms.CheckState.Checked;
             this._btnAutoSync.Image = ((System.Drawing.Image)(resources.GetObject("_btnAutoSync.Image")));
             this._btnAutoSync.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._btnAutoSync.Name = "_btnAutoSync";
@@ -762,7 +809,7 @@
             this._lv_navigation.Location = new System.Drawing.Point(1, 50);
             this._lv_navigation.MultiSelect = false;
             this._lv_navigation.Name = "_lv_navigation";
-            this._lv_navigation.Size = new System.Drawing.Size(339, 157);
+            this._lv_navigation.Size = new System.Drawing.Size(341, 157);
             this._lv_navigation.TabIndex = 0;
             this._lv_navigation.UseCompatibleStateImageBehavior = false;
             this._lv_navigation.View = System.Windows.Forms.View.Details;
@@ -799,11 +846,12 @@
             this.Controls.Add(this._navigationPanel);
             this.Controls.Add(this._cockpitPanel);
             this.Name = "LiveUavPanel";
-            this.Size = new System.Drawing.Size(341, 636);
+            this.Size = new System.Drawing.Size(343, 636);
             this._cockpitPanel.ResumeLayout(false);
             this._cockpitPanel.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this._panelStrip.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -825,7 +873,7 @@
         private BSE.Windows.Forms.Panel _navigationPanel;
         private ArtificialHorizon.ArtificialHorizon _artificialHorizon;
         private System.Windows.Forms.Label _lblGpsSat;
-        private System.Windows.Forms.Label _lblDistNextWp;
+        private TransparentLabel _lblDistNextWp;
         private System.Windows.Forms.Label _lblVoltage;
         private System.Windows.Forms.Label _lblSpeed;
         private System.Windows.Forms.ListView _lv_navigation;
@@ -858,10 +906,10 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private ZedGraph.ZedGraphControl _zgAlt;
-        private System.Windows.Forms.Label _lblFlightTime;
-        private System.Windows.Forms.Label _lblTimeInBlock;
-        private System.Windows.Forms.Label _lblTimeToWp;
-        private System.Windows.Forms.Label _lblHomeDistance;
+        private TransparentLabel _lblFlightTime;
+        private TransparentLabel _lblTimeInBlock;
+        private TransparentLabel _lblTimeToWp;
+        private TransparentLabel _lblHomeDistance;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.FlowLayoutPanel _panelStrip;
@@ -871,12 +919,15 @@
         private ZedGraph.ZedGraphControl _zgBatV;
         private BSE.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label _lblBlockname;
+        private TransparentLabel _lblBlockname;
         private System.Windows.Forms.Label label1;
         private ProgressBarColored _pbThrottle;
         private ProgressBarColored _pbGps;
         private ProgressBarColored _pbBattery;
         private System.Windows.Forms.Label _lblLink;
         private ProgressBarColored _pbLink;
+        private System.Windows.Forms.Label label2;
+        private ProgressBarColored _pbRcLink;
+        private System.Windows.Forms.Label label3;
     }
 }

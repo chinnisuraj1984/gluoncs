@@ -230,7 +230,10 @@ namespace GluonCS
                     Console.WriteLine("OK");
                     SerialCommunication_CSV c = new SerialCommunication_CSV();
                     c.Open(cf.SerialPort.PortName, cf.SerialPort.BaudRate);
+                    if (cf.LogPath != "")
+                        c.LogToFilename = cf.LogPath;
                     model.Serial = c;
+
                 }
                 else if (r == System.Windows.Forms.DialogResult.Cancel)
                 {

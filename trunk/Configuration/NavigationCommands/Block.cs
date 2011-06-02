@@ -24,6 +24,7 @@ namespace Configuration.NavigationCommands
 
         public NavigationInstruction GetNavigationInstruction()
         {
+            ni.opcode = NavigationInstruction.navigation_command.BLOCK;
             ni.StringToArgument(_tbName.Text.Substring(0, Math.Min(8, _tbName.Text.Length)));
             return new NavigationInstruction(ni);
         }

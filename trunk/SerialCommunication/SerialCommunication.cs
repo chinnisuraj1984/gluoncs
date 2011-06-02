@@ -21,6 +21,7 @@ namespace Communication
     public abstract class SerialCommunication
     {
         protected SerialPort _serialPort;   // COM communication port
+        public string LogToFilename;
 
         // delegates used for the communication frames events
         public delegate void ReceiveCommunication(string line);

@@ -33,6 +33,8 @@ namespace GluonCS.LiveUavLayer
         public ControlInfo.FlightModes FlightMode = ControlInfo.FlightModes.AUTOPILOT;
         public bool CommunicationAlive = false;
         public int CurrentNavigationLine = 0;
+        public TimeSpan FlightTime = new TimeSpan(0, 0, 0), BlockTime = new TimeSpan(0, 0, 0);
+        public int RcLink = 0;
 
         public LiveUavNavigationModel NavigationModel;
         public DateTime TakeoffTime = DateTime.Now;
@@ -259,8 +261,11 @@ namespace GluonCS.LiveUavLayer
             if (NavigationModel.Commands[CurrentNavigationLine].BlockName != lastBlockname)
             {
                 lastBlockname = NavigationModel.Commands[CurrentNavigationLine].BlockName;
-                BlockStartTime = DateTime.Now;
+                BlockStartTime = DateTime.Now; // remove me
             }
+            FlightTime = new TimeSpan(0,0,ci.FlightTime);
+            BlockTime = new TimeSpan(0, 0, ci.BlockTime);
+            this.RcLink = ci.RcLink;
         }
 
         public void SendToNavigationLine(int line)
