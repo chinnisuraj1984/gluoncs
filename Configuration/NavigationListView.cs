@@ -365,10 +365,13 @@ namespace Configuration
                 dirty_list.Clear();
                 foreach (ListViewItem lvi in _lv_navigation.Items)
                 {
-                    lvi.Tag = list[i];
-                    lvi.SubItems[1].Text = "* " + list[i].ToString();
-                    dirty_list.Add(i);
-                    i++;
+                    if (list.Length > i)
+                    {
+                        lvi.Tag = list[i];
+                        lvi.SubItems[1].Text = "* " + list[i].ToString();
+                        dirty_list.Add(i);
+                        i++;
+                    }
                 }
                 stream.Close();
             }
