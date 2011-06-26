@@ -299,7 +299,14 @@ namespace Communication
                             ac.control_aileron_differential = int.Parse(lines[70]);
                         if (lines.Length > 71)
                             ac.telemetry_control = int.Parse(lines[71]);
-
+                        if (lines.Length > 72)
+                        {
+                            ac.auto_throttle_enabled = int.Parse(lines[72]) == 1;
+                            ac.auto_throttle_min_pct = int.Parse(lines[73]);
+                            ac.auto_throttle_max_pct = int.Parse(lines[74]);
+                            ac.auto_throttle_cruise_pct = int.Parse(lines[75]);
+                            ac.auto_throttle_p_gain_10 = int.Parse(lines[76]);
+                        }
                         if (AllConfigCommunicationReceived != null)
                             AllConfigCommunicationReceived(ac);
                     }
@@ -624,6 +631,17 @@ namespace Communication
                 ac.control_waypoint_radius.ToString(CultureInfo.InvariantCulture) + ";" +
                 ac.control_cruising_speed.ToString(CultureInfo.InvariantCulture) + ";" +
                 (ac.control_stabilization_with_altitude_hold == false ? 0 : 1).ToString() + "\n");
+
+            Thread.Sleep(200);
+
+            _serialPort.WriteLine("\nAT;" +
+                ac.auto_throttle_min_pct + ";" + ac.auto_throttle_max_pct + ";" +
+                ac.auto_throttle_cruise_pct + ";" + ac.auto_throttle_p_gain_10 + ";" +
+                (ac.auto_throttle_enabled ? "1" : "0"));
+            Console.WriteLine("\nAT;" +
+                ac.auto_throttle_min_pct + ";" + ac.auto_throttle_max_pct + ";" +
+                ac.auto_throttle_cruise_pct + ";" + ac.auto_throttle_p_gain_10 + ";" +
+                (ac.auto_throttle_enabled ? "1" : "0"));
         }
 
         public override void ReadAllConfig()

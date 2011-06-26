@@ -74,6 +74,11 @@ namespace Communication.Frames.Configuration
         public double pid_altitude2pitch_imax;
         public double pid_altitude2pitch_dmin;
 
+        public bool auto_throttle_enabled;
+        public int auto_throttle_min_pct;
+        public int auto_throttle_max_pct;
+        public int auto_throttle_cruise_pct;
+        public int auto_throttle_p_gain_10;
 
 
         // servo
