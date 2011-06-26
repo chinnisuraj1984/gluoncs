@@ -60,6 +60,12 @@ namespace Gluonpilot
         public double WaypointRadius;
         public bool StabilizationWithAltitudeHold;
 
+        public int AutoThrottleMinPct;
+        public int AutoThrottleMaxPct;
+        public int AutoThrottleCruisePct;
+        public double AutoThrottlePGain;
+        public bool AutoThrottleEnabled;
+
 
         /*!
          *    Converts to _model to AllConfig communication frame.
@@ -135,6 +141,12 @@ namespace Gluonpilot
             ac.servo_reverse[3] = _model.ReverseServo4;
             ac.servo_reverse[4] = _model.ReverseServo5;
             ac.servo_reverse[5] = _model.ReverseServo6;
+
+            ac.auto_throttle_enabled = _model.AutoThrottleEnabled;
+            ac.auto_throttle_min_pct = _model.AutoThrottleMinPct;
+            ac.auto_throttle_max_pct = _model.AutoThrottleMaxPct;
+            ac.auto_throttle_cruise_pct = _model.AutoThrottleCruisePct;
+            ac.auto_throttle_p_gain_10 = (int)(_model.AutoThrottlePGain * 10);
 
             return ac;
         }
@@ -221,6 +233,12 @@ namespace Gluonpilot
                 _model.ServoMax[i] = ac.servo_max[i];
                 _model.ServoNeutral[i] = ac.servo_neutral[i];
             }
+
+            _model.AutoThrottleEnabled = ac.auto_throttle_enabled;
+            _model.AutoThrottleMinPct = ac.auto_throttle_min_pct;
+            _model.AutoThrottleMaxPct = ac.auto_throttle_max_pct;
+            _model.AutoThrottleCruisePct = ac.auto_throttle_cruise_pct;
+            _model.AutoThrottlePGain = (double)ac.auto_throttle_p_gain_10 / 10;
         }
     }
 }

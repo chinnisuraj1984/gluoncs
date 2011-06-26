@@ -255,10 +255,19 @@
             this._tb_servo1_neutral = new Configuration.NumericTextBox();
             this._tbControl = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this._ntbAutoThrottlePGain = new Configuration.NumericTextBox();
+            this.label92 = new System.Windows.Forms.Label();
+            this._nudAutoThrottleMinPct = new System.Windows.Forms.NumericUpDown();
+            this._nudAutoThrottleMaxPct = new System.Windows.Forms.NumericUpDown();
+            this.label91 = new System.Windows.Forms.Label();
+            this.label89 = new System.Windows.Forms.Label();
+            this.label90 = new System.Windows.Forms.Label();
+            this._nudAutoThrottleCruisePct = new System.Windows.Forms.NumericUpDown();
+            this.label88 = new System.Windows.Forms.Label();
             this._dtb_waypoint_radius = new Configuration.DistanceTextBox();
             this.label86 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this._cbMotor = new System.Windows.Forms.ComboBox();
             this.label82 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -311,6 +320,9 @@
             this._tpServos.SuspendLayout();
             this._tbControl.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._nudAutoThrottleMinPct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._nudAutoThrottleMaxPct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._nudAutoThrottleCruisePct)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._nud_aileron_diff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._nud_control_pitch_max)).BeginInit();
@@ -710,7 +722,7 @@
             0,
             0,
             0});
-            this._tbGyroZNeutral.DoubleValue = 0;
+            this._tbGyroZNeutral.DoubleValue = 0D;
             this._tbGyroZNeutral.IntValue = 0;
             this._tbGyroZNeutral.Location = new System.Drawing.Point(394, 153);
             this._tbGyroZNeutral.Name = "_tbGyroZNeutral";
@@ -727,7 +739,7 @@
             0,
             0,
             0});
-            this._tbGyroYNeutral.DoubleValue = 0;
+            this._tbGyroYNeutral.DoubleValue = 0D;
             this._tbGyroYNeutral.IntValue = 0;
             this._tbGyroYNeutral.Location = new System.Drawing.Point(255, 153);
             this._tbGyroYNeutral.Name = "_tbGyroYNeutral";
@@ -753,7 +765,7 @@
             0,
             0,
             0});
-            this._tbGyroXNeutral.DoubleValue = 0;
+            this._tbGyroXNeutral.DoubleValue = 0D;
             this._tbGyroXNeutral.IntValue = 0;
             this._tbGyroXNeutral.Location = new System.Drawing.Point(122, 153);
             this._tbGyroXNeutral.Name = "_tbGyroXNeutral";
@@ -970,7 +982,7 @@
             0,
             0,
             0});
-            this._tbAccZNeutral.DoubleValue = 0;
+            this._tbAccZNeutral.DoubleValue = 0D;
             this._tbAccZNeutral.IntValue = 0;
             this._tbAccZNeutral.Location = new System.Drawing.Point(394, 65);
             this._tbAccZNeutral.Name = "_tbAccZNeutral";
@@ -987,7 +999,7 @@
             0,
             0,
             0});
-            this._tbAccYNeutral.DoubleValue = 0;
+            this._tbAccYNeutral.DoubleValue = 0D;
             this._tbAccYNeutral.IntValue = 0;
             this._tbAccYNeutral.Location = new System.Drawing.Point(255, 65);
             this._tbAccYNeutral.Name = "_tbAccYNeutral";
@@ -1004,7 +1016,7 @@
             0,
             0,
             0});
-            this._tbAccXNeutral.DoubleValue = 0;
+            this._tbAccXNeutral.DoubleValue = 0D;
             this._tbAccXNeutral.IntValue = 0;
             this._tbAccXNeutral.Location = new System.Drawing.Point(121, 65);
             this._tbAccXNeutral.Name = "_tbAccXNeutral";
@@ -1413,7 +1425,7 @@
             0,
             0,
             0});
-            this._tb_initial_baudrate.DoubleValue = 0;
+            this._tb_initial_baudrate.DoubleValue = 0D;
             this._tb_initial_baudrate.IntValue = 0;
             this._tb_initial_baudrate.Location = new System.Drawing.Point(129, 13);
             this._tb_initial_baudrate.Name = "_tb_initial_baudrate";
@@ -1430,7 +1442,7 @@
             0,
             0,
             0});
-            this._tb_operational_baudrate.DoubleValue = 0;
+            this._tb_operational_baudrate.DoubleValue = 0D;
             this._tb_operational_baudrate.Enabled = false;
             this._tb_operational_baudrate.IntValue = 0;
             this._tb_operational_baudrate.Location = new System.Drawing.Point(129, 39);
@@ -2686,7 +2698,7 @@
             0,
             0,
             0});
-            this._tb_servo6_neutral.DoubleValue = 0;
+            this._tb_servo6_neutral.DoubleValue = 0D;
             this._tb_servo6_neutral.IntValue = 0;
             this._tb_servo6_neutral.Location = new System.Drawing.Point(160, 225);
             this._tb_servo6_neutral.Name = "_tb_servo6_neutral";
@@ -2703,7 +2715,7 @@
             0,
             0,
             0});
-            this._tb_servo5_neutral.DoubleValue = 0;
+            this._tb_servo5_neutral.DoubleValue = 0D;
             this._tb_servo5_neutral.IntValue = 0;
             this._tb_servo5_neutral.Location = new System.Drawing.Point(160, 196);
             this._tb_servo5_neutral.Name = "_tb_servo5_neutral";
@@ -2720,7 +2732,7 @@
             0,
             0,
             0});
-            this._tb_servo4_neutral.DoubleValue = 0;
+            this._tb_servo4_neutral.DoubleValue = 0D;
             this._tb_servo4_neutral.IntValue = 0;
             this._tb_servo4_neutral.Location = new System.Drawing.Point(160, 167);
             this._tb_servo4_neutral.Name = "_tb_servo4_neutral";
@@ -2737,7 +2749,7 @@
             0,
             0,
             0});
-            this._tb_servo3_neutral.DoubleValue = 0;
+            this._tb_servo3_neutral.DoubleValue = 0D;
             this._tb_servo3_neutral.IntValue = 0;
             this._tb_servo3_neutral.Location = new System.Drawing.Point(160, 138);
             this._tb_servo3_neutral.Name = "_tb_servo3_neutral";
@@ -2754,7 +2766,7 @@
             0,
             0,
             0});
-            this._tb_servo2_neutral.DoubleValue = 0;
+            this._tb_servo2_neutral.DoubleValue = 0D;
             this._tb_servo2_neutral.IntValue = 0;
             this._tb_servo2_neutral.Location = new System.Drawing.Point(160, 109);
             this._tb_servo2_neutral.Name = "_tb_servo2_neutral";
@@ -2771,7 +2783,7 @@
             0,
             0,
             0});
-            this._tb_servo1_neutral.DoubleValue = 0;
+            this._tb_servo1_neutral.DoubleValue = 0D;
             this._tb_servo1_neutral.IntValue = 0;
             this._tb_servo1_neutral.Location = new System.Drawing.Point(160, 80);
             this._tb_servo1_neutral.Name = "_tb_servo1_neutral";
@@ -2811,21 +2823,131 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this._ntbAutoThrottlePGain);
+            this.groupBox7.Controls.Add(this.label92);
+            this.groupBox7.Controls.Add(this._nudAutoThrottleMinPct);
+            this.groupBox7.Controls.Add(this._nudAutoThrottleMaxPct);
+            this.groupBox7.Controls.Add(this.label91);
+            this.groupBox7.Controls.Add(this.label89);
+            this.groupBox7.Controls.Add(this.label90);
+            this.groupBox7.Controls.Add(this._nudAutoThrottleCruisePct);
+            this.groupBox7.Controls.Add(this.label88);
             this.groupBox7.Controls.Add(this._dtb_waypoint_radius);
             this.groupBox7.Controls.Add(this.label86);
             this.groupBox7.Controls.Add(this.label85);
-            this.groupBox7.Controls.Add(this.comboBox1);
-            this.groupBox7.Location = new System.Drawing.Point(313, 138);
+            this.groupBox7.Controls.Add(this._cbMotor);
+            this.groupBox7.Location = new System.Drawing.Point(313, 108);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(265, 122);
+            this.groupBox7.Size = new System.Drawing.Size(265, 152);
             this.groupBox7.TabIndex = 19;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Navigation";
             // 
+            // _ntbAutoThrottlePGain
+            // 
+            this._ntbAutoThrottlePGain.AllowSpace = false;
+            this._ntbAutoThrottlePGain.DecimalValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this._ntbAutoThrottlePGain.DoubleValue = 0D;
+            this._ntbAutoThrottlePGain.IntValue = 0;
+            this._ntbAutoThrottlePGain.Location = new System.Drawing.Point(119, 122);
+            this._ntbAutoThrottlePGain.Name = "_ntbAutoThrottlePGain";
+            this._ntbAutoThrottlePGain.Size = new System.Drawing.Size(36, 20);
+            this._ntbAutoThrottlePGain.TabIndex = 15;
+            this._ntbAutoThrottlePGain.Text = "0";
+            this._ntbAutoThrottlePGain.TextChanged += new System.EventHandler(this._ntbAutoThrottlePGain_TextChanged);
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(10, 125);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(106, 13);
+            this.label92.TabIndex = 13;
+            this.label92.Text = "Throttle P-gain (%/m)";
+            // 
+            // _nudAutoThrottleMinPct
+            // 
+            this._nudAutoThrottleMinPct.Location = new System.Drawing.Point(110, 96);
+            this._nudAutoThrottleMinPct.Name = "_nudAutoThrottleMinPct";
+            this._nudAutoThrottleMinPct.Size = new System.Drawing.Size(45, 20);
+            this._nudAutoThrottleMinPct.TabIndex = 12;
+            this._nudAutoThrottleMinPct.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this._nudAutoThrottleMinPct.ValueChanged += new System.EventHandler(this._nudAutoThrottleMinPct_ValueChanged);
+            // 
+            // _nudAutoThrottleMaxPct
+            // 
+            this._nudAutoThrottleMaxPct.Location = new System.Drawing.Point(212, 96);
+            this._nudAutoThrottleMaxPct.Name = "_nudAutoThrottleMaxPct";
+            this._nudAutoThrottleMaxPct.Size = new System.Drawing.Size(45, 20);
+            this._nudAutoThrottleMaxPct.TabIndex = 11;
+            this._nudAutoThrottleMaxPct.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this._nudAutoThrottleMaxPct.ValueChanged += new System.EventHandler(this._nudAutoThrottleMaxPct_ValueChanged);
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(218, 80);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(27, 13);
+            this.label91.TabIndex = 10;
+            this.label91.Text = "Max";
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(162, 80);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(36, 13);
+            this.label89.TabIndex = 9;
+            this.label89.Text = "Cruise";
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(116, 80);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(24, 13);
+            this.label90.TabIndex = 8;
+            this.label90.Text = "Min";
+            // 
+            // _nudAutoThrottleCruisePct
+            // 
+            this._nudAutoThrottleCruisePct.Location = new System.Drawing.Point(161, 96);
+            this._nudAutoThrottleCruisePct.Name = "_nudAutoThrottleCruisePct";
+            this._nudAutoThrottleCruisePct.Size = new System.Drawing.Size(45, 20);
+            this._nudAutoThrottleCruisePct.TabIndex = 6;
+            this._nudAutoThrottleCruisePct.Value = new decimal(new int[] {
+            85,
+            0,
+            0,
+            0});
+            this._nudAutoThrottleCruisePct.ValueChanged += new System.EventHandler(this._nudAutoThrottleCruisePct_ValueChanged);
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(10, 98);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(81, 13);
+            this.label88.TabIndex = 5;
+            this.label88.Text = "Auto throttle (%)";
+            // 
             // _dtb_waypoint_radius
             // 
-            this._dtb_waypoint_radius.DistanceM = 0;
-            this._dtb_waypoint_radius.Location = new System.Drawing.Point(102, 44);
+            this._dtb_waypoint_radius.DistanceM = 0D;
+            this._dtb_waypoint_radius.Location = new System.Drawing.Point(99, 24);
             this._dtb_waypoint_radius.Name = "_dtb_waypoint_radius";
             this._dtb_waypoint_radius.ReadOnly = false;
             this._dtb_waypoint_radius.Size = new System.Drawing.Size(99, 21);
@@ -2835,7 +2957,7 @@
             // label86
             // 
             this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(10, 47);
+            this.label86.Location = new System.Drawing.Point(10, 27);
             this.label86.Name = "label86";
             this.label86.Size = new System.Drawing.Size(83, 13);
             this.label86.TabIndex = 3;
@@ -2844,24 +2966,23 @@
             // label85
             // 
             this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(10, 21);
+            this.label85.Location = new System.Drawing.Point(10, 55);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(34, 13);
             this.label85.TabIndex = 2;
             this.label85.Text = "Motor";
             // 
-            // comboBox1
+            // _cbMotor
             // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Manual",
-            "Altitude hold with manual max",
-            "Altitude hold"});
-            this.comboBox1.Location = new System.Drawing.Point(50, 17);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(209, 21);
-            this.comboBox1.TabIndex = 1;
+            this._cbMotor.FormattingEnabled = true;
+            this._cbMotor.Items.AddRange(new object[] {
+            "Manual throttle",
+            "Auto-throttle"});
+            this._cbMotor.Location = new System.Drawing.Point(50, 51);
+            this._cbMotor.Name = "_cbMotor";
+            this._cbMotor.Size = new System.Drawing.Size(148, 21);
+            this._cbMotor.TabIndex = 1;
+            this._cbMotor.SelectedIndexChanged += new System.EventHandler(this._cbMotor_SelectedIndexChanged);
             // 
             // label82
             // 
@@ -3043,7 +3164,7 @@
             // 
             // tb_min_circle_radius
             // 
-            this.tb_min_circle_radius.DistanceM = 0;
+            this.tb_min_circle_radius.DistanceM = 0D;
             this.tb_min_circle_radius.Enabled = false;
             this.tb_min_circle_radius.Location = new System.Drawing.Point(426, 81);
             this.tb_min_circle_radius.Name = "tb_min_circle_radius";
@@ -3056,7 +3177,7 @@
             this.tb_speed.Location = new System.Drawing.Point(426, 54);
             this.tb_speed.Name = "tb_speed";
             this.tb_speed.Size = new System.Drawing.Size(110, 21);
-            this.tb_speed.SpeedMS = 0;
+            this.tb_speed.SpeedMS = 0D;
             this.tb_speed.TabIndex = 16;
             this.tb_speed.SpeedChanged += new System.EventHandler(this.tb_speed_SpeedChanged);
             this.tb_speed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CalculateMinimumRadius);
@@ -3086,14 +3207,14 @@
             // 
             // _pid_altitude_to_pitch
             // 
-            this._pid_altitude_to_pitch.D = 0;
-            this._pid_altitude_to_pitch.Dmin = 0;
-            this._pid_altitude_to_pitch.I = 0;
-            this._pid_altitude_to_pitch.Imax = 9999;
-            this._pid_altitude_to_pitch.Imin = -9999;
+            this._pid_altitude_to_pitch.D = 0D;
+            this._pid_altitude_to_pitch.Dmin = 0D;
+            this._pid_altitude_to_pitch.I = 0D;
+            this._pid_altitude_to_pitch.Imax = 9999D;
+            this._pid_altitude_to_pitch.Imin = -9999D;
             this._pid_altitude_to_pitch.Location = new System.Drawing.Point(6, 19);
             this._pid_altitude_to_pitch.Name = "_pid_altitude_to_pitch";
-            this._pid_altitude_to_pitch.P = 0;
+            this._pid_altitude_to_pitch.P = 0D;
             this._pid_altitude_to_pitch.Size = new System.Drawing.Size(296, 87);
             this._pid_altitude_to_pitch.TabIndex = 0;
             this._pid_altitude_to_pitch.IsChanged += new System.EventHandler(this._pid_altitude_to_pitch_IsChanged);
@@ -3110,14 +3231,14 @@
             // 
             // _pid_heading_to_roll
             // 
-            this._pid_heading_to_roll.D = 0;
-            this._pid_heading_to_roll.Dmin = 0;
-            this._pid_heading_to_roll.I = 0;
-            this._pid_heading_to_roll.Imax = 9999;
-            this._pid_heading_to_roll.Imin = -9999;
+            this._pid_heading_to_roll.D = 0D;
+            this._pid_heading_to_roll.Dmin = 0D;
+            this._pid_heading_to_roll.I = 0D;
+            this._pid_heading_to_roll.Imax = 9999D;
+            this._pid_heading_to_roll.Imin = -9999D;
             this._pid_heading_to_roll.Location = new System.Drawing.Point(6, 20);
             this._pid_heading_to_roll.Name = "_pid_heading_to_roll";
-            this._pid_heading_to_roll.P = 0;
+            this._pid_heading_to_roll.P = 0D;
             this._pid_heading_to_roll.Size = new System.Drawing.Size(296, 87);
             this._pid_heading_to_roll.TabIndex = 0;
             this._pid_heading_to_roll.IsChanged += new System.EventHandler(this._pid_heading_to_roll_IsChanged);
@@ -3134,14 +3255,14 @@
             // 
             // _pid_roll_to_aileron
             // 
-            this._pid_roll_to_aileron.D = 0;
-            this._pid_roll_to_aileron.Dmin = 0;
-            this._pid_roll_to_aileron.I = 0;
-            this._pid_roll_to_aileron.Imax = 9999;
-            this._pid_roll_to_aileron.Imin = -9999;
+            this._pid_roll_to_aileron.D = 0D;
+            this._pid_roll_to_aileron.Dmin = 0D;
+            this._pid_roll_to_aileron.I = 0D;
+            this._pid_roll_to_aileron.Imax = 9999D;
+            this._pid_roll_to_aileron.Imin = -9999D;
             this._pid_roll_to_aileron.Location = new System.Drawing.Point(6, 19);
             this._pid_roll_to_aileron.Name = "_pid_roll_to_aileron";
-            this._pid_roll_to_aileron.P = 0;
+            this._pid_roll_to_aileron.P = 0D;
             this._pid_roll_to_aileron.Size = new System.Drawing.Size(269, 87);
             this._pid_roll_to_aileron.TabIndex = 0;
             this._pid_roll_to_aileron.IsChanged += new System.EventHandler(this._pid_roll_to_aileron_IsChanged);
@@ -3158,14 +3279,14 @@
             // 
             // _pid_pitch_to_elevator
             // 
-            this._pid_pitch_to_elevator.D = 0;
-            this._pid_pitch_to_elevator.Dmin = 0;
-            this._pid_pitch_to_elevator.I = 0;
-            this._pid_pitch_to_elevator.Imax = 9999;
-            this._pid_pitch_to_elevator.Imin = -9999;
+            this._pid_pitch_to_elevator.D = 0D;
+            this._pid_pitch_to_elevator.Dmin = 0D;
+            this._pid_pitch_to_elevator.I = 0D;
+            this._pid_pitch_to_elevator.Imax = 9999D;
+            this._pid_pitch_to_elevator.Imin = -9999D;
             this._pid_pitch_to_elevator.Location = new System.Drawing.Point(6, 19);
             this._pid_pitch_to_elevator.Name = "_pid_pitch_to_elevator";
-            this._pid_pitch_to_elevator.P = 0;
+            this._pid_pitch_to_elevator.P = 0D;
             this._pid_pitch_to_elevator.Size = new System.Drawing.Size(258, 89);
             this._pid_pitch_to_elevator.TabIndex = 0;
             this._pid_pitch_to_elevator.IsChanged += new System.EventHandler(this._pid_pitch_to_elevator_IsChanged);
@@ -3215,6 +3336,9 @@
             this._tbControl.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._nudAutoThrottleMinPct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._nudAutoThrottleMaxPct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._nudAutoThrottleCruisePct)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._nud_aileron_diff)).EndInit();
@@ -3475,7 +3599,7 @@
         private System.Windows.Forms.GroupBox groupBox8;
         private Configuration.PidControl _pid_altitude_to_pitch;
         private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox _cbMotor;
         private Configuration.DistanceTextBox _dtb_waypoint_radius;
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.Button _btn_cube;
@@ -3490,5 +3614,14 @@
         private System.Windows.Forms.Label _lbl_control_hz;
         private System.Windows.Forms.Button _btn_telemetry_configuration;
         private System.Windows.Forms.Button _btn_telemetry_inflight;
+        private System.Windows.Forms.NumericUpDown _nudAutoThrottleMinPct;
+        private System.Windows.Forms.NumericUpDown _nudAutoThrottleMaxPct;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.NumericUpDown _nudAutoThrottleCruisePct;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.Label label92;
+        private Configuration.NumericTextBox _ntbAutoThrottlePGain;
     }
 }
