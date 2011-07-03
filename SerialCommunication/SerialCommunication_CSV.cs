@@ -408,7 +408,7 @@ namespace Communication
                         if (NavigationInstructionCommunicationReceived != null)
                             NavigationInstructionCommunicationReceived(ni);
                     }
-                    // Telemetry control
+                    // Control
                     else if (lines[0].EndsWith("TC") && lines.Length >= 3)
                     {
                         ControlInfo ci =
@@ -424,6 +424,7 @@ namespace Communication
                                 ci.FlightTime = int.Parse(lines[5]);
                                 ci.BlockTime = int.Parse(lines[6]);
                                 ci.RcLink = int.Parse(lines[7]);
+                                ci.Throttle = int.Parse(lines[8]);
                             }
                         }
                         if (ControlInfoCommunicationReceived != null)

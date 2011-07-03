@@ -83,6 +83,7 @@
     <Compile Include="AskHome.Designer.cs">
       <DependentUpon>AskHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Common.cs" />
     <Compile Include="ConfigurationControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -144,7 +145,7 @@
     <Compile Include="NavigationCommands\Climb.Designer.cs">
       <DependentUpon>Climb.cs</DependentUpon>
     </Compile>
-    <Compile Include="NavigationCommands\Common.cs" />
+    <Compile Include="NavigationCommands\Global.cs" />
     <Compile Include="NavigationCommands\FlyTo.cs">
       <SubType>UserControl</SubType>
     </Compile>

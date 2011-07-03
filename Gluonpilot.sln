@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GluonCS", "GluonCS\GluonCS.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightgearCommunication", "FlightgearCommunication\FlightgearCommunication.csproj", "{47A74C61-DCDE-4035-9984-6D8070EFC5D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{F1A4A04A-9A2D-4F0D-B79D-3B033AF2CEF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -120,6 +122,16 @@ Global
 		{47A74C61-DCDE-4035-9984-6D8070EFC5D2}.Release|Mixed Platforms.Build.0 = Release|x86
 		{47A74C61-DCDE-4035-9984-6D8070EFC5D2}.Release|x86.ActiveCfg = Release|x86
 		{47A74C61-DCDE-4035-9984-6D8070EFC5D2}.Release|x86.Build.0 = Release|x86
+		{F1A4A04A-9A2D-4F0D-B79D-3B033AF2CEF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1A4A04A-9A2D-4F0D-B79D-3B033AF2CEF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1A4A04A-9A2D-4F0D-B79D-3B033AF2CEF2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F1A4A04A-9A2D-4F0D-B79D-3B033AF2CEF2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F1A4A04A-9A2D-4F0D-B79D-3B033AF2CEF2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F1A4A04A-9A2D-4F0D-B79D-3B033AF2CEF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1A4A04A-9A2D-4F0D-B79D-3B033AF2CEF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1A4A04A-9A2D-4F0D-B79D-3B033AF2CEF2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F1A4A04A-9A2D-4F0D-B79D-3B033AF2CEF2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F1A4A04A-9A2D-4F0D-B79D-3B033AF2CEF2}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

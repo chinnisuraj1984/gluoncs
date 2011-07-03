@@ -79,9 +79,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libs\BSE.Windows.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="CommonTools">
-      <HintPath>..\..\..\Downloads\TreeWithColumn.exe\CommonTools.dll</HintPath>
-    </Reference>
     <Reference Include="GMap.NET.Core, Version=1.5.4.3, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libs\GMap.NET.Core.dll</HintPath>
@@ -91,9 +88,6 @@
       <HintPath>..\Libs\GMap.NET.WindowsForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Renderer">
-      <HintPath>..\..\..\Downloads\Ai\Ai\Test\bin\Debug\Renderer.dll</HintPath>
-    </Reference>
     <Reference Include="SmartThreadPool, Version=1.0.2235.39078, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libs\SmartThreadPool.dll</HintPath>
@@ -245,6 +239,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{F1A4A04A-9A2D-4F0D-B79D-3B033AF2CEF2}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Configuration\Configuration.csproj">
       <Project>{2B1A398D-6E4F-4E71-87CF-7FBA8E4AAFB6}</Project>
       <Name>Configuration</Name>

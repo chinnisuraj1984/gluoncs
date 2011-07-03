@@ -83,7 +83,7 @@ namespace GluonCS
         {
             this.model = model;
 
-            for (int i = 0; i < model.MaxNumberOfNavigationInstructions(); i++)
+            for (int i = 1; i < model.MaxNumberOfNavigationInstructions(); i++)
             {
                 ListViewItem lvi = new ListViewItem("" + i);
                 lvi.Tag = model.GetNavigationInstructionLocal(i);
@@ -147,6 +147,7 @@ namespace GluonCS
             else
                 _lblLink.BackColor = _lblLink.Parent.BackColor;
             _pbRcLink.Value = model.RcLink;
+            _pbThrottle.Value = model.ThrottlePct;
 
             _lblAltitudeAgl.Text = model.AltitudeAglM + " m / " + model.TargetAltitudeAglM() + " m";
             _lblDistNextWp.Text = "Next WP: " + model.DistanceNextWaypoint().ToString("F0") + " m";
@@ -305,7 +306,7 @@ namespace GluonCS
 
                     // Add items to list if there are not enough
                     while (_lv_navigation.Items.Count <= i)
-                        _lv_navigation.Items.Add("" + (i + 1)).SubItems.Add("");
+                        _lv_navigation.Items.Add("" + (i)).SubItems.Add("");
 
                     if (model.GetNavigationInstructionLocal(i) != model.GetNavigationInstructionRemote(i))
                         _lv_navigation.Items[i].SubItems[1].Text = "* ";
@@ -346,14 +347,16 @@ namespace GluonCS
             Console.WriteLine("Ensure visible " + topitem);
 
             _panelStrip.Controls.Clear();
+            int totalwidth = 0;
             foreach (KeyValuePair<string, int> block in model.NavigationModel.Blocks)
             {
                 Button b = new Button();
                 b.Text = block.Key;
                 b.Click += new EventHandler(CommandButton_Click);
+                totalwidth += b.Width;
                 _panelStrip.Controls.Add(b);
             }
-
+            _panelStrip.Height = (int)(Math.Ceiling((double)totalwidth / _panelStrip.Width)) * 30;
         }
 
         void CommandButton_Click(object sender, EventArgs e)

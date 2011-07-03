@@ -10,6 +10,9 @@ using System.Drawing;
 using GluonCS.Markers;
 using Communication.Frames.Incoming;
 using Configuration.NavigationCommands;
+using Configuration;
+using Common;
+
 
 namespace GluonCS.LiveUavLayer
 {
@@ -130,15 +133,10 @@ namespace GluonCS.LiveUavLayer
             if (current_marker is RelativeMarker)
             {
                 PointLatLng p = gmap.FromLocalToLatLng(x, y);
-                double latitude_meter_per_degree = 6363057.32484 / 180.0 * Math.PI;
-                double longitude_meter_per_degree = latitude_meter_per_degree * Math.Cos(gmap.Position.Lat / 180.0 * Math.PI);
-
-                double difflat = p.Lat - home.Position.Lat;
-                double difflng = p.Lng - home.Position.Lng;
-
                 NavigationInstruction ni = model.GetNavigationInstructionLocal(((RelativeMarker)current_marker).Number);
-                ni.x = difflat * latitude_meter_per_degree;
-                ni.y = difflng * longitude_meter_per_degree;
+                LatLng rel = LatLng.ToRelative(home.Position.Lat, home.Position.Lng, p.Lat, p.Lng);
+                ni.x = rel.Lat;
+                ni.y = rel.Lng;
                 model.UpdateLocalNavigationInstruction(ni);  // not good way to go
             }
             if (current_marker is AbsoluteMarker)
@@ -230,20 +228,20 @@ namespace GluonCS.LiveUavLayer
                 {
                     MoveableMarker mm = new MoveableMarker(gmap.Position);
                     NavigationInstruction ni = model.GetNavigationInstructionLocal(i);
-                    if (ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FLY_TO_REL ||
+                    if (ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FROM_TO_REL || 
+                        ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FLY_TO_REL ||
                         ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.CIRCLE_REL)
                     {
                         mm = new RelativeMarker(gmap.Position, i);
                         //double res = gmap.Projection.GetGroundResolution((int)gmap.Zoom, gmap.Position.Lat);
-                        double latitude_meter_per_degree = 6363057.32484 / 180.0 * Math.PI;
-                        double longitude_meter_per_degree = latitude_meter_per_degree * Math.Cos(gmap.Position.Lat / 180.0 * Math.PI);
-                        mm.Position = new PointLatLng(home.Position.Lat + ni.x / latitude_meter_per_degree,
-                                                      home.Position.Lng + ni.y / longitude_meter_per_degree);
+                        mm.Position = new PointLatLng(home.Position.Lat + ni.x / LatLng.LatitudeMeterPerDegree,
+                                                      home.Position.Lng + ni.y / LatLng.LongitudeMeterPerDegree(gmap.Position.Lat));
                         NavigationOverlay.Markers.Add(mm);
                         mm.ToolTipText = ni.ToString();
                         l.Add(mm.Position);
                     }
-                    if (ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FLY_TO_ABS ||
+                    if (ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FROM_TO_ABS ||
+                        ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FLY_TO_ABS ||
                         ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.CIRCLE_ABS)
                     {
                         mm = new AbsoluteMarker(gmap.Position, i);
@@ -265,13 +263,11 @@ namespace GluonCS.LiveUavLayer
                     if (ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.CIRCLE_ABS ||
                         ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.CIRCLE_REL)
                     {
-                        double latitude_meter_per_degree = 6363057.32484 / 180.0 * Math.PI;
-                        double longitude_meter_per_degree = latitude_meter_per_degree * Math.Cos(gmap.Position.Lat / 180.0 * Math.PI);
                         List<PointLatLng> c = new List<PointLatLng>();
                         for (double j = 0.0; j <= Math.PI * 2.00001; j += Math.PI * 2.0 / 30.0)
                         {
-                            double clon = mm.Position.Lng + Math.Cos(j) * ni.a / longitude_meter_per_degree;
-                            double clat = mm.Position.Lat + Math.Sin(j) * ni.a / latitude_meter_per_degree;
+                            double clon = mm.Position.Lng + Math.Cos(j) * ni.a / LatLng.LongitudeMeterPerDegree(gmap.Position.Lat);
+                            double clat = mm.Position.Lat + Math.Sin(j) * ni.a / LatLng.LatitudeMeterPerDegree;
                             c.Add(new PointLatLng(clat, clon));
                         }
                         GMapRoute cr = new GMapRoute(c, "circle");
@@ -323,10 +319,14 @@ namespace GluonCS.LiveUavLayer
             {
                 NavigationMarker nm = (NavigationMarker)current_marker;
 
-                NavigationCommandEditor nce =
-                    new NavigationCommandEditor(model.GetNavigationInstructionLocal(nm.Number));
-                nce.ShowDialog(gmap);
-                model.UpdateLocalNavigationInstruction(nce.GetNavigationInstruction());
+                NavigationInstructionEdit nie =
+                    new NavigationInstructionEdit(model.GetNavigationInstructionLocal(nm.Number), model.Home.Lat, model.Home.Lng);
+                if (nie.ShowDialog(null) == DialogResult.OK)
+                {
+                    model.UpdateLocalNavigationInstruction(new NavigationInstruction(nie.NavigationInstr));
+                    Console.WriteLine(model.GetNavigationInstructionLocal(0));
+                    Console.WriteLine(model.GetNavigationInstructionRemote(0));
+                }
             }
         }
 
@@ -342,20 +342,16 @@ namespace GluonCS.LiveUavLayer
                     ni.opcode == NavigationInstruction.navigation_command.FLY_TO_REL ||
                     ni.opcode == NavigationInstruction.navigation_command.FROM_TO_REL)
                 {
-                    ni.x = p.Lat/180.0*Math.PI;
+                    ni.x = p.Lat / 180.0 * Math.PI;
                     ni.y = p.Lng / 180.0 * Math.PI;
                 }
                 else if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_ABS ||
                         ni.opcode == NavigationInstruction.navigation_command.FLY_TO_ABS ||
                         ni.opcode == NavigationInstruction.navigation_command.FROM_TO_ABS)
                 {
-                    double latitude_meter_per_degree = 6363057.32484 / 180.0 * Math.PI;
-                    double longitude_meter_per_degree = latitude_meter_per_degree * Math.Cos(gmap.Position.Lat / 180.0 * Math.PI);
-                    double difflat = p.Lat - home.Position.Lat;
-                    double difflng = p.Lng - home.Position.Lng;
-
-                    ni.x = difflat * latitude_meter_per_degree;
-                    ni.y = difflng * longitude_meter_per_degree;
+                    LatLng rel = LatLng.ToRelative(home.Position.Lat, home.Position.Lng, nm.Position.Lat, nm.Position.Lng);
+                    ni.x = rel.Lat;
+                    ni.y = rel.Lng;
                 }
 
                 if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_REL)
@@ -412,13 +408,9 @@ namespace GluonCS.LiveUavLayer
                 if (ni.opcode == NavigationInstruction.navigation_command.EMPTY)
                 {
                     ni.opcode = NavigationInstruction.navigation_command.FLY_TO_REL;
-                    double latitude_meter_per_degree = 6363057.32484 / 180.0 * Math.PI;
-                    double longitude_meter_per_degree = latitude_meter_per_degree * Math.Cos(gmap.Position.Lat / 180.0 * Math.PI);
-                    double difflat = p.Lat - home.Position.Lat;
-                    double difflng = p.Lng - home.Position.Lng;
-
-                    ni.x = difflat * latitude_meter_per_degree;
-                    ni.y = difflng * longitude_meter_per_degree;
+                    LatLng abs = LatLng.ToRelative(home.Position.Lat, home.Position.Lng, p.Lat, p.Lng);
+                    ni.x = abs.Lat;
+                    ni.y = abs.Lng;
                     model.UpdateLocalNavigationInstruction(ni);
                     break;
                 }
