@@ -43,13 +43,13 @@ namespace Configuration.NavigationCommands
             tableLayoutPanel.Controls.Clear();
             if (ni.opcode == NavigationInstruction.navigation_command.FROM_TO_REL)
             {
-                _cbRelToHome.Checked = true;
                 tableLayoutPanel.Controls.Add(new FromToRel(ni));
+                _cbRelToHome.Checked = true;
             }
             else
             {
-                _cbRelToHome.Checked = false;
                 tableLayoutPanel.Controls.Add(new FromToAbs(ni));
+                _cbRelToHome.Checked = false;
             }
             this.Width = tableLayoutPanel.Controls[0].Width;
         }

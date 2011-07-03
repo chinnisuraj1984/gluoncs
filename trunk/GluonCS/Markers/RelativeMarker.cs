@@ -28,7 +28,12 @@ namespace GluonCS.Markers
 
         public override void OnRender(Graphics g)
         {
+            g.DrawString(Number.ToString(), new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), Brushes.Black, LocalPosition.X + 14 + 1, LocalPosition.Y + 0);
+            g.DrawString(Number.ToString(), new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), Brushes.Black, LocalPosition.X + 14 - 1, LocalPosition.Y + 0);
+            g.DrawString(Number.ToString(), new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), Brushes.Black, LocalPosition.X + 14, LocalPosition.Y + 0 + 1);
+            g.DrawString(Number.ToString(), new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), Brushes.Black, LocalPosition.X + 14, LocalPosition.Y + 0 - 1);
             g.DrawString(Number.ToString(), new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), Brushes.Red, LocalPosition.X + 14, LocalPosition.Y + 0);
+         
             g.FillEllipse(Brushes.White, new Rectangle(LocalPosition.X, LocalPosition.Y, Size.Width, Size.Height));
             g.DrawEllipse(Pen, new Rectangle(LocalPosition.X - (- 6) / 2, LocalPosition.Y - (- 6) / 2, Size.Width-6, Size.Height-6));        
         }

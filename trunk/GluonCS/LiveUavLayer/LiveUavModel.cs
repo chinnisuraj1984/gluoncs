@@ -35,6 +35,7 @@ namespace GluonCS.LiveUavLayer
         public int CurrentNavigationLine = 0;
         public TimeSpan FlightTime = new TimeSpan(0, 0, 0), BlockTime = new TimeSpan(0, 0, 0);
         public int RcLink = 0;
+        public int ThrottlePct = 0;
 
         public LiveUavNavigationModel NavigationModel;
         public DateTime TakeoffTime = DateTime.Now;
@@ -50,7 +51,7 @@ namespace GluonCS.LiveUavLayer
         private PointLatLng home;
         public PointLatLng Home { get { return home; } }
 
-        private bool autoSync = true;
+        private bool autoSync = false;
         public bool AutoSync
         {
             get { return autoSync; }
@@ -266,6 +267,7 @@ namespace GluonCS.LiveUavLayer
             FlightTime = new TimeSpan(0,0,ci.FlightTime);
             BlockTime = new TimeSpan(0, 0, ci.BlockTime);
             this.RcLink = ci.RcLink;
+            ThrottlePct = ci.Throttle;
         }
 
         public void SendToNavigationLine(int line)
@@ -415,7 +417,7 @@ namespace GluonCS.LiveUavLayer
                 Thread.Sleep(1000);
             }
 
-            while (/*!SmartThreadPool.IsWorkItemCanceled*/model.Serial.IsOpen)
+            while (/*!SmartThreadPool.IsWorkItemCanceled*/model.Serial.IsOpen && model.AutoSync)
             {
                 for (int i = 0; i < model.MaxNumberOfNavigationInstructions() && i < maxLineNumberReceived; i++)
                 {

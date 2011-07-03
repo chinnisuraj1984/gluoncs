@@ -118,10 +118,10 @@ namespace Communication.Frames.Incoming
                 break;
 
             case navigation_command.FROM_TO_REL:   // x, y, height
-                s += "FromTo[Absolute](lat: " + x.ToString("F0") + "m, lon: " + y.ToString("F0") + "m, alt: " + a + "m)";
+                s += "FromTo[Relative](lat: " + x.ToString("F0") + "m, lon: " + y.ToString("F0") + "m, alt: " + a + "m)";
                 break;
             case navigation_command.FROM_TO_ABS:
-                s += "FromTo[Relative](lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°, alt: " + a + "m)";
+                s += "FromTo[Absolute](lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°, alt: " + a + "m)";
                 break;
             case navigation_command.FLY_TO_REL:
                 s += "FlyTo[Relative](lat: " + x.ToString("F0") + "m, lon: " + y.ToString("F0") + "m, alt: " + a + "m)";
