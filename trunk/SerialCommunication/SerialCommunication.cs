@@ -37,6 +37,7 @@ namespace Communication
         public delegate void ReceiveDatalogLineCommunicationFrame(DatalogLine line);
         public delegate void ReceiveNavigationInstructionCommunicationFrame(NavigationInstruction ni);
         public delegate void ReceiveControlInfoCommunicationFrame(ControlInfo ci);
+        public delegate void ReceiveServosCommunicationFrame(Servos s);
 
         public delegate void LostCommunication();
         public delegate void EstablishedCommunication();
@@ -65,6 +66,7 @@ namespace Communication
         public abstract event ReceiveNavigationInstructionCommunicationFrame NavigationInstructionCommunicationReceived;
         // ControlInfo
         public abstract event ReceiveControlInfoCommunicationFrame ControlInfoCommunicationReceived;
+        public abstract event ReceiveServosCommunicationFrame ServosCommunicationReceived;
         // Communication status
         public abstract event LostCommunication CommunicationLost;
         public abstract event EstablishedCommunication CommunicationEstablished;
@@ -125,5 +127,9 @@ namespace Communication
         public abstract void SendReboot();
 
         public abstract void SendWriteTelemetry(int basicgps, int gyroaccraw, int gyroaccproc, int ppm, int pressuretemp, int attitude, int control);
+
+        public abstract void SetSimulationOn();
+
+        public abstract void SendSimulationUpdate(double lat_rad, double lng_rad, double roll_rad, double pitch_rad, double altitude_m, double speed_ms, double heading_rad);
     }
 }

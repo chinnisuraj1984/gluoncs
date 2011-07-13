@@ -247,6 +247,10 @@
       <Project>{2B1A398D-6E4F-4E71-87CF-7FBA8E4AAFB6}</Project>
       <Name>Configuration</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FlightgearCommunication\FlightgearCommunication.csproj">
+      <Project>{47A74C61-DCDE-4035-9984-6D8070EFC5D2}</Project>
+      <Name>FlightgearCommunication</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Kml\Kml.csproj">
       <Project>{3F7BDAB7-2F07-4D0B-A517-42E6DE6C70DB}</Project>
       <Name>Kml</Name>

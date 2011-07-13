@@ -16,7 +16,7 @@ using GluonCS.LiveUavLayer;
 using Communication;
 using System.IO.Ports;
 using System.Net;
-
+using FlightgearCommunication;
 
 namespace GluonCS
 {
@@ -233,7 +233,10 @@ namespace GluonCS
                     if (cf.LogPath != "")
                         c.LogToFilename = cf.LogPath;
                     model.Serial = c;
-
+                    if (cf.Simulation)
+                    {
+                        FlightgearThread fgt = new FlightgearThread(model.Serial, cf.FlightgearPath);
+                    }
                 }
                 else if (r == System.Windows.Forms.DialogResult.Cancel)
                 {

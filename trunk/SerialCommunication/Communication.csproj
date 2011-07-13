@@ -103,6 +103,7 @@
     <Compile Include="Frames\Incoming\PressureTemp.cs" />
     <Compile Include="Frames\Incoming\RcInput.cs" />
     <Compile Include="Frames\Incoming\Sensors.cs" />
+    <Compile Include="Frames\Incoming\Servos.cs" />
     <Compile Include="SerialCommunication.cs" />
     <Compile Include="SerialCommunication_CSV.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -326,7 +326,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(329, 109);
+            this.tabPage1.Size = new System.Drawing.Size(329, 93);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Altitude";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -347,7 +347,7 @@
             this._zgAlt.ScrollMinX = 0D;
             this._zgAlt.ScrollMinY = 0D;
             this._zgAlt.ScrollMinY2 = 0D;
-            this._zgAlt.Size = new System.Drawing.Size(323, 103);
+            this._zgAlt.Size = new System.Drawing.Size(323, 87);
             this._zgAlt.TabIndex = 0;
             // 
             // tabPage2
@@ -356,7 +356,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(329, 109);
+            this.tabPage2.Size = new System.Drawing.Size(329, 93);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Speed";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -377,7 +377,7 @@
             this._zgVel.ScrollMinX = 0D;
             this._zgVel.ScrollMinY = 0D;
             this._zgVel.ScrollMinY2 = 0D;
-            this._zgVel.Size = new System.Drawing.Size(323, 103);
+            this._zgVel.Size = new System.Drawing.Size(323, 87);
             this._zgVel.TabIndex = 1;
             // 
             // tabPage3
