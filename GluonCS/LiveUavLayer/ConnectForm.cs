@@ -17,6 +17,8 @@ namespace GluonCS.LiveUavLayer
         private Hashtable comPortNames;
         public SerialPort SerialPort;
         private string Filename = DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".log";
+        public bool Simulation = false;
+        public string FlightgearPath;
 
         public string LogPath { get { return _cbLogToFile.Checked ? _lblFilename.Text : ""; } }
 
@@ -104,6 +106,13 @@ namespace GluonCS.LiveUavLayer
                 return;
             SerialPort.BaudRate = b;
             //SerialPort.Open();
+
+            if (_cbSimulation.Checked)
+            {
+                this.Simulation = true;
+                this.FlightgearPath = _tbFlightgear.Text;
+            }
+
             Properties.Settings.Default.LastComPortName = SerialPort.PortName;
             Properties.Settings.Default.LastComBaudrate = b;
             Properties.Settings.Default.Save();

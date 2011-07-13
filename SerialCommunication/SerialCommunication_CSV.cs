@@ -72,6 +72,7 @@ namespace Communication
         public override event ReceiveNavigationInstructionCommunicationFrame NavigationInstructionCommunicationReceived;
         // ControlInfo
         public override event ReceiveControlInfoCommunicationFrame ControlInfoCommunicationReceived;
+        public override event ReceiveServosCommunicationFrame ServosCommunicationReceived;
         // Communication status
         public override event LostCommunication CommunicationLost;
         public override event EstablishedCommunication CommunicationEstablished;
@@ -329,6 +330,7 @@ namespace Communication
                     // TG: GPS basic
                     else if (lines[0].EndsWith("TG") && lines.Length >= 7)
                     {
+                        Console.WriteLine(line);
                         GpsBasic gb = new GpsBasic(
                             double.Parse(lines[2], System.Globalization.CultureInfo.InvariantCulture),
                             double.Parse(lines[3], System.Globalization.CultureInfo.InvariantCulture),
@@ -407,6 +409,19 @@ namespace Communication
                                 int.Parse(lines[6]) );
                         if (NavigationInstructionCommunicationReceived != null)
                             NavigationInstructionCommunicationReceived(ni);
+                    }
+                    // TS: Servos (simulation)
+                    else if (lines[0].EndsWith("TS") && lines.Length >= 3)
+                    {
+                        Console.WriteLine(line);
+
+                        Servos s = 
+                            new Servos(
+                                int.Parse(lines[1]),
+                                int.Parse(lines[2]),
+                                int.Parse(lines[3]));
+                        if (ServosCommunicationReceived != null)
+                            ServosCommunicationReceived(s);
                     }
                     // Control
                     else if (lines[0].EndsWith("TC") && lines.Length >= 3)
@@ -727,6 +742,29 @@ namespace Communication
         public override void SendReboot()
         {
             _serialPort.WriteLine("\nZZ;1123\n");
+        }
+
+        public override void SetSimulationOn()
+        {
+            _serialPort.WriteLine("\nSE;\n");
+        }
+
+        public override void SendSimulationUpdate(double lat_rad, double lng_rad, double roll_rad, double pitch_rad, double altitude_m, double speed_ms, double heading_rad)
+        {
+            _serialPort.WriteLine("\nSW;" + lng_rad.ToString("#.######", CultureInfo.InvariantCulture) + ";" +
+                                          lat_rad.ToString("#.######", CultureInfo.InvariantCulture) + ";" +
+                                          heading_rad.ToString("#.####", CultureInfo.InvariantCulture) + ";" +
+                                          speed_ms.ToString("#.###", CultureInfo.InvariantCulture) + ";" +
+                                          ((int)altitude_m).ToString() + ";" +
+                                          roll_rad.ToString("#.###", CultureInfo.InvariantCulture) + ";" +
+                                          pitch_rad.ToString("#.###", CultureInfo.InvariantCulture) + "\n");
+            Console.WriteLine("\nSW;" + lng_rad.ToString("#.######", CultureInfo.InvariantCulture) + ";" +
+                                          lat_rad.ToString("#.######", CultureInfo.InvariantCulture) + ";" +
+                                          heading_rad.ToString("#.####", CultureInfo.InvariantCulture) + ";" +
+                                          speed_ms.ToString("#.###", CultureInfo.InvariantCulture) + ";" +
+                                          ((int)altitude_m).ToString() + ";" +
+                                          roll_rad.ToString("#.####", CultureInfo.InvariantCulture) + ";" +
+                                          pitch_rad.ToString("#.###", CultureInfo.InvariantCulture) + "\n");
         }
     }
 }
