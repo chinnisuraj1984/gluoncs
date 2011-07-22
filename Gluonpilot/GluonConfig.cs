@@ -27,6 +27,16 @@ namespace Gluonpilot
             _tc_main.SelectedTab = _tc_main.TabPages["gcs"];
         }
 
+        public GluonConfig(SerialCommunication serial)
+            : this()
+        {
+            if (serial is SerialCommunication_CSV)
+            {
+                this._serial = (SerialCommunication_CSV)serial;
+                ConnectPanels();
+            }
+        }
+
 
         private void _btn_showlogging_Click(object sender, EventArgs e)
         {
@@ -88,22 +98,26 @@ namespace Gluonpilot
                         _serial = new SerialCommunication_CSV();
                         _serial.Open(cd.SelectedPort(), cd.SelectedBaudrate());
                     }
-
-                    configurationControl.Connect(_serial);
-                    datalogging.Connect(_serial);
-                    navigationListView1.Connect(_serial);
-                    _gcsMainPanel.Connect(_serial);
-
-                    _btn_connect.Checked = true;
-
-                    _serial.CommunicationReceived += new SerialCommunication_CSV.ReceiveCommunication(ReceiveCommunication);
-                    _serial.NonParsedCommunicationReceived += new SerialCommunication.ReceiveNonParsedCommunication(ReceiveNonParsedCommunication);
+                    ConnectPanels();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error connecting", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ConnectPanels()
+        {
+            configurationControl.Connect(_serial);
+            datalogging.Connect(_serial);
+            navigationListView1.Connect(_serial);
+            _gcsMainPanel.Connect(_serial);
+
+            _btn_connect.Checked = true;
+
+            _serial.CommunicationReceived += new SerialCommunication_CSV.ReceiveCommunication(ReceiveCommunication);
+            _serial.NonParsedCommunicationReceived += new SerialCommunication.ReceiveNonParsedCommunication(ReceiveNonParsedCommunication);
         }
 
 

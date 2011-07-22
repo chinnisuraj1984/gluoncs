@@ -101,11 +101,16 @@ namespace GluonCS
             updatePanel.Interval = 200;
             updatePanel.Tick += new EventHandler(updatePanel_Tick);
             updatePanel.Enabled = true;
+
+
         }
 
         // Update the panel's labels. Not based on the events.
         void updatePanel_Tick(object sender, EventArgs e)
         {
+            if (model.Serial != null && model.Serial.IsOpen)
+                _btnConnect.Checked = true;
+
             if (model.NumberOfGpsSatellites >= 0)
             {
                 _lblGpsSat.Text = "GPS: " + model.NumberOfGpsSatellites;
@@ -501,6 +506,12 @@ namespace GluonCS
             {
                 MessageBox.Show(this, "There was an error when writing the navigation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void _btnConfig_Click(object sender, EventArgs e)
+        {
+            Gluonpilot.GluonConfig gc = new Gluonpilot.GluonConfig(model.Serial);
+            gc.Show();
         }
 
 

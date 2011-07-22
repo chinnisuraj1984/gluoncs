@@ -48,6 +48,7 @@
             this.zoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zoomoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this._tbLog = new System.Windows.Forms.TextBox();
             this.liveUavPanel1 = new GluonCS.LiveUavPanel();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -163,6 +164,7 @@
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.CaptionFont = new System.Drawing.Font("Trebuchet MS", 12.5F, System.Drawing.FontStyle.Bold);
             this.panel4.CaptionHeight = 27;
+            this.panel4.Controls.Add(this._tbLog);
             this.panel4.Controls.Add(this.m_cboToolStripRenderer);
             this.panel4.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(65)))), ((int)(((byte)(118)))));
             this.panel4.CustomColors.CaptionCloseIcon = System.Drawing.SystemColors.ControlText;
@@ -196,7 +198,7 @@
             // m_cboToolStripRenderer
             // 
             this.m_cboToolStripRenderer.FormattingEnabled = true;
-            this.m_cboToolStripRenderer.Location = new System.Drawing.Point(140, 41);
+            this.m_cboToolStripRenderer.Location = new System.Drawing.Point(229, 31);
             this.m_cboToolStripRenderer.Name = "m_cboToolStripRenderer";
             this.m_cboToolStripRenderer.Size = new System.Drawing.Size(121, 21);
             this.m_cboToolStripRenderer.TabIndex = 0;
@@ -264,13 +266,13 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._btnOptions});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // _btnOptions
             // 
             this._btnOptions.Name = "_btnOptions";
-            this._btnOptions.Size = new System.Drawing.Size(116, 22);
+            this._btnOptions.Size = new System.Drawing.Size(122, 22);
             this._btnOptions.Text = "Options";
             this._btnOptions.Click += new System.EventHandler(this._btnOptions_Click);
             // 
@@ -281,27 +283,38 @@
             this.zoomoutToolStripMenuItem,
             this.toolStripSeparator1});
             this._gmapContextStrip.Name = "_gmapContextStrip";
-            this._gmapContextStrip.Size = new System.Drawing.Size(128, 54);
+            this._gmapContextStrip.Size = new System.Drawing.Size(131, 54);
             // 
             // zoomToolStripMenuItem
             // 
             this.zoomToolStripMenuItem.Name = "zoomToolStripMenuItem";
-            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.zoomToolStripMenuItem.Text = "&Zoom";
             // 
             // zoomoutToolStripMenuItem
             // 
             this.zoomoutToolStripMenuItem.Name = "zoomoutToolStripMenuItem";
-            this.zoomoutToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.zoomoutToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.zoomoutToolStripMenuItem.Text = "Zoom &out";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(124, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(127, 6);
+            // 
+            // _tbLog
+            // 
+            this._tbLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._tbLog.Location = new System.Drawing.Point(1, 28);
+            this._tbLog.Multiline = true;
+            this._tbLog.Name = "_tbLog";
+            this._tbLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this._tbLog.Size = new System.Drawing.Size(505, 71);
+            this._tbLog.TabIndex = 1;
             // 
             // liveUavPanel1
             // 
+            this.liveUavPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.liveUavPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.liveUavPanel1.Location = new System.Drawing.Point(1, 28);
             this.liveUavPanel1.Name = "liveUavPanel1";
@@ -330,6 +343,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this._layersPanel.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -360,6 +374,7 @@
         private System.Windows.Forms.ToolStripButton _btnZoomin;
         private System.Windows.Forms.ToolStripButton _btnZoomout;
         private System.Windows.Forms.ToolStripMenuItem _btnOptions;
+        private System.Windows.Forms.TextBox _tbLog;
     }
 }
 

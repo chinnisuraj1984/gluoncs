@@ -51,13 +51,13 @@
             this._btnChangeFilename = new System.Windows.Forms.Button();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this._cbLogToFile = new System.Windows.Forms.CheckBox();
+            this.xPanderPanel3 = new BSE.Windows.Forms.XPanderPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this._tbFlightgear = new System.Windows.Forms.TextBox();
+            this._cbSimulation = new System.Windows.Forms.CheckBox();
             this._btn_connect = new System.Windows.Forms.Button();
             this._btn_connectionless = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.xPanderPanel3 = new BSE.Windows.Forms.XPanderPanel();
-            this._cbSimulation = new System.Windows.Forms.CheckBox();
-            this._tbFlightgear = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.xPanderPanelList1.SuspendLayout();
             this.xPanderPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -65,8 +65,8 @@
             this.groupBox1.SuspendLayout();
             this.xPanderPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.xPanderPanel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // xPanderPanelList1
@@ -80,7 +80,7 @@
             this.xPanderPanelList1.Location = new System.Drawing.Point(0, 0);
             this.xPanderPanelList1.Name = "xPanderPanelList1";
             this.xPanderPanelList1.PanelColors = null;
-            this.xPanderPanelList1.Size = new System.Drawing.Size(275, 225);
+            this.xPanderPanelList1.Size = new System.Drawing.Size(275, 243);
             this.xPanderPanelList1.TabIndex = 0;
             this.xPanderPanelList1.Text = "xPanderPanelList1";
             // 
@@ -112,11 +112,12 @@
             this.xPanderPanel2.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(225)))), ((int)(((byte)(252)))));
             this.xPanderPanel2.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.xPanderPanel2.CustomColors.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.xPanderPanel2.Expand = true;
             this.xPanderPanel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel2.Image = null;
             this.xPanderPanel2.Name = "xPanderPanel2";
             this.xPanderPanel2.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
-            this.xPanderPanel2.Size = new System.Drawing.Size(275, 25);
+            this.xPanderPanel2.Size = new System.Drawing.Size(275, 193);
             this.xPanderPanel2.TabIndex = 1;
             this.xPanderPanel2.Text = "Basic settings";
             this.xPanderPanel2.ToolTipTextCloseIcon = null;
@@ -363,36 +364,6 @@
             this._cbLogToFile.UseVisualStyleBackColor = true;
             this._cbLogToFile.CheckedChanged += new System.EventHandler(this._cbLogToFile_CheckedChanged);
             // 
-            // _btn_connect
-            // 
-            this._btn_connect.Location = new System.Drawing.Point(138, 10);
-            this._btn_connect.Name = "_btn_connect";
-            this._btn_connect.Size = new System.Drawing.Size(120, 23);
-            this._btn_connect.TabIndex = 5;
-            this._btn_connect.Text = "&Connect";
-            this._btn_connect.UseVisualStyleBackColor = true;
-            this._btn_connect.Click += new System.EventHandler(this._btn_connect_Click);
-            // 
-            // _btn_connectionless
-            // 
-            this._btn_connectionless.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this._btn_connectionless.Location = new System.Drawing.Point(9, 10);
-            this._btn_connectionless.Name = "_btn_connectionless";
-            this._btn_connectionless.Size = new System.Drawing.Size(119, 23);
-            this._btn_connectionless.TabIndex = 6;
-            this._btn_connectionless.Text = "Work connection&less";
-            this._btn_connectionless.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this._btn_connect);
-            this.panel1.Controls.Add(this._btn_connectionless);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 228);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(275, 45);
-            this.panel1.TabIndex = 1;
-            // 
             // xPanderPanel3
             // 
             this.xPanderPanel3.CaptionFont = new System.Drawing.Font("Trebuchet MS", 8.75F, System.Drawing.FontStyle.Bold);
@@ -420,17 +391,33 @@
             this.xPanderPanel3.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(225)))), ((int)(((byte)(252)))));
             this.xPanderPanel3.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.xPanderPanel3.CustomColors.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.xPanderPanel3.Expand = true;
             this.xPanderPanel3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel3.Image = null;
             this.xPanderPanel3.Name = "xPanderPanel3";
             this.xPanderPanel3.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
-            this.xPanderPanel3.Size = new System.Drawing.Size(275, 175);
+            this.xPanderPanel3.Size = new System.Drawing.Size(275, 25);
             this.xPanderPanel3.TabIndex = 2;
             this.xPanderPanel3.Text = "Simulation";
             this.xPanderPanel3.ToolTipTextCloseIcon = null;
             this.xPanderPanel3.ToolTipTextExpandIconPanelCollapsed = null;
             this.xPanderPanel3.ToolTipTextExpandIconPanelExpanded = null;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Flightgear path:";
+            // 
+            // _tbFlightgear
+            // 
+            this._tbFlightgear.Location = new System.Drawing.Point(10, 88);
+            this._tbFlightgear.Name = "_tbFlightgear";
+            this._tbFlightgear.Size = new System.Drawing.Size(256, 20);
+            this._tbFlightgear.TabIndex = 1;
+            this._tbFlightgear.Text = "D:\\Program Files\\FlightGear\\";
             // 
             // _cbSimulation
             // 
@@ -442,22 +429,35 @@
             this._cbSimulation.Text = "Set Gluonpilot in Flightgear simulation mode \r\nand launch Flightgear";
             this._cbSimulation.UseVisualStyleBackColor = true;
             // 
-            // _tbFlightgear
+            // _btn_connect
             // 
-            this._tbFlightgear.Location = new System.Drawing.Point(10, 88);
-            this._tbFlightgear.Name = "_tbFlightgear";
-            this._tbFlightgear.Size = new System.Drawing.Size(256, 20);
-            this._tbFlightgear.TabIndex = 1;
-            this._tbFlightgear.Text = "D:\\Program Files\\FlightGear\\";
+            this._btn_connect.Location = new System.Drawing.Point(138, 10);
+            this._btn_connect.Name = "_btn_connect";
+            this._btn_connect.Size = new System.Drawing.Size(120, 23);
+            this._btn_connect.TabIndex = 5;
+            this._btn_connect.Text = "&Connect";
+            this._btn_connect.UseVisualStyleBackColor = true;
+            this._btn_connect.Click += new System.EventHandler(this._btn_connect_Click);
             // 
-            // label1
+            // _btn_connectionless
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Flightgear path:";
+            this._btn_connectionless.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this._btn_connectionless.Location = new System.Drawing.Point(9, 10);
+            this._btn_connectionless.Name = "_btn_connectionless";
+            this._btn_connectionless.Size = new System.Drawing.Size(119, 23);
+            this._btn_connectionless.TabIndex = 6;
+            this._btn_connectionless.Text = "Work connection&less";
+            this._btn_connectionless.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this._btn_connect);
+            this.panel1.Controls.Add(this._btn_connectionless);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 243);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(275, 45);
+            this.panel1.TabIndex = 1;
             // 
             // ConnectForm
             // 
@@ -465,7 +465,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this._btn_connectionless;
-            this.ClientSize = new System.Drawing.Size(275, 273);
+            this.ClientSize = new System.Drawing.Size(275, 288);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.xPanderPanelList1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -487,9 +487,9 @@
             this.xPanderPanel1.ResumeLayout(false);
             this.xPanderPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.xPanderPanel3.ResumeLayout(false);
             this.xPanderPanel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
