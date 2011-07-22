@@ -89,6 +89,7 @@ namespace GluonCS.LiveUavLayer
             model.UavAttitudeChanged += new LiveUavModel.ChangedEventHandler(model_UavAttitudeChanged);
             model.CommunicationLost += new LiveUavModel.ChangedEventHandler(model_CommunicationLost);
             model.CommunicationEstablished += new LiveUavModel.ChangedEventHandler(model_CommunicationEstablished);
+            model.CenterOnUav += new LiveUavModel.ChangedEventHandler(model_CenterUav);
 
             // context menu strips
             ToolStripItem i = general_menustrip.Items.Add("Set &home");
@@ -109,6 +110,11 @@ namespace GluonCS.LiveUavLayer
 
             zoomtowaypoints = new Timer();
             zoomtowaypoints.Tick += new EventHandler(zoomtowaypoints_Tick);
+        }
+
+        void model_CenterUav(object sender, EventArgs e)
+        {
+            gmap.Position = uavMarker.Position;
         }
 
         public void RecenterMap()

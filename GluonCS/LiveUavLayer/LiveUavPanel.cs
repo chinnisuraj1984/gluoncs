@@ -110,47 +110,82 @@ namespace GluonCS
         {
             if (model.Serial != null && model.Serial.IsOpen)
                 _btnConnect.Checked = true;
+            else
+                _btnConnect.Checked = false;
 
-            if (model.NumberOfGpsSatellites >= 0)
+            if (!model.CommunicationAlive)
             {
-                _lblGpsSat.Text = "GPS: " + model.NumberOfGpsSatellites;
-                if (model.NumberOfGpsSatellites > 5)
-                    _lblGpsSat.BackColor = Color.Green;
-                else if (model.NumberOfGpsSatellites > 3)
-                    _lblGpsSat.BackColor = Color.Orange;
-                else
-                    _lblGpsSat.BackColor = Color.Red;
-            }
-
-            if (model.NumberOfGpsSatellites == -1)
-            {
-                _pbGps.Value = 0;
-                _pbGps.Text = "Not found";
-                _lblGpsSat.BackColor = Color.Red;
+                _lblFlightMode.Text = "! Connection lost !";
+                _lblFlightMode.BackColor = Color.Orange;
             }
             else
+            {
+                if (model.FlightMode == ControlInfo.FlightModes.AUTOPILOT)
+                {
+                    _lblFlightMode.Text = "Autopilot ON";
+                    _lblFlightMode.BackColor = Color.LimeGreen;
+                }
+                else if (model.FlightMode == ControlInfo.FlightModes.AUTOPILOT)
+                {
+                    _lblFlightMode.Text = "Stabilized manual\r\nRC mode";
+                    _lblFlightMode.BackColor = Color.Yellow;
+                }
+                else if (model.FlightMode == ControlInfo.FlightModes.MANUAL)
+                {
+                    _lblFlightMode.Text = "Autopilot OFF\r\nManual RC mode";
+                    _lblFlightMode.BackColor = Color.Red;
+                }
+            }
+
+            if (model.NumberOfGpsSatellites >= 0)
             {
                 if (model.NumberOfGpsSatellites < 6)
                 {
                     _pbGps.ForeColor = Color.Red;
                     _lblGpsSat.BackColor = Color.Red;
+                    _pbGps.Text = "Acquiring (" + model.NumberOfGpsSatellites + ")";
                 }
                 else
                 {
-                    _pbGps.ForeColor = Color.Green;
+                    _pbGps.ForeColor = Color.LimeGreen;
                     _lblGpsSat.BackColor = _lblGpsSat.Parent.BackColor;
+                    _pbGps.Text = "Locked (" + model.NumberOfGpsSatellites + ")";
                 }
                 _pbGps.Value = model.NumberOfGpsSatellites;
-                _pbGps.Text = model.NumberOfGpsSatellites.ToString();
             }
+            else //if (model.NumberOfGpsSatellites == -1)
+            {
+                _pbGps.Value = 0;
+                _pbGps.Text = "Not found";
+                _lblGpsSat.BackColor = Color.Red;
+            }
+
 
             _pbBattery.Value = (int)(model.BatteryVoltage * 10.0);
             _pbBattery.Text = model.BatteryVoltage.ToString() + " V";
-            _pbLink.Value = (int)Math.Max(0.0, Math.Min(100.0, 110.0 - model.SecondsConnectionLost() * 20.0));  // 5 seconds without connection = 0%
-            if (model.SecondsConnectionLost() > 1)
-                _lblLink.BackColor = Color.Red;
+            if (model.SecondsConnectionLost() > 0.3)
+            {
+                _pbLink.Text = model.SecondsConnectionLost().ToString("F0") + " s lost";
+                _pbLink.Value = (int)Math.Max(0.0, Math.Min(100.0, 110.0 - model.SecondsConnectionLost() * 20.0));  // 5 seconds without connection = 0%
+                if (model.SecondsConnectionLost() < 3)
+                {
+                    _pbLink.ForeColor = Color.Yellow;
+                }
+                else
+                {
+                    _pbLink.ForeColor = Color.Red;
+                    _lblLink.BackColor = Color.Red;
+                }
+            }
             else
+            {
+                _pbLink.Text = "OK";
+                _pbLink.Value = 100;
+                _pbLink.ForeColor = Color.LimeGreen;
                 _lblLink.BackColor = _lblLink.Parent.BackColor;
+            }
+
+
             _pbRcLink.Value = model.RcLink;
             _pbThrottle.Value = model.ThrottlePct;
 
@@ -512,6 +547,38 @@ namespace GluonCS
         {
             Gluonpilot.GluonConfig gc = new Gluonpilot.GluonConfig(model.Serial);
             gc.Show();
+        }
+
+        private void _btnConnect_Click(object sender, EventArgs e)
+        {
+            if (_btnConnect.Checked)
+            {
+                if (model.Serial != null && model.Serial.IsOpen)
+                {
+                    if (MessageBox.Show("Are you sure you want to close the connection?", "Are you sure?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
+                        model.Serial.Close();
+                }
+            }
+            else
+            {
+                ConnectForm cf = new ConnectForm();
+                DialogResult r = cf.ShowDialog(this);
+                if (r == System.Windows.Forms.DialogResult.Yes)
+                {
+                    model.Connect(cf.SerialPort.PortName, cf.SerialPort.BaudRate, cf.LogPath, cf.Simulation ? cf.FlightgearPath : "");
+                }
+                cf.Close();
+            }
+        }
+
+        private void _cockpitPanel_CloseClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void _btnCenterUav_Click(object sender, EventArgs e)
+        {
+            model.CenterMapOnUav();
         }
 
 
