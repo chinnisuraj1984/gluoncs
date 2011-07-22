@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiveUavPanel));
             this._cockpitPanel = new BSE.Windows.Forms.Panel();
             this.splitter1 = new BSE.Windows.Forms.Splitter();
+            this._lblFlightMode = new System.Windows.Forms.Label();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this._btnConnect = new System.Windows.Forms.ToolStripButton();
@@ -39,7 +40,6 @@
             this._btnCenterUav = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this._btnConfig = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this._pbRcLink = new ProgressBarColored();
             this.label3 = new System.Windows.Forms.Label();
             this._pbLink = new ProgressBarColored();
@@ -111,6 +111,7 @@
             this._cockpitPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this._cockpitPanel.CaptionFont = new System.Drawing.Font("Trebuchet MS", 8.75F, System.Drawing.FontStyle.Bold);
             this._cockpitPanel.CaptionHeight = 20;
+            this._cockpitPanel.Controls.Add(this._lblFlightMode);
             this._cockpitPanel.Controls.Add(this.toolStripContainer1);
             this._cockpitPanel.Controls.Add(this._pbRcLink);
             this._cockpitPanel.Controls.Add(this.label3);
@@ -162,6 +163,7 @@
             this._cockpitPanel.ToolTipTextCloseIcon = null;
             this._cockpitPanel.ToolTipTextExpandIconPanelCollapsed = null;
             this._cockpitPanel.ToolTipTextExpandIconPanelExpanded = null;
+            this._cockpitPanel.CloseClick += new System.EventHandler<System.EventArgs>(this._cockpitPanel_CloseClick);
             // 
             // splitter1
             // 
@@ -172,6 +174,17 @@
             this.splitter1.Size = new System.Drawing.Size(343, 3);
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
+            // 
+            // _lblFlightMode
+            // 
+            this._lblFlightMode.BackColor = System.Drawing.Color.LightGray;
+            this._lblFlightMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._lblFlightMode.Location = new System.Drawing.Point(7, 188);
+            this._lblFlightMode.Name = "_lblFlightMode";
+            this._lblFlightMode.Size = new System.Drawing.Size(134, 37);
+            this._lblFlightMode.TabIndex = 48;
+            this._lblFlightMode.Text = "Flight mode";
+            this._lblFlightMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // toolStripContainer1
             // 
@@ -198,11 +211,10 @@
             this.toolStripSeparator2,
             this._btnCenterUav,
             this.toolStripSeparator3,
-            this._btnConfig,
-            this.toolStripButton4});
+            this._btnConfig});
             this.toolStrip2.Location = new System.Drawing.Point(3, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(242, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(219, 25);
             this.toolStrip2.TabIndex = 0;
             // 
             // _btnConnect
@@ -213,6 +225,7 @@
             this._btnConnect.Name = "_btnConnect";
             this._btnConnect.Size = new System.Drawing.Size(23, 22);
             this._btnConnect.Text = "_btnConnect";
+            this._btnConnect.Click += new System.EventHandler(this._btnConnect_Click);
             // 
             // toolStripSeparator2
             // 
@@ -226,6 +239,7 @@
             this._btnCenterUav.Name = "_btnCenterUav";
             this._btnCenterUav.Size = new System.Drawing.Size(83, 22);
             this._btnCenterUav.Text = "Center UAV";
+            this._btnCenterUav.Click += new System.EventHandler(this._btnCenterUav_Click);
             // 
             // toolStripSeparator3
             // 
@@ -241,21 +255,12 @@
             this._btnConfig.Text = "Config";
             this._btnConfig.Click += new System.EventHandler(this._btnConfig_Click);
             // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "toolStripButton4";
-            // 
             // _pbRcLink
             // 
             this._pbRcLink.ForeColor = System.Drawing.Color.LimeGreen;
-            this._pbRcLink.Location = new System.Drawing.Point(40, 143);
+            this._pbRcLink.Location = new System.Drawing.Point(39, 123);
             this._pbRcLink.Name = "_pbRcLink";
-            this._pbRcLink.Size = new System.Drawing.Size(60, 15);
+            this._pbRcLink.Size = new System.Drawing.Size(64, 15);
             this._pbRcLink.Step = 1;
             this._pbRcLink.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this._pbRcLink.TabIndex = 46;
@@ -264,7 +269,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 145);
+            this.label3.Location = new System.Drawing.Point(6, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 13);
             this.label3.TabIndex = 45;
@@ -273,9 +278,9 @@
             // _pbLink
             // 
             this._pbLink.ForeColor = System.Drawing.Color.LimeGreen;
-            this._pbLink.Location = new System.Drawing.Point(40, 122);
+            this._pbLink.Location = new System.Drawing.Point(39, 102);
             this._pbLink.Name = "_pbLink";
-            this._pbLink.Size = new System.Drawing.Size(60, 15);
+            this._pbLink.Size = new System.Drawing.Size(64, 15);
             this._pbLink.Step = 1;
             this._pbLink.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this._pbLink.TabIndex = 44;
@@ -285,7 +290,7 @@
             // 
             this._lblLink.AutoSize = true;
             this._lblLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblLink.Location = new System.Drawing.Point(5, 124);
+            this._lblLink.Location = new System.Drawing.Point(5, 103);
             this._lblLink.Name = "_lblLink";
             this._lblLink.Size = new System.Drawing.Size(31, 13);
             this._lblLink.TabIndex = 43;
@@ -295,10 +300,10 @@
             // 
             this._pbGps.BackColor = System.Drawing.SystemColors.Control;
             this._pbGps.ForeColor = System.Drawing.Color.LimeGreen;
-            this._pbGps.Location = new System.Drawing.Point(40, 100);
+            this._pbGps.Location = new System.Drawing.Point(39, 80);
             this._pbGps.Maximum = 10;
             this._pbGps.Name = "_pbGps";
-            this._pbGps.Size = new System.Drawing.Size(60, 16);
+            this._pbGps.Size = new System.Drawing.Size(64, 16);
             this._pbGps.Step = 1;
             this._pbGps.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this._pbGps.TabIndex = 42;
@@ -307,9 +312,9 @@
             // _pbBattery
             // 
             this._pbBattery.ForeColor = System.Drawing.Color.LimeGreen;
-            this._pbBattery.Location = new System.Drawing.Point(40, 79);
+            this._pbBattery.Location = new System.Drawing.Point(38, 59);
             this._pbBattery.Name = "_pbBattery";
-            this._pbBattery.Size = new System.Drawing.Size(60, 15);
+            this._pbBattery.Size = new System.Drawing.Size(64, 15);
             this._pbBattery.Step = 1;
             this._pbBattery.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this._pbBattery.TabIndex = 41;
@@ -318,7 +323,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 169);
+            this.label1.Location = new System.Drawing.Point(6, 147);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 39;
@@ -327,7 +332,7 @@
             // _pbThrottle
             // 
             this._pbThrottle.ForeColor = System.Drawing.Color.LimeGreen;
-            this._pbThrottle.Location = new System.Drawing.Point(9, 185);
+            this._pbThrottle.Location = new System.Drawing.Point(9, 163);
             this._pbThrottle.Name = "_pbThrottle";
             this._pbThrottle.Size = new System.Drawing.Size(91, 14);
             this._pbThrottle.Step = 1;
@@ -337,7 +342,7 @@
             // _lblBlockname
             // 
             this._lblBlockname.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblBlockname.Location = new System.Drawing.Point(236, 125);
+            this._lblBlockname.Location = new System.Drawing.Point(236, 104);
             this._lblBlockname.Name = "_lblBlockname";
             this._lblBlockname.Size = new System.Drawing.Size(97, 13);
             this._lblBlockname.TabIndex = 36;
@@ -353,12 +358,12 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this._panelStrip, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tabControl1, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 248);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 232);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(343, 163);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(343, 179);
             this.tableLayoutPanel3.TabIndex = 35;
             // 
             // _panelStrip
@@ -393,7 +398,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 41);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(337, 119);
+            this.tabControl1.Size = new System.Drawing.Size(337, 135);
             this.tabControl1.TabIndex = 25;
             // 
             // tabPage1
@@ -402,7 +407,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(329, 93);
+            this.tabPage1.Size = new System.Drawing.Size(329, 109);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Altitude";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -423,7 +428,7 @@
             this._zgAlt.ScrollMinX = 0D;
             this._zgAlt.ScrollMinY = 0D;
             this._zgAlt.ScrollMinY2 = 0D;
-            this._zgAlt.Size = new System.Drawing.Size(323, 87);
+            this._zgAlt.Size = new System.Drawing.Size(323, 103);
             this._zgAlt.TabIndex = 0;
             // 
             // tabPage2
@@ -432,7 +437,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(329, 93);
+            this.tabPage2.Size = new System.Drawing.Size(329, 109);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Speed";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -453,7 +458,7 @@
             this._zgVel.ScrollMinX = 0D;
             this._zgVel.ScrollMinY = 0D;
             this._zgVel.ScrollMinY2 = 0D;
-            this._zgVel.Size = new System.Drawing.Size(323, 87);
+            this._zgVel.Size = new System.Drawing.Size(323, 103);
             this._zgVel.TabIndex = 1;
             // 
             // tabPage3
@@ -462,7 +467,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(329, 93);
+            this.tabPage3.Size = new System.Drawing.Size(329, 109);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Battery voltage";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -483,16 +488,16 @@
             this._zgBatV.ScrollMinX = 0D;
             this._zgBatV.ScrollMinY = 0D;
             this._zgBatV.ScrollMinY2 = 0D;
-            this._zgBatV.Size = new System.Drawing.Size(323, 87);
+            this._zgBatV.Size = new System.Drawing.Size(323, 103);
             this._zgBatV.TabIndex = 1;
             // 
             // _lblAltitudeAgl
             // 
             this._lblAltitudeAgl.AutoSize = true;
-            this._lblAltitudeAgl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblAltitudeAgl.Location = new System.Drawing.Point(260, 218);
+            this._lblAltitudeAgl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._lblAltitudeAgl.Location = new System.Drawing.Point(241, 211);
             this._lblAltitudeAgl.Name = "_lblAltitudeAgl";
-            this._lblAltitudeAgl.Size = new System.Drawing.Size(60, 16);
+            this._lblAltitudeAgl.Size = new System.Drawing.Size(69, 16);
             this._lblAltitudeAgl.TabIndex = 32;
             this._lblAltitudeAgl.Text = "0 m / 0 m";
             // 
@@ -500,7 +505,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(175, 218);
+            this.label9.Location = new System.Drawing.Point(147, 209);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 16);
             this.label9.TabIndex = 31;
@@ -510,7 +515,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(9, 218);
+            this.label14.Location = new System.Drawing.Point(147, 188);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(97, 16);
             this.label14.TabIndex = 30;
@@ -518,7 +523,7 @@
             // 
             // _lblFlightTime
             // 
-            this._lblFlightTime.Location = new System.Drawing.Point(236, 82);
+            this._lblFlightTime.Location = new System.Drawing.Point(236, 61);
             this._lblFlightTime.Name = "_lblFlightTime";
             this._lblFlightTime.Size = new System.Drawing.Size(100, 14);
             this._lblFlightTime.TabIndex = 29;
@@ -526,7 +531,7 @@
             // 
             // _lblTimeInBlock
             // 
-            this._lblTimeInBlock.Location = new System.Drawing.Point(236, 144);
+            this._lblTimeInBlock.Location = new System.Drawing.Point(236, 123);
             this._lblTimeInBlock.Name = "_lblTimeInBlock";
             this._lblTimeInBlock.Size = new System.Drawing.Size(100, 15);
             this._lblTimeInBlock.TabIndex = 28;
@@ -534,7 +539,7 @@
             // 
             // _lblTimeToWp
             // 
-            this._lblTimeToWp.Location = new System.Drawing.Point(236, 186);
+            this._lblTimeToWp.Location = new System.Drawing.Point(236, 165);
             this._lblTimeToWp.Name = "_lblTimeToWp";
             this._lblTimeToWp.Size = new System.Drawing.Size(97, 19);
             this._lblTimeToWp.TabIndex = 27;
@@ -542,7 +547,7 @@
             // 
             // _lblHomeDistance
             // 
-            this._lblHomeDistance.Location = new System.Drawing.Point(236, 102);
+            this._lblHomeDistance.Location = new System.Drawing.Point(236, 81);
             this._lblHomeDistance.Name = "_lblHomeDistance";
             this._lblHomeDistance.Size = new System.Drawing.Size(97, 17);
             this._lblHomeDistance.TabIndex = 26;
@@ -550,7 +555,7 @@
             // 
             // _lblDistNextWp
             // 
-            this._lblDistNextWp.Location = new System.Drawing.Point(236, 165);
+            this._lblDistNextWp.Location = new System.Drawing.Point(236, 144);
             this._lblDistNextWp.Name = "_lblDistNextWp";
             this._lblDistNextWp.Size = new System.Drawing.Size(97, 15);
             this._lblDistNextWp.TabIndex = 4;
@@ -560,7 +565,7 @@
             // 
             this._lblVoltage.AutoSize = true;
             this._lblVoltage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblVoltage.Location = new System.Drawing.Point(5, 78);
+            this._lblVoltage.Location = new System.Drawing.Point(5, 57);
             this._lblVoltage.Name = "_lblVoltage";
             this._lblVoltage.Size = new System.Drawing.Size(28, 15);
             this._lblVoltage.TabIndex = 3;
@@ -568,8 +573,8 @@
             // 
             // _lblSpeed
             // 
-            this._lblSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblSpeed.Location = new System.Drawing.Point(104, 212);
+            this._lblSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._lblSpeed.Location = new System.Drawing.Point(241, 182);
             this._lblSpeed.Name = "_lblSpeed";
             this._lblSpeed.Size = new System.Drawing.Size(65, 29);
             this._lblSpeed.TabIndex = 2;
@@ -581,7 +586,7 @@
             this._lblGpsSat.AutoSize = true;
             this._lblGpsSat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._lblGpsSat.ImageKey = "ERROR";
-            this._lblGpsSat.Location = new System.Drawing.Point(5, 101);
+            this._lblGpsSat.Location = new System.Drawing.Point(5, 80);
             this._lblGpsSat.Name = "_lblGpsSat";
             this._lblGpsSat.Size = new System.Drawing.Size(32, 15);
             this._lblGpsSat.TabIndex = 1;
@@ -594,7 +599,7 @@
             this._artificialHorizon.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this._artificialHorizon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this._artificialHorizon.CornersRadius = 20F;
-            this._artificialHorizon.Location = new System.Drawing.Point(109, 75);
+            this._artificialHorizon.Location = new System.Drawing.Point(110, 54);
             this._artificialHorizon.Name = "_artificialHorizon";
             this._artificialHorizon.pitch_angle = 0D;
             this._artificialHorizon.roll_angle = 0D;
@@ -895,6 +900,6 @@
         private System.Windows.Forms.ToolStripButton _btnCenterUav;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton _btnConfig;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.Label _lblFlightMode;
     }
 }

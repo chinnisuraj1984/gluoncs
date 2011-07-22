@@ -79,6 +79,7 @@ namespace GluonCS
             
             // uav layer
             model = new LiveUavLayer.LiveUavModel();
+            model.InformationMessageReceived += new LiveUavModel.TextReceivedEventHandler(model_InformationMessageReceived);
             controller = new LiveUavLayer.GMapController(_gMapControl, model);
             liveUavPanel1.SetModel(model);
 
@@ -87,6 +88,21 @@ namespace GluonCS
             _gMapControl.MapType = Properties.Settings.Default.MapType;
         }
 
+        void model_InformationMessageReceived(string s)
+        {
+            this.BeginInvoke(new UpdateTextBox(UpdateLog), new object[] { s });
+        }
+        
+        private delegate void UpdateTextBox(string line);
+        private void UpdateLog(string line)
+        {
+            //if (_cb_print_timestamp.Checked)
+            _tbLog.AppendText("[" + DateTime.Now.ToString("hh:mm:ss.ff") + "]  ");
+            _tbLog.AppendText(line + "\r\n");
+            _tbLog.ScrollToCaret();
+        }
+
+            
         private void SetProxy()
         {
             if (Properties.Settings.Default.UseProxy)
@@ -227,18 +243,8 @@ namespace GluonCS
                 DialogResult r = cf.ShowDialog(this);
                 if (r == System.Windows.Forms.DialogResult.Yes)
                 {
-                    Console.WriteLine("OK");
-                    SerialCommunication_CSV c = new SerialCommunication_CSV();
-                    c.Open(cf.SerialPort.PortName, cf.SerialPort.BaudRate);
-                    if (cf.LogPath != "")
-                        c.LogToFilename = cf.LogPath;
-                    model.Serial = c;
-                    if (cf.Simulation)
-                    {
-                        FlightgearThread fgt = new FlightgearThread(model.Serial, cf.FlightgearPath);
-                    }
-                    c.NonParsedCommunicationReceived += new SerialCommunication.ReceiveNonParsedCommunication(c_NonParsedCommunicationReceived);
-                    c.CommunicationReceived += new SerialCommunication.ReceiveCommunication(c_CommunicationReceived);
+                    model.Connect(cf.SerialPort.PortName, cf.SerialPort.BaudRate, cf.LogPath, cf.Simulation?cf.FlightgearPath:"");
+                    //c.NonParsedCommunicationReceived += new SerialCommunication.ReceiveNonParsedCommunication(c_NonParsedCommunicationReceived);
                 }
                 else if (r == System.Windows.Forms.DialogResult.Cancel)
                 {
@@ -249,24 +255,6 @@ namespace GluonCS
             
         }
 
-        private delegate void UpdateTextBox(string line);
-        private void UpdateLog(string line)
-        {
-            //if (_cb_print_timestamp.Checked)
-            _tbLog.AppendText("[" + DateTime.Now.ToString("hh:mm:ss.ff") + "]  ");
-            _tbLog.AppendText(line + "\r\n");
-            _tbLog.ScrollToCaret();
-        }
-
-        void c_CommunicationReceived(string line)
-        {
-            //throw new NotImplementedException();
-        }
-
-        void c_NonParsedCommunicationReceived(string line)
-        {
-            this.BeginInvoke(new UpdateTextBox(UpdateLog), new object[] { line });
-        }
 
         private void _btnZoomin_Click(object sender, EventArgs e)
         {

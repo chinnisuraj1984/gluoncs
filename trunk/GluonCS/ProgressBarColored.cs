@@ -5,7 +5,18 @@ using System.Drawing;
 public class ProgressBarColored : ProgressBar
 {
     private SolidBrush brush = null;
-    public string Text = "";
+    public string _text = "";
+    public string Text
+    {
+        set
+        {
+            if (value != _text)
+            {
+                _text = value;
+                this.Refresh();
+            }
+        }
+    }
 
     public ProgressBarColored()
     {
@@ -25,14 +36,13 @@ public class ProgressBarColored : ProgressBar
         rec.Height = rec.Height - 4;
         e.Graphics.FillRectangle(brush, 2, 2, rec.Width, rec.Height);
 
-        if (Text.Length == 0 && this.Maximum == 100)
+        if (_text.Length == 0 && this.Maximum == 100)
             s = "" + this.Value + "%";
-        else if (Text.Length == 0)
+        else if (_text.Length == 0)
             s = this.Value.ToString();
         else
-            s = Text;
+            s = _text;
         SizeF sf1 = e.Graphics.MeasureString(s, new Font(FontFamily.GenericSansSerif, 8));
         e.Graphics.DrawString(s, new Font(FontFamily.GenericSansSerif, 8), Brushes.Black, this.Width / 2 - sf1.Width / 2, 1 + this.Height / 2 - sf1.Height / 2);
-
     }
 }

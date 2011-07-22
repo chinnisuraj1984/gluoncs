@@ -151,9 +151,11 @@ namespace Communication
                     {
                         if (CommunicationAlive && SecondsConnectionLost() > 1.0)
                         {
-                            CommunicationAlive = false;
                             if (CommunicationLost != null && SecondsConnectionLost() >= 5.0)
+                            {
+                                CommunicationAlive = false;
                                 CommunicationLost();
+                            }
                         }
                         Thread.Sleep(50);
                         //Console.WriteLine("Waiting for communication...");
@@ -471,9 +473,11 @@ namespace Communication
                 {
                     if (CommunicationAlive)
                     {
-                        CommunicationAlive = false;
-                        if (CommunicationLost != null && SecondsConnectionLost() >= 10.0)
+                        if (CommunicationLost != null && SecondsConnectionLost() >= 5.0)
+                        {
                             CommunicationLost();
+                            CommunicationAlive = false;
+                        }
                     }
                 }
                 catch (IOException ioe)

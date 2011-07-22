@@ -9,12 +9,15 @@ using System.IO.Ports;
 using Communication;
 using Amib.Threading;
 using System.Threading;
+using FlightgearCommunication;
 
 namespace GluonCS.LiveUavLayer
 {
     public class LiveUavModel
     {
         public delegate void ChangedEventHandler(object sender, EventArgs e);
+        public delegate void TextReceivedEventHandler(string s);
+        public event TextReceivedEventHandler InformationMessageReceived;
         public event ChangedEventHandler NavigationLocalListChanged;
         public event ChangedEventHandler NavigationRemoteListChanged;
         public event ChangedEventHandler HomeChanged;
@@ -22,6 +25,7 @@ namespace GluonCS.LiveUavLayer
         public event ChangedEventHandler UavAttitudeChanged;
         public event ChangedEventHandler CommunicationLost;
         public event ChangedEventHandler CommunicationEstablished;
+        public event ChangedEventHandler CenterOnUav;
 
         private AutoResetEvent navigationLineReceived = new AutoResetEvent(false);  // used to wait for acknowledgement when a navigation instruction has been written
 
@@ -71,17 +75,37 @@ namespace GluonCS.LiveUavLayer
             set
             {
                 serial = value;
-                value.PressureTempCommunicationReceived += new SerialCommunication.ReceivePressureTempCommunicationFrame(connection_PressureTempCommunicationReceived);
-                value.AttitudeCommunicationReceived += new SerialCommunication.ReceiveAttitudeCommunicationFrame(connection_AttitudeCommunicationReceived);
-                value.NavigationInstructionCommunicationReceived += new SerialCommunication.ReceiveNavigationInstructionCommunicationFrame(connection_NavigationInstructionCommunicationReceived);
-                value.GpsBasicCommunicationReceived += new SerialCommunication.ReceiveGpsBasicCommunicationFrame(connection_GpsBasicCommunicationReceived);
-                value.ControlInfoCommunicationReceived += new SerialCommunication.ReceiveControlInfoCommunicationFrame(connection_ControlInfoCommunicationReceived);
-                value.CommunicationEstablished += new SerialCommunication.EstablishedCommunication(connection_CommunicationEstablished);
-                value.CommunicationLost += new SerialCommunication.LostCommunication(connection_CommunicationLost);
-                uavSynchronizer = new UavNavigationSynchronize(this, serial);
-                uavSynchronizer.StartThread();
             }
             get { return serial; }
+        }
+
+        public void Connect(string port, int baudrate, string logpath, string flightgearpath)
+        {
+            SerialCommunication_CSV s = new SerialCommunication_CSV();
+            s.Open(port, baudrate);
+            if (logpath != "")
+                Serial.LogToFilename = logpath;
+            Serial = s;
+            Serial.PressureTempCommunicationReceived += new SerialCommunication.ReceivePressureTempCommunicationFrame(connection_PressureTempCommunicationReceived);
+            Serial.AttitudeCommunicationReceived += new SerialCommunication.ReceiveAttitudeCommunicationFrame(connection_AttitudeCommunicationReceived);
+            Serial.NavigationInstructionCommunicationReceived += new SerialCommunication.ReceiveNavigationInstructionCommunicationFrame(connection_NavigationInstructionCommunicationReceived);
+            Serial.GpsBasicCommunicationReceived += new SerialCommunication.ReceiveGpsBasicCommunicationFrame(connection_GpsBasicCommunicationReceived);
+            Serial.ControlInfoCommunicationReceived += new SerialCommunication.ReceiveControlInfoCommunicationFrame(connection_ControlInfoCommunicationReceived);
+            Serial.CommunicationEstablished += new SerialCommunication.EstablishedCommunication(connection_CommunicationEstablished);
+            Serial.CommunicationLost += new SerialCommunication.LostCommunication(connection_CommunicationLost);
+            Serial.NonParsedCommunicationReceived += new SerialCommunication.ReceiveNonParsedCommunication(connection_NonParsedCommunicationReceived);
+            uavSynchronizer = new UavNavigationSynchronize(this, serial);
+            uavSynchronizer.StartThread();
+            if (flightgearpath != "")
+            {
+                FlightgearThread fgt = new FlightgearThread(Serial, flightgearpath);
+            }
+        }
+
+        private void connection_NonParsedCommunicationReceived(string line)
+        {
+            if (InformationMessageReceived != null)
+                InformationMessageReceived(line);
         }
 
 
@@ -114,6 +138,12 @@ namespace GluonCS.LiveUavLayer
             {
                 //base.Finalize();
             }
+        }
+
+        public void CenterMapOnUav()
+        {
+            if (CenterOnUav != null)
+                CenterOnUav(this, EventArgs.Empty);
         }
 
         public double DistanceNextWaypoint()
