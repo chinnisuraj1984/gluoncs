@@ -32,6 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiveUavPanel));
             this._cockpitPanel = new BSE.Windows.Forms.Panel();
             this.splitter1 = new BSE.Windows.Forms.Splitter();
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this._btnConnect = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this._btnCenterUav = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this._btnConfig = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this._pbRcLink = new ProgressBarColored();
             this.label3 = new System.Windows.Forms.Label();
             this._pbLink = new ProgressBarColored();
@@ -58,14 +66,6 @@
             this._lblTimeInBlock = new System.Windows.Forms.Label();
             this._lblTimeToWp = new System.Windows.Forms.Label();
             this._lblHomeDistance = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this._cbAltitudeMode = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this._lblDistNextWp = new System.Windows.Forms.Label();
             this._lblVoltage = new System.Windows.Forms.Label();
             this._lblSpeed = new System.Windows.Forms.Label();
@@ -91,14 +91,15 @@
             this._imageListGps = new System.Windows.Forms.ImageList(this.components);
             this._gmapContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this._cockpitPanel.SuspendLayout();
+            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this._panelStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this._navigationPanel.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -110,6 +111,7 @@
             this._cockpitPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this._cockpitPanel.CaptionFont = new System.Drawing.Font("Trebuchet MS", 8.75F, System.Drawing.FontStyle.Bold);
             this._cockpitPanel.CaptionHeight = 20;
+            this._cockpitPanel.Controls.Add(this.toolStripContainer1);
             this._cockpitPanel.Controls.Add(this._pbRcLink);
             this._cockpitPanel.Controls.Add(this.label3);
             this._cockpitPanel.Controls.Add(this._pbLink);
@@ -127,8 +129,6 @@
             this._cockpitPanel.Controls.Add(this._lblTimeInBlock);
             this._cockpitPanel.Controls.Add(this._lblTimeToWp);
             this._cockpitPanel.Controls.Add(this._lblHomeDistance);
-            this._cockpitPanel.Controls.Add(this.tableLayoutPanel2);
-            this._cockpitPanel.Controls.Add(this.tableLayoutPanel1);
             this._cockpitPanel.Controls.Add(this._lblDistNextWp);
             this._cockpitPanel.Controls.Add(this._lblVoltage);
             this._cockpitPanel.Controls.Add(this._lblSpeed);
@@ -173,12 +173,89 @@
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
             // 
+            // toolStripContainer1
+            // 
+            // 
+            // toolStripContainer1.ContentPanel
+            // 
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(341, 2);
+            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.toolStripContainer1.Location = new System.Drawing.Point(1, 21);
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            this.toolStripContainer1.Size = new System.Drawing.Size(341, 27);
+            this.toolStripContainer1.TabIndex = 47;
+            this.toolStripContainer1.Text = "toolStripContainer1";
+            // 
+            // toolStripContainer1.TopToolStripPanel
+            // 
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip2);
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._btnConnect,
+            this.toolStripSeparator2,
+            this._btnCenterUav,
+            this.toolStripSeparator3,
+            this._btnConfig,
+            this.toolStripButton4});
+            this.toolStrip2.Location = new System.Drawing.Point(3, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(242, 25);
+            this.toolStrip2.TabIndex = 0;
+            // 
+            // _btnConnect
+            // 
+            this._btnConnect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this._btnConnect.Image = ((System.Drawing.Image)(resources.GetObject("_btnConnect.Image")));
+            this._btnConnect.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this._btnConnect.Name = "_btnConnect";
+            this._btnConnect.Size = new System.Drawing.Size(23, 22);
+            this._btnConnect.Text = "_btnConnect";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // _btnCenterUav
+            // 
+            this._btnCenterUav.Image = ((System.Drawing.Image)(resources.GetObject("_btnCenterUav.Image")));
+            this._btnCenterUav.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this._btnCenterUav.Name = "_btnCenterUav";
+            this._btnCenterUav.Size = new System.Drawing.Size(83, 22);
+            this._btnCenterUav.Text = "Center UAV";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // _btnConfig
+            // 
+            this._btnConfig.Image = ((System.Drawing.Image)(resources.GetObject("_btnConfig.Image")));
+            this._btnConfig.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this._btnConfig.Name = "_btnConfig";
+            this._btnConfig.Size = new System.Drawing.Size(58, 22);
+            this._btnConfig.Text = "Config";
+            this._btnConfig.Click += new System.EventHandler(this._btnConfig_Click);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton4.Text = "toolStripButton4";
+            // 
             // _pbRcLink
             // 
             this._pbRcLink.ForeColor = System.Drawing.Color.LimeGreen;
-            this._pbRcLink.Location = new System.Drawing.Point(12, 197);
+            this._pbRcLink.Location = new System.Drawing.Point(40, 143);
             this._pbRcLink.Name = "_pbRcLink";
-            this._pbRcLink.Size = new System.Drawing.Size(62, 15);
+            this._pbRcLink.Size = new System.Drawing.Size(60, 15);
             this._pbRcLink.Step = 1;
             this._pbRcLink.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this._pbRcLink.TabIndex = 46;
@@ -187,18 +264,18 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 181);
+            this.label3.Location = new System.Drawing.Point(6, 145);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.Size = new System.Drawing.Size(24, 13);
             this.label3.TabIndex = 45;
-            this.label3.Text = "Rc link:";
+            this.label3.Text = "RC";
             // 
             // _pbLink
             // 
             this._pbLink.ForeColor = System.Drawing.Color.LimeGreen;
-            this._pbLink.Location = new System.Drawing.Point(12, 162);
+            this._pbLink.Location = new System.Drawing.Point(40, 122);
             this._pbLink.Name = "_pbLink";
-            this._pbLink.Size = new System.Drawing.Size(62, 15);
+            this._pbLink.Size = new System.Drawing.Size(60, 15);
             this._pbLink.Step = 1;
             this._pbLink.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this._pbLink.TabIndex = 44;
@@ -208,20 +285,20 @@
             // 
             this._lblLink.AutoSize = true;
             this._lblLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblLink.Location = new System.Drawing.Point(9, 146);
+            this._lblLink.Location = new System.Drawing.Point(5, 124);
             this._lblLink.Name = "_lblLink";
-            this._lblLink.Size = new System.Drawing.Size(39, 13);
+            this._lblLink.Size = new System.Drawing.Size(31, 13);
             this._lblLink.TabIndex = 43;
-            this._lblLink.Text = "Link: ";
+            this._lblLink.Text = "Link";
             // 
             // _pbGps
             // 
             this._pbGps.BackColor = System.Drawing.SystemColors.Control;
             this._pbGps.ForeColor = System.Drawing.Color.LimeGreen;
-            this._pbGps.Location = new System.Drawing.Point(12, 128);
+            this._pbGps.Location = new System.Drawing.Point(40, 100);
             this._pbGps.Maximum = 10;
             this._pbGps.Name = "_pbGps";
-            this._pbGps.Size = new System.Drawing.Size(62, 15);
+            this._pbGps.Size = new System.Drawing.Size(60, 16);
             this._pbGps.Step = 1;
             this._pbGps.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this._pbGps.TabIndex = 42;
@@ -230,30 +307,29 @@
             // _pbBattery
             // 
             this._pbBattery.ForeColor = System.Drawing.Color.LimeGreen;
-            this._pbBattery.Location = new System.Drawing.Point(12, 92);
+            this._pbBattery.Location = new System.Drawing.Point(40, 79);
             this._pbBattery.Name = "_pbBattery";
-            this._pbBattery.Size = new System.Drawing.Size(62, 15);
+            this._pbBattery.Size = new System.Drawing.Size(60, 15);
             this._pbBattery.Step = 1;
             this._pbBattery.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this._pbBattery.TabIndex = 41;
-            this._pbBattery.Value = 33;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 223);
+            this.label1.Location = new System.Drawing.Point(6, 169);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 39;
-            this.label1.Text = "Throttle:";
+            this.label1.Text = "Throttle";
             // 
             // _pbThrottle
             // 
             this._pbThrottle.ForeColor = System.Drawing.Color.LimeGreen;
-            this._pbThrottle.Location = new System.Drawing.Point(70, 223);
+            this._pbThrottle.Location = new System.Drawing.Point(9, 185);
             this._pbThrottle.Name = "_pbThrottle";
-            this._pbThrottle.Size = new System.Drawing.Size(62, 15);
+            this._pbThrottle.Size = new System.Drawing.Size(91, 14);
             this._pbThrottle.Step = 1;
             this._pbThrottle.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this._pbThrottle.TabIndex = 40;
@@ -413,27 +489,30 @@
             // _lblAltitudeAgl
             // 
             this._lblAltitudeAgl.AutoSize = true;
-            this._lblAltitudeAgl.Location = new System.Drawing.Point(250, 233);
+            this._lblAltitudeAgl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._lblAltitudeAgl.Location = new System.Drawing.Point(260, 218);
             this._lblAltitudeAgl.Name = "_lblAltitudeAgl";
-            this._lblAltitudeAgl.Size = new System.Drawing.Size(52, 13);
+            this._lblAltitudeAgl.Size = new System.Drawing.Size(60, 16);
             this._lblAltitudeAgl.TabIndex = 32;
             this._lblAltitudeAgl.Text = "0 m / 0 m";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(175, 233);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(175, 218);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 13);
+            this.label9.Size = new System.Drawing.Size(84, 16);
             this.label9.TabIndex = 31;
             this.label9.Text = "Altitude AGL:";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(175, 214);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(9, 218);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 13);
+            this.label14.Size = new System.Drawing.Size(97, 16);
             this.label14.TabIndex = 30;
             this.label14.Text = "Ground speed:";
             // 
@@ -469,113 +548,6 @@
             this._lblHomeDistance.TabIndex = 26;
             this._lblHomeDistance.Text = "Home: 0m";
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Controls.Add(this.label7, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label6, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label5, 2, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 24);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(333, 16);
-            this.tableLayoutPanel2.TabIndex = 15;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Altitude mode";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(114, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Autopilot mode";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(225, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Control mode";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Controls.Add(this._cbAltitudeMode, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox2, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 37);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(333, 24);
-            this.tableLayoutPanel1.TabIndex = 14;
-            // 
-            // _cbAltitudeMode
-            // 
-            this._cbAltitudeMode.BackColor = System.Drawing.Color.Lime;
-            this._cbAltitudeMode.FormattingEnabled = true;
-            this._cbAltitudeMode.Items.AddRange(new object[] {
-            "Waypoint",
-            "RC-transmitter",
-            "GCS"});
-            this._cbAltitudeMode.Location = new System.Drawing.Point(3, 3);
-            this._cbAltitudeMode.Name = "_cbAltitudeMode";
-            this._cbAltitudeMode.Size = new System.Drawing.Size(88, 21);
-            this._cbAltitudeMode.TabIndex = 11;
-            this._cbAltitudeMode.Text = "Waypoint";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.Yellow;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "RC-transmitter",
-            "GCS (None)",
-            "GCS (Joystick)"});
-            this.comboBox1.Location = new System.Drawing.Point(225, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(89, 21);
-            this.comboBox1.TabIndex = 13;
-            this.comboBox1.Text = "RC-transmitter";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.Color.Red;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Manual",
-            "Stabilized",
-            "Autopilot",
-            "Return home",
-            "Loiter"});
-            this.comboBox2.Location = new System.Drawing.Point(114, 3);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(86, 21);
-            this.comboBox2.TabIndex = 12;
-            this.comboBox2.Text = "Manual";
-            // 
             // _lblDistNextWp
             // 
             this._lblDistNextWp.Location = new System.Drawing.Point(236, 165);
@@ -588,17 +560,18 @@
             // 
             this._lblVoltage.AutoSize = true;
             this._lblVoltage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblVoltage.Location = new System.Drawing.Point(9, 74);
+            this._lblVoltage.Location = new System.Drawing.Point(5, 78);
             this._lblVoltage.Name = "_lblVoltage";
-            this._lblVoltage.Size = new System.Drawing.Size(36, 15);
+            this._lblVoltage.Size = new System.Drawing.Size(28, 15);
             this._lblVoltage.TabIndex = 3;
-            this._lblVoltage.Text = "Bat: ";
+            this._lblVoltage.Text = "Bat";
             // 
             // _lblSpeed
             // 
-            this._lblSpeed.Location = new System.Drawing.Point(250, 215);
+            this._lblSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._lblSpeed.Location = new System.Drawing.Point(104, 212);
             this._lblSpeed.Name = "_lblSpeed";
-            this._lblSpeed.Size = new System.Drawing.Size(44, 12);
+            this._lblSpeed.Size = new System.Drawing.Size(65, 29);
             this._lblSpeed.TabIndex = 2;
             this._lblSpeed.Text = "0 km/h";
             this._lblSpeed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -608,11 +581,11 @@
             this._lblGpsSat.AutoSize = true;
             this._lblGpsSat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._lblGpsSat.ImageKey = "ERROR";
-            this._lblGpsSat.Location = new System.Drawing.Point(9, 110);
+            this._lblGpsSat.Location = new System.Drawing.Point(5, 101);
             this._lblGpsSat.Name = "_lblGpsSat";
-            this._lblGpsSat.Size = new System.Drawing.Size(40, 15);
+            this._lblGpsSat.Size = new System.Drawing.Size(32, 15);
             this._lblGpsSat.TabIndex = 1;
-            this._lblGpsSat.Text = "Gps: ";
+            this._lblGpsSat.Text = "Gps";
             // 
             // _artificialHorizon
             // 
@@ -621,11 +594,11 @@
             this._artificialHorizon.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this._artificialHorizon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this._artificialHorizon.CornersRadius = 20F;
-            this._artificialHorizon.Location = new System.Drawing.Point(80, 75);
+            this._artificialHorizon.Location = new System.Drawing.Point(109, 75);
             this._artificialHorizon.Name = "_artificialHorizon";
             this._artificialHorizon.pitch_angle = 0D;
             this._artificialHorizon.roll_angle = 0D;
-            this._artificialHorizon.Size = new System.Drawing.Size(150, 130);
+            this._artificialHorizon.Size = new System.Drawing.Size(125, 125);
             this._artificialHorizon.TabIndex = 0;
             // 
             // _navigationPanel
@@ -841,15 +814,18 @@
             this.Size = new System.Drawing.Size(343, 636);
             this._cockpitPanel.ResumeLayout(false);
             this._cockpitPanel.PerformLayout();
+            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
+            this.toolStripContainer1.ResumeLayout(false);
+            this.toolStripContainer1.PerformLayout();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this._panelStrip.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this._navigationPanel.ResumeLayout(false);
             this._navigationPanel.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -883,14 +859,6 @@
         private System.Windows.Forms.ToolStripButton _btn_down;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ImageList _imageListGps;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox _cbAltitudeMode;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ToolStripButton _btnNaviBurn;
         private System.Windows.Forms.ToolStripMenuItem _btnNaviReload;
         private System.Windows.Forms.TabControl tabControl1;
@@ -920,5 +888,13 @@
         private System.Windows.Forms.Label label2;
         private ProgressBarColored _pbRcLink;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton _btnConnect;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton _btnCenterUav;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton _btnConfig;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
     }
 }

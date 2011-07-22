@@ -237,6 +237,8 @@ namespace GluonCS
                     {
                         FlightgearThread fgt = new FlightgearThread(model.Serial, cf.FlightgearPath);
                     }
+                    c.NonParsedCommunicationReceived += new SerialCommunication.ReceiveNonParsedCommunication(c_NonParsedCommunicationReceived);
+                    c.CommunicationReceived += new SerialCommunication.ReceiveCommunication(c_CommunicationReceived);
                 }
                 else if (r == System.Windows.Forms.DialogResult.Cancel)
                 {
@@ -245,6 +247,25 @@ namespace GluonCS
                 cf.Close();
             }
             
+        }
+
+        private delegate void UpdateTextBox(string line);
+        private void UpdateLog(string line)
+        {
+            //if (_cb_print_timestamp.Checked)
+            _tbLog.AppendText("[" + DateTime.Now.ToString("hh:mm:ss.ff") + "]  ");
+            _tbLog.AppendText(line + "\r\n");
+            _tbLog.ScrollToCaret();
+        }
+
+        void c_CommunicationReceived(string line)
+        {
+            //throw new NotImplementedException();
+        }
+
+        void c_NonParsedCommunicationReceived(string line)
+        {
+            this.BeginInvoke(new UpdateTextBox(UpdateLog), new object[] { line });
         }
 
         private void _btnZoomin_Click(object sender, EventArgs e)
