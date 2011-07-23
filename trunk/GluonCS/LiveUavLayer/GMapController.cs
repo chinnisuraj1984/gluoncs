@@ -238,7 +238,10 @@ namespace GluonCS.LiveUavLayer
                         ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FLY_TO_REL ||
                         ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.CIRCLE_REL)
                     {
-                        mm = new RelativeMarker(gmap.Position, i);
+                        if (model.IsNavigationSynchronized(i))
+                            mm = new RelativeMarker(gmap.Position, i, false);
+                        else
+                            mm = new RelativeMarker(gmap.Position, i, true);
                         //double res = gmap.Projection.GetGroundResolution((int)gmap.Zoom, gmap.Position.Lat);
                         mm.Position = new PointLatLng(home.Position.Lat + ni.x / LatLng.LatitudeMeterPerDegree,
                                                       home.Position.Lng + ni.y / LatLng.LongitudeMeterPerDegree(gmap.Position.Lat));
@@ -250,7 +253,11 @@ namespace GluonCS.LiveUavLayer
                         ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FLY_TO_ABS ||
                         ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.CIRCLE_ABS)
                     {
-                        mm = new AbsoluteMarker(gmap.Position, i);
+                        if (model.IsNavigationSynchronized(i))
+                            mm = new AbsoluteMarker(gmap.Position, i, false);
+                        else
+                            mm = new AbsoluteMarker(gmap.Position, i, true);
+
                         mm.Position = new PointLatLng(ni.x / Math.PI * 180.0,
                                                       ni.y / Math.PI * 180.0);
                         NavigationOverlay.Markers.Add(mm);

@@ -214,7 +214,7 @@
             this._btnConfig});
             this.toolStrip2.Location = new System.Drawing.Point(3, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(219, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(188, 25);
             this.toolStrip2.TabIndex = 0;
             // 
             // _btnConnect
@@ -495,7 +495,7 @@
             // 
             this._lblAltitudeAgl.AutoSize = true;
             this._lblAltitudeAgl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblAltitudeAgl.Location = new System.Drawing.Point(241, 211);
+            this._lblAltitudeAgl.Location = new System.Drawing.Point(229, 209);
             this._lblAltitudeAgl.Name = "_lblAltitudeAgl";
             this._lblAltitudeAgl.Size = new System.Drawing.Size(69, 16);
             this._lblAltitudeAgl.TabIndex = 32;

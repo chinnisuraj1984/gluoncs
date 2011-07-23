@@ -15,27 +15,36 @@ namespace GluonCS.Markers
     {
         public Pen Pen;
         public GMapMarkerGoogleGreen InnerMarker;
+        private bool out_of_sync;
 
-        public RelativeMarker(PointLatLng p, int wp_number)
+        public RelativeMarker(PointLatLng p, int wp_number, bool out_of_sync = false)
             : base(p, wp_number)
         {
-            Pen = new Pen(Brushes.Red, 2);
             // do not forget set Size of the marker
             // if so, you shall have no event on it ;}
             Size = new System.Drawing.Size(14, 14);
             Offset = new System.Drawing.Point(-Size.Width / 2, -Size.Height / 2);
+            if (out_of_sync)
+                Pen = new Pen(Brushes.Gray, 2);
+            else
+                Pen = new Pen(Brushes.Red, 2);
         }
 
         public override void OnRender(Graphics g)
         {
+            Number++; // we visualize 0 as 1
             g.DrawString(Number.ToString(), new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), Brushes.Black, LocalPosition.X + 14 + 1, LocalPosition.Y + 0);
             g.DrawString(Number.ToString(), new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), Brushes.Black, LocalPosition.X + 14 - 1, LocalPosition.Y + 0);
             g.DrawString(Number.ToString(), new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), Brushes.Black, LocalPosition.X + 14, LocalPosition.Y + 0 + 1);
             g.DrawString(Number.ToString(), new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), Brushes.Black, LocalPosition.X + 14, LocalPosition.Y + 0 - 1);
-            g.DrawString(Number.ToString(), new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), Brushes.Red, LocalPosition.X + 14, LocalPosition.Y + 0);
-         
+            if (out_of_sync)
+                g.DrawString(Number.ToString(), new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), Brushes.LightGray, LocalPosition.X + 14, LocalPosition.Y + 0);
+            else
+                g.DrawString(Number.ToString(), new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), Brushes.Red, LocalPosition.X + 14, LocalPosition.Y + 0);
+            
             g.FillEllipse(Brushes.White, new Rectangle(LocalPosition.X, LocalPosition.Y, Size.Width, Size.Height));
-            g.DrawEllipse(Pen, new Rectangle(LocalPosition.X - (- 6) / 2, LocalPosition.Y - (- 6) / 2, Size.Width-6, Size.Height-6));        
+            g.DrawEllipse(Pen, new Rectangle(LocalPosition.X - (- 6) / 2, LocalPosition.Y - (- 6) / 2, Size.Width-6, Size.Height-6));
+            Number--;
         }
     }
 }
