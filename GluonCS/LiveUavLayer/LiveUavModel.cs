@@ -227,21 +227,22 @@ namespace GluonCS.LiveUavLayer
             //Console.WriteLine("connection_NavigationInstructionCommunicationReceived ENTER");
             lock (navigation_remote)
             {
-                ni.line--;
-                if (navigation_remote.Count <= ni.line)
-                    navigation_remote.Insert(ni.line, ni);
+                NavigationInstruction ni2 = new NavigationInstruction(ni);
+                ni2.line--;
+                if (navigation_remote.Count <= ni2.line)
+                    navigation_remote.Insert(ni2.line, ni2);
                 else
-                    navigation_remote[ni.line] = ni;
+                    navigation_remote[ni2.line] = ni2;
 
                 if (NavigationRemoteListChanged != null)
                     NavigationRemoteListChanged(this, EventArgs.Empty);
 
                 lock (navigation_local)
                 {
-                    if (navigation_local.Count <= ni.line)
-                        navigation_local.Insert(ni.line, ni);
+                    if (navigation_local.Count <= ni2.line)
+                        navigation_local.Insert(ni2.line, ni2);
                     else
-                        navigation_local[ni.line] = ni;
+                        navigation_local[ni2.line] = ni2;
                 }
 
                 if (NavigationLocalListChanged != null)

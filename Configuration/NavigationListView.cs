@@ -79,13 +79,18 @@ namespace Configuration
         private void NavigationInstructionReceived(NavigationInstruction ni)
         {
             dirty_list.Remove(ni.line);
-            _lv_navigation.Items[ni.line - 1].Tag = ni;
-            if (_lv_navigation.Items[ni.line - 1].SubItems.Count <= 1)
+            if (ni.line < 1)
+                Console.WriteLine("ERROR: navigation line = 0");
+            else
             {
-                _lv_navigation.Items[ni.line - 1].SubItems.Add(new ListViewItem.ListViewSubItem());
-                _lv_navigation.Items[ni.line - 1].SubItems.Add(new ListViewItem.ListViewSubItem());
+                _lv_navigation.Items[ni.line - 1].Tag = ni;
+                if (_lv_navigation.Items[ni.line - 1].SubItems.Count <= 1)
+                {
+                    _lv_navigation.Items[ni.line - 1].SubItems.Add(new ListViewItem.ListViewSubItem());
+                    _lv_navigation.Items[ni.line - 1].SubItems.Add(new ListViewItem.ListViewSubItem());
+                }
+                _lv_navigation.Items[ni.line - 1].SubItems[1].Text = ni.ToString();
             }
-            _lv_navigation.Items[ni.line - 1].SubItems[1].Text = ni.ToString();
         }
 
 
