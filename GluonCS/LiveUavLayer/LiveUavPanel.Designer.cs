@@ -32,6 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiveUavPanel));
             this._cockpitPanel = new BSE.Windows.Forms.Panel();
             this.splitter1 = new BSE.Windows.Forms.Splitter();
+            this._ahPanel = new System.Windows.Forms.Panel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this._ts2dah = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this._tsFunjet = new System.Windows.Forms.ToolStripMenuItem();
+            this._tsEasystar = new System.Windows.Forms.ToolStripMenuItem();
+            this._tsPredator = new System.Windows.Forms.ToolStripMenuItem();
+            this._artificialHorizon = new ArtificialHorizon.ArtificialHorizon();
             this._lblFlightMode = new System.Windows.Forms.Label();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
@@ -70,7 +78,6 @@
             this._lblVoltage = new System.Windows.Forms.Label();
             this._lblSpeed = new System.Windows.Forms.Label();
             this._lblGpsSat = new System.Windows.Forms.Label();
-            this._artificialHorizon = new ArtificialHorizon.ArtificialHorizon();
             this._navigationPanel = new BSE.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this._btn_up = new System.Windows.Forms.ToolStripButton();
@@ -91,6 +98,8 @@
             this._imageListGps = new System.Windows.Forms.ImageList(this.components);
             this._gmapContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this._cockpitPanel.SuspendLayout();
+            this._ahPanel.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -111,6 +120,7 @@
             this._cockpitPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this._cockpitPanel.CaptionFont = new System.Drawing.Font("Trebuchet MS", 8.75F, System.Drawing.FontStyle.Bold);
             this._cockpitPanel.CaptionHeight = 20;
+            this._cockpitPanel.Controls.Add(this._ahPanel);
             this._cockpitPanel.Controls.Add(this._lblFlightMode);
             this._cockpitPanel.Controls.Add(this.toolStripContainer1);
             this._cockpitPanel.Controls.Add(this._pbRcLink);
@@ -134,7 +144,6 @@
             this._cockpitPanel.Controls.Add(this._lblVoltage);
             this._cockpitPanel.Controls.Add(this._lblSpeed);
             this._cockpitPanel.Controls.Add(this._lblGpsSat);
-            this._cockpitPanel.Controls.Add(this._artificialHorizon);
             this._cockpitPanel.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(65)))), ((int)(((byte)(118)))));
             this._cockpitPanel.CustomColors.CaptionCloseIcon = System.Drawing.SystemColors.ControlText;
             this._cockpitPanel.CustomColors.CaptionExpandIcon = System.Drawing.SystemColors.ControlText;
@@ -174,6 +183,75 @@
             this.splitter1.Size = new System.Drawing.Size(343, 3);
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
+            // 
+            // _ahPanel
+            // 
+            this._ahPanel.ContextMenuStrip = this.contextMenuStrip1;
+            this._ahPanel.Controls.Add(this._artificialHorizon);
+            this._ahPanel.Location = new System.Drawing.Point(110, 54);
+            this._ahPanel.Name = "_ahPanel";
+            this._ahPanel.Size = new System.Drawing.Size(120, 123);
+            this._ahPanel.TabIndex = 50;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._ts2dah,
+            this.toolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(177, 70);
+            // 
+            // _ts2dah
+            // 
+            this._ts2dah.Name = "_ts2dah";
+            this._ts2dah.Size = new System.Drawing.Size(176, 22);
+            this._ts2dah.Text = "2D artificial horizon";
+            this._ts2dah.Click += new System.EventHandler(this._ts2dah_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._tsFunjet,
+            this._tsEasystar,
+            this._tsPredator});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
+            this.toolStripMenuItem1.Text = "3D artificial horizon";
+            // 
+            // _tsFunjet
+            // 
+            this._tsFunjet.Name = "_tsFunjet";
+            this._tsFunjet.Size = new System.Drawing.Size(152, 22);
+            this._tsFunjet.Text = "Funjet";
+            this._tsFunjet.Click += new System.EventHandler(this._tsFunjet_Click);
+            // 
+            // _tsEasystar
+            // 
+            this._tsEasystar.Name = "_tsEasystar";
+            this._tsEasystar.Size = new System.Drawing.Size(152, 22);
+            this._tsEasystar.Text = "Easystar";
+            this._tsEasystar.Click += new System.EventHandler(this._tsEasystar_Click);
+            // 
+            // _tsPredator
+            // 
+            this._tsPredator.Name = "_tsPredator";
+            this._tsPredator.Size = new System.Drawing.Size(152, 22);
+            this._tsPredator.Text = "Predator";
+            this._tsPredator.Click += new System.EventHandler(this._tsPredator_Click);
+            // 
+            // _artificialHorizon
+            // 
+            this._artificialHorizon.AutoScroll = true;
+            this._artificialHorizon.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this._artificialHorizon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this._artificialHorizon.CornersRadius = 20F;
+            this._artificialHorizon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._artificialHorizon.Location = new System.Drawing.Point(0, 0);
+            this._artificialHorizon.Name = "_artificialHorizon";
+            this._artificialHorizon.pitch_angle = 0D;
+            this._artificialHorizon.roll_angle = 0D;
+            this._artificialHorizon.Size = new System.Drawing.Size(120, 123);
+            this._artificialHorizon.TabIndex = 0;
             // 
             // _lblFlightMode
             // 
@@ -592,20 +670,6 @@
             this._lblGpsSat.TabIndex = 1;
             this._lblGpsSat.Text = "Gps";
             // 
-            // _artificialHorizon
-            // 
-            this._artificialHorizon.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this._artificialHorizon.AutoScroll = true;
-            this._artificialHorizon.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this._artificialHorizon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this._artificialHorizon.CornersRadius = 20F;
-            this._artificialHorizon.Location = new System.Drawing.Point(110, 54);
-            this._artificialHorizon.Name = "_artificialHorizon";
-            this._artificialHorizon.pitch_angle = 0D;
-            this._artificialHorizon.roll_angle = 0D;
-            this._artificialHorizon.Size = new System.Drawing.Size(125, 125);
-            this._artificialHorizon.TabIndex = 0;
-            // 
             // _navigationPanel
             // 
             this._navigationPanel.AssociatedSplitter = this.splitter1;
@@ -819,6 +883,8 @@
             this.Size = new System.Drawing.Size(343, 636);
             this._cockpitPanel.ResumeLayout(false);
             this._cockpitPanel.PerformLayout();
+            this._ahPanel.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
@@ -901,5 +967,12 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton _btnConfig;
         private System.Windows.Forms.Label _lblFlightMode;
+        private System.Windows.Forms.Panel _ahPanel;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem _ts2dah;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem _tsFunjet;
+        private System.Windows.Forms.ToolStripMenuItem _tsEasystar;
+        private System.Windows.Forms.ToolStripMenuItem _tsPredator;
     }
 }

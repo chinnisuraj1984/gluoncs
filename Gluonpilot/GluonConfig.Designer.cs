@@ -62,6 +62,7 @@
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -388,7 +389,7 @@
             this.ClientSize = new System.Drawing.Size(645, 518);
             this.Controls.Add(this.toolStripContainer1);
             this.Name = "GluonConfig";
-            this.Text = "GluonConfig v0.5.2";
+            this.Text = "GluonConfig v0.6";
             this.Resize += new System.EventHandler(this.GluonConfig_Resize);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
@@ -398,6 +399,7 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this._tc_main.ResumeLayout(false);
             this.config.ResumeLayout(false);
