@@ -2996,11 +2996,11 @@
             // label81
             // 
             this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(310, 56);
+            this.label81.Location = new System.Drawing.Point(310, 44);
             this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(76, 13);
+            this.label81.Size = new System.Drawing.Size(105, 26);
             this.label81.TabIndex = 15;
-            this.label81.Text = "Cruising speed";
+            this.label81.Text = "Default speed\r\n(in case of GPS loss)";
             // 
             // groupBox6
             // 
@@ -3174,7 +3174,7 @@
             // 
             // tb_speed
             // 
-            this.tb_speed.Location = new System.Drawing.Point(426, 54);
+            this.tb_speed.Location = new System.Drawing.Point(426, 44);
             this.tb_speed.Name = "tb_speed";
             this.tb_speed.Size = new System.Drawing.Size(110, 21);
             this.tb_speed.SpeedMS = 0D;

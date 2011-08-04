@@ -260,8 +260,21 @@ namespace GluonCS
 
         void model_UavAttitudeChanged(object sender, EventArgs e)
         {
-            _artificialHorizon.pitch_angle = model.Pitch;
-            _artificialHorizon.roll_angle = -model.Roll;
+            //_artificialHorizon.pitch_angle = model.Pitch;
+            //_artificialHorizon.roll_angle = -model.Roll;
+            if (_ahPanel.Controls[0] is ArtificialHorizon.ArtificialHorizon)
+            {
+                ArtificialHorizon.ArtificialHorizon ah = (ArtificialHorizon.ArtificialHorizon)_ahPanel.Controls[0];
+                ah.pitch_angle = model.Pitch;
+                ah.roll_angle = -model.Roll;
+            }
+            else
+            {
+                Artificial3DHorizon.AI3D ah = (Artificial3DHorizon.AI3D)_ahPanel.Controls[0];
+                ah.Pitch = model.Pitch / 180.0 * Math.PI;
+                ah.Roll = model.Roll / 180.0 * Math.PI;
+            }
+
             if (!updatePanel.Enabled)
             {
                 updatePanel.Enabled = true;
@@ -579,6 +592,56 @@ namespace GluonCS
         private void _btnCenterUav_Click(object sender, EventArgs e)
         {
             model.CenterMapOnUav();
+        }
+
+        private void _ts2dah_Click(object sender, EventArgs e)
+        {
+            _ahPanel.Controls.Clear();
+            ArtificialHorizon.ArtificialHorizon ah = new ArtificialHorizon.ArtificialHorizon();
+            _ahPanel.Controls.Add(ah);
+            ah.Dock = DockStyle.Fill;
+            Control c = this;
+            while (c.BackColor == Color.Transparent)
+                c = c.Parent;
+            ah.BackColor = c.BackColor;
+            ah.CornersRadius = 20;
+        }
+
+        private void Load3dAhModel(string model)
+        {
+            if (_ahPanel.Controls[0] is Artificial3DHorizon.AI3D)
+            {
+                Artificial3DHorizon.AI3D ah_old = (Artificial3DHorizon.AI3D)_ahPanel.Controls[0];
+                _ahPanel.Controls.Clear();
+                ah_old.Stop();
+                ah_old.Dispose();
+                ah_old = null;
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            } else
+                _ahPanel.Controls.Clear();
+            Artificial3DHorizon.AI3D ah = new Artificial3DHorizon.AI3D(model);
+            _ahPanel.Controls.Add(ah);
+            ah.Dock = DockStyle.Fill;
+            Control c = this;
+            while (c.BackColor == Color.Transparent)
+                c = c.Parent;
+            ah.BackColor = c.BackColor;
+        }
+
+        private void _tsFunjet_Click(object sender, EventArgs e)
+        {
+            Load3dAhModel("Models\\Funjet\\funjet.x");
+        }
+
+        private void _tsEasystar_Click(object sender, EventArgs e)
+        {
+            Load3dAhModel("Models\\Easystar\\easystar.x");
+        }
+
+        private void _tsPredator_Click(object sender, EventArgs e)
+        {
+            Load3dAhModel("Models\\Reaper\\MQ-9-Reaper.x");
         }
 
 
