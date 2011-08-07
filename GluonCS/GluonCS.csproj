@@ -71,9 +71,9 @@
     <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Artificial3DHorizon">
-      <HintPath>..\..\..\My Documents\Downloads\D3DControls_Full\Artificial3DHorizon\bin\Release\Artificial3DHorizon.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Artificial3DHorizon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Artificial3DHorizon.dll</HintPath>
     </Reference>
     <Reference Include="ArtificialHorizon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -83,8 +83,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libs\BSE.Windows.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="D3DControls">
-      <HintPath>..\..\..\My Documents\Downloads\D3DControls_Full\Artificial3DHorizon\bin\Release\D3DControls.dll</HintPath>
+    <Reference Include="D3DControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\D3DControls.dll</HintPath>
     </Reference>
     <Reference Include="GMap.NET.Core, Version=1.5.4.3, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
