@@ -44,6 +44,18 @@ namespace Configuration
             _btn_to_kml.Enabled = true;
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+
+            if (serial != null)
+                serial.NavigationInstructionCommunicationReceived -= new SerialCommunication.ReceiveNavigationInstructionCommunicationFrame(_serial_NavigationInstructionCommunicationReceived);
+
+        }
 
         public void Connect(SerialCommunication serial)
         {
