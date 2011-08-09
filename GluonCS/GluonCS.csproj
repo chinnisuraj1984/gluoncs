@@ -71,8 +71,7 @@
     <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Artificial3DHorizon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Artificial3DHorizon">
       <HintPath>..\Libs\Artificial3DHorizon.dll</HintPath>
     </Reference>
     <Reference Include="ArtificialHorizon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -83,8 +82,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libs\BSE.Windows.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="D3DControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="D3DControls">
       <HintPath>..\Libs\D3DControls.dll</HintPath>
     </Reference>
     <Reference Include="GMap.NET.Core, Version=1.5.4.3, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=x86">
@@ -96,6 +94,8 @@
       <HintPath>..\Libs\GMap.NET.WindowsForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="SmartThreadPool, Version=1.0.2235.39078, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libs\SmartThreadPool.dll</HintPath>
@@ -104,6 +104,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -115,6 +116,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
     <Reference Include="ZedGraph">
       <HintPath>..\Libs\ZedGraph.dll</HintPath>
     </Reference>
@@ -151,6 +155,12 @@
     </Compile>
     <Compile Include="LiveUavLayer\NavigationOverview.Designer.cs">
       <DependentUpon>NavigationOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiveUavLayer\QuickConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiveUavLayer\QuickConfig.Designer.cs">
+      <DependentUpon>QuickConfig.cs</DependentUpon>
     </Compile>
     <Compile Include="LiveUavLayer\UavPropertiesControl.cs">
       <SubType>UserControl</SubType>
@@ -208,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\NavigationOverview.resx">
       <DependentUpon>NavigationOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\QuickConfig.resx">
+      <DependentUpon>QuickConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\UavPropertiesControl.resx">
       <DependentUpon>UavPropertiesControl.cs</DependentUpon>

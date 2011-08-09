@@ -459,7 +459,8 @@ namespace GluonCS.LiveUavLayer
                             Console.WriteLine("Sync " + i);
                             NavigationInstruction ni = new NavigationInstruction(model.GetNavigationInstructionLocal(i));
                             ni.line++;
-                            serial.SendNavigationInstruction(ni);
+                            if (serial != null && serial.IsOpen)
+                                serial.SendNavigationInstruction(ni);
                             Thread.Sleep(100);
                         }
                     }

@@ -102,8 +102,25 @@ namespace GluonCS
             updatePanel.Tick += new EventHandler(updatePanel_Tick);
             updatePanel.Enabled = true;
 
-
         }
+
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+            if (model != null)
+            {
+                model.NavigationLocalListChanged -= new LiveUavModel.ChangedEventHandler(model_NavigationLocalListChanged);
+                model.NavigationRemoteListChanged -= new LiveUavModel.ChangedEventHandler(model_NavigationRemoteListChanged);
+                model.UavAttitudeChanged -= new LiveUavModel.ChangedEventHandler(model_UavAttitudeChanged);
+                model.UavPositionChanged -= new LiveUavModel.ChangedEventHandler(model_UavPositionChanged);
+            }
+        }
+
 
         // Update the panel's labels. Not based on the events.
         void updatePanel_Tick(object sender, EventArgs e)
@@ -161,7 +178,7 @@ namespace GluonCS
             }
 
 
-            _pbBattery.Value = (int)(model.BatteryVoltage * 10.0);
+            //_pbBattery.Value = (int)(model.BatteryVoltage * 10.0);
             _pbBattery.Text = model.BatteryVoltage.ToString() + " V";
             if (model.SecondsConnectionLost() > 0.3)
             {
@@ -201,7 +218,7 @@ namespace GluonCS
             foreach (ListViewItem lvi in _lv_navigation.Items)
                 if (lvi.BackColor == Color.Yellow && lvi.Index != model.CurrentNavigationLine)
                     lvi.BackColor = _lv_navigation.Parent.BackColor;
-            if (_lv_navigation.Items[model.CurrentNavigationLine].BackColor != Color.Yellow)
+            if (_lv_navigation.Items.Count > model.CurrentNavigationLine  &&_lv_navigation.Items[model.CurrentNavigationLine].BackColor != Color.Yellow)
                 _lv_navigation.Items[model.CurrentNavigationLine].BackColor = Color.Yellow;
 
             if (model.SpeedMS < 0.001)
@@ -558,8 +575,15 @@ namespace GluonCS
 
         private void _btnConfig_Click(object sender, EventArgs e)
         {
-            Gluonpilot.GluonConfig gc = new Gluonpilot.GluonConfig(model.Serial);
-            gc.Show();
+            if (model.Serial != null && model.Serial.IsOpen)
+            {
+                Gluonpilot.GluonConfig gc = new Gluonpilot.GluonConfig(model.Serial);
+                gc.Show();
+                //model.Serial.ReadAllConfig();
+                Gluonpilot.EasyConfig ec = new Gluonpilot.EasyConfig(model.Serial);
+                ec.Show();
+                model.Serial.ReadAllConfig();
+            }
         }
 
         private void _btnConnect_Click(object sender, EventArgs e)
@@ -571,6 +595,8 @@ namespace GluonCS
                     if (MessageBox.Show("Are you sure you want to close the connection?", "Are you sure?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
                         model.Serial.Close();
                 }
+                else
+                    MessageBox.Show("Please first connect to the gluonpilot", "Configuration not possible", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -579,6 +605,7 @@ namespace GluonCS
                 if (r == System.Windows.Forms.DialogResult.Yes)
                 {
                     model.Connect(cf.SerialPort.PortName, cf.SerialPort.BaudRate, cf.LogPath, cf.Simulation ? cf.FlightgearPath : "");
+                    model.Serial.ReadAllConfig();
                 }
                 cf.Close();
             }
@@ -628,6 +655,7 @@ namespace GluonCS
                 c = c.Parent;
             ah.BackColor = c.BackColor;
         }
+
 
         private void _tsFunjet_Click(object sender, EventArgs e)
         {

@@ -31,6 +31,19 @@ namespace Configuration
 
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+
+            serial.DatalogTableCommunicationReceived -= new SerialCommunication.ReceiveDatalogTableCommunicationFrame(ReceiveDatalogTable);
+            serial.DatalogLineCommunicationReceived -= new SerialCommunication.ReceiveDatalogLineCommunicationFrame(ReceiveDatalogLine);
+
+        }
+
         public void Connect(SerialCommunication serial)
         {
             this.serial = serial;

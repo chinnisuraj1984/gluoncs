@@ -43,6 +43,25 @@ namespace Gluonpilot
             
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        
+
+            if (_serial != null)
+            {
+                _serial.GyroAccRawCommunicationReceived -= new SerialCommunication_CSV.ReceiveGyroAccRawCommunicationFrame(ReceiveGyroAccRaw);
+                _serial.GyroAccProcCommunicationReceived -= new SerialCommunication_CSV.ReceiveGyroAccProcCommunicationFrame(ReceiveGyroAccProc);
+                _serial.PressureTempCommunicationReceived -= new SerialCommunication_CSV.ReceivePressureTempCommunicationFrame(ReceivePressureTemp);
+                _serial.AllConfigCommunicationReceived -= new SerialCommunication_CSV.ReceiveAllConfigCommunicationFrame(ReceiveAllConfig);
+                _serial.RcInputCommunicationReceived -= new SerialCommunication_CSV.ReceiveRcInputCommunicationFrame(ReceiveRcInput);
+                _serial.GpsBasicCommunicationReceived -= new SerialCommunication.ReceiveGpsBasicCommunicationFrame(ReceiveGpsBasic);
+            }
+        }
 
         public ConfigurationModel GetModel()
         {

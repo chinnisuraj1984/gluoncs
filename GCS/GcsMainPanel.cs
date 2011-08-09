@@ -53,6 +53,25 @@ namespace GCS
             _beginDateTime = DateTime.Now;
         }
 
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+
+            if (_serial != null)
+            {
+                _serial.AttitudeCommunicationReceived -= new SerialCommunication.ReceiveAttitudeCommunicationFrame(serial_AttitudeCommunicationReceived);
+                _serial.PressureTempCommunicationReceived -= new SerialCommunication.ReceivePressureTempCommunicationFrame(serial_PressureTempCommunicationReceived);
+                _serial.GpsBasicCommunicationReceived -= new SerialCommunication.ReceiveGpsBasicCommunicationFrame(serial_GpsBasicCommunicationReceived);
+                _serial.ControlInfoCommunicationReceived -= new SerialCommunication.ReceiveControlInfoCommunicationFrame(serial_ControlInfoCommunicationReceived);
+            }
+        }
+
+
         public void Connect(SerialCommunication serial)
         {
             _serial = serial;
@@ -64,6 +83,7 @@ namespace GCS
             serial.ControlInfoCommunicationReceived += new SerialCommunication.ReceiveControlInfoCommunicationFrame(serial_ControlInfoCommunicationReceived);
             _graphControl.SetSerial(serial);
         }
+
 
         void serial_ControlInfoCommunicationReceived(ControlInfo ci)
         {

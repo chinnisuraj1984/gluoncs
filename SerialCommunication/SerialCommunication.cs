@@ -98,6 +98,12 @@ namespace Communication
 
         public abstract void Close();
 
+        public abstract void SendTelemetry(int basicgps, int gyroaccraw, int gyroaccproc, int ppm, int pressuretemp, int attitude, int control);
+
+        public abstract void SendServoReverse(bool a, bool b, bool c, bool d, bool e, bool f);
+
+        public abstract void SendConfigChannels(int is_ppm, int channel_ap, int channel_motor, int channel_pitch, int channel_roll, int channel_yaw);
+
         public abstract void Send(AllConfig ac);
 
         public abstract void ReadAllConfig();
@@ -131,5 +137,9 @@ namespace Communication
         public abstract void SetSimulationOn();
 
         public abstract void SendSimulationUpdate(double lat_rad, double lng_rad, double roll_rad, double pitch_rad, double altitude_m, double speed_ms, double heading_rad);
+
+        public abstract void SendCalibrateGyros();
+
+        public abstract void SendCalibrateAcceleros();
     }
 }

@@ -36,6 +36,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Artificial3DHorizon">
+      <HintPath>..\Libs\Artificial3DHorizon.dll</HintPath>
+    </Reference>
+    <Reference Include="ArtificialHorizon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="csgl, Version=1.4.1.0, Culture=neutral, PublicKeyToken=d8fb3bdb88c36cd4">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\ModuleImu3D\csgl.dll</HintPath>
@@ -44,6 +48,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\ModuleImu3D\CsGL.Basecode.dll</HintPath>
     </Reference>
+    <Reference Include="D3DControls">
+      <HintPath>..\Libs\D3DControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -67,6 +75,12 @@
     <Compile Include="ConnectDialog.Designer.cs">
       <DependentUpon>ConnectDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="EasyConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EasyConfig.Designer.cs">
+      <DependentUpon>EasyConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="GluonConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +91,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ConnectDialog.resx">
       <DependentUpon>ConnectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EasyConfig.resx">
+      <DependentUpon>EasyConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GluonConfig.resx">
       <DependentUpon>GluonConfig.cs</DependentUpon>

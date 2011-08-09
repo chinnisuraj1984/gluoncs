@@ -142,6 +142,9 @@ namespace Communication
         private object ReceiveThreadedData(object state)
         {
             _serialPort.ReadTimeout = 1000;
+            bool recognised_frame = true;
+            string line = string.Empty;
+
             while (_serialPort.IsOpen)
             {
                 try
@@ -161,7 +164,7 @@ namespace Communication
                         //Console.WriteLine("Waiting for communication...");
                     }
 
-                    string line = _serialPort.ReadLine();
+                    line = _serialPort.ReadLine();
 
                     if (logfile != null)
                         logfile.WriteLine("[" + DateTime.Now.ToString("g") + "] " + line);
@@ -176,7 +179,7 @@ namespace Communication
                     string[] lines = line.Split(';');
                     //Console.WriteLine(line + "\n\r");
                     // TR: Gyro & Acc raw
-                    bool recognised_frame = true;
+                    recognised_frame = true;
                     if (lines[0].EndsWith("TR") && lines.Length >= 6)
                     {
                         double acc_x_raw = double.Parse(lines[1]);
@@ -454,20 +457,6 @@ namespace Communication
                         if (NonParsedCommunicationReceived != null)
                             NonParsedCommunicationReceived(line);
                     }
-                    if (recognised_frame)
-                    {
-                        //Console.WriteLine(line);
-                        LastValidFrame = DateTime.Now;
-                        FramesReceived++;
-                        if (!CommunicationAlive)
-                        {
-                            CommunicationAlive = true;
-                            if (CommunicationEstablished != null)
-                                CommunicationEstablished();
-                        }
-                    }
-                    if (CommunicationReceived != null)
-                        CommunicationReceived(line);
                 }
                 catch (TimeoutException toe)
                 {
@@ -488,33 +477,105 @@ namespace Communication
                 {
                     ;
                 }
+
+                try
+                {
+                    if (recognised_frame)
+                    {
+                        //Console.WriteLine(line);
+                        LastValidFrame = DateTime.Now;
+                        FramesReceived++;
+                        if (!CommunicationAlive)
+                        {
+                            CommunicationAlive = true;
+                            if (CommunicationEstablished != null)
+                                CommunicationEstablished();
+                        }
+                    }
+                    if (CommunicationReceived != null)
+                        CommunicationReceived(line);
+                }
+                catch (Exception e)
+                {
+                    ;
+                }
             }
 
             return null;
         }
+
+
+        public override void SendTelemetry(int basicgps, int gyroaccraw, int gyroaccproc, int ppm, int pressuretemp, int attitude, int control)
+        {
+            // telemetry
+            _serialPort.WriteLine("\nST;" +
+                basicgps.ToString() + ";" +
+                gyroaccraw.ToString() + ";" +
+                gyroaccproc.ToString() + ";" +
+                ppm.ToString() + ";" +
+                pressuretemp.ToString() + ";" +
+                attitude.ToString() + ";" +
+                control.ToString() + "\n");
+            Console.WriteLine("\nST;" +
+                basicgps.ToString() + ";" +
+                gyroaccraw.ToString() + ";" +
+                gyroaccproc.ToString() + ";" +
+                ppm.ToString() + ";" +
+                pressuretemp.ToString() + ";" +
+                attitude.ToString() + ";" +
+                control.ToString() + "\n");
+        }
+
+        public override void SendServoReverse(bool a, bool b, bool c, bool d, bool e, bool f)
+        {
+            int s = 0;
+            if (a)
+                s += 1;
+            if (b)
+                s += 2;
+            if (c)
+                s += 4;
+            if (d)
+                s += 8;
+            if (e)
+                s += 16;
+            if (f)
+                s += 32;
+            _serialPort.WriteLine("\nSR;" + s.ToString() + "\n");
+        }
+
+        public override void SendConfigChannels(int is_ppm, int channel_ap, int channel_motor, int channel_pitch, int channel_roll, int channel_yaw)
+        {
+            _serialPort.WriteLine("\nSI;" +
+               (1 - is_ppm).ToString() + ";" +
+               Char.ConvertFromUtf32(97 + channel_ap - 1) + ";" +
+               Char.ConvertFromUtf32(97 + channel_motor - 1) + ";" +
+               Char.ConvertFromUtf32(97 + channel_pitch - 1) + ";" +
+               Char.ConvertFromUtf32(97 + channel_roll - 1) + ";" +
+               Char.ConvertFromUtf32(97 + channel_yaw - 1) + "\n");
+            Console.WriteLine("\nSI;" +
+                (1 - is_ppm).ToString() + ";" +
+                Char.ConvertFromUtf32(97 + channel_ap - 1) + ";" +
+                Char.ConvertFromUtf32(97 + channel_motor - 1) + ";" +
+                Char.ConvertFromUtf32(97 + channel_pitch - 1) + ";" +
+                Char.ConvertFromUtf32(97 + channel_roll - 1) + ";" +
+                Char.ConvertFromUtf32(97 + channel_yaw - 1) + "\n");
+        }
+
 
         /*!
          *    Sends the complete configuration set AllConfig to the gluonpilot.
          */
         public override void Send(AllConfig ac)
         {
-            // telemetry
-            _serialPort.WriteLine("\nST;" +
-                ac.telemetry_basicgps.ToString() + ";" +
-                ac.telemetry_gyroaccraw.ToString() + ";" +
-                ac.telemetry_gyroaccproc.ToString() + ";" + 
-                ac.telemetry_ppm.ToString() + ";" +
-                ac.telemetry_pressuretemp.ToString() + ";" +
-                ac.telemetry_attitude.ToString() + ";" +
-                ac.telemetry_control.ToString() + "\n");
-            Console.WriteLine("\nST;" +
-                ac.telemetry_basicgps.ToString() + ";" +
-                ac.telemetry_gyroaccraw.ToString() + ";" +
-                ac.telemetry_gyroaccproc.ToString() + ";" +
-                ac.telemetry_ppm.ToString() + ";" +
-                ac.telemetry_pressuretemp.ToString() + ";" +
-                ac.telemetry_attitude.ToString() + ";" +
-                ac.telemetry_control.ToString() + "\n");
+            SendTelemetry(
+                ac.telemetry_basicgps,
+                ac.telemetry_gyroaccraw,
+                ac.telemetry_gyroaccproc,
+                ac.telemetry_ppm,
+                ac.telemetry_pressuretemp,
+                ac.telemetry_attitude,
+                ac.telemetry_control);
 
             Thread.Sleep(200);
             
@@ -541,20 +602,7 @@ namespace Communication
             Thread.Sleep(200);
             
             // channel config
-            _serialPort.WriteLine("\nSI;" + 
-                (1 - ac.rc_ppm).ToString() + ";" +
-                Char.ConvertFromUtf32(97 + ac.channel_ap - 1) + ";" +
-                Char.ConvertFromUtf32(97 + ac.channel_motor - 1) + ";" +
-                Char.ConvertFromUtf32(97 + ac.channel_pitch - 1) + ";" +
-                Char.ConvertFromUtf32(97 + ac.channel_roll - 1) + ";" +
-                Char.ConvertFromUtf32(97 + ac.channel_yaw - 1) + "\n");
-            Console.WriteLine("\nSI;" +
-                (1 - ac.rc_ppm).ToString() + ";" +
-                Char.ConvertFromUtf32(97 + ac.channel_ap - 1) + ";" +
-                Char.ConvertFromUtf32(97 + ac.channel_motor - 1) + ";" +
-                Char.ConvertFromUtf32(97 + ac.channel_pitch - 1) + ";" +
-                Char.ConvertFromUtf32(97 + ac.channel_roll - 1) + ";" +
-                Char.ConvertFromUtf32(97 + ac.channel_yaw - 1) + "\n");
+            SendConfigChannels(ac.rc_ppm, ac.channel_ap, ac.channel_motor, ac.channel_pitch, ac.channel_roll, ac.channel_yaw);
 
             Thread.Sleep(200);
             // gps config
@@ -617,21 +665,7 @@ namespace Communication
 
             Thread.Sleep(200);
 
-            int s = 0;
-            if (ac.servo_reverse[0])
-                s += 1;
-            if (ac.servo_reverse[1])
-                s += 2;
-            if (ac.servo_reverse[2])
-                s += 4;
-            if (ac.servo_reverse[3])
-                s += 8;
-            if (ac.servo_reverse[4])
-                s += 16;
-            if (ac.servo_reverse[5])
-                s += 32;
-            _serialPort.WriteLine("\nSR;" + s.ToString() + "\n");
-
+            SendServoReverse(ac.servo_reverse[0], ac.servo_reverse[1], ac.servo_reverse[2], ac.servo_reverse[3], ac.servo_reverse[4], ac.servo_reverse[5]);
             Thread.Sleep(200);
 
             _serialPort.WriteLine("\nSC;" +
@@ -770,5 +804,18 @@ namespace Communication
                                           roll_rad.ToString("#.####", CultureInfo.InvariantCulture) + ";" +
                                           pitch_rad.ToString("#.###", CultureInfo.InvariantCulture) + "\n");
         }
+
+
+        public override void SendCalibrateGyros()
+        {
+            _serialPort.WriteLine("\nCG;\n");
+        }
+
+
+        public override void SendCalibrateAcceleros()
+        {
+            _serialPort.WriteLine("\nCA;\n");
+        }
+
     }
 }
