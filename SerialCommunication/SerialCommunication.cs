@@ -104,6 +104,12 @@ namespace Communication
 
         public abstract void SendConfigChannels(int is_ppm, int channel_ap, int channel_motor, int channel_pitch, int channel_roll, int channel_yaw);
 
+        public abstract void SendPidPitch2Elevator(double p, double i, double d, double imin, double imax, double dmin);
+
+        public abstract void SendPidRoll2Aileron(double p, double i, double d, double imin, double imax, double dmin);
+
+        public abstract void SendAutoThrottleConfig(int auto_throttle_min_pct, int auto_throttle_max_pct, int auto_throttle_cruise_pct, int auto_throttle_p_gain_10, bool auto_throttle_enabled);
+
         public abstract void Send(AllConfig ac);
 
         public abstract void ReadAllConfig();

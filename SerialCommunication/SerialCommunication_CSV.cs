@@ -563,6 +563,42 @@ namespace Communication
         }
 
 
+        public override void SendPidPitch2Elevator(double p, double i, double d, double imin, double imax, double dmin)
+        {
+            _serialPort.WriteLine("\nPP;" +
+                p.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
+                i.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
+                d.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
+                imin.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
+                imax.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
+                dmin.ToString(System.Globalization.CultureInfo.InvariantCulture) + "\n");
+        }
+    
+
+        public override void SendPidRoll2Aileron(double p, double i, double d, double imin, double imax, double dmin)
+        {
+            _serialPort.WriteLine("\nPR;" +
+                p.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
+                i.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
+                d.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
+                imin.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
+                imax.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
+                dmin.ToString(System.Globalization.CultureInfo.InvariantCulture) + "\n");   
+        }
+
+        public override void SendAutoThrottleConfig(int auto_throttle_min_pct, int auto_throttle_max_pct, int auto_throttle_cruise_pct, int auto_throttle_p_gain_10, bool auto_throttle_enabled)
+        {
+            
+            _serialPort.WriteLine("\nAT;" +
+                auto_throttle_min_pct + ";" + auto_throttle_max_pct + ";" +
+                auto_throttle_cruise_pct + ";" + auto_throttle_p_gain_10 + ";" +
+                (auto_throttle_enabled ? "1" : "0"));
+            Console.WriteLine("\nAT;" +
+                auto_throttle_min_pct + ";" + auto_throttle_max_pct + ";" +
+                auto_throttle_cruise_pct + ";" + auto_throttle_p_gain_10 + ";" +
+                (auto_throttle_enabled ? "1" : "0"));
+        }
+
         /*!
          *    Sends the complete configuration set AllConfig to the gluonpilot.
          */
@@ -611,24 +647,14 @@ namespace Communication
 
             Thread.Sleep(200);
 
-            _serialPort.WriteLine("\nPP;" +
-                ac.pid_pitch2elevator_p.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
-                ac.pid_pitch2elevator_i.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
-                ac.pid_pitch2elevator_d.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
-                ac.pid_pitch2elevator_imin.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
-                ac.pid_pitch2elevator_imax.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
-                ac.pid_pitch2elevator_dmin.ToString(System.Globalization.CultureInfo.InvariantCulture) + "\n");
+            SendPidPitch2Elevator(ac.pid_pitch2elevator_p, ac.pid_pitch2elevator_i, ac.pid_pitch2elevator_d,
+                                ac.pid_pitch2elevator_imin, ac.pid_pitch2elevator_imax, ac.pid_pitch2elevator_dmin);
 
             Thread.Sleep(200);
 
-            _serialPort.WriteLine("\nPR;" +
-                ac.pid_roll2aileron_p.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
-                ac.pid_roll2aileron_i.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
-                ac.pid_roll2aileron_d.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
-                ac.pid_roll2aileron_imin.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
-                ac.pid_roll2aileron_imax.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
-                ac.pid_roll2aileron_dmin.ToString(System.Globalization.CultureInfo.InvariantCulture) + "\n");
-            
+            SendPidRoll2Aileron(ac.pid_roll2aileron_p, ac.pid_roll2aileron_i, ac.pid_roll2aileron_d,
+                                ac.pid_roll2aileron_imin, ac.pid_roll2aileron_imax, ac.pid_roll2aileron_dmin);
+
             Thread.Sleep(200);
 
             _serialPort.WriteLine("\nPH;" +
@@ -688,14 +714,7 @@ namespace Communication
 
             Thread.Sleep(200);
 
-            _serialPort.WriteLine("\nAT;" +
-                ac.auto_throttle_min_pct + ";" + ac.auto_throttle_max_pct + ";" +
-                ac.auto_throttle_cruise_pct + ";" + ac.auto_throttle_p_gain_10 + ";" +
-                (ac.auto_throttle_enabled ? "1" : "0"));
-            Console.WriteLine("\nAT;" +
-                ac.auto_throttle_min_pct + ";" + ac.auto_throttle_max_pct + ";" +
-                ac.auto_throttle_cruise_pct + ";" + ac.auto_throttle_p_gain_10 + ";" +
-                (ac.auto_throttle_enabled ? "1" : "0"));
+            SendAutoThrottleConfig(ac.auto_throttle_min_pct, ac.auto_throttle_max_pct, ac.auto_throttle_cruise_pct, ac.auto_throttle_p_gain_10, ac.auto_throttle_enabled);
         }
 
         public override void ReadAllConfig()

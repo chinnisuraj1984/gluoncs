@@ -102,6 +102,21 @@ namespace GluonCS.LiveUavLayer
             }
         }
 
+        public void Stop()
+        {
+            Serial.PressureTempCommunicationReceived -= new SerialCommunication.ReceivePressureTempCommunicationFrame(connection_PressureTempCommunicationReceived);
+            Serial.AttitudeCommunicationReceived -= new SerialCommunication.ReceiveAttitudeCommunicationFrame(connection_AttitudeCommunicationReceived);
+            Serial.NavigationInstructionCommunicationReceived -= new SerialCommunication.ReceiveNavigationInstructionCommunicationFrame(connection_NavigationInstructionCommunicationReceived);
+            Serial.GpsBasicCommunicationReceived -= new SerialCommunication.ReceiveGpsBasicCommunicationFrame(connection_GpsBasicCommunicationReceived);
+            Serial.ControlInfoCommunicationReceived -= new SerialCommunication.ReceiveControlInfoCommunicationFrame(connection_ControlInfoCommunicationReceived);
+            Serial.CommunicationEstablished -= new SerialCommunication.EstablishedCommunication(connection_CommunicationEstablished);
+            Serial.CommunicationLost -= new SerialCommunication.LostCommunication(connection_CommunicationLost);
+            Serial.NonParsedCommunicationReceived -= new SerialCommunication.ReceiveNonParsedCommunication(connection_NonParsedCommunicationReceived);
+            if (uavSynchronizer != null)
+                uavSynchronizer.Pause();
+            NavigationModel.Stop();
+        }
+
         private void connection_NonParsedCommunicationReceived(string line)
         {
             if (InformationMessageReceived != null)
@@ -405,7 +420,6 @@ namespace GluonCS.LiveUavLayer
         {
             this.model = model;
             this.serial = serial;
-            serial.NavigationInstructionCommunicationReceived += new SerialCommunication.ReceiveNavigationInstructionCommunicationFrame(serial_NavigationInstructionCommunicationReceived);
         }
 
         void serial_NavigationInstructionCommunicationReceived(NavigationInstruction ni)
@@ -417,26 +431,33 @@ namespace GluonCS.LiveUavLayer
 
         public void StartThread()
         {
-            smartThreadPool = new SmartThreadPool();
+            if (smartThreadPool == null)
+                smartThreadPool = new SmartThreadPool();
             smartThreadPool.Name = "SynchronizeNavigation";
             IWorkItemResult wir =
                 smartThreadPool.QueueWorkItem(new WorkItemCallback(SynchronizeNavigation), null);
             smartThreadPool.Start();
+            serial.NavigationInstructionCommunicationReceived += new SerialCommunication.ReceiveNavigationInstructionCommunicationFrame(serial_NavigationInstructionCommunicationReceived);
         }
 
         public void Pause()
         {
             try
             {
-                smartThreadPool.Cancel();
-                if (smartThreadPool != null && smartThreadPool.InUseThreads > 0)
+                //smartThreadPool.Cancel();
+                if (smartThreadPool != null)// && smartThreadPool.InUseThreads > 0)
+                {
                     smartThreadPool.Shutdown();
+                    smartThreadPool = null;
+                }
+                serial.NavigationInstructionCommunicationReceived -= new SerialCommunication.ReceiveNavigationInstructionCommunicationFrame(serial_NavigationInstructionCommunicationReceived);
             }
             catch (ObjectDisposedException e)
             {
 
             }
         }
+
 
         private object SynchronizeNavigation(object x)
         {

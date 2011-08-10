@@ -575,15 +575,7 @@ namespace GluonCS
 
         private void _btnConfig_Click(object sender, EventArgs e)
         {
-            if (model.Serial != null && model.Serial.IsOpen)
-            {
-                Gluonpilot.GluonConfig gc = new Gluonpilot.GluonConfig(model.Serial);
-                gc.Show();
-                //model.Serial.ReadAllConfig();
-                Gluonpilot.EasyConfig ec = new Gluonpilot.EasyConfig(model.Serial);
-                ec.Show();
-                model.Serial.ReadAllConfig();
-            }
+            
         }
 
         private void _btnConnect_Click(object sender, EventArgs e)
@@ -670,6 +662,26 @@ namespace GluonCS
         private void _tsPredator_Click(object sender, EventArgs e)
         {
             Load3dAhModel("Models\\Reaper\\MQ-9-Reaper.x");
+        }
+
+        private void _ts_basicconfig_Click(object sender, EventArgs e)
+        {
+            if (model.Serial != null && model.Serial.IsOpen)
+            {
+                Gluonpilot.EasyConfig ec = new Gluonpilot.EasyConfig(model.Serial);
+                ec.Show();
+                model.Serial.ReadAllConfig();
+            }
+        }
+
+        private void _tbn_fullconfig_Click(object sender, EventArgs e)
+        {
+            if (model.Serial != null && model.Serial.IsOpen)
+            {
+                Gluonpilot.GluonConfig gc = new Gluonpilot.GluonConfig(model.Serial);
+                gc.Show();
+                model.Serial.ReadAllConfig();
+            }
         }
 
 
