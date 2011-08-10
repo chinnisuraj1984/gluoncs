@@ -39,6 +39,19 @@ namespace Graph
             _serial.AttitudeCommunicationReceived += new SerialCommunication.ReceiveAttitudeCommunicationFrame(_serial_AttitudeCommunicationReceived);
         }
 
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+
+            Stop();
+        }
+
+
         public void Stop()
         {
             if (_serial != null)

@@ -174,6 +174,10 @@ namespace GluonCS
             Properties.Settings.Default.MapPositionLongitude = _gMapControl.Position.Lng;
             Properties.Settings.Default.MapZoomLevel = _gMapControl.Zoom;
             Properties.Settings.Default.Save();
+
+            controller.Stop();
+            model.InformationMessageReceived -= new LiveUavModel.TextReceivedEventHandler(model_InformationMessageReceived);
+            model.Stop();
         }
 
         private void m_cboToolStripRenderer_SelectedIndexChanged(object sender, EventArgs e)

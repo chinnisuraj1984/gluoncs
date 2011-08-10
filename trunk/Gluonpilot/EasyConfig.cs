@@ -16,6 +16,7 @@ namespace Gluonpilot
     {
         private SerialCommunication serial;
         Communication.Frames.Configuration.AllConfig config = null;
+        Communication.Frames.Configuration.AllConfig config_original = null;
         private Artificial3DHorizon.AI3D aI3D = null;
         private bool guiUpdateBusy = false;
 
@@ -109,6 +110,9 @@ namespace Gluonpilot
 
         void serial_AllConfigCommunicationReceived(Communication.Frames.Configuration.AllConfig config)
         {
+            if (this.config_original == null)
+                config_original = config;
+
             guiUpdateBusy = true;
             _tmrGuiUpdateBusy.Enabled = true;
             _tmrGuiUpdateBusy.Start();
@@ -142,6 +146,9 @@ namespace Gluonpilot
 
                 _hsPitchSensitivity.Value = (int)(config.pid_pitch2elevator_p * 10.0);
                 _hsRollSensitivity.Value = (int)(config.pid_roll2aileron_p * 10.0);
+
+                _cbAutothrottle.Checked = config.auto_throttle_enabled;
+                _hsbCruiseThrottle.Value = config.auto_throttle_cruise_pct;
             };
 
             try
@@ -211,11 +218,6 @@ namespace Gluonpilot
             aI3D.BackColor = c.BackColor;
         }
 
-        private void _hsSensitivity_ValueChanged(object sender, EventArgs e)
-        {
-            _lblRollSensitivity.Text = "(" + (((double)_hsRollSensitivity.Value) / 10.0).ToString("F1") + ")";
-            _lblPitchSensitivity.Text = "(" + (((double)_hsPitchSensitivity.Value) / 10.0).ToString("F1") + ")";
-        }
 
         private void _cbInvert_CheckedChanged(object sender, EventArgs e)
         {
@@ -254,7 +256,52 @@ namespace Gluonpilot
             serial.AllConfigCommunicationReceived -= new SerialCommunication.ReceiveAllConfigCommunicationFrame(serial_AllConfigCommunicationReceived);
             serial.AttitudeCommunicationReceived -= new SerialCommunication.ReceiveAttitudeCommunicationFrame(serial_AttitudeCommunicationReceived);
             serial.RcInputCommunicationReceived -= new SerialCommunication.ReceiveRcInputCommunicationFrame(serial_RcInputCommunicationReceived);
+        }
 
+        private void _hsRollSensitivity_ValueChanged(object sender, EventArgs e)
+        {
+            if (!guiUpdateBusy)
+            {
+                _lblRollSensitivity.Text = "(" + (((double)_hsRollSensitivity.Value) / 10.0).ToString("F1") + ")";
+                serial.SendPidRoll2Aileron((((double)_hsRollSensitivity.Value) / 10.0),
+                    config.pid_roll2aileron_i, config.pid_roll2aileron_d, config.pid_roll2aileron_imin, config.pid_roll2aileron_imax, config.pid_roll2aileron_dmin);
+            }
+        }
+
+        private void _hsPitchSensitivity_ValueChanged(object sender, EventArgs e)
+        {
+            if (!guiUpdateBusy)
+            {
+                _lblPitchSensitivity.Text = "(" + (((double)_hsPitchSensitivity.Value) / 10.0).ToString("F1") + ")";
+
+                serial.SendPidPitch2Elevator((((double)_hsPitchSensitivity.Value) / 10.0),
+                    config.pid_pitch2elevator_i, config.pid_pitch2elevator_d, config.pid_pitch2elevator_imin, config.pid_pitch2elevator_imax, config.pid_pitch2elevator_dmin);
+            }
+        }
+
+        private void _btnCancel_Click(object sender, EventArgs e)
+        {
+            serial.Send(config_original);
+            this.Close();
+        }
+
+        private void _btnSaveAndClose_Click(object sender, EventArgs e)
+        {
+            serial.SendFlashConfiguration();
+            this.Close();
+        }
+
+        private void _hsbCruiseThrottle_Scroll(object sender, ScrollEventArgs e)
+        {
+            if (!guiUpdateBusy)
+            {
+                serial.SendAutoThrottleConfig(config.auto_throttle_min_pct, config.auto_throttle_max_pct, _hsbCruiseThrottle.Value, config.auto_throttle_p_gain_10, _cbAutothrottle.Checked);
+            }
+        }
+
+        private void _cbAutothrottle_CheckedChanged(object sender, EventArgs e)
+        {
+            _hsbCruiseThrottle_Scroll(sender, null);
         }
     }
 }

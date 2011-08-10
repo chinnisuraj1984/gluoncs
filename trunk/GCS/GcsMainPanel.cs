@@ -64,10 +64,10 @@ namespace GCS
 
             if (_serial != null)
             {
-                _serial.AttitudeCommunicationReceived -= new SerialCommunication.ReceiveAttitudeCommunicationFrame(serial_AttitudeCommunicationReceived);
-                _serial.PressureTempCommunicationReceived -= new SerialCommunication.ReceivePressureTempCommunicationFrame(serial_PressureTempCommunicationReceived);
-                _serial.GpsBasicCommunicationReceived -= new SerialCommunication.ReceiveGpsBasicCommunicationFrame(serial_GpsBasicCommunicationReceived);
-                _serial.ControlInfoCommunicationReceived -= new SerialCommunication.ReceiveControlInfoCommunicationFrame(serial_ControlInfoCommunicationReceived);
+                //_serial.AttitudeCommunicationReceived -= new SerialCommunication.ReceiveAttitudeCommunicationFrame(serial_AttitudeCommunicationReceived);
+                //_serial.PressureTempCommunicationReceived -= new SerialCommunication.ReceivePressureTempCommunicationFrame(serial_PressureTempCommunicationReceived);
+                //_serial.GpsBasicCommunicationReceived -= new SerialCommunication.ReceiveGpsBasicCommunicationFrame(serial_GpsBasicCommunicationReceived);
+                //_serial.ControlInfoCommunicationReceived -= new SerialCommunication.ReceiveControlInfoCommunicationFrame(serial_ControlInfoCommunicationReceived);
             }
         }
 

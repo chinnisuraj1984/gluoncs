@@ -35,7 +35,9 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this._btnCenterUav = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this._btnConfig = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
+            this._ts_basicconfig = new System.Windows.Forms.ToolStripMenuItem();
+            this._tbn_fullconfig = new System.Windows.Forms.ToolStripMenuItem();
             this._pbRcLink = new ProgressBarColored();
             this.label3 = new System.Windows.Forms.Label();
             this._pbLink = new ProgressBarColored();
@@ -209,21 +211,21 @@
             // _tsFunjet
             // 
             this._tsFunjet.Name = "_tsFunjet";
-            this._tsFunjet.Size = new System.Drawing.Size(152, 22);
+            this._tsFunjet.Size = new System.Drawing.Size(119, 22);
             this._tsFunjet.Text = "Funjet";
             this._tsFunjet.Click += new System.EventHandler(this._tsFunjet_Click);
             // 
             // _tsEasystar
             // 
             this._tsEasystar.Name = "_tsEasystar";
-            this._tsEasystar.Size = new System.Drawing.Size(152, 22);
+            this._tsEasystar.Size = new System.Drawing.Size(119, 22);
             this._tsEasystar.Text = "Easystar";
             this._tsEasystar.Click += new System.EventHandler(this._tsEasystar_Click);
             // 
             // _tsPredator
             // 
             this._tsPredator.Name = "_tsPredator";
-            this._tsPredator.Size = new System.Drawing.Size(152, 22);
+            this._tsPredator.Size = new System.Drawing.Size(119, 22);
             this._tsPredator.Text = "Predator";
             this._tsPredator.Click += new System.EventHandler(this._tsPredator_Click);
             // 
@@ -277,10 +279,10 @@
             this.toolStripSeparator2,
             this._btnCenterUav,
             this.toolStripSeparator3,
-            this._btnConfig});
+            this.toolStripDropDownButton3});
             this.toolStrip2.Location = new System.Drawing.Point(3, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(188, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(318, 25);
             this.toolStrip2.TabIndex = 0;
             // 
             // _btnConnect
@@ -303,7 +305,7 @@
             this._btnCenterUav.Image = ((System.Drawing.Image)(resources.GetObject("_btnCenterUav.Image")));
             this._btnCenterUav.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._btnCenterUav.Name = "_btnCenterUav";
-            this._btnCenterUav.Size = new System.Drawing.Size(83, 22);
+            this._btnCenterUav.Size = new System.Drawing.Size(88, 22);
             this._btnCenterUav.Text = "Center UAV";
             this._btnCenterUav.Click += new System.EventHandler(this._btnCenterUav_Click);
             // 
@@ -312,14 +314,31 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
-            // _btnConfig
+            // toolStripDropDownButton3
             // 
-            this._btnConfig.Image = ((System.Drawing.Image)(resources.GetObject("_btnConfig.Image")));
-            this._btnConfig.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this._btnConfig.Name = "_btnConfig";
-            this._btnConfig.Size = new System.Drawing.Size(58, 22);
-            this._btnConfig.Text = "Config";
-            this._btnConfig.Click += new System.EventHandler(this._btnConfig_Click);
+            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._ts_basicconfig,
+            this._tbn_fullconfig});
+            this.toolStripDropDownButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton3.Image")));
+            this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
+            this.toolStripDropDownButton3.Size = new System.Drawing.Size(152, 22);
+            this.toolStripDropDownButton3.Text = "Module configuration";
+            this.toolStripDropDownButton3.ToolTipText = "Module configuration";
+            // 
+            // _ts_basicconfig
+            // 
+            this._ts_basicconfig.Name = "_ts_basicconfig";
+            this._ts_basicconfig.Size = new System.Drawing.Size(152, 22);
+            this._ts_basicconfig.Text = "Basic";
+            this._ts_basicconfig.Click += new System.EventHandler(this._ts_basicconfig_Click);
+            // 
+            // _tbn_fullconfig
+            // 
+            this._tbn_fullconfig.Name = "_tbn_fullconfig";
+            this._tbn_fullconfig.Size = new System.Drawing.Size(152, 22);
+            this._tbn_fullconfig.Text = "Full";
+            this._tbn_fullconfig.Click += new System.EventHandler(this._tbn_fullconfig_Click);
             // 
             // _pbRcLink
             // 
@@ -744,14 +763,14 @@
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(52, 22);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(54, 22);
             this.toolStripDropDownButton1.Text = "&File";
             // 
             // _nav_open
             // 
             this._nav_open.Image = ((System.Drawing.Image)(resources.GetObject("_nav_open.Image")));
             this._nav_open.Name = "_nav_open";
-            this._nav_open.Size = new System.Drawing.Size(111, 22);
+            this._nav_open.Size = new System.Drawing.Size(103, 22);
             this._nav_open.Text = "&Open";
             this._nav_open.Click += new System.EventHandler(this._nav_open_Click);
             // 
@@ -759,7 +778,7 @@
             // 
             this._nav_save.Image = ((System.Drawing.Image)(resources.GetObject("_nav_save.Image")));
             this._nav_save.Name = "_nav_save";
-            this._nav_save.Size = new System.Drawing.Size(111, 22);
+            this._nav_save.Size = new System.Drawing.Size(103, 22);
             this._nav_save.Text = "&Save";
             this._nav_save.Click += new System.EventHandler(this._nav_save_Click);
             // 
@@ -772,27 +791,27 @@
             this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(55, 22);
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(56, 22);
             this.toolStripDropDownButton2.Text = "&Uav";
             // 
             // _btnNaviRead
             // 
             this._btnNaviRead.Name = "_btnNaviRead";
-            this._btnNaviRead.Size = new System.Drawing.Size(169, 22);
+            this._btnNaviRead.Size = new System.Drawing.Size(167, 22);
             this._btnNaviRead.Text = "&Read";
             this._btnNaviRead.Click += new System.EventHandler(this._btnNaviRead_Click);
             // 
             // _btnNaviWrite
             // 
             this._btnNaviWrite.Name = "_btnNaviWrite";
-            this._btnNaviWrite.Size = new System.Drawing.Size(169, 22);
+            this._btnNaviWrite.Size = new System.Drawing.Size(167, 22);
             this._btnNaviWrite.Text = "&Write";
             this._btnNaviWrite.Click += new System.EventHandler(this._btnNaviWrite_Click);
             // 
             // _btnNaviReload
             // 
             this._btnNaviReload.Name = "_btnNaviReload";
-            this._btnNaviReload.Size = new System.Drawing.Size(169, 22);
+            this._btnNaviReload.Size = new System.Drawing.Size(167, 22);
             this._btnNaviReload.Text = "Re&load from flash";
             this._btnNaviReload.Click += new System.EventHandler(this._btnNaviReload_Click);
             // 
@@ -802,7 +821,7 @@
             this._btnAutoSync.Image = ((System.Drawing.Image)(resources.GetObject("_btnAutoSync.Image")));
             this._btnAutoSync.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._btnAutoSync.Name = "_btnAutoSync";
-            this._btnAutoSync.Size = new System.Drawing.Size(76, 22);
+            this._btnAutoSync.Size = new System.Drawing.Size(82, 22);
             this._btnAutoSync.Text = "Auto-sync";
             this._btnAutoSync.CheckedChanged += new System.EventHandler(this._btnAutoSync_CheckedChanged);
             // 
@@ -811,7 +830,7 @@
             this._btnNaviBurn.Image = ((System.Drawing.Image)(resources.GetObject("_btnNaviBurn.Image")));
             this._btnNaviBurn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._btnNaviBurn.Name = "_btnNaviBurn";
-            this._btnNaviBurn.Size = new System.Drawing.Size(49, 22);
+            this._btnNaviBurn.Size = new System.Drawing.Size(52, 22);
             this._btnNaviBurn.Text = "Burn";
             this._btnNaviBurn.Click += new System.EventHandler(this._btnNaviBurn_Click);
             // 
@@ -953,7 +972,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton _btnCenterUav;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton _btnConfig;
         private System.Windows.Forms.Label _lblFlightMode;
         private System.Windows.Forms.Panel _ahPanel;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
@@ -962,5 +980,8 @@
         private System.Windows.Forms.ToolStripMenuItem _tsFunjet;
         private System.Windows.Forms.ToolStripMenuItem _tsEasystar;
         private System.Windows.Forms.ToolStripMenuItem _tsPredator;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
+        private System.Windows.Forms.ToolStripMenuItem _ts_basicconfig;
+        private System.Windows.Forms.ToolStripMenuItem _tbn_fullconfig;
     }
 }

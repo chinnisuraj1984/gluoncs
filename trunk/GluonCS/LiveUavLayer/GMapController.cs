@@ -112,6 +112,19 @@ namespace GluonCS.LiveUavLayer
             zoomtowaypoints.Tick += new EventHandler(zoomtowaypoints_Tick);
         }
 
+        public void Stop()
+        {
+            model.NavigationLocalListChanged -= new LiveUavModel.ChangedEventHandler(model_NavigationLocalListChanged);
+            model.HomeChanged -= new LiveUavModel.ChangedEventHandler(model_HomeChanged);
+            model.UavPositionChanged -= new LiveUavModel.ChangedEventHandler(model_UavPositionChanged);
+            model.UavAttitudeChanged -= new LiveUavModel.ChangedEventHandler(model_UavAttitudeChanged);
+            model.CommunicationLost -= new LiveUavModel.ChangedEventHandler(model_CommunicationLost);
+            model.CommunicationEstablished -= new LiveUavModel.ChangedEventHandler(model_CommunicationEstablished);
+            model.CenterOnUav -= new LiveUavModel.ChangedEventHandler(model_CenterUav);
+            gmap.Dispose();
+
+        }
+
         void model_CenterUav(object sender, EventArgs e)
         {
             gmap.Position = uavMarker.Position;

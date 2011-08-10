@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this._btnCancel = new System.Windows.Forms.Button();
+            this._btnSaveAndClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -96,32 +96,38 @@
             this._lblInterpretation4 = new System.Windows.Forms.Label();
             this._lblInterpretation5 = new System.Windows.Forms.Label();
             this._lblInterpretation6 = new System.Windows.Forms.Label();
-            this._btnRead = new System.Windows.Forms.Button();
             this._lblFunctionOut5 = new System.Windows.Forms.Label();
             this._lblFunctionOut6 = new System.Windows.Forms.Label();
             this._btnCalibrateGyroscopes = new System.Windows.Forms.Button();
             this._btnCalibrateAccelerometers = new System.Windows.Forms.Button();
             this._pl3d = new System.Windows.Forms.Panel();
             this._tmrGuiUpdateBusy = new System.Windows.Forms.Timer(this.components);
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this._hsbCruiseThrottle = new System.Windows.Forms.HScrollBar();
+            this._lblCruiseThrottle = new System.Windows.Forms.Label();
+            this._cbAutothrottle = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // button1
+            // _btnCancel
             // 
-            this.button1.Location = new System.Drawing.Point(36, 549);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(166, 41);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Cancel && reload original settings";
-            this.button1.UseVisualStyleBackColor = true;
+            this._btnCancel.Location = new System.Drawing.Point(36, 549);
+            this._btnCancel.Name = "_btnCancel";
+            this._btnCancel.Size = new System.Drawing.Size(166, 41);
+            this._btnCancel.TabIndex = 0;
+            this._btnCancel.Text = "Cancel && reload original settings";
+            this._btnCancel.UseVisualStyleBackColor = true;
+            this._btnCancel.Click += new System.EventHandler(this._btnCancel_Click);
             // 
-            // button2
+            // _btnSaveAndClose
             // 
-            this.button2.Location = new System.Drawing.Point(536, 549);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 41);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Close && save settings";
-            this.button2.UseVisualStyleBackColor = true;
+            this._btnSaveAndClose.Location = new System.Drawing.Point(518, 549);
+            this._btnSaveAndClose.Name = "_btnSaveAndClose";
+            this._btnSaveAndClose.Size = new System.Drawing.Size(151, 41);
+            this._btnSaveAndClose.TabIndex = 1;
+            this._btnSaveAndClose.Text = "Close, save && burn settings";
+            this._btnSaveAndClose.UseVisualStyleBackColor = true;
+            this._btnSaveAndClose.Click += new System.EventHandler(this._btnSaveAndClose_Click);
             // 
             // label1
             // 
@@ -192,7 +198,7 @@
             this._hsRollSensitivity.Name = "_hsRollSensitivity";
             this._hsRollSensitivity.Size = new System.Drawing.Size(164, 17);
             this._hsRollSensitivity.TabIndex = 8;
-            this._hsRollSensitivity.ValueChanged += new System.EventHandler(this._hsSensitivity_ValueChanged);
+            this._hsRollSensitivity.ValueChanged += new System.EventHandler(this._hsRollSensitivity_ValueChanged);
             // 
             // label6
             // 
@@ -220,7 +226,7 @@
             this._hsPitchSensitivity.Name = "_hsPitchSensitivity";
             this._hsPitchSensitivity.Size = new System.Drawing.Size(164, 17);
             this._hsPitchSensitivity.TabIndex = 10;
-            this._hsPitchSensitivity.ValueChanged += new System.EventHandler(this._hsSensitivity_ValueChanged);
+            this._hsPitchSensitivity.ValueChanged += new System.EventHandler(this._hsPitchSensitivity_ValueChanged);
             // 
             // _lblRollSensitivity
             // 
@@ -764,16 +770,6 @@
             this._lblInterpretation6.TabIndex = 66;
             this._lblInterpretation6.Text = "   ";
             // 
-            // _btnRead
-            // 
-            this._btnRead.Location = new System.Drawing.Point(237, 549);
-            this._btnRead.Name = "_btnRead";
-            this._btnRead.Size = new System.Drawing.Size(111, 23);
-            this._btnRead.TabIndex = 67;
-            this._btnRead.Text = "Read from module";
-            this._btnRead.UseVisualStyleBackColor = true;
-            this._btnRead.Click += new System.EventHandler(this._btnRead_Click);
-            // 
             // _lblFunctionOut5
             // 
             this._lblFunctionOut5.AutoSize = true;
@@ -814,9 +810,9 @@
             // 
             // _pl3d
             // 
-            this._pl3d.Location = new System.Drawing.Point(426, -4);
+            this._pl3d.Location = new System.Drawing.Point(423, 20);
             this._pl3d.Name = "_pl3d";
-            this._pl3d.Size = new System.Drawing.Size(200, 200);
+            this._pl3d.Size = new System.Drawing.Size(150, 150);
             this._pl3d.TabIndex = 72;
             // 
             // _tmrGuiUpdateBusy
@@ -825,18 +821,70 @@
             this._tmrGuiUpdateBusy.Interval = 500;
             this._tmrGuiUpdateBusy.Tick += new System.EventHandler(this._tmrGuiUpdateBusy_Tick);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(263, 561);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(196, 16);
+            this.label8.TabIndex = 73;
+            this.label8.Text = "All changes are immediate!";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(377, 507);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(71, 13);
+            this.label9.TabIndex = 74;
+            this.label9.Text = "Cruise throttle";
+            // 
+            // _hsbCruiseThrottle
+            // 
+            this._hsbCruiseThrottle.LargeChange = 5;
+            this._hsbCruiseThrottle.Location = new System.Drawing.Point(451, 507);
+            this._hsbCruiseThrottle.Name = "_hsbCruiseThrottle";
+            this._hsbCruiseThrottle.Size = new System.Drawing.Size(164, 17);
+            this._hsbCruiseThrottle.TabIndex = 75;
+            this._hsbCruiseThrottle.Scroll += new System.Windows.Forms.ScrollEventHandler(this._hsbCruiseThrottle_Scroll);
+            // 
+            // _lblCruiseThrottle
+            // 
+            this._lblCruiseThrottle.AutoSize = true;
+            this._lblCruiseThrottle.Location = new System.Drawing.Point(627, 507);
+            this._lblCruiseThrottle.Name = "_lblCruiseThrottle";
+            this._lblCruiseThrottle.Size = new System.Drawing.Size(33, 13);
+            this._lblCruiseThrottle.TabIndex = 76;
+            this._lblCruiseThrottle.Text = "(80%)";
+            // 
+            // _cbAutothrottle
+            // 
+            this._cbAutothrottle.AutoSize = true;
+            this._cbAutothrottle.Location = new System.Drawing.Point(375, 476);
+            this._cbAutothrottle.Name = "_cbAutothrottle";
+            this._cbAutothrottle.Size = new System.Drawing.Size(118, 17);
+            this._cbAutothrottle.TabIndex = 77;
+            this._cbAutothrottle.Text = "Enable auto throttle";
+            this._cbAutothrottle.UseVisualStyleBackColor = true;
+            this._cbAutothrottle.CheckedChanged += new System.EventHandler(this._cbAutothrottle_CheckedChanged);
+            // 
             // EasyConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(698, 602);
+            this.Controls.Add(this._cbAutothrottle);
+            this.Controls.Add(this._lblCruiseThrottle);
+            this.Controls.Add(this._hsbCruiseThrottle);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.artificialHorizon1);
             this.Controls.Add(this._btnCalibrateAccelerometers);
             this.Controls.Add(this._btnCalibrateGyroscopes);
             this.Controls.Add(this._lblFunctionOut6);
             this.Controls.Add(this._lblFunctionOut5);
-            this.Controls.Add(this._btnRead);
             this.Controls.Add(this._lblInterpretation6);
             this.Controls.Add(this._lblInterpretation5);
             this.Controls.Add(this._lblInterpretation4);
@@ -901,8 +949,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this._btnSaveAndClose);
+            this.Controls.Add(this._btnCancel);
             this.Controls.Add(this._pl3d);
             this.Name = "EasyConfig";
             this.Text = "EasyConfig";
@@ -915,8 +963,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button _btnCancel;
+        private System.Windows.Forms.Button _btnSaveAndClose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -982,12 +1030,16 @@
         private System.Windows.Forms.Label _lblInterpretation4;
         private System.Windows.Forms.Label _lblInterpretation5;
         private System.Windows.Forms.Label _lblInterpretation6;
-        private System.Windows.Forms.Button _btnRead;
         private System.Windows.Forms.Label _lblFunctionOut5;
         private System.Windows.Forms.Label _lblFunctionOut6;
         private System.Windows.Forms.Button _btnCalibrateGyroscopes;
         private System.Windows.Forms.Button _btnCalibrateAccelerometers;
         private System.Windows.Forms.Panel _pl3d;
         private System.Windows.Forms.Timer _tmrGuiUpdateBusy;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.HScrollBar _hsbCruiseThrottle;
+        private System.Windows.Forms.Label _lblCruiseThrottle;
+        private System.Windows.Forms.CheckBox _cbAutothrottle;
     }
 }
