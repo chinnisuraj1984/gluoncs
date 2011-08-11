@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.IO;
 using System.IO.Ports;
@@ -27,8 +26,15 @@ namespace Communication
         {
             set
             {
-                filename = value;
-                logfile = new System.IO.StreamWriter(filename);
+                try
+                {
+                    filename = value;
+                    logfile = new System.IO.StreamWriter(filename);
+                }
+                catch (Exception e)
+                {
+                    logfile = null;
+                }
             }
             get
             {
@@ -40,7 +46,7 @@ namespace Communication
         }
         private System.IO.StreamWriter logfile;
 
-        private SmartThreadPool _smartThreadPool = new SmartThreadPool();
+        private SmartThreadPool _smartThreadPool;
         private int bytes_read = 0;
         private double download_speed_kb_s;
         private DateTime last_throughput_calculation;
@@ -120,7 +126,9 @@ namespace Communication
             _serialPort.PortName = portName;
             _serialPort.BaudRate = baudrate;
             _serialPort.Open();
+            _smartThreadPool = new SmartThreadPool();
             _smartThreadPool.Name = "ReceiveThreadedData";
+
             IWorkItemResult wir =
                         _smartThreadPool.QueueWorkItem(
                             new WorkItemCallback(this.ReceiveThreadedData), _serialPort);

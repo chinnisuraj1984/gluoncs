@@ -59,6 +59,8 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this._btn_firmware_upgrade = new System.Windows.Forms.ToolStripButton();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this._btnBasicConfiguration = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -245,14 +247,14 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(86, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(96, 17);
             this.toolStripStatusLabel1.Text = "Time connected:";
             this.toolStripStatusLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // _tssl_time
             // 
             this._tssl_time.Name = "_tssl_time";
-            this._tssl_time.Size = new System.Drawing.Size(404, 17);
+            this._tssl_time.Size = new System.Drawing.Size(386, 17);
             this._tssl_time.Spring = true;
             this._tssl_time.Text = "00:00:00";
             this._tssl_time.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -260,7 +262,7 @@
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(90, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(98, 17);
             this.toolStripStatusLabel2.Text = "Download speed:";
             // 
             // _tssl_downloadspeed
@@ -318,10 +320,12 @@
             this.toolStripSeparator2,
             this._btn_reboot,
             this.toolStripSeparator3,
-            this._btn_firmware_upgrade});
+            this._btn_firmware_upgrade,
+            this.toolStripSeparator4,
+            this._btnBasicConfiguration});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(374, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(540, 25);
             this.toolStrip1.TabIndex = 0;
             // 
             // _btn_connect
@@ -329,7 +333,7 @@
             this._btn_connect.Image = ((System.Drawing.Image)(resources.GetObject("_btn_connect.Image")));
             this._btn_connect.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._btn_connect.Name = "_btn_connect";
-            this._btn_connect.Size = new System.Drawing.Size(67, 22);
+            this._btn_connect.Size = new System.Drawing.Size(72, 22);
             this._btn_connect.Text = "Connect";
             this._btn_connect.Click += new System.EventHandler(this._btn_connect_Click);
             // 
@@ -345,7 +349,7 @@
             this._btn_showlogging.Image = ((System.Drawing.Image)(resources.GetObject("_btn_showlogging.Image")));
             this._btn_showlogging.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._btn_showlogging.Name = "_btn_showlogging";
-            this._btn_showlogging.Size = new System.Drawing.Size(64, 22);
+            this._btn_showlogging.Size = new System.Drawing.Size(71, 22);
             this._btn_showlogging.Text = "Logging";
             this._btn_showlogging.Click += new System.EventHandler(this._btn_showlogging_Click);
             // 
@@ -356,10 +360,11 @@
             // 
             // _btn_reboot
             // 
+            this._btn_reboot.Enabled = false;
             this._btn_reboot.Image = ((System.Drawing.Image)(resources.GetObject("_btn_reboot.Image")));
             this._btn_reboot.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._btn_reboot.Name = "_btn_reboot";
-            this._btn_reboot.Size = new System.Drawing.Size(99, 22);
+            this._btn_reboot.Size = new System.Drawing.Size(109, 22);
             this._btn_reboot.Text = "Reboot module";
             this._btn_reboot.Click += new System.EventHandler(this._btn_reboot_Click);
             // 
@@ -373,7 +378,7 @@
             this._btn_firmware_upgrade.Image = ((System.Drawing.Image)(resources.GetObject("_btn_firmware_upgrade.Image")));
             this._btn_firmware_upgrade.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._btn_firmware_upgrade.Name = "_btn_firmware_upgrade";
-            this._btn_firmware_upgrade.Size = new System.Drawing.Size(114, 22);
+            this._btn_firmware_upgrade.Size = new System.Drawing.Size(123, 22);
             this._btn_firmware_upgrade.Text = "Firmware upgrade";
             this._btn_firmware_upgrade.Click += new System.EventHandler(this._btn_firmware_upgrade_Click);
             // 
@@ -381,6 +386,21 @@
             // 
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // _btnBasicConfiguration
+            // 
+            this._btnBasicConfiguration.Enabled = false;
+            this._btnBasicConfiguration.Image = ((System.Drawing.Image)(resources.GetObject("_btnBasicConfiguration.Image")));
+            this._btnBasicConfiguration.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this._btnBasicConfiguration.Name = "_btnBasicConfiguration";
+            this._btnBasicConfiguration.Size = new System.Drawing.Size(129, 22);
+            this._btnBasicConfiguration.Text = "Basic configuration";
+            this._btnBasicConfiguration.Click += new System.EventHandler(this._btnBasicConfiguration_Click);
             // 
             // GluonConfig
             // 
@@ -390,6 +410,7 @@
             this.Controls.Add(this.toolStripContainer1);
             this.Name = "GluonConfig";
             this.Text = "GluonConfig v0.6";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GluonConfig_FormClosing);
             this.Resize += new System.EventHandler(this.GluonConfig_Resize);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
@@ -445,6 +466,8 @@
         private System.Windows.Forms.ToolStripStatusLabel _tssl_time;
         private System.Windows.Forms.ToolStripStatusLabel _tssl_downloadspeed;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton _btnBasicConfiguration;
 
 
 

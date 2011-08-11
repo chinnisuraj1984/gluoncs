@@ -52,16 +52,18 @@ namespace Gluonpilot
 
                     Label[] channel_labels = {_lblInterpretation1, _lblInterpretation2, _lblInterpretation3, _lblInterpretation4, _lblInterpretation5, _lblInterpretation6 };
                     if (rcinput.GetPwm(config.channel_ap) > 1750)
-                        channel_labels[config.channel_ap - 1].Text = "Autopilot mode";
+                        channel_labels[config.channel_ap - 1].Text = "Manual mode";
                     else if (rcinput.GetPwm(config.channel_ap) > 1350)
                         channel_labels[config.channel_ap - 1].Text = "Stabilized mode";
-                    else if (rcinput.GetPwm(config.channel_ap) > 950)
-                        channel_labels[config.channel_ap - 1].Text = "Manual mode";
+                    else if (rcinput.GetPwm(config.channel_ap) > 900)
+                        channel_labels[config.channel_ap - 1].Text = "Autopilot mode";
                     else
                         channel_labels[config.channel_ap - 1].Text = "Undetermined";
 
-                    if (rcinput.GetPwm(config.channel_motor) > 950)
-                        channel_labels[config.channel_motor - 1].Text = "Throttle " + ((int)((rcinput.GetPwm(config.channel_motor) - 1000) / 10)).ToString() + "%";
+                    if (rcinput.GetPwm(config.channel_motor) > 1500)
+                        channel_labels[config.channel_motor - 1].Text = "Throttle high";
+                    else if (rcinput.GetPwm(config.channel_motor) > 920)
+                        channel_labels[config.channel_motor - 1].Text = "Throttle low";
                     else if (rcinput.GetPwm(config.channel_motor) > 800)
                         channel_labels[config.channel_motor - 1].Text = "Throttle in autopilot failsafe";
                     else
@@ -71,7 +73,7 @@ namespace Gluonpilot
                         channel_labels[config.channel_pitch - 1].Text = "Pitching UP";
                     else if (rcinput.GetPwm(config.channel_pitch) > 1250)
                         channel_labels[config.channel_pitch - 1].Text = "Pithing +- neutral";
-                    else if (rcinput.GetPwm(config.channel_pitch) > 950)
+                    else if (rcinput.GetPwm(config.channel_pitch) > 900)
                         channel_labels[config.channel_pitch - 1].Text = "Pithing DOWN";
                     else
                         channel_labels[config.channel_pitch - 1].Text = "Undetermined";
@@ -80,7 +82,7 @@ namespace Gluonpilot
                         channel_labels[config.channel_roll - 1].Text = "Rolling RIGHT";
                     else if (rcinput.GetPwm(config.channel_roll) > 1250)
                         channel_labels[config.channel_roll - 1].Text = "Roll +- neutral";
-                    else if (rcinput.GetPwm(config.channel_roll) > 950)
+                    else if (rcinput.GetPwm(config.channel_roll) > 900)
                         channel_labels[config.channel_roll - 1].Text = "Rolling LEFT";
                     else
                         channel_labels[config.channel_roll - 1].Text = "Undetermined";
@@ -146,6 +148,8 @@ namespace Gluonpilot
 
                 _hsPitchSensitivity.Value = (int)(config.pid_pitch2elevator_p * 10.0);
                 _hsRollSensitivity.Value = (int)(config.pid_roll2aileron_p * 10.0);
+                //_hsRollSensitivity_ValueChanged(null, ScrollEventArgs.Empty);
+                //_hsPitchSensitivity_ValueChanged(null, ScrollEventArgs.Empty);
 
                 _cbAutothrottle.Checked = config.auto_throttle_enabled;
                 _hsbCruiseThrottle.Value = config.auto_throttle_cruise_pct;
@@ -199,11 +203,13 @@ namespace Gluonpilot
 
         private void _btnCalibrateGyroscopes_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Please make sure the module is not moving", "Tip", MessageBoxButtons.OK, MessageBoxIcon.Information);
             serial.SendCalibrateGyros();
         }
 
         private void _btnCalibrateAccelerometers_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Please make sure the module parallel to the ground", "Tip", MessageBoxButtons.OK, MessageBoxIcon.Information);
             serial.SendCalibrateAcceleros();
         }
 
@@ -260,9 +266,9 @@ namespace Gluonpilot
 
         private void _hsRollSensitivity_ValueChanged(object sender, EventArgs e)
         {
+            _lblRollSensitivity.Text = "(" + (((double)_hsRollSensitivity.Value) / 10.0).ToString("F1") + ")";
             if (!guiUpdateBusy)
             {
-                _lblRollSensitivity.Text = "(" + (((double)_hsRollSensitivity.Value) / 10.0).ToString("F1") + ")";
                 serial.SendPidRoll2Aileron((((double)_hsRollSensitivity.Value) / 10.0),
                     config.pid_roll2aileron_i, config.pid_roll2aileron_d, config.pid_roll2aileron_imin, config.pid_roll2aileron_imax, config.pid_roll2aileron_dmin);
             }
@@ -270,10 +276,9 @@ namespace Gluonpilot
 
         private void _hsPitchSensitivity_ValueChanged(object sender, EventArgs e)
         {
+            _lblPitchSensitivity.Text = "(" + (((double)_hsPitchSensitivity.Value) / 10.0).ToString("F1") + ")";
             if (!guiUpdateBusy)
             {
-                _lblPitchSensitivity.Text = "(" + (((double)_hsPitchSensitivity.Value) / 10.0).ToString("F1") + ")";
-
                 serial.SendPidPitch2Elevator((((double)_hsPitchSensitivity.Value) / 10.0),
                     config.pid_pitch2elevator_i, config.pid_pitch2elevator_d, config.pid_pitch2elevator_imin, config.pid_pitch2elevator_imax, config.pid_pitch2elevator_dmin);
             }
@@ -281,6 +286,7 @@ namespace Gluonpilot
 
         private void _btnCancel_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show("Resetting original settings", "Please be patient", MessageBoxButtons.
             serial.Send(config_original);
             this.Close();
         }
@@ -296,6 +302,7 @@ namespace Gluonpilot
             if (!guiUpdateBusy)
             {
                 serial.SendAutoThrottleConfig(config.auto_throttle_min_pct, config.auto_throttle_max_pct, _hsbCruiseThrottle.Value, config.auto_throttle_p_gain_10, _cbAutothrottle.Checked);
+                _lblCruiseThrottle.Text = "(" + _hsbCruiseThrottle.Value.ToString() + "%)";
             }
         }
 

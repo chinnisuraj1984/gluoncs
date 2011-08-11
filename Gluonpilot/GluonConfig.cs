@@ -79,16 +79,19 @@ namespace Gluonpilot
                     _gcsMainPanel.Disconnnect();
 
                     _btn_connect.Checked = false;
-
+                    _btn_reboot.Enabled = false;
+                    _btnBasicConfiguration.Enabled = false;
                 }
                 else
                 {
                     connected = DateTime.Now;
                     if (_serial != null)
                     {
+                        _serial.Close();
                         string portname = _serial.PortName;
                         int baudrate = _serial.BaudRate;
-                        _serial = new SerialCommunication_CSV();
+                        //if (_serial == null)
+                        //_serial = new SerialCommunication_CSV();
                         _serial.Open(portname, baudrate);
                     }
                     else
@@ -97,8 +100,9 @@ namespace Gluonpilot
                         cd.ShowDialog(this);
                         _serial = new SerialCommunication_CSV();
                         _serial.Open(cd.SelectedPort(), cd.SelectedBaudrate());
+                        ConnectPanels();
                     }
-                    ConnectPanels();
+                    _btn_connect.Checked = true;
                 }
             }
             catch (Exception ex)
@@ -113,8 +117,8 @@ namespace Gluonpilot
             datalogging.Connect(_serial);
             navigationListView1.Connect(_serial);
             _gcsMainPanel.Connect(_serial);
-
-            _btn_connect.Checked = true;
+            _btnBasicConfiguration.Enabled = true;
+            _btn_reboot.Enabled = true;
 
             _serial.CommunicationReceived += new SerialCommunication_CSV.ReceiveCommunication(ReceiveCommunication);
             _serial.NonParsedCommunicationReceived += new SerialCommunication.ReceiveNonParsedCommunication(ReceiveNonParsedCommunication);
@@ -167,7 +171,8 @@ namespace Gluonpilot
             if (connected)  // Close the current connection if it's open
                 _btn_connect_Click(null, null);
 
-            Process p = System.Diagnostics.Process.Start(Application.StartupPath + "\\ds30loader\\ds30LoaderConsole.exe", " -k=" + _serial.PortName + " -f=\"" + fd.FileName + "\"  -p -d=dsPIC33FJ256MC710 -r=" + _serial.BaudRate + " -q=0a;5a;5a;3b;31;31;32;33;0a -u=115200 -b=1200 -o");
+            string c = " -k=" + _serial.PortName + " -f=\"" + fd.FileName + "\"  -p -d=dsPIC33FJ256MC710 -u=" + _serial.BaudRate + " -q=0a;5a;5a;3b;31;31;32;33;0a -r=115200 -b=1200 -o";
+            Process p = System.Diagnostics.Process.Start(Application.StartupPath + "\\ds30loader\\ds30LoaderConsole.exe", c);
             p.WaitForExit();
 
             if (connected)  // Reconnect if the state was connected
@@ -190,6 +195,22 @@ namespace Gluonpilot
                 _tssl_downloadspeed.Text = _serial.ThroughputKbS() + " B/s";
                 _tssl_time.Text = (DateTime.Now - connected).Minutes + ":" + (DateTime.Now - connected).Seconds;
             }
+        }
+
+        private void _btnBasicConfiguration_Click(object sender, EventArgs e)
+        {
+            if (_serial != null && _serial.IsOpen)
+            {
+                Gluonpilot.EasyConfig ec = new Gluonpilot.EasyConfig(_serial);
+                ec.Show();
+                _serial.ReadAllConfig();
+            }
+        }
+
+        private void GluonConfig_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (_btn_connect.Checked)
+                _btn_connect_Click(this, EventArgs.Empty);
         }
     }
 }

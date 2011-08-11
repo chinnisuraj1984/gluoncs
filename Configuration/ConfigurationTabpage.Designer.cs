@@ -16,7 +16,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigurationTabpage));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this._tpTelemetry = new System.Windows.Forms.TabPage();
             this._btn_telemetry_inflight = new System.Windows.Forms.Button();
@@ -46,7 +45,6 @@
             this.label45 = new System.Windows.Forms.Label();
             this._tpSensors = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this._btn_cube = new System.Windows.Forms.Button();
             this._btn_use_current_gyro = new System.Windows.Forms.Button();
             this._tbGyroZNeutral = new Configuration.NumericTextBox();
             this._tbGyroYNeutral = new Configuration.NumericTextBox();
@@ -631,7 +629,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this._btn_cube);
             this.groupBox2.Controls.Add(this._btn_use_current_gyro);
             this.groupBox2.Controls.Add(this._tbGyroZNeutral);
             this.groupBox2.Controls.Add(this._tbGyroYNeutral);
@@ -678,19 +675,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "6DOF: accelerometers && gyroscopes";
-            // 
-            // _btn_cube
-            // 
-            this._btn_cube.Image = ((System.Drawing.Image)(resources.GetObject("_btn_cube.Image")));
-            this._btn_cube.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._btn_cube.Location = new System.Drawing.Point(467, 10);
-            this._btn_cube.Name = "_btn_cube";
-            this._btn_cube.Size = new System.Drawing.Size(75, 23);
-            this._btn_cube.TabIndex = 39;
-            this._btn_cube.Text = "3D cube";
-            this._btn_cube.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this._btn_cube.UseVisualStyleBackColor = true;
-            this._btn_cube.Click += new System.EventHandler(this._btn_cube_Click);
             // 
             // _btn_use_current_gyro
             // 
@@ -3590,7 +3574,6 @@
         private System.Windows.Forms.ComboBox _cbMotor;
         private Configuration.DistanceTextBox _dtb_waypoint_radius;
         private System.Windows.Forms.Label label86;
-        private System.Windows.Forms.Button _btn_cube;
         private System.Windows.Forms.NumericUpDown _nud_control_telemetry;
         private System.Windows.Forms.Label label87;
         private System.Windows.Forms.Label _lbl_attitude_hz;

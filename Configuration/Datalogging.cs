@@ -39,9 +39,11 @@ namespace Configuration
             }
             base.Dispose(disposing);
 
-            serial.DatalogTableCommunicationReceived -= new SerialCommunication.ReceiveDatalogTableCommunicationFrame(ReceiveDatalogTable);
-            serial.DatalogLineCommunicationReceived -= new SerialCommunication.ReceiveDatalogLineCommunicationFrame(ReceiveDatalogLine);
-
+            if (serial != null)
+            {
+                serial.DatalogTableCommunicationReceived -= new SerialCommunication.ReceiveDatalogTableCommunicationFrame(ReceiveDatalogTable);
+                serial.DatalogLineCommunicationReceived -= new SerialCommunication.ReceiveDatalogLineCommunicationFrame(ReceiveDatalogLine);
+            }
         }
 
         public void Connect(SerialCommunication serial)
