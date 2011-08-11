@@ -327,12 +327,17 @@ namespace GluonCS.LiveUavLayer
         //
         void zoomtowaypoints_Tick(object sender, EventArgs e)
         {
+            //zoomToReceivedWaypoints = true;
+            //double zoom = gmap.Zoom;
+            //gmap.ZoomAndCenterMarkers("NavigationOverlay"); //gmap.GetRectOfAllMarkers("");
+            //if (gmap.Zoom > zoom)
+            //    gmap.Zoom = zoom;
+            //zoomtowaypoints.Stop();
+
+            //above code seems to contain a gmap bug
             zoomToReceivedWaypoints = true;
-            double zoom = gmap.Zoom;
-            gmap.ZoomAndCenterMarkers("NavigationOverlay"); //gmap.GetRectOfAllMarkers("");
-            if (gmap.Zoom > zoom)
-                gmap.Zoom = zoom;
             zoomtowaypoints.Stop();
+            RecenterMap();
         }
 
 #endregion

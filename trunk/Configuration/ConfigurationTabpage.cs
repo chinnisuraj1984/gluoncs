@@ -724,11 +724,6 @@ namespace Gluonpilot
 
 
 
-        private void _btn_cube_Click(object sender, EventArgs e)
-        {
-            ModuleImu3D.Imu3D.Run(_serial);
-        }
-
         private void _nudAutoThrottleMinPct_ValueChanged(object sender, EventArgs e)
         {
             _model.AutoThrottleMinPct = (int)_nudAutoThrottleMinPct.Value;

@@ -231,6 +231,8 @@ namespace Configuration
                 c = new NavigationCommands.ServoSet(ni);
             else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.SERVO_TRIGGER)
                 c = new NavigationCommands.ServoTrigger(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.BLOCK)
+                c = new NavigationCommands.Block(ni);
             else //if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.EMPTY)
                 c = new NavigationCommands.Empty(ni);
 

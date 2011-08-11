@@ -82,10 +82,10 @@ namespace GluonCS.LiveUavLayer
         public void Connect(string port, int baudrate, string logpath, string flightgearpath)
         {
             SerialCommunication_CSV s = new SerialCommunication_CSV();
-            s.Open(port, baudrate);
+            Serial = s;
             if (logpath != "")
                 Serial.LogToFilename = logpath;
-            Serial = s;
+
             Serial.PressureTempCommunicationReceived += new SerialCommunication.ReceivePressureTempCommunicationFrame(connection_PressureTempCommunicationReceived);
             Serial.AttitudeCommunicationReceived += new SerialCommunication.ReceiveAttitudeCommunicationFrame(connection_AttitudeCommunicationReceived);
             Serial.NavigationInstructionCommunicationReceived += new SerialCommunication.ReceiveNavigationInstructionCommunicationFrame(connection_NavigationInstructionCommunicationReceived);
@@ -100,6 +100,8 @@ namespace GluonCS.LiveUavLayer
             {
                 FlightgearThread fgt = new FlightgearThread(Serial, flightgearpath);
             }
+
+            s.Open(port, baudrate);
         }
 
         public void Stop()

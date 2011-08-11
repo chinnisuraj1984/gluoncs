@@ -62,19 +62,19 @@ namespace GluonCS
 
             SetProxy();
 
-            top = new GMapOverlay(_gMapControl, "top");
-            _gMapControl.Overlays.Add(top);
+            //top = new GMapOverlay(_gMapControl, "top");
+            //_gMapControl.Overlays.Add(top);
 
-            cross = new GMapMarkerCross(_gMapControl.Position);
-            top.Markers.Add(cross);
+            //cross = new GMapMarkerCross(_gMapControl.Position);
+            //top.Markers.Add(cross);
 
-            _gMapControl.OnMarkerEnter += new MarkerEnter(_gMapControl_OnMarkerEnter);
-            _gMapControl.OnMarkerLeave += new MarkerLeave(_gMapControl_OnMarkerLeave);
-            _gMapControl.MouseDown += new MouseEventHandler(_gMapControl_MouseDown);
-            _gMapControl.MouseUp += new MouseEventHandler(_gMapControl_MouseUp);
-            _gMapControl.MouseMove += new MouseEventHandler(_gMapControl_MouseMove);
-            _gMapControl.OnMapZoomChanged += new MapZoomChanged(_gMapControl_OnMapZoomChanged);
-            _gMapControl.OnCurrentPositionChanged += new CurrentPositionChanged(_gMapControl_OnCurrentPositionChanged);
+            //_gMapControl.OnMarkerEnter += new MarkerEnter(_gMapControl_OnMarkerEnter);
+            //_gMapControl.OnMarkerLeave += new MarkerLeave(_gMapControl_OnMarkerLeave);
+            //_gMapControl.MouseDown += new MouseEventHandler(_gMapControl_MouseDown);
+            //_gMapControl.MouseUp += new MouseEventHandler(_gMapControl_MouseUp);
+           // _gMapControl.MouseMove += new MouseEventHandler(_gMapControl_MouseMove);
+            //_gMapControl.OnMapZoomChanged += new MapZoomChanged(_gMapControl_OnMapZoomChanged);
+            //_gMapControl.OnCurrentPositionChanged += new CurrentPositionChanged(_gMapControl_OnCurrentPositionChanged);
             
             
             // uav layer
@@ -122,47 +122,47 @@ namespace GluonCS
                 _gMapControl.Manager.Proxy = null; 
         }
 
-        void _gMapControl_OnCurrentPositionChanged(PointLatLng point)
-        {
-            cross.Position = point;
-        }
+        //void _gMapControl_OnCurrentPositionChanged(PointLatLng point)
+        //{
+        //    cross.Position = point;
+        //}
 
-        void _gMapControl_OnMapZoomChanged()
-        {
-            cross.Position = _gMapControl.Position;
-        }
+        //void _gMapControl_OnMapZoomChanged()
+        //{
+        //    cross.Position = _gMapControl.Position;
+        //}
 
-        void _gMapControl_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (currentMarker != null && e.Button == MouseButtons.Left)
-            {
-                if (currentMarker.Overlay == top/* || currentMarker.Overlay == activeOverlay*/)
-                    currentMarker.Position = _gMapControl.FromLocalToLatLng(e.X, e.Y);
-            }
-        }
+        //void _gMapControl_MouseMove(object sender, MouseEventArgs e)
+        //{
+        //    if (currentMarker != null && e.Button == MouseButtons.Left)
+        //    {
+        //        if (currentMarker.Overlay == top/* || currentMarker.Overlay == activeOverlay*/)
+        //            currentMarker.Position = _gMapControl.FromLocalToLatLng(e.X, e.Y);
+        //    }
+        //}
 
-        void _gMapControl_MouseUp(object sender, MouseEventArgs e)
-        {
-            isMouseDown = false;
-            //if (!_gMapControl.IsDragging && e.Button == System.Windows.Forms.MouseButtons.Right)
-            //    _gmapContextStrip.Show(_gMapControl, e.X, e.Y);
-        }
+        //void _gMapControl_MouseUp(object sender, MouseEventArgs e)
+        //{
+        //    isMouseDown = false;
+        //    //if (!_gMapControl.IsDragging && e.Button == System.Windows.Forms.MouseButtons.Right)
+        //    //    _gmapContextStrip.Show(_gMapControl, e.X, e.Y);
+        //}
 
-        void _gMapControl_MouseDown(object sender, MouseEventArgs e)
-        {
-            isMouseDown = true;
-        }
+        //void _gMapControl_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    isMouseDown = true;
+        //}
 
-        void _gMapControl_OnMarkerLeave(GMapMarker item)
-        {
-            if (isMouseDown == false)
-                currentMarker = null;
-        }
+        //void _gMapControl_OnMarkerLeave(GMapMarker item)
+        //{
+        //    if (isMouseDown == false)
+        //        currentMarker = null;
+        //}
 
-        void _gMapControl_OnMarkerEnter(GMapMarker item)
-        {
-            currentMarker = item;
-        }
+        //void _gMapControl_OnMarkerEnter(GMapMarker item)
+        //{
+        //    currentMarker = item;
+        //}
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
