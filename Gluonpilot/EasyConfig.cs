@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Communication;
 using Communication.Frames;
+using System.Threading;
 
 
 namespace Gluonpilot
@@ -171,6 +172,7 @@ namespace Gluonpilot
 
         private void _cbMixing_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int mixing = 0;
             //serial.Send
             if (_cbMixing.SelectedItem.ToString() == "Aileron")
             {
@@ -180,6 +182,7 @@ namespace Gluonpilot
                 _lblFunctionOut4.Text = "Motor";
                 _lblFunctionOut5.Text = "Yaw";
                 _lblFunctionOut6.Text = "Camera roll";
+                mixing = 0;
             }
             if (_cbMixing.SelectedItem.ToString() == "Delta+")
             {
@@ -189,6 +192,7 @@ namespace Gluonpilot
                 _lblFunctionOut4.Text = "Motor";
                 _lblFunctionOut5.Text = "";
                 _lblFunctionOut6.Text = "";
+                mixing = 1;
             }
             if (_cbMixing.SelectedItem.ToString() == "Delta-")
             {
@@ -198,7 +202,9 @@ namespace Gluonpilot
                 _lblFunctionOut4.Text = "Motor";
                 _lblFunctionOut5.Text = "";
                 _lblFunctionOut6.Text = "";
+                mixing = 2;
             }
+            serial.SendControlSettings(mixing, config.control_max_pitch, config.control_max_roll, config.control_aileron_differential, config.control_waypoint_radius, config.control_cruising_speed, config.control_stabilization_with_altitude_hold);
         }
 
         private void _btnCalibrateGyroscopes_Click(object sender, EventArgs e)
@@ -309,6 +315,13 @@ namespace Gluonpilot
         private void _cbAutothrottle_CheckedChanged(object sender, EventArgs e)
         {
             _hsbCruiseThrottle_Scroll(sender, null);
+        }
+
+        private void _btnReloadFactorySettings_Click(object sender, EventArgs e)
+        {
+            serial.SendLoadConfigurationDefault();
+            Thread.Sleep(200);
+            serial.ReadAllConfig();
         }
     }
 }

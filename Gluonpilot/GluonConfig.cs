@@ -93,6 +93,7 @@ namespace Gluonpilot
                         //if (_serial == null)
                         //_serial = new SerialCommunication_CSV();
                         _serial.Open(portname, baudrate);
+                        _btnBasicConfiguration.Enabled = true;
                     }
                     else
                     {

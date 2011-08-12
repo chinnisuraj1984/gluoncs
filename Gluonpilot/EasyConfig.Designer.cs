@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EasyConfig));
             this._btnCancel = new System.Windows.Forms.Button();
             this._btnSaveAndClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -107,25 +108,30 @@
             this._hsbCruiseThrottle = new System.Windows.Forms.HScrollBar();
             this._lblCruiseThrottle = new System.Windows.Forms.Label();
             this._cbAutothrottle = new System.Windows.Forms.CheckBox();
+            this._btnReloadFactorySettings = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // _btnCancel
             // 
+            this._btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("_btnCancel.Image")));
+            this._btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnCancel.Location = new System.Drawing.Point(36, 549);
             this._btnCancel.Name = "_btnCancel";
-            this._btnCancel.Size = new System.Drawing.Size(166, 41);
+            this._btnCancel.Size = new System.Drawing.Size(181, 41);
             this._btnCancel.TabIndex = 0;
-            this._btnCancel.Text = "Cancel && reload original settings";
+            this._btnCancel.Text = "     Cancel && reload original settings";
             this._btnCancel.UseVisualStyleBackColor = true;
             this._btnCancel.Click += new System.EventHandler(this._btnCancel_Click);
             // 
             // _btnSaveAndClose
             // 
+            this._btnSaveAndClose.Image = ((System.Drawing.Image)(resources.GetObject("_btnSaveAndClose.Image")));
+            this._btnSaveAndClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnSaveAndClose.Location = new System.Drawing.Point(518, 549);
             this._btnSaveAndClose.Name = "_btnSaveAndClose";
             this._btnSaveAndClose.Size = new System.Drawing.Size(151, 41);
             this._btnSaveAndClose.TabIndex = 1;
-            this._btnSaveAndClose.Text = "Close, save && burn settings";
+            this._btnSaveAndClose.Text = "Close && burn settings";
             this._btnSaveAndClose.UseVisualStyleBackColor = true;
             this._btnSaveAndClose.Click += new System.EventHandler(this._btnSaveAndClose_Click);
             // 
@@ -825,7 +831,8 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(263, 561);
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(263, 543);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(196, 16);
             this.label8.TabIndex = 73;
@@ -869,12 +876,23 @@
             this._cbAutothrottle.UseVisualStyleBackColor = true;
             this._cbAutothrottle.CheckedChanged += new System.EventHandler(this._cbAutothrottle_CheckedChanged);
             // 
+            // _btnReloadFactorySettings
+            // 
+            this._btnReloadFactorySettings.Location = new System.Drawing.Point(279, 567);
+            this._btnReloadFactorySettings.Name = "_btnReloadFactorySettings";
+            this._btnReloadFactorySettings.Size = new System.Drawing.Size(169, 23);
+            this._btnReloadFactorySettings.TabIndex = 78;
+            this._btnReloadFactorySettings.Text = "Reload factory settings";
+            this._btnReloadFactorySettings.UseVisualStyleBackColor = true;
+            this._btnReloadFactorySettings.Click += new System.EventHandler(this._btnReloadFactorySettings_Click);
+            // 
             // EasyConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(698, 602);
+            this.Controls.Add(this._btnReloadFactorySettings);
             this.Controls.Add(this._cbAutothrottle);
             this.Controls.Add(this._lblCruiseThrottle);
             this.Controls.Add(this._hsbCruiseThrottle);
@@ -1041,5 +1059,6 @@
         private System.Windows.Forms.HScrollBar _hsbCruiseThrottle;
         private System.Windows.Forms.Label _lblCruiseThrottle;
         private System.Windows.Forms.CheckBox _cbAutothrottle;
+        private System.Windows.Forms.Button _btnReloadFactorySettings;
     }
 }
