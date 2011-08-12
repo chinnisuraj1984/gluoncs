@@ -607,6 +607,28 @@ namespace Communication
                 (auto_throttle_enabled ? "1" : "0"));
         }
 
+        public override void SendControlSettings(int mixing, double max_pitch, double max_roll, int aileron_differential, double waypoint_radius, double cruising_speed, bool stabilization_with_altitude_hold)
+        {
+            _serialPort.WriteLine("\nSC;" +
+                mixing.ToString() + ";" +
+                max_pitch.ToString(CultureInfo.InvariantCulture) + ";" +
+                max_roll.ToString(CultureInfo.InvariantCulture) + ";" +
+                aileron_differential.ToString() + ";" +
+                waypoint_radius.ToString(CultureInfo.InvariantCulture) + ";" +
+                cruising_speed.ToString(CultureInfo.InvariantCulture) + ";" +
+                (stabilization_with_altitude_hold == false ? 0 : 1).ToString() + "\n");
+
+
+            Console.WriteLine("\nSC;" +
+                mixing.ToString() + ";" +
+                max_pitch.ToString(CultureInfo.InvariantCulture) + ";" +
+                max_roll.ToString(CultureInfo.InvariantCulture) + ";" +
+                waypoint_radius.ToString(CultureInfo.InvariantCulture) + ";" +
+                cruising_speed.ToString(CultureInfo.InvariantCulture) + ";" +
+                (stabilization_with_altitude_hold == false ? 0 : 1).ToString() + "\n");
+
+        }
+
         /*!
          *    Sends the complete configuration set AllConfig to the gluonpilot.
          */
@@ -702,23 +724,13 @@ namespace Communication
             SendServoReverse(ac.servo_reverse[0], ac.servo_reverse[1], ac.servo_reverse[2], ac.servo_reverse[3], ac.servo_reverse[4], ac.servo_reverse[5]);
             Thread.Sleep(200);
 
-            _serialPort.WriteLine("\nSC;" +
-                ac.control_mixing.ToString() + ";" + 
-                ac.control_max_pitch.ToString(CultureInfo.InvariantCulture) + ";" +
-                ac.control_max_roll.ToString(CultureInfo.InvariantCulture) + ";" +
-                ac.control_aileron_differential.ToString() + ";" +
-                ac.control_waypoint_radius.ToString(CultureInfo.InvariantCulture) + ";" +
-                ac.control_cruising_speed.ToString(CultureInfo.InvariantCulture) + ";" +
-                (ac.control_stabilization_with_altitude_hold == false? 0:1).ToString() + "\n");
-
-
-            Console.WriteLine("\nSC;" +
-                ac.control_mixing.ToString() + ";" +
-                ac.control_max_pitch.ToString(CultureInfo.InvariantCulture) + ";" +
-                ac.control_max_roll.ToString(CultureInfo.InvariantCulture) + ";" +
-                ac.control_waypoint_radius.ToString(CultureInfo.InvariantCulture) + ";" +
-                ac.control_cruising_speed.ToString(CultureInfo.InvariantCulture) + ";" +
-                (ac.control_stabilization_with_altitude_hold == false ? 0 : 1).ToString() + "\n");
+            SendControlSettings(ac.control_mixing,
+                                ac.control_max_pitch,
+                                ac.control_max_roll,
+                                ac.control_aileron_differential,
+                                ac.control_waypoint_radius,
+                                ac.control_cruising_speed,
+                                ac.control_stabilization_with_altitude_hold);
 
             Thread.Sleep(200);
 
