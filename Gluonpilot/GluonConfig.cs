@@ -33,6 +33,8 @@ namespace Gluonpilot
             if (serial is SerialCommunication_CSV)
             {
                 this._serial = (SerialCommunication_CSV)serial;
+                if (_serial != null && _serial.IsOpen)
+                    _btn_connect.Checked = true;
                 ConnectPanels();
             }
         }
@@ -73,14 +75,9 @@ namespace Gluonpilot
                 if (_btn_connect.Checked)
                 {
                     _serial.Close();
-                    configurationControl.Disconnect();
-                    datalogging.Disconnect();
-                    navigationListView1.Disconnect();
-                    _gcsMainPanel.Disconnnect();
+                    DisconnectPanels();
 
                     _btn_connect.Checked = false;
-                    _btn_reboot.Enabled = false;
-                    _btnBasicConfiguration.Enabled = false;
                 }
                 else
                 {
@@ -101,8 +98,9 @@ namespace Gluonpilot
                         cd.ShowDialog(this);
                         _serial = new SerialCommunication_CSV();
                         _serial.Open(cd.SelectedPort(), cd.SelectedBaudrate());
-                        ConnectPanels();
+                        //ConnectPanels();
                     }
+                    ConnectPanels();
                     _btn_connect.Checked = true;
                 }
             }
@@ -123,6 +121,20 @@ namespace Gluonpilot
 
             _serial.CommunicationReceived += new SerialCommunication_CSV.ReceiveCommunication(ReceiveCommunication);
             _serial.NonParsedCommunicationReceived += new SerialCommunication.ReceiveNonParsedCommunication(ReceiveNonParsedCommunication);
+        }
+
+        private void DisconnectPanels()
+        {
+            configurationControl.Disconnect();
+            datalogging.Disconnect();
+            navigationListView1.Disconnect();
+            _gcsMainPanel.Disconnnect();
+
+            _btnBasicConfiguration.Enabled = false;
+            _btn_reboot.Enabled = false;
+
+            _serial.CommunicationReceived -= new SerialCommunication_CSV.ReceiveCommunication(ReceiveCommunication);
+            _serial.NonParsedCommunicationReceived -= new SerialCommunication.ReceiveNonParsedCommunication(ReceiveNonParsedCommunication);
         }
 
 
@@ -210,8 +222,8 @@ namespace Gluonpilot
 
         private void GluonConfig_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (_btn_connect.Checked)
-                _btn_connect_Click(this, EventArgs.Empty);
+            //if (_btn_connect.Checked)
+            //    _btn_connect_Click(this, EventArgs.Empty);
         }
     }
 }

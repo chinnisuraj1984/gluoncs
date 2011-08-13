@@ -105,9 +105,8 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libs\System.Data.SQLite.DLL</HintPath>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\Libs\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq">
@@ -161,12 +160,6 @@
     <Compile Include="LiveUavLayer\NavigationOverview.Designer.cs">
       <DependentUpon>NavigationOverview.cs</DependentUpon>
     </Compile>
-    <Compile Include="LiveUavLayer\QuickConfig.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LiveUavLayer\QuickConfig.Designer.cs">
-      <DependentUpon>QuickConfig.cs</DependentUpon>
-    </Compile>
     <Compile Include="LiveUavLayer\UavPropertiesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -211,9 +204,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\NavigationOverview.resx">
       <DependentUpon>NavigationOverview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LiveUavLayer\QuickConfig.resx">
-      <DependentUpon>QuickConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\UavPropertiesControl.resx">
       <DependentUpon>UavPropertiesControl.cs</DependentUpon>
