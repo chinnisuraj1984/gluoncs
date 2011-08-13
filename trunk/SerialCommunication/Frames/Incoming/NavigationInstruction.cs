@@ -185,8 +185,8 @@ namespace Communication.Frames.Incoming
             s = s + Convert.ToChar((int)(a % 256));
             s = s + Convert.ToChar((int)(b / 256));
             s = s + Convert.ToChar((int)(b % 256));
-            int c = (int)x;
-            int d = (int)y;
+            int c = (int)Math.Round(x);
+            int d = (int)Math.Round(y);
             s = s + Convert.ToChar((int)(c / 256));
             s = s + Convert.ToChar((int)(c % 256));
             s = s + Convert.ToChar((int)(d / 256));

@@ -106,14 +106,17 @@ namespace GluonCS.LiveUavLayer
 
         public void Stop()
         {
-            Serial.PressureTempCommunicationReceived -= new SerialCommunication.ReceivePressureTempCommunicationFrame(connection_PressureTempCommunicationReceived);
-            Serial.AttitudeCommunicationReceived -= new SerialCommunication.ReceiveAttitudeCommunicationFrame(connection_AttitudeCommunicationReceived);
-            Serial.NavigationInstructionCommunicationReceived -= new SerialCommunication.ReceiveNavigationInstructionCommunicationFrame(connection_NavigationInstructionCommunicationReceived);
-            Serial.GpsBasicCommunicationReceived -= new SerialCommunication.ReceiveGpsBasicCommunicationFrame(connection_GpsBasicCommunicationReceived);
-            Serial.ControlInfoCommunicationReceived -= new SerialCommunication.ReceiveControlInfoCommunicationFrame(connection_ControlInfoCommunicationReceived);
-            Serial.CommunicationEstablished -= new SerialCommunication.EstablishedCommunication(connection_CommunicationEstablished);
-            Serial.CommunicationLost -= new SerialCommunication.LostCommunication(connection_CommunicationLost);
-            Serial.NonParsedCommunicationReceived -= new SerialCommunication.ReceiveNonParsedCommunication(connection_NonParsedCommunicationReceived);
+            if (Serial != null)
+            {
+                Serial.PressureTempCommunicationReceived -= new SerialCommunication.ReceivePressureTempCommunicationFrame(connection_PressureTempCommunicationReceived);
+                Serial.AttitudeCommunicationReceived -= new SerialCommunication.ReceiveAttitudeCommunicationFrame(connection_AttitudeCommunicationReceived);
+                Serial.NavigationInstructionCommunicationReceived -= new SerialCommunication.ReceiveNavigationInstructionCommunicationFrame(connection_NavigationInstructionCommunicationReceived);
+                Serial.GpsBasicCommunicationReceived -= new SerialCommunication.ReceiveGpsBasicCommunicationFrame(connection_GpsBasicCommunicationReceived);
+                Serial.ControlInfoCommunicationReceived -= new SerialCommunication.ReceiveControlInfoCommunicationFrame(connection_ControlInfoCommunicationReceived);
+                Serial.CommunicationEstablished -= new SerialCommunication.EstablishedCommunication(connection_CommunicationEstablished);
+                Serial.CommunicationLost -= new SerialCommunication.LostCommunication(connection_CommunicationLost);
+                Serial.NonParsedCommunicationReceived -= new SerialCommunication.ReceiveNonParsedCommunication(connection_NonParsedCommunicationReceived);
+            }
             if (uavSynchronizer != null)
                 uavSynchronizer.Pause();
             NavigationModel.Stop();
