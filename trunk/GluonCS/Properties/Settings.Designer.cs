@@ -73,7 +73,7 @@ namespace GluonCS.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("3.6704957485198975")]
+        [global::System.Configuration.DefaultSettingValueAttribute("3.670495748519897")]
         public double MapPositionLongitude {
             get {
                 return ((double)(this["MapPositionLongitude"]));
@@ -85,7 +85,7 @@ namespace GluonCS.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("50.851738797975194")]
+        [global::System.Configuration.DefaultSettingValueAttribute("50.851738797975187")]
         public double MapPositionLatitude {
             get {
                 return ((double)(this["MapPositionLatitude"]));

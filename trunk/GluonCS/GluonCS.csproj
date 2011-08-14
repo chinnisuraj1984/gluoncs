@@ -179,6 +179,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Setup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,6 +297,42 @@
     <None Include="Resources\folder-open-document.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\Documentation\circle.html">
+      <Link>Documentation\circle.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\climb.html">
+      <Link>Documentation\climb.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\emptycmd.html">
+      <Link>Documentation\emptycmd.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\flyto.html">
+      <Link>Documentation\flyto.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\flyto.png">
+      <Link>Documentation\flyto.png</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\fromto.html">
+      <Link>Documentation\fromto.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\fromto.png">
+      <Link>Documentation\fromto.png</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\goto.html">
+      <Link>Documentation\goto.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\if.html">
+      <Link>Documentation\if.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\models\easystar\easystar.jpg">
       <Link>Models\Easystar\easystar.jpg</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

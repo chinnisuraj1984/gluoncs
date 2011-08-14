@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using Communication.Frames.Incoming;
 using System.Globalization;
 using Configuration.NavigationCommands;
+using System.Reflection;
+using System.IO;
+using System.Runtime.InteropServices;
 
 
 namespace Configuration
@@ -32,19 +35,19 @@ namespace Configuration
             if ((int)ni.opcode > 25)
                 ni.opcode = 0;
 
-                /*
-                    0. EMPTY
-                    GOTO
-                    CLIMB
-                    FROM_TO
-                    FLY_TO
-                    5. CIRCLE
-                    IF()
-                    UNTIL()
-                    SERVO_SET(channel, position_us)
-                    SERVO_TRIGGER(channel, position_us, hold_sec)
-                    10 BLOCK
-                    */
+            /*
+                0. EMPTY
+                GOTO
+                CLIMB
+                FROM_TO
+                FLY_TO
+                5. CIRCLE
+                IF()
+                UNTIL()
+                SERVO_SET(channel, position_us)
+                SERVO_TRIGGER(channel, position_us, hold_sec)
+                10 BLOCK
+                */
             if (ni.opcode == NavigationInstruction.navigation_command.BLOCK)
                 _cb_opcode.SelectedIndex = 10;
             else if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_ABS ||
@@ -97,26 +100,44 @@ namespace Configuration
 
             // already a navigationcommand on the panel? delete it so we can add a new one.
             if (tableLayoutPanel.Controls.Count > 0)
-                tableLayoutPanel.Controls.RemoveAt(tableLayoutPanel.Controls.Count-1);
+                tableLayoutPanel.Controls.RemoveAt(tableLayoutPanel.Controls.Count - 1);
 
             // Add the correct usercontrol
             Control c;
             if (_cb_opcode.Text == "CIRCLE")
+            {
+                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\circle.html");
                 c = new NavigationCommands.Circle(ni);
+            }
             else if (_cb_opcode.Text.StartsWith("GOTO"))
+            {
+                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\goto.html");
                 c = new NavigationCommands.Goto(ni);
+            }
             else if (_cb_opcode.Text.StartsWith("CLIMB"))
+            {
+                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\climb.html");
                 c = new NavigationCommands.Climb(ni);
+            }
             else if (_cb_opcode.Text.StartsWith("SERVO_SET"))
                 c = new NavigationCommands.ServoSet(ni);
             else if (_cb_opcode.Text.StartsWith("SERVO_TRIGGER"))
                 c = new NavigationCommands.ServoTrigger(ni);
             else if (_cb_opcode.Text.StartsWith("FLY_TO"))
+            {
+                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\flyto.html");
                 c = new NavigationCommands.FlyTo(ni);
+            }
             else if (_cb_opcode.Text.StartsWith("FROM_TO"))
+            {
+                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\fromto.html");
                 c = new NavigationCommands.FromTo(ni);
+            }
             else if (_cb_opcode.Text.StartsWith("IF"))
+            {
+                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\if.html");
                 c = new NavigationCommands.If(ni);
+            }
             else if (_cb_opcode.Text.StartsWith("BLOCK"))
                 c = new NavigationCommands.Block(ni);
             else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.FLY_TO_REL)
@@ -146,18 +167,35 @@ namespace Configuration
             else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.IF_NE)
                 c = new NavigationCommands.IfNe(ni);
             else //if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.EMPTY)
+            {
+                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\emptycmd.html");
                 c = new NavigationCommands.Empty(ni);
+            }
 
             // add our edit-control
             tableLayoutPanel.Controls.Add(c);
             tableLayoutPanel.SetCellPosition(c, new TableLayoutPanelCellPosition(0, 1));
 
-            // Do some lay-outin'
             c.Anchor = AnchorStyles.None;
-            //tableLayoutPanel.RowStyles[0].Height = c.Height;
-            //tableLayoutPanel.Height = c.Height + 30;
-            //this.Height = tableLayoutPanel.Height;
+            //groupBox1.Height = tableLayoutPanel.Height + 30;
+            //groupBox1.Width = tableLayoutPanel.Width + 20;
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void _gbParameters_Resize(object sender, EventArgs e)
+        {
+            // Do some lay-outin'
+            webBrowser.Left = _gbParameters.Left + _gbParameters.Width + 20;
+            webBrowser.Width = this.Width - webBrowser.Left - 20;
+        }
+
+        private void NavigationInstructionEdit_Resize(object sender, EventArgs e)
+        {
+            _gbParameters_Resize(null, EventArgs.Empty);
+        }
     }
 }
