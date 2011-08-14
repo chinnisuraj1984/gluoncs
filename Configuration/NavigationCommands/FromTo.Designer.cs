@@ -36,20 +36,23 @@
             // 
             this.tableLayoutPanel.AutoSize = true;
             this.tableLayoutPanel.ColumnCount = 1;
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel.Location = new System.Drawing.Point(3, 26);
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel.Location = new System.Drawing.Point(0, 17);
+            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 1;
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel.Size = new System.Drawing.Size(207, 113);
             this.tableLayoutPanel.TabIndex = 5;
             // 
             // _cbRelToHome
             // 
             this._cbRelToHome.AutoSize = true;
-            this._cbRelToHome.Location = new System.Drawing.Point(3, 3);
+            this._cbRelToHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this._cbRelToHome.Location = new System.Drawing.Point(0, 0);
             this._cbRelToHome.Name = "_cbRelToHome";
-            this._cbRelToHome.Size = new System.Drawing.Size(145, 17);
+            this._cbRelToHome.Size = new System.Drawing.Size(207, 17);
             this._cbRelToHome.TabIndex = 4;
             this._cbRelToHome.Text = "Relative to home position";
             this._cbRelToHome.UseVisualStyleBackColor = true;

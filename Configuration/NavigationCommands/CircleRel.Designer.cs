@@ -54,9 +54,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(177, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "east of home";
+            this.label2.Text = "E of home";
             // 
             // label3
             // 
@@ -90,9 +90,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(177, 3);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 13);
+            this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 9;
-            this.label6.Text = "north of home";
+            this.label6.Text = "N of home";
             // 
             // distanceTextBoxHeight
             // 
@@ -134,6 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -145,7 +146,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "CircleRel";
-            this.Size = new System.Drawing.Size(251, 103);
+            this.Size = new System.Drawing.Size(233, 103);
             this.ResumeLayout(false);
             this.PerformLayout();
 

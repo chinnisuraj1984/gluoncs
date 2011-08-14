@@ -43,9 +43,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(164, 2);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 13);
+            this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 19;
-            this.label6.Text = "north of home";
+            this.label6.Text = "N of home";
             // 
             // label5
             // 
@@ -97,9 +97,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(164, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 11;
-            this.label2.Text = "east of home";
+            this.label2.Text = "E of home";
             // 
             // label1
             // 
@@ -114,6 +114,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -123,7 +125,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FlyToRel";
-            this.Size = new System.Drawing.Size(238, 76);
+            this.Size = new System.Drawing.Size(223, 78);
             this.ResumeLayout(false);
             this.PerformLayout();
 
