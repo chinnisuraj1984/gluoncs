@@ -31,7 +31,9 @@ namespace Communication.Frames.Incoming
             UNTIL_SM = 16,
             SERVO_SET = 17,
             SERVO_TRIGGER = 18,
-            BLOCK = 19
+            BLOCK = 19,
+            FLARE_TO_ABS = 20,
+            FLARE_TO_REL = 21
         };
 
         public navigation_command opcode;
@@ -170,6 +172,12 @@ namespace Communication.Frames.Incoming
             case navigation_command.BLOCK:
                 s += "Block (" + GetStringArgument() + ")";
                 break;
+            case navigation_command.FLARE_TO_REL:   // x, y, height
+                s += "FlareTo[Relative](lat: " + x.ToString("F0") + "m, lon: " + y.ToString("F0") + "m, alt: " + a + "m, throttle: " + b + "%)";
+                break;
+            case navigation_command.FLARE_TO_ABS:
+                s += "FlareTo[Absolute](lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°, alt: " + a + "m, throttle: " + b + "%)";
+                break;
             default:
                 s += "Unknown/Unsupported (" + (int)opcode + " : " +  x + ", " + y + ", " + a + ", " + b + ")";
                 break;
@@ -254,6 +262,12 @@ namespace Communication.Frames.Incoming
                 return "Battery voltage (V)";
             else if (a == 17)
                 return "Time in block (s)";
+            else if (a == 18)
+                return "Absolute altitude error [m]";
+            else if (a == 19)
+                return "Absolute heading error [°]";
+            else if (a == 20)
+                return "Absolute altitude && heading error [m*°]";
             else
                 return "?";
         }

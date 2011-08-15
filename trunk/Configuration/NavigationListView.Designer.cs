@@ -216,7 +216,7 @@
             this._btn_open_file.Image = ((System.Drawing.Image)(resources.GetObject("_btn_open_file.Image")));
             this._btn_open_file.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._btn_open_file.Name = "_btn_open_file";
-            this._btn_open_file.Size = new System.Drawing.Size(56, 22);
+            this._btn_open_file.Size = new System.Drawing.Size(53, 22);
             this._btn_open_file.Text = "Open";
             this._btn_open_file.Click += new System.EventHandler(this._btn_open_file_Click);
             // 
@@ -239,7 +239,7 @@
             this._btn_read.Image = ((System.Drawing.Image)(resources.GetObject("_btn_read.Image")));
             this._btn_read.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._btn_read.Name = "_btn_read";
-            this._btn_read.Size = new System.Drawing.Size(53, 22);
+            this._btn_read.Size = new System.Drawing.Size(52, 22);
             this._btn_read.Text = "Read";
             this._btn_read.Click += new System.EventHandler(this._btn_read_Click);
             // 
@@ -248,7 +248,7 @@
             this._btn_save.Image = ((System.Drawing.Image)(resources.GetObject("_btn_save.Image")));
             this._btn_save.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._btn_save.Name = "_btn_save";
-            this._btn_save.Size = new System.Drawing.Size(55, 22);
+            this._btn_save.Size = new System.Drawing.Size(53, 22);
             this._btn_save.Text = "Write";
             this._btn_save.Click += new System.EventHandler(this._btn_save_Click);
             // 
@@ -272,7 +272,7 @@
             this._btn_burn.Image = ((System.Drawing.Image)(resources.GetObject("_btn_burn.Image")));
             this._btn_burn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._btn_burn.Name = "_btn_burn";
-            this._btn_burn.Size = new System.Drawing.Size(52, 22);
+            this._btn_burn.Size = new System.Drawing.Size(49, 22);
             this._btn_burn.Text = "Burn";
             this._btn_burn.Click += new System.EventHandler(this._btn_burn_Click);
             // 
@@ -281,7 +281,7 @@
             this._btn_reload.Image = ((System.Drawing.Image)(resources.GetObject("_btn_reload.Image")));
             this._btn_reload.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._btn_reload.Name = "_btn_reload";
-            this._btn_reload.Size = new System.Drawing.Size(63, 22);
+            this._btn_reload.Size = new System.Drawing.Size(60, 22);
             this._btn_reload.Text = "Reload";
             this._btn_reload.Click += new System.EventHandler(this._btn_reload_Click);
             // 
@@ -295,7 +295,7 @@
             this._btn_format.Image = ((System.Drawing.Image)(resources.GetObject("_btn_format.Image")));
             this._btn_format.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._btn_format.Name = "_btn_format";
-            this._btn_format.Size = new System.Drawing.Size(65, 22);
+            this._btn_format.Size = new System.Drawing.Size(61, 22);
             this._btn_format.Text = "Format";
             this._btn_format.Click += new System.EventHandler(this._btn_format_Click);
             // 
@@ -309,7 +309,7 @@
             this._btn_to_kml.Image = ((System.Drawing.Image)(resources.GetObject("_btn_to_kml.Image")));
             this._btn_to_kml.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._btn_to_kml.Name = "_btn_to_kml";
-            this._btn_to_kml.Size = new System.Drawing.Size(68, 22);
+            this._btn_to_kml.Size = new System.Drawing.Size(61, 22);
             this._btn_to_kml.Text = "To KML";
             this._btn_to_kml.Click += new System.EventHandler(this._btn_to_kml_Click);
             // 
@@ -337,7 +337,9 @@
             "UNTIL(var < x)",
             "SERVO_SET(channel, position_us)",
             "SERVO_TRIGGER(channel, position_us, hold_sec)",
-            "BLOCK"});
+            "BLOCK",
+            "FLARE_TO_REL",
+            "FLARE_TO_ABS"});
             this._cb_opcode.Location = new System.Drawing.Point(8, 19);
             this._cb_opcode.Name = "_cb_opcode";
             this._cb_opcode.Size = new System.Drawing.Size(205, 21);

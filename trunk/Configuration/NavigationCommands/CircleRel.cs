@@ -41,6 +41,7 @@ namespace Configuration.NavigationCommands
             distanceTextBoxEast.DistanceM = ni.y;
             distanceTextBoxRadius.DistanceM = ni.a;
             distanceTextBoxHeight.DistanceM = ni.b;
+            ni.opcode = NavigationInstruction.navigation_command.CIRCLE_REL;
         }
     }
 }

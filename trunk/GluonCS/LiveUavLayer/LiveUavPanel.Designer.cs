@@ -282,7 +282,7 @@
             this.toolStripDropDownButton3});
             this.toolStrip2.Location = new System.Drawing.Point(3, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(266, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(297, 25);
             this.toolStrip2.TabIndex = 0;
             // 
             // _btnConnect
@@ -306,7 +306,7 @@
             this._btnCenterUav.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._btnCenterUav.Name = "_btnCenterUav";
             this._btnCenterUav.Size = new System.Drawing.Size(83, 22);
-            this._btnCenterUav.Text = "Center UAV";
+            this._btnCenterUav.Text = "&Center UAV";
             this._btnCenterUav.Click += new System.EventHandler(this._btnCenterUav_Click);
             // 
             // toolStripSeparator3

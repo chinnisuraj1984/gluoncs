@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 using GMap.NET.WindowsForms;
 using GMap;
@@ -277,5 +279,46 @@ namespace GluonCS
                 SetProxy();
         }
 
+        [DllImport("user32.dll")]
+        static extern IntPtr GetFocus();
+
+        /** 
+         *   Hotkeys
+         */
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            Control focused = null;
+            IntPtr handle = GetFocus();
+            if (handle != IntPtr.Zero)
+            {
+                focused = Control.FromHandle(handle);
+                if (focused is TextBox)
+                {
+                    return false;
+                }
+                else
+                {
+                    if (keyData == System.Windows.Forms.Keys.C)
+                    {
+                        model.CenterMapOnUav();
+                        return true;
+                    }
+                    else if (keyData == System.Windows.Forms.Keys.I)
+                    {
+                        _btnZoomin_Click(null, EventArgs.Empty);
+                        return true;
+                    }
+                    else if (keyData == System.Windows.Forms.Keys.O)
+                    {
+                        _btnZoomout_Click(null, EventArgs.Empty);
+                        return true;
+                    }
+                    else
+                        return false;
+                }
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }
