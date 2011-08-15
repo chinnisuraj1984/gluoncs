@@ -42,7 +42,6 @@
             this.m_cboToolStripRenderer = new System.Windows.Forms.ComboBox();
             this.splitter2 = new BSE.Windows.Forms.Splitter();
             this._layersPanel = new BSE.Windows.Forms.Panel();
-            this.liveUavPanel1 = new GluonCS.LiveUavPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._btnOptions = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +49,7 @@
             this.zoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zoomoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.liveUavPanel1 = new GluonCS.LiveUavPanel();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -139,8 +139,8 @@
             this._gMapControl.MinZoom = 1;
             this._gMapControl.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionWithoutCenter;
             this._gMapControl.Name = "_gMapControl";
-            //this._gMapControl.NegativeMode = false;
             this._gMapControl.PolygonsEnabled = true;
+            this._gMapControl.Position = ((GMap.NET.PointLatLng)(resources.GetObject("_gMapControl.Position")));
             this._gMapControl.RetryLoadTile = 0;
             this._gMapControl.RoutesEnabled = true;
             this._gMapControl.ShowTileGridLines = false;
@@ -260,15 +260,6 @@
             this._layersPanel.ToolTipTextExpandIconPanelCollapsed = null;
             this._layersPanel.ToolTipTextExpandIconPanelExpanded = null;
             // 
-            // liveUavPanel1
-            // 
-            this.liveUavPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.liveUavPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.liveUavPanel1.Location = new System.Drawing.Point(1, 28);
-            this.liveUavPanel1.Name = "liveUavPanel1";
-            this.liveUavPanel1.Size = new System.Drawing.Size(337, 669);
-            this.liveUavPanel1.TabIndex = 0;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
@@ -285,13 +276,13 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._btnOptions});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // _btnOptions
             // 
             this._btnOptions.Name = "_btnOptions";
-            this._btnOptions.Size = new System.Drawing.Size(116, 22);
+            this._btnOptions.Size = new System.Drawing.Size(122, 22);
             this._btnOptions.Text = "Options";
             this._btnOptions.Click += new System.EventHandler(this._btnOptions_Click);
             // 
@@ -320,6 +311,15 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(127, 6);
+            // 
+            // liveUavPanel1
+            // 
+            this.liveUavPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.liveUavPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.liveUavPanel1.Location = new System.Drawing.Point(1, 28);
+            this.liveUavPanel1.Name = "liveUavPanel1";
+            this.liveUavPanel1.Size = new System.Drawing.Size(337, 669);
+            this.liveUavPanel1.TabIndex = 0;
             // 
             // Form1
             // 

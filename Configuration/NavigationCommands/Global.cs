@@ -24,6 +24,10 @@ namespace Configuration.NavigationCommands
             "Channel 7 [us]",
             "Channel 8 [us]",
             "Battery voltage [V]",
-            "Time in block [s]" };
+            "Time in block [s]",
+            "Absolute altitude error [m]",
+            "Absolute heading error [°]",
+            "Absolute altitude && heading error [m*°]"
+            };
     }
 }

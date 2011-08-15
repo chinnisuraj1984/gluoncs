@@ -207,6 +207,10 @@ namespace Configuration
                 c = new NavigationCommands.FromToRel(ni);
             else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.GOTO)
                 c = new NavigationCommands.Goto(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.FLARE_TO_ABS)
+                c = new NavigationCommands.FlareToAbs(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.FLARE_TO_REL)
+                c = new NavigationCommands.FlareToRel(ni);
             else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.FROM_TO_ABS)
                 c = new NavigationCommands.FromToAbs(ni);
             else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.CLIMB)

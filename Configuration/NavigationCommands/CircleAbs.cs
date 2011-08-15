@@ -37,6 +37,7 @@ namespace Configuration.NavigationCommands
             _ce.SetCoordinateRad(ni.x, ni.y);
             _dtb_radius.DistanceM = ni.a;
             _dtb_height.DistanceM = ni.b;
+            ni.opcode = NavigationInstruction.navigation_command.CIRCLE_ABS;
         }
 
         #endregion

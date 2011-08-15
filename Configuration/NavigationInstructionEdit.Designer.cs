@@ -74,7 +74,8 @@
             "UNTIL()",
             "SERVO_SET(channel, position_us)",
             "SERVO_TRIGGER(channel, position_us, hold_sec)",
-            "BLOCK"});
+            "BLOCK",
+            "FLARE_TO"});
             this._cb_opcode.Location = new System.Drawing.Point(74, 12);
             this._cb_opcode.Name = "_cb_opcode";
             this._cb_opcode.Size = new System.Drawing.Size(155, 21);

@@ -249,7 +249,8 @@ namespace GluonCS.LiveUavLayer
                     NavigationInstruction ni = model.GetNavigationInstructionLocal(i);
                     if (ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FROM_TO_REL || 
                         ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FLY_TO_REL ||
-                        ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.CIRCLE_REL)
+                        ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.CIRCLE_REL ||
+                        ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FLARE_TO_REL)
                     {
                         if (model.IsNavigationSynchronized(i))
                             mm = new RelativeMarker(gmap.Position, i, false);
@@ -264,7 +265,8 @@ namespace GluonCS.LiveUavLayer
                     }
                     if (ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FROM_TO_ABS ||
                         ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FLY_TO_ABS ||
-                        ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.CIRCLE_ABS)
+                        ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.CIRCLE_ABS ||
+                        ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FLARE_TO_ABS)
                     {
                         if (model.IsNavigationSynchronized(i))
                             mm = new AbsoluteMarker(gmap.Position, i, false);
@@ -371,14 +373,16 @@ namespace GluonCS.LiveUavLayer
 
                 if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_REL ||
                     ni.opcode == NavigationInstruction.navigation_command.FLY_TO_REL ||
-                    ni.opcode == NavigationInstruction.navigation_command.FROM_TO_REL)
+                    ni.opcode == NavigationInstruction.navigation_command.FROM_TO_REL ||
+                    ni.opcode == NavigationInstruction.navigation_command.FLARE_TO_REL)
                 {
                     ni.x = p.Lat / 180.0 * Math.PI;
                     ni.y = p.Lng / 180.0 * Math.PI;
                 }
                 else if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_ABS ||
                         ni.opcode == NavigationInstruction.navigation_command.FLY_TO_ABS ||
-                        ni.opcode == NavigationInstruction.navigation_command.FROM_TO_ABS)
+                        ni.opcode == NavigationInstruction.navigation_command.FROM_TO_ABS ||
+                        ni.opcode == NavigationInstruction.navigation_command.FLARE_TO_ABS)
                 {
                     LatLng rel = LatLng.ToRelative(home.Position.Lat, home.Position.Lng, nm.Position.Lat, nm.Position.Lng);
                     ni.x = rel.Lat;
@@ -397,7 +401,10 @@ namespace GluonCS.LiveUavLayer
                     ni.opcode = NavigationInstruction.navigation_command.FLY_TO_REL;
                 else if (ni.opcode == NavigationInstruction.navigation_command.FROM_TO_ABS)
                     ni.opcode = NavigationInstruction.navigation_command.FROM_TO_REL;
-
+                else if (ni.opcode == NavigationInstruction.navigation_command.FLARE_TO_ABS)
+                    ni.opcode = NavigationInstruction.navigation_command.FLARE_TO_REL;
+                else if (ni.opcode == NavigationInstruction.navigation_command.FLARE_TO_REL)
+                    ni.opcode = NavigationInstruction.navigation_command.FLARE_TO_ABS;
                 model.UpdateLocalNavigationInstruction(ni);
             }
         }

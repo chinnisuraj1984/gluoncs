@@ -50,6 +50,9 @@ namespace Configuration
                 */
             if (ni.opcode == NavigationInstruction.navigation_command.BLOCK)
                 _cb_opcode.SelectedIndex = 10;
+            else if (ni.opcode == NavigationInstruction.navigation_command.FLARE_TO_ABS ||
+                     ni.opcode == NavigationInstruction.navigation_command.FLARE_TO_REL)
+                _cb_opcode.SelectedIndex = 11;
             else if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_ABS ||
                      ni.opcode == NavigationInstruction.navigation_command.CIRCLE_REL)
                 _cb_opcode.SelectedIndex = 5;
@@ -74,6 +77,11 @@ namespace Configuration
                      ni.opcode == NavigationInstruction.navigation_command.IF_GR ||
                      ni.opcode == NavigationInstruction.navigation_command.IF_SM)
                 _cb_opcode.SelectedIndex = 6;
+            else if (ni.opcode == NavigationInstruction.navigation_command.UNTIL_EQ ||
+                     ni.opcode == NavigationInstruction.navigation_command.UNTIL_NE ||
+                     ni.opcode == NavigationInstruction.navigation_command.UNTIL_GR ||
+                     ni.opcode == NavigationInstruction.navigation_command.UNTIL_SM)
+                _cb_opcode.SelectedIndex = 7;
             //_cb_opcode.SelectedIndex = (int)ni.opcode;
         }
 
@@ -133,10 +141,20 @@ namespace Configuration
                 webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\fromto.html");
                 c = new NavigationCommands.FromTo(ni);
             }
+            else if (_cb_opcode.Text.StartsWith("FLARE_TO"))
+            {
+                //webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\fromto.html");
+                c = new NavigationCommands.FlareTo(ni);
+            }
             else if (_cb_opcode.Text.StartsWith("IF"))
             {
                 webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\if.html");
                 c = new NavigationCommands.If(ni);
+            }
+            else if (_cb_opcode.Text.StartsWith("UNTIL"))
+            {
+                //webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\if.html");
+                c = new NavigationCommands.Until(ni);
             }
             else if (_cb_opcode.Text.StartsWith("BLOCK"))
                 c = new NavigationCommands.Block(ni);
