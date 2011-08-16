@@ -44,12 +44,14 @@
             // 
             // _dtb_height
             // 
+            this._dtb_height.Color = System.Drawing.SystemColors.Window;
             this._dtb_height.DistanceM = 0D;
             this._dtb_height.Location = new System.Drawing.Point(75, 59);
             this._dtb_height.Name = "_dtb_height";
             this._dtb_height.ReadOnly = false;
             this._dtb_height.Size = new System.Drawing.Size(99, 21);
             this._dtb_height.TabIndex = 14;
+            this._dtb_height.UseAltitudeColoring = true;
             // 
             // _ce
             // 

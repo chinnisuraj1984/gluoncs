@@ -49,12 +49,14 @@
             // 
             // _dtb_height
             // 
+            this._dtb_height.Color = System.Drawing.SystemColors.Window;
             this._dtb_height.DistanceM = 0D;
             this._dtb_height.Location = new System.Drawing.Point(73, 55);
             this._dtb_height.Name = "_dtb_height";
             this._dtb_height.ReadOnly = false;
             this._dtb_height.Size = new System.Drawing.Size(99, 21);
             this._dtb_height.TabIndex = 4;
+            this._dtb_height.UseAltitudeColoring = true;
             // 
             // label6
             // 
@@ -76,21 +78,25 @@
             // 
             // _dtb_east
             // 
+            this._dtb_east.Color = System.Drawing.SystemColors.Window;
             this._dtb_east.DistanceM = 0D;
             this._dtb_east.Location = new System.Drawing.Point(73, 28);
             this._dtb_east.Name = "_dtb_east";
             this._dtb_east.ReadOnly = false;
             this._dtb_east.Size = new System.Drawing.Size(99, 21);
             this._dtb_east.TabIndex = 13;
+            this._dtb_east.UseAltitudeColoring = false;
             // 
             // _dtb_north
             // 
+            this._dtb_north.Color = System.Drawing.SystemColors.Window;
             this._dtb_north.DistanceM = 0D;
             this._dtb_north.Location = new System.Drawing.Point(73, 1);
             this._dtb_north.Name = "_dtb_north";
             this._dtb_north.ReadOnly = false;
             this._dtb_north.Size = new System.Drawing.Size(99, 21);
             this._dtb_north.TabIndex = 12;
+            this._dtb_north.UseAltitudeColoring = false;
             // 
             // label2
             // 

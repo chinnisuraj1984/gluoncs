@@ -125,143 +125,150 @@ namespace GluonCS
         // Update the panel's labels. Not based on the events.
         void updatePanel_Tick(object sender, EventArgs e)
         {
-            if (model.Serial != null && model.Serial.IsOpen)
-                _btnConnect.Checked = true;
-            else
-                _btnConnect.Checked = false;
+            try
+            {
+                if (model.Serial != null && model.Serial.IsOpen)
+                    _btnConnect.Checked = true;
+                else
+                    _btnConnect.Checked = false;
 
-            if (!model.CommunicationAlive)
-            {
-                _lblFlightMode.Text = "! Connection lost !";
-                _lblFlightMode.BackColor = Color.Orange;
-            }
-            else
-            {
-                if (model.FlightMode == ControlInfo.FlightModes.AUTOPILOT)
+                if (!model.CommunicationAlive)
                 {
-                    _lblFlightMode.Text = "Autopilot ON";
-                    _lblFlightMode.BackColor = Color.LimeGreen;
+                    _lblFlightMode.Text = "! Connection lost !";
+                    _lblFlightMode.BackColor = Color.Orange;
                 }
-                else if (model.FlightMode == ControlInfo.FlightModes.AUTOPILOT)
+                else
                 {
-                    _lblFlightMode.Text = "Stabilized manual\r\nRC mode";
-                    _lblFlightMode.BackColor = Color.Yellow;
+                    if (model.FlightMode == ControlInfo.FlightModes.AUTOPILOT)
+                    {
+                        _lblFlightMode.Text = "Autopilot ON";
+                        _lblFlightMode.BackColor = Color.LimeGreen;
+                    }
+                    else if (model.FlightMode == ControlInfo.FlightModes.AUTOPILOT)
+                    {
+                        _lblFlightMode.Text = "Stabilized manual\r\nRC mode";
+                        _lblFlightMode.BackColor = Color.Yellow;
+                    }
+                    else if (model.FlightMode == ControlInfo.FlightModes.MANUAL)
+                    {
+                        _lblFlightMode.Text = "Autopilot OFF\r\nManual RC mode";
+                        _lblFlightMode.BackColor = Color.Red;
+                    }
                 }
-                else if (model.FlightMode == ControlInfo.FlightModes.MANUAL)
-                {
-                    _lblFlightMode.Text = "Autopilot OFF\r\nManual RC mode";
-                    _lblFlightMode.BackColor = Color.Red;
-                }
-            }
 
-            if (model.NumberOfGpsSatellites >= 0)
-            {
-                if (model.NumberOfGpsSatellites < 6)
+                if (model.NumberOfGpsSatellites >= 0)
                 {
-                    _pbGps.ForeColor = Color.Red;
+                    if (model.NumberOfGpsSatellites < 6)
+                    {
+                        _pbGps.ForeColor = Color.Red;
+                        _lblGpsSat.BackColor = Color.Red;
+                        _pbGps.Text = "Acquiring (" + model.NumberOfGpsSatellites + ")";
+                    }
+                    else
+                    {
+                        _pbGps.ForeColor = Color.LimeGreen;
+                        _lblGpsSat.BackColor = _lblGpsSat.Parent.BackColor;
+                        _pbGps.Text = "Locked (" + model.NumberOfGpsSatellites + ")";
+                    }
+                    _pbGps.Value = model.NumberOfGpsSatellites;
+                }
+                else //if (model.NumberOfGpsSatellites == -1)
+                {
+                    _pbGps.Value = 0;
+                    _pbGps.Text = "Not found";
                     _lblGpsSat.BackColor = Color.Red;
-                    _pbGps.Text = "Acquiring (" + model.NumberOfGpsSatellites + ")";
+                }
+
+
+                //_pbBattery.Value = (int)(model.BatteryVoltage * 10.0);
+                _pbBattery.Text = model.BatteryVoltage.ToString() + " V";
+                if (model.SecondsConnectionLost() > 0.3)
+                {
+                    _pbLink.Text = model.SecondsConnectionLost().ToString("F0") + " s lost";
+                    _pbLink.Value = (int)Math.Max(0.0, Math.Min(100.0, 110.0 - model.SecondsConnectionLost() * 20.0));  // 5 seconds without connection = 0%
+                    if (model.SecondsConnectionLost() < 3)
+                    {
+                        _pbLink.ForeColor = Color.Yellow;
+                    }
+                    else
+                    {
+                        _pbLink.ForeColor = Color.Red;
+                        _lblLink.BackColor = Color.Red;
+                    }
                 }
                 else
                 {
-                    _pbGps.ForeColor = Color.LimeGreen;
-                    _lblGpsSat.BackColor = _lblGpsSat.Parent.BackColor;
-                    _pbGps.Text = "Locked (" + model.NumberOfGpsSatellites + ")";
+                    _pbLink.Text = "OK";
+                    _pbLink.Value = 100;
+                    _pbLink.ForeColor = Color.LimeGreen;
+                    _lblLink.BackColor = _lblLink.Parent.BackColor;
                 }
-                _pbGps.Value = model.NumberOfGpsSatellites;
-            }
-            else //if (model.NumberOfGpsSatellites == -1)
-            {
-                _pbGps.Value = 0;
-                _pbGps.Text = "Not found";
-                _lblGpsSat.BackColor = Color.Red;
-            }
 
 
-            //_pbBattery.Value = (int)(model.BatteryVoltage * 10.0);
-            _pbBattery.Text = model.BatteryVoltage.ToString() + " V";
-            if (model.SecondsConnectionLost() > 0.3)
-            {
-                _pbLink.Text = model.SecondsConnectionLost().ToString("F0") + " s lost";
-                _pbLink.Value = (int)Math.Max(0.0, Math.Min(100.0, 110.0 - model.SecondsConnectionLost() * 20.0));  // 5 seconds without connection = 0%
-                if (model.SecondsConnectionLost() < 3)
-                {
-                    _pbLink.ForeColor = Color.Yellow;
-                }
+                _pbRcLink.Value = model.RcLink;
+                _pbThrottle.Value = model.ThrottlePct;
+
+                _lblAltitudeAgl.Text = model.AltitudeAglM + " m / " + model.TargetAltitudeAglM() + " m";
+                _lblDistNextWp.Text = "Next WP: " + model.DistanceNextWaypoint().ToString("F0") + " m";
+                _lblHomeDistance.Text = "Home: " + model.DistanceHome().ToString("F0") + " m";
+
+                _lblBlockname.Text = model.NavigationModel.Commands[model.CurrentNavigationLine].BlockName;
+                _lblFlightTime.Text = "Flight time: " + (int)(model.FlightTime.TotalMinutes) + ":" + model.FlightTime.Seconds;
+                _lblTimeInBlock.Text = "Time in block: " + (int)(model.BlockTime.TotalMinutes) + ":" + model.BlockTime.Seconds;
+
+                // update listview with current navigation line selection
+                foreach (ListViewItem lvi in _lv_navigation.Items)
+                    if (lvi.BackColor == Color.Yellow && lvi.Index != model.CurrentNavigationLine)
+                        lvi.BackColor = _lv_navigation.Parent.BackColor;
+                if (_lv_navigation.Items.Count > model.CurrentNavigationLine && _lv_navigation.Items[model.CurrentNavigationLine].BackColor != Color.Yellow)
+                    _lv_navigation.Items[model.CurrentNavigationLine].BackColor = Color.Yellow;
+
+                if (model.SpeedMS < 0.001)
+                    _lblTimeToWp.Text = "Time to WP: oo s";
                 else
                 {
-                    _pbLink.ForeColor = Color.Red;
-                    _lblLink.BackColor = Color.Red;
+                    TimeSpan ts = new TimeSpan(0, 0, (int)(model.DistanceNextWaypoint() / model.SpeedMS));
+                    _lblTimeToWp.Text = "Time to WP: " + (int)ts.TotalMinutes + ":" + ts.Seconds;
                 }
+                _lblSpeed.Text = ((int)(model.SpeedMS * 3.6)).ToString() + " km/h";
+
+                // Update graphs
+                double time = (DateTime.Now - startDateTime).TotalSeconds;
+                altitudeLineItem.AddPoint(time, model.AltitudeAglM);
+                Scale xScale = _zgAlt.GraphPane.XAxis.Scale;
+                if (time > xScale.Max - xScale.MajorStep)
+                {
+                    xScale.Max = time + xScale.MajorStep;
+                    xScale.Min = xScale.Max - 180; // 180 seconden
+                }
+                _zgAlt.AxisChange();
+                _zgAlt.Invalidate();
+
+
+                speedLineItem.AddPoint(time, model.SpeedMS * 3.6);
+                xScale = _zgVel.GraphPane.XAxis.Scale;
+                if (time > xScale.Max - xScale.MajorStep)
+                {
+                    xScale.Max = time + xScale.MajorStep;
+                    xScale.Min = xScale.Max - 180; // 180 seconden
+                }
+                _zgVel.AxisChange();
+                _zgVel.Invalidate();
+
+                batteryVLineItem.AddPoint(time, model.BatteryVoltage);
+                xScale = _zgBatV.GraphPane.XAxis.Scale;
+                if (time > xScale.Max - xScale.MajorStep)
+                {
+                    xScale.Max = time + xScale.MajorStep;
+                    xScale.Min = xScale.Max - 180; // 180 seconden
+                }
+                _zgBatV.AxisChange();
+                _zgBatV.Invalidate();
             }
-            else
+            catch (Exception ex)
             {
-                _pbLink.Text = "OK";
-                _pbLink.Value = 100;
-                _pbLink.ForeColor = Color.LimeGreen;
-                _lblLink.BackColor = _lblLink.Parent.BackColor;
+
             }
-
-
-            _pbRcLink.Value = model.RcLink;
-            _pbThrottle.Value = model.ThrottlePct;
-
-            _lblAltitudeAgl.Text = model.AltitudeAglM + " m / " + model.TargetAltitudeAglM() + " m";
-            _lblDistNextWp.Text = "Next WP: " + model.DistanceNextWaypoint().ToString("F0") + " m";
-            _lblHomeDistance.Text = "Home: " + model.DistanceHome().ToString("F0") + " m";
-
-            _lblBlockname.Text = model.NavigationModel.Commands[model.CurrentNavigationLine].BlockName;
-            _lblFlightTime.Text = "Flight time: " + (int)(model.FlightTime.TotalMinutes) + ":" + model.FlightTime.Seconds;
-            _lblTimeInBlock.Text = "Time in block: " + (int)(model.BlockTime.TotalMinutes) + ":" + model.BlockTime.Seconds;
-
-            // update listview with current navigation line selection
-            foreach (ListViewItem lvi in _lv_navigation.Items)
-                if (lvi.BackColor == Color.Yellow && lvi.Index != model.CurrentNavigationLine)
-                    lvi.BackColor = _lv_navigation.Parent.BackColor;
-            if (_lv_navigation.Items.Count > model.CurrentNavigationLine  &&_lv_navigation.Items[model.CurrentNavigationLine].BackColor != Color.Yellow)
-                _lv_navigation.Items[model.CurrentNavigationLine].BackColor = Color.Yellow;
-
-            if (model.SpeedMS < 0.001)
-                _lblTimeToWp.Text = "Time to WP: oo s";
-            else
-            {
-                TimeSpan ts = new TimeSpan(0, 0, (int)(model.DistanceNextWaypoint() / model.SpeedMS));
-                _lblTimeToWp.Text = "Time to WP: " + (int)ts.TotalMinutes + ":" + ts.Seconds;
-            }
-            _lblSpeed.Text = ((int)(model.SpeedMS * 3.6)).ToString() + " km/h";
-
-            // Update graphs
-            double time = (DateTime.Now - startDateTime).TotalSeconds;
-            altitudeLineItem.AddPoint(time, model.AltitudeAglM);
-            Scale xScale = _zgAlt.GraphPane.XAxis.Scale;
-            if (time > xScale.Max - xScale.MajorStep)
-            {
-                xScale.Max = time + xScale.MajorStep;
-                xScale.Min = xScale.Max - 180; // 180 seconden
-            }
-            _zgAlt.AxisChange();
-            _zgAlt.Invalidate();
-
-
-            speedLineItem.AddPoint(time, model.SpeedMS * 3.6);
-            xScale = _zgVel.GraphPane.XAxis.Scale;
-            if (time > xScale.Max - xScale.MajorStep)
-            {
-                xScale.Max = time + xScale.MajorStep;
-                xScale.Min = xScale.Max - 180; // 180 seconden
-            }
-            _zgVel.AxisChange();
-            _zgVel.Invalidate();
-
-            batteryVLineItem.AddPoint(time, model.BatteryVoltage);
-            xScale = _zgBatV.GraphPane.XAxis.Scale;
-            if (time > xScale.Max - xScale.MajorStep)
-            {
-                xScale.Max = time + xScale.MajorStep;
-                xScale.Min = xScale.Max - 180; // 180 seconden
-            }
-            _zgBatV.AxisChange();
-            _zgBatV.Invalidate();
         }
 
 

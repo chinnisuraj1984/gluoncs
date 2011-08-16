@@ -24,6 +24,7 @@ namespace GluonCS.Markers
             // if so, you shall have no event on it ;}
             Size = new System.Drawing.Size(14, 14);
             Offset = new System.Drawing.Point(-Size.Width / 2, -Size.Height / 2);
+            this.out_of_sync = out_of_sync;
             if (out_of_sync)
                 Pen = new Pen(Brushes.Gray, 2);
             else

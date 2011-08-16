@@ -41,6 +41,11 @@ namespace Configuration.NavigationCommands
         {
             this.ni = ni;
             tableLayoutPanel.Controls.Clear();
+            if (ni.HasRelativeCoordinates())
+                ni.opcode = NavigationInstruction.navigation_command.CIRCLE_REL;
+            else
+                ni.opcode = NavigationInstruction.navigation_command.CIRCLE_ABS;
+
             if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_REL)
             {
                 tableLayoutPanel.Controls.Add(new CircleRel(ni));

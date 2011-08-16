@@ -30,6 +30,33 @@ namespace Configuration
         }
 
         [BrowsableAttribute(true)]
+        public Color Color
+        {
+            set
+            {
+                tb_distance.BackColor = value;
+            }
+            get
+            {
+                return tb_distance.BackColor;
+            }
+        }
+
+        private bool altitude_coloring = false;
+        [BrowsableAttribute(true)]
+        public bool UseAltitudeColoring
+        {
+            set
+            {
+                altitude_coloring = value;
+            }
+            get
+            {
+                return altitude_coloring;
+            }
+        }
+
+        [BrowsableAttribute(true)]
         public double DistanceM
         {
             get
@@ -47,6 +74,7 @@ namespace Configuration
             {
                 current_distance_m = value;
                 cb_unit_SelectedIndexChanged(null, null);
+                DistanceTextBox_DistanceChanged(null, EventArgs.Empty);
             }
         }
 
@@ -62,6 +90,22 @@ namespace Configuration
                 cb_unit.SelectedIndex = 2;
             else //if (Properties.Settings.Default.DistanceUnit == "mi")
                 cb_unit.SelectedIndex = 3;
+
+            DistanceChanged += new EventHandler(DistanceTextBox_DistanceChanged);
+            DistanceTextBox_DistanceChanged(null, EventArgs.Empty);
+        }
+
+        void DistanceTextBox_DistanceChanged(object sender, EventArgs e)
+        {
+            if (UseAltitudeColoring)
+            {
+                if (DistanceM < 30)
+                    Color = Color.Red;
+                else if (DistanceM < 50)
+                    Color = Color.Yellow;
+                else
+                    Color = Color.White;
+            }
         }
 
         private void cb_unit_SelectedIndexChanged(object sender, EventArgs e)
@@ -104,5 +148,7 @@ namespace Configuration
             if (DistanceChanged != null)
                 DistanceChanged(this, e); // or whatever args you want
         }
+
+
     }
 }

@@ -82,7 +82,7 @@ namespace GluonCS.LiveUavLayer
             gmap.MouseDown += new System.Windows.Forms.MouseEventHandler(gmap_MouseDown);
             gmap.MouseUp += new System.Windows.Forms.MouseEventHandler(gmap_MouseUp);
             gmap.MouseMove += new MouseEventHandler(gmap_MouseMove);
-
+            gmap.OnMarkerClick += new MarkerClick(gmap_OnMarkerClick);
             model.NavigationLocalListChanged += new LiveUavModel.ChangedEventHandler(model_NavigationLocalListChanged);
             model.HomeChanged += new LiveUavModel.ChangedEventHandler(model_HomeChanged);
             model.UavPositionChanged += new LiveUavModel.ChangedEventHandler(model_UavPositionChanged);
@@ -111,6 +111,8 @@ namespace GluonCS.LiveUavLayer
             zoomtowaypoints = new Timer();
             zoomtowaypoints.Tick += new EventHandler(zoomtowaypoints_Tick);
         }
+
+
 
         public void Stop()
         {
@@ -503,7 +505,17 @@ namespace GluonCS.LiveUavLayer
             if (current_marker != null && current_marker.Overlay == NavigationOverlay &&
                 e.Button == MouseButtons.Left)
             {
-                UpdateCurrentMarkerInModel(e.X, e.Y);
+                if ((DateTime.Now - lastclick).TotalMilliseconds < 500) // fake doubleclick
+                {
+                    WaypointProperties_Click(this, EventArgs.Empty);
+                }
+                else
+                {
+                    lastclick = DateTime.Now;
+                }
+                if (gmap.IsDragging && is_mouse_down)
+                    UpdateCurrentMarkerInModel(e.X, e.Y);
+                
             }
 
             if (e.Button == MouseButtons.Right && !gmap.IsDragging)
@@ -524,8 +536,10 @@ namespace GluonCS.LiveUavLayer
 
         void gmap_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left && current_marker != null)
                 is_mouse_down = true;
+            else
+                is_mouse_down = false;
         }
 
         void gmap_OnMarkerLeave(GMapMarker item)
@@ -541,6 +555,12 @@ namespace GluonCS.LiveUavLayer
                 current_marker = item;
             }
         }
-#endregion
+
+        DateTime lastclick = DateTime.Now;
+        void gmap_OnMarkerClick(GMapMarker item, MouseEventArgs e)
+        {
+
+        }
+#endregion 
     }
 }
