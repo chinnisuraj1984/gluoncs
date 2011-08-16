@@ -67,30 +67,36 @@
             // 
             // distanceTextBoxHeight
             // 
+            this.distanceTextBoxHeight.Color = System.Drawing.SystemColors.Window;
             this.distanceTextBoxHeight.DistanceM = 0D;
             this.distanceTextBoxHeight.Location = new System.Drawing.Point(59, 54);
             this.distanceTextBoxHeight.Name = "distanceTextBoxHeight";
             this.distanceTextBoxHeight.ReadOnly = false;
             this.distanceTextBoxHeight.Size = new System.Drawing.Size(99, 21);
             this.distanceTextBoxHeight.TabIndex = 15;
+            this.distanceTextBoxHeight.UseAltitudeColoring = true;
             // 
             // distanceTextBoxEast
             // 
+            this.distanceTextBoxEast.Color = System.Drawing.SystemColors.Window;
             this.distanceTextBoxEast.DistanceM = 0D;
             this.distanceTextBoxEast.Location = new System.Drawing.Point(59, 27);
             this.distanceTextBoxEast.Name = "distanceTextBoxEast";
             this.distanceTextBoxEast.ReadOnly = false;
             this.distanceTextBoxEast.Size = new System.Drawing.Size(99, 21);
             this.distanceTextBoxEast.TabIndex = 13;
+            this.distanceTextBoxEast.UseAltitudeColoring = false;
             // 
             // distanceTextBoxNorth
             // 
+            this.distanceTextBoxNorth.Color = System.Drawing.SystemColors.Window;
             this.distanceTextBoxNorth.DistanceM = 0D;
             this.distanceTextBoxNorth.Location = new System.Drawing.Point(59, 0);
             this.distanceTextBoxNorth.Name = "distanceTextBoxNorth";
             this.distanceTextBoxNorth.ReadOnly = false;
             this.distanceTextBoxNorth.Size = new System.Drawing.Size(99, 21);
             this.distanceTextBoxNorth.TabIndex = 12;
+            this.distanceTextBoxNorth.UseAltitudeColoring = false;
             // 
             // label2
             // 

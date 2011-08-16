@@ -41,6 +41,11 @@ namespace Configuration.NavigationCommands
         {
             this.ni = ni;
             tableLayoutPanel.Controls.Clear();
+            if (ni.HasRelativeCoordinates())
+                ni.opcode = NavigationInstruction.navigation_command.FROM_TO_REL;
+            else
+                ni.opcode = NavigationInstruction.navigation_command.FROM_TO_ABS;
+
             if (ni.opcode == NavigationInstruction.navigation_command.FROM_TO_REL)
             {
                 tableLayoutPanel.Controls.Add(new FromToRel(ni));
