@@ -20,7 +20,7 @@ namespace Gluonpilot
         Communication.Frames.Configuration.AllConfig config_original = null;
         private Artificial3DHorizon.AI3D aI3D = null;
         private bool guiUpdateBusy = false;
-
+        private Communication.Frames.Incoming.ControlInfo ci = null;
 
         public EasyConfig()
         {
@@ -34,6 +34,12 @@ namespace Gluonpilot
             serial.AllConfigCommunicationReceived += new SerialCommunication.ReceiveAllConfigCommunicationFrame(serial_AllConfigCommunicationReceived);
             serial.AttitudeCommunicationReceived += new SerialCommunication.ReceiveAttitudeCommunicationFrame(serial_AttitudeCommunicationReceived);
             serial.RcInputCommunicationReceived += new SerialCommunication.ReceiveRcInputCommunicationFrame(serial_RcInputCommunicationReceived);
+            serial.ControlInfoCommunicationReceived += new SerialCommunication.ReceiveControlInfoCommunicationFrame(serial_ControlInfoCommunicationReceived);
+        }
+
+        void serial_ControlInfoCommunicationReceived(Communication.Frames.Incoming.ControlInfo ci)
+        {
+            this.ci = ci;
         }
 
         void serial_RcInputCommunicationReceived(Communication.Frames.Incoming.RcInput rcinput)
@@ -62,9 +68,9 @@ namespace Gluonpilot
                         channel_labels[config.channel_ap - 1].Text = "Undetermined";
 
                     if (rcinput.GetPwm(config.channel_motor) > 1500)
-                        channel_labels[config.channel_motor - 1].Text = "Throttle high";
+                        channel_labels[config.channel_motor - 1].Text = "Throttle high (" + (ci == null ? "?)" : ci.Throttle.ToString() + "%)");
                     else if (rcinput.GetPwm(config.channel_motor) > 920)
-                        channel_labels[config.channel_motor - 1].Text = "Throttle low";
+                        channel_labels[config.channel_motor - 1].Text = "Throttle low (" + (ci == null ? "?)" : ci.Throttle.ToString() + "%)");
                     else if (rcinput.GetPwm(config.channel_motor) > 800)
                         channel_labels[config.channel_motor - 1].Text = "Throttle in autopilot failsafe";
                     else

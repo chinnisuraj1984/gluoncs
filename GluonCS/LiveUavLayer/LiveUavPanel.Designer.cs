@@ -70,6 +70,7 @@
             this._lblGpsSat = new System.Windows.Forms.Label();
             this._navigationPanel = new BSE.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this._btnAddBlock = new System.Windows.Forms.ToolStripButton();
             this._btn_up = new System.Windows.Forms.ToolStripButton();
             this._btn_down = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -81,12 +82,12 @@
             this._btnNaviWrite = new System.Windows.Forms.ToolStripMenuItem();
             this._btnNaviReload = new System.Windows.Forms.ToolStripMenuItem();
             this._btnAutoSync = new System.Windows.Forms.ToolStripButton();
-            this._btnNaviBurn = new System.Windows.Forms.ToolStripButton();
             this._lv_navigation = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._imageListGps = new System.Windows.Forms.ImageList(this.components);
             this._gmapContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this._btnNaviBurn = new System.Windows.Forms.ToolStripMenuItem();
             this._cockpitPanel.SuspendLayout();
             this._ahPanel.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -156,7 +157,7 @@
             this._cockpitPanel.Name = "_cockpitPanel";
             this._cockpitPanel.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
             this._cockpitPanel.ShowExpandIcon = true;
-            this._cockpitPanel.Size = new System.Drawing.Size(343, 408);
+            this._cockpitPanel.Size = new System.Drawing.Size(402, 408);
             this._cockpitPanel.TabIndex = 0;
             this._cockpitPanel.Text = "Cockpit";
             this._cockpitPanel.ToolTipTextCloseIcon = null;
@@ -170,7 +171,7 @@
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter1.Location = new System.Drawing.Point(0, 408);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(343, 3);
+            this.splitter1.Size = new System.Drawing.Size(402, 3);
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
             // 
@@ -259,11 +260,11 @@
             // 
             // toolStripContainer1.ContentPanel
             // 
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(341, 2);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(400, 2);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Top;
             this.toolStripContainer1.Location = new System.Drawing.Point(1, 21);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(341, 27);
+            this.toolStripContainer1.Size = new System.Drawing.Size(400, 27);
             this.toolStripContainer1.TabIndex = 47;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -282,7 +283,7 @@
             this.toolStripDropDownButton3});
             this.toolStrip2.Location = new System.Drawing.Point(3, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(297, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(266, 25);
             this.toolStrip2.TabIndex = 0;
             // 
             // _btnConnect
@@ -448,7 +449,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(343, 179);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(402, 179);
             this.tableLayoutPanel3.TabIndex = 35;
             // 
             // _panelStrip
@@ -458,7 +459,7 @@
             this._panelStrip.Dock = System.Windows.Forms.DockStyle.Fill;
             this._panelStrip.Location = new System.Drawing.Point(3, 3);
             this._panelStrip.Name = "_panelStrip";
-            this._panelStrip.Size = new System.Drawing.Size(337, 32);
+            this._panelStrip.Size = new System.Drawing.Size(396, 32);
             this._panelStrip.TabIndex = 33;
             // 
             // label2
@@ -483,7 +484,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 41);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(337, 135);
+            this.tabControl1.Size = new System.Drawing.Size(396, 135);
             this.tabControl1.TabIndex = 25;
             // 
             // tabPage1
@@ -492,7 +493,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(329, 109);
+            this.tabPage1.Size = new System.Drawing.Size(388, 109);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Altitude";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -513,7 +514,7 @@
             this._zgAlt.ScrollMinX = 0D;
             this._zgAlt.ScrollMinY = 0D;
             this._zgAlt.ScrollMinY2 = 0D;
-            this._zgAlt.Size = new System.Drawing.Size(323, 103);
+            this._zgAlt.Size = new System.Drawing.Size(382, 103);
             this._zgAlt.TabIndex = 0;
             // 
             // tabPage2
@@ -522,7 +523,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(329, 109);
+            this.tabPage2.Size = new System.Drawing.Size(334, 109);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Speed";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -552,7 +553,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(329, 109);
+            this.tabPage3.Size = new System.Drawing.Size(334, 109);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Battery voltage";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -707,7 +708,7 @@
             this._navigationPanel.Name = "_navigationPanel";
             this._navigationPanel.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
             this._navigationPanel.ShowExpandIcon = true;
-            this._navigationPanel.Size = new System.Drawing.Size(343, 228);
+            this._navigationPanel.Size = new System.Drawing.Size(402, 228);
             this._navigationPanel.TabIndex = 2;
             this._navigationPanel.Text = "Navigation";
             this._navigationPanel.ToolTipTextCloseIcon = null;
@@ -717,18 +718,27 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._btnAddBlock,
             this._btn_up,
             this._btn_down,
             this.toolStripSeparator1,
             this.toolStripDropDownButton1,
             this.toolStripDropDownButton2,
-            this._btnAutoSync,
-            this._btnNaviBurn});
+            this._btnAutoSync});
             this.toolStrip1.Location = new System.Drawing.Point(1, 22);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(341, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(400, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // _btnAddBlock
+            // 
+            this._btnAddBlock.Image = ((System.Drawing.Image)(resources.GetObject("_btnAddBlock.Image")));
+            this._btnAddBlock.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this._btnAddBlock.Name = "_btnAddBlock";
+            this._btnAddBlock.Size = new System.Drawing.Size(73, 22);
+            this._btnAddBlock.Text = "Add block";
+            this._btnAddBlock.Click += new System.EventHandler(this._btnAddBlock_Click);
             // 
             // _btn_up
             // 
@@ -787,7 +797,8 @@
             this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._btnNaviRead,
             this._btnNaviWrite,
-            this._btnNaviReload});
+            this._btnNaviReload,
+            this._btnNaviBurn});
             this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
@@ -796,6 +807,7 @@
             // 
             // _btnNaviRead
             // 
+            this._btnNaviRead.Image = ((System.Drawing.Image)(resources.GetObject("_btnNaviRead.Image")));
             this._btnNaviRead.Name = "_btnNaviRead";
             this._btnNaviRead.Size = new System.Drawing.Size(169, 22);
             this._btnNaviRead.Text = "&Read";
@@ -803,6 +815,7 @@
             // 
             // _btnNaviWrite
             // 
+            this._btnNaviWrite.Image = ((System.Drawing.Image)(resources.GetObject("_btnNaviWrite.Image")));
             this._btnNaviWrite.Name = "_btnNaviWrite";
             this._btnNaviWrite.Size = new System.Drawing.Size(169, 22);
             this._btnNaviWrite.Text = "&Write";
@@ -810,6 +823,7 @@
             // 
             // _btnNaviReload
             // 
+            this._btnNaviReload.Image = ((System.Drawing.Image)(resources.GetObject("_btnNaviReload.Image")));
             this._btnNaviReload.Name = "_btnNaviReload";
             this._btnNaviReload.Size = new System.Drawing.Size(169, 22);
             this._btnNaviReload.Text = "Re&load from flash";
@@ -823,16 +837,8 @@
             this._btnAutoSync.Name = "_btnAutoSync";
             this._btnAutoSync.Size = new System.Drawing.Size(76, 22);
             this._btnAutoSync.Text = "Auto-sync";
+            this._btnAutoSync.ToolTipText = "Auto-sync with gluonpilot";
             this._btnAutoSync.CheckedChanged += new System.EventHandler(this._btnAutoSync_CheckedChanged);
-            // 
-            // _btnNaviBurn
-            // 
-            this._btnNaviBurn.Image = ((System.Drawing.Image)(resources.GetObject("_btnNaviBurn.Image")));
-            this._btnNaviBurn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this._btnNaviBurn.Name = "_btnNaviBurn";
-            this._btnNaviBurn.Size = new System.Drawing.Size(49, 22);
-            this._btnNaviBurn.Text = "Burn";
-            this._btnNaviBurn.Click += new System.EventHandler(this._btnNaviBurn_Click);
             // 
             // _lv_navigation
             // 
@@ -849,7 +855,7 @@
             this._lv_navigation.Location = new System.Drawing.Point(1, 50);
             this._lv_navigation.MultiSelect = false;
             this._lv_navigation.Name = "_lv_navigation";
-            this._lv_navigation.Size = new System.Drawing.Size(341, 174);
+            this._lv_navigation.Size = new System.Drawing.Size(400, 174);
             this._lv_navigation.TabIndex = 0;
             this._lv_navigation.UseCompatibleStateImageBehavior = false;
             this._lv_navigation.View = System.Windows.Forms.View.Details;
@@ -863,7 +869,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Command";
-            this.columnHeader2.Width = 272;
+            this.columnHeader2.Width = 294;
             // 
             // _imageListGps
             // 
@@ -878,6 +884,14 @@
             this._gmapContextMenuStrip.Name = "_gmapContextMenuStrip";
             this._gmapContextMenuStrip.Size = new System.Drawing.Size(61, 4);
             // 
+            // _btnNaviBurn
+            // 
+            this._btnNaviBurn.Image = ((System.Drawing.Image)(resources.GetObject("_btnNaviBurn.Image")));
+            this._btnNaviBurn.Name = "_btnNaviBurn";
+            this._btnNaviBurn.Size = new System.Drawing.Size(169, 22);
+            this._btnNaviBurn.Text = "Burn";
+            this._btnNaviBurn.Click += new System.EventHandler(this._btnNaviBurn_Click);
+            // 
             // LiveUavPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -887,7 +901,7 @@
             this.Controls.Add(this._navigationPanel);
             this.Controls.Add(this._cockpitPanel);
             this.Name = "LiveUavPanel";
-            this.Size = new System.Drawing.Size(343, 636);
+            this.Size = new System.Drawing.Size(402, 636);
             this._cockpitPanel.ResumeLayout(false);
             this._cockpitPanel.PerformLayout();
             this._ahPanel.ResumeLayout(false);
@@ -937,7 +951,6 @@
         private System.Windows.Forms.ToolStripButton _btn_down;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ImageList _imageListGps;
-        private System.Windows.Forms.ToolStripButton _btnNaviBurn;
         private System.Windows.Forms.ToolStripMenuItem _btnNaviReload;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -983,5 +996,7 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
         private System.Windows.Forms.ToolStripMenuItem _ts_basicconfig;
         private System.Windows.Forms.ToolStripMenuItem _tbn_fullconfig;
+        private System.Windows.Forms.ToolStripButton _btnAddBlock;
+        private System.Windows.Forms.ToolStripMenuItem _btnNaviBurn;
     }
 }

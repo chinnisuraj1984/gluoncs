@@ -128,9 +128,23 @@ namespace GluonCS
             try
             {
                 if (model.Serial != null && model.Serial.IsOpen)
+                {
                     _btnConnect.Checked = true;
+                    _btnAutoSync.Enabled = true;
+                    _btnNaviBurn.Enabled = true;
+                    _btnNaviRead.Enabled = true;
+                    _btnNaviReload.Enabled = true;
+                    _btnNaviWrite.Enabled = true;
+                }
                 else
+                {
                     _btnConnect.Checked = false;
+                    _btnAutoSync.Enabled = false;
+                    _btnNaviBurn.Enabled = false;
+                    _btnNaviRead.Enabled = false;
+                    _btnNaviReload.Enabled = false;
+                    _btnNaviWrite.Enabled = false;
+                }
 
                 if (!model.CommunicationAlive)
                 {
@@ -688,6 +702,41 @@ namespace GluonCS
                 Gluonpilot.GluonConfig gc = new Gluonpilot.GluonConfig(model.Serial);
                 gc.Show();
                 model.Serial.ReadAllConfig();
+            }
+        }
+
+        private void _btnAddBlock_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.OpenFileDialog file = new System.Windows.Forms.OpenFileDialog();
+            file.Title = "Please open the gluon navigation/block file you wish to insert";
+            file.DefaultExt = "gnf";
+            file.InitialDirectory = Path.GetDirectoryName(Application.ExecutablePath) + "\\NavigationBlocks";
+
+            file.Filter = "Gluon navigation file (*.gnf)|*.gnf|All files (*.*)|*.*";
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                Stream stream = File.OpenRead(file.FileName);
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(NavigationInstruction[]));
+
+                Console.WriteLine("Reading model information");
+
+                NavigationInstruction[] list = (NavigationInstruction[])xmlSerializer.Deserialize(stream);
+                int selected_index = _lv_navigation.SelectedIndices.Count == 0 ? 0 : _lv_navigation.SelectedIndices[0];
+
+                if (MessageBox.Show("The block will be inserted at line nr " + (selected_index + 1).ToString() + ".", "Inserting block", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                {
+                    for (int i = 0; i < list.Length && list[i].opcode != NavigationInstruction.navigation_command.EMPTY; i++)
+                    {
+                        NavigationInstruction ni = list[i];
+                        ni.line += selected_index;
+                        if (ni.opcode == NavigationInstruction.navigation_command.GOTO)
+                            ni.a += selected_index;
+
+                        if (i < model.MaxNumberOfNavigationInstructions())
+                            model.UpdateLocalNavigationInstruction(list[i]);
+                    }
+                }
+                stream.Close();
             }
         }
 

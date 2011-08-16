@@ -96,12 +96,13 @@ namespace GluonCS.LiveUavLayer
             Serial.NonParsedCommunicationReceived += new SerialCommunication.ReceiveNonParsedCommunication(connection_NonParsedCommunicationReceived);
             uavSynchronizer = new UavNavigationSynchronize(this, serial);
             uavSynchronizer.StartThread();
+            
+            s.Open(port, baudrate);
+
             if (flightgearpath != "")
             {
                 FlightgearThread fgt = new FlightgearThread(Serial, flightgearpath);
             }
-
-            s.Open(port, baudrate);
         }
 
         public void Stop()

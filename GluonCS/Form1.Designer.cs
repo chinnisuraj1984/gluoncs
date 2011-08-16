@@ -144,7 +144,7 @@
             this._gMapControl.RetryLoadTile = 0;
             this._gMapControl.RoutesEnabled = true;
             this._gMapControl.ShowTileGridLines = false;
-            this._gMapControl.Size = new System.Drawing.Size(507, 595);
+            this._gMapControl.Size = new System.Drawing.Size(495, 595);
             this._gMapControl.TabIndex = 4;
             this._gMapControl.Zoom = 5D;
             // 
@@ -154,7 +154,7 @@
             this.splitter3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.splitter3.Location = new System.Drawing.Point(0, 595);
             this.splitter3.Name = "splitter3";
-            this.splitter3.Size = new System.Drawing.Size(507, 3);
+            this.splitter3.Size = new System.Drawing.Size(495, 3);
             this.splitter3.TabIndex = 3;
             this.splitter3.TabStop = false;
             // 
@@ -188,7 +188,7 @@
             this.panel4.Name = "panel4";
             this.panel4.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
             this.panel4.ShowExpandIcon = true;
-            this.panel4.Size = new System.Drawing.Size(507, 100);
+            this.panel4.Size = new System.Drawing.Size(495, 100);
             this.panel4.TabIndex = 2;
             this.panel4.Text = "Logging";
             this.panel4.ToolTipTextCloseIcon = null;
@@ -202,7 +202,7 @@
             this._tbLog.Multiline = true;
             this._tbLog.Name = "_tbLog";
             this._tbLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this._tbLog.Size = new System.Drawing.Size(505, 71);
+            this._tbLog.Size = new System.Drawing.Size(493, 71);
             this._tbLog.TabIndex = 1;
             // 
             // m_cboToolStripRenderer
@@ -218,7 +218,7 @@
             // 
             this.splitter2.BackColor = System.Drawing.Color.Transparent;
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitter2.Location = new System.Drawing.Point(507, 0);
+            this.splitter2.Location = new System.Drawing.Point(495, 0);
             this.splitter2.Name = "splitter2";
             this.splitter2.Size = new System.Drawing.Size(3, 698);
             this.splitter2.TabIndex = 1;
@@ -248,12 +248,12 @@
             this._layersPanel.ForeColor = System.Drawing.SystemColors.ControlText;
             this._layersPanel.Image = null;
             this._layersPanel.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this._layersPanel.Location = new System.Drawing.Point(510, 0);
+            this._layersPanel.Location = new System.Drawing.Point(498, 0);
             this._layersPanel.MinimumSize = new System.Drawing.Size(27, 27);
             this._layersPanel.Name = "_layersPanel";
             this._layersPanel.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
             this._layersPanel.ShowExpandIcon = true;
-            this._layersPanel.Size = new System.Drawing.Size(339, 698);
+            this._layersPanel.Size = new System.Drawing.Size(351, 698);
             this._layersPanel.TabIndex = 0;
             this._layersPanel.Text = "Uav information";
             this._layersPanel.ToolTipTextCloseIcon = null;
@@ -318,7 +318,7 @@
             this.liveUavPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.liveUavPanel1.Location = new System.Drawing.Point(1, 28);
             this.liveUavPanel1.Name = "liveUavPanel1";
-            this.liveUavPanel1.Size = new System.Drawing.Size(337, 669);
+            this.liveUavPanel1.Size = new System.Drawing.Size(349, 669);
             this.liveUavPanel1.TabIndex = 0;
             // 
             // Form1
