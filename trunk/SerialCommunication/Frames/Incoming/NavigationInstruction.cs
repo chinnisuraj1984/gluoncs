@@ -119,25 +119,25 @@ namespace Communication.Frames.Incoming
                 break;
 
             case navigation_command.FROM_TO_REL:   // x, y, height
-                s += "FromTo[Relative](lat: " + x.ToString("F0") + "m, lon: " + y.ToString("F0") + "m, alt: " + a + "m)";
+                s += "FromTo[Relative](alt: " + a + "m, lat: " + x.ToString("F0") + "m, lon: " + y.ToString("F0") + "m)";
                 break;
             case navigation_command.FROM_TO_ABS:
-                s += "FromTo[Absolute](lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°, alt: " + a + "m)";
+                s += "FromTo[Absolute](alt: " + a + "m, lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°)";
                 break;
             case navigation_command.FLY_TO_REL:
-                s += "FlyTo[Relative](lat: " + x.ToString("F0") + "m, lon: " + y.ToString("F0") + "m, alt: " + a + "m)";
+                s += "FlyTo[Relative](alt: " + a + "m, lat: " + x.ToString("F0") + "m, lon: " + y.ToString("F0") + "m)";
                 break;
             case navigation_command.FLY_TO_ABS:    // x, y, height
-                s += "FlyTo[Absolute](lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°, alt: " + a + "m)";
+                s += "FlyTo[Absolute](alt: " + a + "m, lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°)";
                 break;
             case navigation_command.GOTO:	   // line number
                 s += "Goto(" + (a+1) + ")";
                 break;
             case navigation_command.CIRCLE_ABS:    // x, y, radius, height <-- should be inside a while  12 B
-                s += "Circle[Absolute](lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°, radius: " + a + "m, alt: " + b + "m)";
+                s += "Circle[Absolute](radius: " + a + "m, alt: " + b + "m, lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°)";
                 break;
             case navigation_command.CIRCLE_REL:
-                s += "Circle[Relative](lat: " + x.ToString("F0") + "m, lon: " + y.ToString("F0") + "m, radius: " + a + "m, alt: " + b + " m)";
+                s += "Circle[Relative](radius: " + a + "m, alt: " + b + "m, lat: " + x.ToString("F0") + "m, lon: " + y.ToString("F0") + "m)";
                 break;
             case navigation_command.UNTIL_SM:
                 s += "Until(" + GetVariableText(a) + " < " + x + ")";
@@ -173,10 +173,10 @@ namespace Communication.Frames.Incoming
                 s += "Block (" + GetStringArgument() + ")";
                 break;
             case navigation_command.FLARE_TO_REL:   // x, y, height
-                s += "FlareTo[Relative](lat: " + x.ToString("F0") + "m, lon: " + y.ToString("F0") + "m, alt: " + a + "m, throttle: " + b + "%)";
+                s += "FlareTo[Relative](alt: " + a + "m, throttle: " + b + "%, lat: " + x.ToString("F0") + "m, lon: " + y.ToString("F0") + "m)";
                 break;
             case navigation_command.FLARE_TO_ABS:
-                s += "FlareTo[Absolute](lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°, alt: " + a + "m, throttle: " + b + "%)";
+                s += "FlareTo[Absolute](alt: " + a + "m, throttle: " + b + "%, lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°)";
                 break;
             default:
                 s += "Unknown/Unsupported (" + (int)opcode + " : " +  x + ", " + y + ", " + a + ", " + b + ")";
