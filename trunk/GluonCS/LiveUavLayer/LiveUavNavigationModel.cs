@@ -92,13 +92,7 @@ namespace GluonCS.LiveUavLayer
                     if (!Commands.ContainsKey(i))
                         continue;
 
-                    NavigationInstruction.navigation_command opcode = Commands[i].Instruction.opcode;
-                    if (opcode == NavigationInstruction.navigation_command.CIRCLE_ABS ||
-                        opcode == NavigationInstruction.navigation_command.CIRCLE_REL ||
-                        opcode == NavigationInstruction.navigation_command.FLY_TO_ABS ||
-                        opcode == NavigationInstruction.navigation_command.FLY_TO_REL ||
-                        opcode == NavigationInstruction.navigation_command.FROM_TO_ABS ||
-                        opcode == NavigationInstruction.navigation_command.FROM_TO_REL)
+                    if (Commands[i].Instruction.IsWaypoint())
                     {
                         targetWpLine = i;
                     }
