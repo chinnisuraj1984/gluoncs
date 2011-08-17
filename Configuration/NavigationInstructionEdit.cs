@@ -49,7 +49,7 @@ namespace Configuration
                 10 BLOCK
                 */
             if (ni.opcode == NavigationInstruction.navigation_command.BLOCK)
-                _cb_opcode.SelectedIndex = 10;
+                _cb_opcode.SelectedIndex = GetIndexFor("BLOCK");
             else if (ni.opcode == NavigationInstruction.navigation_command.FLARE_TO_ABS ||
                      ni.opcode == NavigationInstruction.navigation_command.FLARE_TO_REL)
                 _cb_opcode.SelectedIndex = 11;
@@ -85,6 +85,15 @@ namespace Configuration
             //_cb_opcode.SelectedIndex = (int)ni.opcode;
         }
 
+        private int GetIndexFor(string name)
+        {
+            for (int i = 0; i < _cb_opcode.Items.Count; i++)
+            {
+                if (name == _cb_opcode.Items[i].ToString())
+                    return i;
+            }
+            return 0; // EMPTY
+        }
 
         private void _btn_cancel_Click(object sender, EventArgs e)
         {

@@ -96,14 +96,13 @@ namespace GluonCS
             model.NavigationRemoteListChanged += new LiveUavModel.ChangedEventHandler(model_NavigationRemoteListChanged);
             model.UavAttitudeChanged += new LiveUavModel.ChangedEventHandler(model_UavAttitudeChanged);
             model.UavPositionChanged += new LiveUavModel.ChangedEventHandler(model_UavPositionChanged);
-
+            model.HomeChanged += new LiveUavModel.ChangedEventHandler(model_HomeChanged);
             updatePanel = new Timer();
             updatePanel.Interval = 200;
             updatePanel.Tick += new EventHandler(updatePanel_Tick);
             updatePanel.Enabled = true;
 
         }
-
 
         protected override void Dispose(bool disposing)
         {
@@ -287,6 +286,10 @@ namespace GluonCS
 
 
 #region model events
+        void model_HomeChanged(object sender, EventArgs e)
+        {
+            //_h
+        }
 
         void model_UavPositionChanged(object sender, EventArgs e)
         {
@@ -439,13 +442,26 @@ namespace GluonCS
 
             _panelStrip.Controls.Clear();
             int totalwidth = 0;
+            List<string> takenHotkeys = new List<string> { "i", "o", "c" };
+
             foreach (KeyValuePair<string, int> block in model.NavigationModel.Blocks)
             {
-                Button b = new Button();
-                b.Text = block.Key;
-                b.Click += new EventHandler(CommandButton_Click);
-                totalwidth += b.Width;
-                _panelStrip.Controls.Add(b);
+                if (block.Key != "")
+                {
+                    Button b = new Button();
+
+                    // add hotkey to this block (fired from main form)
+                    if (block.Key != "" && !takenHotkeys.Contains(block.Key.Substring(0, 1)))
+                    {
+                        b.Text = "&" + block.Key;
+                        takenHotkeys.Add(block.Key.Substring(0, 1));
+                    } else
+                        b.Text = block.Key;
+                    b.Tag = block.Key;
+                    b.Click += new EventHandler(CommandButton_Click);
+                    totalwidth += b.Width;
+                    _panelStrip.Controls.Add(b);
+                }
             }
             _panelStrip.Height = (int)(Math.Ceiling((double)totalwidth / _panelStrip.Width)) * 30;
         }
@@ -453,9 +469,9 @@ namespace GluonCS
         void CommandButton_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
-            if (model.NavigationModel.Blocks.ContainsKey(b.Text))
+            if (model.NavigationModel.Blocks.ContainsKey((string)b.Tag))
             {
-                model.SendToNavigationLine(model.NavigationModel.Blocks[b.Text]);
+                model.SendToNavigationLine(model.NavigationModel.Blocks[(string)b.Tag]);
             }
             //throw new NotImplementedException();
         }

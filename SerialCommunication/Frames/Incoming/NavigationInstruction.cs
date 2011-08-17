@@ -279,5 +279,17 @@ namespace Communication.Frames.Incoming
                    opcode == navigation_command.FLY_TO_REL ||
                    opcode == navigation_command.FROM_TO_REL;
         }
+
+        public bool IsWaypoint()
+        {
+            return opcode == navigation_command.CIRCLE_REL ||
+                   opcode == navigation_command.FLARE_TO_REL ||
+                   opcode == navigation_command.FLY_TO_REL ||
+                   opcode == navigation_command.FROM_TO_REL ||
+                   opcode == navigation_command.CIRCLE_ABS ||
+                   opcode == navigation_command.FLARE_TO_ABS ||
+                   opcode == navigation_command.FLY_TO_ABS ||
+                   opcode == navigation_command.FROM_TO_ABS;
+        }
     }
 }

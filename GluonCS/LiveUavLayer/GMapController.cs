@@ -24,6 +24,7 @@ namespace GluonCS.LiveUavLayer
         private GMapMarker home;
         private bool is_mouse_down = false;
         private bool hasReceivedGps = false;
+        private int current_waypointline = -1;
 
         private bool zoomToReceivedWaypoints = false;
         private Timer zoomtowaypoints;
@@ -124,7 +125,6 @@ namespace GluonCS.LiveUavLayer
             model.CommunicationEstablished -= new LiveUavModel.ChangedEventHandler(model_CommunicationEstablished);
             model.CenterOnUav -= new LiveUavModel.ChangedEventHandler(model_CenterUav);
             gmap.Dispose();
-
         }
 
         void model_CenterUav(object sender, EventArgs e)
@@ -193,6 +193,38 @@ namespace GluonCS.LiveUavLayer
         {
             MethodInvoker m = delegate()
             {
+                // should be somewhere else...
+                if (model.CurrentNavigationLine != current_waypointline)
+                {
+                    if (current_waypointline == -1)
+                    {
+                        current_waypointline = model.NavigationModel.Commands[model.CurrentNavigationLine].TargetWp;
+                    }
+
+                    // Is the new navigationcommand a waypoint?
+                    if (model.GetNavigationInstructionLocal(model.CurrentNavigationLine).IsWaypoint() ||
+                        model.GetNavigationInstructionLocal(model.CurrentNavigationLine).opcode == NavigationInstruction.navigation_command.BLOCK) 
+                    {
+                        //current_waypointline = model.CurrentNavigationLine;
+                        current_waypointline = model.NavigationModel.Commands[model.CurrentNavigationLine].TargetWp;
+                        // Yes, update
+                        foreach (GMapMarker marker in NavigationOverlay.Markers)
+                        {
+                            if (marker is NavigationMarker)
+                            {
+                                NavigationMarker nm = (NavigationMarker)marker;
+                                if (nm.Number == current_waypointline)
+                                    nm.IsCurrentWaypoint = true;
+                                else
+                                    nm.IsCurrentWaypoint = false;
+                                gmap.UpdateMarkerLocalPosition(nm);
+                            }
+                        }
+                        gmap.Invalidate();
+                    }
+                }
+
+
                 if (model.NumberOfGpsSatellites > 3)
                 {
                     bool containedUav = gmap.CurrentViewArea.Contains(uavMarker.Position);

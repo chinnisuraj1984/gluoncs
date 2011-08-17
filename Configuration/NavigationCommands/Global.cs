@@ -27,7 +27,7 @@ namespace Configuration.NavigationCommands
             "Time in block [s]",
             "Absolute altitude error [m]",
             "Absolute heading error [°]",
-            "Absolute altitude && heading error [m*°]"
+            "Absolute altitude & heading error [m*°]"
             };
     }
 }
