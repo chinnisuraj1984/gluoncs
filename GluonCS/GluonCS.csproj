@@ -302,6 +302,10 @@
     <None Include="Resources\folder-open-document.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\Documentation\block.html">
+      <Link>Documentation\block.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\Documentation\circle.html">
       <Link>Documentation\circle.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -312,6 +316,10 @@
     </Content>
     <Content Include="..\Documentation\emptycmd.html">
       <Link>Documentation\emptycmd.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\flareto.html">
+      <Link>Documentation\flareto.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\Documentation\flyto.html">
@@ -336,6 +344,10 @@
     </Content>
     <Content Include="..\Documentation\if.html">
       <Link>Documentation\if.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\until.html">
+      <Link>Documentation\until.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\models\easystar\easystar.jpg">

@@ -52,36 +52,36 @@ namespace Configuration
                 _cb_opcode.SelectedIndex = GetIndexFor("BLOCK");
             else if (ni.opcode == NavigationInstruction.navigation_command.FLARE_TO_ABS ||
                      ni.opcode == NavigationInstruction.navigation_command.FLARE_TO_REL)
-                _cb_opcode.SelectedIndex = 11;
+                _cb_opcode.SelectedIndex = GetIndexFor("FLARE_TO");
             else if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_ABS ||
                      ni.opcode == NavigationInstruction.navigation_command.CIRCLE_REL)
-                _cb_opcode.SelectedIndex = 5;
+                _cb_opcode.SelectedIndex = GetIndexFor("CIRCLE");
             else if (ni.opcode == NavigationInstruction.navigation_command.CLIMB)
-                _cb_opcode.SelectedIndex = 2;
+                _cb_opcode.SelectedIndex = GetIndexFor("CLIMB");
             else if (ni.opcode == NavigationInstruction.navigation_command.EMPTY)
-                _cb_opcode.SelectedIndex = 0;
+                _cb_opcode.SelectedIndex = GetIndexFor("EMPTY");
             else if (ni.opcode == NavigationInstruction.navigation_command.FLY_TO_ABS ||
                      ni.opcode == NavigationInstruction.navigation_command.FLY_TO_REL)
-                _cb_opcode.SelectedIndex = 4;
+                _cb_opcode.SelectedIndex = GetIndexFor("FLY_TO");
             else if (ni.opcode == NavigationInstruction.navigation_command.FROM_TO_ABS ||
                         ni.opcode == NavigationInstruction.navigation_command.FROM_TO_REL)
-                _cb_opcode.SelectedIndex = 3;
+                _cb_opcode.SelectedIndex = GetIndexFor("FROM_TO");
             else if (ni.opcode == NavigationInstruction.navigation_command.GOTO)
-                _cb_opcode.SelectedIndex = 1;
+                _cb_opcode.SelectedIndex = GetIndexFor("GOTO");
             else if (ni.opcode == NavigationInstruction.navigation_command.SERVO_SET)
-                _cb_opcode.SelectedIndex = 8;
+                _cb_opcode.SelectedIndex = GetIndexFor("SERVO_SET");
             else if (ni.opcode == NavigationInstruction.navigation_command.SERVO_TRIGGER)
-                _cb_opcode.SelectedIndex = 9;
+                _cb_opcode.SelectedIndex = GetIndexFor("SERVO_TRIGGER");
             else if (ni.opcode == NavigationInstruction.navigation_command.IF_EQ ||
                      ni.opcode == NavigationInstruction.navigation_command.IF_NE ||
                      ni.opcode == NavigationInstruction.navigation_command.IF_GR ||
                      ni.opcode == NavigationInstruction.navigation_command.IF_SM)
-                _cb_opcode.SelectedIndex = 6;
+                _cb_opcode.SelectedIndex = GetIndexFor("IF");
             else if (ni.opcode == NavigationInstruction.navigation_command.UNTIL_EQ ||
                      ni.opcode == NavigationInstruction.navigation_command.UNTIL_NE ||
                      ni.opcode == NavigationInstruction.navigation_command.UNTIL_GR ||
                      ni.opcode == NavigationInstruction.navigation_command.UNTIL_SM)
-                _cb_opcode.SelectedIndex = 7;
+                _cb_opcode.SelectedIndex = GetIndexFor("UNTIL");
             //_cb_opcode.SelectedIndex = (int)ni.opcode;
         }
 
@@ -152,7 +152,7 @@ namespace Configuration
             }
             else if (_cb_opcode.Text.StartsWith("FLARE_TO"))
             {
-                //webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\fromto.html");
+                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\flareto.html");
                 c = new NavigationCommands.FlareTo(ni);
             }
             else if (_cb_opcode.Text.StartsWith("IF"))
@@ -162,11 +162,19 @@ namespace Configuration
             }
             else if (_cb_opcode.Text.StartsWith("UNTIL"))
             {
-                //webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\if.html");
+                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\until.html");
                 c = new NavigationCommands.Until(ni);
             }
             else if (_cb_opcode.Text.StartsWith("BLOCK"))
+            {
                 c = new NavigationCommands.Block(ni);
+                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\block.html");
+            }
+            else if (_cb_opcode.Text.StartsWith("EMPTY"))
+            {
+                c = new NavigationCommands.Empty(ni);
+                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\emptycmd.html");
+            }
             else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.FLY_TO_REL)
                 c = new NavigationCommands.FlyToRel(ni);
             else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.CIRCLE_ABS)

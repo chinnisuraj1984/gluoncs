@@ -64,19 +64,27 @@
             // 
             this._cb_opcode.FormattingEnabled = true;
             this._cb_opcode.Items.AddRange(new object[] {
+            "- Structure -",
+            "BLOCK",
             "EMPTY",
             "GOTO",
-            "CLIMB",
-            "FROM_TO",
-            "FLY_TO",
+            "",
+            "- Waypoints -",
             "CIRCLE",
+            "CLIMB",
+            "FLARE_TO",
+            "FLY_TO",
+            "FROM_TO",
+            "",
+            "- Conditional -",
             "IF",
-            "UNTIL()",
-            "SERVO_SET(channel, position_us)",
-            "SERVO_TRIGGER(channel, position_us, hold_sec)",
-            "BLOCK",
-            "FLARE_TO"});
+            "UNTIL",
+            "",
+            "- Servo -",
+            "SERVO_SET",
+            "SERVO_TRIGGER"});
             this._cb_opcode.Location = new System.Drawing.Point(74, 12);
+            this._cb_opcode.MaxDropDownItems = 20;
             this._cb_opcode.Name = "_cb_opcode";
             this._cb_opcode.Size = new System.Drawing.Size(155, 21);
             this._cb_opcode.TabIndex = 6;
