@@ -7,7 +7,7 @@
 	<META NAME="AUTHOR" CONTENT="Tom P">
 	<META NAME="CREATED" CONTENT="20110813;20530400">
 	<META NAME="CHANGEDBY" CONTENT="Tom P">
-	<META NAME="CHANGED" CONTENT="20110817;23355300">
+	<META NAME="CHANGED" CONTENT="20110817;23344200">
 	<STYLE TYPE="text/css">
 	<!--
 		@page { margin: 2cm }
@@ -22,23 +22,25 @@
 	</STYLE>
 </HEAD>
 <BODY LANG="en-US" DIR="LTR">
-<H1 CLASS="western">IF</H1>
+<H1 CLASS="western">UNTIL</H1>
 <P CLASS="western" STYLE="margin-bottom: 0cm"><FONT SIZE=1 STYLE="font-size: 8pt">This
-command executes the next command when the statement is valid,
-otherwise it skips the next statement.</FONT></P>
+command executes the next command when the condition is not valid,
+otherwise it goes back to the previous command. It is especially
+designed for flying circles.</FONT></P>
 <P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
 </P>
 <P CLASS="western" STYLE="margin-bottom: 0cm"><FONT SIZE=1 STYLE="font-size: 8pt">Example:</FONT></P>
 <P CLASS="western" STYLE="margin-bottom: 0cm"><FONT SIZE=1 STYLE="font-size: 8pt">This
-example will go to line <I>x</I> if the altitude is above 150 meters,
-otherwise it will go to line <I>y.</I></FONT></P>
+example will <SPAN STYLE="font-style: normal">circle until the
+altitude of 100m is reached</SPAN></FONT></P>
 <OL START=3>
-	<LI><P CLASS="western" STYLE="margin-bottom: 0cm"><FONT SIZE=1 STYLE="font-size: 8pt">IF
-	(Altitude[m] &gt; 150)</FONT></P>
-	<LI><P CLASS="western" STYLE="margin-bottom: 0cm"><FONT SIZE=1 STYLE="font-size: 8pt">GOTO
-	(x)</FONT></P>
-	<LI><P CLASS="western" STYLE="margin-bottom: 0cm"><FONT SIZE=1 STYLE="font-size: 8pt">GOTO
-	(y)</FONT></P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm"><FONT SIZE=1 STYLE="font-size: 8pt">FLY_TO(altitude:
+	200m, ...)</FONT></P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">   
+	<FONT SIZE=1 STYLE="font-size: 8pt">CIRCLE(altitude: 100m)</FONT></P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm"><FONT SIZE=1 STYLE="font-size: 8pt">UNTIL(altitude
+	&lt;= 100m)</FONT></P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm"><FONT SIZE=1 STYLE="font-size: 8pt">FLY_TO(...)</FONT></P>
 </OL>
 <P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
 </P>
