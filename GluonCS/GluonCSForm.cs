@@ -251,7 +251,10 @@ namespace GluonCS
                 {
                     try
                     {
-                        model.Connect(cf.SerialPort.PortName, cf.SerialPort.BaudRate, cf.LogPath, cf.Simulation ? cf.FlightgearPath : "");
+                        if (cf.ReplayFilename != "")
+                            model.Replay(cf.ReplayFilename, cf.LogPath);
+                        else
+                            model.Connect(cf.SerialPort.PortName, cf.SerialPort.BaudRate, cf.LogPath, cf.Simulation ? cf.FlightgearPath : "");
                         //c.NonParsedCommunicationReceived += new SerialCommunication.ReceiveNonParsedCommunication(c_NonParsedCommunicationReceived);
                     }
                     catch (Exception ex)

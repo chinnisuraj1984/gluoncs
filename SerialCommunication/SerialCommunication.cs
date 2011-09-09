@@ -79,19 +79,19 @@ namespace Communication
 
         public string PortName
         {
-            get { return _serialPort.PortName; }
+            get { if (_serialPort != null) return _serialPort.PortName; else return ""; }
         }
 
         public int BaudRate
         {
-            get { return _serialPort.BaudRate; }
+            get { if (_serialPort != null) return _serialPort.BaudRate; else return 0; }
         }
 
         public bool IsOpen
         {
             get
             {
-                return _serialPort.IsOpen;
+                return _serialPort != null && _serialPort.IsOpen;
             }
         }
 

@@ -21,6 +21,7 @@ namespace GluonCS.LiveUavLayer
         public string FlightgearPath;
 
         public string LogPath { get { return _cbLogToFile.Checked ? _lblFilename.Text : ""; } }
+        public string ReplayFilename { get { return _rbReplay.Checked ? _tbLoggedFilename.Text : ""; } }
 
         public ConnectForm()
         {
@@ -149,6 +150,14 @@ namespace GluonCS.LiveUavLayer
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 _lblFilename.Text = fbd.SelectedPath + "\\" + Filename;
+        }
+
+        private void _btnBrowseLoggedFile_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.FileDialog fd = new System.Windows.Forms.OpenFileDialog();
+            fd.CheckFileExists = true;
+            if (fd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                _tbLoggedFilename.Text = fd.FileName;
         }
     }
 }
