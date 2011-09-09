@@ -35,9 +35,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this._tbLoggedFilename = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this._cbBaudrate = new System.Windows.Forms.ComboBox();
@@ -61,7 +59,6 @@
             this.xPanderPanelList1.SuspendLayout();
             this.xPanderPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.xPanderPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -130,9 +127,9 @@
             this.radioButton2.Enabled = false;
             this.radioButton2.Location = new System.Drawing.Point(20, 111);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(137, 17);
+            this.radioButton2.Size = new System.Drawing.Size(88, 17);
             this.radioButton2.TabIndex = 3;
-            this.radioButton2.Text = "Connect to TCP/IP port";
+            this.radioButton2.Text = "Replay logfile";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
@@ -149,49 +146,31 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.numericUpDown2);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this._tbLoggedFilename);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Enabled = false;
             this.groupBox2.Location = new System.Drawing.Point(10, 114);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(248, 69);
+            this.groupBox2.Size = new System.Drawing.Size(248, 49);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "   ";
             // 
-            // numericUpDown2
+            // _tbLoggedFilename
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(63, 44);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(55, 20);
-            this.numericUpDown2.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 46);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Port:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(63, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 20);
-            this.textBox1.TabIndex = 1;
+            this._tbLoggedFilename.Location = new System.Drawing.Point(63, 17);
+            this._tbLoggedFilename.Name = "_tbLoggedFilename";
+            this._tbLoggedFilename.Size = new System.Drawing.Size(165, 20);
+            this._tbLoggedFilename.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(10, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 13);
+            this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Host/IP:";
+            this.label3.Text = "File:";
             // 
             // groupBox1
             // 
@@ -481,7 +460,6 @@
             this.xPanderPanel2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.xPanderPanel1.ResumeLayout(false);
@@ -512,9 +490,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button _btn_connectionless;
         private System.Windows.Forms.Button _btn_connect;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox _tbLoggedFilename;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox _cbBaudrate;
         private System.Windows.Forms.Label label6;

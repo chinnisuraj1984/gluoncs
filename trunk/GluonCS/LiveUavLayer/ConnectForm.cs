@@ -99,11 +99,22 @@ namespace GluonCS.LiveUavLayer
 
         private void _btn_connect_Click(object sender, EventArgs e)
         {
+            this.DialogResult = System.Windows.Forms.DialogResult.Yes;
             SerialPort = new System.IO.Ports.SerialPort();
-            SerialPort.PortName = comPortNames[_cb_portnames.Text].ToString();
+            if (comPortNames.ContainsKey(_cb_portnames.Text))
+                SerialPort.PortName = comPortNames[_cb_portnames.Text].ToString();
+            else
+            {
+                MessageBox.Show("Error connecting", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            }
+
             int b;
-            if (!int.TryParse(_cbBaudrate.Text, out b))
-                return;
+            if (!int.TryParse(_cbBaudrate.Text, out b) || _cbBaudrate.SelectedItem == null)
+            {
+                MessageBox.Show("Error connecting", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            }
             SerialPort.BaudRate = b;
             //SerialPort.Open();
 
@@ -116,7 +127,6 @@ namespace GluonCS.LiveUavLayer
             Properties.Settings.Default.LastComPortName = SerialPort.PortName;
             Properties.Settings.Default.LastComBaudrate = b;
             Properties.Settings.Default.Save();
-            this.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.Close();
         }
 
