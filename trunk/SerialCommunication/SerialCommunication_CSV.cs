@@ -184,7 +184,7 @@ namespace Communication
                     }
 
                     if (logfile != null)
-                        logfile.WriteLine("[" + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss") + "] " + line);
+                        logfile.WriteLine("[" + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss.fff") + "] " + line);
 
                     lock (this)
                     {
