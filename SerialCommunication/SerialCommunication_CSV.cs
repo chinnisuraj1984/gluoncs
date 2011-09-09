@@ -22,7 +22,7 @@ namespace Communication
     public class SerialCommunication_CSV : SerialCommunication
     {
         private string filename;
-        public string LogToFilename
+        public override string LogToFilename
         {
             set
             {
@@ -173,9 +173,18 @@ namespace Communication
                     }
 
                     line = _serialPort.ReadLine();
+                    if (line.StartsWith("$")) // line with checksum
+                    {
+                        string[] frame = line.Substring(1, line.Length-1).Split('*');
+                        //line = frame[0];
+                        if (calculateChecksum(frame[0]) == Int32.Parse(frame[1], System.Globalization.NumberStyles.HexNumber))
+                            line = frame[0];
+                        else
+                            throw new Exception("Checksum error");
+                    }
 
                     if (logfile != null)
-                        logfile.WriteLine("[" + DateTime.Now.ToString("g") + "] " + line);
+                        logfile.WriteLine("[" + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss") + "] " + line);
 
                     lock (this)
                     {
@@ -856,5 +865,14 @@ namespace Communication
             _serialPort.WriteLine("\nCA;\n");
         }
 
+        public int calculateChecksum(string s)
+        {
+            int c = 0;
+            foreach (char h in s.ToCharArray())
+            {
+                c ^= (int)(h);
+            }
+            return c;
+        }
     }
 }

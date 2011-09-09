@@ -249,8 +249,15 @@ namespace GluonCS
                 DialogResult r = cf.ShowDialog(this);
                 if (r == System.Windows.Forms.DialogResult.Yes)
                 {
-                    model.Connect(cf.SerialPort.PortName, cf.SerialPort.BaudRate, cf.LogPath, cf.Simulation?cf.FlightgearPath:"");
-                    //c.NonParsedCommunicationReceived += new SerialCommunication.ReceiveNonParsedCommunication(c_NonParsedCommunicationReceived);
+                    try
+                    {
+                        model.Connect(cf.SerialPort.PortName, cf.SerialPort.BaudRate, cf.LogPath, cf.Simulation ? cf.FlightgearPath : "");
+                        //c.NonParsedCommunicationReceived += new SerialCommunication.ReceiveNonParsedCommunication(c_NonParsedCommunicationReceived);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error connecting", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                    }
                 }
                 else if (r == System.Windows.Forms.DialogResult.Cancel)
                 {

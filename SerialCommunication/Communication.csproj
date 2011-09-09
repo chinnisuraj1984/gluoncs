@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Communication</RootNamespace>
     <AssemblyName>Communication</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -83,6 +83,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SerialCommunication_replay.cs" />
     <Compile Include="Frames\Configuration\AllConfig.cs" />
     <Compile Include="Frames\Incoming\Attitude.cs" />
     <Compile Include="Frames\Incoming\ControlInfo.cs" />

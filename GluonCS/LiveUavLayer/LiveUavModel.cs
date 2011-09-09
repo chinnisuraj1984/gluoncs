@@ -121,6 +121,9 @@ namespace GluonCS.LiveUavLayer
             if (uavSynchronizer != null)
                 uavSynchronizer.Pause();
             NavigationModel.Stop();
+            Properties.Settings.Default.HomeLatitude = Home.Lat;
+            Properties.Settings.Default.HomeLongitude = Home.Lng;
+            Properties.Settings.Default.Save();
         }
 
         private void connection_NonParsedCommunicationReceived(string line)
@@ -372,7 +375,7 @@ namespace GluonCS.LiveUavLayer
             for (int i = 0; i < navigation_local.Count; i++)
             {
                 NavigationInstruction ni = new NavigationInstruction(navigation_local[i]);
-                if (ni != navigation_remote[ni.line])
+                if (ni.line < navigation_remote.Count && ni != navigation_remote[ni.line])
                 {
                     ni.line++;
                     serial.SendNavigationInstruction(ni);
@@ -408,9 +411,6 @@ namespace GluonCS.LiveUavLayer
                 HomeChanged(this, EventArgs.Empty);
             if (NavigationLocalListChanged != null)
                 NavigationLocalListChanged(this, EventArgs.Empty);
-            Properties.Settings.Default.HomeLatitude = Home.Lat;
-            Properties.Settings.Default.HomeLongitude = Home.Lng;
-            Properties.Settings.Default.Save();
         }
     }
 

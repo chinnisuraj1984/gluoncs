@@ -659,7 +659,7 @@
             this._zgVel.ScrollMinX = 0D;
             this._zgVel.ScrollMinY = 0D;
             this._zgVel.ScrollMinY2 = 0D;
-            this._zgVel.Size = new System.Drawing.Size(382, 103);
+            this._zgVel.Size = new System.Drawing.Size(359, 103);
             this._zgVel.TabIndex = 1;
             // 
             // tabPage3
@@ -689,7 +689,7 @@
             this._zgBatV.ScrollMinX = 0D;
             this._zgBatV.ScrollMinY = 0D;
             this._zgBatV.ScrollMinY2 = 0D;
-            this._zgBatV.Size = new System.Drawing.Size(382, 103);
+            this._zgBatV.Size = new System.Drawing.Size(359, 103);
             this._zgBatV.TabIndex = 1;
             // 
             // _lblAltitudeAgl
@@ -888,7 +888,7 @@
             this._btnNaviBurn.Image = ((System.Drawing.Image)(resources.GetObject("_btnNaviBurn.Image")));
             this._btnNaviBurn.Name = "_btnNaviBurn";
             this._btnNaviBurn.Size = new System.Drawing.Size(169, 22);
-            this._btnNaviBurn.Text = "Burn";
+            this._btnNaviBurn.Text = "Burn to flash";
             this._btnNaviBurn.Click += new System.EventHandler(this._btnNaviBurn_Click);
             // 
             // _btnAutoSync
