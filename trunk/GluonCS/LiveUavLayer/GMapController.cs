@@ -68,9 +68,9 @@ namespace GluonCS.LiveUavLayer
             Overlay.Markers.Add(uavMarker);
 
             uavRoute = new GMapRoute(new List<PointLatLng>(), "uav");
-            uavRoute.Stroke.Color = Color.FromArgb(255, Color.Red);
-            uavRoute.Stroke.Brush = Brushes.Red;
-            uavRoute.Stroke.Width = 2;
+            uavRoute.Stroke.Color = Color.FromArgb(150, Color.Yellow);
+            //uavRoute.Stroke.Brush = Brushes.Yellow;
+            uavRoute.Stroke.Width = 4;
             Overlay.Routes.Add(uavRoute);
             //uavRoute.Points.Add(new PointLatLng(um.Position.Lat - 0.0001, um.Position.Lng - 0.0001));
             //uavRoute.Points.Add(new PointLatLng(um.Position.Lat - 0.0001, um.Position.Lng));
@@ -230,6 +230,9 @@ namespace GluonCS.LiveUavLayer
                     bool containedUav = gmap.CurrentViewArea.Contains(uavMarker.Position);
 
                     uavRoute.Points.Add(new PointLatLng(model.UavPosition.Lat, model.UavPosition.Lng));
+                    if (uavRoute.Points.Count > 500) // time to delete some old point on the pad (can become annoying after a while)
+                        uavRoute.Points.RemoveRange(0, 100);
+
                     gmap.UpdateRouteLocalPosition(uavRoute);
 
                     uavMarker.Yaw = model.Heading; // model.Yaw;
