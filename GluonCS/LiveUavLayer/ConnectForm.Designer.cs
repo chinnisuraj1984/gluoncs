@@ -33,8 +33,9 @@
             this.xPanderPanelList1 = new BSE.Windows.Forms.XPanderPanelList();
             this.xPanderPanel2 = new BSE.Windows.Forms.XPanderPanel();
             this._rbReplay = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this._rbViaComPort = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this._btnBrowseLoggedFile = new System.Windows.Forms.Button();
             this._tbLoggedFilename = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -56,7 +57,6 @@
             this._btn_connect = new System.Windows.Forms.Button();
             this._btn_connectionless = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this._btnBrowseLoggedFile = new System.Windows.Forms.Button();
             this.xPanderPanelList1.SuspendLayout();
             this.xPanderPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -86,7 +86,7 @@
             // 
             this.xPanderPanel2.CaptionFont = new System.Drawing.Font("Trebuchet MS", 8.75F, System.Drawing.FontStyle.Bold);
             this.xPanderPanel2.Controls.Add(this._rbReplay);
-            this.xPanderPanel2.Controls.Add(this.radioButton1);
+            this.xPanderPanel2.Controls.Add(this._rbViaComPort);
             this.xPanderPanel2.Controls.Add(this.groupBox2);
             this.xPanderPanel2.Controls.Add(this.groupBox1);
             this.xPanderPanel2.CustomColors.BackColor = System.Drawing.SystemColors.Control;
@@ -132,17 +132,17 @@
             this._rbReplay.Text = "Replay logfile";
             this._rbReplay.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // _rbViaComPort
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(20, 33);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(125, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Connect to COM-port";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this._rbViaComPort.AutoSize = true;
+            this._rbViaComPort.Checked = true;
+            this._rbViaComPort.Location = new System.Drawing.Point(20, 33);
+            this._rbViaComPort.Name = "_rbViaComPort";
+            this._rbViaComPort.Size = new System.Drawing.Size(125, 17);
+            this._rbViaComPort.TabIndex = 0;
+            this._rbViaComPort.TabStop = true;
+            this._rbViaComPort.Text = "Connect to COM-port";
+            this._rbViaComPort.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -155,6 +155,16 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "   ";
+            // 
+            // _btnBrowseLoggedFile
+            // 
+            this._btnBrowseLoggedFile.Location = new System.Drawing.Point(209, 16);
+            this._btnBrowseLoggedFile.Name = "_btnBrowseLoggedFile";
+            this._btnBrowseLoggedFile.Size = new System.Drawing.Size(26, 21);
+            this._btnBrowseLoggedFile.TabIndex = 2;
+            this._btnBrowseLoggedFile.Text = "...";
+            this._btnBrowseLoggedFile.UseVisualStyleBackColor = true;
+            this._btnBrowseLoggedFile.Click += new System.EventHandler(this._btnBrowseLoggedFile_Click);
             // 
             // _tbLoggedFilename
             // 
@@ -438,16 +448,6 @@
             this.panel1.Size = new System.Drawing.Size(275, 45);
             this.panel1.TabIndex = 1;
             // 
-            // _btnBrowseLoggedFile
-            // 
-            this._btnBrowseLoggedFile.Location = new System.Drawing.Point(209, 16);
-            this._btnBrowseLoggedFile.Name = "_btnBrowseLoggedFile";
-            this._btnBrowseLoggedFile.Size = new System.Drawing.Size(26, 21);
-            this._btnBrowseLoggedFile.TabIndex = 2;
-            this._btnBrowseLoggedFile.Text = "...";
-            this._btnBrowseLoggedFile.UseVisualStyleBackColor = true;
-            this._btnBrowseLoggedFile.Click += new System.EventHandler(this._btnBrowseLoggedFile_Click);
-            // 
             // ConnectForm
             // 
             this.AcceptButton = this._btn_connect;
@@ -494,7 +494,7 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox _cbLogToFile;
         private System.Windows.Forms.RadioButton _rbReplay;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton _rbViaComPort;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;

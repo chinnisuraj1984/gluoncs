@@ -107,14 +107,14 @@ namespace Communication
             if (!file_to_replay.EndOfStream)
             {
                 string s = file_to_replay.ReadLine();
-                s = s.Substring(1, s.Length - 1);  // remove "[";
+                s = s.TrimStart('[');  // remove "[";
                 string[] parts = s.Split(']');
                 DateTime timestamp = DateTime.Parse(parts[0], CultureInfo.InvariantCulture);
                 TimeSpan delay = timestamp - last_timestamp;
                 if (delay.TotalSeconds < 0)
                     delay = TimeSpan.Zero;
                 last_timestamp = timestamp;
-                return new KeyValuePair<TimeSpan, string>(delay, parts[1].Substring(1, parts[1].Length - 1));
+                return new KeyValuePair<TimeSpan, string>(delay, parts[1].TrimStart(' '));
             }
             else
                 return new KeyValuePair<TimeSpan, string>(TimeSpan.MaxValue, "");
@@ -178,7 +178,7 @@ namespace Communication
             bool recognised_frame = true;
             string line = string.Empty;
 
-            while (file_to_replay != null && !file_to_replay.EndOfStream)
+            while (file_to_replay != null && file_to_replay.BaseStream != null && !file_to_replay.EndOfStream)
             {
                 try
                 {

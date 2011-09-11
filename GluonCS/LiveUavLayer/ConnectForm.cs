@@ -102,22 +102,28 @@ namespace GluonCS.LiveUavLayer
         {
             this.DialogResult = System.Windows.Forms.DialogResult.Yes;
             SerialPort = new System.IO.Ports.SerialPort();
-            if (comPortNames.ContainsKey(_cb_portnames.Text))
-                SerialPort.PortName = comPortNames[_cb_portnames.Text].ToString();
-            else
+            if (_rbViaComPort.Checked)
             {
-                MessageBox.Show("Error connecting", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
-                this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            }
+                if (comPortNames.ContainsKey(_cb_portnames.Text))
+                    SerialPort.PortName = comPortNames[_cb_portnames.Text].ToString();
+                else
+                {
+                    MessageBox.Show("Error connecting", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                    this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+                }
 
-            int b;
-            if (!int.TryParse(_cbBaudrate.Text, out b) || _cbBaudrate.SelectedItem == null)
-            {
-                MessageBox.Show("Error connecting", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
-                this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+                int b;
+                if (!int.TryParse(_cbBaudrate.Text, out b) || _cbBaudrate.SelectedItem == null)
+                {
+                    MessageBox.Show("Error connecting", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                    this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+                }
+                SerialPort.BaudRate = b;
+                //SerialPort.Open();
+                Properties.Settings.Default.LastComPortName = SerialPort.PortName;
+                Properties.Settings.Default.LastComBaudrate = b;
+                Properties.Settings.Default.Save();
             }
-            SerialPort.BaudRate = b;
-            //SerialPort.Open();
 
             if (_cbSimulation.Checked)
             {
@@ -125,9 +131,7 @@ namespace GluonCS.LiveUavLayer
                 this.FlightgearPath = _tbFlightgear.Text;
             }
 
-            Properties.Settings.Default.LastComPortName = SerialPort.PortName;
-            Properties.Settings.Default.LastComBaudrate = b;
-            Properties.Settings.Default.Save();
+
             this.Close();
         }
 

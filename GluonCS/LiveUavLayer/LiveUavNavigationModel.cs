@@ -69,7 +69,8 @@ namespace GluonCS.LiveUavLayer
                     if (ni.opcode == NavigationInstruction.navigation_command.BLOCK)
                     {
                         blockname = ni.GetStringArgument();
-                        Blocks.Add(ni.GetStringArgument(), ni.line);
+                        if (!Blocks.ContainsKey(ni.GetStringArgument()))
+                            Blocks.Add(ni.GetStringArgument(), ni.line);
                     }
                     
                     NavigationCommand nc = new NavigationCommand();

@@ -378,10 +378,11 @@ namespace GluonCS
             int topitem = 0;
             for (int i = 0; i < _lv_navigation.Items.Count; i++)
             {
-                if (_lv_navigation.ClientRectangle.Contains(_lv_navigation.Items[i].Bounds))
+                //if (_lv_navigation.ClientRectangle.Contains(_lv_navigation.Items[i].Bounds))
+                if (_lv_navigation.Items[i].Bounds.Top >= 15)
                 {
                     topitem = i;
-                    continue;
+                    break;
                 }
             }
 
@@ -390,6 +391,7 @@ namespace GluonCS
             {
                 for (int i = 0; i < model.MaxNumberOfNavigationInstructions(); i++)
                 {
+                    // Create groups(blocks)
                     if (lvg_name != model.NavigationModel.Commands[i].BlockName)
                     {
                         lvg_name = model.NavigationModel.Commands[i].BlockName;
@@ -435,8 +437,8 @@ namespace GluonCS
                 }
             }
 
-            //_lv_navigation.TopItem = topitem;
-            _lv_navigation.EnsureVisible(topitem);
+            _lv_navigation.TopItem = _lv_navigation.Items[topitem];
+            //_lv_navigation.EnsureVisible(topitem);
             _lv_navigation.Items[topitem].EnsureVisible();
             Console.WriteLine("Ensure visible " + topitem);
 
