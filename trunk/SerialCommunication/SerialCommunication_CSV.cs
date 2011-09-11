@@ -172,7 +172,8 @@ namespace Communication
                         //Console.WriteLine("Waiting for communication...");
                     }
 
-                    line = _serialPort.ReadLine();
+                    line = _serialPort.ReadLine().Replace("\r", "").Replace("\n", "");
+
                     if (line.StartsWith("$")) // line with checksum
                     {
                         string[] frame = line.Substring(1, line.Length-1).Split('*');
@@ -184,7 +185,7 @@ namespace Communication
                     }
 
                     if (logfile != null)
-                        logfile.WriteLine("[" + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss.fff") + "] " + line);
+                        logfile.WriteLine("[" + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss.fff", CultureInfo.InvariantCulture) + "] " + line);
 
                     lock (this)
                     {
