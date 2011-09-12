@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConnectForm));
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.xPanderPanelList1 = new BSE.Windows.Forms.XPanderPanelList();
             this.xPanderPanel2 = new BSE.Windows.Forms.XPanderPanel();
@@ -57,6 +58,7 @@
             this._btn_connect = new System.Windows.Forms.Button();
             this._btn_connectionless = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this._btn_portrefresh = new System.Windows.Forms.Button();
             this.xPanderPanelList1.SuspendLayout();
             this.xPanderPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -151,7 +153,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(10, 119);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(248, 49);
+            this.groupBox2.Size = new System.Drawing.Size(254, 49);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "   ";
@@ -184,13 +186,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this._btn_portrefresh);
             this.groupBox1.Controls.Add(this._cbBaudrate);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this._cb_portnames);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(10, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(248, 71);
+            this.groupBox1.Size = new System.Drawing.Size(254, 71);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "      ";
@@ -207,7 +210,7 @@
             "57600",
             "115200",
             "230400"});
-            this._cbBaudrate.Location = new System.Drawing.Point(72, 44);
+            this._cbBaudrate.Location = new System.Drawing.Point(72, 43);
             this._cbBaudrate.Name = "_cbBaudrate";
             this._cbBaudrate.Size = new System.Drawing.Size(156, 21);
             this._cbBaudrate.TabIndex = 3;
@@ -448,6 +451,19 @@
             this.panel1.Size = new System.Drawing.Size(275, 45);
             this.panel1.TabIndex = 1;
             // 
+            // _btn_portrefresh
+            // 
+            this._btn_portrefresh.FlatAppearance.BorderSize = 0;
+            this._btn_portrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._btn_portrefresh.ForeColor = System.Drawing.Color.Transparent;
+            this._btn_portrefresh.Image = ((System.Drawing.Image)(resources.GetObject("_btn_portrefresh.Image")));
+            this._btn_portrefresh.Location = new System.Drawing.Point(231, 18);
+            this._btn_portrefresh.Name = "_btn_portrefresh";
+            this._btn_portrefresh.Size = new System.Drawing.Size(15, 18);
+            this._btn_portrefresh.TabIndex = 4;
+            this._btn_portrefresh.UseVisualStyleBackColor = true;
+            this._btn_portrefresh.Click += new System.EventHandler(this._btn_portrefresh_Click);
+            // 
             // ConnectForm
             // 
             this.AcceptButton = this._btn_connect;
@@ -512,5 +528,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox _tbFlightgear;
         private System.Windows.Forms.Button _btnBrowseLoggedFile;
+        private System.Windows.Forms.Button _btn_portrefresh;
     }
 }

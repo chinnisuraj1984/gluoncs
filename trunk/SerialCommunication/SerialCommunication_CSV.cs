@@ -807,7 +807,8 @@ namespace Communication
 
         public override void SendJumpToNavigationLine(int line)
         {
-            _serialPort.WriteLine("\nJN;" + line + "\n");
+            //_serialPort.WriteLine("\nJN;" + line + "\n");
+            WriteChecksumLine("JN;" + line);
             Console.WriteLine("\nJN;" + line + "\n");
         }
 
@@ -874,6 +875,15 @@ namespace Communication
                 c ^= (int)(h);
             }
             return c;
+        }
+
+        private void WriteChecksumLine(string s)
+        {
+            int chk = calculateChecksum(s);
+            if (chk < 16)
+                _serialPort.WriteLine("\n$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
+            else
+                _serialPort.WriteLine("\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
         }
     }
 }
