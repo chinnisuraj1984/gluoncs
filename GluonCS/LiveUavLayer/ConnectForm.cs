@@ -27,13 +27,7 @@ namespace GluonCS.LiveUavLayer
         {
             InitializeComponent();
 
-            comPortNames = BuildPortNameHash(SerialPort.GetPortNames());
-            foreach (string key in comPortNames.Keys)
-            {
-                int i = _cb_portnames.Items.Add(key);
-                if (comPortNames[key].ToString() == Properties.Settings.Default.LastComPortName)
-                    _cb_portnames.SelectedIndex = i;
-            }
+            _btn_portrefresh_Click(null, EventArgs.Empty);
             foreach (string k in _cbBaudrate.Items)
             {
                 if (k == Properties.Settings.Default.LastComBaudrate.ToString())
@@ -162,6 +156,18 @@ namespace GluonCS.LiveUavLayer
             fd.CheckFileExists = true;
             if (fd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 _tbLoggedFilename.Text = fd.FileName;
+        }
+
+        private void _btn_portrefresh_Click(object sender, EventArgs e)
+        {
+            comPortNames = BuildPortNameHash(SerialPort.GetPortNames());
+            _cb_portnames.Items.Clear();
+            foreach (string key in comPortNames.Keys)
+            {
+                int i = _cb_portnames.Items.Add(key);
+                if (comPortNames[key].ToString() == Properties.Settings.Default.LastComPortName)
+                    _cb_portnames.SelectedIndex = i;
+            }
         }
     }
 }
