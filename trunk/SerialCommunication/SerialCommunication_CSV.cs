@@ -526,14 +526,14 @@ namespace Communication
         public override void SendTelemetry(int basicgps, int gyroaccraw, int gyroaccproc, int ppm, int pressuretemp, int attitude, int control)
         {
             // telemetry
-            _serialPort.WriteLine("\nST;" +
+            WriteChecksumLine("ST;" +
                 basicgps.ToString() + ";" +
                 gyroaccraw.ToString() + ";" +
                 gyroaccproc.ToString() + ";" +
                 ppm.ToString() + ";" +
                 pressuretemp.ToString() + ";" +
                 attitude.ToString() + ";" +
-                control.ToString() + "\n");
+                control.ToString() + "");
             Console.WriteLine("\nST;" +
                 basicgps.ToString() + ";" +
                 gyroaccraw.ToString() + ";" +
@@ -559,18 +559,18 @@ namespace Communication
                 s += 16;
             if (f)
                 s += 32;
-            _serialPort.WriteLine("\nSR;" + s.ToString() + "\n");
+            WriteChecksumLine("SR;" + s.ToString() + "");
         }
 
         public override void SendConfigChannels(int is_ppm, int channel_ap, int channel_motor, int channel_pitch, int channel_roll, int channel_yaw)
         {
-            _serialPort.WriteLine("\nSI;" +
+            WriteChecksumLine("SI;" +
                (1 - is_ppm).ToString() + ";" +
                Char.ConvertFromUtf32(97 + channel_ap - 1) + ";" +
                Char.ConvertFromUtf32(97 + channel_motor - 1) + ";" +
                Char.ConvertFromUtf32(97 + channel_pitch - 1) + ";" +
                Char.ConvertFromUtf32(97 + channel_roll - 1) + ";" +
-               Char.ConvertFromUtf32(97 + channel_yaw - 1) + "\n");
+               Char.ConvertFromUtf32(97 + channel_yaw - 1) + "");
             Console.WriteLine("\nSI;" +
                 (1 - is_ppm).ToString() + ";" +
                 Char.ConvertFromUtf32(97 + channel_ap - 1) + ";" +
@@ -583,31 +583,30 @@ namespace Communication
 
         public override void SendPidPitch2Elevator(double p, double i, double d, double imin, double imax, double dmin)
         {
-            _serialPort.WriteLine("\nPP;" +
+            WriteChecksumLine("PP;" +
                 p.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 i.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 d.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 imin.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 imax.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
-                dmin.ToString(System.Globalization.CultureInfo.InvariantCulture) + "\n");
+                dmin.ToString(System.Globalization.CultureInfo.InvariantCulture) + "");
         }
     
 
         public override void SendPidRoll2Aileron(double p, double i, double d, double imin, double imax, double dmin)
         {
-            _serialPort.WriteLine("\nPR;" +
+            WriteChecksumLine("PR;" +
                 p.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 i.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 d.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 imin.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 imax.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
-                dmin.ToString(System.Globalization.CultureInfo.InvariantCulture) + "\n");   
+                dmin.ToString(System.Globalization.CultureInfo.InvariantCulture) + "");   
         }
 
         public override void SendAutoThrottleConfig(int auto_throttle_min_pct, int auto_throttle_max_pct, int auto_throttle_cruise_pct, int auto_throttle_p_gain_10, bool auto_throttle_enabled)
         {
-            
-            _serialPort.WriteLine("\nAT;" +
+            WriteChecksumLine("AT;" +
                 auto_throttle_min_pct + ";" + auto_throttle_max_pct + ";" +
                 auto_throttle_cruise_pct + ";" + auto_throttle_p_gain_10 + ";" +
                 (auto_throttle_enabled ? "1" : "0"));
@@ -619,14 +618,14 @@ namespace Communication
 
         public override void SendControlSettings(int mixing, double max_pitch, double max_roll, int aileron_differential, double waypoint_radius, double cruising_speed, bool stabilization_with_altitude_hold)
         {
-            _serialPort.WriteLine("\nSC;" +
+            WriteChecksumLine("SC;" +
                 mixing.ToString() + ";" +
                 max_pitch.ToString(CultureInfo.InvariantCulture) + ";" +
                 max_roll.ToString(CultureInfo.InvariantCulture) + ";" +
                 aileron_differential.ToString() + ";" +
                 waypoint_radius.ToString(CultureInfo.InvariantCulture) + ";" +
                 cruising_speed.ToString(CultureInfo.InvariantCulture) + ";" +
-                (stabilization_with_altitude_hold == false ? 0 : 1).ToString() + "\n");
+                (stabilization_with_altitude_hold == false ? 0 : 1).ToString() + "");
 
 
             Console.WriteLine("\nSC;" +
@@ -656,10 +655,10 @@ namespace Communication
             Thread.Sleep(200);
             
             // neutral acc
-            _serialPort.WriteLine("\nSA;" +
+            WriteChecksumLine("SA;" +
                 ac.acc_x_neutral.ToString() + ";" +
                 ac.acc_y_neutral.ToString() + ";" +
-                ac.acc_z_neutral.ToString() + "\n");
+                ac.acc_z_neutral.ToString() + "");
             Console.WriteLine("\nSA;" +
                 ac.acc_x_neutral.ToString() + ";" +
                 ac.acc_y_neutral.ToString() + ";" +
@@ -667,10 +666,10 @@ namespace Communication
             Thread.Sleep(200);
 
             // neutral gyro
-            _serialPort.WriteLine("\nSY;" +
+            WriteChecksumLine("SY;" +
                 ac.gyro_x_neutral.ToString() + ";" +
                 ac.gyro_y_neutral.ToString() + ";" +
-                ac.gyro_z_neutral.ToString() + "\n");
+                ac.gyro_z_neutral.ToString() + "");
             Console.WriteLine("\nSY;" +
                 ac.gyro_x_neutral.ToString() + ";" +
                 ac.gyro_y_neutral.ToString() + ";" +
@@ -682,7 +681,7 @@ namespace Communication
 
             Thread.Sleep(200);
             // gps config
-            _serialPort.WriteLine("\nSG;" + (ac.gps_initial_baudrate / 10).ToString() + "\n");
+            WriteChecksumLine("SG;" + (ac.gps_initial_baudrate / 10).ToString() + "");
             Console.WriteLine("\nSG;" + (ac.gps_initial_baudrate / 10).ToString() + "\n");
 
             Thread.Sleep(200);
@@ -697,13 +696,13 @@ namespace Communication
 
             Thread.Sleep(200);
 
-            _serialPort.WriteLine("\nPH;" +
+            WriteChecksumLine("PH;" +
                 ac.pid_heading2roll_p.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_heading2roll_i.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_heading2roll_d.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_heading2roll_imin.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_heading2roll_imax.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
-                ac.pid_heading2roll_dmin.ToString(System.Globalization.CultureInfo.InvariantCulture) + "\n\n");
+                ac.pid_heading2roll_dmin.ToString(System.Globalization.CultureInfo.InvariantCulture) + "");
             Console.WriteLine("\nPH;" +
                 ac.pid_heading2roll_p.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_heading2roll_i.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
@@ -714,13 +713,13 @@ namespace Communication
 
             Thread.Sleep(200);
 
-            _serialPort.WriteLine("\nPA;" +
+            WriteChecksumLine("PA;" +
                 ac.pid_altitude2pitch_p.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_altitude2pitch_i.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_altitude2pitch_d.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_altitude2pitch_imin.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_altitude2pitch_imax.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
-                ac.pid_altitude2pitch_dmin.ToString(System.Globalization.CultureInfo.InvariantCulture) + "\n\n");
+                ac.pid_altitude2pitch_dmin.ToString(System.Globalization.CultureInfo.InvariantCulture) + "");
             Console.WriteLine("\nPA;" +
                 ac.pid_altitude2pitch_p.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_altitude2pitch_i.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
@@ -749,40 +748,40 @@ namespace Communication
 
         public override void ReadAllConfig()
         {
-            _serialPort.WriteLine("\nRC;A\n");
+            WriteChecksumLine("RC;A");
         }
 
         public override void SendWriteTelemetry(int basicgps, int gyroaccraw, int gyroaccproc, int ppm, int pressuretemp, int attitude, int control)
         {
-            _serialPort.WriteLine("\nST;" +
+            WriteChecksumLine("ST;" +
                 basicgps + ";" +
                 gyroaccraw + ";" +
                 gyroaccproc + ";" +
                 ppm + ";" +
                 pressuretemp + ";" +
                 attitude + ";" +
-                control + "\n");
+                control + "");
             Thread.Sleep(200);
         }
 
         public override void SendFlashConfiguration()
         {
-            _serialPort.WriteLine("\nFC;\n");
+            WriteChecksumLine("FC;");
         }
 
         public override void SendLoadConfigurationFromFlash()
         {
-            _serialPort.WriteLine("\nLC;\n");
+            WriteChecksumLine("LC;");
         }
 
         public override void SendLoadConfigurationDefault()
         {
-            _serialPort.WriteLine("\nLD;\n");
+            WriteChecksumLine("LD;");
         }
 
         public override void SendDatalogFormat()
         {
-            _serialPort.WriteLine("\nFF;\n");
+            WriteChecksumLine("FF;");
         }
 
         public override void SendDatalogTableRequest()
@@ -797,9 +796,9 @@ namespace Communication
 
         public override void SendNavigationInstruction(NavigationInstruction ni)
         {
-            _serialPort.WriteLine("\nWN;" + ni.line.ToString() + ";" + (int)ni.opcode + ";" + 
+            WriteChecksumLine("WN;" + ni.line.ToString() + ";" + (int)ni.opcode + ";" + 
                 ni.x.ToString(CultureInfo.InvariantCulture) + ";" + ni.y.ToString(CultureInfo.InvariantCulture) + ";" +
-                ni.a.ToString() + ";" + ni.b.ToString() + "\n");
+                ni.a.ToString() + ";" + ni.b.ToString());
             Console.WriteLine("\nWN;" + ni.line.ToString() + ";" +
                 ni.x.ToString(CultureInfo.InvariantCulture) + ";" + ni.y.ToString(CultureInfo.InvariantCulture) + ";" +
                 ni.a.ToString() + ";" + ni.b.ToString() + "\n");
@@ -814,17 +813,17 @@ namespace Communication
 
         public override void SendNavigationBurn()
         {
-            _serialPort.WriteLine("\nFN;\n");
+            WriteChecksumLine("FN;");
         }
 
         public override void SendNavigationRead()
         {
-            _serialPort.WriteLine("\nRN;\n");
+            WriteChecksumLine("RN;");
         }
 
         public override void SendNavigationLoad()
         {
-            _serialPort.WriteLine("\nLN;\n");
+            WriteChecksumLine("LN;");
         }
 
         public override void SendReboot()
@@ -858,13 +857,13 @@ namespace Communication
 
         public override void SendCalibrateGyros()
         {
-            _serialPort.WriteLine("\nCG;\n");
+            WriteChecksumLine("CG;");
         }
 
 
         public override void SendCalibrateAcceleros()
         {
-            _serialPort.WriteLine("\nCA;\n");
+            WriteChecksumLine("CA;");
         }
 
         public int calculateChecksum(string s)
@@ -876,6 +875,7 @@ namespace Communication
             }
             return c;
         }
+
 
         private void WriteChecksumLine(string s)
         {
