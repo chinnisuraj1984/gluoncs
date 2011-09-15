@@ -282,7 +282,7 @@
             // _btnOptions
             // 
             this._btnOptions.Name = "_btnOptions";
-            this._btnOptions.Size = new System.Drawing.Size(122, 22);
+            this._btnOptions.Size = new System.Drawing.Size(152, 22);
             this._btnOptions.Text = "Options";
             this._btnOptions.Click += new System.EventHandler(this._btnOptions_Click);
             // 
@@ -321,7 +321,7 @@
             this.liveUavPanel1.Size = new System.Drawing.Size(349, 669);
             this.liveUavPanel1.TabIndex = 0;
             // 
-            // Form1
+            // GluonCSForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -330,7 +330,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "GluonCSForm";
             this.Text = "Gluon Control Station";
             this.Activated += new System.EventHandler(this.Form1_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
