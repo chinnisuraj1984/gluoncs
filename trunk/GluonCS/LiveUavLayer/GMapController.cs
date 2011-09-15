@@ -279,39 +279,47 @@ namespace GluonCS.LiveUavLayer
                 List<PointLatLng> l = new List<PointLatLng>();
                 NavigationOverlay.Markers.Clear();
                 NavigationOverlay.Routes.Clear();
-                l.Add(home.Position);
+                current_waypointline = -1;
+                //l.Add(home.Position);
+                string lastblockname = "Start";
                 for (int i = 0; i < model.MaxNumberOfNavigationInstructions(); i++)
                 {
                     MoveableMarker mm = new MoveableMarker(gmap.Position);
                     NavigationInstruction ni = model.GetNavigationInstructionLocal(i);
-                    if (ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FROM_TO_REL || 
-                        ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FLY_TO_REL ||
-                        ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.CIRCLE_REL ||
-                        ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FLARE_TO_REL)
-                    {
-                        if (model.IsNavigationSynchronized(i))
-                            mm = new RelativeMarker(gmap.Position, i, false);
-                        else
-                            mm = new RelativeMarker(gmap.Position, i, true);
-                        //double res = gmap.Projection.GetGroundResolution((int)gmap.Zoom, gmap.Position.Lat);
-                        mm.Position = new PointLatLng(home.Position.Lat + ni.x / LatLng.LatitudeMeterPerDegree,
-                                                      home.Position.Lng + ni.y / LatLng.LongitudeMeterPerDegree(gmap.Position.Lat));
-                        NavigationOverlay.Markers.Add(mm);
-                        mm.ToolTipText = ni.ToString();
-                        l.Add(mm.Position);
-                    }
-                    if (ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FROM_TO_ABS ||
-                        ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FLY_TO_ABS ||
-                        ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.CIRCLE_ABS ||
-                        ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.FLARE_TO_ABS)
-                    {
-                        if (model.IsNavigationSynchronized(i))
-                            mm = new AbsoluteMarker(gmap.Position, i, false);
-                        else
-                            mm = new AbsoluteMarker(gmap.Position, i, true);
 
-                        mm.Position = new PointLatLng(ni.x / Math.PI * 180.0,
-                                                      ni.y / Math.PI * 180.0);
+                    // if new block name -> don't connect blocks with a path!
+                    if (model.NavigationModel.Commands[i].BlockName != lastblockname)
+                    {
+                        lastblockname = model.NavigationModel.Commands[i].BlockName;
+                        GMapRoute r = new GMapRoute(l, "test" + (new Random()).Next(10000));
+                        NavigationOverlay.Routes.Add(r);
+                        r.Stroke.Color = Color.FromArgb(150, Color.Red);
+                        l = new List<PointLatLng>();
+                    }
+
+                    if (ni.HasRelativeCoordinates() || ni.HasAbsoluteCoordinates())
+                    {
+                        if (ni.HasRelativeCoordinates())
+                        {
+                            if (model.IsNavigationSynchronized(i))
+                                mm = new RelativeMarker(gmap.Position, i, false);
+                            else
+                                mm = new RelativeMarker(gmap.Position, i, true);
+                            //double res = gmap.Projection.GetGroundResolution((int)gmap.Zoom, gmap.Position.Lat);
+                            mm.Position = new PointLatLng(home.Position.Lat + ni.x / LatLng.LatitudeMeterPerDegree,
+                                                          home.Position.Lng + ni.y / LatLng.LongitudeMeterPerDegree(gmap.Position.Lat));
+                        }
+                        else if (ni.HasAbsoluteCoordinates())
+                        {
+                            if (model.IsNavigationSynchronized(i))
+                                mm = new AbsoluteMarker(gmap.Position, i, false);
+                            else
+                                mm = new AbsoluteMarker(gmap.Position, i, true);
+
+                            mm.Position = new PointLatLng(ni.x / Math.PI * 180.0,
+                                                          ni.y / Math.PI * 180.0);
+
+                        }
                         NavigationOverlay.Markers.Add(mm);
                         mm.ToolTipText = ni.ToString();
                         l.Add(mm.Position);
@@ -319,8 +327,8 @@ namespace GluonCS.LiveUavLayer
                         if (!zoomToReceivedWaypoints)
                         {
                             zoomtowaypoints.Interval = 500;
-                           // if (zoomtowaypoints.Enabled)
-                                zoomtowaypoints.Stop();
+                            // if (zoomtowaypoints.Enabled)
+                            zoomtowaypoints.Stop();
                             zoomtowaypoints.Start();
                         }
                     }
@@ -347,10 +355,10 @@ namespace GluonCS.LiveUavLayer
                             current_marker = mm;
                     }
                 }
-                GMapRoute r = new GMapRoute(l, "test");
-                NavigationOverlay.Routes.Add(r);
-                r.Stroke.Color = Color.FromArgb(150, Color.Red);
-                gmap.UpdateRouteLocalPosition(r);
+                GMapRoute rr = new GMapRoute(l, "test"+(new Random()).Next(10000));
+                NavigationOverlay.Routes.Add(rr);
+                rr.Stroke.Color = Color.FromArgb(150, Color.Red);
+                gmap.UpdateRouteLocalPosition(rr);
             };
 
             try
