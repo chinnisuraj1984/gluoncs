@@ -231,8 +231,19 @@ namespace GluonCS
 
                 // update listview with current navigation line selection
                 foreach (ListViewItem lvi in _lv_navigation.Items)
+                {
                     if (lvi.BackColor == Color.Yellow && lvi.Index != model.CurrentNavigationLine)
                         lvi.BackColor = _lv_navigation.Parent.BackColor;
+                }
+                foreach (Control c in _panelStrip.Controls)
+                {
+                    if (c.Text.TrimStart('&') == model.NavigationModel.Commands[model.CurrentNavigationLine].BlockName &&
+                        c.BackColor != Color.Yellow)
+                        c.BackColor = Color.Yellow;
+                    else if (c.BackColor != Color.Transparent && c.Text.TrimStart('&') != model.NavigationModel.Commands[model.CurrentNavigationLine].BlockName)
+                        c.BackColor = Color.Transparent;
+                }
+
                 if (_lv_navigation.Items.Count > model.CurrentNavigationLine && _lv_navigation.Items[model.CurrentNavigationLine].BackColor != Color.Yellow)
                     _lv_navigation.Items[model.CurrentNavigationLine].BackColor = Color.Yellow;
 
@@ -461,11 +472,30 @@ namespace GluonCS
                         b.Text = block.Key;
                     b.Tag = block.Key;
                     b.Click += new EventHandler(CommandButton_Click);
+
                     totalwidth += b.Width;
                     _panelStrip.Controls.Add(b);
                 }
             }
-            _panelStrip.Height = (int)(Math.Ceiling((double)totalwidth / _panelStrip.Width)) * 30;
+            if (_panelStrip.Controls.Count == 0)
+            {
+                System.Windows.Forms.Label l = new System.Windows.Forms.Label();
+                l.Dock = System.Windows.Forms.DockStyle.Top;
+                l.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                l.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+                l.Location = new System.Drawing.Point(3, 0);
+                l.Name = "label2";
+                l.Size = new System.Drawing.Size(333, 35);
+                l.TabIndex = 0;
+                l.Text = "Block commands created in the Navigation list will be automatically \r\nadded as bu" +
+                    "ttons to this strip.";
+                l.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
+                _panelStrip.Controls.Add(l);
+                _panelStrip.Height = l.Height;
+            } 
+            else
+                _panelStrip.Height = (int)(Math.Ceiling((double)totalwidth / _panelStrip.Width)) * 30;
         }
 
         void CommandButton_Click(object sender, EventArgs e)

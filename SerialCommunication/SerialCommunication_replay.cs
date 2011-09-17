@@ -21,6 +21,10 @@ namespace Communication
 {
     public class SerialCommunication_replay : SerialCommunication
     {
+        public bool Play = true;
+        public bool DoubleSpeed = false;
+        public bool QuadSpeed = false;
+
         private string filename;
         public override string LogToFilename
         {
@@ -182,8 +186,16 @@ namespace Communication
             {
                 try
                 {
+                    while (!Play)
+                        Thread.Sleep(100);
+
                     KeyValuePair<TimeSpan, string> kvp = ReadReplayLine();
-                    Thread.Sleep(kvp.Key);
+                    if (DoubleSpeed)
+                        Thread.Sleep((int)(kvp.Key.TotalMilliseconds / 2.0));
+                    else if (QuadSpeed)
+                        Thread.Sleep((int)(kvp.Key.TotalMilliseconds / 4.0));
+                    else
+                        Thread.Sleep(kvp.Key);
                     Console.WriteLine(kvp.Key.ToString() + " - " + kvp.Value);
                     line = kvp.Value;
 
