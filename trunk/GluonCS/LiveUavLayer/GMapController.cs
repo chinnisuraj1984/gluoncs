@@ -59,8 +59,7 @@ namespace GluonCS.LiveUavLayer
             NavigationOverlay = new GMapOverlay(gmap, "NavigationOverlay");
             gmap.Overlays.Add(NavigationOverlay);
             gmap.Overlays.Add(Overlay);
-
-            
+            gmap.DragButton = MouseButtons.Left;
             home = new Markers.GluonHomeMarker(model.Home);
             Overlay.Markers.Add(home);
 

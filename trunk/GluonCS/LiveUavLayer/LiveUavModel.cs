@@ -79,11 +79,13 @@ namespace GluonCS.LiveUavLayer
             get { return serial; }
         }
 
-        public void Replay(string filename, string logpath)
+        public SerialCommunication_replay Replay(string filename, string logpath)
         {
             Serial = new SerialCommunication_replay(filename);
 
             SubscribeSerial(logpath);
+
+            return (SerialCommunication_replay)Serial;
         }
 
         private void SubscribeSerial(string logpath)
