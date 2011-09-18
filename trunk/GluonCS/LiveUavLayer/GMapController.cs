@@ -192,6 +192,7 @@ namespace GluonCS.LiveUavLayer
         {
             MethodInvoker m = delegate()
             {
+                home.Position = model.Home;
                 // should be somewhere else...
                 if (model.CurrentNavigationLine != current_waypointline)
                 {

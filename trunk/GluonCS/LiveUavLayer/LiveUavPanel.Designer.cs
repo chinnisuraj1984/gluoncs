@@ -432,7 +432,7 @@
             this._pbGps.BackColor = System.Drawing.SystemColors.Control;
             this._pbGps.ForeColor = System.Drawing.Color.LimeGreen;
             this._pbGps.Location = new System.Drawing.Point(37, 23);
-            this._pbGps.Maximum = 10;
+            this._pbGps.Maximum = 12;
             this._pbGps.Name = "_pbGps";
             this._pbGps.Size = new System.Drawing.Size(78, 16);
             this._pbGps.Step = 1;

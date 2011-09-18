@@ -2918,12 +2918,14 @@
             // 
             // _dtb_waypoint_radius
             // 
+            this._dtb_waypoint_radius.Color = System.Drawing.SystemColors.Window;
             this._dtb_waypoint_radius.DistanceM = 0D;
             this._dtb_waypoint_radius.Location = new System.Drawing.Point(99, 24);
             this._dtb_waypoint_radius.Name = "_dtb_waypoint_radius";
             this._dtb_waypoint_radius.ReadOnly = false;
             this._dtb_waypoint_radius.Size = new System.Drawing.Size(99, 21);
             this._dtb_waypoint_radius.TabIndex = 4;
+            this._dtb_waypoint_radius.UseAltitudeColoring = false;
             this._dtb_waypoint_radius.DistanceChanged += new System.EventHandler(this._dtb_waypoint_radius_DistanceChanged);
             // 
             // label86
@@ -3118,7 +3120,8 @@
             "Aileron",
             "Delta+",
             "Delta-",
-            "Quadrocopter"});
+            "Quadrocopter",
+            "Aileron-flaperons on yaw"});
             this._cbControlMix.Location = new System.Drawing.Point(75, 16);
             this._cbControlMix.Name = "_cbControlMix";
             this._cbControlMix.Size = new System.Drawing.Size(121, 21);
@@ -3136,6 +3139,7 @@
             // 
             // tb_min_circle_radius
             // 
+            this.tb_min_circle_radius.Color = System.Drawing.SystemColors.Control;
             this.tb_min_circle_radius.DistanceM = 0D;
             this.tb_min_circle_radius.Enabled = false;
             this.tb_min_circle_radius.Location = new System.Drawing.Point(426, 81);
@@ -3143,6 +3147,7 @@
             this.tb_min_circle_radius.ReadOnly = true;
             this.tb_min_circle_radius.Size = new System.Drawing.Size(110, 21);
             this.tb_min_circle_radius.TabIndex = 18;
+            this.tb_min_circle_radius.UseAltitudeColoring = false;
             // 
             // tb_speed
             // 
