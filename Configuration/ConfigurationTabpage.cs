@@ -657,7 +657,16 @@ namespace Gluonpilot
         private void _cbControlMix_SelectedIndexChanged(object sender, EventArgs e)
         {
             _model.ControlMixing = _cbControlMix.SelectedIndex;
-            _lblControlMixInfo.Text = "1: Up/Down, 2: Aileron1, 3: Aileron2, 4: Motor";
+            if (_cbControlMix.SelectedIndex == 0)
+                _lblControlMixInfo.Text = "1: Aileron1, 2: Aileron2, 3: Up/Down, 2, 4: Motor, 6: roll stabi";
+            if (_cbControlMix.SelectedIndex == 1)
+                _lblControlMixInfo.Text = "1: Elevon1, 2: Elevon2, 4: Motor";
+            if (_cbControlMix.SelectedIndex == 2)
+                _lblControlMixInfo.Text = "1: Elevon1, 2: Elevon2, 4: Motor";
+            if (_cbControlMix.SelectedIndex == 3)
+                _lblControlMixInfo.Text = "See quadrocopter page";
+            if (_cbControlMix.SelectedIndex == 4)
+                _lblControlMixInfo.Text = "1: Aileron1, 2: Aileron2, 3: Up/Down, 2, 4: Motor, 6: roll stabi";
         }
 
         private void _pid_pitch_to_elevator_IsChanged(object sender, EventArgs e)

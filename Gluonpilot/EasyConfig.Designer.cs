@@ -179,7 +179,9 @@
             this._cbMixing.Items.AddRange(new object[] {
             "Aileron",
             "Delta+",
-            "Delta-"});
+            "Delta-",
+            "Quadrocopter",
+            "Aileron-flaperons on yaw"});
             this._cbMixing.Location = new System.Drawing.Point(482, 206);
             this._cbMixing.Name = "_cbMixing";
             this._cbMixing.Size = new System.Drawing.Size(121, 21);

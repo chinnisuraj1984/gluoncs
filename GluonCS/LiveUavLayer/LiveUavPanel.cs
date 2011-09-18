@@ -183,6 +183,8 @@ namespace GluonCS
                         _lblGpsSat.BackColor = _lblGpsSat.Parent.BackColor;
                         _pbGps.Text = "Locked (" + model.NumberOfGpsSatellites + ")";
                     }
+                    if (model.NumberOfGpsSatellites > _pbGps.Maximum)
+                        _pbGps.Maximum = model.NumberOfGpsSatellites;
                     _pbGps.Value = model.NumberOfGpsSatellites;
                 }
                 else //if (model.NumberOfGpsSatellites == -1)
@@ -291,7 +293,7 @@ namespace GluonCS
             }
             catch (Exception ex)
             {
-
+                ;
             }
         }
 

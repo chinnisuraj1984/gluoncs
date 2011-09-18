@@ -55,6 +55,8 @@ namespace GluonCS.LiveUavLayer
         private PointLatLng home;
         public PointLatLng Home { get { return home; } }
 
+        private bool hasReceivedAGpsPosition = false;  // used to set initial gps point = home
+
         private bool autoSync = false;
         public bool AutoSync
         {
@@ -311,6 +313,13 @@ namespace GluonCS.LiveUavLayer
                 hasTakenOff = true;
                 TakeoffTime = DateTime.Now;
             }
+
+            if (!hasReceivedAGpsPosition)
+            {
+                home = new PointLatLng(gpsbasic.Latitude / Math.PI * 180.0, gpsbasic.Longitude / Math.PI * 180.0);
+                HomeChanged(this, EventArgs.Empty);
+                hasReceivedAGpsPosition = true;
+            }
         }
 
         void connection_AttitudeCommunicationReceived(Attitude attitude)
@@ -394,7 +403,7 @@ namespace GluonCS.LiveUavLayer
                 {
                     ni.line++;
                     serial.SendNavigationInstruction(ni);
-                    if (!navigationLineReceived.WaitOne(2000))  // wait for a navigationlinereceived event before sending another update
+                    if (!navigationLineReceived.WaitOne(500))  // wait for a navigationlinereceived event before sending another update
                     {
                         Console.WriteLine("TIMEOUT");
                         ret = false;

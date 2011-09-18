@@ -210,6 +210,16 @@ namespace Gluonpilot
                 _lblFunctionOut6.Text = "";
                 mixing = 2;
             }
+            if (_cbMixing.SelectedItem.ToString() == "Aileron-flaperons on yaw")
+            {
+                _lblFunctionOut1.Text = "Aileron 1";
+                _lblFunctionOut2.Text = "Aileron 2";
+                _lblFunctionOut3.Text = "Elevator";
+                _lblFunctionOut4.Text = "Motor";
+                _lblFunctionOut5.Text = "NO YAW";
+                _lblFunctionOut6.Text = "Camera roll";
+                mixing = 4;
+            }
             serial.SendControlSettings(mixing, config.control_max_pitch, config.control_max_roll, config.control_aileron_differential, config.control_waypoint_radius, config.control_cruising_speed, config.control_stabilization_with_altitude_hold);
         }
 
