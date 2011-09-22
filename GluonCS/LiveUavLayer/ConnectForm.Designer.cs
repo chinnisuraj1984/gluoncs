@@ -40,6 +40,7 @@
             this._tbLoggedFilename = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this._btn_portrefresh = new System.Windows.Forms.Button();
             this._cbBaudrate = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this._cb_portnames = new System.Windows.Forms.ComboBox();
@@ -56,9 +57,8 @@
             this._tbFlightgear = new System.Windows.Forms.TextBox();
             this._cbSimulation = new System.Windows.Forms.CheckBox();
             this._btn_connect = new System.Windows.Forms.Button();
-            this._btn_connectionless = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this._btn_portrefresh = new System.Windows.Forms.Button();
+            this._rbOffline = new System.Windows.Forms.RadioButton();
             this.xPanderPanelList1.SuspendLayout();
             this.xPanderPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -80,13 +80,14 @@
             this.xPanderPanelList1.Location = new System.Drawing.Point(0, 0);
             this.xPanderPanelList1.Name = "xPanderPanelList1";
             this.xPanderPanelList1.PanelColors = null;
-            this.xPanderPanelList1.Size = new System.Drawing.Size(275, 243);
+            this.xPanderPanelList1.Size = new System.Drawing.Size(275, 253);
             this.xPanderPanelList1.TabIndex = 0;
             this.xPanderPanelList1.Text = "xPanderPanelList1";
             // 
             // xPanderPanel2
             // 
             this.xPanderPanel2.CaptionFont = new System.Drawing.Font("Trebuchet MS", 8.75F, System.Drawing.FontStyle.Bold);
+            this.xPanderPanel2.Controls.Add(this._rbOffline);
             this.xPanderPanel2.Controls.Add(this._rbReplay);
             this.xPanderPanel2.Controls.Add(this._rbViaComPort);
             this.xPanderPanel2.Controls.Add(this.groupBox2);
@@ -117,7 +118,7 @@
             this.xPanderPanel2.Image = null;
             this.xPanderPanel2.Name = "xPanderPanel2";
             this.xPanderPanel2.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
-            this.xPanderPanel2.Size = new System.Drawing.Size(275, 193);
+            this.xPanderPanel2.Size = new System.Drawing.Size(275, 203);
             this.xPanderPanel2.TabIndex = 1;
             this.xPanderPanel2.Text = "Basic settings";
             this.xPanderPanel2.ToolTipTextCloseIcon = null;
@@ -197,6 +198,19 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "      ";
+            // 
+            // _btn_portrefresh
+            // 
+            this._btn_portrefresh.FlatAppearance.BorderSize = 0;
+            this._btn_portrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._btn_portrefresh.ForeColor = System.Drawing.Color.Transparent;
+            this._btn_portrefresh.Image = ((System.Drawing.Image)(resources.GetObject("_btn_portrefresh.Image")));
+            this._btn_portrefresh.Location = new System.Drawing.Point(231, 18);
+            this._btn_portrefresh.Name = "_btn_portrefresh";
+            this._btn_portrefresh.Size = new System.Drawing.Size(15, 18);
+            this._btn_portrefresh.TabIndex = 4;
+            this._btn_portrefresh.UseVisualStyleBackColor = true;
+            this._btn_portrefresh.Click += new System.EventHandler(this._btn_portrefresh_Click);
             // 
             // _cbBaudrate
             // 
@@ -423,54 +437,40 @@
             // 
             // _btn_connect
             // 
-            this._btn_connect.Location = new System.Drawing.Point(138, 10);
+            this._btn_connect.Location = new System.Drawing.Point(73, 5);
             this._btn_connect.Name = "_btn_connect";
-            this._btn_connect.Size = new System.Drawing.Size(120, 23);
+            this._btn_connect.Size = new System.Drawing.Size(127, 23);
             this._btn_connect.TabIndex = 5;
-            this._btn_connect.Text = "&Connect";
+            this._btn_connect.Text = "&Ok";
             this._btn_connect.UseVisualStyleBackColor = true;
             this._btn_connect.Click += new System.EventHandler(this._btn_connect_Click);
-            // 
-            // _btn_connectionless
-            // 
-            this._btn_connectionless.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this._btn_connectionless.Location = new System.Drawing.Point(9, 10);
-            this._btn_connectionless.Name = "_btn_connectionless";
-            this._btn_connectionless.Size = new System.Drawing.Size(119, 23);
-            this._btn_connectionless.TabIndex = 6;
-            this._btn_connectionless.Text = "Work connection&less";
-            this._btn_connectionless.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this._btn_connect);
-            this.panel1.Controls.Add(this._btn_connectionless);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 243);
+            this.panel1.Location = new System.Drawing.Point(0, 259);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(275, 45);
+            this.panel1.Size = new System.Drawing.Size(275, 35);
             this.panel1.TabIndex = 1;
             // 
-            // _btn_portrefresh
+            // _rbOffline
             // 
-            this._btn_portrefresh.FlatAppearance.BorderSize = 0;
-            this._btn_portrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._btn_portrefresh.ForeColor = System.Drawing.Color.Transparent;
-            this._btn_portrefresh.Image = ((System.Drawing.Image)(resources.GetObject("_btn_portrefresh.Image")));
-            this._btn_portrefresh.Location = new System.Drawing.Point(231, 18);
-            this._btn_portrefresh.Name = "_btn_portrefresh";
-            this._btn_portrefresh.Size = new System.Drawing.Size(15, 18);
-            this._btn_portrefresh.TabIndex = 4;
-            this._btn_portrefresh.UseVisualStyleBackColor = true;
-            this._btn_portrefresh.Click += new System.EventHandler(this._btn_portrefresh_Click);
+            this._rbOffline.AutoSize = true;
+            this._rbOffline.Location = new System.Drawing.Point(20, 174);
+            this._rbOffline.Name = "_rbOffline";
+            this._rbOffline.Size = new System.Drawing.Size(203, 17);
+            this._rbOffline.TabIndex = 4;
+            this._rbOffline.TabStop = true;
+            this._rbOffline.Text = "Don\'t connect - offline flightplan editor";
+            this._rbOffline.UseVisualStyleBackColor = true;
             // 
             // ConnectForm
             // 
             this.AcceptButton = this._btn_connect;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this._btn_connectionless;
-            this.ClientSize = new System.Drawing.Size(275, 288);
+            this.ClientSize = new System.Drawing.Size(275, 294);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.xPanderPanelList1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -514,7 +514,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button _btn_connectionless;
         private System.Windows.Forms.Button _btn_connect;
         private System.Windows.Forms.TextBox _tbLoggedFilename;
         private System.Windows.Forms.Label label3;
@@ -529,5 +528,6 @@
         private System.Windows.Forms.TextBox _tbFlightgear;
         private System.Windows.Forms.Button _btnBrowseLoggedFile;
         private System.Windows.Forms.Button _btn_portrefresh;
+        private System.Windows.Forms.RadioButton _rbOffline;
     }
 }

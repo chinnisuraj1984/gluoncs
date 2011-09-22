@@ -279,6 +279,7 @@ namespace GluonCS.LiveUavLayer
                 List<PointLatLng> l = new List<PointLatLng>();
                 NavigationOverlay.Markers.Clear();
                 NavigationOverlay.Routes.Clear();
+                NavigationOverlay.Polygons.Clear();
                 current_waypointline = -1;
                 //l.Add(home.Position);
                 string lastblockname = "Start";
@@ -359,6 +360,20 @@ namespace GluonCS.LiveUavLayer
                 NavigationOverlay.Routes.Add(rr);
                 rr.Stroke.Color = Color.FromArgb(150, Color.Red);
                 gmap.UpdateRouteLocalPosition(rr);
+
+                l.Clear();
+                for (int i = 0; i < model.NavigationModel.Commands.Count; i++)
+                {
+                    NavigationInstruction ni = model.GetNavigationInstructionLocal(i);
+                    if (model.NavigationModel.Commands[i].BlockName.StartsWith("Survey") && ni.HasAbsoluteCoordinates())
+                        l.Add(new PointLatLng(ni.x / Math.PI * 180.0, ni.y / Math.PI * 180.0));
+                }
+                GMapPolygon gp = new GMapPolygon(l, "survey");
+                gp.Stroke.Color = Color.FromArgb(150, Color.Blue);
+                //gp.Fill = new SolidBrush(Color.Blue);
+                NavigationOverlay.Polygons.Add(gp);
+                
+                NavigationOverlay.Routes.Add(new GMapRoute(DoSurvey(l), "surv"));
             };
 
             try
@@ -370,6 +385,135 @@ namespace GluonCS.LiveUavLayer
             } 
 
         }
+
+        private List<PointLatLng> RotateList(List<PointLatLng> l, double angle)
+        {
+            List<PointLatLng> newl = new List<PointLatLng>();
+            for (int i = 0; i < l.Count; i++)
+            {
+                double x = l[i].Lng;
+                double y = l[i].Lat;
+                double x2 = x * Math.Cos(angle) - y * Math.Sin(angle);
+                double y2 = x * Math.Sin(angle) + y * Math.Cos(angle);
+                newl.Add(new PointLatLng(y2, x2));
+            }
+            return newl;
+        }
+
+        private bool PointInPolygon(List<PointLatLng> l, PointLatLng p)
+        {
+            int nvert = l.Count;
+            int i, j;
+            bool c = false;
+            for (i = 0, j = nvert - 1; i < nvert; j = i++)
+            {
+                if (((l[i].Lat > p.Lat) != (l[j].Lat > p.Lat)) &&
+                 (p.Lng < (l[j].Lng - l[i].Lng) * (p.Lat - l[i].Lat) / (l[j].Lat - l[i].Lat) + l[i].Lng))
+                    c = !c;
+            }
+            return c;
+        }
+
+        private List<PointLatLng> DoSurvey(List<PointLatLng> poly)
+        {
+            if (poly.Count < 3)
+                return new List<PointLatLng>();
+            double angle = 0;
+            poly = RotateList(poly, angle / 180.0 * Math.PI);
+            double maxLat = -9999;
+            double maxLng = -9999;
+            double minLng = 9999;
+            double minLat = 9999;
+            List<PointLatLng> route = new List<PointLatLng>();
+
+
+            double dst_lat = 70 / LatLng.LatitudeMeterPerDegree;
+            double dst_lng = 70 / LatLng.LongitudeMeterPerDegree(poly[0].Lat);
+            // calculate boundingbox
+            foreach (PointLatLng ll in poly)
+            {
+                if (ll.Lat > maxLat)
+                    maxLat = ll.Lat + dst_lat/2;
+                if (ll.Lat < minLat)
+                    minLat = ll.Lat - dst_lat / 2;
+                if (ll.Lng < minLng)
+                    minLng = ll.Lng - dst_lng / 2;
+                if (ll.Lng > maxLng)
+                    maxLng = ll.Lng + dst_lng / 2;
+            }
+
+            double lat = maxLat;
+            double lng = minLng;
+            while(true)
+            {
+                //route.Add(new PointLatLng(lat, lng));
+                lng = minLng;
+                for (; lng < maxLng; lng += dst_lng / 20)
+                {
+                    if (PointInPolygon(poly, new PointLatLng(lat, lng)))
+                    {
+                        route.Add(new PointLatLng(lat, lng));
+                        break;
+                    }
+                }
+                for (; lng < maxLng; lng += dst_lng / 20)
+                {
+                    if (!PointInPolygon(poly, new PointLatLng(lat, lng)))
+                    {
+                        route.Add(new PointLatLng(lat, lng));
+                        break;
+                    }
+                }
+                //route.Add(new PointLatLng(lat, lng));
+
+                // turn right
+                lat -= dst_lat/2;
+                /*for (double j = Math.PI / 2.0; j >= -Math.PI / 2.0; j -= Math.PI * 2.0 / 30.0)
+                {
+                    double clon = lng + Math.Cos(j) * dst_lng / 2.0;
+                    double clat = lat + Math.Sin(j) * dst_lat / 2.0;
+                    route.Add(new PointLatLng(clat, clon));
+                }*/
+                lat -= dst_lat/2;
+
+                //route.Add(new PointLatLng(lat, lng));
+                lng = maxLng;
+                for (; lng > minLng; lng -= dst_lng / 20)
+                {
+                    if (PointInPolygon(poly, new PointLatLng(lat, lng)))
+                    {
+                        route.Add(new PointLatLng(lat, lng));
+                        break;
+                    }
+                }
+                for (; lng > minLng; lng -= dst_lng / 20)
+                {
+                    if (!PointInPolygon(poly, new PointLatLng(lat, lng)))
+                    {
+                        route.Add(new PointLatLng(lat, lng));
+                        break;
+                    }
+                }
+                //lng = minLng;
+                //route.Add(new PointLatLng(lat, lng));
+                if (lat - dst_lat < minLat)
+                    break;
+                else
+                {
+                    lat -= dst_lat/2;
+                    /*for (double j = Math.PI / 2.0; j <= 3.0*Math.PI/2.0; j += Math.PI * 2.0 / 30.0)
+                    {
+                        double clon = lng + Math.Cos(j) * dst_lng / 2.0;
+                        double clat = lat + Math.Sin(j) * dst_lat / 2.0;
+                        route.Add(new PointLatLng(clat, clon));
+                    }*/
+                    lat -= dst_lat / 2;
+                }
+            }
+            route = RotateList(route, -angle / 180.0 * Math.PI);
+            return route;
+        }
+
 
         //
         void zoomtowaypoints_Tick(object sender, EventArgs e)
