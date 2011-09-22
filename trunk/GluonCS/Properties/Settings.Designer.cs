@@ -190,5 +190,41 @@ namespace GluonCS.Properties {
                 this["ShowUavSpeedAltitude"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public double SurveyDistanceM {
+            get {
+                return ((double)(this["SurveyDistanceM"]));
+            }
+            set {
+                this["SurveyDistanceM"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double SurveyAngleDeg {
+            get {
+                return ((double)(this["SurveyAngleDeg"]));
+            }
+            set {
+                this["SurveyAngleDeg"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public double SurveyAltitudeM {
+            get {
+                return ((double)(this["SurveyAltitudeM"]));
+            }
+            set {
+                this["SurveyAltitudeM"] = value;
+            }
+        }
     }
 }

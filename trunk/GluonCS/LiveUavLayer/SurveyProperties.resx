@@ -117,25 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="serialPort1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="_btn_portrefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAadJREFUOE9j/P//
-        PwNFAGQAPpy7L2lV5s44Zlxq8GoGacrYEXspZXPUAaIMKDme4VB0JO1A/oHk/9l7Ev6nb4/933So8n/d
-        vtL/kcsCdmIzBO6C4mMZDoWHU8/MuTTl/6Zbq/+vv7ni/9obS/+vurbo//Kr8/+XbMn57zfd7Q66IXAD
-        Cg6lzpx+vu//xpur/jcfrvqfuD78f8zKoP8V2/P/l2zO/u8z1XU3Xhfk7E18APTvf6B//8evDTsEUxww
-        y+OS9xTnQ2699kyO7VacOF2ALAH0LzzUvSY5rXHtsSU9FoD+XUMoisFpCFlR+CI/zqA5nkxA/x5y73e4
-        BJOzqDY6ZFyq+18vX/O/VpbqA2Q9GOkA6N/dWSuT/qcuif1v3WD636zK8H/E9MD/vSea/icvjP6vmqI4
-        E6cBQP++zFie8H/62d7/U053/Z94qv1/38mW/z0nGv+DxFWSFc4oxss64HWBXbPFzri5Yf+jZgb/1y/U
-        +q+drfZfPU35v3KSwgGFOFTNGGEAMxno3wNA/8LDAF9gYs0LunkazJqZqqtIjgViNKCrAQAKQYnl55pI
-        nAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>38</value>
-  </metadata>
 </root>

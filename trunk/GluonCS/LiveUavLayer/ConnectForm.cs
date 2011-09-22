@@ -94,7 +94,6 @@ namespace GluonCS.LiveUavLayer
 
         private void _btn_connect_Click(object sender, EventArgs e)
         {
-            this.DialogResult = System.Windows.Forms.DialogResult.Yes;
             SerialPort = new System.IO.Ports.SerialPort();
             if (_rbViaComPort.Checked)
             {
@@ -102,8 +101,15 @@ namespace GluonCS.LiveUavLayer
                     SerialPort.PortName = comPortNames[_cb_portnames.Text].ToString();
                 else
                 {
-                    MessageBox.Show("Error connecting", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
-                    this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+                    MessageBox.Show("Error connecting: invalid COM port", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                    //this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+                    return;
+                }
+                if (_cbBaudrate.Text == "")
+                {
+                    MessageBox.Show("Error connecting: invalid baud rate", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                    //this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+                    return;
                 }
 
                 int b;
@@ -117,13 +123,16 @@ namespace GluonCS.LiveUavLayer
                 Properties.Settings.Default.LastComPortName = SerialPort.PortName;
                 Properties.Settings.Default.LastComBaudrate = b;
                 Properties.Settings.Default.Save();
+                this.DialogResult = System.Windows.Forms.DialogResult.Yes;
             }
-
-            if (_cbSimulation.Checked)
+            else if (_cbSimulation.Checked)
             {
                 this.Simulation = true;
                 this.FlightgearPath = _tbFlightgear.Text;
+                this.DialogResult = System.Windows.Forms.DialogResult.Yes;
             }
+            else
+                DialogResult = System.Windows.Forms.DialogResult.Cancel;
 
 
             this.Close();
@@ -169,5 +178,6 @@ namespace GluonCS.LiveUavLayer
                     _cb_portnames.SelectedIndex = i;
             }
         }
+
     }
 }
