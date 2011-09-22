@@ -51,7 +51,7 @@ namespace Gluonpilot
                     ProgressBar[] pbs = { _pbChannel1, _pbChannel2, _pbChannel3, _pbChannel4, _pbChannel5, _pbChannel6 };
                     for (int i = 0; i < 6; i++)
                     {
-                        if (rcinput.GetPwm(i + 1) > 900)
+                        if (rcinput.GetPwm(i + 1) > 900 && rcinput.GetPwm(i + 1) < 2200)
                             pbs[i].Value = rcinput.GetPwm(i + 1) - 900;
                         else
                             pbs[i].Value = 0;

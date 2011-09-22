@@ -196,7 +196,7 @@ namespace Communication
                         Thread.Sleep((int)(kvp.Key.TotalMilliseconds / 4.0));
                     else
                         Thread.Sleep(kvp.Key);
-                    Console.WriteLine(kvp.Key.ToString() + " - " + kvp.Value);
+                    //Console.WriteLine(kvp.Key.ToString() + " - " + kvp.Value);
                     line = kvp.Value;
 
                     //line = _serialPort.ReadLine();

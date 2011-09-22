@@ -114,7 +114,7 @@ namespace GluonCS
                 if (add.Length == 2)
                 {
                     int.TryParse(add[1], out port);
-                    _gMapControl.Manager.Proxy = new WebProxy(add[0], port);
+                    _gMapControl.Manager.Proxy = new WebProxy("http://" + add[0] + ":" + port, false, null, new System.Net.NetworkCredential(Properties.Settings.Default.ProxyUsername, Properties.Settings.Default.ProxyPassword, ""));
                 }
                 else
                 {
