@@ -298,6 +298,7 @@ namespace GluonCS.LiveUavLayer
                         l = new List<PointLatLng>();
                     }
 
+                    // create marker
                     if (ni.HasRelativeCoordinates() || ni.HasAbsoluteCoordinates())
                     {
                         if (ni.HasRelativeCoordinates())
@@ -306,7 +307,6 @@ namespace GluonCS.LiveUavLayer
                                 mm = new RelativeMarker(gmap.Position, i, false);
                             else
                                 mm = new RelativeMarker(gmap.Position, i, true);
-                            //double res = gmap.Projection.GetGroundResolution((int)gmap.Zoom, gmap.Position.Lat);
                             mm.Position = new PointLatLng(home.Position.Lat + ni.x / LatLng.LatitudeMeterPerDegree,
                                                           home.Position.Lng + ni.y / LatLng.LongitudeMeterPerDegree(gmap.Position.Lat));
                         }
@@ -334,6 +334,7 @@ namespace GluonCS.LiveUavLayer
                         }
                     }
 
+                    // draw circle path
                     if (ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.CIRCLE_ABS ||
                         ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.CIRCLE_REL)
                     {
@@ -350,17 +351,29 @@ namespace GluonCS.LiveUavLayer
                         l.Add(mm.Position);
                     }
 
+                    // determine current marker
                     if (current_marker is NavigationMarker)
                     {
                         if (((NavigationMarker)current_marker).Number == i)
                             current_marker = mm;
                     }
+
+                    if (model.NavigationModel.WaypointsInBlock(model.NavigationModel.Commands[i].BlockName) == 1)
+                    {
+                        if (mm is NavigationMarker)
+                        {
+                            ((NavigationMarker)mm).Name = model.NavigationModel.Commands[i].BlockName;
+                        }
+                    }
                 }
+                
+                // draw route
                 GMapRoute rr = new GMapRoute(l, "test"+(new Random()).Next(10000));
                 NavigationOverlay.Routes.Add(rr);
                 rr.Stroke.Color = Color.FromArgb(150, Color.Red);
                 gmap.UpdateRouteLocalPosition(rr);
 
+                // survey
                 l.Clear();
                 for (int i = 0; i < model.NavigationModel.Commands.Count; i++)
                 {
@@ -386,6 +399,26 @@ namespace GluonCS.LiveUavLayer
 
         }
 
+
+        //
+        void zoomtowaypoints_Tick(object sender, EventArgs e)
+        {
+            //zoomToReceivedWaypoints = true;
+            //double zoom = gmap.Zoom;
+            //gmap.ZoomAndCenterMarkers("NavigationOverlay"); //gmap.GetRectOfAllMarkers("");
+            //if (gmap.Zoom > zoom)
+            //    gmap.Zoom = zoom;
+            //zoomtowaypoints.Stop();
+
+            //above code seems to contain a gmap bug
+            zoomToReceivedWaypoints = true;
+            zoomtowaypoints.Stop();
+            RecenterMap();
+        }
+
+#endregion
+
+        #region Survey
         private List<PointLatLng> RotateList(List<PointLatLng> l, double angle)
         {
             List<PointLatLng> newl = new List<PointLatLng>();
@@ -418,8 +451,7 @@ namespace GluonCS.LiveUavLayer
         {
             if (poly.Count < 3)
                 return new List<PointLatLng>();
-            double angle = 0;
-            poly = RotateList(poly, angle / 180.0 * Math.PI);
+            poly = RotateList(poly, Properties.Settings.Default.SurveyAngleDeg / 180.0 * Math.PI);
             double maxLat = -9999;
             double maxLng = -9999;
             double minLng = 9999;
@@ -427,8 +459,8 @@ namespace GluonCS.LiveUavLayer
             List<PointLatLng> route = new List<PointLatLng>();
 
 
-            double dst_lat = 70 / LatLng.LatitudeMeterPerDegree;
-            double dst_lng = 70 / LatLng.LongitudeMeterPerDegree(poly[0].Lat);
+            double dst_lat = Properties.Settings.Default.SurveyDistanceM / LatLng.LatitudeMeterPerDegree;
+            double dst_lng = Properties.Settings.Default.SurveyDistanceM / LatLng.LongitudeMeterPerDegree(poly[0].Lat);
             // calculate boundingbox
             foreach (PointLatLng ll in poly)
             {
@@ -510,30 +542,12 @@ namespace GluonCS.LiveUavLayer
                     lat -= dst_lat / 2;
                 }
             }
-            route = RotateList(route, -angle / 180.0 * Math.PI);
+            route = RotateList(route, -Properties.Settings.Default.SurveyAngleDeg / 180.0 * Math.PI);
             return route;
         }
+        #endregion
 
-
-        //
-        void zoomtowaypoints_Tick(object sender, EventArgs e)
-        {
-            //zoomToReceivedWaypoints = true;
-            //double zoom = gmap.Zoom;
-            //gmap.ZoomAndCenterMarkers("NavigationOverlay"); //gmap.GetRectOfAllMarkers("");
-            //if (gmap.Zoom > zoom)
-            //    gmap.Zoom = zoom;
-            //zoomtowaypoints.Stop();
-
-            //above code seems to contain a gmap bug
-            zoomToReceivedWaypoints = true;
-            zoomtowaypoints.Stop();
-            RecenterMap();
-        }
-
-#endregion
-
-#region Contextmenu events
+        #region Contextmenu events
 
         void WaypointProperties_Click(object sender, EventArgs e)
         {

@@ -131,6 +131,8 @@ namespace GluonCS.LiveUavLayer
                 this.FlightgearPath = _tbFlightgear.Text;
                 this.DialogResult = System.Windows.Forms.DialogResult.Yes;
             }
+            else if (_rbReplay.Checked)
+                DialogResult = System.Windows.Forms.DialogResult.Yes;
             else
                 DialogResult = System.Windows.Forms.DialogResult.Cancel;
 
