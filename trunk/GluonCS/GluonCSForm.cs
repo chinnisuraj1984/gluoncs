@@ -345,5 +345,11 @@ namespace GluonCS
 
             return base.ProcessCmdKey(ref msg, keyData);
         }
+
+        private void _btnSurveyOptions_Click(object sender, EventArgs e)
+        {
+            SurveyProperties sp = new SurveyProperties();
+            sp.ShowDialog(this);
+        }
     }
 }

@@ -11,6 +11,14 @@ namespace GluonCS.Markers
     {
         public int Number;
         private bool is_current_waypoint;
+        private string name = "";
+        protected bool out_of_sync;
+
+        public string Name
+        {
+            set { name = value; }
+            get { return name; }
+        }
 
         public bool IsCurrentWaypoint
         {
@@ -18,9 +26,10 @@ namespace GluonCS.Markers
             set { is_current_waypoint = value; }
         }
 
-        public NavigationMarker(PointLatLng p, int wp_number, bool is_current_waypoint)
+        public NavigationMarker(PointLatLng p, int wp_number, bool is_current_waypoint, bool out_of_sync)
             : base(p)
         {
+            this.out_of_sync = out_of_sync;
             this.is_current_waypoint = is_current_waypoint;
             this.Number = wp_number;
         }

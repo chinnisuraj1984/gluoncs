@@ -354,7 +354,7 @@ namespace GluonCS.LiveUavLayer
         void connection_NavigationInstructionCommunicationReceived(NavigationInstruction ni)
         {
             //if (navigationLineReceived.
-            navigationLineReceived.Set();
+            navigationLineReceived.Set();  // used when a line is written, waiting for its confirmation
 
             //Console.WriteLine("connection_NavigationInstructionCommunicationReceived ENTER");
             lock (navigation_remote)
@@ -393,7 +393,7 @@ namespace GluonCS.LiveUavLayer
 
             if (gpsbasic.NumberOfSatellites > 3)
                 UavPosition = new PointLatLng(gpsbasic.Latitude / Math.PI * 180.0, gpsbasic.Longitude / Math.PI * 180.0);
-            Heading = yaw*180/Math.PI;// gpsbasic.Heading_deg;
+            Heading = Yaw; //gpsbasic.Heading_deg;
             SpeedMS = gpsbasic.Speed_ms;
             
             if (UavPositionChanged != null)
@@ -411,7 +411,7 @@ namespace GluonCS.LiveUavLayer
                 HomeChanged(this, EventArgs.Empty);
                 hasReceivedAGpsPosition = true;
             }
-            CalcWind();
+            //CalcWind();
         }
 
         void connection_AttitudeCommunicationReceived(Attitude attitude)

@@ -18,6 +18,9 @@ namespace GluonCS.LiveUavLayer
         public SurveyProperties()
         {
             InitializeComponent();
+            _dtbAltitudeM.DistanceM = Properties.Settings.Default.SurveyAltitudeM;
+            _dtbDistanceM.DistanceM = Properties.Settings.Default.SurveyDistanceM;
+            _nudFlightPath.Value = (decimal)Properties.Settings.Default.SurveyAngleDeg;
         }
 
         private void button2_Click(object sender, EventArgs e)

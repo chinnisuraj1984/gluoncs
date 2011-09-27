@@ -14,7 +14,7 @@ namespace GluonCS.LiveUavLayer
         private LiveUavModel model;
         private Timer reSync;
         public Dictionary<int, NavigationCommand> Commands = new Dictionary<int, NavigationCommand>(1);
-        public Dictionary<string,int> Blocks = new Dictionary<string,int>(5);
+        public Dictionary<string,int> Blocks = new Dictionary<string,int>(5);  // block name and start line
 
 
         public LiveUavNavigationModel(LiveUavModel model)
@@ -26,6 +26,23 @@ namespace GluonCS.LiveUavLayer
             reSync = new Timer();
             reSync.Elapsed += new ElapsedEventHandler(reSync_Elapsed);
             Resync();
+        }
+
+        public int WaypointsInBlock(string blockname)
+        {
+            int counter = 0;
+
+            if (Blocks.ContainsKey(blockname))
+            {
+                for (int i = Blocks[blockname] + 1; i < Commands.Count && Commands[i].BlockName == blockname; i++)
+                {
+                    if (Commands[i].Instruction.HasAbsoluteCoordinates() || Commands[i].Instruction.HasRelativeCoordinates())
+                        counter++;
+                }
+                return counter;
+            }
+            else
+                return 0;
         }
 
         public void Stop()
