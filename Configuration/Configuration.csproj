@@ -151,6 +151,24 @@
     <Compile Include="NavigationCommands\FlareToRel.designer.cs">
       <DependentUpon>FlareToRel.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationCommands\GlideTo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationCommands\GlideTo.Designer.cs">
+      <DependentUpon>GlideTo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationCommands\GlideToAbs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationCommands\GlideToAbs.Designer.cs">
+      <DependentUpon>GlideToAbs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationCommands\GlideToRel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationCommands\GlideToRel.Designer.cs">
+      <DependentUpon>GlideToRel.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationCommands\Global.cs" />
     <Compile Include="NavigationCommands\FlyTo.cs">
       <SubType>UserControl</SubType>
@@ -363,6 +381,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationCommands\FromTo.resx">
       <DependentUpon>FromTo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationCommands\GlideTo.resx">
+      <DependentUpon>GlideTo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationCommands\GlideToAbs.resx">
+      <DependentUpon>GlideToAbs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationCommands\GlideToRel.resx">
+      <DependentUpon>GlideToRel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationCommands\If.resx">
       <DependentUpon>If.cs</DependentUpon>

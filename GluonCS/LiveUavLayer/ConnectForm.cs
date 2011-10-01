@@ -33,6 +33,9 @@ namespace GluonCS.LiveUavLayer
                 if (k == Properties.Settings.Default.LastComBaudrate.ToString())
                     _cbBaudrate.Text = k.ToString();
             }
+
+            _cbLogToFile.Checked = true;
+            _cbLogToFile_CheckedChanged(this, EventArgs.Empty);
         }
 
         /// <summary>

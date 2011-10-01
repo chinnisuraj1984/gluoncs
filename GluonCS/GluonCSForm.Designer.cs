@@ -1,4 +1,5 @@
-﻿namespace GluonCS
+﻿using GluonCS.LiveUavLayer;
+namespace GluonCS
 {
     partial class GluonCSForm
     {
@@ -35,7 +36,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this._btnZoomin = new System.Windows.Forms.ToolStripButton();
             this._btnZoomout = new System.Windows.Forms.ToolStripButton();
-            this._gMapControl = new GMap.NET.WindowsForms.GMapControl();
+            this._gMapControl = new WindGMapControl();
             this.splitter3 = new BSE.Windows.Forms.Splitter();
             this.panel4 = new BSE.Windows.Forms.Panel();
             this._tbLog = new System.Windows.Forms.TextBox();
@@ -371,7 +372,7 @@
         private BSE.Windows.Forms.Splitter splitter3;
         private BSE.Windows.Forms.Panel panel4;
         private BSE.Windows.Forms.Splitter splitter2;
-        private GMap.NET.WindowsForms.GMapControl _gMapControl;
+        private WindGMapControl _gMapControl;
         private BSE.Windows.Forms.Panel _layersPanel;
         private System.Windows.Forms.ContextMenuStrip _gmapContextStrip;
         private System.Windows.Forms.ToolStripMenuItem zoomToolStripMenuItem;

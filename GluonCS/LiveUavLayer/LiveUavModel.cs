@@ -108,91 +108,81 @@ namespace GluonCS.LiveUavLayer
             uavSynchronizer.StartThread();
         }
 
-        DateTime last_msg;
-        List<double> pl = new List<double>();
-        List<double> ql = new List<double>();
-        List<double> rl = new List<double>();
+
+
         void connection_GyroAccProcCommunicationReceived(GyroAccProcessed ga)
         {
-            if (last_msg == null)
-                last_msg = DateTime.Now;
+        }
 
-            pl.Add(ga.GyroX);
-            ql.Add(ga.GyroY);
-            rl.Add(ga.GyroZ);
-        }
-        double p, q, r;
-        private void CalcGyroAvg()
-        {
-            p = 0;
-            foreach (double d in pl)
-                p += d;
-            p /= (double)pl.Count;
-            pl.Clear();
-            q = 0;
-            foreach (double d in ql)
-                q += d;
-            q /= (double)ql.Count;
-            ql.Clear();
-            r = 0;
-            foreach (double d in rl)
-                r += d;
-            r /= (double)rl.Count;
-            rl.Clear();
-        }
-        int c = 0;
         double lastheading = 0;
         double last_altitude = 0;
         double[] old_Gps = new double[3];
-        List<double> Winds = new List<double>();
-        double yaw = 0;
+        double[] old_F = new double[3];
         DateTime lastcall;
+
+        public double WindX=0, WindY = 0;
+        int c = 0;
         private void CalcWind()
         {
-            if (yaw == 0 && SpeedMS > 2)
-                yaw = Heading / 180 * Math.PI;
-
             if (c++ % 4 == 0)
             {
+                double roll_rad = Roll / 180 * Math.PI;
+                double pitch_rad = Pitch / 180 * Math.PI;
+                double yaw_rad = Yaw / 180 * Math.PI;
                 double[] Gps = {Math.Cos(Heading / 180.0 * Math.PI) * SpeedMS,
                                 Math.Sin(Heading / 180.0 * Math.PI) * SpeedMS,
-                                AltitudeAglM - last_altitude};
-                CalcGyroAvg();
-
+                                0/*(AltitudeAglM - last_altitude)*/};
+                double[] F = { Math.Cos(pitch_rad) * Math.Cos(yaw_rad), Math.Cos(pitch_rad) * Math.Sin(yaw_rad), -Math.Sin(pitch_rad) };
                 double[] VelocityDiff = new double[3];
+                double[] FDiff = new double[3];
                 for (int i = 0; i < old_Gps.Length; i++)
-                    VelocityDiff[i] = Gps[i] - old_Gps[i];
-
-                Roll /= 180 / Math.PI;
-                double dyaw = (Math.Sin(Roll) * q  + Math.Cos(Roll) * r)/180*Math.PI;
-                if( !double.IsNaN(dyaw))
-                    yaw += dyaw;
-                Console.WriteLine((DateTime.Now - lastcall).TotalSeconds);
-                if (yaw < 0)
-                    yaw += Math.PI * 2;
-                if (yaw > Math.PI * 2)
-                    yaw -= Math.PI * 2;
-
-                double DirectionDiff = Math.Sqrt(Math.Sin(Roll) * q * Math.Sin(Roll) * q + Math.Cos(Roll) * r * Math.Cos(Roll) * r) / 180.0 * Math.PI;
-                Roll *= 180 / Math.PI;
-                if (Math.Abs(DirectionDiff) > 10.0 / 180 * Math.PI)
                 {
-                    double w = Math.Sqrt(VelocityDiff[0] * VelocityDiff[0] + VelocityDiff[1] * VelocityDiff[1] + VelocityDiff[2] * VelocityDiff[2]) / DirectionDiff;
-                    //w -= SpeedMS;
-                    Console.WriteLine("Velocity = " + w);
-                    Winds.Add(w);
+                    VelocityDiff[i] = Gps[i] - old_Gps[i];
+                    FDiff[i] = F[i] - old_F[i];
                 }
 
-                double theta = (Heading-lastheading) / 180.0 * Math.PI - DirectionDiff;
+                //double DirectionDiff = Math.Sqrt(Math.Sin(roll_rad) * q * Math.Sin(roll_rad) * q + Math.Cos(roll_rad) * r * Math.Cos(roll_rad) * r) / 180.0 * Math.PI;
+                double DirectionDiff = Math.Sqrt(FDiff[0] * FDiff[0] + FDiff[1] * FDiff[1] + FDiff[2] * FDiff[2]);
+                double w = Math.Sqrt(VelocityDiff[0] * VelocityDiff[0] + VelocityDiff[1] * VelocityDiff[1] + VelocityDiff[2] * VelocityDiff[2]) / DirectionDiff;
+                if (Math.Abs(DirectionDiff) > 5.0 / 180 * Math.PI && SpeedMS > 2.0)
+                {
+                    //w -= SpeedMS;
+                    Console.WriteLine("Velocity = " + (w*3.6));
 
-                double Wx = (Gps[0] + old_Gps[0] - (Math.Cos(theta) - Math.Sin(theta)))/2;
+                    //double theta = (Heading - Yaw) / 180.0 * Math.PI;// -DirectionDiff;
+                    double theta = (Math.Atan2(VelocityDiff[1], VelocityDiff[0]) - Math.Atan2(FDiff[1], FDiff[0])) / 180.0 * Math.PI;
 
-                lastheading = Heading/180.0*Math.PI;
-                yaw = yaw * 0.9 + lastheading * 0.1;
+                    if (theta > Math.PI)
+                        theta -= 2.0 * Math.PI;
+                    else if (theta < -Math.PI)
+                        theta += 2.0 * Math.PI;
+
+                    double Wx = (Gps[0] + old_Gps[0] - w * (Math.Cos(theta) * (F[0] + old_F[0]) - Math.Sin(theta) * (F[1] + old_F[1]))) / 2;
+                    double Wy = (Gps[1] + old_Gps[1] - w * (Math.Sin(theta) * (F[0] + old_F[0]) + Math.Cos(theta) * (F[1] + old_F[1]))) / 2;
+
+                    /*double old_heading = Math.Atan2(WindY, WindX);
+                    double old_windspeed = Math.Sqrt(WindX * WindX + WindY * WindY);
+                    double heading = Math.Atan2(Wy, Wx);
+                    double windspeed = Math.Sqrt(Wx * Wx + Wy * Wy);
+                    heading = old_heading * 0.9 + heading * 0.1;
+                    windspeed = old_windspeed * 0.9 + windspeed * 0.1;
+                    WindX = windspeed * Math.Cos(heading);
+                    WindY = windspeed * Math.Sin(heading);*/
+                    WindX = WindX  + (Wx - WindX)/32;
+                    WindY = WindY  + (Wy - WindY)/32;
+                    
+                    Console.WriteLine("Wind: " + Math.Atan2(WindY, WindX) / Math.PI * 180 + "°; " + (Math.Sqrt(WindX * WindX + WindY * WindY) * 3.6) + "km/h");
+                }
+
+
+                lastheading = Heading;
 
                 last_altitude = AltitudeAglM;
                 for (int i = 0; i < old_Gps.Length; i++)
+                {
                     old_Gps[i] = Gps[i];
+                    old_F[i] = F[i];
+                }
 
                 lastcall = DateTime.Now;
             }
@@ -393,7 +383,7 @@ namespace GluonCS.LiveUavLayer
 
             if (gpsbasic.NumberOfSatellites > 3)
                 UavPosition = new PointLatLng(gpsbasic.Latitude / Math.PI * 180.0, gpsbasic.Longitude / Math.PI * 180.0);
-            Heading = Yaw; //gpsbasic.Heading_deg;
+            Heading = gpsbasic.Heading_deg;
             SpeedMS = gpsbasic.Speed_ms;
             
             if (UavPositionChanged != null)
@@ -405,13 +395,13 @@ namespace GluonCS.LiveUavLayer
                 TakeoffTime = DateTime.Now;
             }
 
-            if (!hasReceivedAGpsPosition)
+            if (!hasReceivedAGpsPosition && gpsbasic.NumberOfSatellites > 4)
             {
                 home = new PointLatLng(gpsbasic.Latitude / Math.PI * 180.0, gpsbasic.Longitude / Math.PI * 180.0);
                 HomeChanged(this, EventArgs.Empty);
                 hasReceivedAGpsPosition = true;
             }
-            //CalcWind();
+            CalcWind();
         }
 
         void connection_AttitudeCommunicationReceived(Attitude attitude)
@@ -604,7 +594,7 @@ namespace GluonCS.LiveUavLayer
                             ni.line++;
                             if (serial != null && serial.IsOpen)
                                 serial.SendNavigationInstruction(ni);
-                            Thread.Sleep(100);
+                            Thread.Sleep(150);
                         }
                     }
                 }

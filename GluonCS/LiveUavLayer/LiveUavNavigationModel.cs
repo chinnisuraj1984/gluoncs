@@ -31,6 +31,8 @@ namespace GluonCS.LiveUavLayer
         public int WaypointsInBlock(string blockname)
         {
             int counter = 0;
+            if (!Blocks.ContainsKey(blockname))
+                return 0;
 
             if (Blocks.ContainsKey(blockname))
             {
@@ -67,10 +69,12 @@ namespace GluonCS.LiveUavLayer
 
         void model_NavigationLocalListChanged(object sender, EventArgs e)
         {
+            Resync();
+            /*
             reSync.Interval = 100;
             // if (zoomtowaypoints.Enabled)
             reSync.Stop();
-            reSync.Start();
+            reSync.Start();*/
         }
 
         private void Resync()
