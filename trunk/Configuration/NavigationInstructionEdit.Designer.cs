@@ -75,6 +75,7 @@
             "FLARE_TO",
             "FLY_TO",
             "FROM_TO",
+            "GLIDE_TO",
             "",
             "- Conditional -",
             "IF",

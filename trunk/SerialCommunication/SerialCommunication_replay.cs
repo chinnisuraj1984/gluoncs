@@ -379,7 +379,7 @@ namespace Communication
                     // TG: GPS basic
                     else if (lines[0].EndsWith("TG") && lines.Length >= 7)
                     {
-                        Console.WriteLine(line);
+                        //Console.WriteLine(line);
                         GpsBasic gb = new GpsBasic(
                             double.Parse(lines[2], System.Globalization.CultureInfo.InvariantCulture),
                             double.Parse(lines[3], System.Globalization.CultureInfo.InvariantCulture),

@@ -353,7 +353,7 @@ namespace Communication
                     // TG: GPS basic
                     else if (lines[0].EndsWith("TG") && lines.Length >= 7)
                     {
-                        Console.WriteLine(line);
+                        //Console.WriteLine(line);
                         GpsBasic gb = new GpsBasic(
                             double.Parse(lines[2], System.Globalization.CultureInfo.InvariantCulture),
                             double.Parse(lines[3], System.Globalization.CultureInfo.InvariantCulture),
@@ -799,9 +799,9 @@ namespace Communication
             WriteChecksumLine("WN;" + ni.line.ToString() + ";" + (int)ni.opcode + ";" + 
                 ni.x.ToString(CultureInfo.InvariantCulture) + ";" + ni.y.ToString(CultureInfo.InvariantCulture) + ";" +
                 ni.a.ToString() + ";" + ni.b.ToString());
-            Console.WriteLine("\nWN;" + ni.line.ToString() + ";" +
+            /*Console.WriteLine("\nWN;" + ni.line.ToString() + ";" +
                 ni.x.ToString(CultureInfo.InvariantCulture) + ";" + ni.y.ToString(CultureInfo.InvariantCulture) + ";" +
-                ni.a.ToString() + ";" + ni.b.ToString() + "\n");
+                ni.a.ToString() + ";" + ni.b.ToString() + "\n");*/
         }
 
         public override void SendJumpToNavigationLine(int line)
@@ -881,9 +881,15 @@ namespace Communication
         {
             int chk = calculateChecksum(s);
             if (chk < 16)
+            {
                 _serialPort.WriteLine("\n$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
+                Console.WriteLine("\n$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
+            }
             else
+            {
                 _serialPort.WriteLine("\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
+                Console.WriteLine("\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
+            }
         }
     }
 }

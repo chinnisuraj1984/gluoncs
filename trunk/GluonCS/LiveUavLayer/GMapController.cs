@@ -18,7 +18,7 @@ namespace GluonCS.LiveUavLayer
 {
     public class GMapController
     {
-        private GMapControl gmap;
+        private WindGMapControl gmap;
         private LiveUavModel model;
         private GMapMarker current_marker = null;
         private GMapMarker home;
@@ -40,7 +40,7 @@ namespace GluonCS.LiveUavLayer
         private ContextMenuStrip current_contextmenu = new ContextMenuStrip();  // contains the merged menus
 
 
-        public GMapController(GMapControl gmap,
+        public GMapController(WindGMapControl gmap,
                               LiveUavModel model)
         {
             try
@@ -76,7 +76,6 @@ namespace GluonCS.LiveUavLayer
             //uavRoute.Points.Add(new PointLatLng(um.Position.Lat, um.Position.Lng));
             gmap.UpdateRouteLocalPosition(uavRoute);
 
-
             gmap.OnMarkerEnter += new MarkerEnter(gmap_OnMarkerEnter);
             gmap.OnMarkerLeave += new MarkerLeave(gmap_OnMarkerLeave);
             gmap.MouseDown += new System.Windows.Forms.MouseEventHandler(gmap_MouseDown);
@@ -111,7 +110,6 @@ namespace GluonCS.LiveUavLayer
             zoomtowaypoints = new Timer();
             zoomtowaypoints.Tick += new EventHandler(zoomtowaypoints_Tick);
         }
-
 
 
         public void Stop()
@@ -192,6 +190,8 @@ namespace GluonCS.LiveUavLayer
         {
             MethodInvoker m = delegate()
             {
+                gmap.WindSpeed = Math.Sqrt(model.WindX * model.WindX + model.WindY * model.WindY);
+                gmap.WindDirectionRad = Math.Atan2(model.WindY, model.WindX);
                 home.Position = model.Home;
                 // should be somewhere else...
                 if (model.CurrentNavigationLine != current_waypointline)
@@ -235,11 +235,13 @@ namespace GluonCS.LiveUavLayer
 
                     gmap.UpdateRouteLocalPosition(uavRoute);
 
-                    uavMarker.Yaw = model.Heading; // model.Yaw;
+                    uavMarker.Yaw = model.Yaw;
                     uavMarker.AltitudeAglM = model.AltitudeAglM;
                     uavMarker.SpeedMS = model.SpeedMS;
                     uavMarker.Position = new PointLatLng(model.UavPosition.Lat, model.UavPosition.Lng);
                     gmap.UpdateMarkerLocalPosition(uavMarker);
+
+                    //this.NavigationOverlay.
 
                     if (!hasReceivedGps)  // first gps position? center on UAV
                     {

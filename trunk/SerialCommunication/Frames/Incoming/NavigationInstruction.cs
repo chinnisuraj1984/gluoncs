@@ -33,7 +33,9 @@ namespace Communication.Frames.Incoming
             SERVO_TRIGGER = 18,
             BLOCK = 19,
             FLARE_TO_ABS = 20,
-            FLARE_TO_REL = 21
+            FLARE_TO_REL = 21,
+            GLIDE_TO_ABS = 22,
+            GLIDE_TO_REL = 23
         };
 
         public navigation_command opcode;
@@ -178,6 +180,12 @@ namespace Communication.Frames.Incoming
             case navigation_command.FLARE_TO_ABS:
                 s += "FlareTo[Absolute](alt: " + a + "m, throttle: " + b + "%, lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°)";
                 break;
+            case navigation_command.GLIDE_TO_REL:   // x, y, height
+                s += "GlideTo[Relative](alt: " + a + "m, throttle: " + b + "%, lat: " + x.ToString("F0") + "m, lon: " + y.ToString("F0") + "m)";
+                break;
+            case navigation_command.GLIDE_TO_ABS:
+                s += "GlideTo[Absolute](alt: " + a + "m, throttle: " + b + "%, lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°)";
+                break;
             default:
                 s += "Unknown/Unsupported (" + (int)opcode + " : " +  x + ", " + y + ", " + a + ", " + b + ")";
                 break;
@@ -276,6 +284,7 @@ namespace Communication.Frames.Incoming
         {
             return opcode == navigation_command.CIRCLE_REL ||
                    opcode == navigation_command.FLARE_TO_REL ||
+                   opcode == navigation_command.GLIDE_TO_REL ||
                    opcode == navigation_command.FLY_TO_REL ||
                    opcode == navigation_command.FROM_TO_REL;
         }
@@ -284,6 +293,7 @@ namespace Communication.Frames.Incoming
         {
             return opcode == navigation_command.CIRCLE_ABS ||
                    opcode == navigation_command.FLARE_TO_ABS ||
+                   opcode == navigation_command.GLIDE_TO_ABS ||
                    opcode == navigation_command.FLY_TO_ABS ||
                    opcode == navigation_command.FROM_TO_ABS;
         }
@@ -292,10 +302,12 @@ namespace Communication.Frames.Incoming
         {
             return opcode == navigation_command.CIRCLE_REL ||
                    opcode == navigation_command.FLARE_TO_REL ||
+                   opcode == navigation_command.GLIDE_TO_REL ||
                    opcode == navigation_command.FLY_TO_REL ||
                    opcode == navigation_command.FROM_TO_REL ||
                    opcode == navigation_command.CIRCLE_ABS ||
                    opcode == navigation_command.FLARE_TO_ABS ||
+                   opcode == navigation_command.GLIDE_TO_ABS ||
                    opcode == navigation_command.FLY_TO_ABS ||
                    opcode == navigation_command.FROM_TO_ABS;
         }
