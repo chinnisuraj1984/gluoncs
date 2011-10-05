@@ -6,9 +6,12 @@ namespace Communication.Frames.Incoming
 {
     public class NavigationInstruction
     {
-        public double x, y;
+        private float X, Y;
         public int a, b;
         public int line;
+
+        public double x { get { return (double)X; } set { X = (float)value; } }
+        public double y { get { return (double)Y; } set { Y = (float)value; } }
 
         public enum navigation_command
         {
@@ -51,8 +54,8 @@ namespace Communication.Frames.Incoming
         {
             this.line = line;
             this.opcode = opcode;
-            this.x = x;
-            this.y = y;
+            this.X = (float)x;
+            this.Y = (float)y;
             this.a = a;
             this.b = b;
         }
@@ -61,8 +64,8 @@ namespace Communication.Frames.Incoming
         {
             this.line = ni.line;
             this.opcode = ni.opcode;
-            this.x = ni.x;
-            this.y = ni.y;
+            this.X = ni.X;
+            this.Y = ni.Y;
             this.a = ni.a;
             this.b = ni.b;
         }
@@ -83,7 +86,7 @@ namespace Communication.Frames.Incoming
             }
 
             // Return true if the fields match:
-            return (x == p.x) && (y == p.y) && (a == p.a) && (b == p.b) && (opcode == p.opcode);  // line??
+            return (X == p.X) && (Y == p.Y) && (a == p.a) && (b == p.b) && (opcode == p.opcode);  // line??
         }
 
         public static bool operator ==(NavigationInstruction a, NavigationInstruction b)
@@ -128,13 +131,13 @@ namespace Communication.Frames.Incoming
                 s += "LoiterCircle(radius: " + a +"m)";
                 break;
             case navigation_command.FROM_TO_REL:   // x, y, height
-                s += "FromTo[Relative](alt: " + a + "m, lat: " + x.ToString("F0") + "m, lon: " + y.ToString("F0") + "m)";
+                s += "FromTo[Relative](alt: " + a + "m, lat: " + X.ToString("F0") + "m, lon: " + Y.ToString("F0") + "m)";
                 break;
             case navigation_command.FROM_TO_ABS:
-                s += "FromTo[Absolute](alt: " + a + "m, lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°)";
+                s += "FromTo[Absolute](alt: " + a + "m, lat: " + RAD2DEG(X).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°)";
                 break;
             case navigation_command.FLY_TO_REL:
-                s += "FlyTo[Relative](alt: " + a + "m, lat: " + x.ToString("F0") + "m, lon: " + y.ToString("F0") + "m)";
+                s += "FlyTo[Relative](alt: " + a + "m, lat: " + X.ToString("F0") + "m, lon: " + Y.ToString("F0") + "m)";
                 break;
             case navigation_command.FLY_TO_ABS:    // x, y, height
                 s += "FlyTo[Absolute](alt: " + a + "m, lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°)";
@@ -143,58 +146,58 @@ namespace Communication.Frames.Incoming
                 s += "Goto(" + (a+1) + ")";
                 break;
             case navigation_command.CIRCLE_ABS:    // x, y, radius, height <-- should be inside a while  12 B
-                s += "Circle[Absolute](radius: " + a + "m, alt: " + b + "m, lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°)";
+                s += "Circle[Absolute](radius: " + a + "m, alt: " + b + "m, lat: " + RAD2DEG(X).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°)";
                 break;
             case navigation_command.CIRCLE_REL:
-                s += "Circle[Relative](radius: " + a + "m, alt: " + b + "m, lat: " + x.ToString("F0") + "m, lon: " + y.ToString("F0") + "m)";
+                s += "Circle[Relative](radius: " + a + "m, alt: " + b + "m, lat: " + X.ToString("F0") + "m, lon: " + y.ToString("F0") + "m)";
                 break;
             case navigation_command.UNTIL_SM:
-                s += "Until(" + GetVariableText(a) + " < " + x + ")";
+                s += "Until(" + GetVariableText(a) + " < " + X + ")";
                 break;
             case navigation_command.UNTIL_GR:
-                s += "Until(" + GetVariableText(a) + " > " + x + ")";
+                s += "Until(" + GetVariableText(a) + " > " + X + ")";
                 break;
             case navigation_command.UNTIL_NE:
-                s += "Until(" + GetVariableText(a) + " <> " + x + ")";
+                s += "Until(" + GetVariableText(a) + " <> " + X + ")";
                 break;
             case navigation_command.UNTIL_EQ:
-                s += "Until(" + GetVariableText(a) + " = " + x + ")";
+                s += "Until(" + GetVariableText(a) + " = " + X + ")";
                 break;
             case navigation_command.IF_SM:
-                s += "If(" + GetVariableText(a) + " < " + x + ")";
+                s += "If(" + GetVariableText(a) + " < " + X + ")";
                 break;
             case navigation_command.IF_GR:
-                s += "If(" + GetVariableText(a) + " > " + x + ")";
+                s += "If(" + GetVariableText(a) + " > " + X + ")";
                 break;
             case navigation_command.IF_NE:
-                s += "If(" + GetVariableText(a) + " <> " + x + ")";
+                s += "If(" + GetVariableText(a) + " <> " + X + ")";
                 break;
             case navigation_command.IF_EQ:
-                s += "If(" + GetVariableText(a) + " = " + x + ")";
+                s += "If(" + GetVariableText(a) + " = " + X + ")";
                 break;
             case navigation_command.SERVO_SET:
                 s += "ServoSet(channel: " + (a+1) + ", position: " + b + "us)";
                 break;
             case navigation_command.SERVO_TRIGGER:
-                s += "ServoTrigger(channel: " + (a + 1) + ", position: " + b + "us, hold: " + x + "s)";
+                s += "ServoTrigger(channel: " + (a + 1) + ", position: " + b + "us, hold: " + X + "s)";
                 break;
             case navigation_command.BLOCK:
                 s += "Block (" + GetStringArgument() + ")";
                 break;
             case navigation_command.FLARE_TO_REL:   // x, y, height
-                s += "FlareTo[Relative](alt: " + a + "m, throttle: " + b + "%, lat: " + x.ToString("F0") + "m, lon: " + y.ToString("F0") + "m)";
+                s += "FlareTo[Relative](alt: " + a + "m, throttle: " + b + "%, lat: " + X.ToString("F0") + "m, lon: " + Y.ToString("F0") + "m)";
                 break;
             case navigation_command.FLARE_TO_ABS:
-                s += "FlareTo[Absolute](alt: " + a + "m, throttle: " + b + "%, lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°)";
+                s += "FlareTo[Absolute](alt: " + a + "m, throttle: " + b + "%, lat: " + RAD2DEG(X).ToString("F5") + "°, lon: " + RAD2DEG(Y).ToString("F5") + "°)";
                 break;
             case navigation_command.GLIDE_TO_REL:   // x, y, height
-                s += "GlideTo[Relative](alt: " + a + "m, throttle: " + b + "%, lat: " + x.ToString("F0") + "m, lon: " + y.ToString("F0") + "m)";
+                s += "GlideTo[Relative](alt: " + a + "m, throttle: " + b + "%, lat: " + X.ToString("F0") + "m, lon: " + Y.ToString("F0") + "m)";
                 break;
             case navigation_command.GLIDE_TO_ABS:
-                s += "GlideTo[Absolute](alt: " + a + "m, throttle: " + b + "%, lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°)";
+                s += "GlideTo[Absolute](alt: " + a + "m, throttle: " + b + "%, lat: " + RAD2DEG(X).ToString("F5") + "°, lon: " + RAD2DEG(Y).ToString("F5") + "°)";
                 break;
             default:
-                s += "Unknown/Unsupported (" + (int)opcode + " : " +  x + ", " + y + ", " + a + ", " + b + ")";
+                s += "Unknown/Unsupported (" + (int)opcode + " : " +  X + ", " + Y + ", " + a + ", " + b + ")";
                 break;
             }
 
@@ -208,8 +211,8 @@ namespace Communication.Frames.Incoming
             s = s + Convert.ToChar((int)(a % 256));
             s = s + Convert.ToChar((int)(b / 256));
             s = s + Convert.ToChar((int)(b % 256));
-            int c = (int)Math.Round(x);
-            int d = (int)Math.Round(y);
+            int c = (int)Math.Round(X);
+            int d = (int)Math.Round(Y);
             s = s + Convert.ToChar((int)(c / 256));
             s = s + Convert.ToChar((int)(c % 256));
             s = s + Convert.ToChar((int)(d / 256));

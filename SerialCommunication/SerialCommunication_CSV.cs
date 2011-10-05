@@ -884,6 +884,8 @@ namespace Communication
             int chk = calculateChecksum(s);
             if (chk < 16)
             {
+                if (_serialPort.BytesToWrite > 0)
+                    Thread.Sleep(200); ;
                 _serialPort.WriteLine("\n$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
                 Console.WriteLine("\n$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
             }

@@ -493,6 +493,7 @@ namespace GluonCS.LiveUavLayer
                         Console.WriteLine("TIMEOUT");
                         ret = false;
                     }
+                    Thread.Sleep(70);
                 }
             }
             return ret;
@@ -596,8 +597,13 @@ namespace GluonCS.LiveUavLayer
                             NavigationInstruction ni = new NavigationInstruction(model.GetNavigationInstructionLocal(i));
                             ni.line++;
                             if (serial != null && serial.IsOpen)
-                                serial.SendNavigationInstruction(ni);
-                            Thread.Sleep(150);
+                            {
+                                lock (serial)
+                                {
+                                    serial.SendNavigationInstruction(ni);
+                                }
+                            }
+                            Thread.Sleep(170);
                         }
                     }
                 }
