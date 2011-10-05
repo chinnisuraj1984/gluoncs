@@ -136,8 +136,10 @@ namespace Communication
 
         public override void Close()
         {
-            _serialPort.Close();
-            _smartThreadPool.Shutdown(false, 100);
+            if (_serialPort != null)
+                _serialPort.Close();
+            if (_smartThreadPool != null)
+                _smartThreadPool.Shutdown(false, 100);
             if (logfile != null)
                 logfile.Close();
         }

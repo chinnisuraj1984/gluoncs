@@ -241,6 +241,10 @@ namespace Configuration
                 c = new NavigationCommands.ServoTrigger(ni);
             else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.BLOCK)
                 c = new NavigationCommands.Block(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.SET_LOITER_POSITION)
+                c = new NavigationCommands.SetLoiterPosition(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.LOITER_CIRCLE)
+                c = new NavigationCommands.LoiterCircle(ni);
             else //if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.EMPTY)
                 c = new NavigationCommands.Empty(ni);
 
