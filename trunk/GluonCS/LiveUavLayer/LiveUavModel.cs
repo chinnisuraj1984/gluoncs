@@ -381,8 +381,16 @@ namespace GluonCS.LiveUavLayer
             else
                 NumberOfGpsSatellites = gpsbasic.NumberOfSatellites;
 
-            if (gpsbasic.NumberOfSatellites > 3)
+            if (gpsbasic.NumberOfSatellites > 4)
+            {
                 UavPosition = new PointLatLng(gpsbasic.Latitude / Math.PI * 180.0, gpsbasic.Longitude / Math.PI * 180.0);
+                if (!hasReceivedAGpsPosition)
+                {
+                    home = new PointLatLng(gpsbasic.Latitude / Math.PI * 180.0, gpsbasic.Longitude / Math.PI * 180.0);
+                    HomeChanged(this, EventArgs.Empty);
+                    hasReceivedAGpsPosition = true;
+                }
+            }
             Heading = gpsbasic.Heading_deg;
             SpeedMS = gpsbasic.Speed_ms;
             
@@ -395,12 +403,7 @@ namespace GluonCS.LiveUavLayer
                 TakeoffTime = DateTime.Now;
             }
 
-            if (!hasReceivedAGpsPosition && gpsbasic.NumberOfSatellites > 4)
-            {
-                home = new PointLatLng(gpsbasic.Latitude / Math.PI * 180.0, gpsbasic.Longitude / Math.PI * 180.0);
-                HomeChanged(this, EventArgs.Empty);
-                hasReceivedAGpsPosition = true;
-            }
+
             CalcWind();
         }
 

@@ -458,25 +458,28 @@ namespace GluonCS
             _panelStrip.Controls.Clear();
             int totalwidth = 0;
             List<string> takenHotkeys = new List<string> { "i", "o", "c" };
-
-            foreach (KeyValuePair<string, int> block in model.NavigationModel.Blocks)
+            lock (model.NavigationModel.Commands)  // see navigationmodel
             {
-                if (block.Key != "")
+                foreach (KeyValuePair<string, int> block in model.NavigationModel.Blocks)
                 {
-                    Button b = new Button();
-
-                    // add hotkey to this block (fired from main form)
-                    if (block.Key != "" && !takenHotkeys.Contains(block.Key.Substring(0, 1)))
+                    if (block.Key != "")
                     {
-                        b.Text = "&" + block.Key;
-                        takenHotkeys.Add(block.Key.Substring(0, 1));
-                    } else
-                        b.Text = block.Key;
-                    b.Tag = block.Key;
-                    b.Click += new EventHandler(CommandButton_Click);
+                        Button b = new Button();
 
-                    totalwidth += b.Width;
-                    _panelStrip.Controls.Add(b);
+                        // add hotkey to this block (fired from main form)
+                        if (block.Key != "" && !takenHotkeys.Contains(block.Key.Substring(0, 1)))
+                        {
+                            b.Text = "&" + block.Key;
+                            takenHotkeys.Add(block.Key.Substring(0, 1));
+                        }
+                        else
+                            b.Text = block.Key;
+                        b.Tag = block.Key;
+                        b.Click += new EventHandler(CommandButton_Click);
+
+                        totalwidth += b.Width;
+                        _panelStrip.Controls.Add(b);
+                    }
                 }
             }
             if (_panelStrip.Controls.Count == 0)

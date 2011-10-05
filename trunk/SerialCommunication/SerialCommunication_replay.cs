@@ -32,8 +32,8 @@ namespace Communication
             {
                 try
                 {
-                    filename = value;
-                    logfile = new System.IO.StreamWriter(filename);
+                    //filename = value;
+                    //logfile = new System.IO.StreamWriter(filename);
                 }
                 catch (Exception e)
                 {

@@ -63,7 +63,7 @@ namespace GluonCS.LiveUavLayer
             home = new Markers.GluonHomeMarker(model.Home);
             Overlay.Markers.Add(home);
 
-            uavMarker = new UavMarker(model.Home);
+            uavMarker = new UavMarker(model.UavPosition);
             Overlay.Markers.Add(uavMarker);
 
             uavRoute = new GMapRoute(new List<PointLatLng>(), "uav");

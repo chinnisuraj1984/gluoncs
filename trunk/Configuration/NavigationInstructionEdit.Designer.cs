@@ -83,7 +83,11 @@
             "",
             "- Servo -",
             "SERVO_SET",
-            "SERVO_TRIGGER"});
+            "SERVO_TRIGGER",
+            "",
+            "- Loiter -",
+            "SET_LOITER_POSITION",
+            "LOITER_CIRCLE"});
             this._cb_opcode.Location = new System.Drawing.Point(74, 12);
             this._cb_opcode.MaxDropDownItems = 20;
             this._cb_opcode.Name = "_cb_opcode";

@@ -85,6 +85,12 @@ namespace Configuration
                      ni.opcode == NavigationInstruction.navigation_command.UNTIL_GR ||
                      ni.opcode == NavigationInstruction.navigation_command.UNTIL_SM)
                 _cb_opcode.SelectedIndex = GetIndexFor("UNTIL");
+            else if (ni.opcode == NavigationInstruction.navigation_command.SET_LOITER_POSITION)
+                _cb_opcode.SelectedIndex = GetIndexFor("SET_LOITER_POSITION");
+            else if (ni.opcode == NavigationInstruction.navigation_command.LOITER_CIRCLE)
+                _cb_opcode.SelectedIndex = GetIndexFor("LOITER_CIRCLE");
+            else
+                _cb_opcode.SelectedIndex = GetIndexFor("EMPTY");
             //_cb_opcode.SelectedIndex = (int)ni.opcode;
         }
 
@@ -182,6 +188,16 @@ namespace Configuration
             {
                 c = new NavigationCommands.Empty(ni);
                 webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\emptycmd.html");
+            }
+            else if (_cb_opcode.Text.StartsWith("SET_LOITER_POSITION"))
+            {
+                c = new NavigationCommands.SetLoiterPosition(ni);
+                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\setloiterposition.html");
+            }
+            else if (_cb_opcode.Text.StartsWith("LOITER_CIRCLE"))
+            {
+                c = new NavigationCommands.LoiterCircle(ni);
+                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\loitercircle.html");
             }
             else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.FLY_TO_REL)
                 c = new NavigationCommands.FlyToRel(ni);

@@ -259,6 +259,9 @@
     <None Include="NavigationBlocks\auto-land.gnf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="NavigationBlocks\loiter.gnf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="NavigationBlocks\standby.gnf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

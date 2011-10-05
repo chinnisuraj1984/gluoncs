@@ -35,7 +35,9 @@ namespace Communication.Frames.Incoming
             FLARE_TO_ABS = 20,
             FLARE_TO_REL = 21,
             GLIDE_TO_ABS = 22,
-            GLIDE_TO_REL = 23
+            GLIDE_TO_REL = 23,
+            SET_LOITER_POSITION = 24,
+            LOITER_CIRCLE = 25
         };
 
         public navigation_command opcode;
@@ -119,7 +121,12 @@ namespace Communication.Frames.Incoming
             case navigation_command.CLIMB:
                 s += "Climb(" + x + "m)";
                 break;
-
+            case navigation_command.SET_LOITER_POSITION:
+                s += "SetLoiterPosition()";
+                break;
+            case navigation_command.LOITER_CIRCLE:
+                s += "LoiterCircle(radius: " + a +"m)";
+                break;
             case navigation_command.FROM_TO_REL:   // x, y, height
                 s += "FromTo[Relative](alt: " + a + "m, lat: " + x.ToString("F0") + "m, lon: " + y.ToString("F0") + "m)";
                 break;
