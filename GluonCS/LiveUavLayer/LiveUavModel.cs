@@ -131,7 +131,7 @@ namespace GluonCS.LiveUavLayer
                 double yaw_rad = Yaw / 180 * Math.PI;
                 double[] Gps = {Math.Cos(Heading / 180.0 * Math.PI) * SpeedMS,
                                 Math.Sin(Heading / 180.0 * Math.PI) * SpeedMS,
-                                0/*(AltitudeAglM - last_altitude)*/};
+                                (AltitudeAglM - last_altitude)};
                 double[] F = { Math.Cos(pitch_rad) * Math.Cos(yaw_rad), Math.Cos(pitch_rad) * Math.Sin(yaw_rad), -Math.Sin(pitch_rad) };
                 double[] VelocityDiff = new double[3];
                 double[] FDiff = new double[3];

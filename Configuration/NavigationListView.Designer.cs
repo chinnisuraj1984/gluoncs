@@ -343,7 +343,9 @@
             "GLIDE_TO_ABS",
             "GLIDE_TO_REL",
             "SET_LOITER_POSITION",
-            "LOITER_CIRCLE"});
+            "LOITER_CIRCLE",
+            "CIRCLE_TO_ABS",
+            "CIRCLE_TO_REL"});
             this._cb_opcode.Location = new System.Drawing.Point(8, 19);
             this._cb_opcode.Name = "_cb_opcode";
             this._cb_opcode.Size = new System.Drawing.Size(205, 21);

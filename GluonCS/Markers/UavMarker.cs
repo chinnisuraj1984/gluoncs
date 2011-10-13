@@ -18,6 +18,7 @@ namespace GluonCS.Markers
         public double AltitudeAglM = 0;
         public double SpeedMS = 0;
         public string AlarmMessage = "";
+        private string name = "";
 
         public UavMarker(PointLatLng p)
             : base(p)
@@ -32,7 +33,7 @@ namespace GluonCS.Markers
         public override void OnRender(Graphics g)
         {
             SizeF sf1, sf2;
-
+            name = Properties.Settings.Default.UavName;
             GraphicsState s = g.Save();
             g.TranslateTransform(LocalPosition.X, LocalPosition.Y);
             g.RotateTransform((float)Yaw, System.Drawing.Drawing2D.MatrixOrder.Prepend);
@@ -49,8 +50,8 @@ namespace GluonCS.Markers
             g.Restore(s);
 
             
-            sf1 = g.MeasureString("Gluonpilot", new Font(FontFamily.GenericSansSerif, 8));
-            DrawContrastString("Gluonpilot", g, LocalPosition.X - (int)sf1.Width / 2, LocalPosition.Y + Size.Height / 2 + 5, 8, Brushes.White);
+            sf1 = g.MeasureString(name, new Font(FontFamily.GenericSansSerif, 8));
+            DrawContrastString(name, g, LocalPosition.X - (int)sf1.Width / 2, LocalPosition.Y + Size.Height / 2 + 5, 8, Brushes.White);
 
             if (Properties.Settings.Default.ShowUavSpeedAltitude)
             {

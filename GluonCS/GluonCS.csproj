@@ -363,6 +363,9 @@
       <Link>Documentation\fromto.png</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="..\Documentation\glideto.html">
+      <Link>Documentation\glideto.html</Link>
+    </Content>
     <Content Include="..\Documentation\goto.html">
       <Link>Documentation\goto.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

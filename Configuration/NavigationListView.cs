@@ -245,6 +245,10 @@ namespace Configuration
                 c = new NavigationCommands.SetLoiterPosition(ni);
             else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.LOITER_CIRCLE)
                 c = new NavigationCommands.LoiterCircle(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.CIRCLE_TO_REL)
+                c = new NavigationCommands.CircleToRel(ni);
+            else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.CIRCLE_TO_ABS)
+                c = new NavigationCommands.CircleToAbs(ni);
             else //if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.EMPTY)
                 c = new NavigationCommands.Empty(ni);
 

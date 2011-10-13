@@ -50,6 +50,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this._btnOk = new System.Windows.Forms.Button();
             this._btnCancel = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this._tbUavName = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -67,6 +69,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this._tbUavName);
+            this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this._cbUavAltSpeed);
             this.tabPage2.Controls.Add(this.comboBox3);
             this.tabPage2.Controls.Add(this.label4);
@@ -276,6 +280,23 @@
             this._btnCancel.Text = "Cancel";
             this._btnCancel.UseVisualStyleBackColor = true;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 72);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(56, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Uav name";
+            // 
+            // _tbUavName
+            // 
+            this._tbUavName.Location = new System.Drawing.Point(74, 69);
+            this._tbUavName.Name = "_tbUavName";
+            this._tbUavName.Size = new System.Drawing.Size(155, 20);
+            this._tbUavName.TabIndex = 5;
+            this._tbUavName.TextChanged += new System.EventHandler(this._tbUavName_TextChanged);
+            // 
             // Setup
             // 
             this.AcceptButton = this._btnOk;
@@ -322,5 +343,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox _cbUseProxy;
+        private System.Windows.Forms.TextBox _tbUavName;
+        private System.Windows.Forms.Label label8;
     }
 }

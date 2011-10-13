@@ -71,6 +71,7 @@
             "",
             "- Waypoints -",
             "CIRCLE",
+            "CIRCLE_TO",
             "CLIMB",
             "FLARE_TO",
             "FLY_TO",

@@ -384,11 +384,16 @@ namespace GluonCS.LiveUavLayer
                         l.Add(new PointLatLng(ni.x / Math.PI * 180.0, ni.y / Math.PI * 180.0));
                 }
                 GMapPolygon gp = new GMapPolygon(l, "survey");
-                gp.Stroke.Color = Color.FromArgb(150, Color.Blue);
+                gp.Stroke.Color = Color.FromArgb(140, Color.Blue);
                 //gp.Fill = new SolidBrush(Color.Blue);
                 NavigationOverlay.Polygons.Add(gp);
-                
-                NavigationOverlay.Routes.Add(new GMapRoute(DoSurvey(l), "surv"));
+
+                List<PointLatLng> points = DoSurvey(l);
+                foreach (PointLatLng pll in points)
+                {
+                    NavigationOverlay.Markers.Add(new AbsoluteMarker(pll, 0));
+                }
+                NavigationOverlay.Routes.Add(new GMapRoute(points, "surv"));
             };
 
             try
@@ -421,6 +426,8 @@ namespace GluonCS.LiveUavLayer
 #endregion
 
         #region Survey
+
+
         private List<PointLatLng> RotateList(List<PointLatLng> l, double angle)
         {
             List<PointLatLng> newl = new List<PointLatLng>();
@@ -453,16 +460,23 @@ namespace GluonCS.LiveUavLayer
         {
             if (poly.Count < 3)
                 return new List<PointLatLng>();
+            // to relative
+            for (int i = 0; i < poly.Count; i++)
+            {
+                LatLng rel = LatLng.ToRelative(gmap.Position.Lat, gmap.Position.Lng, poly[i].Lat, poly[i].Lng);
+                poly[i] = new PointLatLng(rel.Lat, rel.Lng);
+            }
+
             poly = RotateList(poly, Properties.Settings.Default.SurveyAngleDeg / 180.0 * Math.PI);
-            double maxLat = -9999;
-            double maxLng = -9999;
-            double minLng = 9999;
-            double minLat = 9999;
+            double maxLat = double.NegativeInfinity;
+            double maxLng = double.NegativeInfinity;
+            double minLng = double.PositiveInfinity;
+            double minLat = double.PositiveInfinity;
             List<PointLatLng> route = new List<PointLatLng>();
 
 
-            double dst_lat = Properties.Settings.Default.SurveyDistanceM / LatLng.LatitudeMeterPerDegree;
-            double dst_lng = Properties.Settings.Default.SurveyDistanceM / LatLng.LongitudeMeterPerDegree(poly[0].Lat);
+            double dst_lat = Properties.Settings.Default.SurveyDistanceM;// / LatLng.LatitudeMeterPerDegree;
+            double dst_lng = Properties.Settings.Default.SurveyDistanceM;// / LatLng.LongitudeMeterPerDegree(poly[0].Lat);
             // calculate boundingbox
             foreach (PointLatLng ll in poly)
             {
@@ -478,6 +492,7 @@ namespace GluonCS.LiveUavLayer
 
             double lat = maxLat;
             double lng = minLng;
+            //bool previous_in_polygon = false;
             while(true)
             {
                 //route.Add(new PointLatLng(lat, lng));
@@ -545,6 +560,12 @@ namespace GluonCS.LiveUavLayer
                 }
             }
             route = RotateList(route, -Properties.Settings.Default.SurveyAngleDeg / 180.0 * Math.PI);
+            // to relative
+            for (int i = 0; i < route.Count; i++)
+            {
+                LatLng abs = LatLng.ToAbsolute(gmap.Position.Lat, gmap.Position.Lng, route[i].Lat, route[i].Lng);
+                route[i] = new PointLatLng(abs.Lat, abs.Lng);
+            }
             return route;
         }
         #endregion
@@ -579,7 +600,8 @@ namespace GluonCS.LiveUavLayer
                 if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_REL ||
                     ni.opcode == NavigationInstruction.navigation_command.FLY_TO_REL ||
                     ni.opcode == NavigationInstruction.navigation_command.FROM_TO_REL ||
-                    ni.opcode == NavigationInstruction.navigation_command.FLARE_TO_REL)
+                    ni.opcode == NavigationInstruction.navigation_command.FLARE_TO_REL ||
+                    ni.opcode == NavigationInstruction.navigation_command.CIRCLE_TO_REL)
                 {
                     ni.x = p.Lat / 180.0 * Math.PI;
                     ni.y = p.Lng / 180.0 * Math.PI;
@@ -587,7 +609,8 @@ namespace GluonCS.LiveUavLayer
                 else if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_ABS ||
                         ni.opcode == NavigationInstruction.navigation_command.FLY_TO_ABS ||
                         ni.opcode == NavigationInstruction.navigation_command.FROM_TO_ABS ||
-                        ni.opcode == NavigationInstruction.navigation_command.FLARE_TO_ABS)
+                        ni.opcode == NavigationInstruction.navigation_command.FLARE_TO_ABS ||
+                        ni.opcode == NavigationInstruction.navigation_command.CIRCLE_TO_ABS)
                 {
                     LatLng rel = LatLng.ToRelative(home.Position.Lat, home.Position.Lng, nm.Position.Lat, nm.Position.Lng);
                     ni.x = rel.Lat;
@@ -596,12 +619,16 @@ namespace GluonCS.LiveUavLayer
 
                 if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_REL)
                     ni.opcode = NavigationInstruction.navigation_command.CIRCLE_ABS;
+                if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_TO_REL)
+                    ni.opcode = NavigationInstruction.navigation_command.CIRCLE_TO_ABS;
                 else if (ni.opcode == NavigationInstruction.navigation_command.FLY_TO_REL)
                     ni.opcode = NavigationInstruction.navigation_command.FLY_TO_ABS;
                 else if (ni.opcode == NavigationInstruction.navigation_command.FROM_TO_REL)
                     ni.opcode = NavigationInstruction.navigation_command.FROM_TO_ABS;
                 else if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_ABS)
                     ni.opcode = NavigationInstruction.navigation_command.CIRCLE_REL;
+                else if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_TO_ABS)
+                    ni.opcode = NavigationInstruction.navigation_command.CIRCLE_TO_REL;
                 else if (ni.opcode == NavigationInstruction.navigation_command.FLY_TO_ABS)
                     ni.opcode = NavigationInstruction.navigation_command.FLY_TO_REL;
                 else if (ni.opcode == NavigationInstruction.navigation_command.FROM_TO_ABS)
@@ -610,6 +637,10 @@ namespace GluonCS.LiveUavLayer
                     ni.opcode = NavigationInstruction.navigation_command.FLARE_TO_REL;
                 else if (ni.opcode == NavigationInstruction.navigation_command.FLARE_TO_REL)
                     ni.opcode = NavigationInstruction.navigation_command.FLARE_TO_ABS;
+                else if (ni.opcode == NavigationInstruction.navigation_command.GLIDE_TO_ABS)
+                    ni.opcode = NavigationInstruction.navigation_command.GLIDE_TO_REL;
+                else if (ni.opcode == NavigationInstruction.navigation_command.GLIDE_TO_REL)
+                    ni.opcode = NavigationInstruction.navigation_command.GLIDE_TO_ABS;
                 model.UpdateLocalNavigationInstruction(ni);
             }
         }
