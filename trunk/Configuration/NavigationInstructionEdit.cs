@@ -56,6 +56,9 @@ namespace Configuration
             else if (ni.opcode == NavigationInstruction.navigation_command.GLIDE_TO_ABS ||
                      ni.opcode == NavigationInstruction.navigation_command.GLIDE_TO_REL)
                 _cb_opcode.SelectedIndex = GetIndexFor("GLIDE_TO");
+            else if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_TO_ABS ||
+                                 ni.opcode == NavigationInstruction.navigation_command.CIRCLE_TO_REL)
+                _cb_opcode.SelectedIndex = GetIndexFor("CIRCLE_TO");
             else if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_ABS ||
                      ni.opcode == NavigationInstruction.navigation_command.CIRCLE_REL)
                 _cb_opcode.SelectedIndex = GetIndexFor("CIRCLE");
@@ -168,6 +171,11 @@ namespace Configuration
             {
                 webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\glideto.html");
                 c = new NavigationCommands.GlideTo(ni);
+            }
+            else if (_cb_opcode.Text.StartsWith("CIRCLE_TO"))
+            {
+                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\circleto.html");
+                c = new NavigationCommands.CircleTo(ni);
             }
             else if (_cb_opcode.Text.StartsWith("IF"))
             {

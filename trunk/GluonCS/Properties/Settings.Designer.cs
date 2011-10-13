@@ -226,5 +226,17 @@ namespace GluonCS.Properties {
                 this["SurveyAltitudeM"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Gluonpilot")]
+        public string UavName {
+            get {
+                return ((string)(this["UavName"]));
+            }
+            set {
+                this["UavName"] = value;
+            }
+        }
     }
 }

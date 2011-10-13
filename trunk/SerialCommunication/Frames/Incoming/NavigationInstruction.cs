@@ -40,7 +40,9 @@ namespace Communication.Frames.Incoming
             GLIDE_TO_ABS = 22,
             GLIDE_TO_REL = 23,
             SET_LOITER_POSITION = 24,
-            LOITER_CIRCLE = 25
+            LOITER_CIRCLE = 25,
+            CIRCLE_TO_ABS = 26,
+            CIRCLE_TO_REL = 27
         };
 
         public navigation_command opcode;
@@ -141,6 +143,12 @@ namespace Communication.Frames.Incoming
                 break;
             case navigation_command.FLY_TO_ABS:    // x, y, height
                 s += "FlyTo[Absolute](alt: " + a + "m, lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°)";
+                break;
+            case navigation_command.CIRCLE_TO_REL:
+                s += "CircleTo[Relative](alt: " + a + "m, lat: " + X.ToString("F0") + "m, lon: " + Y.ToString("F0") + "m)";
+                break;
+            case navigation_command.CIRCLE_TO_ABS:    // x, y, height
+                s += "CircleTo[Absolute](alt: " + a + "m, lat: " + RAD2DEG(x).ToString("F5") + "°, lon: " + RAD2DEG(y).ToString("F5") + "°)";
                 break;
             case navigation_command.GOTO:	   // line number
                 s += "Goto(" + (a+1) + ")";
@@ -296,7 +304,8 @@ namespace Communication.Frames.Incoming
                    opcode == navigation_command.FLARE_TO_REL ||
                    opcode == navigation_command.GLIDE_TO_REL ||
                    opcode == navigation_command.FLY_TO_REL ||
-                   opcode == navigation_command.FROM_TO_REL;
+                   opcode == navigation_command.FROM_TO_REL ||
+                   opcode == navigation_command.CIRCLE_TO_REL;
         }
 
         public bool HasAbsoluteCoordinates()
@@ -305,7 +314,8 @@ namespace Communication.Frames.Incoming
                    opcode == navigation_command.FLARE_TO_ABS ||
                    opcode == navigation_command.GLIDE_TO_ABS ||
                    opcode == navigation_command.FLY_TO_ABS ||
-                   opcode == navigation_command.FROM_TO_ABS;
+                   opcode == navigation_command.FROM_TO_ABS ||
+                   opcode == navigation_command.CIRCLE_TO_ABS;
         }
 
         public bool IsWaypoint()
@@ -319,7 +329,9 @@ namespace Communication.Frames.Incoming
                    opcode == navigation_command.FLARE_TO_ABS ||
                    opcode == navigation_command.GLIDE_TO_ABS ||
                    opcode == navigation_command.FLY_TO_ABS ||
-                   opcode == navigation_command.FROM_TO_ABS;
+                   opcode == navigation_command.FROM_TO_ABS ||
+                   opcode == navigation_command.CIRCLE_TO_ABS ||
+                   opcode == navigation_command.CIRCLE_TO_REL;
         }
     }
 }
