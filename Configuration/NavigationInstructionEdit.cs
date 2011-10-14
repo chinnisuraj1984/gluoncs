@@ -32,7 +32,7 @@ namespace Configuration
             InitializeComponent();
             this.ni = ni;
 
-            if ((int)ni.opcode > 25)
+            if ((int)ni.opcode > Enum.GetValues(typeof(NavigationInstruction.navigation_command)).Cast<int>().Max())
                 ni.opcode = 0;
 
             /*
@@ -57,7 +57,7 @@ namespace Configuration
                      ni.opcode == NavigationInstruction.navigation_command.GLIDE_TO_REL)
                 _cb_opcode.SelectedIndex = GetIndexFor("GLIDE_TO");
             else if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_TO_ABS ||
-                                 ni.opcode == NavigationInstruction.navigation_command.CIRCLE_TO_REL)
+                     ni.opcode == NavigationInstruction.navigation_command.CIRCLE_TO_REL)
                 _cb_opcode.SelectedIndex = GetIndexFor("CIRCLE_TO");
             else if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_ABS ||
                      ni.opcode == NavigationInstruction.navigation_command.CIRCLE_REL)

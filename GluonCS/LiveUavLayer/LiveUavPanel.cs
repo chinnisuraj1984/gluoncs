@@ -157,7 +157,7 @@ namespace GluonCS
                         _lblFlightMode.Text = "Autopilot ON";
                         _lblFlightMode.BackColor = Color.LimeGreen;
                     }
-                    else if (model.FlightMode == ControlInfo.FlightModes.AUTOPILOT)
+                    else if (model.FlightMode == ControlInfo.FlightModes.STABILIZED)
                     {
                         _lblFlightMode.Text = "Stabilized manual\r\nRC mode";
                         _lblFlightMode.BackColor = Color.Yellow;
@@ -793,6 +793,53 @@ namespace GluonCS
             }
         }
 
+        private void _btnNewSurvey_Click(object sender, EventArgs e)
+        {
+            int line = SelectNewBlockLine();
+            if (line == -1)
+                return;
 
+            NavigationInstruction ni = new NavigationInstruction();
+            ni.line = line;
+            ni.StringToArgument("Survey");
+            ni.opcode = NavigationInstruction.navigation_command.BLOCK;
+            model.UpdateLocalNavigationInstruction(ni);
+            for(int i = line; model.GetNavigationInstructionLocal(i).opcode != NavigationInstruction.navigation_command.BLOCK && i < model.MaxNumberOfNavigationInstructions(); i++)
+            {
+                NavigationInstruction emptyni = new NavigationInstruction();
+                emptyni.line = i;
+                emptyni.opcode = NavigationInstruction.navigation_command.EMPTY;
+                model.UpdateLocalNavigationInstruction(ni);
+            }
+        }
+
+        private int SelectNewBlockLine()
+        {
+            int selected_index = _lv_navigation.SelectedIndices.Count == 0 ? 0 : _lv_navigation.SelectedIndices[0];
+
+            DialogResult r = MessageBox.Show("Do you want me to insert the block at the first empty line?", "Add new block", MessageBoxButtons.YesNoCancel);
+            if (r == DialogResult.Yes)
+            {
+                for (int i = 0; i < _lv_navigation.Items.Count; i++)
+                {
+                    if (model.GetNavigationInstructionLocal(i).opcode == NavigationInstruction.navigation_command.EMPTY)
+                        return i;
+                }
+                MessageBox.Show("Sorry, no empty position detected. Please select the line where you want the block to be inserted and try again.", "Add block");
+            }
+            else if (r == DialogResult.No)
+            {
+                if (MessageBox.Show("Inserting the new block at the selected position " + (selected_index + 1).ToString() + "", "Add new block", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    return selected_index;
+                }
+            }
+            return -1;
+        }
+
+        private void _btnBuildSurvey_Click(object sender, EventArgs e)
+        {
+            model.GenerateSurveyLines();
+        }
     }
 }
