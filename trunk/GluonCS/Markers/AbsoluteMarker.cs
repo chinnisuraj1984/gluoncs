@@ -47,6 +47,7 @@ namespace GluonCS.Markers
                 g.DrawString(str, new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), Brushes.Red, LocalPosition.X + 14, LocalPosition.Y + 0);
 
             g.FillRectangle(backgroundmarkercolor, new Rectangle(LocalPosition.X, LocalPosition.Y, Size.Width, Size.Height));
+            //g.DrawImage(pin, new Point(LocalPosition.X - 3, LocalPosition.Y - Size.Height));
             g.DrawRectangle(Pen, new Rectangle(LocalPosition.X - (-6) / 2, LocalPosition.Y - (-6) / 2, Size.Width - 6, Size.Height - 6));
         }
     }

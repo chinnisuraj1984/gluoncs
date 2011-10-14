@@ -629,7 +629,15 @@ namespace GluonCS
 
         private void _btnAutoSync_CheckedChanged(object sender, EventArgs e)
         {
-            model.AutoSync = _btnAutoSync.Checked;
+            try
+            {
+                model.AutoSync = _btnAutoSync.Checked;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Can't synchronize with data that has not yet been received. \r\nPlease read the navigation data from the module first or perform a Write operation.", "Error synchronizing");
+                _btnAutoSync.Checked = false;
+            }
         }
 
         private void _btnNaviReload_Click(object sender, EventArgs e)
@@ -774,7 +782,9 @@ namespace GluonCS
                 Console.WriteLine("Reading model information");
 
                 NavigationInstruction[] list = (NavigationInstruction[])xmlSerializer.Deserialize(stream);
-                int selected_index = _lv_navigation.SelectedIndices.Count == 0 ? 0 : _lv_navigation.SelectedIndices[0];
+                int selected_index = SelectNewBlockLine(); //_lv_navigation.SelectedIndices.Count == 0 ? 0 : _lv_navigation.SelectedIndices[0];
+                if (selected_index == -1)
+                    return;
 
                 if (MessageBox.Show("The block will be inserted at line nr " + (selected_index + 1).ToString() + ".", "Inserting block", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                 {
@@ -795,7 +805,24 @@ namespace GluonCS
 
         private void _btnNewSurvey_Click(object sender, EventArgs e)
         {
-            int line = SelectNewBlockLine();
+            int line;
+            if (model.NavigationModel.Blocks.ContainsKey("Survey"))
+            {
+                if (MessageBox.Show("There already is a Survey block. It will be cleared.", "New survey block", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    line = model.NavigationModel.Blocks["Survey"];
+                else
+                    return;
+            }
+            else if (model.NavigationModel.Blocks.ContainsKey("DoSurvey"))
+            {
+                if (MessageBox.Show("There already is a DoSurvey block. It will be cleared.", "New survey block", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    line = model.NavigationModel.Blocks["DoSurvey"];
+                else
+                    return;
+            }
+            else
+                line = SelectNewBlockLine();
+
             if (line == -1)
                 return;
 
@@ -804,12 +831,12 @@ namespace GluonCS
             ni.StringToArgument("Survey");
             ni.opcode = NavigationInstruction.navigation_command.BLOCK;
             model.UpdateLocalNavigationInstruction(ni);
-            for(int i = line; model.GetNavigationInstructionLocal(i).opcode != NavigationInstruction.navigation_command.BLOCK && i < model.MaxNumberOfNavigationInstructions(); i++)
+            for(int i = line+1; i < model.MaxNumberOfNavigationInstructions() && model.GetNavigationInstructionLocal(i).opcode != NavigationInstruction.navigation_command.BLOCK; i++)
             {
                 NavigationInstruction emptyni = new NavigationInstruction();
                 emptyni.line = i;
                 emptyni.opcode = NavigationInstruction.navigation_command.EMPTY;
-                model.UpdateLocalNavigationInstruction(ni);
+                model.UpdateLocalNavigationInstruction(emptyni);
             }
         }
 

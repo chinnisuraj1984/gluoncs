@@ -180,6 +180,7 @@
     </Compile>
     <Compile Include="Markers\AbsoluteMarker.cs" />
     <Compile Include="Markers\GluonHomeMarker.cs" />
+    <Compile Include="Markers\IconMarker.cs" />
     <Compile Include="Markers\MoveableMarker.cs" />
     <Compile Include="Markers\NavigationMarker.cs" />
     <Compile Include="Markers\RelativeCircleMarker.cs" />
@@ -409,6 +410,21 @@
     </Content>
     <Content Include="..\models\mq-9 reaper\Texture.jpg">
       <Link>Models\Reaper\Texture.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\marker.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\marker_empty.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\marker_empty_gray.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\marker_empty_white.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\marker_empty_yellow.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\windvane.png">
