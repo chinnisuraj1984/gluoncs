@@ -220,7 +220,10 @@ namespace Gluonpilot
                 _lblFunctionOut6.Text = "Camera roll";
                 mixing = 4;
             }
-            serial.SendControlSettings(mixing, config.control_max_pitch, config.control_max_roll, config.control_aileron_differential, config.control_waypoint_radius, config.control_cruising_speed, config.control_stabilization_with_altitude_hold);
+            if (config != null)
+                serial.SendControlSettings(mixing, config.control_max_pitch, config.control_max_roll, config.control_aileron_differential, config.control_waypoint_radius, config.control_cruising_speed, config.control_stabilization_with_altitude_hold);
+            else
+                MessageBox.Show("No configuration has been received from the gluonpilot module, please retry", "Error");
         }
 
         private void _btnCalibrateGyroscopes_Click(object sender, EventArgs e)

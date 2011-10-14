@@ -46,6 +46,7 @@ namespace GluonCS.LiveUavLayer
         public DateTime BlockStartTime = DateTime.Now;
         private string lastBlockname = "";
         private bool hasTakenOff = false;
+        public int maxLineNumberReceived = -1;
 
         private List<NavigationInstruction> navigation_local = new List<NavigationInstruction>(36);
         private List<NavigationInstruction> navigation_remote = new List<NavigationInstruction>(36);
@@ -62,7 +63,9 @@ namespace GluonCS.LiveUavLayer
         {
             get { return autoSync; }
             set 
-            { 
+            {
+                if (maxLineNumberReceived == -1 && value == true)
+                    throw new Exception("Can't syncronize if I didn't receive any navigation data from the gluonpilot! Please do a read first.");
                 autoSync = value;
                 if (autoSync && uavSynchronizer != null)
                     uavSynchronizer.StartThread();
@@ -345,6 +348,8 @@ namespace GluonCS.LiveUavLayer
         {
             //if (navigationLineReceived.
             navigationLineReceived.Set();  // used when a line is written, waiting for its confirmation
+            if (maxLineNumberReceived < ni.line)
+                maxLineNumberReceived = ni.line;
 
             //Console.WriteLine("connection_NavigationInstructionCommunicationReceived ENTER");
             lock (navigation_remote)
@@ -437,6 +442,8 @@ namespace GluonCS.LiveUavLayer
 
         public void GenerateSurveyLines()
         {
+            bool is_turningpoint = false;
+
             if (!NavigationModel.Blocks.ContainsKey("Survey"))
                 return;
 
@@ -452,15 +459,21 @@ namespace GluonCS.LiveUavLayer
             List<PointLatLng> corners = Survey.GenerateSurvey(polygon);
 
             int line = NavigationModel.Blocks["Survey"] + 1;
-            foreach (PointLatLng c in corners)
+            for (int i = 0; i < corners.Count; i++)
             {
+                PointLatLng c = corners[i];
+
                 NavigationInstruction ni = new NavigationInstruction();
-                ni.opcode = NavigationInstruction.navigation_command.FROM_TO_ABS;
+                if (is_turningpoint)
+                    ni.opcode = NavigationInstruction.navigation_command.CIRCLE_TO_ABS;
+                else
+                    ni.opcode = NavigationInstruction.navigation_command.FROM_TO_ABS;
                 ni.x = c.Lat/180.0*Math.PI;
                 ni.y = c.Lng/180.0*Math.PI;
                 ni.line = line;
                 UpdateLocalNavigationInstruction(ni);
                 line++;
+                is_turningpoint = !is_turningpoint;
             }
             NavigationInstruction blockdef = GetNavigationInstructionLocal(NavigationModel.Blocks["Survey"]);
             blockdef.StringToArgument("DoSurvey");
@@ -514,7 +527,7 @@ namespace GluonCS.LiveUavLayer
         }
         public bool WriteLocalNavigation()
         {
-            bool ret = true;
+            /*bool ret = true;
             for (int i = 0; i < navigation_local.Count; i++)
             {
                 NavigationInstruction ni = new NavigationInstruction(navigation_local[i]);
@@ -530,8 +543,40 @@ namespace GluonCS.LiveUavLayer
                     Thread.Sleep(70);
                 }
             }
-            return ret;
+            return ret;*/
+
+            maxLineNumberReceived = navigation_local.Count;// MaxNumberOfNavigationInstructions();
+            bool last_autosync = AutoSync;
+            AutoSync = true;
+
+            int last_number_not_synced = MaxNumberOfNavigationInstructions();
+            while (true)
+            {
+                int number_not_synced = 0;
+                for (int i = 0; i < MaxNumberOfNavigationInstructions(); i++)
+                {
+                    NavigationInstruction ni = new NavigationInstruction(navigation_local[i]);
+                    if (ni.line < navigation_remote.Count && ni != navigation_remote[ni.line])
+                        number_not_synced++;
+                }
+                if (number_not_synced == 0)
+                {
+                    AutoSync = last_autosync;
+                    return true;
+                }
+                else if (number_not_synced < last_number_not_synced)
+                    Thread.Sleep(500);
+                else
+                {
+                    AutoSync = last_autosync;
+                    return false;
+                }
+
+                last_number_not_synced = number_not_synced;
+            }
         }
+
+
         public void ReloadNavigation()
         {
             serial.SendNavigationLoad();
@@ -564,7 +609,6 @@ namespace GluonCS.LiveUavLayer
         private LiveUavModel model;
         private SerialCommunication serial;
         private SmartThreadPool smartThreadPool;
-        private int maxLineNumberReceived = -1;
 
         public UavNavigationSynchronize(LiveUavModel model, SerialCommunication serial)
         {
@@ -572,12 +616,6 @@ namespace GluonCS.LiveUavLayer
             this.serial = serial;
         }
 
-        void serial_NavigationInstructionCommunicationReceived(NavigationInstruction ni)
-        {
-            // OK, we received some information about the navigation we can start synchronizing
-            if (ni.line > maxLineNumberReceived)
-                maxLineNumberReceived = ni.line;
-        }
 
         public void StartThread()
         {
@@ -587,7 +625,7 @@ namespace GluonCS.LiveUavLayer
             IWorkItemResult wir =
                 smartThreadPool.QueueWorkItem(new WorkItemCallback(SynchronizeNavigation), null);
             smartThreadPool.Start();
-            serial.NavigationInstructionCommunicationReceived += new SerialCommunication.ReceiveNavigationInstructionCommunicationFrame(serial_NavigationInstructionCommunicationReceived);
+            //serial.NavigationInstructionCommunicationReceived += new SerialCommunication.ReceiveNavigationInstructionCommunicationFrame(serial_NavigationInstructionCommunicationReceived);
         }
 
         public void Pause()
@@ -600,7 +638,7 @@ namespace GluonCS.LiveUavLayer
                     smartThreadPool.Shutdown();
                     smartThreadPool = null;
                 }
-                serial.NavigationInstructionCommunicationReceived -= new SerialCommunication.ReceiveNavigationInstructionCommunicationFrame(serial_NavigationInstructionCommunicationReceived);
+                //serial.NavigationInstructionCommunicationReceived -= new SerialCommunication.ReceiveNavigationInstructionCommunicationFrame(serial_NavigationInstructionCommunicationReceived);
             }
             catch (ObjectDisposedException e)
             {
@@ -613,7 +651,7 @@ namespace GluonCS.LiveUavLayer
         {
             Console.WriteLine("Thread for synchro started");
 
-            while (maxLineNumberReceived == -1 && model.Serial.IsOpen)
+            while (model.maxLineNumberReceived == -1 && model.Serial.IsOpen)
             {
                 Console.WriteLine("Waiting for NI...");
                 Thread.Sleep(1000);
@@ -621,7 +659,7 @@ namespace GluonCS.LiveUavLayer
 
             while (/*!SmartThreadPool.IsWorkItemCanceled*/model.Serial.IsOpen && model.AutoSync)
             {
-                for (int i = 0; i < model.MaxNumberOfNavigationInstructions() && i < maxLineNumberReceived; i++)
+                for (int i = 0; i < model.MaxNumberOfNavigationInstructions() && i < model.maxLineNumberReceived; i++)
                 {
                     if (!model.IsNavigationSynchronized(i))
                     {

@@ -89,9 +89,15 @@ namespace GluonCS.LiveUavLayer
                     if (PointInPolygon(poly, new PointLatLng(lat, lng)))
                     {
                         route.Add(new PointLatLng(lat, lng));
+                        if (route.Count > 1)
+                        {
+                            route[route.Count - 2] = new PointLatLng(route[route.Count - 2].Lat, Math.Min(route[route.Count - 1].Lng, route[route.Count - 2].Lng));
+                            route[route.Count - 1] = new PointLatLng(route[route.Count - 1].Lat, Math.Min(route[route.Count - 1].Lng, route[route.Count - 2].Lng));
+                        }
                         break;
                     }
                 }
+
                 for (; lng < maxLng; lng += dst_lng / 20)
                 {
                     if (!PointInPolygon(poly, new PointLatLng(lat, lng)))
@@ -119,9 +125,15 @@ namespace GluonCS.LiveUavLayer
                     if (PointInPolygon(poly, new PointLatLng(lat, lng)))
                     {
                         route.Add(new PointLatLng(lat, lng));
+                        if (route.Count > 1)
+                        {
+                            route[route.Count - 2] = new PointLatLng(route[route.Count - 2].Lat, Math.Max(route[route.Count - 1].Lng, route[route.Count - 2].Lng));
+                            route[route.Count - 1] = new PointLatLng(route[route.Count - 1].Lat, Math.Max(route[route.Count - 1].Lng, route[route.Count - 2].Lng));
+                        }
                         break;
                     }
                 }
+
                 for (; lng > minLng; lng -= dst_lng / 20)
                 {
                     if (!PointInPolygon(poly, new PointLatLng(lat, lng)))

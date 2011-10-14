@@ -23,6 +23,7 @@ namespace GluonCS.LiveUavLayer
         private GMapMarker current_marker = null;
         private GMapMarker home;
         private bool is_mouse_down = false;
+        private Point click_offset;
         private bool hasReceivedGps = false;
         private int current_waypointline = -1;
 
@@ -165,6 +166,14 @@ namespace GluonCS.LiveUavLayer
                 ni.y = p.Lng / 180.0 * Math.PI; ;
                 model.UpdateLocalNavigationInstruction(ni);  // not good way to go
             }
+            if (current_marker is IconMarker && ((IconMarker)current_marker).IsAbsolute)
+            {
+                PointLatLng p = gmap.FromLocalToLatLng(x, y);
+                NavigationInstruction ni = model.GetNavigationInstructionLocal(((IconMarker)current_marker).Number);
+                ni.x = p.Lat / 180.0 * Math.PI;
+                ni.y = p.Lng / 180.0 * Math.PI; ;
+                model.UpdateLocalNavigationInstruction(ni);  // not good way to go
+            }
         }
 
 #region Model events
@@ -234,13 +243,12 @@ namespace GluonCS.LiveUavLayer
                         uavRoute.Points.RemoveRange(0, 100);
 
                     gmap.UpdateRouteLocalPosition(uavRoute);
-
                     uavMarker.Yaw = model.Yaw;
                     uavMarker.AltitudeAglM = model.AltitudeAglM;
                     uavMarker.SpeedMS = model.SpeedMS;
                     uavMarker.Position = new PointLatLng(model.UavPosition.Lat, model.UavPosition.Lng);
                     gmap.UpdateMarkerLocalPosition(uavMarker);
-
+                    gmap.Position = uavMarker.Position;
                     //this.NavigationOverlay.
 
                     if (!hasReceivedGps)  // first gps position? center on UAV
@@ -315,9 +323,9 @@ namespace GluonCS.LiveUavLayer
                         else if (ni.HasAbsoluteCoordinates())
                         {
                             if (model.IsNavigationSynchronized(i))
-                                mm = new AbsoluteMarker(gmap.Position, i, false);
+                                mm = new IconMarker(gmap.Position, i, true, false);
                             else
-                                mm = new AbsoluteMarker(gmap.Position, i, true);
+                                mm = new IconMarker(gmap.Position, i, true, true);
 
                             mm.Position = new PointLatLng(ni.x / Math.PI * 180.0,
                                                           ni.y / Math.PI * 180.0);
@@ -457,6 +465,7 @@ namespace GluonCS.LiveUavLayer
                     ni.opcode == NavigationInstruction.navigation_command.FLY_TO_REL ||
                     ni.opcode == NavigationInstruction.navigation_command.FROM_TO_REL ||
                     ni.opcode == NavigationInstruction.navigation_command.FLARE_TO_REL ||
+                    ni.opcode == NavigationInstruction.navigation_command.GLIDE_TO_REL ||
                     ni.opcode == NavigationInstruction.navigation_command.CIRCLE_TO_REL)
                 {
                     ni.x = p.Lat / 180.0 * Math.PI;
@@ -466,6 +475,7 @@ namespace GluonCS.LiveUavLayer
                         ni.opcode == NavigationInstruction.navigation_command.FLY_TO_ABS ||
                         ni.opcode == NavigationInstruction.navigation_command.FROM_TO_ABS ||
                         ni.opcode == NavigationInstruction.navigation_command.FLARE_TO_ABS ||
+                        ni.opcode == NavigationInstruction.navigation_command.GLIDE_TO_ABS ||
                         ni.opcode == NavigationInstruction.navigation_command.CIRCLE_TO_ABS)
                 {
                     LatLng rel = LatLng.ToRelative(home.Position.Lat, home.Position.Lng, nm.Position.Lat, nm.Position.Lng);
@@ -475,7 +485,7 @@ namespace GluonCS.LiveUavLayer
 
                 if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_REL)
                     ni.opcode = NavigationInstruction.navigation_command.CIRCLE_ABS;
-                if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_TO_REL)
+                else if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_TO_REL)
                     ni.opcode = NavigationInstruction.navigation_command.CIRCLE_TO_ABS;
                 else if (ni.opcode == NavigationInstruction.navigation_command.FLY_TO_REL)
                     ni.opcode = NavigationInstruction.navigation_command.FLY_TO_ABS;
@@ -579,10 +589,10 @@ namespace GluonCS.LiveUavLayer
 
                 if (current_marker.Overlay == NavigationOverlay)
                 {
-                    current_marker.Position = gmap.FromLocalToLatLng(e.X, e.Y);
+                    current_marker.Position = gmap.FromLocalToLatLng(e.X - click_offset.X, e.Y - click_offset.Y);
                     if (current_marker is NavigationMarker)
                     {
-                        UpdateCurrentMarkerInModel(e.X, e.Y);
+                        UpdateCurrentMarkerInModel(e.X - click_offset.X, e.Y - click_offset.Y);
                     }
                 }
             }
@@ -630,6 +640,10 @@ namespace GluonCS.LiveUavLayer
                 is_mouse_down = true;
             else
                 is_mouse_down = false;
+            if (current_marker != null)
+            {
+                click_offset = new Point(e.X - current_marker.LocalPosition.X + current_marker.Offset.X, e.Y - current_marker.LocalPosition.Y + current_marker.Offset.Y);
+            }
         }
 
         void gmap_OnMarkerLeave(GMapMarker item)
@@ -649,7 +663,7 @@ namespace GluonCS.LiveUavLayer
         DateTime lastclick = DateTime.Now;
         void gmap_OnMarkerClick(GMapMarker item, MouseEventArgs e)
         {
-
+            ;
         }
 #endregion 
     }
