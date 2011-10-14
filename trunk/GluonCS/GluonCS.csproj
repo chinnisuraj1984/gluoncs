@@ -161,6 +161,7 @@
     <Compile Include="LiveUavLayer\NavigationOverview.Designer.cs">
       <DependentUpon>NavigationOverview.cs</DependentUpon>
     </Compile>
+    <Compile Include="LiveUavLayer\Survey.cs" />
     <Compile Include="LiveUavLayer\SurveyProperties.cs">
       <SubType>Form</SubType>
     </Compile>

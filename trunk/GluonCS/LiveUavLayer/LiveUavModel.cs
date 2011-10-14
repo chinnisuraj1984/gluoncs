@@ -434,6 +434,40 @@ namespace GluonCS.LiveUavLayer
             ThrottlePct = ci.Throttle;
         }
 
+
+        public void GenerateSurveyLines()
+        {
+            if (!NavigationModel.Blocks.ContainsKey("Survey"))
+                return;
+
+            List<PointLatLng> polygon = new List<PointLatLng>();
+
+            for (int i = NavigationModel.Blocks["Survey"]; i < NavigationModel.Commands.Count; i++)
+            {
+                NavigationInstruction ni = GetNavigationInstructionLocal(i);
+                if (NavigationModel.Commands[i].BlockName.StartsWith("Survey") && ni.HasAbsoluteCoordinates())
+                    polygon.Add(new PointLatLng(ni.x / Math.PI * 180.0, ni.y / Math.PI * 180.0));
+            }
+
+            List<PointLatLng> corners = Survey.GenerateSurvey(polygon);
+
+            int line = NavigationModel.Blocks["Survey"] + 1;
+            foreach (PointLatLng c in corners)
+            {
+                NavigationInstruction ni = new NavigationInstruction();
+                ni.opcode = NavigationInstruction.navigation_command.FROM_TO_ABS;
+                ni.x = c.Lat/180.0*Math.PI;
+                ni.y = c.Lng/180.0*Math.PI;
+                ni.line = line;
+                UpdateLocalNavigationInstruction(ni);
+                line++;
+            }
+            NavigationInstruction blockdef = GetNavigationInstructionLocal(NavigationModel.Blocks["Survey"]);
+            blockdef.StringToArgument("DoSurvey");
+            UpdateLocalNavigationInstruction(blockdef);
+        }
+
+
         public void SendToNavigationLine(int line)
         {
             if (serial != null)

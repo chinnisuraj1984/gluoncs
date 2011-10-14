@@ -73,7 +73,11 @@
             this._lblSpeed = new System.Windows.Forms.Label();
             this._navigationPanel = new BSE.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this._btnAddBlock = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.addBlockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateSurveyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._btnNewSurvey = new System.Windows.Forms.ToolStripMenuItem();
+            this._btnBuildSurvey = new System.Windows.Forms.ToolStripMenuItem();
             this._btn_up = new System.Windows.Forms.ToolStripButton();
             this._btn_down = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -770,7 +774,7 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._btnAddBlock,
+            this.toolStripSplitButton1,
             this._btn_up,
             this._btn_down,
             this.toolStripSeparator1,
@@ -783,14 +787,50 @@
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // _btnAddBlock
+            // toolStripSplitButton1
             // 
-            this._btnAddBlock.Image = ((System.Drawing.Image)(resources.GetObject("_btnAddBlock.Image")));
-            this._btnAddBlock.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this._btnAddBlock.Name = "_btnAddBlock";
-            this._btnAddBlock.Size = new System.Drawing.Size(73, 22);
-            this._btnAddBlock.Text = "Add block";
-            this._btnAddBlock.Click += new System.EventHandler(this._btnAddBlock_Click);
+            this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addBlockToolStripMenuItem,
+            this.generateSurveyToolStripMenuItem});
+            this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
+            this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
+            this.toolStripSplitButton1.Size = new System.Drawing.Size(72, 22);
+            this.toolStripSplitButton1.Text = "Helpers";
+            // 
+            // addBlockToolStripMenuItem
+            // 
+            this.addBlockToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("addBlockToolStripMenuItem.Image")));
+            this.addBlockToolStripMenuItem.Name = "addBlockToolStripMenuItem";
+            this.addBlockToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addBlockToolStripMenuItem.Text = "Add block";
+            this.addBlockToolStripMenuItem.Click += new System.EventHandler(this._btnAddBlock_Click);
+            // 
+            // generateSurveyToolStripMenuItem
+            // 
+            this.generateSurveyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._btnNewSurvey,
+            this._btnBuildSurvey});
+            this.generateSurveyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("generateSurveyToolStripMenuItem.Image")));
+            this.generateSurveyToolStripMenuItem.Name = "generateSurveyToolStripMenuItem";
+            this.generateSurveyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.generateSurveyToolStripMenuItem.Text = "Survey";
+            // 
+            // _btnNewSurvey
+            // 
+            this._btnNewSurvey.Image = ((System.Drawing.Image)(resources.GetObject("_btnNewSurvey.Image")));
+            this._btnNewSurvey.Name = "_btnNewSurvey";
+            this._btnNewSurvey.Size = new System.Drawing.Size(152, 22);
+            this._btnNewSurvey.Text = "Create new";
+            this._btnNewSurvey.Click += new System.EventHandler(this._btnNewSurvey_Click);
+            // 
+            // _btnBuildSurvey
+            // 
+            this._btnBuildSurvey.Image = ((System.Drawing.Image)(resources.GetObject("_btnBuildSurvey.Image")));
+            this._btnBuildSurvey.Name = "_btnBuildSurvey";
+            this._btnBuildSurvey.Size = new System.Drawing.Size(152, 22);
+            this._btnBuildSurvey.Text = "Build";
+            this._btnBuildSurvey.Click += new System.EventHandler(this._btnBuildSurvey_Click);
             // 
             // _btn_up
             // 
@@ -1052,10 +1092,14 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
         private System.Windows.Forms.ToolStripMenuItem _ts_basicconfig;
         private System.Windows.Forms.ToolStripMenuItem _tbn_fullconfig;
-        private System.Windows.Forms.ToolStripButton _btnAddBlock;
         private System.Windows.Forms.ToolStripMenuItem _btnNaviBurn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripSplitButton1;
+        private System.Windows.Forms.ToolStripMenuItem addBlockToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generateSurveyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem _btnNewSurvey;
+        private System.Windows.Forms.ToolStripMenuItem _btnBuildSurvey;
     }
 }
