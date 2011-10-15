@@ -88,6 +88,8 @@ namespace GluonCS.LiveUavLayer
                 {
                     if (PointInPolygon(poly, new PointLatLng(lat, lng)))
                     {
+                        if (route.Count == 0)
+                            route.Add(new PointLatLng(lat + dst_lat, lng));
                         route.Add(new PointLatLng(lat, lng));
                         if (route.Count > 1)
                         {
@@ -102,6 +104,8 @@ namespace GluonCS.LiveUavLayer
                 {
                     if (!PointInPolygon(poly, new PointLatLng(lat, lng)))
                     {
+                        if (route.Count == 0)
+                            route.Add(new PointLatLng(lat + dst_lat, lng));
                         route.Add(new PointLatLng(lat, lng));
                         break;
                     }
@@ -124,6 +128,8 @@ namespace GluonCS.LiveUavLayer
                 {
                     if (PointInPolygon(poly, new PointLatLng(lat, lng)))
                     {
+                        if (route.Count == 0)
+                            route.Add(new PointLatLng(lat + dst_lat, lng));
                         route.Add(new PointLatLng(lat, lng));
                         if (route.Count > 1)
                         {
@@ -138,6 +144,8 @@ namespace GluonCS.LiveUavLayer
                 {
                     if (!PointInPolygon(poly, new PointLatLng(lat, lng)))
                     {
+                        if (route.Count == 0)
+                            route.Add(new PointLatLng(lat + dst_lat, lng));
                         route.Add(new PointLatLng(lat, lng));
                         break;
                     }
