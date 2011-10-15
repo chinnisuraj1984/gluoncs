@@ -30,21 +30,24 @@ namespace GluonCS.LiveUavLayer
 
         public int WaypointsInBlock(string blockname)
         {
-            int counter = 0;
-            if (!Blocks.ContainsKey(blockname))
-                return 0;
-
-            if (Blocks.ContainsKey(blockname))
+            lock (Commands)
             {
-                for (int i = Blocks[blockname] + 1; i < Commands.Count && Commands[i].BlockName == blockname; i++)
+                int counter = 0;
+                if (!Blocks.ContainsKey(blockname))
+                    return 0;
+
+                if (Blocks.ContainsKey(blockname))
                 {
-                    if (Commands[i].Instruction.HasAbsoluteCoordinates() || Commands[i].Instruction.HasRelativeCoordinates())
-                        counter++;
+                    for (int i = Blocks[blockname] + 1; i < Commands.Count && Commands[i].BlockName == blockname; i++)
+                    {
+                        if (Commands[i].Instruction.HasAbsoluteCoordinates() || Commands[i].Instruction.HasRelativeCoordinates())
+                            counter++;
+                    }
+                    return counter;
                 }
-                return counter;
+                else
+                    return 0;
             }
-            else
-                return 0;
         }
 
         public void Stop()

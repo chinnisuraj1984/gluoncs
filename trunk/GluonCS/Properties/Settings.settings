@@ -35,7 +35,7 @@
     <Setting Name="ProxyPassword" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="MapType" Type="GMap.NET.MapType" Scope="User">
+    <Setting Name="MapType" Type="System.String" Scope="User">
       <Value Profile="(Default)">GoogleHybrid</Value>
     </Setting>
     <Setting Name="ProxyAddress" Type="System.String" Scope="User">
@@ -58,6 +58,12 @@
     </Setting>
     <Setting Name="FollowUav" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="DefaultAltitudeM" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="DefaultCircleRadius" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">80</Value>
     </Setting>
   </Settings>
 </SettingsFile>

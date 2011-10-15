@@ -87,7 +87,8 @@ namespace GluonCS
 
             activeOverlay = controller.Overlay;
 
-            _gMapControl.MapType = Properties.Settings.Default.MapType;
+            if (Enum.IsDefined(typeof(MapType), Properties.Settings.Default.MapType))
+                _gMapControl.MapType = (MapType)Enum.Parse(typeof(MapType), Properties.Settings.Default.MapType, true);
         }
 
         void model_InformationMessageReceived(string s)

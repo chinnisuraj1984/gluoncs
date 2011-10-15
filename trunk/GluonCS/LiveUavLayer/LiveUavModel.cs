@@ -380,6 +380,9 @@ namespace GluonCS.LiveUavLayer
 
         void connection_GpsBasicCommunicationReceived(GpsBasic gpsbasic)
         {
+            if (Math.Abs(gpsbasic.Latitude) < 0.001 && Math.Abs(gpsbasic.Longitude) < 0.001) // data error
+                return;
+
             //uavPath.Add(new PointLatLng(gpsbasic.Latitude / Math.PI * 180.0, gpsbasic.Longitude / Math.PI * 180.0));
             if (gpsbasic.Status == 2)
                 NumberOfGpsSatellites = -1;
@@ -465,11 +468,18 @@ namespace GluonCS.LiveUavLayer
 
                 NavigationInstruction ni = new NavigationInstruction();
                 if (is_turningpoint)
+                {
                     ni.opcode = NavigationInstruction.navigation_command.CIRCLE_TO_ABS;
+                    ni.b = (int)Properties.Settings.Default.DefaultAltitudeM;
+                }
                 else
+                {
                     ni.opcode = NavigationInstruction.navigation_command.FROM_TO_ABS;
+                    ni.a = (int)Properties.Settings.Default.DefaultAltitudeM;
+                }
                 ni.x = c.Lat/180.0*Math.PI;
                 ni.y = c.Lng/180.0*Math.PI;
+
                 ni.line = line;
                 UpdateLocalNavigationInstruction(ni);
                 line++;

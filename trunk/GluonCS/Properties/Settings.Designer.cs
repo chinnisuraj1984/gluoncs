@@ -13,7 +13,7 @@ namespace GluonCS.Properties {
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "10.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+    public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
         
@@ -158,9 +158,9 @@ namespace GluonCS.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("GoogleHybrid")]
-        public global::GMap.NET.MapType MapType {
+        public string MapType {
             get {
-                return ((global::GMap.NET.MapType)(this["MapType"]));
+                return ((string)(this["MapType"]));
             }
             set {
                 this["MapType"] = value;
@@ -248,6 +248,30 @@ namespace GluonCS.Properties {
             }
             set {
                 this["FollowUav"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public double DefaultAltitudeM {
+            get {
+                return ((double)(this["DefaultAltitudeM"]));
+            }
+            set {
+                this["DefaultAltitudeM"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("80")]
+        public double DefaultCircleRadius {
+            get {
+                return ((double)(this["DefaultCircleRadius"]));
+            }
+            set {
+                this["DefaultCircleRadius"] = value;
             }
         }
     }

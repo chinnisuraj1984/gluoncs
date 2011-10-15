@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this._tbUavName = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this._cbUavAltSpeed = new System.Windows.Forms.CheckBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,8 +52,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this._btnOk = new System.Windows.Forms.Button();
             this._btnCancel = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this._tbUavName = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this._dtb_altitude = new Configuration.DistanceTextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this._dtb_radius = new Configuration.DistanceTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -69,6 +73,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this._dtb_radius);
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this._dtb_altitude);
+            this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this._tbUavName);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this._cbUavAltSpeed);
@@ -81,6 +89,23 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "General";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // _tbUavName
+            // 
+            this._tbUavName.Location = new System.Drawing.Point(74, 69);
+            this._tbUavName.Name = "_tbUavName";
+            this._tbUavName.Size = new System.Drawing.Size(155, 20);
+            this._tbUavName.TabIndex = 5;
+            this._tbUavName.TextChanged += new System.EventHandler(this._tbUavName_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 72);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(56, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Uav name";
             // 
             // _cbUavAltSpeed
             // 
@@ -280,22 +305,45 @@
             this._btnCancel.Text = "Cancel";
             this._btnCancel.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // label9
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 72);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Uav name";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 108);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(78, 13);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Default altitude";
             // 
-            // _tbUavName
+            // _dtb_altitude
             // 
-            this._tbUavName.Location = new System.Drawing.Point(74, 69);
-            this._tbUavName.Name = "_tbUavName";
-            this._tbUavName.Size = new System.Drawing.Size(155, 20);
-            this._tbUavName.TabIndex = 5;
-            this._tbUavName.TextChanged += new System.EventHandler(this._tbUavName_TextChanged);
+            this._dtb_altitude.Color = System.Drawing.SystemColors.Window;
+            this._dtb_altitude.DistanceM = 0D;
+            this._dtb_altitude.Location = new System.Drawing.Point(90, 105);
+            this._dtb_altitude.Name = "_dtb_altitude";
+            this._dtb_altitude.ReadOnly = false;
+            this._dtb_altitude.Size = new System.Drawing.Size(108, 24);
+            this._dtb_altitude.TabIndex = 7;
+            this._dtb_altitude.UseAltitudeColoring = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 137);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 13);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Default circle radius";
+            // 
+            // _dtb_radius
+            // 
+            this._dtb_radius.Color = System.Drawing.SystemColors.Window;
+            this._dtb_radius.DistanceM = 0D;
+            this._dtb_radius.Location = new System.Drawing.Point(112, 135);
+            this._dtb_radius.Name = "_dtb_radius";
+            this._dtb_radius.ReadOnly = false;
+            this._dtb_radius.Size = new System.Drawing.Size(108, 24);
+            this._dtb_radius.TabIndex = 9;
+            this._dtb_radius.UseAltitudeColoring = false;
             // 
             // Setup
             // 
@@ -345,5 +393,9 @@
         private System.Windows.Forms.CheckBox _cbUseProxy;
         private System.Windows.Forms.TextBox _tbUavName;
         private System.Windows.Forms.Label label8;
+        private Configuration.DistanceTextBox _dtb_altitude;
+        private System.Windows.Forms.Label label9;
+        private Configuration.DistanceTextBox _dtb_radius;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -17,6 +17,10 @@ namespace Configuration.NavigationCommands
         public Circle(NavigationInstruction ni)
         {
             InitializeComponent();
+            if (ni.b == 0) // altitude
+                ni.b = (int) GluonCS.Properties.Settings.Default.DefaultAltitudeM;
+            if (ni.a == 0) // radius
+                ni.a = (int)GluonCS.Properties.Settings.Default.DefaultCircleRadius;
             SetNavigationInstruction(ni);
         }
 
