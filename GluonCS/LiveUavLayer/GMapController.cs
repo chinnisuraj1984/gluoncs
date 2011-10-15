@@ -552,6 +552,7 @@ namespace GluonCS.LiveUavLayer
                     LatLng abs = LatLng.ToRelative(home.Position.Lat, home.Position.Lng, p.Lat, p.Lng);
                     ni.x = abs.Lat;
                     ni.y = abs.Lng;
+                    ni.a = (int)Properties.Settings.Default.DefaultAltitudeM;
                     model.UpdateLocalNavigationInstruction(ni);
                     break;
                 }
@@ -569,6 +570,7 @@ namespace GluonCS.LiveUavLayer
                     ni.opcode = NavigationInstruction.navigation_command.FLY_TO_ABS;
                     ni.x = p.Lat / 180.0 * Math.PI;
                     ni.y = p.Lng / 180.0 * Math.PI;
+                    ni.a = (int)Properties.Settings.Default.DefaultAltitudeM;
                     model.UpdateLocalNavigationInstruction(ni);
                     break;
                 }

@@ -31,6 +31,8 @@ namespace GluonCS
             _tbLoginProxy.Text = Properties.Settings.Default.ProxyUsername;
             _mtbPasswdProxy.Text = Properties.Settings.Default.ProxyPassword;
             _tbUavName.Text = Properties.Settings.Default.UavName;
+            _dtb_altitude.DistanceM = Properties.Settings.Default.DefaultAltitudeM;
+            _dtb_radius.DistanceM = Properties.Settings.Default.DefaultCircleRadius;
         }
 
         private void _btnClearCache_Click(object sender, EventArgs e)
@@ -65,9 +67,11 @@ namespace GluonCS
             Properties.Settings.Default.ProxyAddress = _tbAddressproxy.Text;
             Properties.Settings.Default.ProxyUsername = _tbLoginProxy.Text;
             Properties.Settings.Default.ProxyPassword = _mtbPasswdProxy.Text;
-            Properties.Settings.Default.MapType = (MapType)_cbMapType.SelectedValue;
+            Properties.Settings.Default.MapType = _cbMapType.SelectedValue.ToString();
             Properties.Settings.Default.ShowUavSpeedAltitude = _cbUavAltSpeed.Checked;
             Properties.Settings.Default.UavName = _tbUavName.Text;
+            Properties.Settings.Default.DefaultAltitudeM = _dtb_altitude.DistanceM;
+            Properties.Settings.Default.DefaultCircleRadius = _dtb_radius.DistanceM;
             Properties.Settings.Default.Save();
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
