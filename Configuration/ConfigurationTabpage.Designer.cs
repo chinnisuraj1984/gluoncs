@@ -265,7 +265,6 @@
             this.label65 = new System.Windows.Forms.Label();
             this._nud_control_pitch_max = new System.Windows.Forms.NumericUpDown();
             this.label66 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
             this._nud_control_roll_max = new System.Windows.Forms.NumericUpDown();
             this.label61 = new System.Windows.Forms.Label();
@@ -283,6 +282,8 @@
             this._pid_roll_to_aileron = new Configuration.PidControl();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this._pid_pitch_to_elevator = new Configuration.PidControl();
+            this._nud_control_pitch_min = new System.Windows.Forms.NumericUpDown();
+            this.label63 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this._tpTelemetry.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._nud_control_telemetry)).BeginInit();
@@ -318,6 +319,7 @@
             this.groupBox5.SuspendLayout();
             this._pid_roll2aileron.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._nud_control_pitch_min)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -2775,6 +2777,7 @@
             this._tbControl.Controls.Add(this.label79);
             this._tbControl.Controls.Add(this.label64);
             this._tbControl.Controls.Add(this.label65);
+            this._tbControl.Controls.Add(this._nud_control_pitch_min);
             this._tbControl.Controls.Add(this._nud_control_pitch_max);
             this._tbControl.Controls.Add(this.label66);
             this._tbControl.Controls.Add(this.label63);
@@ -3054,7 +3057,7 @@
             // 
             // _nud_control_pitch_max
             // 
-            this._nud_control_pitch_max.Location = new System.Drawing.Point(95, 54);
+            this._nud_control_pitch_max.Location = new System.Drawing.Point(180, 52);
             this._nud_control_pitch_max.Name = "_nud_control_pitch_max";
             this._nud_control_pitch_max.Size = new System.Drawing.Size(56, 20);
             this._nud_control_pitch_max.TabIndex = 8;
@@ -3069,19 +3072,10 @@
             this.label66.TabIndex = 7;
             this.label66.Text = "Max roll";
             // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(76, 56);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(16, 13);
-            this.label63.TabIndex = 6;
-            this.label63.Text = "+-";
-            // 
             // label62
             // 
             this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(157, 56);
+            this.label62.Location = new System.Drawing.Point(240, 54);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(45, 13);
             this.label62.TabIndex = 5;
@@ -3100,9 +3094,9 @@
             this.label61.AutoSize = true;
             this.label61.Location = new System.Drawing.Point(9, 56);
             this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(53, 13);
+            this.label61.Size = new System.Drawing.Size(75, 13);
             this.label61.TabIndex = 3;
-            this.label61.Text = "Max pitch";
+            this.label61.Text = "Pitch between";
             // 
             // _lblControlMixInfo
             // 
@@ -3268,6 +3262,34 @@
             this._pid_pitch_to_elevator.TabIndex = 0;
             this._pid_pitch_to_elevator.IsChanged += new System.EventHandler(this._pid_pitch_to_elevator_IsChanged);
             // 
+            // _nud_control_pitch_min
+            // 
+            this._nud_control_pitch_min.Location = new System.Drawing.Point(95, 52);
+            this._nud_control_pitch_min.Maximum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this._nud_control_pitch_min.Minimum = new decimal(new int[] {
+            25,
+            0,
+            0,
+            -2147483648});
+            this._nud_control_pitch_min.Name = "_nud_control_pitch_min";
+            this._nud_control_pitch_min.Size = new System.Drawing.Size(56, 20);
+            this._nud_control_pitch_min.TabIndex = 8;
+            this._nud_control_pitch_min.ValueChanged += new System.EventHandler(this._nud_control_pitch_min_ValueChanged);
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(151, 54);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(25, 13);
+            this.label63.TabIndex = 5;
+            this.label63.Text = "and";
+            this.label63.Click += new System.EventHandler(this.label63_Click);
+            // 
             // ConfigurationTabpage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3326,6 +3348,7 @@
             this.groupBox5.ResumeLayout(false);
             this._pid_roll2aileron.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this._nud_control_pitch_min)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3531,7 +3554,6 @@
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.NumericUpDown _nud_control_pitch_max;
         private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.NumericUpDown _nud_control_roll_max;
         private System.Windows.Forms.Label label61;
@@ -3599,5 +3621,7 @@
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.Label label92;
         private Configuration.NumericTextBox _ntbAutoThrottlePGain;
+        private System.Windows.Forms.NumericUpDown _nud_control_pitch_min;
+        private System.Windows.Forms.Label label63;
     }
 }

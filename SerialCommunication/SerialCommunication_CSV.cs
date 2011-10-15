@@ -333,6 +333,9 @@ namespace Communication
                             ac.auto_throttle_cruise_pct = int.Parse(lines[75]);
                             ac.auto_throttle_p_gain_10 = int.Parse(lines[76]);
                         }
+                        if (lines.Length > 77)
+                            ac.control_min_pitch = int.Parse(lines[77]);
+
                         if (AllConfigCommunicationReceived != null)
                             AllConfigCommunicationReceived(ac);
                     }
@@ -618,7 +621,7 @@ namespace Communication
                 (auto_throttle_enabled ? "1" : "0"));
         }
 
-        public override void SendControlSettings(int mixing, double max_pitch, double max_roll, int aileron_differential, double waypoint_radius, double cruising_speed, bool stabilization_with_altitude_hold)
+        public override void SendControlSettings(int mixing, double max_pitch, double min_pitch, double max_roll, int aileron_differential, double waypoint_radius, double cruising_speed, bool stabilization_with_altitude_hold)
         {
             WriteChecksumLine("SC;" +
                 mixing.ToString() + ";" +
@@ -627,7 +630,8 @@ namespace Communication
                 aileron_differential.ToString() + ";" +
                 waypoint_radius.ToString(CultureInfo.InvariantCulture) + ";" +
                 cruising_speed.ToString(CultureInfo.InvariantCulture) + ";" +
-                (stabilization_with_altitude_hold == false ? 0 : 1).ToString() + "");
+                (stabilization_with_altitude_hold == false ? 0 : 1).ToString() + ";"+
+                min_pitch.ToString(CultureInfo.InvariantCulture));
 
 
             Console.WriteLine("\nSC;" +
@@ -737,6 +741,7 @@ namespace Communication
 
             SendControlSettings(ac.control_mixing,
                                 ac.control_max_pitch,
+                                ac.control_min_pitch,
                                 ac.control_max_roll,
                                 ac.control_aileron_differential,
                                 ac.control_waypoint_radius,

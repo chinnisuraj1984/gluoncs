@@ -52,6 +52,7 @@ namespace Gluonpilot
         public int RcTransmitterFromPpm;
 
         public double ControlMaxPitch;
+        public double ControlMinPitch;
         public double ControlMaxRoll;
         public int ControlMixing;
         public int ControlAileronDiff;
@@ -89,6 +90,7 @@ namespace Gluonpilot
             ac.rc_ppm = _model.RcTransmitterFromPpm;
 
             ac.control_max_pitch = _model.ControlMaxPitch;
+            ac.control_min_pitch = _model.ControlMinPitch;
             ac.control_max_roll = _model.ControlMaxRoll;
             ac.control_mixing = _model.ControlMixing;
             ac.control_waypoint_radius = _model.WaypointRadius;
@@ -181,6 +183,7 @@ namespace Gluonpilot
 
             _model.ControlMixing = ac.control_mixing;
             _model.ControlMaxPitch = ac.control_max_pitch;
+            _model.ControlMinPitch = ac.control_min_pitch;
             _model.ControlMaxRoll = ac.control_max_roll;
             _model.ControlAileronDiff = ac.control_aileron_differential;
 

@@ -17,6 +17,7 @@ namespace Communication.Frames.Configuration
         // control
         public double control_max_roll;
         public double control_max_pitch;
+        public double control_min_pitch;
         public int control_aileron_differential;
         public int control_mixing;
         public bool control_stabilization_with_altitude_hold;
