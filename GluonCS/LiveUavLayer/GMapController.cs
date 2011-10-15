@@ -248,7 +248,8 @@ namespace GluonCS.LiveUavLayer
                     uavMarker.SpeedMS = model.SpeedMS;
                     uavMarker.Position = new PointLatLng(model.UavPosition.Lat, model.UavPosition.Lng);
                     gmap.UpdateMarkerLocalPosition(uavMarker);
-                    gmap.Position = uavMarker.Position;
+                    if (Properties.Settings.Default.FollowUav)
+                        gmap.Position = uavMarker.Position;
                     //this.NavigationOverlay.
 
                     if (!hasReceivedGps)  // first gps position? center on UAV
