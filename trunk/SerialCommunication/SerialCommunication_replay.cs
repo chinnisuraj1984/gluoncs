@@ -357,6 +357,8 @@ namespace Communication
                             ac.auto_throttle_cruise_pct = int.Parse(lines[75]);
                             ac.auto_throttle_p_gain_10 = int.Parse(lines[76]);
                         }
+                        if (lines.Length > 77)
+                            ac.control_min_pitch = int.Parse(lines[77]);
                         if (AllConfigCommunicationReceived != null)
                             AllConfigCommunicationReceived(ac);
                     }
@@ -583,7 +585,7 @@ namespace Communication
 
         }
 
-        public override void SendControlSettings(int mixing, double max_pitch, double max_roll, int aileron_differential, double waypoint_radius, double cruising_speed, bool stabilization_with_altitude_hold)
+        public override void SendControlSettings(int mixing, double max_pitch, double min_pitch, double max_roll, int aileron_differential, double waypoint_radius, double cruising_speed, bool stabilization_with_altitude_hold)
         {
 
         }

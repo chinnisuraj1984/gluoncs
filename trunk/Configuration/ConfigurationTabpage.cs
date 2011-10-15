@@ -114,6 +114,7 @@ namespace Gluonpilot
             _rbPwm.Checked = _model.RcTransmitterFromPpm == 0? true : false;
 
             _nud_control_pitch_max.Value = (int)_model.ControlMaxPitch;
+            _nud_control_pitch_min.Value = (int)_model.ControlMinPitch;
             _nud_control_roll_max.Value = (int)_model.ControlMaxRoll;
             _nud_aileron_diff.Value = _model.ControlAileronDiff;
 
@@ -695,6 +696,11 @@ namespace Gluonpilot
             CalculateMinimumRadius(sender, null);
         }
 
+        private void _nud_control_pitch_min_ValueChanged(object sender, EventArgs e)
+        {
+            _model.ControlMinPitch = Convert.ToDouble(_nud_control_pitch_min.Value);
+        }
+
         private void _nud_control_pitch_max_ValueChanged(object sender, EventArgs e)
         {
             _model.ControlMaxPitch = Convert.ToDouble(_nud_control_pitch_max.Value);
@@ -757,6 +763,12 @@ namespace Gluonpilot
         {
             _model.AutoThrottlePGain = _ntbAutoThrottlePGain.DoubleValue;
         }
+
+        private void label63_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
     }
