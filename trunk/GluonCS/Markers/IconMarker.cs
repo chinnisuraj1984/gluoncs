@@ -9,6 +9,7 @@ using GMap.NET;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Drawing.Text;
 
 
 namespace GluonCS.Markers
@@ -26,7 +27,8 @@ namespace GluonCS.Markers
         private void LoadImages()
         {
             if (pin == null)
-                pin = Image.FromFile(Path.GetDirectoryName(Application.ExecutablePath) + "\\Resources\\marker_empty_white.png");
+                //pin = Image.FromFile(Path.GetDirectoryName(Application.ExecutablePath) + "\\Resources\\marker_empty_white.png");
+                pin = Image.FromFile(Path.GetDirectoryName(Application.ExecutablePath) + "\\Resources\\marker_empty_red.png");
             if (pingray == null)
                 pingray = Image.FromFile(Path.GetDirectoryName(Application.ExecutablePath) + "\\Resources\\marker_empty_gray.png");
             if (pinyellow == null)
@@ -41,8 +43,8 @@ namespace GluonCS.Markers
             IsAbsolute = is_absolute;
             // do not forget set Size of the marker
             // if so, you shall have no event on it ;}
-            Size = new System.Drawing.Size(14, 24);
-            Offset = new System.Drawing.Point(-Size.Width / 2, -Size.Height);
+            Size = new System.Drawing.Size(2*pin.Width/3, pin.Height);
+            Offset = new System.Drawing.Point(-pin.Width / 2 +5, -Size.Height);
             if (out_of_sync)
                 Pen = new Pen(Brushes.Gray, 2);
             else
@@ -52,12 +54,13 @@ namespace GluonCS.Markers
         public override void OnRender(Graphics g)
         {
             string str = Name == "" ? (Number + 1).ToString() : Name;
+            int y_pad = 0;
 
             Brush backgroundmarkercolor = Brushes.White;
             if (IsCurrentWaypoint)
                 backgroundmarkercolor = Brushes.Yellow;
 
-            g.DrawString(str, new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), Brushes.Black, LocalPosition.X + 14 + 1, LocalPosition.Y + 4);
+            /*g.DrawString(str, new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), Brushes.Black, LocalPosition.X + 14 + 1, LocalPosition.Y + 4);
             g.DrawString(str, new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), Brushes.Black, LocalPosition.X + 14 - 1, LocalPosition.Y + 4);
             g.DrawString(str, new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), Brushes.Black, LocalPosition.X + 14, LocalPosition.Y + 4 + 1);
             g.DrawString(str, new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), Brushes.Black, LocalPosition.X + 14, LocalPosition.Y + 4 - 1);
@@ -65,7 +68,7 @@ namespace GluonCS.Markers
                 g.DrawString(str, new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), Brushes.LightGray, LocalPosition.X + 14, LocalPosition.Y + 4);
             else
                 g.DrawString(str, new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold), myredbrush , LocalPosition.X + 14, LocalPosition.Y + 4);
-            
+            */
 
             //g.FillRectangle(backgroundmarkercolor, new Rectangle(LocalPosition.X, LocalPosition.Y, Size.Width, Size.Height));
             if (out_of_sync)
@@ -77,10 +80,26 @@ namespace GluonCS.Markers
             //g.DrawRectangle(Pen, new Rectangle(LocalPosition.X - (-6) / 2, LocalPosition.Y - (-6) / 2, Size.Width - 6, Size.Height - 6));
 
             /*SizeF sf = g.MeasureString(str, new Font(FontFamily.GenericSansSerif, 6, FontStyle.Bold));
-            g.DrawString(str, new Font(FontFamily.GenericSansSerif, 6, FontStyle.Bold), mygraybrush, LocalPosition.X + 9 - ((int)sf.Width/2) - 2, LocalPosition.Y + 6);
-            */
-            /*SizeF sf = g.MeasureString(str, new Font(FontFamily.GenericSansSerif, 7, FontStyle.Regular));
-            g.DrawString(str, new Font(FontFamily.GenericSansSerif, 7, FontStyle.Regular), mygraybrush, LocalPosition.X + 9 - ((int)sf.Width / 2) - 2, LocalPosition.Y + 3);*/
+            g.DrawString(str, new Font(FontFamily.GenericSansSerif, 6, FontStyle.Bold), mygraybrush, LocalPosition.X + 9 - ((int)sf.Width/2) - 2, LocalPosition.Y + 6);*/
+
+            g.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+            Font font = new Font(FontFamily.GenericSansSerif, 7, FontStyle.Bold);
+            SizeF sf = g.MeasureString(str, font);
+ 
+            if (str.Length > 2)
+                y_pad += pin.Height / 2 + 12;
+
+            float ypos = LocalPosition.Y + 4;
+            float xpos = (float)LocalPosition.X + (float)12 - (float)Math.Floor(sf.Width / 2 - 0.0) - 2;
+            if (str.Length > 1 && str.Substring(0, 1) == "1")
+                xpos -= 1; // hack to make it look better
+
+            g.DrawString(str, font, Brushes.Black, xpos + 1, ypos + 1 + y_pad);
+            g.DrawString(str, font, Brushes.Black, xpos + 1, ypos - 1 + y_pad);
+            g.DrawString(str, font, Brushes.Black, xpos - 1, ypos + 1 + y_pad);
+            g.DrawString(str, font, Brushes.Black, xpos - 1, ypos - 1 + y_pad);
+            g.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+            g.DrawString(str, font, Brushes.White, xpos, ypos + y_pad);
 
         }
     }

@@ -12,6 +12,7 @@ using Communication.Frames.Incoming;
 using Configuration.NavigationCommands;
 using Configuration;
 using Common;
+using System.IO;
 
 
 namespace GluonCS.LiveUavLayer
@@ -95,6 +96,7 @@ namespace GluonCS.LiveUavLayer
             ToolStripItem i = general_menustrip.Items.Add("Set &home");
             i.Click += new EventHandler(SetHome_Click);
             i = general_menustrip.Items.Add("Add &absolute waypoint");
+            i.Image = Image.FromFile(Path.GetDirectoryName(Application.ExecutablePath) + "\\Resources\\marker_empty_red.png");
             i.Click += new EventHandler(AddAbsolute_Click);
             i = general_menustrip.Items.Add("Add &relative waypoint");
             i.Click += new EventHandler(AddRelative_Click);
