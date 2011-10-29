@@ -18,6 +18,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiveUavPanel));
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this._btnConnect = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this._btnCenterUav = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
+            this._ts_basicconfig = new System.Windows.Forms.ToolStripMenuItem();
+            this._tbn_fullconfig = new System.Windows.Forms.ToolStripMenuItem();
             this._cockpitPanel = new BSE.Windows.Forms.Panel();
             this.splitter1 = new BSE.Windows.Forms.Splitter();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -48,15 +57,6 @@
             this._pbGps = new ProgressBarColored();
             this._lblLink = new System.Windows.Forms.Label();
             this._lblFlightMode = new System.Windows.Forms.Label();
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this._btnConnect = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this._btnCenterUav = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
-            this._ts_basicconfig = new System.Windows.Forms.ToolStripMenuItem();
-            this._tbn_fullconfig = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this._panelStrip = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -73,13 +73,14 @@
             this._lblSpeed = new System.Windows.Forms.Label();
             this._navigationPanel = new BSE.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this._btn_up = new System.Windows.Forms.ToolStripButton();
+            this._btn_down = new System.Windows.Forms.ToolStripButton();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.addBlockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateSurveyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._btnSurveySettings = new System.Windows.Forms.ToolStripMenuItem();
             this._btnNewSurvey = new System.Windows.Forms.ToolStripMenuItem();
             this._btnBuildSurvey = new System.Windows.Forms.ToolStripMenuItem();
-            this._btn_up = new System.Windows.Forms.ToolStripButton();
-            this._btn_down = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this._nav_open = new System.Windows.Forms.ToolStripMenuItem();
@@ -95,15 +96,15 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._imageListGps = new System.Windows.Forms.ImageList(this.components);
             this._gmapContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             this._cockpitPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this._ahPanel.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
-            this.toolStripContainer1.SuspendLayout();
-            this.toolStrip2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this._panelStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -114,11 +115,91 @@
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // toolStripContainer1
+            // 
+            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
+            // 
+            // toolStripContainer1.BottomToolStripPanel
+            // 
+            resources.ApplyResources(this.toolStripContainer1.BottomToolStripPanel, "toolStripContainer1.BottomToolStripPanel");
+            // 
+            // toolStripContainer1.ContentPanel
+            // 
+            resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
+            // 
+            // toolStripContainer1.LeftToolStripPanel
+            // 
+            resources.ApplyResources(this.toolStripContainer1.LeftToolStripPanel, "toolStripContainer1.LeftToolStripPanel");
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            // 
+            // toolStripContainer1.RightToolStripPanel
+            // 
+            resources.ApplyResources(this.toolStripContainer1.RightToolStripPanel, "toolStripContainer1.RightToolStripPanel");
+            // 
+            // toolStripContainer1.TopToolStripPanel
+            // 
+            resources.ApplyResources(this.toolStripContainer1.TopToolStripPanel, "toolStripContainer1.TopToolStripPanel");
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip2);
+            // 
+            // toolStrip2
+            // 
+            resources.ApplyResources(this.toolStrip2, "toolStrip2");
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._btnConnect,
+            this.toolStripSeparator2,
+            this._btnCenterUav,
+            this.toolStripSeparator3,
+            this.toolStripDropDownButton3});
+            this.toolStrip2.Name = "toolStrip2";
+            // 
+            // _btnConnect
+            // 
+            resources.ApplyResources(this._btnConnect, "_btnConnect");
+            this._btnConnect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this._btnConnect.Name = "_btnConnect";
+            this._btnConnect.Click += new System.EventHandler(this._btnConnect_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            // 
+            // _btnCenterUav
+            // 
+            resources.ApplyResources(this._btnCenterUav, "_btnCenterUav");
+            this._btnCenterUav.Name = "_btnCenterUav";
+            this._btnCenterUav.Click += new System.EventHandler(this._btnCenterUav_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            // 
+            // toolStripDropDownButton3
+            // 
+            resources.ApplyResources(this.toolStripDropDownButton3, "toolStripDropDownButton3");
+            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._ts_basicconfig,
+            this._tbn_fullconfig});
+            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
+            // 
+            // _ts_basicconfig
+            // 
+            resources.ApplyResources(this._ts_basicconfig, "_ts_basicconfig");
+            this._ts_basicconfig.Name = "_ts_basicconfig";
+            this._ts_basicconfig.Click += new System.EventHandler(this._ts_basicconfig_Click);
+            // 
+            // _tbn_fullconfig
+            // 
+            resources.ApplyResources(this._tbn_fullconfig, "_tbn_fullconfig");
+            this._tbn_fullconfig.Name = "_tbn_fullconfig";
+            this._tbn_fullconfig.Click += new System.EventHandler(this._tbn_fullconfig_Click);
+            // 
             // _cockpitPanel
             // 
+            resources.ApplyResources(this._cockpitPanel, "_cockpitPanel");
             this._cockpitPanel.AssociatedSplitter = this.splitter1;
             this._cockpitPanel.BackColor = System.Drawing.Color.Transparent;
-            this._cockpitPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this._cockpitPanel.CaptionFont = new System.Drawing.Font("Trebuchet MS", 8.75F, System.Drawing.FontStyle.Bold);
             this._cockpitPanel.CaptionHeight = 20;
             this._cockpitPanel.Controls.Add(this.tableLayoutPanel1);
@@ -142,18 +223,13 @@
             this._cockpitPanel.CustomColors.ContentGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(190)))), ((int)(((byte)(245)))));
             this._cockpitPanel.CustomColors.ContentGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(218)))), ((int)(((byte)(250)))));
             this._cockpitPanel.CustomColors.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this._cockpitPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this._cockpitPanel.ForeColor = System.Drawing.SystemColors.ControlText;
             this._cockpitPanel.Image = null;
             this._cockpitPanel.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this._cockpitPanel.Location = new System.Drawing.Point(0, 0);
             this._cockpitPanel.MinimumSize = new System.Drawing.Size(20, 20);
             this._cockpitPanel.Name = "_cockpitPanel";
             this._cockpitPanel.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
             this._cockpitPanel.ShowExpandIcon = true;
-            this._cockpitPanel.Size = new System.Drawing.Size(379, 408);
-            this._cockpitPanel.TabIndex = 0;
-            this._cockpitPanel.Text = "Cockpit";
             this._cockpitPanel.ToolTipTextCloseIcon = null;
             this._cockpitPanel.ToolTipTextExpandIconPanelCollapsed = null;
             this._cockpitPanel.ToolTipTextExpandIconPanelExpanded = null;
@@ -161,168 +237,120 @@
             // 
             // splitter1
             // 
+            resources.ApplyResources(this.splitter1, "splitter1");
             this.splitter1.BackColor = System.Drawing.Color.Transparent;
-            this.splitter1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitter1.Location = new System.Drawing.Point(0, 408);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(379, 3);
-            this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
             this.tableLayoutPanel1.Controls.Add(this._ahPanel, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 50);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(372, 135);
-            this.tableLayoutPanel1.TabIndex = 1;
             // 
             // _ahPanel
             // 
+            resources.ApplyResources(this._ahPanel, "_ahPanel");
             this._ahPanel.ContextMenuStrip = this.contextMenuStrip1;
             this._ahPanel.Controls.Add(this._artificialHorizon);
-            this._ahPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._ahPanel.Location = new System.Drawing.Point(124, 3);
-            this._ahPanel.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this._ahPanel.Name = "_ahPanel";
-            this._ahPanel.Size = new System.Drawing.Size(124, 129);
-            this._ahPanel.TabIndex = 50;
             // 
             // contextMenuStrip1
             // 
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._ts2dah,
             this.toolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(177, 48);
             // 
             // _ts2dah
             // 
+            resources.ApplyResources(this._ts2dah, "_ts2dah");
             this._ts2dah.Name = "_ts2dah";
-            this._ts2dah.Size = new System.Drawing.Size(176, 22);
-            this._ts2dah.Text = "2D artificial horizon";
             this._ts2dah.Click += new System.EventHandler(this._ts2dah_Click);
             // 
             // toolStripMenuItem1
             // 
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._tsFunjet,
             this._tsEasystar,
             this._tsPredator});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
-            this.toolStripMenuItem1.Text = "3D artificial horizon";
             // 
             // _tsFunjet
             // 
+            resources.ApplyResources(this._tsFunjet, "_tsFunjet");
             this._tsFunjet.Name = "_tsFunjet";
-            this._tsFunjet.Size = new System.Drawing.Size(127, 22);
-            this._tsFunjet.Text = "Funjet";
             this._tsFunjet.Click += new System.EventHandler(this._tsFunjet_Click);
             // 
             // _tsEasystar
             // 
+            resources.ApplyResources(this._tsEasystar, "_tsEasystar");
             this._tsEasystar.Name = "_tsEasystar";
-            this._tsEasystar.Size = new System.Drawing.Size(127, 22);
-            this._tsEasystar.Text = "Easystar";
             this._tsEasystar.Click += new System.EventHandler(this._tsEasystar_Click);
             // 
             // _tsPredator
             // 
+            resources.ApplyResources(this._tsPredator, "_tsPredator");
             this._tsPredator.Name = "_tsPredator";
-            this._tsPredator.Size = new System.Drawing.Size(127, 22);
-            this._tsPredator.Text = "Predator";
             this._tsPredator.Click += new System.EventHandler(this._tsPredator_Click);
             // 
             // _artificialHorizon
             // 
-            this._artificialHorizon.AutoScroll = true;
+            resources.ApplyResources(this._artificialHorizon, "_artificialHorizon");
             this._artificialHorizon.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this._artificialHorizon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this._artificialHorizon.CornersRadius = 20F;
-            this._artificialHorizon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._artificialHorizon.Location = new System.Drawing.Point(0, 0);
             this._artificialHorizon.Name = "_artificialHorizon";
             this._artificialHorizon.pitch_angle = 0D;
             this._artificialHorizon.roll_angle = 0D;
-            this._artificialHorizon.Size = new System.Drawing.Size(124, 129);
-            this._artificialHorizon.TabIndex = 0;
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this._lblBlockname);
             this.panel1.Controls.Add(this._lblDistNextWp);
             this.panel1.Controls.Add(this._lblHomeDistance);
             this.panel1.Controls.Add(this._lblTimeToWp);
             this.panel1.Controls.Add(this._lblTimeInBlock);
             this.panel1.Controls.Add(this._lblFlightTime);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(251, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(118, 129);
-            this.panel1.TabIndex = 51;
             // 
             // _lblBlockname
             // 
-            this._lblBlockname.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblBlockname.Location = new System.Drawing.Point(3, 47);
+            resources.ApplyResources(this._lblBlockname, "_lblBlockname");
             this._lblBlockname.Name = "_lblBlockname";
-            this._lblBlockname.Size = new System.Drawing.Size(97, 13);
-            this._lblBlockname.TabIndex = 36;
-            this._lblBlockname.Text = "Block name";
             // 
             // _lblDistNextWp
             // 
-            this._lblDistNextWp.Location = new System.Drawing.Point(3, 87);
+            resources.ApplyResources(this._lblDistNextWp, "_lblDistNextWp");
             this._lblDistNextWp.Name = "_lblDistNextWp";
-            this._lblDistNextWp.Size = new System.Drawing.Size(97, 15);
-            this._lblDistNextWp.TabIndex = 4;
-            this._lblDistNextWp.Text = "Next WP: 0 m";
             // 
             // _lblHomeDistance
             // 
-            this._lblHomeDistance.Location = new System.Drawing.Point(3, 24);
+            resources.ApplyResources(this._lblHomeDistance, "_lblHomeDistance");
             this._lblHomeDistance.Name = "_lblHomeDistance";
-            this._lblHomeDistance.Size = new System.Drawing.Size(97, 17);
-            this._lblHomeDistance.TabIndex = 26;
-            this._lblHomeDistance.Text = "Home: 0m";
             // 
             // _lblTimeToWp
             // 
-            this._lblTimeToWp.Location = new System.Drawing.Point(3, 108);
+            resources.ApplyResources(this._lblTimeToWp, "_lblTimeToWp");
             this._lblTimeToWp.Name = "_lblTimeToWp";
-            this._lblTimeToWp.Size = new System.Drawing.Size(97, 19);
-            this._lblTimeToWp.TabIndex = 27;
-            this._lblTimeToWp.Text = "Time to WP: 0s";
             // 
             // _lblTimeInBlock
             // 
-            this._lblTimeInBlock.Location = new System.Drawing.Point(3, 66);
+            resources.ApplyResources(this._lblTimeInBlock, "_lblTimeInBlock");
             this._lblTimeInBlock.Name = "_lblTimeInBlock";
-            this._lblTimeInBlock.Size = new System.Drawing.Size(100, 15);
-            this._lblTimeInBlock.TabIndex = 28;
-            this._lblTimeInBlock.Text = "Time in block: 0s";
             // 
             // _lblFlightTime
             // 
-            this._lblFlightTime.Location = new System.Drawing.Point(3, 4);
+            resources.ApplyResources(this._lblFlightTime, "_lblFlightTime");
             this._lblFlightTime.Name = "_lblFlightTime";
-            this._lblFlightTime.Size = new System.Drawing.Size(100, 14);
-            this._lblFlightTime.TabIndex = 29;
-            this._lblFlightTime.Text = "Flight time: 0s";
             // 
             // panel2
             // 
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Controls.Add(this._lblVoltage);
             this.panel2.Controls.Add(this._lblGpsSat);
             this.panel2.Controls.Add(this._pbThrottle);
@@ -333,296 +361,122 @@
             this.panel2.Controls.Add(this._pbLink);
             this.panel2.Controls.Add(this._pbGps);
             this.panel2.Controls.Add(this._lblLink);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(118, 129);
-            this.panel2.TabIndex = 52;
             // 
             // _lblVoltage
             // 
-            this._lblVoltage.AutoSize = true;
-            this._lblVoltage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblVoltage.Location = new System.Drawing.Point(3, 0);
+            resources.ApplyResources(this._lblVoltage, "_lblVoltage");
             this._lblVoltage.Name = "_lblVoltage";
-            this._lblVoltage.Size = new System.Drawing.Size(28, 15);
-            this._lblVoltage.TabIndex = 3;
-            this._lblVoltage.Text = "Bat";
             // 
             // _lblGpsSat
             // 
-            this._lblGpsSat.AutoSize = true;
-            this._lblGpsSat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblGpsSat.ImageKey = "ERROR";
-            this._lblGpsSat.Location = new System.Drawing.Point(3, 23);
+            resources.ApplyResources(this._lblGpsSat, "_lblGpsSat");
             this._lblGpsSat.Name = "_lblGpsSat";
-            this._lblGpsSat.Size = new System.Drawing.Size(32, 15);
-            this._lblGpsSat.TabIndex = 1;
-            this._lblGpsSat.Text = "Gps";
             // 
             // _pbThrottle
             // 
-            this._pbThrottle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this._pbThrottle, "_pbThrottle");
             this._pbThrottle.ForeColor = System.Drawing.Color.LimeGreen;
-            this._pbThrottle.Location = new System.Drawing.Point(7, 106);
             this._pbThrottle.Name = "_pbThrottle";
-            this._pbThrottle.Size = new System.Drawing.Size(108, 14);
             this._pbThrottle.Step = 1;
             this._pbThrottle.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this._pbThrottle.TabIndex = 40;
             // 
             // _pbRcLink
             // 
-            this._pbRcLink.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this._pbRcLink, "_pbRcLink");
             this._pbRcLink.ForeColor = System.Drawing.Color.LimeGreen;
-            this._pbRcLink.Location = new System.Drawing.Point(37, 66);
             this._pbRcLink.Name = "_pbRcLink";
-            this._pbRcLink.Size = new System.Drawing.Size(78, 15);
             this._pbRcLink.Step = 1;
             this._pbRcLink.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this._pbRcLink.TabIndex = 46;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 90);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "Throttle";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(4, 67);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 13);
-            this.label3.TabIndex = 45;
-            this.label3.Text = "RC";
             // 
             // _pbBattery
             // 
-            this._pbBattery.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this._pbBattery, "_pbBattery");
             this._pbBattery.ForeColor = System.Drawing.Color.LimeGreen;
-            this._pbBattery.Location = new System.Drawing.Point(36, 2);
             this._pbBattery.Name = "_pbBattery";
-            this._pbBattery.Size = new System.Drawing.Size(79, 15);
             this._pbBattery.Step = 1;
             this._pbBattery.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this._pbBattery.TabIndex = 41;
             // 
             // _pbLink
             // 
-            this._pbLink.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this._pbLink, "_pbLink");
             this._pbLink.ForeColor = System.Drawing.Color.LimeGreen;
-            this._pbLink.Location = new System.Drawing.Point(37, 45);
             this._pbLink.Name = "_pbLink";
-            this._pbLink.Size = new System.Drawing.Size(78, 15);
             this._pbLink.Step = 1;
             this._pbLink.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this._pbLink.TabIndex = 44;
             this._pbLink.Value = 100;
             // 
             // _pbGps
             // 
-            this._pbGps.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this._pbGps, "_pbGps");
             this._pbGps.BackColor = System.Drawing.SystemColors.Control;
             this._pbGps.ForeColor = System.Drawing.Color.LimeGreen;
-            this._pbGps.Location = new System.Drawing.Point(37, 23);
             this._pbGps.Maximum = 12;
             this._pbGps.Name = "_pbGps";
-            this._pbGps.Size = new System.Drawing.Size(78, 16);
             this._pbGps.Step = 1;
             this._pbGps.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this._pbGps.TabIndex = 42;
             this._pbGps.Value = 6;
             // 
             // _lblLink
             // 
-            this._lblLink.AutoSize = true;
-            this._lblLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblLink.Location = new System.Drawing.Point(3, 46);
+            resources.ApplyResources(this._lblLink, "_lblLink");
             this._lblLink.Name = "_lblLink";
-            this._lblLink.Size = new System.Drawing.Size(31, 13);
-            this._lblLink.TabIndex = 43;
-            this._lblLink.Text = "Link";
             // 
             // _lblFlightMode
             // 
+            resources.ApplyResources(this._lblFlightMode, "_lblFlightMode");
             this._lblFlightMode.BackColor = System.Drawing.Color.LightGray;
-            this._lblFlightMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblFlightMode.Location = new System.Drawing.Point(7, 188);
             this._lblFlightMode.Name = "_lblFlightMode";
-            this._lblFlightMode.Size = new System.Drawing.Size(134, 37);
-            this._lblFlightMode.TabIndex = 48;
-            this._lblFlightMode.Text = "Flight mode";
-            this._lblFlightMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // toolStripContainer1
-            // 
-            // 
-            // toolStripContainer1.ContentPanel
-            // 
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(377, 2);
-            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.toolStripContainer1.Location = new System.Drawing.Point(1, 21);
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(377, 27);
-            this.toolStripContainer1.TabIndex = 47;
-            this.toolStripContainer1.Text = "toolStripContainer1";
-            // 
-            // toolStripContainer1.TopToolStripPanel
-            // 
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip2);
-            // 
-            // toolStrip2
-            // 
-            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._btnConnect,
-            this.toolStripSeparator2,
-            this._btnCenterUav,
-            this.toolStripSeparator3,
-            this.toolStripDropDownButton3});
-            this.toolStrip2.Location = new System.Drawing.Point(3, 0);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(266, 25);
-            this.toolStrip2.TabIndex = 0;
-            // 
-            // _btnConnect
-            // 
-            this._btnConnect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this._btnConnect.Image = ((System.Drawing.Image)(resources.GetObject("_btnConnect.Image")));
-            this._btnConnect.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this._btnConnect.Name = "_btnConnect";
-            this._btnConnect.Size = new System.Drawing.Size(23, 22);
-            this._btnConnect.Text = "_btnConnect";
-            this._btnConnect.Click += new System.EventHandler(this._btnConnect_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // _btnCenterUav
-            // 
-            this._btnCenterUav.Image = ((System.Drawing.Image)(resources.GetObject("_btnCenterUav.Image")));
-            this._btnCenterUav.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this._btnCenterUav.Name = "_btnCenterUav";
-            this._btnCenterUav.Size = new System.Drawing.Size(83, 22);
-            this._btnCenterUav.Text = "&Center UAV";
-            this._btnCenterUav.Click += new System.EventHandler(this._btnCenterUav_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripDropDownButton3
-            // 
-            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._ts_basicconfig,
-            this._tbn_fullconfig});
-            this.toolStripDropDownButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton3.Image")));
-            this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
-            this.toolStripDropDownButton3.Size = new System.Drawing.Size(136, 22);
-            this.toolStripDropDownButton3.Text = "Module configuration";
-            this.toolStripDropDownButton3.ToolTipText = "Module configuration";
-            // 
-            // _ts_basicconfig
-            // 
-            this._ts_basicconfig.Name = "_ts_basicconfig";
-            this._ts_basicconfig.Size = new System.Drawing.Size(109, 22);
-            this._ts_basicconfig.Text = "Basic";
-            this._ts_basicconfig.Click += new System.EventHandler(this._ts_basicconfig_Click);
-            // 
-            // _tbn_fullconfig
-            // 
-            this._tbn_fullconfig.Name = "_tbn_fullconfig";
-            this._tbn_fullconfig.Size = new System.Drawing.Size(109, 22);
-            this._tbn_fullconfig.Text = "Full";
-            this._tbn_fullconfig.Click += new System.EventHandler(this._tbn_fullconfig_Click);
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
             this.tableLayoutPanel3.Controls.Add(this._panelStrip, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tabControl1, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 232);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(379, 179);
-            this.tableLayoutPanel3.TabIndex = 35;
             // 
             // _panelStrip
             // 
-            this._panelStrip.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            resources.ApplyResources(this._panelStrip, "_panelStrip");
             this._panelStrip.Controls.Add(this.label2);
-            this._panelStrip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._panelStrip.Location = new System.Drawing.Point(3, 3);
             this._panelStrip.Name = "_panelStrip";
-            this._panelStrip.Size = new System.Drawing.Size(373, 32);
-            this._panelStrip.TabIndex = 33;
             // 
             // label2
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label2, "label2");
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(333, 35);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Block commands created in the Navigation list will be automatically \r\nadded as bu" +
-                "ttons to this strip.";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabControl1
             // 
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(3, 41);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(373, 135);
-            this.tabControl1.TabIndex = 25;
             // 
             // tabPage1
             // 
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this._zgAlt);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(365, 109);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Altitude";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // _zgAlt
             // 
-            this._zgAlt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this._zgAlt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._zgAlt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this._zgAlt, "_zgAlt");
             this._zgAlt.IsAntiAlias = true;
-            this._zgAlt.Location = new System.Drawing.Point(3, 3);
-            this._zgAlt.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this._zgAlt.Name = "_zgAlt";
             this._zgAlt.ScrollGrace = 0D;
             this._zgAlt.ScrollMaxX = 0D;
@@ -631,28 +485,18 @@
             this._zgAlt.ScrollMinX = 0D;
             this._zgAlt.ScrollMinY = 0D;
             this._zgAlt.ScrollMinY2 = 0D;
-            this._zgAlt.Size = new System.Drawing.Size(359, 103);
-            this._zgAlt.TabIndex = 0;
             // 
             // tabPage2
             // 
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this._zgVel);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(365, 109);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Speed";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // _zgVel
             // 
-            this._zgVel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this._zgVel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._zgVel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this._zgVel, "_zgVel");
             this._zgVel.IsAntiAlias = true;
-            this._zgVel.Location = new System.Drawing.Point(3, 3);
-            this._zgVel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this._zgVel.Name = "_zgVel";
             this._zgVel.ScrollGrace = 0D;
             this._zgVel.ScrollMaxX = 0D;
@@ -661,28 +505,18 @@
             this._zgVel.ScrollMinX = 0D;
             this._zgVel.ScrollMinY = 0D;
             this._zgVel.ScrollMinY2 = 0D;
-            this._zgVel.Size = new System.Drawing.Size(359, 103);
-            this._zgVel.TabIndex = 1;
             // 
             // tabPage3
             // 
+            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Controls.Add(this._zgBatV);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(365, 109);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Battery voltage";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // _zgBatV
             // 
-            this._zgBatV.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this._zgBatV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._zgBatV.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this._zgBatV, "_zgBatV");
             this._zgBatV.IsAntiAlias = true;
-            this._zgBatV.Location = new System.Drawing.Point(3, 3);
-            this._zgBatV.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this._zgBatV.Name = "_zgBatV";
             this._zgBatV.ScrollGrace = 0D;
             this._zgBatV.ScrollMaxX = 0D;
@@ -691,51 +525,30 @@
             this._zgBatV.ScrollMinX = 0D;
             this._zgBatV.ScrollMinY = 0D;
             this._zgBatV.ScrollMinY2 = 0D;
-            this._zgBatV.Size = new System.Drawing.Size(359, 103);
-            this._zgBatV.TabIndex = 1;
             // 
             // _lblAltitudeAgl
             // 
-            this._lblAltitudeAgl.AutoSize = true;
-            this._lblAltitudeAgl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblAltitudeAgl.Location = new System.Drawing.Point(229, 209);
+            resources.ApplyResources(this._lblAltitudeAgl, "_lblAltitudeAgl");
             this._lblAltitudeAgl.Name = "_lblAltitudeAgl";
-            this._lblAltitudeAgl.Size = new System.Drawing.Size(69, 16);
-            this._lblAltitudeAgl.TabIndex = 32;
-            this._lblAltitudeAgl.Text = "0 m / 0 m";
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(147, 209);
+            resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 16);
-            this.label9.TabIndex = 31;
-            this.label9.Text = "Altitude AGL:";
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(147, 188);
+            resources.ApplyResources(this.label14, "label14");
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(97, 16);
-            this.label14.TabIndex = 30;
-            this.label14.Text = "Ground speed:";
             // 
             // _lblSpeed
             // 
-            this._lblSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblSpeed.Location = new System.Drawing.Point(241, 182);
+            resources.ApplyResources(this._lblSpeed, "_lblSpeed");
             this._lblSpeed.Name = "_lblSpeed";
-            this._lblSpeed.Size = new System.Drawing.Size(65, 29);
-            this._lblSpeed.TabIndex = 2;
-            this._lblSpeed.Text = "0 km/h";
-            this._lblSpeed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // _navigationPanel
             // 
+            resources.ApplyResources(this._navigationPanel, "_navigationPanel");
             this._navigationPanel.AssociatedSplitter = this.splitter1;
             this._navigationPanel.BackColor = System.Drawing.Color.Transparent;
             this._navigationPanel.CaptionFont = new System.Drawing.Font("Trebuchet MS", 8.75F, System.Drawing.FontStyle.Bold);
@@ -755,221 +568,175 @@
             this._navigationPanel.CustomColors.ContentGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(190)))), ((int)(((byte)(245)))));
             this._navigationPanel.CustomColors.ContentGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(218)))), ((int)(((byte)(250)))));
             this._navigationPanel.CustomColors.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this._navigationPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._navigationPanel.ForeColor = System.Drawing.SystemColors.ControlText;
             this._navigationPanel.Image = null;
             this._navigationPanel.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this._navigationPanel.Location = new System.Drawing.Point(0, 408);
             this._navigationPanel.MinimumSize = new System.Drawing.Size(21, 21);
             this._navigationPanel.Name = "_navigationPanel";
             this._navigationPanel.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
             this._navigationPanel.ShowExpandIcon = true;
-            this._navigationPanel.Size = new System.Drawing.Size(379, 228);
-            this._navigationPanel.TabIndex = 2;
-            this._navigationPanel.Text = "Navigation";
             this._navigationPanel.ToolTipTextCloseIcon = null;
             this._navigationPanel.ToolTipTextExpandIconPanelCollapsed = null;
             this._navigationPanel.ToolTipTextExpandIconPanelExpanded = null;
             // 
             // toolStrip1
             // 
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSplitButton1,
             this._btn_up,
             this._btn_down,
+            this.toolStripSplitButton1,
             this.toolStripSeparator1,
             this.toolStripDropDownButton1,
             this.toolStripDropDownButton2,
             this._btnAutoSync});
-            this.toolStrip1.Location = new System.Drawing.Point(1, 22);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(377, 25);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripSplitButton1
-            // 
-            this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addBlockToolStripMenuItem,
-            this.generateSurveyToolStripMenuItem});
-            this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
-            this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
-            this.toolStripSplitButton1.Size = new System.Drawing.Size(72, 22);
-            this.toolStripSplitButton1.Text = "Helpers";
-            // 
-            // addBlockToolStripMenuItem
-            // 
-            this.addBlockToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("addBlockToolStripMenuItem.Image")));
-            this.addBlockToolStripMenuItem.Name = "addBlockToolStripMenuItem";
-            this.addBlockToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.addBlockToolStripMenuItem.Text = "Add block";
-            this.addBlockToolStripMenuItem.Click += new System.EventHandler(this._btnAddBlock_Click);
-            // 
-            // generateSurveyToolStripMenuItem
-            // 
-            this.generateSurveyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._btnNewSurvey,
-            this._btnBuildSurvey});
-            this.generateSurveyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("generateSurveyToolStripMenuItem.Image")));
-            this.generateSurveyToolStripMenuItem.Name = "generateSurveyToolStripMenuItem";
-            this.generateSurveyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.generateSurveyToolStripMenuItem.Text = "Survey";
-            // 
-            // _btnNewSurvey
-            // 
-            this._btnNewSurvey.Image = ((System.Drawing.Image)(resources.GetObject("_btnNewSurvey.Image")));
-            this._btnNewSurvey.Name = "_btnNewSurvey";
-            this._btnNewSurvey.Size = new System.Drawing.Size(152, 22);
-            this._btnNewSurvey.Text = "Create new";
-            this._btnNewSurvey.Click += new System.EventHandler(this._btnNewSurvey_Click);
-            // 
-            // _btnBuildSurvey
-            // 
-            this._btnBuildSurvey.Image = ((System.Drawing.Image)(resources.GetObject("_btnBuildSurvey.Image")));
-            this._btnBuildSurvey.Name = "_btnBuildSurvey";
-            this._btnBuildSurvey.Size = new System.Drawing.Size(152, 22);
-            this._btnBuildSurvey.Text = "Build";
-            this._btnBuildSurvey.Click += new System.EventHandler(this._btnBuildSurvey_Click);
             // 
             // _btn_up
             // 
+            resources.ApplyResources(this._btn_up, "_btn_up");
             this._btn_up.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this._btn_up.Image = ((System.Drawing.Image)(resources.GetObject("_btn_up.Image")));
-            this._btn_up.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._btn_up.Name = "_btn_up";
-            this._btn_up.Size = new System.Drawing.Size(23, 22);
-            this._btn_up.Text = "Move up";
             this._btn_up.Click += new System.EventHandler(this._btn_up_Click);
             // 
             // _btn_down
             // 
+            resources.ApplyResources(this._btn_down, "_btn_down");
             this._btn_down.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this._btn_down.Image = ((System.Drawing.Image)(resources.GetObject("_btn_down.Image")));
-            this._btn_down.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._btn_down.Name = "_btn_down";
-            this._btn_down.Size = new System.Drawing.Size(23, 22);
-            this._btn_down.Text = "Move down";
             this._btn_down.Click += new System.EventHandler(this._btn_down_Click);
+            // 
+            // toolStripSplitButton1
+            // 
+            resources.ApplyResources(this.toolStripSplitButton1, "toolStripSplitButton1");
+            this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addBlockToolStripMenuItem,
+            this.generateSurveyToolStripMenuItem});
+            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
+            // 
+            // addBlockToolStripMenuItem
+            // 
+            resources.ApplyResources(this.addBlockToolStripMenuItem, "addBlockToolStripMenuItem");
+            this.addBlockToolStripMenuItem.Name = "addBlockToolStripMenuItem";
+            this.addBlockToolStripMenuItem.Click += new System.EventHandler(this._btnAddBlock_Click);
+            // 
+            // generateSurveyToolStripMenuItem
+            // 
+            resources.ApplyResources(this.generateSurveyToolStripMenuItem, "generateSurveyToolStripMenuItem");
+            this.generateSurveyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._btnSurveySettings,
+            this._btnNewSurvey,
+            this._btnBuildSurvey});
+            this.generateSurveyToolStripMenuItem.Name = "generateSurveyToolStripMenuItem";
+            // 
+            // _btnSurveySettings
+            // 
+            resources.ApplyResources(this._btnSurveySettings, "_btnSurveySettings");
+            this._btnSurveySettings.Name = "_btnSurveySettings";
+            this._btnSurveySettings.Click += new System.EventHandler(this._btnSurveySettings_Click);
+            // 
+            // _btnNewSurvey
+            // 
+            resources.ApplyResources(this._btnNewSurvey, "_btnNewSurvey");
+            this._btnNewSurvey.Name = "_btnNewSurvey";
+            this._btnNewSurvey.Click += new System.EventHandler(this._btnNewSurvey_Click);
+            // 
+            // _btnBuildSurvey
+            // 
+            resources.ApplyResources(this._btnBuildSurvey, "_btnBuildSurvey");
+            this._btnBuildSurvey.Name = "_btnBuildSurvey";
+            this._btnBuildSurvey.Click += new System.EventHandler(this._btnBuildSurvey_Click);
             // 
             // toolStripSeparator1
             // 
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripDropDownButton1
             // 
+            resources.ApplyResources(this.toolStripDropDownButton1, "toolStripDropDownButton1");
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._nav_open,
             this._nav_save});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(52, 22);
-            this.toolStripDropDownButton1.Text = "&File";
             // 
             // _nav_open
             // 
-            this._nav_open.Image = ((System.Drawing.Image)(resources.GetObject("_nav_open.Image")));
+            resources.ApplyResources(this._nav_open, "_nav_open");
             this._nav_open.Name = "_nav_open";
-            this._nav_open.Size = new System.Drawing.Size(111, 22);
-            this._nav_open.Text = "&Open";
             this._nav_open.Click += new System.EventHandler(this._nav_open_Click);
             // 
             // _nav_save
             // 
-            this._nav_save.Image = ((System.Drawing.Image)(resources.GetObject("_nav_save.Image")));
+            resources.ApplyResources(this._nav_save, "_nav_save");
             this._nav_save.Name = "_nav_save";
-            this._nav_save.Size = new System.Drawing.Size(111, 22);
-            this._nav_save.Text = "&Save";
             this._nav_save.Click += new System.EventHandler(this._nav_save_Click);
             // 
             // toolStripDropDownButton2
             // 
+            resources.ApplyResources(this.toolStripDropDownButton2, "toolStripDropDownButton2");
             this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._btnNaviRead,
             this._btnNaviWrite,
             this._btnNaviReload,
             this._btnNaviBurn});
-            this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
-            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(55, 22);
-            this.toolStripDropDownButton2.Text = "&Uav";
             // 
             // _btnNaviRead
             // 
-            this._btnNaviRead.Image = ((System.Drawing.Image)(resources.GetObject("_btnNaviRead.Image")));
+            resources.ApplyResources(this._btnNaviRead, "_btnNaviRead");
             this._btnNaviRead.Name = "_btnNaviRead";
-            this._btnNaviRead.Size = new System.Drawing.Size(169, 22);
-            this._btnNaviRead.Text = "&Read";
             this._btnNaviRead.Click += new System.EventHandler(this._btnNaviRead_Click);
             // 
             // _btnNaviWrite
             // 
-            this._btnNaviWrite.Image = ((System.Drawing.Image)(resources.GetObject("_btnNaviWrite.Image")));
+            resources.ApplyResources(this._btnNaviWrite, "_btnNaviWrite");
             this._btnNaviWrite.Name = "_btnNaviWrite";
-            this._btnNaviWrite.Size = new System.Drawing.Size(169, 22);
-            this._btnNaviWrite.Text = "&Write";
             this._btnNaviWrite.Click += new System.EventHandler(this._btnNaviWrite_Click);
             // 
             // _btnNaviReload
             // 
-            this._btnNaviReload.Image = ((System.Drawing.Image)(resources.GetObject("_btnNaviReload.Image")));
+            resources.ApplyResources(this._btnNaviReload, "_btnNaviReload");
             this._btnNaviReload.Name = "_btnNaviReload";
-            this._btnNaviReload.Size = new System.Drawing.Size(169, 22);
-            this._btnNaviReload.Text = "Re&load from flash";
             this._btnNaviReload.Click += new System.EventHandler(this._btnNaviReload_Click);
             // 
             // _btnNaviBurn
             // 
-            this._btnNaviBurn.Image = ((System.Drawing.Image)(resources.GetObject("_btnNaviBurn.Image")));
+            resources.ApplyResources(this._btnNaviBurn, "_btnNaviBurn");
             this._btnNaviBurn.Name = "_btnNaviBurn";
-            this._btnNaviBurn.Size = new System.Drawing.Size(169, 22);
-            this._btnNaviBurn.Text = "Burn to flash";
             this._btnNaviBurn.Click += new System.EventHandler(this._btnNaviBurn_Click);
             // 
             // _btnAutoSync
             // 
+            resources.ApplyResources(this._btnAutoSync, "_btnAutoSync");
             this._btnAutoSync.CheckOnClick = true;
-            this._btnAutoSync.Image = ((System.Drawing.Image)(resources.GetObject("_btnAutoSync.Image")));
-            this._btnAutoSync.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._btnAutoSync.Name = "_btnAutoSync";
-            this._btnAutoSync.Size = new System.Drawing.Size(76, 22);
-            this._btnAutoSync.Text = "Auto-sync";
-            this._btnAutoSync.ToolTipText = "Auto-sync with gluonpilot";
             this._btnAutoSync.CheckedChanged += new System.EventHandler(this._btnAutoSync_CheckedChanged);
             // 
             // _lv_navigation
             // 
+            resources.ApplyResources(this._lv_navigation, "_lv_navigation");
             this._lv_navigation.Activation = System.Windows.Forms.ItemActivation.TwoClick;
-            this._lv_navigation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this._lv_navigation.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
             this._lv_navigation.FullRowSelect = true;
             this._lv_navigation.GridLines = true;
             this._lv_navigation.HideSelection = false;
-            this._lv_navigation.Location = new System.Drawing.Point(1, 50);
             this._lv_navigation.MultiSelect = false;
             this._lv_navigation.Name = "_lv_navigation";
-            this._lv_navigation.Size = new System.Drawing.Size(377, 174);
-            this._lv_navigation.TabIndex = 0;
             this._lv_navigation.UseCompatibleStateImageBehavior = false;
             this._lv_navigation.View = System.Windows.Forms.View.Details;
             this._lv_navigation.ItemActivate += new System.EventHandler(this._lv_navigation_ItemActivate);
+            this._lv_navigation.SelectedIndexChanged += new System.EventHandler(this._lv_navigation_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "#";
-            this.columnHeader1.Width = 40;
+            resources.ApplyResources(this.columnHeader1, "columnHeader1");
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Command";
-            this.columnHeader2.Width = 294;
+            resources.ApplyResources(this.columnHeader2, "columnHeader2");
             // 
             // _imageListGps
             // 
@@ -981,19 +748,23 @@
             // 
             // _gmapContextMenuStrip
             // 
+            resources.ApplyResources(this._gmapContextMenuStrip, "_gmapContextMenuStrip");
             this._gmapContextMenuStrip.Name = "_gmapContextMenuStrip";
-            this._gmapContextMenuStrip.Size = new System.Drawing.Size(61, 4);
             // 
             // LiveUavPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this._navigationPanel);
             this.Controls.Add(this._cockpitPanel);
             this.Name = "LiveUavPanel";
-            this.Size = new System.Drawing.Size(379, 636);
+            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
+            this.toolStripContainer1.ResumeLayout(false);
+            this.toolStripContainer1.PerformLayout();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this._cockpitPanel.ResumeLayout(false);
             this._cockpitPanel.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -1002,12 +773,6 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
-            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
-            this.toolStripContainer1.ResumeLayout(false);
-            this.toolStripContainer1.PerformLayout();
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this._panelStrip.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -1101,5 +866,6 @@
         private System.Windows.Forms.ToolStripMenuItem generateSurveyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem _btnNewSurvey;
         private System.Windows.Forms.ToolStripMenuItem _btnBuildSurvey;
+        private System.Windows.Forms.ToolStripMenuItem _btnSurveySettings;
     }
 }

@@ -374,8 +374,20 @@
     <EmbeddedResource Include="AskHome.resx">
       <DependentUpon>AskHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConfigurationControl.de.resx">
+      <DependentUpon>ConfigurationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigurationControl.nl.resx">
+      <DependentUpon>ConfigurationControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConfigurationControl.resx">
       <DependentUpon>ConfigurationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigurationTabpage.de.resx">
+      <DependentUpon>ConfigurationTabpage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigurationTabpage.nl.resx">
+      <DependentUpon>ConfigurationTabpage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConfigurationTabpage.resx">
       <DependentUpon>ConfigurationTabpage.cs</DependentUpon>

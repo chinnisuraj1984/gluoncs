@@ -16,9 +16,16 @@ namespace GluonCS.LiveUavLayer
 
         protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
         {
-            if (vane == null)
-                vane = Image.FromFile("Resources\\windvane.png");
             base.OnPaint(e);
+            try
+            {
+                if (vane == null)
+                    vane = Image.FromFile("Resources\\windvane.png");
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
 
             double size = 30;
             //e.Graphics.DrawLine(new Pen(Brushes.Red, 3), new Point(this.Width - 50, 20), new Point((int)(this.Width - 50 + Math.Cos(WindDirectionRad) * size), (int)(20 - Math.Sin(WindDirectionRad) * size)));

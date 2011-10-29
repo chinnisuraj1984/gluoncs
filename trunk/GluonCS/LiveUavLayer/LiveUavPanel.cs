@@ -14,6 +14,10 @@ using System.IO;
 using System.Xml.Serialization;
 using Configuration.NavigationCommands;
 using ZedGraph;
+using System.Globalization;
+using System.Threading;
+using System.Reflection;
+
 
 namespace GluonCS
 {
@@ -25,8 +29,11 @@ namespace GluonCS
         private LineItem batteryVLineItem;
         private DateTime startDateTime = DateTime.Now;
 
-        private Timer redrawNavigationTable;
-        private Timer updatePanel;
+        private System.Windows.Forms.Timer redrawNavigationTable;
+        private System.Windows.Forms.Timer updatePanel;
+
+        private System.Resources.ResourceManager resources = 
+            new System.Resources.ResourceManager("GluonCS.LiveUavLayer.WinFormStrings", Assembly.GetExecutingAssembly());
 
         public LiveUavPanel()
             : base()
@@ -73,7 +80,7 @@ namespace GluonCS
             //zedGraphControl1.MasterPane.Add(_zgAlt.GraphPane.Clone());
             //zedGraphControl1.MasterPane.Add(_zgBatV.GraphPane.Clone());
 
-            redrawNavigationTable = new Timer();
+            redrawNavigationTable = new System.Windows.Forms.Timer();
             redrawNavigationTable.Interval = 400;
             redrawNavigationTable.Tick += new EventHandler(redrawNavigationTable_Tick);
         }
@@ -97,7 +104,7 @@ namespace GluonCS
             model.UavAttitudeChanged += new LiveUavModel.ChangedEventHandler(model_UavAttitudeChanged);
             model.UavPositionChanged += new LiveUavModel.ChangedEventHandler(model_UavPositionChanged);
             model.HomeChanged += new LiveUavModel.ChangedEventHandler(model_HomeChanged);
-            updatePanel = new Timer();
+            updatePanel = new System.Windows.Forms.Timer();
             updatePanel.Interval = 200;
             updatePanel.Tick += new EventHandler(updatePanel_Tick);
             updatePanel.Enabled = true;
@@ -147,24 +154,24 @@ namespace GluonCS
 
                 if (!model.CommunicationAlive)
                 {
-                    _lblFlightMode.Text = "! Connection lost !";
+                    _lblFlightMode.Text = resources.GetString("ConnectionLost");// "! Connection lost !";
                     _lblFlightMode.BackColor = Color.Orange;
                 }
                 else
                 {
                     if (model.FlightMode == ControlInfo.FlightModes.AUTOPILOT)
                     {
-                        _lblFlightMode.Text = "Autopilot ON";
+                        _lblFlightMode.Text = resources.GetString("Autopilot_ON");
                         _lblFlightMode.BackColor = Color.LimeGreen;
                     }
                     else if (model.FlightMode == ControlInfo.FlightModes.STABILIZED)
                     {
-                        _lblFlightMode.Text = "Stabilized manual\r\nRC mode";
+                        _lblFlightMode.Text = resources.GetString("Stabilized_manual"); // "Stabilized manual\r\nRC mode";
                         _lblFlightMode.BackColor = Color.Yellow;
                     }
                     else if (model.FlightMode == ControlInfo.FlightModes.MANUAL)
                     {
-                        _lblFlightMode.Text = "Autopilot OFF\r\nManual RC mode";
+                        _lblFlightMode.Text = resources.GetString("Autopilot_OFF");
                         _lblFlightMode.BackColor = Color.Red;
                     }
                 }
@@ -175,13 +182,13 @@ namespace GluonCS
                     {
                         _pbGps.ForeColor = Color.Red;
                         _lblGpsSat.BackColor = Color.Red;
-                        _pbGps.Text = "Acquiring (" + model.NumberOfGpsSatellites + ")";
+                        _pbGps.Text = resources.GetString("Acquiring") + "(" + model.NumberOfGpsSatellites + ")";
                     }
                     else
                     {
                         _pbGps.ForeColor = Color.LimeGreen;
                         _lblGpsSat.BackColor = _lblGpsSat.Parent.BackColor;
-                        _pbGps.Text = "Locked (" + model.NumberOfGpsSatellites + ")";
+                        _pbGps.Text = resources.GetString("Locked") + "(" + model.NumberOfGpsSatellites + ")";
                     }
                     if (model.NumberOfGpsSatellites > _pbGps.Maximum)
                         _pbGps.Maximum = model.NumberOfGpsSatellites;
@@ -190,7 +197,7 @@ namespace GluonCS
                 else //if (model.NumberOfGpsSatellites == -1)
                 {
                     _pbGps.Value = 0;
-                    _pbGps.Text = "Not found";
+                    _pbGps.Text = resources.GetString("Not found") + "Not found";
                     _lblGpsSat.BackColor = Color.Red;
                 }
 
@@ -199,7 +206,7 @@ namespace GluonCS
                 _pbBattery.Text = model.BatteryVoltage.ToString() + " V";
                 if (model.SecondsConnectionLost() > 0.3)
                 {
-                    _pbLink.Text = model.SecondsConnectionLost().ToString("F0") + " s lost";
+                    _pbLink.Text = model.SecondsConnectionLost().ToString("F0") + " " + resources.GetString("s lost");
                     _pbLink.Value = (int)Math.Max(0.0, Math.Min(100.0, 110.0 - model.SecondsConnectionLost() * 20.0));  // 5 seconds without connection = 0%
                     if (model.SecondsConnectionLost() < 3)
                     {
@@ -224,12 +231,12 @@ namespace GluonCS
                 _pbThrottle.Value = model.ThrottlePct;
 
                 _lblAltitudeAgl.Text = model.AltitudeAglM + " m / " + model.TargetAltitudeAglM() + " m";
-                _lblDistNextWp.Text = "Next WP: " + model.DistanceNextWaypoint().ToString("F0") + " m";
-                _lblHomeDistance.Text = "Home: " + model.DistanceHome().ToString("F0") + " m";
+                _lblDistNextWp.Text = resources.GetString("Next_WP") + ": " + model.DistanceNextWaypoint().ToString("F0") + " m";
+                _lblHomeDistance.Text = resources.GetString("Home") + ": " + model.DistanceHome().ToString("F0") + " m";
 
                 _lblBlockname.Text = model.NavigationModel.Commands[model.CurrentNavigationLine].BlockName;
-                _lblFlightTime.Text = "Flight time: " + (int)(model.FlightTime.TotalMinutes) + ":" + model.FlightTime.Seconds;
-                _lblTimeInBlock.Text = "Time in block: " + (int)(model.BlockTime.TotalMinutes) + ":" + model.BlockTime.Seconds;
+                _lblFlightTime.Text = resources.GetString("Flight_time") + ": " + (int)(model.FlightTime.TotalMinutes) + ":" + model.FlightTime.Seconds;
+                _lblTimeInBlock.Text = resources.GetString("Time_in_block") + ": " + (int)(model.BlockTime.TotalMinutes) + ":" + model.BlockTime.Seconds;
 
                 // update listview with current navigation line selection
                 foreach (ListViewItem lvi in _lv_navigation.Items)
@@ -250,11 +257,11 @@ namespace GluonCS
                     _lv_navigation.Items[model.CurrentNavigationLine].BackColor = Color.Yellow;
 
                 if (model.SpeedMS < 0.001)
-                    _lblTimeToWp.Text = "Time to WP: oo s";
+                    _lblTimeToWp.Text = resources.GetString("Time_to_WP") + ": oo s";
                 else
                 {
                     TimeSpan ts = new TimeSpan(0, 0, (int)(model.DistanceNextWaypoint() / model.SpeedMS));
-                    _lblTimeToWp.Text = "Time to WP: " + (int)ts.TotalMinutes + ":" + ts.Seconds;
+                    _lblTimeToWp.Text = resources.GetString("Time_to_WP") + ": " + (int)ts.TotalMinutes + ":" + ts.Seconds;
                 }
                 _lblSpeed.Text = ((int)(model.SpeedMS * 3.6)).ToString() + " km/h";
 
@@ -635,7 +642,7 @@ namespace GluonCS
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Can't synchronize with data that has not yet been received. \r\nPlease read the navigation data from the module first or perform a Write operation.", "Error synchronizing");
+                MessageBox.Show(resources.GetString("cantsynchronize"), resources.GetString("Error_synchronizing"));
                 _btnAutoSync.Checked = false;
             }
         }
@@ -651,7 +658,7 @@ namespace GluonCS
 
             if (ret == false)
             {
-                MessageBox.Show(this, "There was an error when writing the navigation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, resources.GetString("There_was_an_error_when_writing_the_navigation"), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -666,11 +673,11 @@ namespace GluonCS
             {
                 if (model.Serial != null && model.Serial.IsOpen)
                 {
-                    if (MessageBox.Show("Are you sure you want to close the connection?", "Are you sure?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
+                    if (MessageBox.Show(resources.GetString("Are_you_sure_you_want_to_close_the_connection"), resources.GetString("Are_you_sure"), MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
                         model.Serial.Close();
                 }
                 else
-                    MessageBox.Show("Please first connect to the gluonpilot", "Configuration not possible", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(resources.GetString("Please_first_connect_to_the_gluonpilot"), resources.GetString("Configuration_not_possible"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -769,7 +776,8 @@ namespace GluonCS
         private void _btnAddBlock_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.OpenFileDialog file = new System.Windows.Forms.OpenFileDialog();
-            file.Title = "Please open the gluon navigation/block file you wish to insert";
+
+            file.Title = resources.GetString("open_the_gluon_navigationblock");
             file.DefaultExt = "gnf";
             file.InitialDirectory = Path.GetDirectoryName(Application.ExecutablePath) + "\\NavigationBlocks";
 
@@ -786,7 +794,7 @@ namespace GluonCS
                 if (selected_index == -1)
                     return;
 
-                if (MessageBox.Show("The block will be inserted at line nr " + (selected_index + 1).ToString() + ".", "Inserting block", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                if (MessageBox.Show(resources.GetString("The_block_will_be_inserted_at_line_nr") + "  " + (selected_index + 1).ToString() + ".", resources.GetString("Inserting block"), MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                 {
                     for (int i = 0; i < list.Length && list[i].opcode != NavigationInstruction.navigation_command.EMPTY; i++)
                     {
@@ -808,14 +816,14 @@ namespace GluonCS
             int line;
             if (model.NavigationModel.Blocks.ContainsKey("Survey"))
             {
-                if (MessageBox.Show("There already is a Survey block. It will be cleared.", "New survey block", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show(resources.GetString("There_already_is_a_Survey_block_It_will_be_cleared"), resources.GetString("New_survey_block"), MessageBoxButtons.OKCancel) == DialogResult.OK)
                     line = model.NavigationModel.Blocks["Survey"];
                 else
                     return;
             }
             else if (model.NavigationModel.Blocks.ContainsKey("DoSurvey"))
             {
-                if (MessageBox.Show("There already is a DoSurvey block. It will be cleared.", "New survey block", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show(resources.GetString("There_already_is_a_Survey_block_It_will_be_cleared"), resources.GetString("New_survey_block"), MessageBoxButtons.OKCancel) == DialogResult.OK)
                     line = model.NavigationModel.Blocks["DoSurvey"];
                 else
                     return;
@@ -844,7 +852,7 @@ namespace GluonCS
         {
             int selected_index = _lv_navigation.SelectedIndices.Count == 0 ? 0 : _lv_navigation.SelectedIndices[0];
 
-            DialogResult r = MessageBox.Show("Do you want me to insert the block at the first empty line?", "Add new block", MessageBoxButtons.YesNoCancel);
+            DialogResult r = MessageBox.Show(resources.GetString("Do_you_want_me_to_insert_the_block_at_the_first_empty_line"), resources.GetString("Add_new_block"), MessageBoxButtons.YesNoCancel);
             if (r == DialogResult.Yes)
             {
                 for (int i = 0; i < _lv_navigation.Items.Count; i++)
@@ -852,11 +860,11 @@ namespace GluonCS
                     if (model.GetNavigationInstructionLocal(i).opcode == NavigationInstruction.navigation_command.EMPTY)
                         return i;
                 }
-                MessageBox.Show("Sorry, no empty position detected. Please select the line where you want the block to be inserted and try again.", "Add block");
+                MessageBox.Show(resources.GetString("Sorry_no_empty_position_detected"), resources.GetString("Add_new_block"));
             }
             else if (r == DialogResult.No)
             {
-                if (MessageBox.Show("Inserting the new block at the selected position " + (selected_index + 1).ToString() + "", "Add new block", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show(resources.GetString("Inserting the new block at the selected position") + " " + (selected_index + 1).ToString() + "", resources.GetString("Add_new_block"), MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     return selected_index;
                 }
@@ -866,7 +874,20 @@ namespace GluonCS
 
         private void _btnBuildSurvey_Click(object sender, EventArgs e)
         {
-            model.GenerateSurveyLines();
+            SurveyProperties sp = new SurveyProperties();
+            if (sp.ShowDialog(this) == DialogResult.OK)
+                model.GenerateSurveyLines();
+        }
+
+        private void _lv_navigation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void _btnSurveySettings_Click(object sender, EventArgs e)
+        {
+            SurveyProperties sp = new SurveyProperties();
+            sp.ShowDialog(this);
         }
     }
 }
