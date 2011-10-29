@@ -19,6 +19,8 @@ using Communication;
 using System.IO.Ports;
 using System.Net;
 using FlightgearCommunication;
+using System.Threading;
+using System.Globalization;
 
 namespace GluonCS
 {
@@ -38,6 +40,8 @@ namespace GluonCS
 
         public GluonCSForm()
         {
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo("nl-NL");
+
             InitializeComponent();
 
             /////////////

@@ -21,6 +21,13 @@ namespace GluonCS.LiveUavLayer
             _dtbAltitudeM.DistanceM = Properties.Settings.Default.SurveyAltitudeM;
             _dtbDistanceM.DistanceM = Properties.Settings.Default.SurveyDistanceM;
             _nudFlightPath.Value = (decimal)Properties.Settings.Default.SurveyAngleDeg;
+            surveyAngle1.AngleChanged += new SurveyAngle.AngleChangedDelegate(surveyAngle1_AngleChanged);
+        }
+
+        void surveyAngle1_AngleChanged(double new_angle)
+        {
+            if ((double)_nudFlightPath.Maximum >= new_angle && (double)_nudFlightPath.Minimum <= new_angle)
+                _nudFlightPath.Value = (decimal)new_angle;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -33,6 +40,14 @@ namespace GluonCS.LiveUavLayer
             Properties.Settings.Default.SurveyAngleDeg = AngleDeg;
             Properties.Settings.Default.SurveyDistanceM = DistanceM;
             Properties.Settings.Default.Save();
+        }
+
+        private void _nudFlightPath_ValueChanged(object sender, EventArgs e)
+        {
+            if (_nudFlightPath.Value == 360)
+                _nudFlightPath.Value = 0;
+            surveyAngle1.Angle = (double)_nudFlightPath.Value;
+            surveyAngle1.Invalidate();
         }
     }
 }

@@ -91,14 +91,13 @@ namespace GluonCS.Markers
 
             float ypos = LocalPosition.Y + 4;
             float xpos = (float)LocalPosition.X + (float)12 - (float)Math.Floor(sf.Width / 2 - 0.0) - 2;
-            //if (str.Length > 1 && str.Substring(0, 1) == "1")
-            //    xpos -= 1; // hack to make it look better
+            if (str.Length > 1 && str.Substring(0, 1) == "1")
+                xpos -= 1; // hack to make it look better
 
             g.DrawString(str, font, Brushes.Black, xpos + 1, ypos + 1 + y_pad);
             g.DrawString(str, font, Brushes.Black, xpos + 1, ypos - 1 + y_pad);
             g.DrawString(str, font, Brushes.Black, xpos - 1, ypos + 1 + y_pad);
             g.DrawString(str, font, Brushes.Black, xpos - 1, ypos - 1 + y_pad);
-            g.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
             g.DrawString(str, font, Brushes.White, xpos, ypos + y_pad);
 
         }

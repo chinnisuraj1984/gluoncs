@@ -33,6 +33,7 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.xPanderPanelList1 = new BSE.Windows.Forms.XPanderPanelList();
             this.xPanderPanel2 = new BSE.Windows.Forms.XPanderPanel();
+            this._rbOffline = new System.Windows.Forms.RadioButton();
             this._rbReplay = new System.Windows.Forms.RadioButton();
             this._rbViaComPort = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -58,7 +59,6 @@
             this._cbSimulation = new System.Windows.Forms.CheckBox();
             this._btn_connect = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this._rbOffline = new System.Windows.Forms.RadioButton();
             this.xPanderPanelList1.SuspendLayout();
             this.xPanderPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -71,18 +71,14 @@
             // 
             // xPanderPanelList1
             // 
+            resources.ApplyResources(this.xPanderPanelList1, "xPanderPanelList1");
             this.xPanderPanelList1.CaptionStyle = BSE.Windows.Forms.CaptionStyle.Normal;
             this.xPanderPanelList1.Controls.Add(this.xPanderPanel2);
             this.xPanderPanelList1.Controls.Add(this.xPanderPanel1);
             this.xPanderPanelList1.Controls.Add(this.xPanderPanel3);
-            this.xPanderPanelList1.Dock = System.Windows.Forms.DockStyle.Top;
             this.xPanderPanelList1.GradientBackground = System.Drawing.Color.Empty;
-            this.xPanderPanelList1.Location = new System.Drawing.Point(0, 0);
             this.xPanderPanelList1.Name = "xPanderPanelList1";
             this.xPanderPanelList1.PanelColors = null;
-            this.xPanderPanelList1.Size = new System.Drawing.Size(275, 253);
-            this.xPanderPanelList1.TabIndex = 0;
-            this.xPanderPanelList1.Text = "xPanderPanelList1";
             // 
             // xPanderPanel2
             // 
@@ -114,146 +110,112 @@
             this.xPanderPanel2.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.xPanderPanel2.CustomColors.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.xPanderPanel2.Expand = true;
+            resources.ApplyResources(this.xPanderPanel2, "xPanderPanel2");
             this.xPanderPanel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel2.Image = null;
             this.xPanderPanel2.Name = "xPanderPanel2";
             this.xPanderPanel2.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
-            this.xPanderPanel2.Size = new System.Drawing.Size(275, 203);
-            this.xPanderPanel2.TabIndex = 1;
-            this.xPanderPanel2.Text = "Basic settings";
             this.xPanderPanel2.ToolTipTextCloseIcon = null;
             this.xPanderPanel2.ToolTipTextExpandIconPanelCollapsed = null;
             this.xPanderPanel2.ToolTipTextExpandIconPanelExpanded = null;
             // 
+            // _rbOffline
+            // 
+            resources.ApplyResources(this._rbOffline, "_rbOffline");
+            this._rbOffline.Name = "_rbOffline";
+            this._rbOffline.TabStop = true;
+            this._rbOffline.UseVisualStyleBackColor = true;
+            // 
             // _rbReplay
             // 
-            this._rbReplay.AutoSize = true;
-            this._rbReplay.Location = new System.Drawing.Point(20, 116);
+            resources.ApplyResources(this._rbReplay, "_rbReplay");
             this._rbReplay.Name = "_rbReplay";
-            this._rbReplay.Size = new System.Drawing.Size(88, 17);
-            this._rbReplay.TabIndex = 3;
-            this._rbReplay.Text = "Replay logfile";
             this._rbReplay.UseVisualStyleBackColor = true;
             // 
             // _rbViaComPort
             // 
-            this._rbViaComPort.AutoSize = true;
+            resources.ApplyResources(this._rbViaComPort, "_rbViaComPort");
             this._rbViaComPort.Checked = true;
-            this._rbViaComPort.Location = new System.Drawing.Point(20, 33);
             this._rbViaComPort.Name = "_rbViaComPort";
-            this._rbViaComPort.Size = new System.Drawing.Size(125, 17);
-            this._rbViaComPort.TabIndex = 0;
             this._rbViaComPort.TabStop = true;
-            this._rbViaComPort.Text = "Connect to COM-port";
             this._rbViaComPort.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this._btnBrowseLoggedFile);
             this.groupBox2.Controls.Add(this._tbLoggedFilename);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(10, 119);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(254, 49);
-            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "   ";
             // 
             // _btnBrowseLoggedFile
             // 
-            this._btnBrowseLoggedFile.Location = new System.Drawing.Point(209, 16);
+            resources.ApplyResources(this._btnBrowseLoggedFile, "_btnBrowseLoggedFile");
             this._btnBrowseLoggedFile.Name = "_btnBrowseLoggedFile";
-            this._btnBrowseLoggedFile.Size = new System.Drawing.Size(26, 21);
-            this._btnBrowseLoggedFile.TabIndex = 2;
-            this._btnBrowseLoggedFile.Text = "...";
             this._btnBrowseLoggedFile.UseVisualStyleBackColor = true;
             this._btnBrowseLoggedFile.Click += new System.EventHandler(this._btnBrowseLoggedFile_Click);
             // 
             // _tbLoggedFilename
             // 
-            this._tbLoggedFilename.Location = new System.Drawing.Point(63, 17);
+            resources.ApplyResources(this._tbLoggedFilename, "_tbLoggedFilename");
             this._tbLoggedFilename.Name = "_tbLoggedFilename";
-            this._tbLoggedFilename.Size = new System.Drawing.Size(139, 20);
-            this._tbLoggedFilename.TabIndex = 1;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 20);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "File:";
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this._btn_portrefresh);
             this.groupBox1.Controls.Add(this._cbBaudrate);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this._cb_portnames);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(10, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(254, 71);
-            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "      ";
             // 
             // _btn_portrefresh
             // 
+            resources.ApplyResources(this._btn_portrefresh, "_btn_portrefresh");
             this._btn_portrefresh.FlatAppearance.BorderSize = 0;
-            this._btn_portrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._btn_portrefresh.ForeColor = System.Drawing.Color.Transparent;
-            this._btn_portrefresh.Image = ((System.Drawing.Image)(resources.GetObject("_btn_portrefresh.Image")));
-            this._btn_portrefresh.Location = new System.Drawing.Point(231, 18);
             this._btn_portrefresh.Name = "_btn_portrefresh";
-            this._btn_portrefresh.Size = new System.Drawing.Size(15, 18);
-            this._btn_portrefresh.TabIndex = 4;
             this._btn_portrefresh.UseVisualStyleBackColor = true;
             this._btn_portrefresh.Click += new System.EventHandler(this._btn_portrefresh_Click);
             // 
             // _cbBaudrate
             // 
+            resources.ApplyResources(this._cbBaudrate, "_cbBaudrate");
             this._cbBaudrate.FormattingEnabled = true;
             this._cbBaudrate.Items.AddRange(new object[] {
-            "2400",
-            "4800",
-            "9600",
-            "19200",
-            "38400",
-            "57600",
-            "115200",
-            "230400"});
-            this._cbBaudrate.Location = new System.Drawing.Point(72, 43);
+            resources.GetString("_cbBaudrate.Items"),
+            resources.GetString("_cbBaudrate.Items1"),
+            resources.GetString("_cbBaudrate.Items2"),
+            resources.GetString("_cbBaudrate.Items3"),
+            resources.GetString("_cbBaudrate.Items4"),
+            resources.GetString("_cbBaudrate.Items5"),
+            resources.GetString("_cbBaudrate.Items6"),
+            resources.GetString("_cbBaudrate.Items7")});
             this._cbBaudrate.Name = "_cbBaudrate";
-            this._cbBaudrate.Size = new System.Drawing.Size(156, 21);
-            this._cbBaudrate.TabIndex = 3;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 46);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Baudrate:";
             // 
             // _cb_portnames
             // 
+            resources.ApplyResources(this._cb_portnames, "_cb_portnames");
             this._cb_portnames.FormattingEnabled = true;
-            this._cb_portnames.Location = new System.Drawing.Point(72, 17);
             this._cb_portnames.Name = "_cb_portnames";
-            this._cb_portnames.Size = new System.Drawing.Size(156, 21);
-            this._cb_portnames.TabIndex = 1;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 20);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Port:";
             // 
             // xPanderPanel1
             // 
@@ -285,30 +247,23 @@
             this.xPanderPanel1.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(225)))), ((int)(((byte)(252)))));
             this.xPanderPanel1.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.xPanderPanel1.CustomColors.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.xPanderPanel1, "xPanderPanel1");
             this.xPanderPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel1.Image = null;
             this.xPanderPanel1.Name = "xPanderPanel1";
             this.xPanderPanel1.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
-            this.xPanderPanel1.Size = new System.Drawing.Size(275, 25);
-            this.xPanderPanel1.TabIndex = 0;
-            this.xPanderPanel1.Text = "Advanced";
             this.xPanderPanel1.ToolTipTextCloseIcon = null;
             this.xPanderPanel1.ToolTipTextExpandIconPanelCollapsed = null;
             this.xPanderPanel1.ToolTipTextExpandIconPanelExpanded = null;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 115);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Port number";
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Enabled = false;
-            this.numericUpDown1.Location = new System.Drawing.Point(99, 113);
+            resources.ApplyResources(this.numericUpDown1, "numericUpDown1");
             this.numericUpDown1.Maximum = new decimal(new int[] {
             30000,
             0,
@@ -320,8 +275,6 @@
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(51, 20);
-            this.numericUpDown1.TabIndex = 4;
             this.numericUpDown1.Value = new decimal(new int[] {
             6170,
             0,
@@ -330,43 +283,26 @@
             // 
             // _lblFilename
             // 
-            this._lblFilename.AutoSize = true;
-            this._lblFilename.Location = new System.Drawing.Point(63, 66);
+            resources.ApplyResources(this._lblFilename, "_lblFilename");
             this._lblFilename.Name = "_lblFilename";
-            this._lblFilename.Size = new System.Drawing.Size(16, 13);
-            this._lblFilename.TabIndex = 3;
-            this._lblFilename.Text = "...";
             // 
             // _btnChangeFilename
             // 
-            this._btnChangeFilename.Enabled = false;
-            this._btnChangeFilename.Location = new System.Drawing.Point(32, 61);
+            resources.ApplyResources(this._btnChangeFilename, "_btnChangeFilename");
             this._btnChangeFilename.Name = "_btnChangeFilename";
-            this._btnChangeFilename.Size = new System.Drawing.Size(25, 23);
-            this._btnChangeFilename.TabIndex = 2;
-            this._btnChangeFilename.Text = "...";
             this._btnChangeFilename.UseVisualStyleBackColor = true;
             this._btnChangeFilename.Click += new System.EventHandler(this._btnChangeFilename_Click);
             // 
             // checkBox2
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Enabled = false;
-            this.checkBox2.Location = new System.Drawing.Point(12, 90);
+            resources.ApplyResources(this.checkBox2, "checkBox2");
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(226, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Proxy read-only connection to TCP/IP port";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // _cbLogToFile
             // 
-            this._cbLogToFile.AutoSize = true;
-            this._cbLogToFile.Location = new System.Drawing.Point(13, 38);
+            resources.ApplyResources(this._cbLogToFile, "_cbLogToFile");
             this._cbLogToFile.Name = "_cbLogToFile";
-            this._cbLogToFile.Size = new System.Drawing.Size(96, 17);
-            this._cbLogToFile.TabIndex = 0;
-            this._cbLogToFile.Text = "Log data to file";
             this._cbLogToFile.UseVisualStyleBackColor = true;
             this._cbLogToFile.CheckedChanged += new System.EventHandler(this._cbLogToFile_CheckedChanged);
             // 
@@ -397,80 +333,49 @@
             this.xPanderPanel3.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(225)))), ((int)(((byte)(252)))));
             this.xPanderPanel3.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.xPanderPanel3.CustomColors.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.xPanderPanel3, "xPanderPanel3");
             this.xPanderPanel3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel3.Image = null;
             this.xPanderPanel3.Name = "xPanderPanel3";
             this.xPanderPanel3.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
-            this.xPanderPanel3.Size = new System.Drawing.Size(275, 25);
-            this.xPanderPanel3.TabIndex = 2;
-            this.xPanderPanel3.Text = "Simulation";
             this.xPanderPanel3.ToolTipTextCloseIcon = null;
             this.xPanderPanel3.ToolTipTextExpandIconPanelCollapsed = null;
             this.xPanderPanel3.ToolTipTextExpandIconPanelExpanded = null;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 72);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Flightgear path:";
             // 
             // _tbFlightgear
             // 
-            this._tbFlightgear.Location = new System.Drawing.Point(10, 88);
+            resources.ApplyResources(this._tbFlightgear, "_tbFlightgear");
             this._tbFlightgear.Name = "_tbFlightgear";
-            this._tbFlightgear.Size = new System.Drawing.Size(256, 20);
-            this._tbFlightgear.TabIndex = 1;
-            this._tbFlightgear.Text = "D:\\Program Files\\FlightGear\\";
             // 
             // _cbSimulation
             // 
-            this._cbSimulation.AutoSize = true;
-            this._cbSimulation.Location = new System.Drawing.Point(13, 34);
+            resources.ApplyResources(this._cbSimulation, "_cbSimulation");
             this._cbSimulation.Name = "_cbSimulation";
-            this._cbSimulation.Size = new System.Drawing.Size(233, 30);
-            this._cbSimulation.TabIndex = 0;
-            this._cbSimulation.Text = "Set Gluonpilot in Flightgear simulation mode \r\nand launch Flightgear";
             this._cbSimulation.UseVisualStyleBackColor = true;
             // 
             // _btn_connect
             // 
-            this._btn_connect.Location = new System.Drawing.Point(73, 5);
+            resources.ApplyResources(this._btn_connect, "_btn_connect");
             this._btn_connect.Name = "_btn_connect";
-            this._btn_connect.Size = new System.Drawing.Size(127, 23);
-            this._btn_connect.TabIndex = 5;
-            this._btn_connect.Text = "&Ok";
             this._btn_connect.UseVisualStyleBackColor = true;
             this._btn_connect.Click += new System.EventHandler(this._btn_connect_Click);
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this._btn_connect);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 259);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(275, 35);
-            this.panel1.TabIndex = 1;
-            // 
-            // _rbOffline
-            // 
-            this._rbOffline.AutoSize = true;
-            this._rbOffline.Location = new System.Drawing.Point(20, 174);
-            this._rbOffline.Name = "_rbOffline";
-            this._rbOffline.Size = new System.Drawing.Size(203, 17);
-            this._rbOffline.TabIndex = 4;
-            this._rbOffline.TabStop = true;
-            this._rbOffline.Text = "Don\'t connect - offline flightplan editor";
-            this._rbOffline.UseVisualStyleBackColor = true;
             // 
             // ConnectForm
             // 
             this.AcceptButton = this._btn_connect;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(275, 294);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.xPanderPanelList1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -479,8 +384,6 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "  Connect to your UAV...";
             this.xPanderPanelList1.ResumeLayout(false);
             this.xPanderPanel2.ResumeLayout(false);
             this.xPanderPanel2.PerformLayout();

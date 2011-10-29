@@ -380,10 +380,6 @@ namespace GluonCS.LiveUavLayer
 
         void connection_GpsBasicCommunicationReceived(GpsBasic gpsbasic)
         {
-            if (Math.Abs(gpsbasic.Latitude) < 0.001 && Math.Abs(gpsbasic.Longitude) < 0.001) // data error
-                return;
-
-            //uavPath.Add(new PointLatLng(gpsbasic.Latitude / Math.PI * 180.0, gpsbasic.Longitude / Math.PI * 180.0));
             if (gpsbasic.Status == 2)
                 NumberOfGpsSatellites = -1;
             else
@@ -398,7 +394,13 @@ namespace GluonCS.LiveUavLayer
                     HomeChanged(this, EventArgs.Empty);
                     hasReceivedAGpsPosition = true;
                 }
-            }
+            }       
+     
+            if (Math.Abs(gpsbasic.Latitude) < 0.001 && Math.Abs(gpsbasic.Longitude) < 0.001) // data error
+                return;
+
+            //uavPath.Add(new PointLatLng(gpsbasic.Latitude / Math.PI * 180.0, gpsbasic.Longitude / Math.PI * 180.0));
+
             Heading = gpsbasic.Heading_deg;
             SpeedMS = gpsbasic.Speed_ms;
             

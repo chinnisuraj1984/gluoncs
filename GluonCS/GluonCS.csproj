@@ -161,7 +161,18 @@
     <Compile Include="LiveUavLayer\NavigationOverview.Designer.cs">
       <DependentUpon>NavigationOverview.cs</DependentUpon>
     </Compile>
+    <Compile Include="LiveUavLayer\WinFormStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WinFormStrings.resx</DependentUpon>
+    </Compile>
     <Compile Include="LiveUavLayer\Survey.cs" />
+    <Compile Include="LiveUavLayer\SurveyAngle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LiveUavLayer\SurveyAngle.Designer.cs">
+      <DependentUpon>SurveyAngle.cs</DependentUpon>
+    </Compile>
     <Compile Include="LiveUavLayer\SurveyProperties.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +217,12 @@
     <Compile Include="TransparentLabel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="GluonCSForm.de.resx">
+      <DependentUpon>GluonCSForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GluonCSForm.nl.resx">
+      <DependentUpon>GluonCSForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GluonCSForm.resx">
       <DependentUpon>GluonCSForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -213,8 +230,17 @@
     <EmbeddedResource Include="LayerPropertiesPanel.resx">
       <DependentUpon>LayerPropertiesPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\ConnectForm.nl.resx">
+      <DependentUpon>ConnectForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\ConnectForm.resx">
       <DependentUpon>ConnectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\LiveUavPanel.en.resx">
+      <DependentUpon>LiveUavPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\LiveUavPanel.nl.resx">
+      <DependentUpon>LiveUavPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\LiveUavPanel.resx">
       <DependentUpon>LiveUavPanel.cs</DependentUpon>
@@ -222,6 +248,20 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\NavigationOverview.resx">
       <DependentUpon>NavigationOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\SurveyProperties.de.resx">
+      <DependentUpon>SurveyProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\SurveyProperties.nl.resx">
+      <DependentUpon>SurveyProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\WinFormStrings.nl.resx" />
+    <EmbeddedResource Include="LiveUavLayer\WinFormStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>WinFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\SurveyAngle.resx">
+      <DependentUpon>SurveyAngle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\SurveyProperties.resx">
       <DependentUpon>SurveyProperties.cs</DependentUpon>
@@ -241,6 +281,9 @@
     </Compile>
     <EmbeddedResource Include="ReplayControl.resx">
       <DependentUpon>ReplayControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setup.nl.resx">
+      <DependentUpon>Setup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Setup.resx">
       <DependentUpon>Setup.cs</DependentUpon>
@@ -369,6 +412,7 @@
     </Content>
     <Content Include="..\Documentation\glideto.html">
       <Link>Documentation\glideto.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\Documentation\goto.html">
       <Link>Documentation\goto.html</Link>
@@ -430,6 +474,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\marker_empty_yellow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\surveyimage.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\windvane.png">
