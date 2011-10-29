@@ -109,6 +109,7 @@
       <HintPath>..\Libs\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Net" />
+    <Reference Include="System.Speech" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -161,6 +162,7 @@
     <Compile Include="LiveUavLayer\NavigationOverview.Designer.cs">
       <DependentUpon>NavigationOverview.cs</DependentUpon>
     </Compile>
+    <Compile Include="LiveUavLayer\UavSpeech.cs" />
     <Compile Include="LiveUavLayer\WinFormStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -483,7 +485,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

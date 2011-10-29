@@ -38,9 +38,17 @@ namespace GluonCS
         private ToolStripRenderer m_currentToolStripRenderer;
         private BSE.Windows.Forms.ProfessionalColorTable m_currentProfessionalColorTable;
 
+        private System.Speech.Synthesis.SpeechSynthesizer ss = new System.Speech.Synthesis.SpeechSynthesizer();
+        private UavSpeech uavspeech;
+
         public GluonCSForm()
         {
-            //Thread.CurrentThread.CurrentUICulture = new CultureInfo("nl-NL");
+            if (Properties.Settings.Default.Language == "Nederlands")
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("nl-NL");
+            else if (Properties.Settings.Default.Language == "Deutsch")
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("de-DE");
+            else
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
 
             InitializeComponent();
 
@@ -88,6 +96,8 @@ namespace GluonCS
             model.InformationMessageReceived += new LiveUavModel.TextReceivedEventHandler(model_InformationMessageReceived);
             controller = new LiveUavLayer.GMapController(_gMapControl, model);
             liveUavPanel1.SetModel(model);
+
+            uavspeech = new UavSpeech(model);
 
             activeOverlay = controller.Overlay;
 
@@ -173,6 +183,7 @@ namespace GluonCS
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            uavspeech.Stop();
             Console.WriteLine("Closing serial...");
             if (model.Serial != null)
                 model.Serial.Close();
