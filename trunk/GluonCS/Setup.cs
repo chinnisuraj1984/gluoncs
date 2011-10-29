@@ -33,6 +33,9 @@ namespace GluonCS
             _tbUavName.Text = Properties.Settings.Default.UavName;
             _dtb_altitude.DistanceM = Properties.Settings.Default.DefaultAltitudeM;
             _dtb_radius.DistanceM = Properties.Settings.Default.DefaultCircleRadius;
+            _cbUseSpeech.Checked = Properties.Settings.Default.UseSpeech;
+
+            _cbLanguage.SelectedText = Properties.Settings.Default.Language;
         }
 
         private void _btnClearCache_Click(object sender, EventArgs e)
@@ -72,6 +75,8 @@ namespace GluonCS
             Properties.Settings.Default.UavName = _tbUavName.Text;
             Properties.Settings.Default.DefaultAltitudeM = _dtb_altitude.DistanceM;
             Properties.Settings.Default.DefaultCircleRadius = _dtb_radius.DistanceM;
+            Properties.Settings.Default.UseSpeech = _cbUseSpeech.Checked;
+            Properties.Settings.Default.Language = (string)(_cbLanguage.SelectedItem.ToString());
             Properties.Settings.Default.Save();
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
@@ -83,6 +88,11 @@ namespace GluonCS
         }
 
         private void _tbUavName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void _cbUseSpeech_CheckedChanged(object sender, EventArgs e)
         {
 
         }

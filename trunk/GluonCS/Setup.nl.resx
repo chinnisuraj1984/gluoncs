@@ -121,9 +121,6 @@
     <value>Algemeen</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="_dtb_radius.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 135</value>
-  </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 13</value>
   </data>
@@ -156,6 +153,10 @@
   </data>
   <data name="_btnCancel.Text" xml:space="preserve">
     <value>Afbreken</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Instellingen</value>
