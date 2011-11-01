@@ -43,6 +43,7 @@ namespace GluonCS
 
         public GluonCSForm()
         {
+            Console.WriteLine("-> " + Properties.Settings.Default.Language);
             if (Properties.Settings.Default.Language == "Nederlands")
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("nl-NL");
             else if (Properties.Settings.Default.Language == "Deutsch")

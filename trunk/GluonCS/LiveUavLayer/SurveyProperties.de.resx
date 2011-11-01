@@ -274,4 +274,22 @@
         AAA=
 </value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Abstand zwischen Zeilen</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>&amp; Abbrechen</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Grad</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Flug Pfad Winkel</value>
+  </data>
+  <data name="_btnBuild.Text" xml:space="preserve">
+    <value>&amp; Ok</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Höhe über dem Boden</value>
+  </data>
 </root>

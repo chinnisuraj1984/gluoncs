@@ -273,4 +273,55 @@
         Arjc3AAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="_tssl_downloadspeed.Text" xml:space="preserve">
+    <value>0 kB/s</value>
+  </data>
+  <data name="_btnBasicConfiguration.Text" xml:space="preserve">
+    <value>Basiskonfiguration</value>
+  </data>
+  <data name="_statusStrip.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="_btn_reboot.Text" xml:space="preserve">
+    <value>Modul Neustart</value>
+  </data>
+  <data name="_cb_print_timestamp.Text" xml:space="preserve">
+    <value>## Drucken von timestamp</value>
+  </data>
+  <data name="_btn_firmware_upgrade.Text" xml:space="preserve">
+    <value>Firmware Update</value>
+  </data>
+  <data name="gcs.Text" xml:space="preserve">
+    <value>## Dashboard</value>
+  </data>
+  <data name="_cb_hide_parsed.Text" xml:space="preserve">
+    <value>Analysierte Zeilen ausblenden</value>
+  </data>
+  <data name="config.Text" xml:space="preserve">
+    <value>Konfiguration</value>
+  </data>
+  <data name="toolStripStatusLabel2.Text" xml:space="preserve">
+    <value>Download Geschwindigkeit:</value>
+  </data>
+  <data name="_btn_connect.Text" xml:space="preserve">
+    <value>Verbinden</value>
+  </data>
+  <data name="_btn_showlogging.Text" xml:space="preserve">
+    <value>Protokollierung</value>
+  </data>
+  <data name="toolStripStatusLabel1.Text" xml:space="preserve">
+    <value>Zeit verbunden:</value>
+  </data>
+  <data name="toolStripContainer1.Text" xml:space="preserve">
+    <value>toolStripContainer1</value>
+  </data>
+  <data name="Navigation.Text" xml:space="preserve">
+    <value>Navigation</value>
+  </data>
+  <data name="datalog.Text" xml:space="preserve">
+    <value>Datalogging</value>
+  </data>
+  <data name="_tssl_time.Text" xml:space="preserve">
+    <value>00:00:00</value>
+  </data>
 </root>

@@ -219,6 +219,9 @@
     <Compile Include="TransparentLabel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="GluonCSForm.ar.resx">
+      <DependentUpon>GluonCSForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GluonCSForm.de.resx">
       <DependentUpon>GluonCSForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,11 +235,17 @@
     <EmbeddedResource Include="LayerPropertiesPanel.resx">
       <DependentUpon>LayerPropertiesPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\ConnectForm.de.resx">
+      <DependentUpon>ConnectForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\ConnectForm.nl.resx">
       <DependentUpon>ConnectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\ConnectForm.resx">
       <DependentUpon>ConnectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\LiveUavPanel.de.resx">
+      <DependentUpon>LiveUavPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\LiveUavPanel.en.resx">
       <DependentUpon>LiveUavPanel.cs</DependentUpon>
@@ -257,6 +266,7 @@
     <EmbeddedResource Include="LiveUavLayer\SurveyProperties.nl.resx">
       <DependentUpon>SurveyProperties.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\WinFormStrings.de.resx" />
     <EmbeddedResource Include="LiveUavLayer\WinFormStrings.nl.resx" />
     <EmbeddedResource Include="LiveUavLayer\WinFormStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -283,6 +293,9 @@
     </Compile>
     <EmbeddedResource Include="ReplayControl.resx">
       <DependentUpon>ReplayControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setup.de.resx">
+      <DependentUpon>Setup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Setup.nl.resx">
       <DependentUpon>Setup.cs</DependentUpon>
@@ -376,56 +389,108 @@
     <None Include="Resources\folder-open-document.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\Documentation\block.html">
-      <Link>Documentation\block.html</Link>
+    <Content Include="..\Documentation\de\block.html">
+      <Link>Documentation\de\block.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\Documentation\circle.html">
-      <Link>Documentation\circle.html</Link>
+    <Content Include="..\Documentation\de\circle.html">
+      <Link>Documentation\de\circle.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\Documentation\climb.html">
-      <Link>Documentation\climb.html</Link>
+    <Content Include="..\Documentation\de\climb.html">
+      <Link>Documentation\de\climb.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\Documentation\emptycmd.html">
-      <Link>Documentation\emptycmd.html</Link>
+    <Content Include="..\Documentation\de\emptycmd.html">
+      <Link>Documentation\de\emptycmd.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\Documentation\flareto.html">
-      <Link>Documentation\flareto.html</Link>
+    <Content Include="..\Documentation\de\flareto.html">
+      <Link>Documentation\de\flareto.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\Documentation\flyto.html">
-      <Link>Documentation\flyto.html</Link>
+    <Content Include="..\Documentation\de\flyto.html">
+      <Link>Documentation\de\flyto.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\Documentation\flyto.png">
-      <Link>Documentation\flyto.png</Link>
+    <Content Include="..\Documentation\de\flyto.png">
+      <Link>Documentation\de\flyto.png</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\Documentation\fromto.html">
-      <Link>Documentation\fromto.html</Link>
+    <Content Include="..\Documentation\de\fromto.html">
+      <Link>Documentation\de\fromto.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\Documentation\fromto.png">
-      <Link>Documentation\fromto.png</Link>
+    <Content Include="..\Documentation\de\fromto.png">
+      <Link>Documentation\de\fromto.png</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\Documentation\glideto.html">
-      <Link>Documentation\glideto.html</Link>
+    <Content Include="..\Documentation\de\glideto.html">
+      <Link>Documentation\de\glideto.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\Documentation\goto.html">
-      <Link>Documentation\goto.html</Link>
+    <Content Include="..\Documentation\de\goto.html">
+      <Link>Documentation\de\goto.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\Documentation\if.html">
-      <Link>Documentation\if.html</Link>
+    <Content Include="..\Documentation\de\if.html">
+      <Link>Documentation\de\if.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\Documentation\until.html">
-      <Link>Documentation\until.html</Link>
+    <Content Include="..\Documentation\de\until.html">
+      <Link>Documentation\de\until.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\en\block.html">
+      <Link>Documentation\en\block.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\en\circle.html">
+      <Link>Documentation\en\circle.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\en\climb.html">
+      <Link>Documentation\en\climb.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\en\emptycmd.html">
+      <Link>Documentation\en\emptycmd.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\en\flareto.html">
+      <Link>Documentation\en\flareto.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\en\flyto.html">
+      <Link>Documentation\en\flyto.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\en\flyto.png">
+      <Link>Documentation\en\flyto.png</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\en\fromto.html">
+      <Link>Documentation\en\fromto.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\en\fromto.png">
+      <Link>Documentation\en\fromto.png</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\en\glideto.html">
+      <Link>Documentation\en\glideto.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\en\goto.html">
+      <Link>Documentation\en\goto.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\en\if.html">
+      <Link>Documentation\en\if.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\en\until.html">
+      <Link>Documentation\en\until.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\models\easystar\easystar.jpg">

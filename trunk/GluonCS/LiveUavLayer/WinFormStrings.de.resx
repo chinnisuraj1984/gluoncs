@@ -118,90 +118,89 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Acquiring" xml:space="preserve">
-    <value>Acquiring</value>
+    <value>### Erwerb</value>
   </data>
   <data name="Add_new_block" xml:space="preserve">
-    <value>Add new block</value>
+    <value>Neuen Block hinzufügen</value>
   </data>
   <data name="Are_you_sure" xml:space="preserve">
-    <value>Are you sure?</value>
+    <value>Bist du sicher?</value>
   </data>
   <data name="Are_you_sure_you_want_to_close_the_connection" xml:space="preserve">
-    <value>Are you sure you want to close the connection?</value>
+    <value>Sind Sie sicher, dass Sie die Verbindung trennen möchten?</value>
   </data>
   <data name="Autopilot_OFF" xml:space="preserve">
     <value>Autopilot OFF
-Manual mode</value>
+Handbetrieb</value>
   </data>
   <data name="Autopilot_ON" xml:space="preserve">
     <value>Autopilot ON</value>
   </data>
   <data name="cantsynchronize" xml:space="preserve">
-    <value>Can't synchronize with data that has not yet been received. 
-Please read the navigation data from the module first or perform a Write operation.</value>
+    <value>## Kann nicht synchroniesieren, da die Navigations daten noch nicht aus den Modul Abgerufen wurden, Bitte Navigationsdaten auslesen oder erst einen Schreibvorgang ausführen.</value>
   </data>
   <data name="Configuration_not_possible" xml:space="preserve">
-    <value>Configuration not possible</value>
+    <value>Konfiguration nicht möglich</value>
   </data>
   <data name="ConnectionLost" xml:space="preserve">
-    <value>! ConnectionLost !</value>
+    <value>! Verbindung Getrennt !</value>
   </data>
   <data name="Do_you_want_me_to_insert_the_block_at_the_first_empty_line" xml:space="preserve">
-    <value>Do you want me to insert the block at the first empty line?</value>
+    <value>Wollen Sie den Block in die erste leere Zeile einfügen?</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>Fehler</value>
   </data>
   <data name="Error_synchronizing" xml:space="preserve">
-    <value>Error synchronizing</value>
+    <value>Fehler beim Synchronisieren</value>
   </data>
   <data name="Flight_time" xml:space="preserve">
-    <value>Flight time</value>
+    <value>Flugzeit</value>
   </data>
   <data name="Home" xml:space="preserve">
-    <value>Home</value>
+    <value>Startseite</value>
   </data>
   <data name="Inserting_the_new_block_at_the_selected_position" xml:space="preserve">
-    <value>Inserting the new block at the selected position</value>
+    <value>Den neuen Block an der ausgewählten position einfügen</value>
   </data>
   <data name="Locked" xml:space="preserve">
-    <value>Locked</value>
+    <value>### Gesperrt</value>
   </data>
   <data name="New_survey_block" xml:space="preserve">
-    <value>New survey block</value>
+    <value>### Neue Umfrage-block</value>
   </data>
   <data name="Next_WP" xml:space="preserve">
-    <value>Next WP</value>
+    <value>Nächsten WP</value>
   </data>
   <data name="Not_found" xml:space="preserve">
-    <value>Not found</value>
+    <value>Nicht gefunden</value>
   </data>
   <data name="open_the_gluon_navigationblock" xml:space="preserve">
-    <value>Please open the gluon navigation/block file you wish to insert</value>
+    <value>Öffnen Sie bitte die Gluon-Navigation/Block-Datei, die Sie einfügen möchten</value>
   </data>
   <data name="Please_first_connect_to_the_gluonpilot" xml:space="preserve">
-    <value>Please first connect to the gluonpilot</value>
+    <value>Bitte zunächst die Verbindung mit der gluonpilot herstellen</value>
   </data>
   <data name="Sorry_no_empty_position_detected" xml:space="preserve">
-    <value>Sorry, no empty position detected. Please select the line where you want the block to be inserted and try again.</value>
+    <value>keine freie Position erkannt, wählen Sie die Zeile in die den Block eingefügt werden soll und versuchen Sie es erneut</value>
   </data>
   <data name="Stabilized_manual" xml:space="preserve">
-    <value>Stabilized manual
-RC mode</value>
+    <value>Stabilisierte Handbetrieb
+RC-Modus</value>
   </data>
   <data name="There_already_is_a_Survey_block_It_will_be_cleared" xml:space="preserve">
-    <value>There already is a Survey block. It will be cleared.</value>
+    <value>### Es gibt bereits ein Umfrage-Block. Er wird gelöscht.</value>
   </data>
   <data name="There_was_an_error_when_writing_the_navigation" xml:space="preserve">
-    <value>There was an error when writing the navigation</value>
+    <value>Fehler beim Schreiben der Navigation</value>
   </data>
   <data name="The_block_will_be_inserted_at_line_nr" xml:space="preserve">
-    <value>The block will be inserted at line nr</value>
+    <value>Der Block wird eingefügt an der Linie Nr.</value>
   </data>
   <data name="Time_in_block" xml:space="preserve">
-    <value>Time in block</value>
+    <value>Zeit in block</value>
   </data>
   <data name="Time_to_WP" xml:space="preserve">
-    <value>Time to WP</value>
+    <value>Zeit für WP</value>
   </data>
 </root>
