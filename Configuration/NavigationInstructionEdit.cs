@@ -131,21 +131,27 @@ namespace Configuration
             if (tableLayoutPanel.Controls.Count > 0)
                 tableLayoutPanel.Controls.RemoveAt(tableLayoutPanel.Controls.Count - 1);
 
+            string directoryname = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation";
+            if (GluonCS.Properties.Settings.Default.Language == "Deutsch")
+                directoryname = directoryname + "\\de";
+            else
+                directoryname = directoryname + "\\en";
+
             // Add the correct usercontrol
             Control c;
             if (_cb_opcode.Text == "CIRCLE")
             {
-                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\circle.html");
+                webBrowser.Navigate(directoryname + "\\circle.html");
                 c = new NavigationCommands.Circle(ni);
             }
             else if (_cb_opcode.Text.StartsWith("GOTO"))
             {
-                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\goto.html");
+                webBrowser.Navigate(directoryname + "\\goto.html");
                 c = new NavigationCommands.Goto(ni);
             }
             else if (_cb_opcode.Text.StartsWith("CLIMB"))
             {
-                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\climb.html");
+                webBrowser.Navigate(directoryname + "\\climb.html");
                 c = new NavigationCommands.Climb(ni);
             }
             else if (_cb_opcode.Text.StartsWith("SERVO_SET"))
@@ -154,58 +160,58 @@ namespace Configuration
                 c = new NavigationCommands.ServoTrigger(ni);
             else if (_cb_opcode.Text.StartsWith("FLY_TO"))
             {
-                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\flyto.html");
+                webBrowser.Navigate(directoryname + "\\flyto.html");
                 c = new NavigationCommands.FlyTo(ni);
             }
             else if (_cb_opcode.Text.StartsWith("FROM_TO"))
             {
-                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\fromto.html");
+                webBrowser.Navigate(directoryname + "\\fromto.html");
                 c = new NavigationCommands.FromTo(ni);
             }
             else if (_cb_opcode.Text.StartsWith("FLARE_TO"))
             {
-                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\flareto.html");
+                webBrowser.Navigate(directoryname + "\\flareto.html");
                 c = new NavigationCommands.FlareTo(ni);
             }
             else if (_cb_opcode.Text.StartsWith("GLIDE_TO"))
             {
-                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\glideto.html");
+                webBrowser.Navigate(directoryname + "\\glideto.html");
                 c = new NavigationCommands.GlideTo(ni);
             }
             else if (_cb_opcode.Text.StartsWith("CIRCLE_TO"))
             {
-                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\circleto.html");
+                webBrowser.Navigate(directoryname + "\\circleto.html");
                 c = new NavigationCommands.CircleTo(ni);
             }
             else if (_cb_opcode.Text.StartsWith("IF"))
             {
-                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\if.html");
+                webBrowser.Navigate(directoryname + "\\if.html");
                 c = new NavigationCommands.If(ni);
             }
             else if (_cb_opcode.Text.StartsWith("UNTIL"))
             {
-                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\until.html");
+                webBrowser.Navigate(directoryname + "\\until.html");
                 c = new NavigationCommands.Until(ni);
             }
             else if (_cb_opcode.Text.StartsWith("BLOCK"))
             {
                 c = new NavigationCommands.Block(ni);
-                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\block.html");
+                webBrowser.Navigate(directoryname + "\\block.html");
             }
             else if (_cb_opcode.Text.StartsWith("EMPTY"))
             {
                 c = new NavigationCommands.Empty(ni);
-                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\emptycmd.html");
+                webBrowser.Navigate(directoryname + "\\emptycmd.html");
             }
             else if (_cb_opcode.Text.StartsWith("SET_LOITER_POSITION"))
             {
                 c = new NavigationCommands.SetLoiterPosition(ni);
-                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\setloiterposition.html");
+                webBrowser.Navigate(directoryname + "\\setloiterposition.html");
             }
             else if (_cb_opcode.Text.StartsWith("LOITER_CIRCLE"))
             {
                 c = new NavigationCommands.LoiterCircle(ni);
-                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\loitercircle.html");
+                webBrowser.Navigate(directoryname + "\\loitercircle.html");
             }
             else if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.FLY_TO_REL)
                 c = new NavigationCommands.FlyToRel(ni);
@@ -235,7 +241,7 @@ namespace Configuration
                 c = new NavigationCommands.IfNe(ni);
             else //if (_cb_opcode.SelectedIndex == (int)NavigationInstruction.navigation_command.EMPTY)
             {
-                webBrowser.Navigate(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documentation\\emptycmd.html");
+                webBrowser.Navigate(directoryname + "\\emptycmd.html");
                 c = new NavigationCommands.Empty(ni);
             }
 

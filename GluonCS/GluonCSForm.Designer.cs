@@ -63,34 +63,21 @@ namespace GluonCS
             // 
             // toolStripContainer1
             // 
-            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
-            // 
-            // toolStripContainer1.BottomToolStripPanel
-            // 
-            resources.ApplyResources(this.toolStripContainer1.BottomToolStripPanel, "toolStripContainer1.BottomToolStripPanel");
             // 
             // toolStripContainer1.ContentPanel
             // 
-            resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
             this.toolStripContainer1.ContentPanel.Controls.Add(this.toolStrip1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this._gMapControl);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.splitter3);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.panel4);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.splitter2);
             this.toolStripContainer1.ContentPanel.Controls.Add(this._layersPanel);
-            // 
-            // toolStripContainer1.LeftToolStripPanel
-            // 
-            resources.ApplyResources(this.toolStripContainer1.LeftToolStripPanel, "toolStripContainer1.LeftToolStripPanel");
+            resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
+            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
             this.toolStripContainer1.Name = "toolStripContainer1";
-            // 
-            // toolStripContainer1.RightToolStripPanel
-            // 
-            resources.ApplyResources(this.toolStripContainer1.RightToolStripPanel, "toolStripContainer1.RightToolStripPanel");
             // 
             // toolStripContainer1.TopToolStripPanel
             // 
-            resources.ApplyResources(this.toolStripContainer1.TopToolStripPanel, "toolStripContainer1.TopToolStripPanel");
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
             // 
             // toolStrip1
@@ -104,23 +91,23 @@ namespace GluonCS
             // 
             // _btnZoomin
             // 
-            resources.ApplyResources(this._btnZoomin, "_btnZoomin");
             this._btnZoomin.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this._btnZoomin, "_btnZoomin");
             this._btnZoomin.Name = "_btnZoomin";
             this._btnZoomin.Click += new System.EventHandler(this._btnZoomin_Click);
             // 
             // _btnZoomout
             // 
-            resources.ApplyResources(this._btnZoomout, "_btnZoomout");
             this._btnZoomout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this._btnZoomout, "_btnZoomout");
             this._btnZoomout.Name = "_btnZoomout";
             this._btnZoomout.Click += new System.EventHandler(this._btnZoomout_Click);
             // 
             // _gMapControl
             // 
-            resources.ApplyResources(this._gMapControl, "_gMapControl");
             this._gMapControl.Bearing = 0F;
             this._gMapControl.CanDragMap = true;
+            resources.ApplyResources(this._gMapControl, "_gMapControl");
             this._gMapControl.GrayScaleMode = false;
             this._gMapControl.LevelsKeepInMemmory = 5;
             this._gMapControl.MapType = GMap.NET.MapType.GoogleHybrid;
@@ -138,14 +125,13 @@ namespace GluonCS
             // 
             // splitter3
             // 
-            resources.ApplyResources(this.splitter3, "splitter3");
             this.splitter3.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.splitter3, "splitter3");
             this.splitter3.Name = "splitter3";
             this.splitter3.TabStop = false;
             // 
             // panel4
             // 
-            resources.ApplyResources(this.panel4, "panel4");
             this.panel4.AssociatedSplitter = this.splitter3;
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.CaptionFont = new System.Drawing.Font("Trebuchet MS", 12.5F, System.Drawing.FontStyle.Bold);
@@ -165,6 +151,7 @@ namespace GluonCS
             this.panel4.CustomColors.ContentGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(190)))), ((int)(((byte)(245)))));
             this.panel4.CustomColors.ContentGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(218)))), ((int)(((byte)(250)))));
             this.panel4.CustomColors.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.panel4, "panel4");
             this.panel4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel4.Image = null;
             this.panel4.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
@@ -183,21 +170,20 @@ namespace GluonCS
             // 
             // m_cboToolStripRenderer
             // 
-            resources.ApplyResources(this.m_cboToolStripRenderer, "m_cboToolStripRenderer");
             this.m_cboToolStripRenderer.FormattingEnabled = true;
+            resources.ApplyResources(this.m_cboToolStripRenderer, "m_cboToolStripRenderer");
             this.m_cboToolStripRenderer.Name = "m_cboToolStripRenderer";
             this.m_cboToolStripRenderer.SelectedIndexChanged += new System.EventHandler(this.m_cboToolStripRenderer_SelectedIndexChanged);
             // 
             // splitter2
             // 
-            resources.ApplyResources(this.splitter2, "splitter2");
             this.splitter2.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.splitter2, "splitter2");
             this.splitter2.Name = "splitter2";
             this.splitter2.TabStop = false;
             // 
             // _layersPanel
             // 
-            resources.ApplyResources(this._layersPanel, "_layersPanel");
             this._layersPanel.AssociatedSplitter = this.splitter2;
             this._layersPanel.BackColor = System.Drawing.Color.Transparent;
             this._layersPanel.CaptionFont = new System.Drawing.Font("Trebuchet MS", 12.5F, System.Drawing.FontStyle.Bold);
@@ -216,6 +202,7 @@ namespace GluonCS
             this._layersPanel.CustomColors.ContentGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(190)))), ((int)(((byte)(245)))));
             this._layersPanel.CustomColors.ContentGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(218)))), ((int)(((byte)(250)))));
             this._layersPanel.CustomColors.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this._layersPanel, "_layersPanel");
             this._layersPanel.ForeColor = System.Drawing.SystemColors.ControlText;
             this._layersPanel.Image = null;
             this._layersPanel.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
@@ -241,15 +228,15 @@ namespace GluonCS
             // 
             // fileToolStripMenuItem
             // 
-            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._btnOptions});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             // 
             // _btnOptions
             // 
-            resources.ApplyResources(this._btnOptions, "_btnOptions");
             this._btnOptions.Name = "_btnOptions";
+            resources.ApplyResources(this._btnOptions, "_btnOptions");
             this._btnOptions.Click += new System.EventHandler(this._btnOptions_Click);
             // 
             // statusStrip1
@@ -259,27 +246,27 @@ namespace GluonCS
             // 
             // _gmapContextStrip
             // 
-            resources.ApplyResources(this._gmapContextStrip, "_gmapContextStrip");
             this._gmapContextStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.zoomToolStripMenuItem,
             this.zoomoutToolStripMenuItem,
             this.toolStripSeparator1});
             this._gmapContextStrip.Name = "_gmapContextStrip";
+            resources.ApplyResources(this._gmapContextStrip, "_gmapContextStrip");
             // 
             // zoomToolStripMenuItem
             // 
-            resources.ApplyResources(this.zoomToolStripMenuItem, "zoomToolStripMenuItem");
             this.zoomToolStripMenuItem.Name = "zoomToolStripMenuItem";
+            resources.ApplyResources(this.zoomToolStripMenuItem, "zoomToolStripMenuItem");
             // 
             // zoomoutToolStripMenuItem
             // 
-            resources.ApplyResources(this.zoomoutToolStripMenuItem, "zoomoutToolStripMenuItem");
             this.zoomoutToolStripMenuItem.Name = "zoomoutToolStripMenuItem";
+            resources.ApplyResources(this.zoomoutToolStripMenuItem, "zoomoutToolStripMenuItem");
             // 
             // toolStripSeparator1
             // 
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // GluonCSForm
             // 

@@ -236,4 +236,49 @@
         rkJggg==
 </value>
   </data>
+  <data name="_btn_save.Text" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="_btn_load.Text" xml:space="preserve">
+    <value>Öffnen</value>
+  </data>
+  <data name="_btn_burn.Text" xml:space="preserve">
+    <value>Brennen</value>
+  </data>
+  <data name="_btn_reload.Text" xml:space="preserve">
+    <value>Neu laden</value>
+  </data>
+  <data name="_btn_write.Text" xml:space="preserve">
+    <value>Schreiben</value>
+  </data>
+  <data name="_btn_write.ToolTipText" xml:space="preserve">
+    <value>in flüchtigen Speicher des Moduls schreiben</value>
+  </data>
+  <data name="_btn_reload.ToolTipText" xml:space="preserve">
+    <value>Laden von Flash zum flüchtigen Speicher des Moduls</value>
+  </data>
+  <data name="_btn_default.ToolTipText" xml:space="preserve">
+    <value>Standardkonfiguration in flüchtigen Speicher des Moduls laden</value>
+  </data>
+  <data name="_btn_burn.ToolTipText" xml:space="preserve">
+    <value>Konfiguration im Flash-Speicher des Moduls Brennen</value>
+  </data>
+  <data name="_btn_default.Text" xml:space="preserve">
+    <value>Standard Laden</value>
+  </data>
+  <data name="_btn_load.ToolTipText" xml:space="preserve">
+    <value>Aus Datei laden...</value>
+  </data>
+  <data name="_btn_read.Text" xml:space="preserve">
+    <value>Lesen</value>
+  </data>
+  <data name="toolStripContainer1.Text" xml:space="preserve">
+    <value>toolStripContainer1</value>
+  </data>
+  <data name="_btn_save.ToolTipText" xml:space="preserve">
+    <value>In Datei speichern...</value>
+  </data>
+  <data name="_btn_read.ToolTipText" xml:space="preserve">
+    <value>Lesen von flüchtigen Speicher des Moduls</value>
+  </data>
 </root>

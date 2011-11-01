@@ -35,7 +35,13 @@ namespace GluonCS
             _dtb_radius.DistanceM = Properties.Settings.Default.DefaultCircleRadius;
             _cbUseSpeech.Checked = Properties.Settings.Default.UseSpeech;
 
-            _cbLanguage.SelectedText = Properties.Settings.Default.Language;
+            for (int i = 0; i < _cbLanguage.Items.Count; i++)
+            {
+                if (_cbLanguage.Items[i].ToString() == Properties.Settings.Default.Language)
+                    _cbLanguage.SelectedIndex = i;
+            }
+
+            _cbLanguage.SelectedValue = Properties.Settings.Default.Language;
         }
 
         private void _btnClearCache_Click(object sender, EventArgs e)
