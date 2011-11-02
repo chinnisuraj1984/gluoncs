@@ -148,6 +148,9 @@
       <DependentUpon>ConnectForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LiveUavLayer\GMapController.cs" />
+    <Compile Include="LiveUavLayer\GMapControlWithScale.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="LiveUavLayer\LiveUavModel.cs" />
     <Compile Include="LiveUavLayer\LiveUavNavigationModel.cs" />
     <Compile Include="LiveUavLayer\LiveUavPanel.cs">

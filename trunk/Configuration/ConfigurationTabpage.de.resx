@@ -124,7 +124,7 @@
     <value>Motor</value>
   </data>
   <data name="groupBox8.Text" xml:space="preserve">
-    <value>### Höhe Fehler-&gt; Pitch</value>
+    <value>Flughöhe falsch-&gt; Höhe</value>
   </data>
   <data name="label57.Text" xml:space="preserve">
     <value>Anzahl der Satelliten:</value>
@@ -137,7 +137,7 @@ zum Deaktivieren auf "0" setzen.</value>
     <value>% (-100..100)</value>
   </data>
   <data name="_rb_servos_neutral_configurable.Text" xml:space="preserve">
-    <value>Servo-neutral-Wert wird hier festgelegt.</value>
+    <value>Servo neutral Wert wird hier festgelegt.</value>
   </data>
   <data name="label60.Text" xml:space="preserve">
     <value>=</value>
@@ -155,7 +155,7 @@ zum Deaktivieren auf "0" setzen.</value>
     <value>Pa</value>
   </data>
   <data name="label89.Text" xml:space="preserve">
-    <value>### Normal Flug</value>
+    <value>Reiseflug</value>
   </data>
   <data name="label52.Text" xml:space="preserve">
     <value>Breite:</value>
@@ -227,13 +227,13 @@ zum Deaktivieren auf "0" setzen.</value>
     <value>Höhe:</value>
   </data>
   <data name="_rb_gps_status_active.Text" xml:space="preserve">
-    <value>### Gesperrt</value>
+    <value>erfasst</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>Neutral:</value>
   </data>
   <data name="label68.Text" xml:space="preserve">
-    <value>### Querruder / Elevon (Delta)</value>
+    <value>Querruder / Höhe (Delta)</value>
   </data>
   <data name="label32.Text" xml:space="preserve">
     <value>Max</value>
@@ -254,7 +254,7 @@ zum Deaktivieren auf "0" setzen.</value>
     <value>Gas P-Verstärkung (% / m)</value>
   </data>
   <data name="label61.Text" xml:space="preserve">
-    <value>### Abstand zwischen den</value>
+    <value>Fluglage</value>
   </data>
   <data name="_tb_servo6_neutral.Text" xml:space="preserve">
     <value>0</value>
@@ -281,13 +281,13 @@ zum Deaktivieren auf "0" setzen.</value>
     <value>0</value>
   </data>
   <data name="label84.Text" xml:space="preserve">
-    <value>### Haltung</value>
+    <value>Flughöhe</value>
   </data>
   <data name="label25.Text" xml:space="preserve">
     <value>Kanal 3</value>
   </data>
   <data name="label82.Text" xml:space="preserve">
-    <value>Minimale Kreisradius</value>
+    <value>Minimaler Kreisradius</value>
   </data>
   <data name="label21.Text" xml:space="preserve">
     <value>Kanal 1</value>
@@ -320,13 +320,13 @@ zum Deaktivieren auf "0" setzen.</value>
     <value>Kanal Konfiguration</value>
   </data>
   <data name="groupBox4.Text" xml:space="preserve">
-    <value>### Teilungsfehler-&gt; Aufzug</value>
+    <value>Fluglage falsch-&gt; Höhenruder</value>
   </data>
   <data name="_lblCh1Ms.Text" xml:space="preserve">
     <value>1500</value>
   </data>
   <data name="groupBox5.Text" xml:space="preserve">
-    <value>### Überschrift Fehler-&gt; Roll/Scherung</value>
+    <value>Ausrichtung flasch-&gt; Rollen/Gieren</value>
   </data>
   <data name="_tbGyroXNeutral.Text" xml:space="preserve">
     <value>0</value>
@@ -335,7 +335,7 @@ zum Deaktivieren auf "0" setzen.</value>
     <value>Kanal 5</value>
   </data>
   <data name="groupBox6.Text" xml:space="preserve">
-    <value>### Höhenregelung</value>
+    <value>Höhenregelung</value>
   </data>
   <data name="groupBox7.Text" xml:space="preserve">
     <value>Navigation</value>
@@ -353,13 +353,13 @@ zum Deaktivieren auf "0" setzen.</value>
     <value>0</value>
   </data>
   <data name="_rb_gps_status_void.Text" xml:space="preserve">
-    <value>### Wozu Sperre</value>
+    <value>Erfassung</value>
   </data>
   <data name="label36.Text" xml:space="preserve">
-    <value>### (Scherung)</value>
+    <value>Gieren</value>
   </data>
   <data name="_cbMotor.Items1" xml:space="preserve">
-    <value>### Auto Gas</value>
+    <value>Auto Gas</value>
   </data>
   <data name="label50.Text" xml:space="preserve">
     <value>Start-up-Baudrate:</value>
@@ -404,23 +404,23 @@ zum Deaktivieren auf "0" setzen.</value>
     <value>Kanal 2</value>
   </data>
   <data name="label67.Text" xml:space="preserve">
-    <value>### Querruder / Elevon (Delta)</value>
+    <value>Querruder / Höhenruder (Delta)</value>
   </data>
   <data name="_cbControlMix.Items" xml:space="preserve">
-    <value>### Spoiler</value>
+    <value>Querruder</value>
   </data>
   <data name="_btn_use_current_gyro.Text" xml:space="preserve">
     <value>aktuelle verwenden</value>
   </data>
   <data name="cb_altitudehold.Text" xml:space="preserve">
-    <value>### Stabilisierte: Aufzug Stock: (ON) Höhe - (Tonhöhe aus)
-Navigation: Höhe: (auf) Handbuch (OFF)</value>
+    <value>Stabilisierte: Höhenruder: (AN) Manuell Höhe (AUS)
+Navigation: Automatische Höhe: (AN) Handbetrieb (AUS)</value>
   </data>
   <data name="label38.Text" xml:space="preserve">
     <value>Autopilot</value>
   </data>
   <data name="label58.Text" xml:space="preserve">
-    <value>### Ausgabe-Mischung:</value>
+    <value>Ausgang Mix:</value>
   </data>
   <data name="_llServos.Text" xml:space="preserve">
     <value>Wiki</value>
@@ -468,7 +468,7 @@ Navigation: Höhe: (auf) Handbuch (OFF)</value>
     <value>Höhe:</value>
   </data>
   <data name="_rbPpm.Text" xml:space="preserve">
-    <value>### PPM-Pulse-train</value>
+    <value>PPM Pulse train</value>
   </data>
   <data name="_tbPid.Text" xml:space="preserve">
     <value>PID</value>
@@ -490,7 +490,7 @@ Navigation: Höhe: (auf) Handbuch (OFF)</value>
     <value>g</value>
   </data>
   <data name="label35.Text" xml:space="preserve">
-    <value>### Höhe/Nicken</value>
+    <value>Höhe/Nicken</value>
   </data>
   <data name="_rbPwm.Text" xml:space="preserve">
     <value>Separate PWM-Eingänge</value>
@@ -524,7 +524,7 @@ Navigation: Höhe: (auf) Handbuch (OFF)</value>
     <value>Servo 4</value>
   </data>
   <data name="label69.Text" xml:space="preserve">
-    <value>### Elevator</value>
+    <value>Höhenruder</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Temperatur:</value>

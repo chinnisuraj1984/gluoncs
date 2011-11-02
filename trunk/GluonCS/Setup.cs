@@ -42,6 +42,11 @@ namespace GluonCS
             }
 
             _cbLanguage.SelectedValue = Properties.Settings.Default.Language;
+
+            if (Properties.Settings.Default.SpeedUnit == "km/h")
+                _cbMeasurementUnit.SelectedIndex = 0;
+            else
+                _cbMeasurementUnit.SelectedIndex = 1;
         }
 
         private void _btnClearCache_Click(object sender, EventArgs e)
@@ -83,7 +88,18 @@ namespace GluonCS
             Properties.Settings.Default.DefaultCircleRadius = _dtb_radius.DistanceM;
             Properties.Settings.Default.UseSpeech = _cbUseSpeech.Checked;
             Properties.Settings.Default.Language = (string)(_cbLanguage.SelectedItem.ToString());
+            if (_cbMeasurementUnit.SelectedItem.ToString() == "km/h")
+            {
+                Properties.Settings.Default.DistanceUnit = "m";
+                Properties.Settings.Default.SpeedUnit = "km/h";
+            }
+            else
+            {
+                Properties.Settings.Default.DistanceUnit = "mi";
+                Properties.Settings.Default.SpeedUnit = "mph";
+            }
             Properties.Settings.Default.Save();
+            
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
         }

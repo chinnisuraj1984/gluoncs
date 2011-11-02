@@ -2222,4 +2222,43 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Gluon Control Station </value>
   </data>
+  <data name="_btnOptions.Text" xml:space="preserve">
+    <value>Allgemeine Einstellungen</value>
+  </data>
+  <data name="_layersPanel.Text" xml:space="preserve">
+    <value>UAV Informationen</value>
+  </data>
+  <data name="zoomToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Zoom</value>
+  </data>
+  <data name="statusStrip1.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="_btnZoomout.ToolTipText" xml:space="preserve">
+    <value>Zoom out</value>
+  </data>
+  <data name="panel4.Text" xml:space="preserve">
+    <value>Logging</value>
+  </data>
+  <data name="zoomoutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zoom &amp;out</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Datei</value>
+  </data>
+  <data name="toolStrip1.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="toolStripContainer1.Text" xml:space="preserve">
+    <value>toolStripContainer1</value>
+  </data>
+  <data name="_btnZoomout.Text" xml:space="preserve">
+    <value>Zoom out</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="_btnZoomin.Text" xml:space="preserve">
+    <value>Zoom in</value>
+  </data>
 </root>

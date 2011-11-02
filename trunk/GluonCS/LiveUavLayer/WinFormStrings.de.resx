@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Acquiring" xml:space="preserve">
-    <value>### Erwerb</value>
+    <value>Erwerb</value>
   </data>
   <data name="Add_new_block" xml:space="preserve">
     <value>Neuen Block hinzufügen</value>
@@ -137,7 +137,7 @@ Handbetrieb</value>
     <value>Autopilot ON</value>
   </data>
   <data name="cantsynchronize" xml:space="preserve">
-    <value>## Kann nicht synchroniesieren, da die Navigations daten noch nicht aus den Modul Abgerufen wurden, Bitte Navigationsdaten auslesen oder erst einen Schreibvorgang ausführen.</value>
+    <value>Kann nicht synchroniesieren, da die Navigations daten noch nicht aus den Modul Abgerufen wurden, Bitte Navigationsdaten auslesen oder erst einen Schreibvorgang ausführen.</value>
   </data>
   <data name="Configuration_not_possible" xml:space="preserve">
     <value>Konfiguration nicht möglich</value>
@@ -164,10 +164,10 @@ Handbetrieb</value>
     <value>Den neuen Block an der ausgewählten position einfügen</value>
   </data>
   <data name="Locked" xml:space="preserve">
-    <value>### Gesperrt</value>
+    <value>erfasst</value>
   </data>
   <data name="New_survey_block" xml:space="preserve">
-    <value>### Neue Umfrage-block</value>
+    <value>Neuer Umfrage Block</value>
   </data>
   <data name="Next_WP" xml:space="preserve">
     <value>Nächsten WP</value>
@@ -189,7 +189,7 @@ Handbetrieb</value>
 RC-Modus</value>
   </data>
   <data name="There_already_is_a_Survey_block_It_will_be_cleared" xml:space="preserve">
-    <value>### Es gibt bereits ein Umfrage-Block. Er wird gelöscht.</value>
+    <value>Es gibt bereits ein Umfrage-Block. Er wird gelöscht.</value>
   </data>
   <data name="There_was_an_error_when_writing_the_navigation" xml:space="preserve">
     <value>Fehler beim Schreiben der Navigation</value>

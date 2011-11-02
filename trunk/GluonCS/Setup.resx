@@ -124,14 +124,18 @@
   <data name="_cbUseProxy.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 17</value>
   </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Language</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
   </data>
-  <data name="comboBox3.Text" xml:space="preserve">
-    <value>km/h</value>
+  <data name="_tbLoginProxy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 170</value>
+  </data>
+  <data name="&gt;&gt;_btnClearCache.Parent" xml:space="preserve">
+    <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;label8.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -146,8 +150,8 @@
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="_cbMeasurementUnit.Items" xml:space="preserve">
+    <value>km/h</value>
   </data>
   <data name="&gt;&gt;label5.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -161,17 +165,8 @@
   <data name="comboBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 21</value>
   </data>
-  <data name="_cbUseProxy.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 13</value>
-  </data>
-  <data name="&gt;&gt;_btnCancel.Name" xml:space="preserve">
-    <value>_btnCancel</value>
+  <data name="_cbUseSpeech.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;_tbAddressproxy.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -182,15 +177,11 @@
   <data name="&gt;&gt;_mtbPasswdProxy.Parent" xml:space="preserve">
     <value>tabPage1</value>
   </data>
-  <data name="_tbUavName.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Login:</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="_cbUseProxy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;_cbUseProxy.Parent" xml:space="preserve">
+    <value>tabPage1</value>
   </data>
   <data name="_btnClearCache.Text" xml:space="preserve">
     <value>Clear cache</value>
@@ -198,17 +189,14 @@
   <data name="&gt;&gt;_tbUavName.Parent" xml:space="preserve">
     <value>tabPage2</value>
   </data>
-  <data name="&gt;&gt;_dtb_radius.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 40</value>
   </data>
   <data name="_cbUseSpeech.Text" xml:space="preserve">
     <value>Use speech</value>
-  </data>
-  <data name="&gt;&gt;_btnOk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label6.Parent" xml:space="preserve">
     <value>tabPage1</value>
@@ -234,6 +222,12 @@
   <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;_cbMeasurementUnit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="_cbCacheMode.Location" type="System.Drawing.Point, System.Drawing">
     <value>76, 40</value>
   </data>
@@ -243,14 +237,14 @@
   <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;_btnOk.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
     <value>tabPage1</value>
   </data>
-  <data name="_cbCacheMode.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;label10.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -258,14 +252,14 @@
   <data name="&gt;&gt;_dtb_radius.Type" xml:space="preserve">
     <value>Configuration.DistanceTextBox, Configuration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;_cbUseProxy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="_btnCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="_btnCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>258, 214</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Setup</value>
   </data>
   <data name="&gt;&gt;_tbCacheSize.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -276,14 +270,11 @@
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
-    <value>tabPage2</value>
+  <data name="_btnOk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>13</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label10.Name" xml:space="preserve">
     <value>label10</value>
@@ -291,16 +282,16 @@
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
-  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
+  <data name="_cbLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>67, 170</value>
   </data>
   <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="comboBox3.Items" xml:space="preserve">
+    <value>km/h</value>
   </data>
-  <data name="&gt;&gt;_dtb_altitude.ZOrder" xml:space="preserve">
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
@@ -309,32 +300,32 @@
   <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
     <value>258, 214</value>
   </data>
-  <data name="_btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
   <data name="&gt;&gt;_cbUavAltSpeed.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;_tbLoginProxy.Parent" xml:space="preserve">
-    <value>tabPage1</value>
+  <data name="&gt;&gt;_btnClearCache.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label11.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Cache mode:</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;_tbLoginProxy.Parent" xml:space="preserve">
+    <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;_cbLanguage.Name" xml:space="preserve">
     <value>_cbLanguage</value>
   </data>
-  <data name="_tbUavName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 98</value>
+  <data name="_cbUseProxy.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
   </data>
   <data name="_cbUseSpeech.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -342,23 +333,20 @@
   <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;_btnClearCache.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="_btnClearCache.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 23</value>
   </data>
   <data name="&gt;&gt;_cbCacheMode.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Default circle radius</value>
+  <data name="&gt;&gt;_cbCacheMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label11.Name" xml:space="preserve">
     <value>label11</value>
   </data>
-  <data name="&gt;&gt;_tbCacheSize.Name" xml:space="preserve">
-    <value>_tbCacheSize</value>
+  <data name="_btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
   <data name="&gt;&gt;label11.Parent" xml:space="preserve">
     <value>tabPage2</value>
@@ -378,29 +366,26 @@
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;_cbUseProxy.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;_btnClearCache.Parent" xml:space="preserve">
-    <value>tabPage1</value>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 147</value>
   </data>
   <data name="_cbLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 21</value>
   </data>
-  <data name="_tbLoginProxy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;_btnOk.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="_cbUavAltSpeed.Text" xml:space="preserve">
     <value>Show speed and altitude under UAV</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
   <data name="_dtb_altitude.Location" type="System.Drawing.Point, System.Drawing">
     <value>135, 38</value>
   </data>
-  <data name="_btnCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="label10.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="&gt;&gt;_btnOk.Name" xml:space="preserve">
     <value>_btnOk</value>
@@ -417,6 +402,9 @@
   <data name="label8.Text" xml:space="preserve">
     <value>Uav name</value>
   </data>
+  <data name="&gt;&gt;_dtb_radius.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="&gt;&gt;_mtbPasswdProxy.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
@@ -429,11 +417,8 @@
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
   </data>
-  <data name="&gt;&gt;_btnOk.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>11</value>
+  <data name="&gt;&gt;_cbUseSpeech.Parent" xml:space="preserve">
+    <value>tabPage2</value>
   </data>
   <data name="_btnCancel.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -444,8 +429,8 @@
   <data name="&gt;&gt;_cbUseSpeech.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_cbUseSpeech.Parent" xml:space="preserve">
-    <value>tabPage2</value>
+  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 10</value>
@@ -456,17 +441,14 @@
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
   </data>
-  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
-  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="_cbUseProxy.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;_cbUseProxy.Parent" xml:space="preserve">
-    <value>tabPage1</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Setup</value>
   </data>
   <data name="_dtb_radius.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -477,20 +459,14 @@
   <data name="_tbCacheSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>76, 72</value>
   </data>
-  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="_cbUseSpeech.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 17</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Setup</value>
+  <data name="&gt;&gt;_btnCancel.Name" xml:space="preserve">
+    <value>_btnCancel</value>
   </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 147</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
-    <value>tabControl1</value>
+  <data name="_tbLoginProxy.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
   <data name="&gt;&gt;_mtbPasswdProxy.Type" xml:space="preserve">
     <value>System.Windows.Forms.MaskedTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -504,11 +480,8 @@
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Setup</value>
+  <data name="&gt;&gt;_cbLanguage.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;label7.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -516,17 +489,14 @@
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
   </data>
-  <data name="_cbUseProxy.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>tabPage2</value>
   </data>
-  <data name="_tbLoginProxy.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
   <data name="_cbUseProxy.Text" xml:space="preserve">
     <value>Use proxy</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;_tbCacheSize.Parent" xml:space="preserve">
     <value>tabPage1</value>
@@ -534,29 +504,26 @@
   <data name="_btnOk.Text" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="&gt;&gt;_dtb_radius.Parent" xml:space="preserve">
-    <value>tabPage2</value>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 13</value>
   </data>
-  <data name="_btnOk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="&gt;&gt;_tbLoginProxy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 101</value>
   </data>
-  <data name="_cbLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 170</value>
+  <data name="_tbLoginProxy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
   </data>
-  <data name="&gt;&gt;_dtb_radius.Name" xml:space="preserve">
-    <value>_dtb_radius</value>
-  </data>
-  <data name="_cbUseProxy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 123</value>
+  <data name="&gt;&gt;_tbCacheSize.Name" xml:space="preserve">
+    <value>_tbCacheSize</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;_tbLoginProxy.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="_btnClearCache.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -576,6 +543,9 @@
   <data name="&gt;&gt;_cbLanguage.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="_cbUseProxy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="_cbUseSpeech.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 147</value>
   </data>
@@ -585,7 +555,7 @@
   <data name="_cbLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+  <data name="&gt;&gt;_dtb_radius.Parent" xml:space="preserve">
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;_cbMapType.Name" xml:space="preserve">
@@ -600,8 +570,8 @@
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>tabPage1</value>
+  <data name="&gt;&gt;_btnCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label8.Parent" xml:space="preserve">
     <value>tabPage2</value>
@@ -612,20 +582,23 @@
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
   <data name="&gt;&gt;label6.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 70</value>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Default circle radius</value>
   </data>
-  <data name="&gt;&gt;_cbLanguage.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;_btnClearCache.Name" xml:space="preserve">
+    <value>_btnClearCache</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 13</value>
   </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
   </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
@@ -648,8 +621,8 @@
   <data name="_btnOk.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;comboBox3.Parent" xml:space="preserve">
     <value>tabPage2</value>
@@ -663,17 +636,14 @@
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 75</value>
   </data>
-  <data name="_cbUseSpeech.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;_btnOk.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="_cbMeasurementUnit.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;_tbAddressproxy.Name" xml:space="preserve">
     <value>_tbAddressproxy</value>
@@ -681,8 +651,14 @@
   <data name="&gt;&gt;_dtb_altitude.Parent" xml:space="preserve">
     <value>tabPage2</value>
   </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>tabPage2</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Address:</value>
+  </data>
+  <data name="_cbMeasurementUnit.Items1" xml:space="preserve">
+    <value>mph</value>
+  </data>
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 214</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -690,11 +666,14 @@
   <data name="_cbMapType.Location" type="System.Drawing.Point, System.Drawing">
     <value>76, 7</value>
   </data>
+  <data name="&gt;&gt;_cbUseProxy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_btnCancel.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="comboBox3.Text" xml:space="preserve">
+    <value>km/h</value>
   </data>
   <data name="_dtb_radius.Location" type="System.Drawing.Point, System.Drawing">
     <value>135, 68</value>
@@ -702,11 +681,11 @@
   <data name="_btnOk.Location" type="System.Drawing.Point, System.Drawing">
     <value>199, 258</value>
   </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
   <data name="_btnOk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="&gt;&gt;label7.Parent" xml:space="preserve">
     <value>tabPage1</value>
@@ -726,8 +705,8 @@
   <data name="_tbUavName.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 20</value>
   </data>
-  <data name="_cbUseSpeech.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>tabPage1</value>
   </data>
   <data name="_mtbPasswdProxy.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -735,8 +714,8 @@
   <data name="_btnClearCache.Location" type="System.Drawing.Point, System.Drawing">
     <value>165, 70</value>
   </data>
-  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
-    <value>tabControl1</value>
+  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="label11.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -744,26 +723,29 @@
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
   </data>
-  <data name="_cbLanguage.Items" xml:space="preserve">
-    <value>English</value>
+  <data name="&gt;&gt;_cbUseProxy.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Map</value>
-  </data>
-  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="&gt;&gt;_btnOk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_mtbPasswdProxy.Name" xml:space="preserve">
     <value>_mtbPasswdProxy</value>
   </data>
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
   <data name="_dtb_altitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 24</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
     <value>133, 173</value>
   </data>
-  <data name="&gt;&gt;_cbCacheMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label8.Name" xml:space="preserve">
     <value>label8</value>
@@ -771,14 +753,17 @@
   <data name="tabPage2.Text" xml:space="preserve">
     <value>General</value>
   </data>
-  <data name="comboBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 11</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Cache size:</value>
+  </data>
+  <data name="&gt;&gt;_cbUavAltSpeed.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="_tbAddressproxy.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 20</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Cache size:</value>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Map</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -789,23 +774,26 @@
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 13</value>
   </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>290, 293</value>
+  </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 173</value>
   </data>
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;_btnCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>290, 293</value>
-  </data>
-  <data name="_tbLoginProxy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>63, 170</value>
+  <data name="_cbUseSpeech.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
   <data name="_tbAddressproxy.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Map type:</value>
@@ -816,32 +804,35 @@
   <data name="label8.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;comboBox3.Name" xml:space="preserve">
-    <value>comboBox3</value>
+  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="_cbCacheMode.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;comboBox3.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="_cbUavAltSpeed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 124</value>
+  <data name="&gt;&gt;_dtb_altitude.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 13</value>
+  <data name="_cbUseProxy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 123</value>
   </data>
   <data name="_cbLanguage.Items2" xml:space="preserve">
     <value>Deutsch</value>
   </data>
-  <data name="_cbUavAltSpeed.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="_cbLanguage.Items" xml:space="preserve">
+    <value>English</value>
   </data>
   <data name="&gt;&gt;label10.Parent" xml:space="preserve">
     <value>tabPage2</value>
   </data>
-  <data name="_mtbPasswdProxy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>183, 170</value>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_tbLoginProxy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="comboBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 11</value>
   </data>
   <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -852,14 +843,17 @@
   <data name="&gt;&gt;_tbUavName.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_btnClearCache.Name" xml:space="preserve">
-    <value>_btnClearCache</value>
+  <data name="_tbUavName.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="_mtbPasswdProxy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
+  <data name="_cbMeasurementUnit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>149, 11</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 43</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 70</value>
   </data>
   <data name="&gt;&gt;_tbCacheSize.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -870,14 +864,17 @@
   <data name="&gt;&gt;_cbMapType.Parent" xml:space="preserve">
     <value>tabPage1</value>
   </data>
-  <data name="comboBox3.Items" xml:space="preserve">
-    <value>km/h</value>
+  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;_cbMeasurementUnit.Name" xml:space="preserve">
+    <value>_cbMeasurementUnit</value>
   </data>
   <data name="_cbLanguage.Items1" xml:space="preserve">
     <value>Nederlands</value>
   </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
+  <data name="&gt;&gt;_cbMeasurementUnit.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="_cbMapType.Size" type="System.Drawing.Size, System.Drawing">
     <value>163, 21</value>
@@ -888,17 +885,23 @@
   <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
     <value>tabControl1</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 13</value>
+  <data name="&gt;&gt;_btnCancel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;_dtb_radius.Name" xml:space="preserve">
+    <value>_dtb_radius</value>
   </data>
   <data name="&gt;&gt;_cbMapType.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="_cbUavAltSpeed.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="&gt;&gt;_btnCancel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;_cbUavAltSpeed.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="&gt;&gt;_tbLoginProxy.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -906,11 +909,23 @@
   <data name="_btnCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 258</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;_cbMeasurementUnit.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="_cbUavAltSpeed.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="_mtbPasswdProxy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
   </data>
   <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -921,8 +936,8 @@
   <data name="&gt;&gt;_cbUavAltSpeed.Parent" xml:space="preserve">
     <value>tabPage2</value>
   </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 13</value>
   </data>
   <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>266, 240</value>
@@ -930,20 +945,29 @@
   <data name="_cbCacheMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>163, 21</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Address:</value>
+  <data name="_cbUavAltSpeed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 124</value>
+  </data>
+  <data name="_tbUavName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>77, 98</value>
+  </data>
+  <data name="&gt;&gt;comboBox3.Name" xml:space="preserve">
+    <value>comboBox3</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 13</value>
   </data>
+  <data name="_mtbPasswdProxy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>183, 170</value>
+  </data>
   <data name="_btnClearCache.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>tabPage2</value>
   </data>
-  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Cache mode:</value>
   </data>
   <data name="&gt;&gt;label9.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
