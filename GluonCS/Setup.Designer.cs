@@ -41,7 +41,7 @@
             this._tbUavName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this._cbUavAltSpeed = new System.Windows.Forms.CheckBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this._cbMeasurementUnit = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this._mtbPasswdProxy = new System.Windows.Forms.MaskedTextBox();
@@ -86,7 +86,7 @@
             this.tabPage2.Controls.Add(this._tbUavName);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this._cbUavAltSpeed);
-            this.tabPage2.Controls.Add(this.comboBox3);
+            this.tabPage2.Controls.Add(this._cbMeasurementUnit);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -158,14 +158,14 @@
             this._cbUavAltSpeed.Name = "_cbUavAltSpeed";
             this._cbUavAltSpeed.UseVisualStyleBackColor = true;
             // 
-            // comboBox3
+            // _cbMeasurementUnit
             // 
-            resources.ApplyResources(this.comboBox3, "comboBox3");
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            resources.GetString("comboBox3.Items"),
-            resources.GetString("comboBox3.Items1")});
-            this.comboBox3.Name = "comboBox3";
+            resources.ApplyResources(this._cbMeasurementUnit, "_cbMeasurementUnit");
+            this._cbMeasurementUnit.FormattingEnabled = true;
+            this._cbMeasurementUnit.Items.AddRange(new object[] {
+            resources.GetString("_cbMeasurementUnit.Items"),
+            resources.GetString("_cbMeasurementUnit.Items1")});
+            this._cbMeasurementUnit.Name = "_cbMeasurementUnit";
             // 
             // label4
             // 
@@ -318,7 +318,7 @@
         private System.Windows.Forms.ComboBox _cbMapType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox _cbUavAltSpeed;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox _cbMeasurementUnit;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button _btnOk;
         private System.Windows.Forms.Button _btnCancel;

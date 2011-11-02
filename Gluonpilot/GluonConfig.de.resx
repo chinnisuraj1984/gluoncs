@@ -286,13 +286,13 @@
     <value>Modul Neustart</value>
   </data>
   <data name="_cb_print_timestamp.Text" xml:space="preserve">
-    <value>## Drucken von timestamp</value>
+    <value>Zeit Stempel anzeigen</value>
   </data>
   <data name="_btn_firmware_upgrade.Text" xml:space="preserve">
     <value>Firmware Update</value>
   </data>
   <data name="gcs.Text" xml:space="preserve">
-    <value>## Dashboard</value>
+    <value>Amaturen</value>
   </data>
   <data name="_cb_hide_parsed.Text" xml:space="preserve">
     <value>Analysierte Zeilen ausblenden</value>

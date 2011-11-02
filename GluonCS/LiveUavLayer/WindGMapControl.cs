@@ -8,7 +8,7 @@ using System.Drawing.Drawing2D;
 
 namespace GluonCS.LiveUavLayer
 {
-    public class WindGMapControl : GMap.NET.WindowsForms.GMapControl
+    public class WindGMapControl : GMapControlWithScale
     {
         public double WindSpeed;
         public double WindDirectionRad;

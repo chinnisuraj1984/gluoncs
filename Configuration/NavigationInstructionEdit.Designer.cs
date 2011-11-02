@@ -132,7 +132,7 @@
             this._gbParameters.MaximumSize = new System.Drawing.Size(270, 195);
             this._gbParameters.MinimumSize = new System.Drawing.Size(200, 0);
             this._gbParameters.Name = "_gbParameters";
-            this._gbParameters.Padding = new System.Windows.Forms.Padding(10, 0, 1, 0);
+            this._gbParameters.Padding = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this._gbParameters.Size = new System.Drawing.Size(200, 33);
             this._gbParameters.TabIndex = 12;
             this._gbParameters.TabStop = false;

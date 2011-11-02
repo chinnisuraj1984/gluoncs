@@ -155,7 +155,7 @@
     <value>Auslegung</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>### Roll-Empfindlichkeit</value>
+    <value>Roll Empfindlichkeit</value>
   </data>
   <data name="_cbMixing.Items3" xml:space="preserve">
     <value>Quadrocopter</value>
@@ -167,7 +167,7 @@
     <value>Delta-</value>
   </data>
   <data name="_cbInputFunction6.Items" xml:space="preserve">
-    <value>### Stellplatz</value>
+    <value>Nicken</value>
   </data>
   <data name="_lblInterpretation4.Text" xml:space="preserve">
     <value>   </value>
@@ -176,7 +176,7 @@
     <value>Funktion</value>
   </data>
   <data name="_cbInputFunction5.Items" xml:space="preserve">
-    <value>### Stellplatz</value>
+    <value>Nicken</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Alle Änderungen werden sofort übernommen!</value>
@@ -185,7 +185,7 @@
     <value>Eingabe</value>
   </data>
   <data name="_cbInputFunction3.Items2" xml:space="preserve">
-    <value>### Scherung</value>
+    <value>Gieren</value>
   </data>
   <data name="_btnCalibrateGyroscopes.Text" xml:space="preserve">
     <value>Gyroskope Kalibrieren</value>
@@ -200,10 +200,10 @@
     <value>Kalibrierung</value>
   </data>
   <data name="_cbInputFunction2.Items" xml:space="preserve">
-    <value>### Stellplatz</value>
+    <value>Nicken</value>
   </data>
   <data name="_cbInputFunction1.Items" xml:space="preserve">
-    <value>### Stellplatz</value>
+    <value>Nicken</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Mischen</value>
@@ -212,7 +212,7 @@
     <value>4.</value>
   </data>
   <data name="_lblFunctionOut3.Text" xml:space="preserve">
-    <value>#### Aufzug</value>
+    <value>Höhenruder</value>
   </data>
   <data name="_cbInputFunction5.Items3" xml:space="preserve">
     <value>Motor</value>
@@ -239,7 +239,7 @@
     <value>Motor</value>
   </data>
   <data name="_cbInputFunction3.Items" xml:space="preserve">
-    <value>### Stellplatz</value>
+    <value>Nicken</value>
   </data>
   <data name="_cbInputFunction1.Items3" xml:space="preserve">
     <value>Motor</value>
@@ -248,7 +248,7 @@
     <value>   </value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>### Tonhöhe Empfindlichkeit</value>
+    <value>Nick Empfindlichkeit</value>
   </data>
   <data name="_cbInputFunction6.Items5" xml:space="preserve">
     <value>(keine)</value>
@@ -266,7 +266,7 @@
     <value>sicher Stellen, dass das Modul richtig Kalibriert ist wenn es im Modell ist</value>
   </data>
   <data name="_cbInputFunction4.Items" xml:space="preserve">
-    <value>### Stellplatz</value>
+    <value>Nicken</value>
   </data>
   <data name="label30.Text" xml:space="preserve">
     <value>6.</value>
@@ -319,7 +319,7 @@ Wenn die "Interpretation" falsch ist, ändern die einstellungen des RC-Senders.
     <value>Querruder 1</value>
   </data>
   <data name="_cbInputFunction6.Items1" xml:space="preserve">
-    <value>### Roll</value>
+    <value>Rollen</value>
   </data>
   <data name="_cbInputFunction2.Items4" xml:space="preserve">
     <value>Modus</value>
@@ -328,7 +328,7 @@ Wenn die "Interpretation" falsch ist, ändern die einstellungen des RC-Senders.
     <value>Modus</value>
   </data>
   <data name="label23.Text" xml:space="preserve">
-    <value>### Anpassen der Tonhöhe oder Empfindlichkeit Rolle, wenn es zu verhält sich schnell (oszillierende!) oder auch schlampige in stabilisiert oder Navigations-Modus</value>
+    <value>Anpassen der Nick und Roll empfindlichkeit wenn zu schnell oder zu unruhig im Stapilisierten oder Autopilot Modus</value>
   </data>
   <data name="_cbMixing.Items1" xml:space="preserve">
     <value>Delta +</value>
@@ -349,13 +349,13 @@ Wenn die "Interpretation" falsch ist, ändern die einstellungen des RC-Senders.
     <value>4.</value>
   </data>
   <data name="_cbInputFunction5.Items1" xml:space="preserve">
-    <value>### Roll</value>
+    <value>Rollen</value>
   </data>
   <data name="label32.Text" xml:space="preserve">
     <value>5.</value>
   </data>
   <data name="_cbInputFunction4.Items1" xml:space="preserve">
-    <value>### Roll</value>
+    <value>Rollen</value>
   </data>
   <data name="label24.Text" xml:space="preserve">
     <value>#</value>
@@ -364,7 +364,7 @@ Wenn die "Interpretation" falsch ist, ändern die einstellungen des RC-Senders.
     <value>Motor</value>
   </data>
   <data name="_cbInputFunction2.Items1" xml:space="preserve">
-    <value>### Roll</value>
+    <value>Rollen</value>
   </data>
   <data name="label28.Text" xml:space="preserve">
     <value>1.</value>
@@ -376,7 +376,7 @@ Wenn die "Interpretation" falsch ist, ändern die einstellungen des RC-Senders.
     <value>5.</value>
   </data>
   <data name="_cbInputFunction1.Items1" xml:space="preserve">
-    <value>### Roll</value>
+    <value>Rollen</value>
   </data>
   <data name="_lblInterpretation5.Text" xml:space="preserve">
     <value>   </value>
@@ -394,25 +394,25 @@ Wenn die "Interpretation" falsch ist, ändern die einstellungen des RC-Senders.
     <value>(0.5)</value>
   </data>
   <data name="_cbInputFunction3.Items1" xml:space="preserve">
-    <value>### Roll</value>
+    <value>Rollen</value>
   </data>
   <data name="label33.Text" xml:space="preserve">
     <value>Aktuellen Wert</value>
   </data>
   <data name="_cbInputFunction6.Items2" xml:space="preserve">
-    <value>### Scherung</value>
+    <value>Gieren</value>
   </data>
   <data name="_cbInputFunction5.Items2" xml:space="preserve">
-    <value>### Scherung</value>
+    <value>Gieren</value>
   </data>
   <data name="_cbInputFunction4.Items2" xml:space="preserve">
-    <value>### Scherung</value>
+    <value>Gieren</value>
   </data>
   <data name="label20.Text" xml:space="preserve">
     <value>Funktion</value>
   </data>
   <data name="_cbInputFunction1.Items2" xml:space="preserve">
-    <value>### Scherung</value>
+    <value>Gieren</value>
   </data>
   <data name="_lblFunctionOut2.Text" xml:space="preserve">
     <value>Querruder 2</value>
@@ -421,12 +421,12 @@ Wenn die "Interpretation" falsch ist, ändern die einstellungen des RC-Senders.
     <value>3.</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>### Standart Gas</value>
+    <value>Normal Gas</value>
   </data>
   <data name="label18.Text" xml:space="preserve">
     <value>#</value>
   </data>
   <data name="_cbInputFunction2.Items2" xml:space="preserve">
-    <value>### Scherung</value>
+    <value>Gieren</value>
   </data>
 </root>
