@@ -88,7 +88,10 @@
             "",
             "- Loiter -",
             "SET_LOITER_POSITION",
-            "LOITER_CIRCLE"});
+            "LOITER_CIRCLE",
+            "",
+            "- Settings -",
+            "SET_BATTERY_ALARM"});
             this._cb_opcode.Location = new System.Drawing.Point(74, 12);
             this._cb_opcode.MaxDropDownItems = 20;
             this._cb_opcode.Name = "_cb_opcode";

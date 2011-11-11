@@ -92,6 +92,8 @@ namespace Configuration
                 _cb_opcode.SelectedIndex = GetIndexFor("SET_LOITER_POSITION");
             else if (ni.opcode == NavigationInstruction.navigation_command.LOITER_CIRCLE)
                 _cb_opcode.SelectedIndex = GetIndexFor("LOITER_CIRCLE");
+            else if (ni.opcode == NavigationInstruction.navigation_command.SET_BATTERY_ALARM)
+                _cb_opcode.SelectedIndex = GetIndexFor("SET_BATTERY_ALARM");
             else
                 _cb_opcode.SelectedIndex = GetIndexFor("EMPTY");
             //_cb_opcode.SelectedIndex = (int)ni.opcode;
@@ -148,6 +150,11 @@ namespace Configuration
             {
                 webBrowser.Navigate(directoryname + "\\goto.html");
                 c = new NavigationCommands.Goto(ni);
+            }
+            else if (_cb_opcode.Text.StartsWith("SET_BATTERY_ALARM"))
+            {
+                webBrowser.Navigate(directoryname + "\\set_battery_alarm.html");
+                c = new NavigationCommands.BattAlarm(ni);
             }
             else if (_cb_opcode.Text.StartsWith("CLIMB"))
             {

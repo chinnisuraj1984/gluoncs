@@ -67,15 +67,14 @@
             // 
             // tabControl1
             // 
-            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             // 
             // tabPage2
             // 
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this._cbLanguage);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this._cbUseSpeech);
@@ -88,17 +87,18 @@
             this.tabPage2.Controls.Add(this._cbUavAltSpeed);
             this.tabPage2.Controls.Add(this._cbMeasurementUnit);
             this.tabPage2.Controls.Add(this.label4);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // _cbLanguage
             // 
-            resources.ApplyResources(this._cbLanguage, "_cbLanguage");
             this._cbLanguage.FormattingEnabled = true;
             this._cbLanguage.Items.AddRange(new object[] {
             resources.GetString("_cbLanguage.Items"),
             resources.GetString("_cbLanguage.Items1"),
             resources.GetString("_cbLanguage.Items2")});
+            resources.ApplyResources(this._cbLanguage, "_cbLanguage");
             this._cbLanguage.Name = "_cbLanguage";
             // 
             // label11
@@ -115,9 +115,9 @@
             // 
             // _dtb_radius
             // 
-            resources.ApplyResources(this._dtb_radius, "_dtb_radius");
             this._dtb_radius.Color = System.Drawing.SystemColors.Window;
             this._dtb_radius.DistanceM = 0D;
+            resources.ApplyResources(this._dtb_radius, "_dtb_radius");
             this._dtb_radius.Name = "_dtb_radius";
             this._dtb_radius.ReadOnly = false;
             this._dtb_radius.UseAltitudeColoring = false;
@@ -129,9 +129,9 @@
             // 
             // _dtb_altitude
             // 
-            resources.ApplyResources(this._dtb_altitude, "_dtb_altitude");
             this._dtb_altitude.Color = System.Drawing.SystemColors.Window;
             this._dtb_altitude.DistanceM = 0D;
+            resources.ApplyResources(this._dtb_altitude, "_dtb_altitude");
             this._dtb_altitude.Name = "_dtb_altitude";
             this._dtb_altitude.ReadOnly = false;
             this._dtb_altitude.UseAltitudeColoring = false;
@@ -160,11 +160,11 @@
             // 
             // _cbMeasurementUnit
             // 
-            resources.ApplyResources(this._cbMeasurementUnit, "_cbMeasurementUnit");
             this._cbMeasurementUnit.FormattingEnabled = true;
             this._cbMeasurementUnit.Items.AddRange(new object[] {
             resources.GetString("_cbMeasurementUnit.Items"),
             resources.GetString("_cbMeasurementUnit.Items1")});
+            resources.ApplyResources(this._cbMeasurementUnit, "_cbMeasurementUnit");
             this._cbMeasurementUnit.Name = "_cbMeasurementUnit";
             // 
             // label4
@@ -174,7 +174,6 @@
             // 
             // tabPage1
             // 
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this._mtbPasswdProxy);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this._tbLoginProxy);
@@ -189,6 +188,7 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this._cbMapType);
             this.tabPage1.Controls.Add(this.label1);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -248,8 +248,8 @@
             // 
             // _cbCacheMode
             // 
-            resources.ApplyResources(this._cbCacheMode, "_cbCacheMode");
             this._cbCacheMode.FormattingEnabled = true;
+            resources.ApplyResources(this._cbCacheMode, "_cbCacheMode");
             this._cbCacheMode.Name = "_cbCacheMode";
             this._cbCacheMode.DropDownClosed += new System.EventHandler(this._cbCacheMode_DropDownClosed);
             // 
@@ -260,8 +260,8 @@
             // 
             // _cbMapType
             // 
-            resources.ApplyResources(this._cbMapType, "_cbMapType");
             this._cbMapType.FormattingEnabled = true;
+            resources.ApplyResources(this._cbMapType, "_cbMapType");
             this._cbMapType.Name = "_cbMapType";
             this._cbMapType.SelectedIndexChanged += new System.EventHandler(this._cbMapType_SelectedIndexChanged);
             this._cbMapType.DropDownClosed += new System.EventHandler(this._cbMapType_DropDownClosed);
@@ -280,8 +280,8 @@
             // 
             // _btnCancel
             // 
-            resources.ApplyResources(this._btnCancel, "_btnCancel");
             this._btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this._btnCancel, "_btnCancel");
             this._btnCancel.Name = "_btnCancel";
             this._btnCancel.UseVisualStyleBackColor = true;
             // 

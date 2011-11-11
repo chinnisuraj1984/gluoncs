@@ -106,6 +106,12 @@
     <Compile Include="DistanceTextBox.Designer.cs">
       <DependentUpon>DistanceTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationCommands\BattAlarm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationCommands\BattAlarm.Designer.cs">
+      <DependentUpon>BattAlarm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationCommands\Block.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -345,6 +351,9 @@
     <Compile Include="NumericTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="OrientedTextLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PidControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -395,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DistanceTextBox.resx">
       <DependentUpon>DistanceTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationCommands\BattAlarm.resx">
+      <DependentUpon>BattAlarm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationCommands\Block.resx">
       <DependentUpon>Block.cs</DependentUpon>

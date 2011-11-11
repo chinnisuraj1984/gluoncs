@@ -222,9 +222,6 @@
     <Compile Include="TransparentLabel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="GluonCSForm.ar.resx">
-      <DependentUpon>GluonCSForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GluonCSForm.de.resx">
       <DependentUpon>GluonCSForm.cs</DependentUpon>
     </EmbeddedResource>
