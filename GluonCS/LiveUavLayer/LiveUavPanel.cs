@@ -879,6 +879,8 @@ namespace GluonCS
                 model.GenerateSurveyLines();
         }
 
+
+
         private void _lv_navigation_SelectedIndexChanged(object sender, EventArgs e)
         {
 

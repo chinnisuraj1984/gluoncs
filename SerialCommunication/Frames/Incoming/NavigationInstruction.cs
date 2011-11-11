@@ -42,7 +42,8 @@ namespace Communication.Frames.Incoming
             SET_LOITER_POSITION = 24,
             LOITER_CIRCLE = 25,
             CIRCLE_TO_ABS = 26,
-            CIRCLE_TO_REL = 27
+            CIRCLE_TO_REL = 27,
+            SET_BATTERY_ALARM = 28
         };
 
         public navigation_command opcode;
@@ -203,6 +204,9 @@ namespace Communication.Frames.Incoming
                 break;
             case navigation_command.GLIDE_TO_ABS:
                 s += "GlideTo[Absolute](alt: " + a + "m, throttle: " + b + "%, lat: " + RAD2DEG(X).ToString("F5") + "°, lon: " + RAD2DEG(Y).ToString("F5") + "°)";
+                break;
+            case navigation_command.SET_BATTERY_ALARM:
+                s += "SetBatteryAlarm(Warning < " + X + "V, Panic < " + Y + "V -> " + a + ")";
                 break;
             default:
                 s += "Unknown/Unsupported (" + (int)opcode + " : " +  X + ", " + Y + ", " + a + ", " + b + ")";

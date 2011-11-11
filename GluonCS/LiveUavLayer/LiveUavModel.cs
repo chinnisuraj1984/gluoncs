@@ -147,7 +147,7 @@ namespace GluonCS.LiveUavLayer
                 //double DirectionDiff = Math.Sqrt(Math.Sin(roll_rad) * q * Math.Sin(roll_rad) * q + Math.Cos(roll_rad) * r * Math.Cos(roll_rad) * r) / 180.0 * Math.PI;
                 double DirectionDiff = Math.Sqrt(FDiff[0] * FDiff[0] + FDiff[1] * FDiff[1] + FDiff[2] * FDiff[2]);
                 double w = Math.Sqrt(VelocityDiff[0] * VelocityDiff[0] + VelocityDiff[1] * VelocityDiff[1] + VelocityDiff[2] * VelocityDiff[2]) / DirectionDiff;
-                if (Math.Abs(DirectionDiff) > 5.0 / 180 * Math.PI && SpeedMS > 2.0)
+                if (Math.Abs(DirectionDiff) > 5.0 / 180 * Math.PI && SpeedMS > 2.0 && Math.Abs(Heading - lastheading) > 5.0)
                 {
                     //w -= SpeedMS;
                     Console.WriteLine("Velocity = " + (w*3.6));
@@ -171,8 +171,11 @@ namespace GluonCS.LiveUavLayer
                     windspeed = old_windspeed * 0.9 + windspeed * 0.1;
                     WindX = windspeed * Math.Cos(heading);
                     WindY = windspeed * Math.Sin(heading);*/
-                    WindX = WindX  + (Wx - WindX)/32;
-                    WindY = WindY  + (Wy - WindY)/32;
+                    if (Math.Abs(Wx) + Math.Abs(Wy) < 20)
+                    {
+                        WindX = WindX + (Wx - WindX) / 32;
+                        WindY = WindY + (Wy - WindY) / 32;
+                    }
                     
                     Console.WriteLine("Wind: " + Math.Atan2(WindY, WindX) / Math.PI * 180 + "°; " + (Math.Sqrt(WindX * WindX + WindY * WindY) * 3.6) + "km/h");
                 }
