@@ -34,9 +34,7 @@
             this._cbLanguage = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this._cbUseSpeech = new System.Windows.Forms.CheckBox();
-            this._dtb_radius = new Configuration.DistanceTextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this._dtb_altitude = new Configuration.DistanceTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this._tbUavName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -60,15 +58,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this._btnOk = new System.Windows.Forms.Button();
             this._btnCancel = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this._tbLogLocation = new System.Windows.Forms.TextBox();
+            this._btnBrowseLogmap = new System.Windows.Forms.Button();
+            this._cbLogging = new System.Windows.Forms.CheckBox();
+            this._dtb_radius = new Configuration.DistanceTextBox();
+            this._dtb_altitude = new Configuration.DistanceTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage3);
             resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -113,28 +120,10 @@
             this._cbUseSpeech.UseVisualStyleBackColor = true;
             this._cbUseSpeech.CheckedChanged += new System.EventHandler(this._cbUseSpeech_CheckedChanged);
             // 
-            // _dtb_radius
-            // 
-            this._dtb_radius.Color = System.Drawing.SystemColors.Window;
-            this._dtb_radius.DistanceM = 0D;
-            resources.ApplyResources(this._dtb_radius, "_dtb_radius");
-            this._dtb_radius.Name = "_dtb_radius";
-            this._dtb_radius.ReadOnly = false;
-            this._dtb_radius.UseAltitudeColoring = false;
-            // 
             // label10
             // 
             resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
-            // 
-            // _dtb_altitude
-            // 
-            this._dtb_altitude.Color = System.Drawing.SystemColors.Window;
-            this._dtb_altitude.DistanceM = 0D;
-            resources.ApplyResources(this._dtb_altitude, "_dtb_altitude");
-            this._dtb_altitude.Name = "_dtb_altitude";
-            this._dtb_altitude.ReadOnly = false;
-            this._dtb_altitude.UseAltitudeColoring = false;
             // 
             // label9
             // 
@@ -285,6 +274,57 @@
             this._btnCancel.Name = "_btnCancel";
             this._btnCancel.UseVisualStyleBackColor = true;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this._cbLogging);
+            this.tabPage3.Controls.Add(this._btnBrowseLogmap);
+            this.tabPage3.Controls.Add(this._tbLogLocation);
+            this.tabPage3.Controls.Add(this.label12);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.Name = "label12";
+            // 
+            // _tbLogLocation
+            // 
+            resources.ApplyResources(this._tbLogLocation, "_tbLogLocation");
+            this._tbLogLocation.Name = "_tbLogLocation";
+            // 
+            // _btnBrowseLogmap
+            // 
+            resources.ApplyResources(this._btnBrowseLogmap, "_btnBrowseLogmap");
+            this._btnBrowseLogmap.Name = "_btnBrowseLogmap";
+            this._btnBrowseLogmap.UseVisualStyleBackColor = true;
+            this._btnBrowseLogmap.Click += new System.EventHandler(this._btnBrowseLogmap_Click);
+            // 
+            // _cbLogging
+            // 
+            resources.ApplyResources(this._cbLogging, "_cbLogging");
+            this._cbLogging.Name = "_cbLogging";
+            this._cbLogging.UseVisualStyleBackColor = true;
+            // 
+            // _dtb_radius
+            // 
+            this._dtb_radius.Color = System.Drawing.SystemColors.Window;
+            this._dtb_radius.DistanceM = 0D;
+            resources.ApplyResources(this._dtb_radius, "_dtb_radius");
+            this._dtb_radius.Name = "_dtb_radius";
+            this._dtb_radius.ReadOnly = false;
+            this._dtb_radius.UseAltitudeColoring = false;
+            // 
+            // _dtb_altitude
+            // 
+            this._dtb_altitude.Color = System.Drawing.SystemColors.Window;
+            this._dtb_altitude.DistanceM = 0D;
+            resources.ApplyResources(this._dtb_altitude, "_dtb_altitude");
+            this._dtb_altitude.Name = "_dtb_altitude";
+            this._dtb_altitude.ReadOnly = false;
+            this._dtb_altitude.UseAltitudeColoring = false;
+            // 
             // Setup
             // 
             this.AcceptButton = this._btnOk;
@@ -301,6 +341,8 @@
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -338,5 +380,10 @@
         private System.Windows.Forms.CheckBox _cbUseSpeech;
         private System.Windows.Forms.ComboBox _cbLanguage;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.CheckBox _cbLogging;
+        private System.Windows.Forms.Button _btnBrowseLogmap;
+        private System.Windows.Forms.TextBox _tbLogLocation;
+        private System.Windows.Forms.Label label12;
     }
 }
