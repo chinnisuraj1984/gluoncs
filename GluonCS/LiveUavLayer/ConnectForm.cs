@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using System.Collections;
 using System.IO.Ports;
 using Microsoft.Win32;
+using System.IO;
+using System.Reflection;
 
 namespace GluonCS.LiveUavLayer
 {
@@ -34,7 +36,7 @@ namespace GluonCS.LiveUavLayer
                     _cbBaudrate.Text = k.ToString();
             }
 
-            _cbLogToFile.Checked = true;
+            _cbLogToFile.Checked = Properties.Settings.Default.AutomaticLogging;
             _cbLogToFile_CheckedChanged(this, EventArgs.Empty);
         }
 
@@ -147,7 +149,24 @@ namespace GluonCS.LiveUavLayer
         {
             if (_cbLogToFile.Checked == true)
             {
-                _lblFilename.Text = Filename;
+                string map = Properties.Settings.Default.LogLocation;
+                map = map.Replace("$GLUONMAP",  Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+                if (System.IO.Directory.Exists(map))
+                {
+                    _lblFilename.Text = map + '\\' + Filename;
+                }
+                else
+                {
+                    try
+                    {
+                        System.IO.Directory.CreateDirectory(map);
+                        _lblFilename.Text = map + '\\' + Filename;
+                    }
+                    catch (Exception ex)
+                    {
+                        _lblFilename.Text = Filename;
+                    }
+                }
                 _btnChangeFilename.Enabled = true;
             }
             else

@@ -867,6 +867,142 @@
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="_cbLogging.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="_cbLogging.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="_cbLogging.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 64</value>
+  </data>
+  <data name="_cbLogging.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 30</value>
+  </data>
+  <data name="_cbLogging.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="_cbLogging.Text" xml:space="preserve">
+    <value>Automatically start logging on 
+application startup</value>
+  </data>
+  <data name="&gt;&gt;_cbLogging.Name" xml:space="preserve">
+    <value>_cbLogging</value>
+  </data>
+  <data name="&gt;&gt;_cbLogging.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_cbLogging.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;_cbLogging.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="_btnBrowseLogmap.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="_btnBrowseLogmap.Location" type="System.Drawing.Point, System.Drawing">
+    <value>228, 29</value>
+  </data>
+  <data name="_btnBrowseLogmap.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 20</value>
+  </data>
+  <data name="_btnBrowseLogmap.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="_btnBrowseLogmap.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;_btnBrowseLogmap.Name" xml:space="preserve">
+    <value>_btnBrowseLogmap</value>
+  </data>
+  <data name="&gt;&gt;_btnBrowseLogmap.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_btnBrowseLogmap.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;_btnBrowseLogmap.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="_tbLogLocation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 29</value>
+  </data>
+  <data name="_tbLogLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 20</value>
+  </data>
+  <data name="_tbLogLocation.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;_tbLogLocation.Name" xml:space="preserve">
+    <value>_tbLogLocation</value>
+  </data>
+  <data name="&gt;&gt;_tbLogLocation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_tbLogLocation.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;_tbLogLocation.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 32</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="label12.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Log location:</value>
+  </data>
+  <data name="&gt;&gt;label12.Name" xml:space="preserve">
+    <value>label12</value>
+  </data>
+  <data name="&gt;&gt;label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPage3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 214</value>
+  </data>
+  <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Logging</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
   </data>
@@ -950,6 +1086,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>290, 293</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Setup</value>

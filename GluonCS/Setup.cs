@@ -34,6 +34,8 @@ namespace GluonCS
             _dtb_altitude.DistanceM = Properties.Settings.Default.DefaultAltitudeM;
             _dtb_radius.DistanceM = Properties.Settings.Default.DefaultCircleRadius;
             _cbUseSpeech.Checked = Properties.Settings.Default.UseSpeech;
+            _cbLogging.Checked = Properties.Settings.Default.AutomaticLogging;
+            _tbLogLocation.Text = Properties.Settings.Default.LogLocation;
 
             for (int i = 0; i < _cbLanguage.Items.Count; i++)
             {
@@ -88,6 +90,9 @@ namespace GluonCS
             Properties.Settings.Default.DefaultCircleRadius = _dtb_radius.DistanceM;
             Properties.Settings.Default.UseSpeech = _cbUseSpeech.Checked;
             Properties.Settings.Default.Language = (string)(_cbLanguage.SelectedItem.ToString());
+            Properties.Settings.Default.AutomaticLogging = _cbLogging.Checked;
+            Properties.Settings.Default.LogLocation = _tbLogLocation.Text;
+
             if (_cbMeasurementUnit.SelectedItem.ToString() == "km/h")
             {
                 Properties.Settings.Default.DistanceUnit = "m";
@@ -117,6 +122,15 @@ namespace GluonCS
         private void _cbUseSpeech_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void _btnBrowseLogmap_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                _tbLogLocation.Text = fbd.SelectedPath;
+            }
         }
     }
 }

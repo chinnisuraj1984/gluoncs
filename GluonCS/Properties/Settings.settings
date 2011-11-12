@@ -77,5 +77,11 @@
     <Setting Name="DistanceUnit" Type="System.String" Scope="User">
       <Value Profile="(Default)">m</Value>
     </Setting>
+    <Setting Name="LogLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">$GLUONMAP\logs</Value>
+    </Setting>
+    <Setting Name="AutomaticLogging" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
