@@ -120,8 +120,8 @@
   <data name="&gt;&gt;_lblFlightTime.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;_lblFlightTime.Name" xml:space="preserve">
-    <value>_lblFlightTime</value>
+  <data name="&gt;&gt;_btnAutoSync.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
@@ -143,18 +143,17 @@
   <data name="&gt;&gt;_zgBatV.Type" xml:space="preserve">
     <value>ZedGraph.ZedGraphControl, ZedGraph, Version=5.1.2.878, Culture=neutral, PublicKeyToken=02a83cbd123fcd60</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="_pbRcLink.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="_lblBlockname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 47</value>
   </data>
   <data name="&gt;&gt;toolStrip2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="_btnCenterUav.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -181,6 +180,9 @@
   <data name="_pbLink.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
   </data>
+  <data name="_gmapContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 4</value>
+  </data>
   <data name="splitter1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -190,11 +192,14 @@
   <data name="&gt;&gt;_pbBattery.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;_lblAltitudeAgl.Name" xml:space="preserve">
-    <value>_lblAltitudeAgl</value>
+  <data name="_lblLink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 46</value>
   </data>
   <data name="&gt;&gt;_tsEasystar.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
   </data>
   <data name="_btnAutoSync.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -216,11 +221,12 @@
         gg==
 </value>
   </data>
+  <data name="&gt;&gt;toolStripContainer1.Name" xml:space="preserve">
+    <value>toolStripContainer1</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
-  </data>
-  <data name="_lblFlightMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 37</value>
   </data>
   <data name="_btnCenterUav.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 22</value>
@@ -231,20 +237,17 @@
   <data name="toolStripDropDownButton3.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 22</value>
   </data>
-  <data name="_ts2dah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
-  </data>
   <data name="&gt;&gt;_lblHomeDistance.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_lblHomeDistance.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.RightToolStripPanel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;_ts_basicconfig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_btnCenterUav.Name" xml:space="preserve">
     <value>_btnCenterUav</value>
@@ -291,8 +294,11 @@
   <data name="toolStripContainer1.Text" xml:space="preserve">
     <value>toolStripContainer1</value>
   </data>
-  <data name="&gt;&gt;_ahPanel.Name" xml:space="preserve">
-    <value>_ahPanel</value>
+  <data name="_btnAutoSync.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 22</value>
+  </data>
+  <data name="&gt;&gt;_pbLink.Name" xml:space="preserve">
+    <value>_pbLink</value>
   </data>
   <data name="&gt;&gt;_btnNaviReload.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -303,19 +309,8 @@
   <data name="&gt;&gt;_imageListGps.Name" xml:space="preserve">
     <value>_imageListGps</value>
   </data>
-  <data name="_btnNaviRead.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAbpJREFUOE+Vk0tL
-        AlEYhmdq0U8IIqFViwqSvGyyTdgmaN26dlmEYgsjI7OwMAIFNWbVvjYuWhRIYFgQQUH/oBaKNxzv13w7
-        3+B4SS0beJnhnO99vsucwwPgeJ4f5zhulGmY6bcnxjY/mafeDCIAe1SlUkmsVqtftVoNvcT24fF43Cx2
-        gmmIfJK3AdCSOZfLIZ/PN5VOp5FKpRCNRiVoJBKB1+vtgFB2nklLAcViEeVyWXqTstksRFFELBaTAIVC
-        AZREEAQJ0kjeApBZFgHIkMlkEI/Hu9qipI3kLQBroxlI39Q3tUStJBIJqZJwOCzF9AT8HF47hCqheSST
-        ycEBBJQh1A7NhEADVyBXVKlUpNkQhPRvAFVBAEdoH8dB62AAMsmiCmxBC6z3ZljutmH2b/09RNlcLBVg
-        CRixFzDh8t0H4c2Njas1LDrmPzSm2ZGOg9TrLzhDR1i7XoX5xoCLVxfcL04Y/QboDjRlza7yth1Q73cP
-        aH3FtwTX8ymcT3Ysn+uh0I+tt98FNRtSngX2vUz6swWcPB7C/mDF3M4MzUDVDlCwBXXjdNER7ZLOpgEr
-        GUrTNKY2JwmgIMA3squfsD93HBEAAAAASUVORK5CYII=
-</value>
+  <data name="&gt;&gt;_lblLink.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="_lblVoltage.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt, style=Bold</value>
@@ -326,14 +321,14 @@
   <data name="&gt;&gt;_btnBuildSurvey.Name" xml:space="preserve">
     <value>_btnBuildSurvey</value>
   </data>
-  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="_lblBlockname.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 47</value>
+  <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.Parent" xml:space="preserve">
+    <value>toolStripContainer1</value>
   </data>
   <data name="_lblLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="&gt;&gt;_ts_basicconfig.Name" xml:space="preserve">
+    <value>_ts_basicconfig</value>
   </data>
   <data name="&gt;&gt;_btnNaviRead.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -346,6 +341,9 @@
   </data>
   <data name="_pbBattery.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 15</value>
+  </data>
+  <data name="&gt;&gt;_zgBatV.Name" xml:space="preserve">
+    <value>_zgBatV</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -368,17 +366,14 @@
   <data name="&gt;&gt;_tsFunjet.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.Name" xml:space="preserve">
+    <value>toolStripContainer1.LeftToolStripPanel</value>
+  </data>
   <data name="_lblGpsSat.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 23</value>
   </data>
   <data name="&gt;&gt;_btnNaviWrite.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_lblTimeInBlock.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="_btnAutoSync.Text" xml:space="preserve">
-    <value>Auto-sync</value>
   </data>
   <data name="_artificialHorizon.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 129</value>
@@ -386,8 +381,8 @@
   <data name="_btnNaviRead.Text" xml:space="preserve">
     <value>&amp;Read</value>
   </data>
-  <data name="&gt;&gt;_lv_navigation.Parent" xml:space="preserve">
-    <value>_navigationPanel</value>
+  <data name="_lblLink.Text" xml:space="preserve">
+    <value>Link</value>
   </data>
   <data name="_lblAltitudeAgl.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
@@ -398,17 +393,11 @@
   <data name="_zgVel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 6, 6, 6</value>
   </data>
-  <data name="_lblLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 46</value>
-  </data>
   <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
     <value>columnHeader1</value>
   </data>
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
     <value>365, 109</value>
-  </data>
-  <data name="label2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
   </data>
   <data name="toolStripDropDownButton3.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -474,9 +463,6 @@
   <data name="_lblBlockname.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;_cockpitPanel.Type" xml:space="preserve">
-    <value>BSE.Windows.Forms.Panel, BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef</value>
-  </data>
   <data name="&gt;&gt;tableLayoutPanel3.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
@@ -489,6 +475,9 @@
   <data name="_lblFlightMode.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 188</value>
   </data>
+  <data name="_lv_navigation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 50</value>
+  </data>
   <data name="splitter1.Size" type="System.Drawing.Size, System.Drawing">
     <value>379, 3</value>
   </data>
@@ -500,6 +489,9 @@
   </data>
   <data name="&gt;&gt;toolStrip2.Name" xml:space="preserve">
     <value>toolStrip2</value>
+  </data>
+  <data name="&gt;&gt;_zgBatV.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="_btnNewSurvey.Text" xml:space="preserve">
     <value>Create new</value>
@@ -525,6 +517,9 @@
   <data name="_lblAltitudeAgl.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
+  <data name="_btn_up.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="_ahPanel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="panel1" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="panel2" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,33333,Percent,33,33333,Percent,33,33333" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
@@ -543,9 +538,6 @@
   <data name="addBlockToolStripMenuItem.Text" xml:space="preserve">
     <value>Add block</value>
   </data>
-  <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="_lblAltitudeAgl.Location" type="System.Drawing.Point, System.Drawing">
     <value>229, 209</value>
   </data>
@@ -561,11 +553,11 @@
   <data name="&gt;&gt;_lblHomeDistance.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
+  <data name="_pbBattery.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 2</value>
+  </data>
   <data name="_lblGpsSat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="_ts2dah.Text" xml:space="preserve">
-    <value>2D artificial horizon</value>
   </data>
   <data name="toolStrip1.Text" xml:space="preserve">
     <value>toolStrip1</value>
@@ -573,8 +565,8 @@
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>333, 35</value>
   </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="_lblTimeToWp.Text" xml:space="preserve">
+    <value>Time to WP: 0s</value>
   </data>
   <data name="toolStripContainer1.Size" type="System.Drawing.Size, System.Drawing">
     <value>377, 27</value>
@@ -597,6 +589,9 @@
   <data name="_ahPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 129</value>
   </data>
+  <data name="_cockpitPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -606,26 +601,38 @@
   <data name="label9.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
   </data>
-  <data name="_zgVel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
   <data name="_panelStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="_lblVoltage.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="tableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="_panelStrip" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tabControl1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
-  <data name="_zgAlt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+  <data name="&gt;&gt;_lv_navigation.Parent" xml:space="preserve">
+    <value>_navigationPanel</value>
   </data>
   <data name="_lblGpsSat.Text" xml:space="preserve">
     <value>Gps</value>
   </data>
-  <data name="tableLayoutPanel3.ColumnCount" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="_nav_open.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAphJREFUOE+F011I
+        U2EYwPFnV9HXhV1mUGC7MiOC6MKKIhOFQBGpXWQfoxLFLCsqa7WarpnaEmfOoSnVNC1Dk9CVhjUITFkJ
+        illT5778mnNznn1vPr3nrTM4QXTgx54X3vPnPZwzwZAC6CUQwBnys+336r/XNCI00V2DJPBHCWMsw/lP
+        p3Gh/xQyI3cxam1AnHnGt9CCZH8Jdx8MyIEjx+XXuOp6hQFLDToHCvGd+jC+71Hy9PapsLM0vlZ57wBU
+        SvcDfC6NUUSX2jAyr6Wirpdo6LiANqcTZxkGrYTZ48E3ej3Kpam6LIlEmFlcDKCXxZRHHC0YnnlKsfOX
+        VjGOGo34bXwcJx0OHJudxebubmQvcnMeIYR+KXAehueeY9D6hGJnfZMIv09M0MiM200jKq02RpieLoHe
+        28CpCtob0Weqo9i5v+EY/piaopFF8ghchD0J+zhpRUUFoLsFnBq/uR4ZYw3Fzn2aLDSaTDTi8np5EevK
+        CqYUFBTC2xvAUfum1OgZr6LYWVebgZNmM40s+/28yJzPhwdzcy9B5zXg1DM/q9E9WkGxc3f1UTSRABth
+        AgFeZIms94nFl0F2HKD9CtXoGVOic1hBsXPXozQ0Wyw04guFeBEPWe/NyblKv8Y72QAvLoLWPVKODoOM
+        YueOilS0WK00EgiHeRGGBHaLROT8AGuJTZrz0OUaJp/yoJRykVO0P0hBm81GI+FIhBfxkuCOjAzyDgHi
+        iO35qVD3oWqPZ1KXF1ockuHSVzm23j+EdrsdbUR0dRUjRCgaxSCJBckcn5xcFvvbHdkJoDkHmeqzoGm7
+        ueWjoTlr+nr2Gss6oVC1ITGxfGNSkuJv6xMS8nkBcjOoxADKk7Cr8gRISkXwmGzYSmz+h7hfaetvRiJD
+        uLkAAAAASUVORK5CYII=
+</value>
   </data>
   <data name="&gt;&gt;_tsFunjet.Name" xml:space="preserve">
     <value>_tsFunjet</value>
@@ -633,8 +640,8 @@
   <data name="&gt;&gt;_lblSpeed.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label14.Text" xml:space="preserve">
-    <value>Ground speed:</value>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 16</value>
@@ -651,11 +658,8 @@
   <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="_navigationPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="tableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="_panelStrip" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tabControl1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="&gt;&gt;_pbThrottle.Type" xml:space="preserve">
     <value>ProgressBarColored, GluonCS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
@@ -674,8 +678,8 @@
         RK5CYII=
 </value>
   </data>
-  <data name="_cockpitPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>373, 135</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 0</value>
@@ -689,6 +693,9 @@
   <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
     <value>tabControl1</value>
   </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
   <data name="&gt;&gt;_lblFlightMode.Parent" xml:space="preserve">
     <value>_cockpitPanel</value>
   </data>
@@ -700,9 +707,6 @@
   </data>
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
     <value>3D artificial horizon</value>
-  </data>
-  <data name="&gt;&gt;splitter1.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <data name="&gt;&gt;label14.Parent" xml:space="preserve">
     <value>_cockpitPanel</value>
@@ -719,14 +723,25 @@
   <data name="&gt;&gt;toolStripDropDownButton3.Name" xml:space="preserve">
     <value>toolStripDropDownButton3</value>
   </data>
-  <data name="_lblFlightMode.TabIndex" type="System.Int32, mscorlib">
-    <value>48</value>
-  </data>
   <data name="&gt;&gt;_pbLink.Type" xml:space="preserve">
     <value>ProgressBarColored, GluonCS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;_zgBatV.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="_zgBatV.Size" type="System.Drawing.Size, System.Drawing">
+    <value>359, 103</value>
+  </data>
+  <data name="_btnNaviRead.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAbpJREFUOE+Vk0tL
+        AlEYhmdq0U8IIqFViwqSvGyyTdgmaN26dlmEYgsjI7OwMAIFNWbVvjYuWhRIYFgQQUH/oBaKNxzv13w7
+        3+B4SS0beJnhnO99vsucwwPgeJ4f5zhulGmY6bcnxjY/mafeDCIAe1SlUkmsVqtftVoNvcT24fF43Cx2
+        gmmIfJK3AdCSOZfLIZ/PN5VOp5FKpRCNRiVoJBKB1+vtgFB2nklLAcViEeVyWXqTstksRFFELBaTAIVC
+        AZREEAQJ0kjeApBZFgHIkMlkEI/Hu9qipI3kLQBroxlI39Q3tUStJBIJqZJwOCzF9AT8HF47hCqheSST
+        ycEBBJQh1A7NhEADVyBXVKlUpNkQhPRvAFVBAEdoH8dB62AAMsmiCmxBC6z3ZljutmH2b/09RNlcLBVg
+        CRixFzDh8t0H4c2Njas1LDrmPzSm2ZGOg9TrLzhDR1i7XoX5xoCLVxfcL04Y/QboDjRlza7yth1Q73cP
+        aH3FtwTX8ymcT3Ysn+uh0I+tt98FNRtSngX2vUz6swWcPB7C/mDF3M4MzUDVDlCwBXXjdNER7ZLOpgEr
+        GUrTNKY2JwmgIMA3squfsD93HBEAAAAASUVORK5CYII=
+</value>
   </data>
   <data name="&gt;&gt;_panelStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -740,8 +755,8 @@
   <data name="&gt;&gt;_ts2dah.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;addBlockToolStripMenuItem.Name" xml:space="preserve">
-    <value>addBlockToolStripMenuItem</value>
+  <data name="_btn_down.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
     <value>147, 209</value>
@@ -749,14 +764,23 @@
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;_pbRcLink.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="toolStripSplitButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAehJREFUOE+Vkj1o
+        E2Ecxv+TKKgg5ZJmOXGQihVKKCEnSJLmgwhJLrqFuBsjioviZCUkY7YSOgs6pNBqYuopNeSLCgltIwYV
+        oWYsOFjvLvc1SB5zBbXQRq/v9PLy/H7Pw3FEFs7wHXdCXZ+5aSH6N6K1Zlm1NXvHfFHWL0XUxnTXvOsN
+        9pxcZ63J1NbMB7U1Laj1qYq+dQ1Kg30wqDnEQXUiaWmN0rwwr79Pwvh8F8b2I2ibEYivT2vfaszJsQKl
+        fXFy1FpVG+ehb/EwvmbRfMqjW7qB7dotaJ05SG+PQ3pDi/9codTZea17Hc1ncRiGgeFwiM0XSeifbuOH
+        QB93K3R2rEBuTjJy1S5Eo1F0Oh3ouo5er4fakwiML/chVWggvSLuUIG25mAHa2dK8XgcqVQK+XwexWIR
+        lcW5EfwQO6v0U1qlDbFMj8cu4Hl+D+Y4Dn6/H7FYDOpGBHLVAVk4hd0ysf+F3W43fD4fbDabOXlh5+Wo
+        uUyXpRJ1xRVKHypIJBLI5XIwYa/XC4ZhYAblMl2RnpNg3rFEx74v09UDgnA4jGw2ewD+HRSXKTR2diAQ
+        QCaTgcvlgsfj+dNs6W9Lp9Po9/twOp0IhUJHg80GU9But1EoFPY+mKXW/aFgMHjPnG23248Oj0S/ADgf
+        Cw9P9/tzAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="_pbRcLink.Location" type="System.Drawing.Point, System.Drawing">
     <value>37, 66</value>
-  </data>
-  <data name="toolStrip2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
   </data>
   <data name="_zgBatV.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -767,8 +791,8 @@
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 13</value>
   </data>
-  <data name="_artificialHorizon.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="_pbRcLink.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="&gt;&gt;_nav_save.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -779,17 +803,14 @@
   <data name="_pbLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 15</value>
   </data>
-  <data name="&gt;&gt;_btn_down.Name" xml:space="preserve">
-    <value>_btn_down</value>
+  <data name="&gt;&gt;_btn_up.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.RightToolStripPanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.RightToolStripPanel.Name" xml:space="preserve">
-    <value>toolStripContainer1.RightToolStripPanel</value>
   </data>
   <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -799,9 +820,6 @@
   </data>
   <data name="&gt;&gt;generateSurveyToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="_btnNewSurvey.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 22</value>
@@ -815,8 +833,14 @@
   <data name="&gt;&gt;_lblDistNextWp.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 22</value>
+  </data>
   <data name="&gt;&gt;toolStripContainer1.ContentPanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripContentPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="generateSurveyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Survey polygon</value>
   </data>
   <data name="&gt;&gt;_btnSurveySettings.Name" xml:space="preserve">
     <value>_btnSurveySettings</value>
@@ -824,8 +848,8 @@
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
   </data>
-  <data name="_btnAutoSync.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 22</value>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
   </data>
   <data name="_pbGps.Location" type="System.Drawing.Point, System.Drawing">
     <value>37, 23</value>
@@ -833,17 +857,11 @@
   <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="_lblTimeToWp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 19</value>
-  </data>
   <data name="columnHeader1.Width" type="System.Int32, mscorlib">
     <value>40</value>
   </data>
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
-  </data>
-  <data name="_artificialHorizon.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="_zgAlt.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15.75pt</value>
@@ -854,8 +872,8 @@
   <data name="_lblDistNextWp.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 87</value>
   </data>
-  <data name="&gt;&gt;_zgBatV.Name" xml:space="preserve">
-    <value>_zgBatV</value>
+  <data name="_ahPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="&gt;&gt;_lblVoltage.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -866,36 +884,41 @@
   <data name="&gt;&gt;contextMenuStrip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="_cockpitPanel.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
   </data>
   <data name="_lblGpsSat.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="_btnAutoSync.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAtNJREFUOE9jYKA2
-        sJ//XsBu3nNf+3kve+znvThoN/fFGYd5L5cB+TlWc15Lgeyzn/siBsifiWG3zdwXSi7zn1ck7fi4rOHM
-        r/MdF79+7Lv173/j+U9fU3d9fOw49+l+25lPWm1nPD4DwigG2M54IOk870l8743fE1rP/tzSeuH3NZAB
-        nVf+/G+78Pt/6/lf/zsv//5vOe3hmUl3/4FpuAFa9VfYLKfcce669D239siXCRXHP28KWvF4l/GE2wdN
-        +m6eCVrx9E7r2e//qw59Ahry4z+IDRKHG2DUck0yZNlDv5Ldb3JL9rydaNBxucOg86oXTIFB56Up+p1X
-        zrSc/fK/aPur/3XHPv4H8eEGaDadU03f8Cwkb+vzHJeZNyo0Wk4bwSQ1m87GaDWdBWr+/L987xswrjv6
-        4T9IDG6Aevlxhdxtz+yzNz93UK44bIwcOGrVx2aqVh09g45B4nB1MoV7ZsoX7zuDjkHiyIbJFe8zjl//
-        2CF10zN7+fz9CnA5yextZxJ3vP4fvuE5GGftf/cfJCaRsy0Gpkgye5ORQfPxCt/lj3K8F9wKkc7brAo3
-        QCRl/RnPjW/+myx+9j9o+7v/IL5I0vopMAUiyWu8RJLXdbgsfzLRasXzXMPOU34iqWsl4QbwxCw/Y7n5
-        03+XHZ//q6x49x/EVqg7eAckzhez7KBS3aFdZiufbdJa/X6C847PucJJq50ZQlexwQ3gCl90xmH/z/8g
-        Wmvr9/8yG779l9v4/b/61h//1dd+/Si98es1mfXfthjv+DZBIHl1PFf0YoTtIFNYA+ecAeOA2a2sEQv3
-        i7Ucfiy/9NVXhZ1//kvv/PpRdtmr8xJNx5dxRC6uYLepUELPAzKMVoWLmIxTioASxgxims6M5rkNjF6T
-        VzP5TjvL5DvjEKPnhIlMJhlJDILKVkA1WkAsCsTMMIP4gAxhIBYHYlBuI4RBmrmBmAlkAACZYn+i0yjw
-        zwAAAABJRU5ErkJggg==
-</value>
+  <data name="&gt;&gt;_nav_open.Name" xml:space="preserve">
+    <value>_nav_open</value>
   </data>
   <data name="_lblDistNextWp.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 15</value>
   </data>
   <data name="_artificialHorizon.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
+  </data>
+  <data name="toolStripDropDownButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAddJREFUOE+Nkr1L
+        glEUxq2paGsoGg0cgqBBCImmgmwoiIpoaHDpQ8pCEQW1oZb+gKb2WqKlJYoiwohIFBPsi4xI0CKk8vvb
+        03kuGcF9X+jC4eXCc37vc557GjQ/Z2p1dZQaGzvqd6UvaTSne2trEUXNpNs9n61U6LNYpPdcjmKZDEXT
+        aXpJpUTte70EzbjHo1MEjLlcC+lSiRLc+JpM0nMiQQ9vb3QTj1M4FqOdgwPCgU4RMupwmDMM+MhmFSGb
+        29tUL53R6JFcjNjti7lymfS7nQICy2ehkOQE40ArAYas1qU8Z5DK5+mLM1BzAgC0EmDQYrEUGOC1LgvI
+        SSBA5+EwHfl8wslpMEgXt7ciWGglwIDZvFKqVinHOWQKBVUneB1oJUD/7Ky1zIC5LRKQw6srury/F3+9
+        jkR+g31nd9BKgD6TyVap1ajIYxQ4TDUn2BNoJUDvzIy9ygCn0ykgx34/+R4fxfx1Jwg2xe6glQD66WlH
+        jRelwmNgFDUnWDZoJUDPxIQTm4YMAIED/9OTqLto9DfYLI8HrQTQDQ+7xa7yqfEoak6wbND+BTTzpa3d
+        YFivAwSEC5kgWIyEJ8aeFPkOLXq40Ktp5epu0mptLV1dG/8paNGD3m+SmzmoaozA8QAAAABJRU5ErkJg
+        gg==
+</value>
   </data>
   <data name="&gt;&gt;_navigationPanel.Name" xml:space="preserve">
     <value>_navigationPanel</value>
@@ -912,14 +935,21 @@
   <data name="_pbThrottle.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>_cockpitPanel</value>
+  <data name="_btn_down.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYVJREFUOE9jYKAF
+        sJ/3cqbd3BdnYBjEJ8ke2xmPz0x58P9//+1//yff//8fxCfJAMtpD890Xv3zv/r4j/8dV/78B/FJMsCk
+        7+aZxrM//ufu/PS//vT3/yA+SQbod145U3386/+0Te/+Vx37+h/EJ8kAraazZ0oPfvwfvvj+//TNT/6D
+        +CQZoFp19Ezi2rv/XSac+R+78s5/EB+vATKFe2bKF+87g4wjVt/7bzfl4v/QlXf/o8uB1KMYKJGzLUYy
+        e9uZnKMf//tseP7fe/2z/7ZLHv43mHXnv/XiB/9dVz/577Lqyf+QrS//g9SB1GO4SCx5XYxIyvozYYc+
+        /5db/BIDO29//x8kD1KH0zu8cStjeGKWn7E78PM/3+qvcGy468d/kDhInmBgckcsjuEKX3RGY/+//0wb
+        //1X2vPvP4gPEieoGaaAyaY8hjVwzhmp3f//g2gQnxjNrEBFskBsBMTGTEZJJUy+M86AaBAfipWANAcu
+        w5iBEvxALAnEUjiwIFCcBdkAAMKv6uTVK0SIAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="_btnNaviRead.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 22</value>
-  </data>
-  <data name="&gt;&gt;_lblHomeDistance.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 48</value>
@@ -930,14 +960,17 @@
   <data name="&gt;&gt;label3.Parent" xml:space="preserve">
     <value>panel2</value>
   </data>
+  <data name="&gt;&gt;_btn_down.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;_lblVoltage.Parent" xml:space="preserve">
     <value>panel2</value>
   </data>
-  <data name="&gt;&gt;_pbThrottle.Name" xml:space="preserve">
-    <value>_pbThrottle</value>
-  </data>
   <data name="_btnNaviBurn.Text" xml:space="preserve">
     <value>Burn to flash</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
   </data>
   <data name="&gt;&gt;_pbRcLink.Type" xml:space="preserve">
     <value>ProgressBarColored, GluonCS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
@@ -963,9 +996,6 @@
   <data name="_zgBatV.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="_btnCenterUav.Text" xml:space="preserve">
-    <value>&amp;Center UAV</value>
-  </data>
   <data name="_zgVel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -975,11 +1005,14 @@
   <data name="_zgAlt.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="&gt;&gt;toolStripContainer1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="_lblTimeInBlock.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 15</value>
+  </data>
+  <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="&gt;&gt;_lblFlightTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.ContentPanel.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -987,14 +1020,14 @@
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 13</value>
   </data>
-  <data name="_btnConnect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
   <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
   <data name="_ahPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
+  </data>
+  <data name="addBlockToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 22</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
@@ -1011,9 +1044,6 @@
   <data name="&gt;&gt;_tsPredator.Name" xml:space="preserve">
     <value>_tsPredator</value>
   </data>
-  <data name="generateSurveyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
-  </data>
   <data name="tableLayoutPanel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -1023,29 +1053,11 @@
   <data name="_lblLink.TabIndex" type="System.Int32, mscorlib">
     <value>43</value>
   </data>
-  <data name="&gt;&gt;_lblLink.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="_nav_save.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 22</value>
   </data>
   <data name="&gt;&gt;_ahPanel.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="_nav_open.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAphJREFUOE+F011I
-        U2EYwPFnV9HXhV1mUGC7MiOC6MKKIhOFQBGpXWQfoxLFLCsqa7WarpnaEmfOoSnVNC1Dk9CVhjUITFkJ
-        illT5778mnNznn1vPr3nrTM4QXTgx54X3vPnPZwzwZAC6CUQwBnys+336r/XNCI00V2DJPBHCWMsw/lP
-        p3Gh/xQyI3cxam1AnHnGt9CCZH8Jdx8MyIEjx+XXuOp6hQFLDToHCvGd+jC+71Hy9PapsLM0vlZ57wBU
-        SvcDfC6NUUSX2jAyr6Wirpdo6LiANqcTZxkGrYTZ48E3ej3Kpam6LIlEmFlcDKCXxZRHHC0YnnlKsfOX
-        VjGOGo34bXwcJx0OHJudxebubmQvcnMeIYR+KXAehueeY9D6hGJnfZMIv09M0MiM200jKq02RpieLoHe
-        28CpCtob0Weqo9i5v+EY/piaopFF8ghchD0J+zhpRUUFoLsFnBq/uR4ZYw3Fzn2aLDSaTDTi8np5EevK
-        CqYUFBTC2xvAUfum1OgZr6LYWVebgZNmM40s+/28yJzPhwdzcy9B5zXg1DM/q9E9WkGxc3f1UTSRABth
-        AgFeZIms94nFl0F2HKD9CtXoGVOic1hBsXPXozQ0Wyw04guFeBEPWe/NyblKv8Y72QAvLoLWPVKODoOM
-        YueOilS0WK00EgiHeRGGBHaLROT8AGuJTZrz0OUaJp/yoJRykVO0P0hBm81GI+FIhBfxkuCOjAzyDgHi
-        iO35qVD3oWqPZ1KXF1ockuHSVzm23j+EdrsdbUR0dRUjRCgaxSCJBckcn5xcFvvbHdkJoDkHmeqzoGm7
-        ueWjoTlr+nr2Gss6oVC1ITGxfGNSkuJv6xMS8nkBcjOoxADKk7Cr8gRISkXwmGzYSmz+h7hfaetvRiJD
-        uLkAAAAASUVORK5CYII=
-</value>
   </data>
   <data name="toolStripSplitButton1.Text" xml:space="preserve">
     <value>Helpers</value>
@@ -1068,9 +1080,6 @@
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel3.Parent" xml:space="preserve">
-    <value>_cockpitPanel</value>
-  </data>
   <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1082,9 +1091,6 @@
   </data>
   <data name="&gt;&gt;_panelStrip.Name" xml:space="preserve">
     <value>_panelStrip</value>
-  </data>
-  <data name="&gt;&gt;_panelStrip.Parent" xml:space="preserve">
-    <value>tableLayoutPanel3</value>
   </data>
   <data name="_zgBatV.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1107,17 +1113,14 @@
   <data name="_tsFunjet.Text" xml:space="preserve">
     <value>Funjet</value>
   </data>
-  <data name="&gt;&gt;_lblFlightMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
   </data>
   <data name="&gt;&gt;_lblTimeInBlock.Parent" xml:space="preserve">
     <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;_nav_open.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="_btnSurveySettings.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1129,26 +1132,20 @@
     <value>Block commands created in the Navigation list will be automatically 
 added as buttons to this strip.</value>
   </data>
-  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 109</value>
-  </data>
   <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
     <value>tableLayoutPanel1</value>
   </data>
-  <data name="&gt;&gt;_panelStrip.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="_zgVel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 15.75pt</value>
   </data>
-  <data name="_nav_open.Text" xml:space="preserve">
-    <value>&amp;Open</value>
+  <data name="_pbGps.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
   </data>
   <data name="&gt;&gt;splitter1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="_pbThrottle.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
-  </data>
-  <data name="_lblVoltage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 15</value>
   </data>
   <data name="&gt;&gt;_lblLink.Parent" xml:space="preserve">
     <value>panel2</value>
@@ -1168,8 +1165,8 @@ added as buttons to this strip.</value>
   <data name="&gt;&gt;toolStripDropDownButton1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="_ahPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="_lblSpeed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 29</value>
   </data>
   <data name="&gt;&gt;_ahPanel.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
@@ -1179,6 +1176,9 @@ added as buttons to this strip.</value>
   </data>
   <data name="&gt;&gt;_lblGpsSat.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripDropDownButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 22</value>
   </data>
   <data name="&gt;&gt;_lblDistNextWp.Name" xml:space="preserve">
     <value>_lblDistNextWp</value>
@@ -1192,20 +1192,29 @@ added as buttons to this strip.</value>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Altitude</value>
   </data>
-  <data name="_pbGps.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
+  <data name="&gt;&gt;toolStripContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_cockpitPanel.Text" xml:space="preserve">
+    <value>Cockpit</value>
+  </data>
+  <data name="&gt;&gt;toolStripDropDownButton2.Name" xml:space="preserve">
+    <value>toolStripDropDownButton2</value>
   </data>
   <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
     <value>tabPage2</value>
   </data>
-  <data name="&gt;&gt;toolStripContainer1.ContentPanel.Name" xml:space="preserve">
-    <value>toolStripContainer1.ContentPanel</value>
+  <data name="&gt;&gt;_lblFlightMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_pbBattery.Name" xml:space="preserve">
     <value>_pbBattery</value>
   </data>
   <data name="&gt;&gt;_btn_up.Name" xml:space="preserve">
     <value>_btn_up</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>LiveUavPanel</value>
   </data>
   <data name="_btnBuildSurvey.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1237,9 +1246,6 @@ added as buttons to this strip.</value>
   <data name="tableLayoutPanel3.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="_nav_save.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 22</value>
-  </data>
   <data name="_lblHomeDistance.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 24</value>
   </data>
@@ -1258,14 +1264,8 @@ added as buttons to this strip.</value>
   <data name="&gt;&gt;_zgBatV.Parent" xml:space="preserve">
     <value>tabPage3</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
-  </data>
   <data name="&gt;&gt;_pbGps.Type" xml:space="preserve">
     <value>ProgressBarColored, GluonCS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.TopToolStripPanel.Parent" xml:space="preserve">
-    <value>toolStripContainer1</value>
   </data>
   <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
     <value>365, 109</value>
@@ -1275,6 +1275,9 @@ added as buttons to this strip.</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 129</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="_btn_up.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -1307,38 +1310,31 @@ added as buttons to this strip.</value>
         SUVORK5CYII=
 </value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
+  <data name="&gt;&gt;_zgAlt.Type" xml:space="preserve">
+    <value>ZedGraph.ZedGraphControl, ZedGraph, Version=5.1.2.878, Culture=neutral, PublicKeyToken=02a83cbd123fcd60</value>
   </data>
   <data name="_navigationPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 408</value>
   </data>
-  <data name="&gt;&gt;_ts_basicconfig.Name" xml:space="preserve">
-    <value>_ts_basicconfig</value>
+  <data name="_nav_save.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAcVJREFUOE+lzk9I
+        k3Ecx/Hvnmd3Dx2EiC7du0jgVbxUeAhkiaL5L6VDdAo8KDqIms6tTdiYKJpKtZkITQjdpji3aCPoUJqo
+        qCmJYQzUMBkM9un3eXRQIE9Gg9c2fr/P+9ksAOS/Xk26R5p07z2l19bV1Xoe3J40HpFG9aa4V1/+UH8G
+        yP8FN9yyYSsNups8iyMZ5PJ5ZHM5U9xwy4at1Osu6vs4/B0/VXxwfGyKG27ZsJU7upN8HwZ2sZ/N4tvh
+        oSluuGXDVmo1BwXeB75iT/36l0zGFDfcsmErNdpjGkj5trC5cYCdoyNT3HDLhq1Ua49oKOldR9SxeC7c
+        smErVZqdRuLuVfTcHkO3bfRMvCtI+7fBhq3YtE56PtvzGa7qF0il0kgkkn/gGe9etSXhqQ3hbd8G2LCV
+        Sq2dQpEnn+CtG0csFkfHDb9hamrawDPe8QGBu6+x8HQNbNjKLa2NJmPdS/A1TiIcjhqfFAqFDYUzPuDZ
+        /RnMu1bAhq1csFySUktl2U3Lg6j9+uD+xEQE/S1hQzD4xlA44wOCD+OYcy6De7Z8XVauXpFrzeXS8s5q
+        tTrPwrvflUjF8GkrRepLsXLxH7Ep+gW/zj478IOLjQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="toolStripContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
-  </data>
-  <data name="_btnNaviReload.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAA0hJREFUOE9Fk/tT
-        TGEYx09+wS/+AzMMMUKYMAZDY+R+mVCjQda2u9auQci1KEKMyyDSuEyGKblmpai2prRbUWSyu6XLlgi1
-        q23bPe/ZPZevt1NtZ+bznjPzzvM53+d5zwlanlSuGDtu9LZRQUwYwzBjKEGUwRV0gcQIktTqcsIY5O5N
-        +JCxzi/vD1+rz1V+cLiJ45+HE5weDs7+ERxuDnQPti43kgw/oE5v9i7SvhkNgBmGWZtm6nazfqGq3Y+a
-        Dh41P3hUt/Mw2X0ob+bwzuoBxwP5jSyS8jqgutHMLtHnByTMuotmts/rQ12ngM+dPL3z+CRLfKho4VBk
-        9VKBiLouAWlV15Fa0I5lx8uyRxJcNJMBwRcqqP/J48tPQZZ97PCjstWHkiYW9r8euZXE0iNINiYh4lQF
-        zTTYBrOWClweHxroG75RGn6L+EolBc0WpFalQVe8E5qC7VDmbcVp4xGcfH8QG2/rxYBgTZqZ9FKB7bcE
-        Ky22UIpbbUgxp+Bu/U0Yvj9DXlMuXjRm45ntEXIsWYh/tQcrr4W3yAlWU4GTChr/SDI2yu3PWbhVexmv
-        m54iuewotuVEIvrhehwy6HHgpRYrLilHEqxMNRNHvw/WoeKBFIeNBxBniEHs8ygkvD2OWjrYKrsfiiwl
-        9j7WYVmyiSw8PXesnCDijIn00PO2DrUwIJBb6RLR8EtEfacfR1+l4BM94v3ZJ+BifViaaCKBGQzY/vRx
-        sPyS5IJBBHoqLC3moc+JR+yDXaih30Y1lWgy4xCWMBOh+6chRBfczoQnVpIuF0FUPofofIItbwk20+fN
-        Bg7r7x2CLlcJ9eMdWJQ8D/NPzEFMRiSu1pyF6uF2BKsmZjKLj5WTTifBvgoRWY3AAxtw1wpE3tkE7RMF
-        MuquIL32Eq5/vEALU3G5OgXaHAUmx02onbhzfDizIL7Ma+/xStoyEbuNAtSlPFSlgsyqm/sQez8aMZmb
-        MCs+BNP1UzBVMwnByghhQuz4cHmIYXtK2rr7OLfdQcS2HhZt3Sxahujpp5NPV2Dj+Q3oJwLo/yaKkuQK
-        URRaAkOcqyvWz1YXlczRFDtna4pIAHURmUUJVReS6dooIVT1nlB6ZygLjaHKwrhhwX8yw9/wNRIVXQAA
-        AABJRU5ErkJggg==
-</value>
   </data>
   <data name="_pbLink.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1354,6 +1350,9 @@ added as buttons to this strip.</value>
   </data>
   <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
     <value>tabPage3</value>
+  </data>
+  <data name="label14.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="generateSurveyToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1372,11 +1371,11 @@ added as buttons to this strip.</value>
   <data name="_pbBattery.TabIndex" type="System.Int32, mscorlib">
     <value>41</value>
   </data>
-  <data name="_lblLink.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
-    <value>_navigationPanel</value>
+  <data name="_btnNaviWrite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 22</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
     <value>_cockpitPanel</value>
@@ -1396,19 +1395,8 @@ added as buttons to this strip.</value>
   <data name="&gt;&gt;_pbThrottle.Parent" xml:space="preserve">
     <value>panel2</value>
   </data>
-  <data name="_nav_save.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAcVJREFUOE+lzk9I
-        k3Ecx/Hvnmd3Dx2EiC7du0jgVbxUeAhkiaL5L6VDdAo8KDqIms6tTdiYKJpKtZkITQjdpji3aCPoUJqo
-        qCmJYQzUMBkM9un3eXRQIE9Gg9c2fr/P+9ksAOS/Xk26R5p07z2l19bV1Xoe3J40HpFG9aa4V1/+UH8G
-        yP8FN9yyYSsNups8iyMZ5PJ5ZHM5U9xwy4at1Osu6vs4/B0/VXxwfGyKG27ZsJU7upN8HwZ2sZ/N4tvh
-        oSluuGXDVmo1BwXeB75iT/36l0zGFDfcsmErNdpjGkj5trC5cYCdoyNT3HDLhq1Ua49oKOldR9SxeC7c
-        smErVZqdRuLuVfTcHkO3bfRMvCtI+7fBhq3YtE56PtvzGa7qF0il0kgkkn/gGe9etSXhqQ3hbd8G2LCV
-        Sq2dQpEnn+CtG0csFkfHDb9hamrawDPe8QGBu6+x8HQNbNjKLa2NJmPdS/A1TiIcjhqfFAqFDYUzPuDZ
-        /RnMu1bAhq1csFySUktl2U3Lg6j9+uD+xEQE/S1hQzD4xlA44wOCD+OYcy6De7Z8XVauXpFrzeXS8s5q
-        tTrPwrvflUjF8GkrRepLsXLxH7Ep+gW/zj478IOLjQAAAABJRU5ErkJggg==
-</value>
+  <data name="generateSurveyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 22</value>
   </data>
   <data name="toolStripContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>47</value>
@@ -1416,8 +1404,8 @@ added as buttons to this strip.</value>
   <data name="_lblFlightTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 14</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>panel2</value>
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+    <value>tabControl1</value>
   </data>
   <data name="_btnNaviBurn.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 22</value>
@@ -1425,17 +1413,17 @@ added as buttons to this strip.</value>
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="_zgAlt.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>LiveUavPanel</value>
+  <data name="_lblFlightMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 37</value>
   </data>
-  <data name="&gt;&gt;_lblTimeInBlock.Name" xml:space="preserve">
-    <value>_lblTimeInBlock</value>
+  <data name="&gt;&gt;_nav_open.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_nav_open.Name" xml:space="preserve">
-    <value>_nav_open</value>
+  <data name="_lblFlightMode.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
   </data>
   <data name="_lblGpsSat.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 15</value>
@@ -1443,8 +1431,8 @@ added as buttons to this strip.</value>
   <data name="_lblDistNextWp.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 22</value>
+  <data name="_lblVoltage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 15</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.TopToolStripPanel.Name" xml:space="preserve">
     <value>toolStripContainer1.TopToolStripPanel</value>
@@ -1452,8 +1440,11 @@ added as buttons to this strip.</value>
   <data name="&gt;&gt;_pbGps.Name" xml:space="preserve">
     <value>_pbGps</value>
   </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;addBlockToolStripMenuItem.Name" xml:space="preserve">
+    <value>addBlockToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.Parent" xml:space="preserve">
     <value>toolStripContainer1</value>
@@ -1467,8 +1458,8 @@ added as buttons to this strip.</value>
   <data name="_btn_up.Text" xml:space="preserve">
     <value>Move up</value>
   </data>
-  <data name="_lblTimeToWp.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+  <data name="&gt;&gt;_lblTimeInBlock.Name" xml:space="preserve">
+    <value>_lblTimeInBlock</value>
   </data>
   <data name="&gt;&gt;_lv_navigation.Name" xml:space="preserve">
     <value>_lv_navigation</value>
@@ -1496,11 +1487,30 @@ added as buttons to this strip.</value>
   <data name="_nav_save.Text" xml:space="preserve">
     <value>&amp;Save</value>
   </data>
-  <data name="generateSurveyToolStripMenuItem.Text" xml:space="preserve">
-    <value>Survey polygon</value>
+  <data name="_btnAutoSync.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAtNJREFUOE9jYKA2
+        sJ//XsBu3nNf+3kve+znvThoN/fFGYd5L5cB+TlWc15Lgeyzn/siBsifiWG3zdwXSi7zn1ck7fi4rOHM
+        r/MdF79+7Lv173/j+U9fU3d9fOw49+l+25lPWm1nPD4DwigG2M54IOk870l8743fE1rP/tzSeuH3NZAB
+        nVf+/G+78Pt/6/lf/zsv//5vOe3hmUl3/4FpuAFa9VfYLKfcce669D239siXCRXHP28KWvF4l/GE2wdN
+        +m6eCVrx9E7r2e//qw59Ahry4z+IDRKHG2DUck0yZNlDv5Ldb3JL9rydaNBxucOg86oXTIFB56Up+p1X
+        zrSc/fK/aPur/3XHPv4H8eEGaDadU03f8Cwkb+vzHJeZNyo0Wk4bwSQ1m87GaDWdBWr+/L987xswrjv6
+        4T9IDG6Aevlxhdxtz+yzNz93UK44bIwcOGrVx2aqVh09g45B4nB1MoV7ZsoX7zuDjkHiyIbJFe8zjl//
+        2CF10zN7+fz9CnA5yextZxJ3vP4fvuE5GGftf/cfJCaRsy0Gpkgye5ORQfPxCt/lj3K8F9wKkc7brAo3
+        QCRl/RnPjW/+myx+9j9o+7v/IL5I0vopMAUiyWu8RJLXdbgsfzLRasXzXMPOU34iqWsl4QbwxCw/Y7n5
+        03+XHZ//q6x49x/EVqg7eAckzhez7KBS3aFdZiufbdJa/X6C847PucJJq50ZQlexwQ3gCl90xmH/z/8g
+        Wmvr9/8yG779l9v4/b/61h//1dd+/Si98es1mfXfthjv+DZBIHl1PFf0YoTtIFNYA+ecAeOA2a2sEQv3
+        i7Ucfiy/9NVXhZ1//kvv/PpRdtmr8xJNx5dxRC6uYLepUELPAzKMVoWLmIxTioASxgxims6M5rkNjF6T
+        VzP5TjvL5DvjEKPnhIlMJhlJDILKVkA1WkAsCsTMMIP4gAxhIBYHYlBuI4RBmrmBmAlkAACZYn+i0yjw
+        zwAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="&gt;&gt;toolStripContainer1.Name" xml:space="preserve">
-    <value>toolStripContainer1</value>
+  <data name="&gt;&gt;splitter1.Name" xml:space="preserve">
+    <value>splitter1</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel3.Name" xml:space="preserve">
     <value>tableLayoutPanel3</value>
@@ -1517,23 +1527,20 @@ added as buttons to this strip.</value>
   <data name="_tsFunjet.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 22</value>
   </data>
-  <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.Parent" xml:space="preserve">
-    <value>toolStripContainer1</value>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="_tsEasystar.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 22</value>
   </data>
-  <data name="_lblFlightMode.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
   <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="_pbBattery.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 2</value>
+  <data name="&gt;&gt;_ahPanel.Name" xml:space="preserve">
+    <value>_ahPanel</value>
   </data>
-  <data name="_zgAlt.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
+  <data name="&gt;&gt;toolStripContainer1.TopToolStripPanel.Parent" xml:space="preserve">
+    <value>toolStripContainer1</value>
   </data>
   <data name="&gt;&gt;_lblHomeDistance.Name" xml:space="preserve">
     <value>_lblHomeDistance</value>
@@ -1541,11 +1548,14 @@ added as buttons to this strip.</value>
   <data name="&gt;&gt;_navigationPanel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;_btnNewSurvey.Name" xml:space="preserve">
-    <value>_btnNewSurvey</value>
+  <data name="&gt;&gt;_lblTimeInBlock.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;_zgVel.Type" xml:space="preserve">
     <value>ZedGraph.ZedGraphControl, ZedGraph, Version=5.1.2.878, Culture=neutral, PublicKeyToken=02a83cbd123fcd60</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.ContentPanel.Name" xml:space="preserve">
+    <value>toolStripContainer1.ContentPanel</value>
   </data>
   <data name="_btn_down.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -1553,17 +1563,17 @@ added as buttons to this strip.</value>
   <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>379, 179</value>
   </data>
-  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+  <data name="_lblLink.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
+    <value>_navigationPanel</value>
   </data>
   <data name="&gt;&gt;_zgVel.Name" xml:space="preserve">
     <value>_zgVel</value>
   </data>
-  <data name="_lblGpsSat.ImageKey" xml:space="preserve">
-    <value>ERROR</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;_pbRcLink.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;_pbThrottle.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -1574,11 +1584,11 @@ added as buttons to this strip.</value>
   <data name="toolStripSplitButton1.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 22</value>
   </data>
-  <data name="&gt;&gt;toolStripContainer1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
+  </data>
+  <data name="toolStripDropDownButton1.Text" xml:space="preserve">
+    <value>&amp;File</value>
   </data>
   <data name="_lv_navigation.Size" type="System.Drawing.Size, System.Drawing">
     <value>377, 174</value>
@@ -1592,38 +1602,23 @@ added as buttons to this strip.</value>
   <data name="_pbGps.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 16</value>
   </data>
-  <data name="toolStripSplitButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAehJREFUOE+Vkj1o
-        E2Ecxv+TKKgg5ZJmOXGQihVKKCEnSJLmgwhJLrqFuBsjioviZCUkY7YSOgs6pNBqYuopNeSLCgltIwYV
-        oWYsOFjvLvc1SB5zBbXQRq/v9PLy/H7Pw3FEFs7wHXdCXZ+5aSH6N6K1Zlm1NXvHfFHWL0XUxnTXvOsN
-        9pxcZ63J1NbMB7U1Laj1qYq+dQ1Kg30wqDnEQXUiaWmN0rwwr79Pwvh8F8b2I2ibEYivT2vfaszJsQKl
-        fXFy1FpVG+ehb/EwvmbRfMqjW7qB7dotaJ05SG+PQ3pDi/9codTZea17Hc1ncRiGgeFwiM0XSeifbuOH
-        QB93K3R2rEBuTjJy1S5Eo1F0Oh3ouo5er4fakwiML/chVWggvSLuUIG25mAHa2dK8XgcqVQK+XwexWIR
-        lcW5EfwQO6v0U1qlDbFMj8cu4Hl+D+Y4Dn6/H7FYDOpGBHLVAVk4hd0ysf+F3W43fD4fbDabOXlh5+Wo
-        uUyXpRJ1xRVKHypIJBLI5XIwYa/XC4ZhYAblMl2RnpNg3rFEx74v09UDgnA4jGw2ewD+HRSXKTR2diAQ
-        QCaTgcvlgsfj+dNs6W9Lp9Po9/twOp0IhUJHg80GU9But1EoFPY+mKXW/aFgMHjPnG23248Oj0S/ADgf
-        Cw9P9/tzAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="_pbLink.Location" type="System.Drawing.Point, System.Drawing">
     <value>37, 45</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_lblBlockname.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_lblDistNextWp.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;_gmapContextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_lblAltitudeAgl.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_cockpitPanel.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="_btnNaviReload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 22</value>
+  </data>
+  <data name="_zgAlt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="&gt;&gt;_artificialHorizon.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1631,23 +1626,29 @@ added as buttons to this strip.</value>
   <data name="_lblFlightMode.Text" xml:space="preserve">
     <value>Flight mode</value>
   </data>
-  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="_lblTimeToWp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 19</value>
   </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
+  <data name="_artificialHorizon.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="_lv_navigation.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;_navigationPanel.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="&gt;&gt;_btnNaviBurn.Name" xml:space="preserve">
+    <value>_btnNaviBurn</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.TopToolStripPanel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="_cockpitPanel.Text" xml:space="preserve">
-    <value>Cockpit</value>
+  <data name="&gt;&gt;_lblFlightTime.Name" xml:space="preserve">
+    <value>_lblFlightTime</value>
   </data>
   <data name="tabPage3.Text" xml:space="preserve">
     <value>Battery voltage</value>
@@ -1658,7 +1659,7 @@ added as buttons to this strip.</value>
   <data name="&gt;&gt;_lv_navigation.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="&gt;&gt;columnHeader2.Name" xml:space="preserve">
@@ -1685,6 +1686,9 @@ added as buttons to this strip.</value>
   <data name="label3.Text" xml:space="preserve">
     <value>RC</value>
   </data>
+  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
   <data name="_pbThrottle.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 14</value>
   </data>
@@ -1693,6 +1697,12 @@ added as buttons to this strip.</value>
   </data>
   <data name="_tbn_fullconfig.Text" xml:space="preserve">
     <value>Full</value>
+  </data>
+  <data name="&gt;&gt;_pbGps.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;_lblAltitudeAgl.Name" xml:space="preserve">
+    <value>_lblAltitudeAgl</value>
   </data>
   <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -1716,8 +1726,8 @@ added as buttons to this strip.</value>
   <data name="&gt;&gt;_lblTimeToWp.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="_lv_navigation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 50</value>
+  <data name="&gt;&gt;_btn_down.Name" xml:space="preserve">
+    <value>_btn_down</value>
   </data>
   <data name="toolStripDropDownButton2.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 22</value>
@@ -1737,23 +1747,17 @@ added as buttons to this strip.</value>
   <data name="&gt;&gt;_pbRcLink.Name" xml:space="preserve">
     <value>_pbRcLink</value>
   </data>
-  <data name="_lblLink.Text" xml:space="preserve">
-    <value>Link</value>
+  <data name="&gt;&gt;tableLayoutPanel3.Parent" xml:space="preserve">
+    <value>_cockpitPanel</value>
   </data>
-  <data name="_btnNaviReload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
   </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;_lblHomeDistance.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="_zgVel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 15.75pt</value>
-  </data>
-  <data name="&gt;&gt;_lv_navigation.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="_btnSurveySettings.Text" xml:space="preserve">
-    <value>Settings</value>
+  <data name="toolStrip2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
   </data>
   <data name="&gt;&gt;_artificialHorizon.Type" xml:space="preserve">
     <value>ArtificialHorizon.ArtificialHorizon, ArtificialHorizon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
@@ -1764,24 +1768,14 @@ added as buttons to this strip.</value>
   <data name="&gt;&gt;toolStripContainer1.ContentPanel.Parent" xml:space="preserve">
     <value>toolStripContainer1</value>
   </data>
-  <data name="toolStripDropDownButton1.Text" xml:space="preserve">
-    <value>&amp;File</value>
+  <data name="&gt;&gt;_panelStrip.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="_gmapContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 4</value>
+  <data name="_ts2dah.Text" xml:space="preserve">
+    <value>2D artificial horizon</value>
   </data>
-  <data name="_btn_down.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYVJREFUOE9jYKAF
-        sJ/3cqbd3BdnYBjEJ8ke2xmPz0x58P9//+1//yff//8fxCfJAMtpD890Xv3zv/r4j/8dV/78B/FJMsCk
-        7+aZxrM//ufu/PS//vT3/yA+SQbod145U3386/+0Te/+Vx37+h/EJ8kAraazZ0oPfvwfvvj+//TNT/6D
-        +CQZoFp19Ezi2rv/XSac+R+78s5/EB+vATKFe2bKF+87g4wjVt/7bzfl4v/QlXf/o8uB1KMYKJGzLUYy
-        e9uZnKMf//tseP7fe/2z/7ZLHv43mHXnv/XiB/9dVz/577Lqyf+QrS//g9SB1GO4SCx5XYxIyvozYYc+
-        /5db/BIDO29//x8kD1KH0zu8cStjeGKWn7E78PM/3+qvcGy468d/kDhInmBgckcsjuEKX3RGY/+//0wb
-        //1X2vPvP4gPEieoGaaAyaY8hjVwzhmp3f//g2gQnxjNrEBFskBsBMTGTEZJJUy+M86AaBAfipWANAcu
-        w5iBEvxALAnEUjiwIFCcBdkAAMKv6uTVK0SIAAAAAElFTkSuQmCC
-</value>
+  <data name="&gt;&gt;_panelStrip.Parent" xml:space="preserve">
+    <value>tableLayoutPanel3</value>
   </data>
   <data name="tabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1792,11 +1786,11 @@ added as buttons to this strip.</value>
   <data name="tabPage2.Text" xml:space="preserve">
     <value>Speed</value>
   </data>
-  <data name="_zgBatV.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 103</value>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;_ts_basicconfig.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="_btnConnect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
   </data>
   <data name="_panelStrip.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -1810,17 +1804,17 @@ added as buttons to this strip.</value>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>_panelStrip</value>
   </data>
-  <data name="label14.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;_cockpitPanel.Type" xml:space="preserve">
+    <value>BSE.Windows.Forms.Panel, BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef</value>
   </data>
-  <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
+  <data name="_lblFlightMode.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
   </data>
-  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_btn_down.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="_ts2dah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
   </data>
   <data name="_btnNaviReload.Text" xml:space="preserve">
     <value>Re&amp;load from flash</value>
@@ -1831,8 +1825,8 @@ added as buttons to this strip.</value>
   <data name="toolStrip2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="&gt;&gt;label14.Name" xml:space="preserve">
-    <value>label14</value>
+  <data name="&gt;&gt;_btnNewSurvey.Name" xml:space="preserve">
+    <value>_btnNewSurvey</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1846,8 +1840,8 @@ added as buttons to this strip.</value>
   <data name="&gt;&gt;toolStripDropDownButton2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_pbLink.Name" xml:space="preserve">
-    <value>_pbLink</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="_btnAutoSync.ToolTipText" xml:space="preserve">
     <value>Auto-sync with gluonpilot</value>
@@ -1855,20 +1849,23 @@ added as buttons to this strip.</value>
   <data name="columnHeader2.Width" type="System.Int32, mscorlib">
     <value>294</value>
   </data>
-  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="toolStripContainer1.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>377, 2</value>
   </data>
   <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <data name="_btnNaviWrite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
-  </data>
-  <data name="_lv_navigation.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
   </data>
   <data name="&gt;&gt;_btnConnect.Name" xml:space="preserve">
     <value>_btnConnect</value>
+  </data>
+  <data name="_nav_open.Text" xml:space="preserve">
+    <value>&amp;Open</value>
+  </data>
+  <data name="_artificialHorizon.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
@@ -1885,44 +1882,26 @@ added as buttons to this strip.</value>
   <data name="&gt;&gt;_pbBattery.Parent" xml:space="preserve">
     <value>panel2</value>
   </data>
-  <data name="_lblVoltage.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="&gt;&gt;_lblSpeed.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="_lblTimeToWp.Text" xml:space="preserve">
-    <value>Time to WP: 0s</value>
+  <data name="_btnSurveySettings.Text" xml:space="preserve">
+    <value>Settings</value>
   </data>
-  <data name="&gt;&gt;_imageListGps.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripDropDownButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAddJREFUOE+Nkr1L
-        glEUxq2paGsoGg0cgqBBCImmgmwoiIpoaHDpQ8pCEQW1oZb+gKb2WqKlJYoiwohIFBPsi4xI0CKk8vvb
-        03kuGcF9X+jC4eXCc37vc557GjQ/Z2p1dZQaGzvqd6UvaTSne2trEUXNpNs9n61U6LNYpPdcjmKZDEXT
-        aXpJpUTte70EzbjHo1MEjLlcC+lSiRLc+JpM0nMiQQ9vb3QTj1M4FqOdgwPCgU4RMupwmDMM+MhmFSGb
-        29tUL53R6JFcjNjti7lymfS7nQICy2ehkOQE40ArAYas1qU8Z5DK5+mLM1BzAgC0EmDQYrEUGOC1LgvI
-        SSBA5+EwHfl8wslpMEgXt7ciWGglwIDZvFKqVinHOWQKBVUneB1oJUD/7Ky1zIC5LRKQw6srury/F3+9
-        jkR+g31nd9BKgD6TyVap1ajIYxQ4TDUn2BNoJUDvzIy9ygCn0ykgx34/+R4fxfx1Jwg2xe6glQD66WlH
-        jRelwmNgFDUnWDZoJUDPxIQTm4YMAIED/9OTqLto9DfYLI8HrQTQDQ+7xa7yqfEoak6wbND+BTTzpa3d
-        YFivAwSEC5kgWIyEJ8aeFPkOLXq40Ktp5epu0mptLV1dG/8paNGD3m+SmzmoaozA8QAAAABJRU5ErkJg
-        gg==
-</value>
+  <data name="_btnCenterUav.Text" xml:space="preserve">
+    <value>&amp;Center UAV</value>
   </data>
   <data name="&gt;&gt;_cockpitPanel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="_btn_up.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
+  <data name="_lblVoltage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="_zgVel.Size" type="System.Drawing.Size, System.Drawing">
     <value>359, 103</value>
   </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>51</value>
+  <data name="_btnAutoSync.Text" xml:space="preserve">
+    <value>Auto-sync</value>
   </data>
   <data name="toolStripDropDownButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1948,17 +1927,17 @@ added as buttons to this strip.</value>
   <data name="_lblHomeDistance.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 17</value>
   </data>
-  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
-    <value>tabControl1</value>
+  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="_btn_down.Text" xml:space="preserve">
     <value>Move down</value>
   </data>
-  <data name="&gt;&gt;toolStripDropDownButton2.Name" xml:space="preserve">
-    <value>toolStripDropDownButton2</value>
+  <data name="&gt;&gt;_cockpitPanel.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="_btn_down.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
+  <data name="_lblTimeToWp.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -1990,29 +1969,26 @@ added as buttons to this strip.</value>
   <data name="&gt;&gt;tableLayoutPanel3.Type" xml:space="preserve">
     <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tableLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 232</value>
-  </data>
   <data name="&gt;&gt;_tsPredator.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="addBlockToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
+  <data name="&gt;&gt;_lblDistNextWp.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;_lblVoltage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="_lv_navigation.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
+  <data name="&gt;&gt;_lv_navigation.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;splitter1.Name" xml:space="preserve">
-    <value>splitter1</value>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>_cockpitPanel</value>
   </data>
-  <data name="&gt;&gt;_btnAutoSync.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
   </data>
   <data name="_cockpitPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -2028,6 +2004,81 @@ added as buttons to this strip.</value>
   </data>
   <data name="_lblBlockname.Text" xml:space="preserve">
     <value>Block name</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;_btnNaviReload.Name" xml:space="preserve">
+    <value>_btnNaviReload</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>372, 135</value>
+  </data>
+  <data name="&gt;&gt;generateSurveyToolStripMenuItem.Name" xml:space="preserve">
+    <value>generateSurveyToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;_lblGpsSat.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="_btnConnect.Text" xml:space="preserve">
+    <value>_btnConnect</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.RightToolStripPanel.Name" xml:space="preserve">
+    <value>toolStripContainer1.RightToolStripPanel</value>
+  </data>
+  <data name="toolStrip2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>266, 25</value>
+  </data>
+  <data name="_btnNaviReload.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAA0hJREFUOE9Fk/tT
+        TGEYx09+wS/+AzMMMUKYMAZDY+R+mVCjQda2u9auQci1KEKMyyDSuEyGKblmpai2prRbUWSyu6XLlgi1
+        q23bPe/ZPZevt1NtZ+bznjPzzvM53+d5zwlanlSuGDtu9LZRQUwYwzBjKEGUwRV0gcQIktTqcsIY5O5N
+        +JCxzi/vD1+rz1V+cLiJ45+HE5weDs7+ERxuDnQPti43kgw/oE5v9i7SvhkNgBmGWZtm6nazfqGq3Y+a
+        Dh41P3hUt/Mw2X0ob+bwzuoBxwP5jSyS8jqgutHMLtHnByTMuotmts/rQ12ngM+dPL3z+CRLfKho4VBk
+        9VKBiLouAWlV15Fa0I5lx8uyRxJcNJMBwRcqqP/J48tPQZZ97PCjstWHkiYW9r8euZXE0iNINiYh4lQF
+        zTTYBrOWClweHxroG75RGn6L+EolBc0WpFalQVe8E5qC7VDmbcVp4xGcfH8QG2/rxYBgTZqZ9FKB7bcE
+        Ky22UIpbbUgxp+Bu/U0Yvj9DXlMuXjRm45ntEXIsWYh/tQcrr4W3yAlWU4GTChr/SDI2yu3PWbhVexmv
+        m54iuewotuVEIvrhehwy6HHgpRYrLilHEqxMNRNHvw/WoeKBFIeNBxBniEHs8ygkvD2OWjrYKrsfiiwl
+        9j7WYVmyiSw8PXesnCDijIn00PO2DrUwIJBb6RLR8EtEfacfR1+l4BM94v3ZJ+BifViaaCKBGQzY/vRx
+        sPyS5IJBBHoqLC3moc+JR+yDXaih30Y1lWgy4xCWMBOh+6chRBfczoQnVpIuF0FUPofofIItbwk20+fN
+        Bg7r7x2CLlcJ9eMdWJQ8D/NPzEFMRiSu1pyF6uF2BKsmZjKLj5WTTifBvgoRWY3AAxtw1wpE3tkE7RMF
+        MuquIL32Eq5/vEALU3G5OgXaHAUmx02onbhzfDizIL7Ma+/xStoyEbuNAtSlPFSlgsyqm/sQez8aMZmb
+        MCs+BNP1UzBVMwnByghhQuz4cHmIYXtK2rr7OLfdQcS2HhZt3Sxahujpp5NPV2Dj+Q3oJwLo/yaKkuQK
+        URRaAkOcqyvWz1YXlczRFDtna4pIAHURmUUJVReS6dooIVT1nlB6ZygLjaHKwrhhwX8yw9/wNRIVXQAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripContainer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 21</value>
+  </data>
+  <data name="_zgVel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;_zgAlt.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
+    <value>toolStripMenuItem1</value>
+  </data>
+  <data name="_lblSpeed.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="toolStripDropDownButton3.Text" xml:space="preserve">
+    <value>Module configuration</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_lblBlockname.Name" xml:space="preserve">
+    <value>_lblBlockname</value>
+  </data>
+  <data name="_zgVel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;toolStrip2.Parent" xml:space="preserve">
+    <value>toolStripContainer1.TopToolStripPanel</value>
   </data>
   <data name="_imageListGps.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
@@ -2080,80 +2131,26 @@ added as buttons to this strip.</value>
         AeABBwHgAQcCAAHwAQ8B8AEPAfABDwIACw==
 </value>
   </data>
-  <data name="&gt;&gt;_btnNaviReload.Name" xml:space="preserve">
-    <value>_btnNaviReload</value>
+  <data name="_panelStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
   </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>372, 135</value>
+  <data name="_navigationPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;generateSurveyToolStripMenuItem.Name" xml:space="preserve">
-    <value>generateSurveyToolStripMenuItem</value>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Ground speed:</value>
   </data>
-  <data name="&gt;&gt;_lblGpsSat.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="_btnConnect.Text" xml:space="preserve">
-    <value>_btnConnect</value>
+  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>365, 109</value>
   </data>
   <data name="&gt;&gt;_lblTimeToWp.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="toolStrip2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 25</value>
+  <data name="_lblGpsSat.ImageKey" xml:space="preserve">
+    <value>ERROR</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
-    <value>toolStripSeparator2</value>
-  </data>
-  <data name="toolStripContainer1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 21</value>
-  </data>
-  <data name="_lblSpeed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 29</value>
-  </data>
-  <data name="&gt;&gt;_zgAlt.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
-    <value>toolStripMenuItem1</value>
-  </data>
-  <data name="_lblSpeed.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="toolStripDropDownButton3.Text" xml:space="preserve">
-    <value>Module configuration</value>
-  </data>
-  <data name="&gt;&gt;_lblFlightTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_lblBlockname.Name" xml:space="preserve">
-    <value>_lblBlockname</value>
-  </data>
-  <data name="_zgVel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="&gt;&gt;toolStrip2.Parent" xml:space="preserve">
-    <value>toolStripContainer1.TopToolStripPanel</value>
-  </data>
-  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 135</value>
-  </data>
-  <data name="_panelStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="toolStripDropDownButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 22</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.Name" xml:space="preserve">
-    <value>toolStripContainer1.LeftToolStripPanel</value>
-  </data>
-  <data name="&gt;&gt;_btnNaviBurn.Name" xml:space="preserve">
-    <value>_btnNaviBurn</value>
-  </data>
-  <data name="&gt;&gt;_zgAlt.Type" xml:space="preserve">
-    <value>ZedGraph.ZedGraphControl, ZedGraph, Version=5.1.2.878, Culture=neutral, PublicKeyToken=02a83cbd123fcd60</value>
-  </data>
-  <data name="_cockpitPanel.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>None</value>
+  <data name="_lblHomeDistance.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
   </data>
   <data name="_lblTimeInBlock.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 66</value>
@@ -2161,20 +2158,20 @@ added as buttons to this strip.</value>
   <data name="_artificialHorizon.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="tableLayoutPanel3.ColumnCount" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="_lblVoltage.Text" xml:space="preserve">
-    <value>Bat</value>
+  <data name="&gt;&gt;splitter1.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="_lblFlightTime.Text" xml:space="preserve">
     <value>Flight time: 0s</value>
   </data>
-  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;_pbThrottle.Name" xml:space="preserve">
+    <value>_pbThrottle</value>
   </data>
-  <data name="toolStripContainer1.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>377, 2</value>
+  <data name="&gt;&gt;toolStripContainer1.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
     <value>toolStripSeparator3</value>
@@ -2185,32 +2182,32 @@ added as buttons to this strip.</value>
   <data name="tableLayoutPanel3.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="_lblVoltage.Text" xml:space="preserve">
+    <value>Bat</value>
+  </data>
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
   </data>
-  <data name="&gt;&gt;_btn_up.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;_lblVoltage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;_pbLink.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;_pbGps.Parent" xml:space="preserve">
-    <value>panel2</value>
+  <data name="tableLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 232</value>
   </data>
-  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
-    <value>tabControl1</value>
+  <data name="&gt;&gt;_imageListGps.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_gmapContextMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label14.Name" xml:space="preserve">
+    <value>label14</value>
   </data>
   <metadata name="_gmapContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>116, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>nl</value>
   </metadata>
   <metadata name="_imageListGps.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>290, 17</value>

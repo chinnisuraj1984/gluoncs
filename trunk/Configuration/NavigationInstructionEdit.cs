@@ -151,11 +151,6 @@ namespace Configuration
                 webBrowser.Navigate(directoryname + "\\goto.html");
                 c = new NavigationCommands.Goto(ni);
             }
-            else if (_cb_opcode.Text.StartsWith("SET_BATTERY_ALARM"))
-            {
-                webBrowser.Navigate(directoryname + "\\set_battery_alarm.html");
-                c = new NavigationCommands.BattAlarm(ni);
-            }
             else if (_cb_opcode.Text.StartsWith("CLIMB"))
             {
                 webBrowser.Navigate(directoryname + "\\climb.html");
@@ -204,6 +199,11 @@ namespace Configuration
             {
                 c = new NavigationCommands.Block(ni);
                 webBrowser.Navigate(directoryname + "\\block.html");
+            }
+            else if (_cb_opcode.Text.StartsWith("SET_BATTERY_ALARM"))
+            {
+                c = new NavigationCommands.BattAlarm(ni);
+                webBrowser.Navigate(directoryname + "\\setbatteryalarm.html");
             }
             else if (_cb_opcode.Text.StartsWith("EMPTY"))
             {
