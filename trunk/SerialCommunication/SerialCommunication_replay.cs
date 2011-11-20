@@ -558,9 +558,13 @@ namespace Communication
         {
         }
 
-        public override void SendServoReverse(bool a, bool b, bool c, bool d, bool e, bool f)
+        public override void SendServoReverse(bool a, bool b, bool c, bool d, bool e, bool f, bool manual_trim)
         {
 
+        }
+
+        public override void SendServoMinNeutralMax(int nr, int min, int neutral, int max)
+        {
         }
 
         public override void SendConfigChannels(int is_ppm, int channel_ap, int channel_motor, int channel_pitch, int channel_roll, int channel_yaw)

@@ -99,7 +99,9 @@ namespace Communication
 
         public abstract void SendTelemetry(int basicgps, int gyroaccraw, int gyroaccproc, int ppm, int pressuretemp, int attitude, int control);
 
-        public abstract void SendServoReverse(bool a, bool b, bool c, bool d, bool e, bool f);
+        public abstract void SendServoReverse(bool a, bool b, bool c, bool d, bool e, bool f, bool manual_trim);
+
+        public abstract void SendServoMinNeutralMax(int nr, int min, int neutral, int max);
 
         public abstract void SendConfigChannels(int is_ppm, int channel_ap, int channel_motor, int channel_pitch, int channel_roll, int channel_yaw);
 

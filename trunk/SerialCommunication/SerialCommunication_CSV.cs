@@ -95,6 +95,23 @@ namespace Communication
             LastValidFrame = DateTime.Now;
             _serialPort = new SerialPort();
             last_throughput_calculation = DateTime.Now;
+
+            _smartThreadPool = new SmartThreadPool();
+            _smartThreadPool.Name = "ReceiveThreadedData";
+
+            IWorkItemResult wir =
+                        _smartThreadPool.QueueWorkItem(
+                            new WorkItemCallback(this.ReceiveThreadedData), _serialPort);
+        }
+
+        ~SerialCommunication_CSV()
+        {
+            if (_smartThreadPool != null)
+                _smartThreadPool.Shutdown(false, 100);
+            if (logfile != null)
+                logfile.Close();
+
+            _serialPort.Dispose();
         }
 
         public double ThroughputKbS()
@@ -126,22 +143,13 @@ namespace Communication
             _serialPort.PortName = portName;
             _serialPort.BaudRate = baudrate;
             _serialPort.Open();
-            _smartThreadPool = new SmartThreadPool();
-            _smartThreadPool.Name = "ReceiveThreadedData";
-
-            IWorkItemResult wir =
-                        _smartThreadPool.QueueWorkItem(
-                            new WorkItemCallback(this.ReceiveThreadedData), _serialPort);
         }
 
         public override void Close()
         {
             if (_serialPort != null)
                 _serialPort.Close();
-            if (_smartThreadPool != null)
-                _smartThreadPool.Shutdown(false, 100);
-            if (logfile != null)
-                logfile.Close();
+
         }
 
         /*!
@@ -155,7 +163,7 @@ namespace Communication
             bool recognised_frame = true;
             string line = string.Empty;
 
-            while (_serialPort.IsOpen)
+            while (true)//_serialPort.IsOpen)
             {
                 try
                 {
@@ -240,6 +248,7 @@ namespace Communication
                     // CA: All configuration
                     else if (lines[0].EndsWith("CA") && lines.Length >= 2)
                     {
+                        Console.WriteLine("receiving...");
                         AllConfig ac = new AllConfig();
                         ac.acc_x_neutral = int.Parse(lines[1]);
                         ac.acc_y_neutral = int.Parse(lines[2]);
@@ -335,7 +344,12 @@ namespace Communication
                         }
                         if (lines.Length > 77)
                             ac.control_min_pitch = int.Parse(lines[77]);
+                        if (lines.Length > 78)
+                            ac.manual_trim = int.Parse(lines[78]) == 0 ? false : true;
+                        else
+                            Console.WriteLine("FOUT");
 
+                        Console.WriteLine("receive: " + lines[78]);
                         if (AllConfigCommunicationReceived != null)
                             AllConfigCommunicationReceived(ac);
                     }
@@ -539,17 +553,17 @@ namespace Communication
                 pressuretemp.ToString() + ";" +
                 attitude.ToString() + ";" +
                 control.ToString() + "");
-            Console.WriteLine("\nST;" +
+            /*Console.WriteLine("\nST;" +
                 basicgps.ToString() + ";" +
                 gyroaccraw.ToString() + ";" +
                 gyroaccproc.ToString() + ";" +
                 ppm.ToString() + ";" +
                 pressuretemp.ToString() + ";" +
                 attitude.ToString() + ";" +
-                control.ToString() + "\n");
+                control.ToString() + "\n");*/
         }
 
-        public override void SendServoReverse(bool a, bool b, bool c, bool d, bool e, bool f)
+        public override void SendServoReverse(bool a, bool b, bool c, bool d, bool e, bool f, bool manual_trim)
         {
             int s = 0;
             if (a)
@@ -564,7 +578,13 @@ namespace Communication
                 s += 16;
             if (f)
                 s += 32;
-            WriteChecksumLine("SR;" + s.ToString() + "");
+            WriteChecksumLine("SR;" + s.ToString() + ";" + ((manual_trim==true)?"1":"0"));
+            Console.WriteLine("send: " + manual_trim);
+        }
+
+        public override void SendServoMinNeutralMax(int nr, int min, int neutral, int max)
+        {
+            WriteChecksumLine("SM;" + nr + ";" + min + ";" + neutral + ";" + max); // nr = zero based
         }
 
         public override void SendConfigChannels(int is_ppm, int channel_ap, int channel_motor, int channel_pitch, int channel_roll, int channel_yaw)
@@ -576,13 +596,13 @@ namespace Communication
                Char.ConvertFromUtf32(97 + channel_pitch - 1) + ";" +
                Char.ConvertFromUtf32(97 + channel_roll - 1) + ";" +
                Char.ConvertFromUtf32(97 + channel_yaw - 1) + "");
-            Console.WriteLine("\nSI;" +
+            /*Console.WriteLine("\nSI;" +
                 (1 - is_ppm).ToString() + ";" +
                 Char.ConvertFromUtf32(97 + channel_ap - 1) + ";" +
                 Char.ConvertFromUtf32(97 + channel_motor - 1) + ";" +
                 Char.ConvertFromUtf32(97 + channel_pitch - 1) + ";" +
                 Char.ConvertFromUtf32(97 + channel_roll - 1) + ";" +
-                Char.ConvertFromUtf32(97 + channel_yaw - 1) + "\n");
+                Char.ConvertFromUtf32(97 + channel_yaw - 1) + "\n");*/
         }
 
 
@@ -615,10 +635,10 @@ namespace Communication
                 auto_throttle_min_pct + ";" + auto_throttle_max_pct + ";" +
                 auto_throttle_cruise_pct + ";" + auto_throttle_p_gain_10 + ";" +
                 (auto_throttle_enabled ? "1" : "0"));
-            Console.WriteLine("\nAT;" +
+            /*Console.WriteLine("\nAT;" +
                 auto_throttle_min_pct + ";" + auto_throttle_max_pct + ";" +
                 auto_throttle_cruise_pct + ";" + auto_throttle_p_gain_10 + ";" +
-                (auto_throttle_enabled ? "1" : "0"));
+                (auto_throttle_enabled ? "1" : "0"));*/
         }
 
         public override void SendControlSettings(int mixing, double max_pitch, double min_pitch, double max_roll, int aileron_differential, double waypoint_radius, double cruising_speed, bool stabilization_with_altitude_hold)
@@ -634,13 +654,13 @@ namespace Communication
                 min_pitch.ToString(CultureInfo.InvariantCulture));
 
 
-            Console.WriteLine("\nSC;" +
+            /*Console.WriteLine("\nSC;" +
                 mixing.ToString() + ";" +
                 max_pitch.ToString(CultureInfo.InvariantCulture) + ";" +
                 max_roll.ToString(CultureInfo.InvariantCulture) + ";" +
                 waypoint_radius.ToString(CultureInfo.InvariantCulture) + ";" +
                 cruising_speed.ToString(CultureInfo.InvariantCulture) + ";" +
-                (stabilization_with_altitude_hold == false ? 0 : 1).ToString() + "\n");
+                (stabilization_with_altitude_hold == false ? 0 : 1).ToString() + "\n");*/
 
         }
 
@@ -665,10 +685,10 @@ namespace Communication
                 ac.acc_x_neutral.ToString() + ";" +
                 ac.acc_y_neutral.ToString() + ";" +
                 ac.acc_z_neutral.ToString() + "");
-            Console.WriteLine("\nSA;" +
+            /*Console.WriteLine("\nSA;" +
                 ac.acc_x_neutral.ToString() + ";" +
                 ac.acc_y_neutral.ToString() + ";" +
-                ac.acc_z_neutral.ToString() + "\n");
+                ac.acc_z_neutral.ToString() + "\n");*/
             Thread.Sleep(200);
 
             // neutral gyro
@@ -676,10 +696,10 @@ namespace Communication
                 ac.gyro_x_neutral.ToString() + ";" +
                 ac.gyro_y_neutral.ToString() + ";" +
                 ac.gyro_z_neutral.ToString() + "");
-            Console.WriteLine("\nSY;" +
+            /*Console.WriteLine("\nSY;" +
                 ac.gyro_x_neutral.ToString() + ";" +
                 ac.gyro_y_neutral.ToString() + ";" +
-                ac.gyro_z_neutral.ToString() + "\n");
+                ac.gyro_z_neutral.ToString() + "\n");*/
             Thread.Sleep(200);
             
             // channel config
@@ -688,7 +708,7 @@ namespace Communication
             Thread.Sleep(200);
             // gps config
             WriteChecksumLine("SG;" + (ac.gps_initial_baudrate / 10).ToString() + "");
-            Console.WriteLine("\nSG;" + (ac.gps_initial_baudrate / 10).ToString() + "\n");
+            //Console.WriteLine("\nSG;" + (ac.gps_initial_baudrate / 10).ToString() + "\n");
 
             Thread.Sleep(200);
 
@@ -709,14 +729,14 @@ namespace Communication
                 ac.pid_heading2roll_imin.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_heading2roll_imax.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_heading2roll_dmin.ToString(System.Globalization.CultureInfo.InvariantCulture) + "");
-            Console.WriteLine("\nPH;" +
+            /*Console.WriteLine("\nPH;" +
                 ac.pid_heading2roll_p.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_heading2roll_i.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_heading2roll_d.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_heading2roll_imin.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_heading2roll_imax.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_heading2roll_dmin.ToString(System.Globalization.CultureInfo.InvariantCulture) + "\n");
-
+            */
             Thread.Sleep(200);
 
             WriteChecksumLine("PA;" +
@@ -726,18 +746,28 @@ namespace Communication
                 ac.pid_altitude2pitch_imin.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_altitude2pitch_imax.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_altitude2pitch_dmin.ToString(System.Globalization.CultureInfo.InvariantCulture) + "");
-            Console.WriteLine("\nPA;" +
+            /*Console.WriteLine("\nPA;" +
                 ac.pid_altitude2pitch_p.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_altitude2pitch_i.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_altitude2pitch_d.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_altitude2pitch_imin.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_altitude2pitch_imax.ToString(System.Globalization.CultureInfo.InvariantCulture) + ";" +
                 ac.pid_altitude2pitch_dmin.ToString(System.Globalization.CultureInfo.InvariantCulture) + "\n");
-
+            */
             Thread.Sleep(200);
 
-            SendServoReverse(ac.servo_reverse[0], ac.servo_reverse[1], ac.servo_reverse[2], ac.servo_reverse[3], ac.servo_reverse[4], ac.servo_reverse[5]);
+            SendServoReverse(ac.servo_reverse[0], ac.servo_reverse[1], ac.servo_reverse[2], ac.servo_reverse[3], ac.servo_reverse[4], ac.servo_reverse[5], ac.manual_trim);
             Thread.Sleep(200);
+
+            if (ac.manual_trim)
+            {
+                for (int i = 0; i < 6; i++)
+                {
+                    SendServoMinNeutralMax(i, ac.servo_min[i], ac.servo_neutral[i], ac.servo_max[i]);
+                    Thread.Sleep(200);
+                }
+            }
+
 
             SendControlSettings(ac.control_mixing,
                                 ac.control_max_pitch,
@@ -892,12 +922,12 @@ namespace Communication
                 if (_serialPort.BytesToWrite > 0)
                     Thread.Sleep(200); ;
                 _serialPort.WriteLine("\n$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
-                Console.WriteLine("\n$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
+                //Console.WriteLine("\n$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
             }
             else
             {
                 _serialPort.WriteLine("\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
-                Console.WriteLine("\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
+                //Console.WriteLine("\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
             }
         }
     }

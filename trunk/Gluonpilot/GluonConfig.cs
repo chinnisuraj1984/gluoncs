@@ -75,7 +75,7 @@ namespace Gluonpilot
                 if (_btn_connect.Checked)
                 {
                     _serial.Close();
-                    DisconnectPanels();
+                    //DisconnectPanels();
 
                     _btn_connect.Checked = false;
                 }
@@ -98,9 +98,9 @@ namespace Gluonpilot
                         cd.ShowDialog(this);
                         _serial = new SerialCommunication_CSV();
                         _serial.Open(cd.SelectedPort(), cd.SelectedBaudrate());
-                        //ConnectPanels();
+                        ConnectPanels();
                     }
-                    ConnectPanels();
+                    //ConnectPanels();
                     _btn_connect.Checked = true;
                 }
             }
@@ -116,6 +116,7 @@ namespace Gluonpilot
             datalogging.Connect(_serial);
             navigationListView1.Connect(_serial);
             _gcsMainPanel.Connect(_serial);
+
             _btnBasicConfiguration.Enabled = true;
             _btn_reboot.Enabled = true;
 
@@ -175,6 +176,7 @@ namespace Gluonpilot
                 cd.ShowDialog(this);
                 _serial = new SerialCommunication_CSV();
                 _serial.Open(cd.SelectedPort(), cd.SelectedBaudrate());
+                ConnectPanels();
             }
 
             FileDialog fd = new OpenFileDialog();
@@ -182,14 +184,13 @@ namespace Gluonpilot
                 return;
 
             if (connected)  // Close the current connection if it's open
-                _btn_connect_Click(null, null);
+                _serial.Close(); //_btn_connect_Click(null, null);
 
             string c = " -k=" + _serial.PortName + " -f=\"" + fd.FileName + "\"  -p -d=dsPIC33FJ256MC710 -u=" + _serial.BaudRate + " -q=0a;5a;5a;3b;31;31;32;33;0a -r=115200 -b=1200 -o";
             Process p = System.Diagnostics.Process.Start(Application.StartupPath + "\\ds30loader\\ds30LoaderConsole.exe", c);
             p.WaitForExit();
 
-            if (connected)  // Reconnect if the state was connected
-                _btn_connect_Click(null, null);
+
 
             if (p.ExitCode != -1)
                 MessageBox.Show("New firmware has been written", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -197,6 +198,11 @@ namespace Gluonpilot
             {
                 if (MessageBox.Show("There has been an error!", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Retry)
                     _btn_firmware_upgrade_Click(null, null);
+            }
+            
+            if (connected)  // Reconnect if the state was connected
+            {
+                _serial.Open(_serial.PortName, _serial.BaudRate);//_btn_connect_Click(null, null);
             }
         }
 
@@ -222,6 +228,7 @@ namespace Gluonpilot
 
         private void GluonConfig_FormClosing(object sender, FormClosingEventArgs e)
         {
+            DisconnectPanels();
             //if (_btn_connect.Checked)
             //    _btn_connect_Click(this, EventArgs.Empty);
         }
