@@ -25,6 +25,7 @@ namespace Gluonpilot
         public int[] ServoMin = new int[6];
         public int[] ServoMax = new int[6];
         public int[] ServoNeutral = new int[6];
+        public bool ManualTrim;
 
         public int GpsInitialBaudrate;
         public int GpsOperationalBaudrate;
@@ -73,6 +74,7 @@ namespace Gluonpilot
          */
         public AllConfig ToAllConfig()
         {
+            Console.WriteLine("To all config");
             AllConfig ac = new AllConfig();
             ConfigurationModel _model = this;
             ac.acc_x_neutral = _model.NeutralAccX;
@@ -143,7 +145,25 @@ namespace Gluonpilot
             ac.servo_reverse[3] = _model.ReverseServo4;
             ac.servo_reverse[4] = _model.ReverseServo5;
             ac.servo_reverse[5] = _model.ReverseServo6;
-
+            ac.manual_trim = _model.ManualTrim;
+            ac.servo_min[0] = _model.ServoMin[0];
+            ac.servo_min[1] = _model.ServoMin[1];
+            ac.servo_min[2] = _model.ServoMin[2];
+            ac.servo_min[3] = _model.ServoMin[3];
+            ac.servo_min[4] = _model.ServoMin[4];
+            ac.servo_min[5] = _model.ServoMin[5];
+            ac.servo_max[0] = _model.ServoMax[0];
+            ac.servo_max[1] = _model.ServoMax[1];
+            ac.servo_max[2] = _model.ServoMax[2];
+            ac.servo_max[3] = _model.ServoMax[3];
+            ac.servo_max[4] = _model.ServoMax[4];
+            ac.servo_max[5] = _model.ServoMax[5];
+            ac.servo_neutral[0] = _model.ServoNeutral[0];
+            ac.servo_neutral[1] = _model.ServoNeutral[1];
+            ac.servo_neutral[2] = _model.ServoNeutral[2];
+            ac.servo_neutral[3] = _model.ServoNeutral[3];
+            ac.servo_neutral[4] = _model.ServoNeutral[4];
+            ac.servo_neutral[5] = _model.ServoNeutral[5];
             ac.auto_throttle_enabled = _model.AutoThrottleEnabled;
             ac.auto_throttle_min_pct = _model.AutoThrottleMinPct;
             ac.auto_throttle_max_pct = _model.AutoThrottleMaxPct;
@@ -236,6 +256,7 @@ namespace Gluonpilot
                 _model.ServoMax[i] = ac.servo_max[i];
                 _model.ServoNeutral[i] = ac.servo_neutral[i];
             }
+            _model.ManualTrim = ac.manual_trim;
 
             _model.AutoThrottleEnabled = ac.auto_throttle_enabled;
             _model.AutoThrottleMinPct = ac.auto_throttle_min_pct;

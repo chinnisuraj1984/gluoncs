@@ -87,5 +87,6 @@ namespace Communication.Frames.Configuration
         public int[] servo_min = new int[6];
         public int[] servo_max = new int[6];
         public int[] servo_neutral = new int[6];
+        public bool manual_trim;
     }
 }

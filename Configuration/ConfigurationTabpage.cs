@@ -54,10 +54,10 @@ namespace Gluonpilot
 
             if (_serial != null)
             {
-                _serial.GyroAccRawCommunicationReceived -= new SerialCommunication_CSV.ReceiveGyroAccRawCommunicationFrame(ReceiveGyroAccRaw);
-                _serial.GyroAccProcCommunicationReceived -= new SerialCommunication_CSV.ReceiveGyroAccProcCommunicationFrame(ReceiveGyroAccProc);
-                _serial.PressureTempCommunicationReceived -= new SerialCommunication_CSV.ReceivePressureTempCommunicationFrame(ReceivePressureTemp);
-                _serial.AllConfigCommunicationReceived -= new SerialCommunication_CSV.ReceiveAllConfigCommunicationFrame(ReceiveAllConfig);
+                _serial.GyroAccRawCommunicationReceived -= ReceiveGyroAccRaw;
+                _serial.GyroAccProcCommunicationReceived -= ReceiveGyroAccProc;
+                _serial.PressureTempCommunicationReceived -= ReceivePressureTemp;
+                _serial.AllConfigCommunicationReceived -= ReceiveAllConfig;
                 _serial.RcInputCommunicationReceived -= new SerialCommunication_CSV.ReceiveRcInputCommunicationFrame(ReceiveRcInput);
                 _serial.GpsBasicCommunicationReceived -= new SerialCommunication.ReceiveGpsBasicCommunicationFrame(ReceiveGpsBasic);
             }
@@ -198,6 +198,11 @@ namespace Gluonpilot
                 _tb_servo6_neutral.Text = _model.ServoNeutral[5].ToString();
             }
 
+            if (_model.ManualTrim)
+                _rb_servos_neutral_configurable.Checked = true;
+            else
+                _rb_serovs_neutral_auto.Checked = true;
+
             _nudAutoThrottleMinPct.Value = _model.AutoThrottleMinPct;
             _nudAutoThrottleMaxPct.Value = _model.AutoThrottleMaxPct;
             _nudAutoThrottleCruisePct.Value = _model.AutoThrottleCruisePct;
@@ -222,6 +227,7 @@ namespace Gluonpilot
 
         private void ReceiveAllConfig(AllConfig ac)
         {
+            Console.WriteLine("GUI received");
             this.BeginInvoke(new D_ReceiveAllConfig(AllConfig), new object[] { ac });
         }
         private delegate void D_ReceiveAllConfig(AllConfig ac);
@@ -578,6 +584,49 @@ namespace Gluonpilot
 
 #region Servos tab page
 
+        private void _nud_servo_TextChanged(object sender, EventArgs e)
+        {
+            if (sender == _tb_servo1_min)
+                int.TryParse(_tb_servo1_min.Text, out _model.ServoMin[0]);
+            if (sender == _tb_servo2_min)
+                int.TryParse(_tb_servo2_min.Text, out _model.ServoMin[1]);
+            if (sender == _tb_servo3_min)
+                int.TryParse(_tb_servo3_min.Text, out _model.ServoMin[2]);
+            if (sender == _tb_servo4_min)
+                int.TryParse(_tb_servo4_min.Text, out _model.ServoMin[3]);
+            if (sender == _tb_servo5_min)
+                int.TryParse(_tb_servo5_min.Text, out _model.ServoMin[4]);
+            if (sender == _tb_servo6_min)
+                int.TryParse(_tb_servo6_min.Text, out _model.ServoMin[5]);
+
+            if (sender == _tb_servo1_max)
+                int.TryParse(_tb_servo1_max.Text, out _model.ServoMax[0]);
+            if (sender == _tb_servo2_max)
+                int.TryParse(_tb_servo2_max.Text, out _model.ServoMax[1]);
+            if (sender == _tb_servo3_max)
+                int.TryParse(_tb_servo3_max.Text, out _model.ServoMax[2]);
+            if (sender == _tb_servo4_max)
+                int.TryParse(_tb_servo4_max.Text, out _model.ServoMax[3]);
+            if (sender == _tb_servo5_max)
+                int.TryParse(_tb_servo5_max.Text, out _model.ServoMax[4]);
+            if (sender == _tb_servo6_max)
+                int.TryParse(_tb_servo6_max.Text, out _model.ServoMax[5]);
+
+            if (sender == _tb_servo1_neutral)
+                int.TryParse(_tb_servo1_neutral.Text, out _model.ServoNeutral[0]);
+            if (sender == _tb_servo2_neutral)
+                int.TryParse(_tb_servo2_neutral.Text, out _model.ServoNeutral[1]);
+            if (sender == _tb_servo3_neutral)
+                int.TryParse(_tb_servo3_neutral.Text, out _model.ServoNeutral[2]);
+            if (sender == _tb_servo4_neutral)
+                int.TryParse(_tb_servo4_neutral.Text, out _model.ServoNeutral[3]);
+            if (sender == _tb_servo5_neutral)
+                int.TryParse(_tb_servo5_neutral.Text, out _model.ServoNeutral[4]);
+            if (sender == _tb_servo6_neutral)
+                int.TryParse(_tb_servo6_neutral.Text, out _model.ServoNeutral[5]);
+        }
+
+
         private void _cb_reverse_servo_Click(object sender, EventArgs e)
         {
             if (sender == _cb_reverse_servo1)
@@ -599,7 +648,30 @@ namespace Gluonpilot
             System.Diagnostics.Process.Start("http://www.gluonpilot.com/wiki/Config_Servos");
         }
 
-        
+     
+        private void _rb_serovs_neutral_auto_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (Control c in _panelServos.Controls)
+            {
+                TextBox tb = c as TextBox;
+                if (tb != null)
+                    tb.ReadOnly = true;
+            }
+            _model.ManualTrim = false;
+        } 
+  
+        private void _rb_servos_neutral_configurable_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (Control c in _panelServos.Controls)
+            {
+                TextBox tb = c as TextBox;
+                if (tb != null)
+                    tb.ReadOnly = false;
+            }
+            _model.ManualTrim = true;
+        }
+
+
 #endregion
 
 #region GPS tab page
@@ -735,8 +807,6 @@ namespace Gluonpilot
         {
             _model.ControlAileronDiff = (int)_nud_aileron_diff.Value;
         }
-#endregion
-
 
 
         private void _nudAutoThrottleMinPct_ValueChanged(object sender, EventArgs e)
@@ -764,10 +834,17 @@ namespace Gluonpilot
             _model.AutoThrottlePGain = _ntbAutoThrottlePGain.DoubleValue;
         }
 
+#endregion
+
+
+
         private void label63_Click(object sender, EventArgs e)
         {
 
         }
+
+
+
 
 
 

@@ -253,7 +253,7 @@ namespace Gluonpilot
         private void _cbInvert_CheckedChanged(object sender, EventArgs e)
         {
             if (!guiUpdateBusy)
-                serial.SendServoReverse(_cbInvert1.Checked, _cbInvert2.Checked, _cbInvert3.Checked, _cbInvert4.Checked, _cbInvert5.Checked, _cbInvert6.Checked);
+                serial.SendServoReverse(_cbInvert1.Checked, _cbInvert2.Checked, _cbInvert3.Checked, _cbInvert4.Checked, _cbInvert5.Checked, _cbInvert6.Checked, config_original.manual_trim);
         }
 
         private void _tmrGuiUpdateBusy_Tick(object sender, EventArgs e)
