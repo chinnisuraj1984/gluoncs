@@ -134,8 +134,11 @@ namespace Gluonpilot
             _btnBasicConfiguration.Enabled = false;
             _btn_reboot.Enabled = false;
 
-            _serial.CommunicationReceived -= new SerialCommunication_CSV.ReceiveCommunication(ReceiveCommunication);
-            _serial.NonParsedCommunicationReceived -= new SerialCommunication.ReceiveNonParsedCommunication(ReceiveNonParsedCommunication);
+            if (_serial != null)
+            {
+                _serial.CommunicationReceived -= new SerialCommunication_CSV.ReceiveCommunication(ReceiveCommunication);
+                _serial.NonParsedCommunicationReceived -= new SerialCommunication.ReceiveNonParsedCommunication(ReceiveNonParsedCommunication);
+            }
         }
 
 
