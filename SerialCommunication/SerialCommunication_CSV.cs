@@ -106,8 +106,16 @@ namespace Communication
 
         ~SerialCommunication_CSV()
         {
-            if (_smartThreadPool != null)
-                _smartThreadPool.Shutdown(false, 100);
+            try
+            {
+                if (_smartThreadPool != null)
+                    _smartThreadPool.Shutdown(false, 100);
+            }
+            catch (Exception ex)
+            {
+                // to catch objectdisposed on smart thread pool
+            }
+
             if (logfile != null)
                 logfile.Close();
 
@@ -921,12 +929,12 @@ namespace Communication
             {
                 if (_serialPort.BytesToWrite > 0)
                     Thread.Sleep(200); ;
-                _serialPort.WriteLine("\n$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
+                _serialPort.WriteLine("\n\r$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
                 //Console.WriteLine("\n$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
             }
             else
             {
-                _serialPort.WriteLine("\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
+                _serialPort.WriteLine("\n\r$" + s + "*" + Convert.ToString(chk, 16) + "\n");
                 //Console.WriteLine("\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
             }
         }
