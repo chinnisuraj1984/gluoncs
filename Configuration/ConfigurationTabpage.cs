@@ -678,8 +678,8 @@ namespace Gluonpilot
 
         private void ReceiveGpsBasic(GpsBasic gb)
         {
-            string s = "";
-            this.BeginInvoke(new D_UpdateGpsBasic(UpdateGpsBasic), new object[] { gb });
+            D_UpdateGpsBasic d = new D_UpdateGpsBasic(UpdateGpsBasic);
+            this.BeginInvoke(d, new object[] { gb });
         }
         private delegate void D_UpdateGpsBasic(GpsBasic gb);
         private void UpdateGpsBasic(GpsBasic gb)
