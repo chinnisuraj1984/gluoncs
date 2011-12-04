@@ -111,14 +111,18 @@ namespace Communication
                 if (_smartThreadPool != null)
                     _smartThreadPool.Shutdown(false, 100);
             }
-            catch (Exception ex)
+            catch (Exception ex)  // threadpool already shut down
             {
-                // to catch objectdisposed on smart thread pool
             }
 
-            if (logfile != null)
-                logfile.Close();
-
+            try
+            {
+                if (logfile != null)
+                    logfile.Close();
+            }
+            catch (Exception ex) // logfile already closed
+            {
+            }
             _serialPort.Dispose();
         }
 
@@ -175,6 +179,8 @@ namespace Communication
             {
                 try
                 {
+                    line = "";
+                    recognised_frame = false;
                     // A bit extra logic to set communication lost after 1 second of no data 
                     while (/*_serialPort == null || !_serialPort.IsOpen ||*/ _serialPort.BytesToRead < 3)
                     {
@@ -353,11 +359,14 @@ namespace Communication
                         if (lines.Length > 77)
                             ac.control_min_pitch = int.Parse(lines[77]);
                         if (lines.Length > 78)
+                        {
                             ac.manual_trim = int.Parse(lines[78]) == 0 ? false : true;
+                            Console.WriteLine("receive: " + lines[78]);
+                        }
                         else
                             Console.WriteLine("FOUT");
 
-                        Console.WriteLine("receive: " + lines[78]);
+
                         if (AllConfigCommunicationReceived != null)
                             AllConfigCommunicationReceived(ac);
                     }
@@ -929,12 +938,12 @@ namespace Communication
             {
                 if (_serialPort.BytesToWrite > 0)
                     Thread.Sleep(200); ;
-                _serialPort.WriteLine("\n\r$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
+                _serialPort.WriteLine("\n$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
                 //Console.WriteLine("\n$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
             }
             else
             {
-                _serialPort.WriteLine("\n\r$" + s + "*" + Convert.ToString(chk, 16) + "\n");
+                _serialPort.WriteLine("\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
                 //Console.WriteLine("\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
             }
         }
