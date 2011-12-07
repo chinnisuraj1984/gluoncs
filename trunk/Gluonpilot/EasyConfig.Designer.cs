@@ -147,7 +147,6 @@
             // 
             // _cbMixing
             // 
-            resources.ApplyResources(this._cbMixing, "_cbMixing");
             this._cbMixing.FormattingEnabled = true;
             this._cbMixing.Items.AddRange(new object[] {
             resources.GetString("_cbMixing.Items"),
@@ -155,6 +154,7 @@
             resources.GetString("_cbMixing.Items2"),
             resources.GetString("_cbMixing.Items3"),
             resources.GetString("_cbMixing.Items4")});
+            resources.ApplyResources(this._cbMixing, "_cbMixing");
             this._cbMixing.Name = "_cbMixing";
             this._cbMixing.SelectedIndexChanged += new System.EventHandler(this._cbMixing_SelectedIndexChanged);
             // 
@@ -165,8 +165,8 @@
             // 
             // _hsRollSensitivity
             // 
+            this._hsRollSensitivity.LargeChange = 2;
             resources.ApplyResources(this._hsRollSensitivity, "_hsRollSensitivity");
-            this._hsRollSensitivity.LargeChange = 5;
             this._hsRollSensitivity.Maximum = 50;
             this._hsRollSensitivity.Name = "_hsRollSensitivity";
             this._hsRollSensitivity.ValueChanged += new System.EventHandler(this._hsRollSensitivity_ValueChanged);
@@ -183,8 +183,8 @@
             // 
             // _hsPitchSensitivity
             // 
+            this._hsPitchSensitivity.LargeChange = 2;
             resources.ApplyResources(this._hsPitchSensitivity, "_hsPitchSensitivity");
-            this._hsPitchSensitivity.LargeChange = 5;
             this._hsPitchSensitivity.Maximum = 50;
             this._hsPitchSensitivity.Name = "_hsPitchSensitivity";
             this._hsPitchSensitivity.ValueChanged += new System.EventHandler(this._hsPitchSensitivity_ValueChanged);
@@ -385,7 +385,6 @@
             // 
             // _cbInputFunction1
             // 
-            resources.ApplyResources(this._cbInputFunction1, "_cbInputFunction1");
             this._cbInputFunction1.FormattingEnabled = true;
             this._cbInputFunction1.Items.AddRange(new object[] {
             resources.GetString("_cbInputFunction1.Items"),
@@ -394,12 +393,12 @@
             resources.GetString("_cbInputFunction1.Items3"),
             resources.GetString("_cbInputFunction1.Items4"),
             resources.GetString("_cbInputFunction1.Items5")});
+            resources.ApplyResources(this._cbInputFunction1, "_cbInputFunction1");
             this._cbInputFunction1.Name = "_cbInputFunction1";
             this._cbInputFunction1.SelectedIndexChanged += new System.EventHandler(this._cbInputFunction_SelectionChanged);
             // 
             // _cbInputFunction2
             // 
-            resources.ApplyResources(this._cbInputFunction2, "_cbInputFunction2");
             this._cbInputFunction2.FormattingEnabled = true;
             this._cbInputFunction2.Items.AddRange(new object[] {
             resources.GetString("_cbInputFunction2.Items"),
@@ -408,12 +407,12 @@
             resources.GetString("_cbInputFunction2.Items3"),
             resources.GetString("_cbInputFunction2.Items4"),
             resources.GetString("_cbInputFunction2.Items5")});
+            resources.ApplyResources(this._cbInputFunction2, "_cbInputFunction2");
             this._cbInputFunction2.Name = "_cbInputFunction2";
             this._cbInputFunction2.SelectedIndexChanged += new System.EventHandler(this._cbInputFunction_SelectionChanged);
             // 
             // _cbInputFunction3
             // 
-            resources.ApplyResources(this._cbInputFunction3, "_cbInputFunction3");
             this._cbInputFunction3.FormattingEnabled = true;
             this._cbInputFunction3.Items.AddRange(new object[] {
             resources.GetString("_cbInputFunction3.Items"),
@@ -422,12 +421,12 @@
             resources.GetString("_cbInputFunction3.Items3"),
             resources.GetString("_cbInputFunction3.Items4"),
             resources.GetString("_cbInputFunction3.Items5")});
+            resources.ApplyResources(this._cbInputFunction3, "_cbInputFunction3");
             this._cbInputFunction3.Name = "_cbInputFunction3";
             this._cbInputFunction3.SelectedIndexChanged += new System.EventHandler(this._cbInputFunction_SelectionChanged);
             // 
             // _cbInputFunction4
             // 
-            resources.ApplyResources(this._cbInputFunction4, "_cbInputFunction4");
             this._cbInputFunction4.FormattingEnabled = true;
             this._cbInputFunction4.Items.AddRange(new object[] {
             resources.GetString("_cbInputFunction4.Items"),
@@ -436,12 +435,12 @@
             resources.GetString("_cbInputFunction4.Items3"),
             resources.GetString("_cbInputFunction4.Items4"),
             resources.GetString("_cbInputFunction4.Items5")});
+            resources.ApplyResources(this._cbInputFunction4, "_cbInputFunction4");
             this._cbInputFunction4.Name = "_cbInputFunction4";
             this._cbInputFunction4.SelectedIndexChanged += new System.EventHandler(this._cbInputFunction_SelectionChanged);
             // 
             // _cbInputFunction5
             // 
-            resources.ApplyResources(this._cbInputFunction5, "_cbInputFunction5");
             this._cbInputFunction5.FormattingEnabled = true;
             this._cbInputFunction5.Items.AddRange(new object[] {
             resources.GetString("_cbInputFunction5.Items"),
@@ -450,12 +449,12 @@
             resources.GetString("_cbInputFunction5.Items3"),
             resources.GetString("_cbInputFunction5.Items4"),
             resources.GetString("_cbInputFunction5.Items5")});
+            resources.ApplyResources(this._cbInputFunction5, "_cbInputFunction5");
             this._cbInputFunction5.Name = "_cbInputFunction5";
             this._cbInputFunction5.SelectedIndexChanged += new System.EventHandler(this._cbInputFunction_SelectionChanged);
             // 
             // _cbInputFunction6
             // 
-            resources.ApplyResources(this._cbInputFunction6, "_cbInputFunction6");
             this._cbInputFunction6.FormattingEnabled = true;
             this._cbInputFunction6.Items.AddRange(new object[] {
             resources.GetString("_cbInputFunction6.Items"),
@@ -464,6 +463,7 @@
             resources.GetString("_cbInputFunction6.Items3"),
             resources.GetString("_cbInputFunction6.Items4"),
             resources.GetString("_cbInputFunction6.Items5")});
+            resources.ApplyResources(this._cbInputFunction6, "_cbInputFunction6");
             this._cbInputFunction6.Name = "_cbInputFunction6";
             this._cbInputFunction6.SelectedIndexChanged += new System.EventHandler(this._cbInputFunction_SelectionChanged);
             // 
@@ -587,8 +587,8 @@
             // 
             // _hsbCruiseThrottle
             // 
+            this._hsbCruiseThrottle.LargeChange = 2;
             resources.ApplyResources(this._hsbCruiseThrottle, "_hsbCruiseThrottle");
-            this._hsbCruiseThrottle.LargeChange = 5;
             this._hsbCruiseThrottle.Name = "_hsbCruiseThrottle";
             this._hsbCruiseThrottle.Scroll += new System.Windows.Forms.ScrollEventHandler(this._hsbCruiseThrottle_Scroll);
             // 

@@ -21,7 +21,7 @@ namespace GluonCS.LiveUavLayer
     {
         private WindGMapControl gmap;
         private LiveUavModel model;
-        private GMapMarker current_marker = null;
+        private GMapMarker current_marker = null;  // when dragging a marker
         private GMapMarker home;
         private bool is_mouse_down = false;
         private Point click_offset;
@@ -30,6 +30,8 @@ namespace GluonCS.LiveUavLayer
 
         private bool zoomToReceivedWaypoints = false;
         private Timer zoomtowaypoints;
+
+        private Timer guiUpdateTimer;
 
         public GMapOverlay Overlay;
         public GMapOverlay NavigationOverlay;
@@ -112,6 +114,11 @@ namespace GluonCS.LiveUavLayer
 
             zoomtowaypoints = new Timer();
             zoomtowaypoints.Tick += new EventHandler(zoomtowaypoints_Tick);
+
+            guiUpdateTimer = new Timer();
+            guiUpdateTimer.Interval = 200;
+            guiUpdateTimer.Tick += new EventHandler(guiUpdateTimer_Tick);
+            guiUpdateTimer.Start();
         }
 
 
@@ -197,7 +204,7 @@ namespace GluonCS.LiveUavLayer
             //throw new NotImplementedException();
         }
 
-        void model_UavPositionChanged(object sender, EventArgs e)
+        void guiUpdateTimer_Tick(object sender, EventArgs e)
         {
             MethodInvoker m = delegate()
             {
@@ -214,16 +221,16 @@ namespace GluonCS.LiveUavLayer
 
                     // Is the new navigationcommand a waypoint?
                     if (model.GetNavigationInstructionLocal(model.CurrentNavigationLine).IsWaypoint() ||
-                        model.GetNavigationInstructionLocal(model.CurrentNavigationLine).opcode == NavigationInstruction.navigation_command.BLOCK) 
+                        model.GetNavigationInstructionLocal(model.CurrentNavigationLine).opcode == NavigationInstruction.navigation_command.BLOCK)
                     {
                         //current_waypointline = model.CurrentNavigationLine;
                         current_waypointline = model.NavigationModel.Commands[model.CurrentNavigationLine].TargetWp;
                         // Yes, update
                         foreach (GMapMarker marker in NavigationOverlay.Markers)
                         {
-                            if (marker is NavigationMarker)
+                            NavigationMarker nm = marker as NavigationMarker;
+                            if (nm != null)
                             {
-                                NavigationMarker nm = (NavigationMarker)marker;
                                 if (nm.Number == current_waypointline)
                                     nm.IsCurrentWaypoint = true;
                                 else
@@ -262,7 +269,7 @@ namespace GluonCS.LiveUavLayer
                     }
 
                     // if the uav is flying out of the screen, move the map
-                    if (! gmap.CurrentViewArea.Contains(uavMarker.Position) && containedUav)
+                    if (!gmap.CurrentViewArea.Contains(uavMarker.Position) && containedUav)
                         gmap.Position = new PointLatLng(model.UavPosition.Lat, model.UavPosition.Lng);
                 }
             };
@@ -275,6 +282,13 @@ namespace GluonCS.LiveUavLayer
             {
             } 
         }
+
+
+        void model_UavPositionChanged(object sender, EventArgs e)
+        {
+            
+        }
+
         void model_HomeChanged(object sender, EventArgs e)
         {
             home.Position = model.Home;
@@ -293,8 +307,8 @@ namespace GluonCS.LiveUavLayer
                 NavigationOverlay.Markers.Clear();
                 NavigationOverlay.Routes.Clear();
                 NavigationOverlay.Polygons.Clear();
-                current_waypointline = -1;
-                //l.Add(home.Position);
+                //current_waypointline = -1;
+
                 string lastblockname = "Start";
                 for (int i = 0; i < model.MaxNumberOfNavigationInstructions(); i++)
                 {
@@ -326,9 +340,9 @@ namespace GluonCS.LiveUavLayer
                         else if (ni.HasAbsoluteCoordinates())
                         {
                             if (model.IsNavigationSynchronized(i))
-                                mm = new IconMarker(gmap.Position, i, true, false);
+                                mm = new IconMarker(gmap.Position, i, true, false, i==current_waypointline);
                             else
-                                mm = new IconMarker(gmap.Position, i, true, true);
+                                mm = new IconMarker(gmap.Position, i, true, true, i == current_waypointline);
 
                             mm.Position = new PointLatLng(ni.x / Math.PI * 180.0,
                                                           ni.y / Math.PI * 180.0);
@@ -364,11 +378,12 @@ namespace GluonCS.LiveUavLayer
                         l.Add(mm.Position);
                     }
 
-                    // determine current marker
-                    if (current_marker is NavigationMarker)
+                    // determine current dragged marker
+                    NavigationMarker current_dragging_marker = current_marker as NavigationMarker;
+                    if (current_dragging_marker != null)
                     {
-                        if (((NavigationMarker)current_marker).Number == i)
-                            current_marker = mm;
+                        if (current_dragging_marker.Number == i)
+                            current_dragging_marker = mm as NavigationMarker;
                     }
 
                     if (model.NavigationModel.WaypointsInBlock(model.NavigationModel.Commands[i].BlockName) == 1)
