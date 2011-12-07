@@ -74,6 +74,10 @@ namespace Configuration
                 _cb_opcode.SelectedIndex = GetIndexFor("FROM_TO");
             else if (ni.opcode == NavigationInstruction.navigation_command.GOTO)
                 _cb_opcode.SelectedIndex = GetIndexFor("GOTO");
+            else if (ni.opcode == NavigationInstruction.navigation_command.CALL)
+                _cb_opcode.SelectedIndex = GetIndexFor("CALL");
+            else if (ni.opcode == NavigationInstruction.navigation_command.RETURN)
+                _cb_opcode.SelectedIndex = GetIndexFor("RETURN");
             else if (ni.opcode == NavigationInstruction.navigation_command.SERVO_SET)
                 _cb_opcode.SelectedIndex = GetIndexFor("SERVO_SET");
             else if (ni.opcode == NavigationInstruction.navigation_command.SERVO_TRIGGER)
@@ -150,6 +154,16 @@ namespace Configuration
             {
                 webBrowser.Navigate(directoryname + "\\goto.html");
                 c = new NavigationCommands.Goto(ni);
+            }
+            else if (_cb_opcode.Text.StartsWith("CALL"))
+            {
+                webBrowser.Navigate(directoryname + "\\call.html");
+                c = new NavigationCommands.Call(ni);
+            }
+            else if (_cb_opcode.Text.StartsWith("RETURN"))
+            {
+                webBrowser.Navigate(directoryname + "\\return.html");
+                c = new NavigationCommands.Return(ni);
             }
             else if (_cb_opcode.Text.StartsWith("CLIMB"))
             {

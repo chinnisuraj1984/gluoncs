@@ -118,6 +118,12 @@
     <Compile Include="NavigationCommands\Block.Designer.cs">
       <DependentUpon>Block.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationCommands\Call.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationCommands\Call.Designer.cs">
+      <DependentUpon>Call.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationCommands\Circle.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -288,6 +294,12 @@
     <Compile Include="NavigationCommands\NavigationCommandEditor.Designer.cs">
       <DependentUpon>NavigationCommandEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationCommands\Return.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationCommands\Return.Designer.cs">
+      <DependentUpon>Return.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationCommands\ServoSet.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -411,6 +423,9 @@
     <EmbeddedResource Include="NavigationCommands\Block.resx">
       <DependentUpon>Block.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NavigationCommands\Call.resx">
+      <DependentUpon>Call.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NavigationCommands\Circle.resx">
       <DependentUpon>Circle.cs</DependentUpon>
     </EmbeddedResource>
@@ -490,6 +505,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationCommands\NavigationCommandEditor.resx">
       <DependentUpon>NavigationCommandEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationCommands\Return.resx">
+      <DependentUpon>Return.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationCommands\ServoSet.resx">
       <DependentUpon>ServoSet.cs</DependentUpon>

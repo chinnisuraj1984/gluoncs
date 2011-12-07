@@ -65,9 +65,11 @@
             this._cb_opcode.FormattingEnabled = true;
             this._cb_opcode.Items.AddRange(new object[] {
             "- Structure -",
+            "CALL",
             "BLOCK",
             "EMPTY",
             "GOTO",
+            "RETURN",
             "",
             "- Waypoints -",
             "CIRCLE",
