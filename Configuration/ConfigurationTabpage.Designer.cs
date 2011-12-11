@@ -283,8 +283,10 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this._pid_heading_to_roll = new Configuration.PidControl();
             this._pid_roll2aileron = new System.Windows.Forms.GroupBox();
+            this._btnWriteRollPid = new System.Windows.Forms.Button();
             this._pid_roll_to_aileron = new Configuration.PidControl();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this._btnWritePitchPid = new System.Windows.Forms.Button();
             this._pid_pitch_to_elevator = new Configuration.PidControl();
             this.tabControl1.SuspendLayout();
             this._tpTelemetry.SuspendLayout();
@@ -2309,7 +2311,6 @@
             // 
             resources.ApplyResources(this.label63, "label63");
             this.label63.Name = "label63";
-            this.label63.Click += new System.EventHandler(this.label63_Click);
             // 
             // label62
             // 
@@ -2417,10 +2418,18 @@
             // 
             // _pid_roll2aileron
             // 
+            this._pid_roll2aileron.Controls.Add(this._btnWriteRollPid);
             this._pid_roll2aileron.Controls.Add(this._pid_roll_to_aileron);
             resources.ApplyResources(this._pid_roll2aileron, "_pid_roll2aileron");
             this._pid_roll2aileron.Name = "_pid_roll2aileron";
             this._pid_roll2aileron.TabStop = false;
+            // 
+            // _btnWriteRollPid
+            // 
+            resources.ApplyResources(this._btnWriteRollPid, "_btnWriteRollPid");
+            this._btnWriteRollPid.Name = "_btnWriteRollPid";
+            this._btnWriteRollPid.UseVisualStyleBackColor = true;
+            this._btnWriteRollPid.Click += new System.EventHandler(this._btnWriteRollPid_Click);
             // 
             // _pid_roll_to_aileron
             // 
@@ -2436,10 +2445,18 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this._btnWritePitchPid);
             this.groupBox4.Controls.Add(this._pid_pitch_to_elevator);
             resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
+            // 
+            // _btnWritePitchPid
+            // 
+            resources.ApplyResources(this._btnWritePitchPid, "_btnWritePitchPid");
+            this._btnWritePitchPid.Name = "_btnWritePitchPid";
+            this._btnWritePitchPid.UseVisualStyleBackColor = true;
+            this._btnWritePitchPid.Click += new System.EventHandler(this._btnWritePitchPid_Click);
             // 
             // _pid_pitch_to_elevator
             // 
@@ -2787,5 +2804,7 @@
         private System.Windows.Forms.NumericUpDown _nud_control_pitch_min;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Panel _panelServos;
+        private System.Windows.Forms.Button _btnWriteRollPid;
+        private System.Windows.Forms.Button _btnWritePitchPid;
     }
 }

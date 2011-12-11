@@ -500,6 +500,15 @@ namespace GluonCS
                         b.Tag = block.Key;
                         b.Click += new EventHandler(CommandButton_Click);
 
+                        // Add image to button
+                        //if (File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "\\Resources\\" + block.Key + ".png"))
+                        //{
+                        //    b.ImageAlign = ContentAlignment.MiddleLeft;
+                        //    b.TextAlign = ContentAlignment.MiddleCenter;
+                        //    b.Image = Image.FromFile(Path.GetDirectoryName(Application.ExecutablePath) + "\\Resources\\" + block.Key + ".png");
+                        //    b.Text = "    " + b.Text;
+                        //}
+                        b.Height = 25;
                         totalwidth += b.Width;
                         _panelStrip.Controls.Add(b);
                     }
@@ -523,7 +532,7 @@ namespace GluonCS
                 _panelStrip.Height = l.Height;
             } 
             else
-                _panelStrip.Height = (int)(Math.Ceiling((double)totalwidth / _panelStrip.Width)) * 30;
+                _panelStrip.Height = (int)(Math.Ceiling((double)totalwidth / _panelStrip.Width)) * 33;
         }
 
         void CommandButton_Click(object sender, EventArgs e)

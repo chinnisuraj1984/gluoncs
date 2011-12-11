@@ -837,16 +837,18 @@ namespace Gluonpilot
 #endregion
 
 
-
-        private void label63_Click(object sender, EventArgs e)
+#region PID
+        private void _btnWritePitchPid_Click(object sender, EventArgs e)
         {
-
+            _serial.SendPidPitch2Elevator(_pid_pitch_to_elevator.P, _pid_pitch_to_elevator.I, _pid_pitch_to_elevator.D, _pid_pitch_to_elevator.Imin,
+                _pid_pitch_to_elevator.Imax, _pid_pitch_to_elevator.Dmin);
         }
+#endregion
 
-
-
-
-
-
+        private void _btnWriteRollPid_Click(object sender, EventArgs e)
+        {
+            _serial.SendPidRoll2Aileron(_pid_roll_to_aileron.P, _pid_roll_to_aileron.I, _pid_roll_to_aileron.D, _pid_roll_to_aileron.Imin,
+                _pid_roll_to_aileron.Imax, _pid_roll_to_aileron.Dmin);
+        }
     }
 }

@@ -6572,7 +6572,7 @@ Navigation: Altitude: (ON) manual  (OFF) waypoint</value>
     <value>295, 136</value>
   </data>
   <data name="groupBox8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>281, 123</value>
+    <value>281, 116</value>
   </data>
   <data name="groupBox8.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -6617,7 +6617,7 @@ Navigation: Altitude: (ON) manual  (OFF) waypoint</value>
     <value>12, 136</value>
   </data>
   <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 123</value>
+    <value>277, 116</value>
   </data>
   <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -6636,6 +6636,33 @@ Navigation: Altitude: (ON) manual  (OFF) waypoint</value>
   </data>
   <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="_btnWriteRollPid.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="_btnWriteRollPid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 84</value>
+  </data>
+  <data name="_btnWriteRollPid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 22</value>
+  </data>
+  <data name="_btnWriteRollPid.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="_btnWriteRollPid.Text" xml:space="preserve">
+    <value>Write</value>
+  </data>
+  <data name="&gt;&gt;_btnWriteRollPid.Name" xml:space="preserve">
+    <value>_btnWriteRollPid</value>
+  </data>
+  <data name="&gt;&gt;_btnWriteRollPid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_btnWriteRollPid.Parent" xml:space="preserve">
+    <value>_pid_roll2aileron</value>
+  </data>
+  <data name="&gt;&gt;_btnWriteRollPid.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="_pid_roll_to_aileron.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 19</value>
@@ -6656,7 +6683,7 @@ Navigation: Altitude: (ON) manual  (OFF) waypoint</value>
     <value>_pid_roll2aileron</value>
   </data>
   <data name="&gt;&gt;_pid_roll_to_aileron.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="_pid_roll2aileron.Location" type="System.Drawing.Point, System.Drawing">
     <value>295, 15</value>
@@ -6682,6 +6709,30 @@ Navigation: Altitude: (ON) manual  (OFF) waypoint</value>
   <data name="&gt;&gt;_pid_roll2aileron.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="_btnWritePitchPid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>217, 84</value>
+  </data>
+  <data name="_btnWritePitchPid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 22</value>
+  </data>
+  <data name="_btnWritePitchPid.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="_btnWritePitchPid.Text" xml:space="preserve">
+    <value>Write</value>
+  </data>
+  <data name="&gt;&gt;_btnWritePitchPid.Name" xml:space="preserve">
+    <value>_btnWritePitchPid</value>
+  </data>
+  <data name="&gt;&gt;_btnWritePitchPid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_btnWritePitchPid.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;_btnWritePitchPid.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="_pid_pitch_to_elevator.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 19</value>
   </data>
@@ -6701,7 +6752,7 @@ Navigation: Altitude: (ON) manual  (OFF) waypoint</value>
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;_pid_pitch_to_elevator.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 15</value>
