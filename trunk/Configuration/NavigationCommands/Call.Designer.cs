@@ -64,7 +64,7 @@
             this.Controls.Add(this._ntb_linenr);
             this.Controls.Add(this.label1);
             this.Name = "Call";
-            this.Size = new System.Drawing.Size(119, 24);
+            this.Size = new System.Drawing.Size(119, 25);
             this.ResumeLayout(false);
             this.PerformLayout();
 

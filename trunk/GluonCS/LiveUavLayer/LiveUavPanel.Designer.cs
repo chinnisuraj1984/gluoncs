@@ -702,7 +702,7 @@
             // 
             // _lv_navigation
             // 
-            this._lv_navigation.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this._lv_navigation.Activation = System.Windows.Forms.ItemActivation.TwoClick;
             resources.ApplyResources(this._lv_navigation, "_lv_navigation");
             this._lv_navigation.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
