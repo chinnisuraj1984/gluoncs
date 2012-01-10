@@ -35,12 +35,12 @@
             this._tc_main = new System.Windows.Forms.TabControl();
             this.config = new System.Windows.Forms.TabPage();
             this.configurationControl = new Configuration.ConfigurationControl();
-            this.Navigation = new System.Windows.Forms.TabPage();
-            this.navigationListView1 = new Configuration.NavigationListView();
             this.datalog = new System.Windows.Forms.TabPage();
             this.datalogging = new Configuration.Datalogging();
             this.gcs = new System.Windows.Forms.TabPage();
             this._gcsMainPanel = new GCS.GcsMainPanel();
+            this.Navigation = new System.Windows.Forms.TabPage();
+            this.navigationListView1 = new Configuration.NavigationListView();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this._statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -70,9 +70,9 @@
             this.splitContainer1.SuspendLayout();
             this._tc_main.SuspendLayout();
             this.config.SuspendLayout();
-            this.Navigation.SuspendLayout();
             this.datalog.SuspendLayout();
             this.gcs.SuspendLayout();
+            this.Navigation.SuspendLayout();
             this._statusStrip.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -134,19 +134,6 @@
             resources.ApplyResources(this.configurationControl, "configurationControl");
             this.configurationControl.Name = "configurationControl";
             // 
-            // Navigation
-            // 
-            this.Navigation.Controls.Add(this.navigationListView1);
-            this.Navigation.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            resources.ApplyResources(this.Navigation, "Navigation");
-            this.Navigation.Name = "Navigation";
-            this.Navigation.UseVisualStyleBackColor = true;
-            // 
-            // navigationListView1
-            // 
-            resources.ApplyResources(this.navigationListView1, "navigationListView1");
-            this.navigationListView1.Name = "navigationListView1";
-            // 
             // datalog
             // 
             this.datalog.Controls.Add(this.datalogging);
@@ -170,6 +157,19 @@
             // 
             resources.ApplyResources(this._gcsMainPanel, "_gcsMainPanel");
             this._gcsMainPanel.Name = "_gcsMainPanel";
+            // 
+            // Navigation
+            // 
+            this.Navigation.Controls.Add(this.navigationListView1);
+            this.Navigation.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            resources.ApplyResources(this.Navigation, "Navigation");
+            this.Navigation.Name = "Navigation";
+            this.Navigation.UseVisualStyleBackColor = true;
+            // 
+            // navigationListView1
+            // 
+            resources.ApplyResources(this.navigationListView1, "navigationListView1");
+            this.navigationListView1.Name = "navigationListView1";
             // 
             // imageList
             // 
@@ -327,9 +327,9 @@
             this.splitContainer1.ResumeLayout(false);
             this._tc_main.ResumeLayout(false);
             this.config.ResumeLayout(false);
-            this.Navigation.ResumeLayout(false);
             this.datalog.ResumeLayout(false);
             this.gcs.ResumeLayout(false);
+            this.Navigation.ResumeLayout(false);
             this._statusStrip.ResumeLayout(false);
             this._statusStrip.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

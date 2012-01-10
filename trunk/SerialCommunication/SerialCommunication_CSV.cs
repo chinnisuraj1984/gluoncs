@@ -197,6 +197,9 @@ namespace Communication
                     }
 
                     line = _serialPort.ReadLine().Replace("\r", "").Replace("\n", "");
+                    if (line.Length < 3)
+                        continue;
+
 
                     if (line.StartsWith("$")) // line with checksum
                     {

@@ -81,9 +81,6 @@ Section "MainSection" SEC01
   SetOutPath "$INSTDIR\ds30loader"
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Debug\ds30loader\devices.xml"
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Debug\ds30loader\ds30LoaderConsole.exe"
-  CreateDirectory "$SMPROGRAMS\Gluon Control Station"
-  CreateShortCut "$SMPROGRAMS\Gluon Control Station\Gluon Control Station.lnk" "$INSTDIR\ds30LoaderConsole.exe"
-  CreateShortCut "$DESKTOP\Gluon Control Station.lnk" "$INSTDIR\ds30LoaderConsole.exe"
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Debug\en\GluonCS.resources.dll"
   SetOutPath "$INSTDIR\Models\Easystar"
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Debug\Models\Easystar\easystar.jpg"
@@ -143,6 +140,12 @@ Section "MainSection" SEC01
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Debug\BSE.Windows.Forms.dll"
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Debug\ArtificialHorizon.dll"
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Debug\Artificial3DHorizon.dll"
+
+
+  CreateDirectory "$SMPROGRAMS\Gluon Control Station"
+  CreateShortCut "$SMPROGRAMS\Gluon Control Station\Gluon Control Station.lnk" "$INSTDIR\GluonCS.exe"
+  CreateShortCut "$DESKTOP\Gluon Control Station.lnk" "$INSTDIR\GluonCS.exe"
+
 SectionEnd
 
 Section -AdditionalIcons

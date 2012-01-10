@@ -16,7 +16,7 @@ namespace GluonCS.LiveUavLayer
 {
     public partial class ConnectForm : Form
     {
-        private Hashtable comPortNames;
+        private Dictionary<string, string> comPortNames;
         public SerialPort SerialPort;
         private string Filename = DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".log";
         public bool Simulation = false;
@@ -43,57 +43,63 @@ namespace GluonCS.LiveUavLayer
         /// <summary>
         /// Begins recursive registry enumeration
         /// </summary>
-        /// <param name="oPortsToMap">array of port names (i.e. COM1, COM2, etc)</param>
+        /// <param name="portsToMap">array of port names (i.e. COM1, COM2, etc)</param>
         /// <returns>a hashtable mapping Friendly names to non-friendly port values</returns>
-        Hashtable BuildPortNameHash(string[] oPortsToMap)
+        static Dictionary<string, string> BuildPortNameHash(string[] portsToMap)
         {
-            Hashtable oReturnTable = new Hashtable();
-            try
-            {
-                MineRegistryForPortName("SYSTEM\\CurrentControlSet\\Enum", oReturnTable, oPortsToMap);
-            }
-            catch (Exception e)
-            {
-                foreach (string s in oPortsToMap)
-                    oReturnTable[s] = s;
-            }
+            Dictionary<string, string> oReturnTable = new Dictionary<string, string>();
+            MineRegistryForPortName("SYSTEM\\CurrentControlSet\\Enum", oReturnTable, portsToMap);
             return oReturnTable;
         }
+
         /// <summary>
-        /// Recursively enumerates registry subkeys starting with strStartKey looking for 
+        /// Recursively enumerates registry subkeys starting with startKeyPath looking for 
         /// "Device Parameters" subkey. If key is present, friendly port name is extracted.
         /// </summary>
-        /// <param name="strStartKey">the start key from which to begin the enumeration</param>
-        /// <param name="oTargetMap">hashtable that will get populated with 
-        /// friendly-to-nonfriendly port names</param>
-        /// <param name="oPortNamesToMatch">array of port names (i.e. COM1, COM2, etc)</param>
-        void MineRegistryForPortName(string strStartKey, Hashtable oTargetMap, string[] oPortNamesToMatch)
+        /// <param name="startKeyPath">the start key from which to begin the enumeration</param>
+        /// <param name="targetMap">dictionary that will get populated with 
+        /// nonfriendly-to-friendly port names</param>
+        /// <param name="portsToMap">array of port names (i.e. COM1, COM2, etc)</param>
+        static void MineRegistryForPortName(string startKeyPath, Dictionary<string, string> targetMap,
+            string[] portsToMap)
         {
-            if (oTargetMap.Count >= oPortNamesToMatch.Length)
+            if (targetMap.Count >= portsToMap.Length)
                 return;
-            RegistryKey oCurrentKey = Registry.LocalMachine;
-            oCurrentKey = oCurrentKey.OpenSubKey(strStartKey);
-            string[] oSubKeyNames = oCurrentKey.GetSubKeyNames();
-            if (oSubKeyNames.Contains("Device Parameters") && strStartKey != "SYSTEM\\CurrentControlSet\\Enum")
+            using (RegistryKey currentKey = Registry.LocalMachine)
             {
-                object oPortNameValue = Registry.GetValue("HKEY_LOCAL_MACHINE\\" +
-                    strStartKey + "\\Device Parameters", "PortName", null);
-                if (oPortNameValue == null ||
-                    oPortNamesToMatch.Contains(oPortNameValue.ToString()) == false)
-                    return;
-                object oFriendlyName = Registry.GetValue("HKEY_LOCAL_MACHINE\\" +
-                    strStartKey, "FriendlyName", null);
-                string strFriendlyName = "N/A";
-                if (oFriendlyName != null)
-                    strFriendlyName = oFriendlyName.ToString();
-                if (strFriendlyName.Contains(oPortNameValue.ToString()) == false)
-                    strFriendlyName = string.Format("{0} ({1})", strFriendlyName, oPortNameValue);
-                oTargetMap[strFriendlyName] = oPortNameValue;
-            }
-            else
-            {
-                foreach (string strSubKey in oSubKeyNames)
-                    MineRegistryForPortName(strStartKey + "\\" + strSubKey, oTargetMap, oPortNamesToMatch);
+                try
+                {
+                    using (RegistryKey currentSubKey = currentKey.OpenSubKey(startKeyPath))
+                    {
+                        string[] currentSubkeys = currentSubKey.GetSubKeyNames();
+                        if (currentSubkeys.Contains("Device Parameters") &&
+                            startKeyPath != "SYSTEM\\CurrentControlSet\\Enum")
+                        {
+                            object portName = Registry.GetValue("HKEY_LOCAL_MACHINE\\" +
+                                startKeyPath + "\\Device Parameters", "PortName", null);
+                            if (portName == null ||
+                                portsToMap.Contains(portName.ToString()) == false)
+                                return;
+                            object friendlyPortName = Registry.GetValue("HKEY_LOCAL_MACHINE\\" +
+                                startKeyPath, "FriendlyName", null);
+                            string friendlyName = "N/A";
+                            if (friendlyPortName != null)
+                                friendlyName = friendlyPortName.ToString();
+                            if (friendlyName.Contains(portName.ToString()) == false)
+                                friendlyName = string.Format("{0} ({1})", friendlyName, portName);
+                            targetMap[portName.ToString()] = friendlyName;
+                        }
+                        else
+                        {
+                            foreach (string strSubKey in currentSubkeys)
+                                MineRegistryForPortName(startKeyPath + "\\" + strSubKey, targetMap, portsToMap);
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Error accessing key '{0}'.. Skipping..", startKeyPath);
+                }
             }
         }
 
@@ -102,8 +108,8 @@ namespace GluonCS.LiveUavLayer
             SerialPort = new System.IO.Ports.SerialPort();
             if (_rbViaComPort.Checked)
             {
-                if (comPortNames.ContainsKey(_cb_portnames.Text))
-                    SerialPort.PortName = comPortNames[_cb_portnames.Text].ToString();
+                if (comPortNames.ContainsValue(_cb_portnames.Text))
+                    SerialPort.PortName = SerialPort.GetPortNames()[_cb_portnames.SelectedIndex].ToString();
                 else
                 {
                     MessageBox.Show("Error connecting: invalid COM port", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
@@ -186,6 +192,12 @@ namespace GluonCS.LiveUavLayer
         private void _btnBrowseLoggedFile_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.FileDialog fd = new System.Windows.Forms.OpenFileDialog();
+            string map = Properties.Settings.Default.LogLocation;
+            map = map.Replace("$GLUONMAP", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            if (System.IO.Directory.Exists(map))
+            {
+                fd.InitialDirectory = map;
+            }
             fd.CheckFileExists = true;
             if (fd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 _tbLoggedFilename.Text = fd.FileName;
@@ -197,8 +209,9 @@ namespace GluonCS.LiveUavLayer
             _cb_portnames.Items.Clear();
             foreach (string key in comPortNames.Keys)
             {
-                int i = _cb_portnames.Items.Add(key);
-                if (comPortNames[key].ToString() == Properties.Settings.Default.LastComPortName)
+                int i = _cb_portnames.Items.Add(comPortNames[key]);
+                //_cb_portnames.Items[i]
+                if (key == Properties.Settings.Default.LastComPortName)
                     _cb_portnames.SelectedIndex = i;
             }
         }
