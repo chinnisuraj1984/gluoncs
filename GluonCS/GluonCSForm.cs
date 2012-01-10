@@ -140,48 +140,6 @@ namespace GluonCS
                 _gMapControl.Manager.Proxy = null; 
         }
 
-        //void _gMapControl_OnCurrentPositionChanged(PointLatLng point)
-        //{
-        //    cross.Position = point;
-        //}
-
-        //void _gMapControl_OnMapZoomChanged()
-        //{
-        //    cross.Position = _gMapControl.Position;
-        //}
-
-        //void _gMapControl_MouseMove(object sender, MouseEventArgs e)
-        //{
-        //    if (currentMarker != null && e.Button == MouseButtons.Left)
-        //    {
-        //        if (currentMarker.Overlay == top/* || currentMarker.Overlay == activeOverlay*/)
-        //            currentMarker.Position = _gMapControl.FromLocalToLatLng(e.X, e.Y);
-        //    }
-        //}
-
-        //void _gMapControl_MouseUp(object sender, MouseEventArgs e)
-        //{
-        //    isMouseDown = false;
-        //    //if (!_gMapControl.IsDragging && e.Button == System.Windows.Forms.MouseButtons.Right)
-        //    //    _gmapContextStrip.Show(_gMapControl, e.X, e.Y);
-        //}
-
-        //void _gMapControl_MouseDown(object sender, MouseEventArgs e)
-        //{
-        //    isMouseDown = true;
-        //}
-
-        //void _gMapControl_OnMarkerLeave(GMapMarker item)
-        //{
-        //    if (isMouseDown == false)
-        //        currentMarker = null;
-        //}
-
-        //void _gMapControl_OnMarkerEnter(GMapMarker item)
-        //{
-        //    currentMarker = item;
-        //}
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             uavspeech.Stop();

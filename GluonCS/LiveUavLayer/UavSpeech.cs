@@ -32,8 +32,9 @@ namespace GluonCS.LiveUavLayer
         {
             if (Properties.Settings.Default.UseSpeech && !stop)
             {
-                if (!s.Contains('+'))
+                if (!s.Contains('+') && !s.Contains(';'))
                 {
+                    s = s.Replace(".", " ");
                     speech.SpeakAsyncCancelAll();
                     speech.SpeakAsync(s);
                 }
@@ -42,8 +43,7 @@ namespace GluonCS.LiveUavLayer
 
         void model_InformationMessageReceived(string s)
         {
-            if (! s.Contains(';'))
-                Speak(s);
+             Speak(s);
         }
 
         private static string last_block = "";

@@ -51,48 +51,67 @@ namespace Gluonpilot
                     ProgressBar[] pbs = { _pbChannel1, _pbChannel2, _pbChannel3, _pbChannel4, _pbChannel5, _pbChannel6 };
                     for (int i = 0; i < 6; i++)
                     {
-                        if (rcinput.GetPwm(i + 1) > 900 && rcinput.GetPwm(i + 1) < 2200)
+                        if (rcinput.GetPwm(i + 1) > 900 && rcinput.GetPwm(i + 1) < 2100)
                             pbs[i].Value = rcinput.GetPwm(i + 1) - 900;
                         else
                             pbs[i].Value = 0;
                     }
 
                     Label[] channel_labels = {_lblInterpretation1, _lblInterpretation2, _lblInterpretation3, _lblInterpretation4, _lblInterpretation5, _lblInterpretation6 };
-                    if (rcinput.GetPwm(config.channel_ap) > 1750)
-                        channel_labels[config.channel_ap - 1].Text = "Manual mode";
-                    else if (rcinput.GetPwm(config.channel_ap) > 1350)
-                        channel_labels[config.channel_ap - 1].Text = "Stabilized mode";
-                    else if (rcinput.GetPwm(config.channel_ap) > 900)
-                        channel_labels[config.channel_ap - 1].Text = "Autopilot mode";
-                    else
-                        channel_labels[config.channel_ap - 1].Text = "Undetermined";
+                    _lblInterpretation1.Text = "";
+                    _lblInterpretation2.Text = "";
+                    _lblInterpretation3.Text = "";
+                    _lblInterpretation4.Text = "";
+                    _lblInterpretation5.Text = "";
+                    _lblInterpretation6.Text = "";
 
-                    if (rcinput.GetPwm(config.channel_motor) > 1500)
-                        channel_labels[config.channel_motor - 1].Text = "Throttle high (" + (ci == null ? "?)" : ci.Throttle.ToString() + "%)");
-                    else if (rcinput.GetPwm(config.channel_motor) > 920)
-                        channel_labels[config.channel_motor - 1].Text = "Throttle low (" + (ci == null ? "?)" : ci.Throttle.ToString() + "%)");
-                    else if (rcinput.GetPwm(config.channel_motor) > 800)
-                        channel_labels[config.channel_motor - 1].Text = "Throttle in autopilot failsafe";
-                    else
-                        channel_labels[config.channel_motor - 1].Text = "Undetermined";
+                    if (config.channel_ap > 0 && config.channel_ap <= channel_labels.Length)
+                    {
+                        if (rcinput.GetPwm(config.channel_ap) > 1750)
+                            channel_labels[config.channel_ap - 1].Text = "Manual mode";
+                        else if (rcinput.GetPwm(config.channel_ap) > 1350)
+                            channel_labels[config.channel_ap - 1].Text = "Stabilized mode";
+                        else if (rcinput.GetPwm(config.channel_ap) > 900)
+                            channel_labels[config.channel_ap - 1].Text = "Autopilot mode";
+                        else
+                            channel_labels[config.channel_ap - 1].Text = "Undetermined";
+                    }
 
-                    if (rcinput.GetPwm(config.channel_pitch) > 1750)
-                        channel_labels[config.channel_pitch - 1].Text = "Pitching UP";
-                    else if (rcinput.GetPwm(config.channel_pitch) > 1250)
-                        channel_labels[config.channel_pitch - 1].Text = "Pithing +- neutral";
-                    else if (rcinput.GetPwm(config.channel_pitch) > 900)
-                        channel_labels[config.channel_pitch - 1].Text = "Pithing DOWN";
-                    else
-                        channel_labels[config.channel_pitch - 1].Text = "Undetermined";
+                    if (config.channel_motor > 0 && config.channel_motor <= channel_labels.Length)
+                    {
+                        if (rcinput.GetPwm(config.channel_motor) > 1500)
+                            channel_labels[config.channel_motor - 1].Text = "Throttle high (" + (ci == null ? "?)" : ci.Throttle.ToString() + "%)");
+                        else if (rcinput.GetPwm(config.channel_motor) > 920)
+                            channel_labels[config.channel_motor - 1].Text = "Throttle low (" + (ci == null ? "?)" : ci.Throttle.ToString() + "%)");
+                        else if (rcinput.GetPwm(config.channel_motor) > 800)
+                            channel_labels[config.channel_motor - 1].Text = "Throttle in autopilot failsafe";
+                        else
+                            channel_labels[config.channel_motor - 1].Text = "Undetermined";
+                    }
 
-                    if (rcinput.GetPwm(config.channel_roll) > 1750)
-                        channel_labels[config.channel_roll - 1].Text = "Rolling RIGHT";
-                    else if (rcinput.GetPwm(config.channel_roll) > 1250)
-                        channel_labels[config.channel_roll - 1].Text = "Roll +- neutral";
-                    else if (rcinput.GetPwm(config.channel_roll) > 900)
-                        channel_labels[config.channel_roll - 1].Text = "Rolling LEFT";
-                    else
-                        channel_labels[config.channel_roll - 1].Text = "Undetermined";
+                    if (config.channel_pitch > 0 && config.channel_pitch <= channel_labels.Length)
+                    {
+                        if (rcinput.GetPwm(config.channel_pitch) > 1750)
+                            channel_labels[config.channel_pitch - 1].Text = "Pitching UP";
+                        else if (rcinput.GetPwm(config.channel_pitch) > 1250)
+                            channel_labels[config.channel_pitch - 1].Text = "Pithing +- neutral";
+                        else if (rcinput.GetPwm(config.channel_pitch) > 900)
+                            channel_labels[config.channel_pitch - 1].Text = "Pithing DOWN";
+                        else
+                            channel_labels[config.channel_pitch - 1].Text = "Undetermined";
+                    }
+
+                    if (config.channel_roll > 0 && config.channel_roll <= channel_labels.Length)
+                    {
+                        if (rcinput.GetPwm(config.channel_roll) > 1750)
+                            channel_labels[config.channel_roll - 1].Text = "Rolling RIGHT";
+                        else if (rcinput.GetPwm(config.channel_roll) > 1250)
+                            channel_labels[config.channel_roll - 1].Text = "Roll +- neutral";
+                        else if (rcinput.GetPwm(config.channel_roll) > 900)
+                            channel_labels[config.channel_roll - 1].Text = "Rolling LEFT";
+                        else
+                            channel_labels[config.channel_roll - 1].Text = "Undetermined";
+                    }
                 };
 
                 try
@@ -138,28 +157,34 @@ namespace Gluonpilot
                 _cbInvert6.Checked = config.servo_reverse[5];
 
                 ComboBox[] cbn = { _cbInputFunction1, _cbInputFunction2, _cbInputFunction3, _cbInputFunction4, _cbInputFunction5, _cbInputFunction6 };
+                cbn[0].SelectedIndex = 5;
+                cbn[1].SelectedIndex = 5;
+                cbn[2].SelectedIndex = 5;
+                cbn[3].SelectedIndex = 5;
+                cbn[4].SelectedIndex = 5;
+                cbn[5].SelectedIndex = 5;
 
-                if (config.channel_ap <= 5)
+                if (config.channel_ap <= 6 && config.channel_ap > 0)
                     cbn[config.channel_ap - 1].SelectedIndex = 4;
-                if (config.channel_motor <= 5)
+                if (config.channel_motor <= 6 && config.channel_motor > 0)
                     cbn[config.channel_motor - 1].SelectedIndex = 3;
-                if (config.channel_pitch <= 5)
+                if (config.channel_pitch <= 6 && config.channel_pitch > 0)
                     cbn[config.channel_pitch - 1].SelectedIndex = 0;
-                if (config.channel_roll <= 5)
+                if (config.channel_roll <= 6 && config.channel_roll > 0)
                     cbn[config.channel_roll - 1].SelectedIndex = 1;
-                if (config.channel_yaw <= 5)
+                if (config.channel_yaw <= 6 && config.channel_yaw > 0)
                     cbn[config.channel_yaw - 1].SelectedIndex = 2;
 
                 if (config.control_mixing < _cbMixing.Items.Count)
                     _cbMixing.SelectedIndex = config.control_mixing;
 
-                _hsPitchSensitivity.Value = (int)(config.pid_pitch2elevator_p * 10.0);
-                _hsRollSensitivity.Value = (int)(config.pid_roll2aileron_p * 10.0);
+                _hsPitchSensitivity.Value = Math.Max(0, (int)(config.pid_pitch2elevator_p * 10.0));
+                _hsRollSensitivity.Value = Math.Max(0, (int)(config.pid_roll2aileron_p * 10.0));
                 //_hsRollSensitivity_ValueChanged(null, ScrollEventArgs.Empty);
                 //_hsPitchSensitivity_ValueChanged(null, ScrollEventArgs.Empty);
 
                 _cbAutothrottle.Checked = config.auto_throttle_enabled;
-                _hsbCruiseThrottle.Value = config.auto_throttle_cruise_pct;
+                _hsbCruiseThrottle.Value = Math.Max(0, config.auto_throttle_cruise_pct);
             };
 
             try
@@ -268,17 +293,25 @@ namespace Gluonpilot
                 // Pitch Roll Yaw Motor Mode (none)
                 int channel_ap = 4, channel_motor = 3, channel_pitch = 0, channel_roll = 1, channel_yaw = 2;
                 int[] channels = { channel_pitch, channel_roll, channel_yaw, channel_motor, channel_ap };
-                if (_cbInputFunction1.SelectedIndex >= 0)
+                if (_cbInputFunction1.SelectedIndex >= 0 && _cbInputFunction1.SelectedIndex < channels.Length)
                     channels[_cbInputFunction1.SelectedIndex] = 1;
-                if (_cbInputFunction2.SelectedIndex >= 0)
+                if (_cbInputFunction2.SelectedIndex >= 0 && _cbInputFunction2.SelectedIndex < channels.Length)
                     channels[_cbInputFunction2.SelectedIndex] = 2;
-                if (_cbInputFunction3.SelectedIndex >= 0)
+                if (_cbInputFunction3.SelectedIndex >= 0 && _cbInputFunction3.SelectedIndex < channels.Length)
                     channels[_cbInputFunction3.SelectedIndex] = 3;
-                if (_cbInputFunction4.SelectedIndex >= 0)
+                if (_cbInputFunction4.SelectedIndex >= 0 && _cbInputFunction4.SelectedIndex < channels.Length)
                     channels[_cbInputFunction4.SelectedIndex] = 4;
-                if (_cbInputFunction5.SelectedIndex >= 0)
+                if (_cbInputFunction5.SelectedIndex >= 0 && _cbInputFunction5.SelectedIndex < channels.Length)
                     channels[_cbInputFunction5.SelectedIndex] = 5;
+                if (_cbInputFunction6.SelectedIndex >= 0 && _cbInputFunction6.SelectedIndex < channels.Length)
+                    channels[_cbInputFunction6.SelectedIndex] = 6;
+                config.channel_ap = channels[channel_ap];
+                config.channel_motor = channels[channel_motor];
+                config.channel_pitch = channels[channel_pitch];
+                config.channel_roll = channels[channel_roll];
+                config.channel_yaw = channels[channel_yaw];
                 serial.SendConfigChannels(config.rc_ppm, channels[channel_ap], channels[channel_motor], channels[channel_pitch], channels[channel_roll], channels[channel_yaw]);
+                serial_AllConfigCommunicationReceived(config);
             }
         }
 

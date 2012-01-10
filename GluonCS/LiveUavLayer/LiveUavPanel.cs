@@ -81,8 +81,6 @@ namespace GluonCS
             _zgBatV.GraphPane.YAxis.Title.Text = "Bat [V]";
             batteryVLineItem = _zgBatV.GraphPane.AddCurve("Bat", new PointPairList(), Color.Blue, SymbolType.None);
 
-            //zedGraphControl1.MasterPane.Add(_zgAlt.GraphPane.Clone());
-            //zedGraphControl1.MasterPane.Add(_zgBatV.GraphPane.Clone());
 
             redrawNavigationTable = new System.Windows.Forms.Timer();
             redrawNavigationTable.Interval = 400;
@@ -96,6 +94,13 @@ namespace GluonCS
             styles |= ListViewExtendedStyles.DoubleBuffer | ListViewExtendedStyles.BorderSelect;
             // write new style
             SendMessage(_lv_navigation.Handle, (int)ListViewMessages.SetExtendedStyle, 0, (int)styles);
+
+            // read current style
+            styles = (ListViewExtendedStyles)SendMessage(_panelStrip.Handle, (int)ListViewMessages.GetExtendedStyle, 0, 0);
+            // enable double buffer and border select
+            styles |= ListViewExtendedStyles.DoubleBuffer | ListViewExtendedStyles.BorderSelect;
+            // write new style
+            SendMessage(_panelStrip.Handle, (int)ListViewMessages.SetExtendedStyle, 0, (int)styles);
         }
 
 
@@ -305,13 +310,13 @@ namespace GluonCS
                 _zgVel.Invalidate();
 
                 batteryVLineItem.AddPoint(time, model.BatteryVoltage);
-                xScale = _zgBatV.GraphPane.XAxis.Scale;
-                if (time > xScale.Max - xScale.MajorStep)
-                {
-                    xScale.Max = time + xScale.MajorStep;
-                    xScale.Min = xScale.Max - 180; // 180 seconden
-                }
-                _zgBatV.AxisChange();
+                //xScale = _zgBatV.GraphPane.XAxis.Scale;
+                //if (time > xScale.Max - xScale.MajorStep)
+                //{
+                //    xScale.Max = time + xScale.MajorStep;
+                //    xScale.Min = xScale.Max - 180; // 180 seconden
+                //}
+                //_zgBatV.AxisChange();
                 _zgBatV.Invalidate();
             }
             catch (Exception ex)
