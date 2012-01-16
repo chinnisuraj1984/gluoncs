@@ -173,6 +173,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NavigationInstructionEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit navigation instruction";
             this.Resize += new System.EventHandler(this.NavigationInstructionEdit_Resize);
             this._gbParameters.ResumeLayout(false);

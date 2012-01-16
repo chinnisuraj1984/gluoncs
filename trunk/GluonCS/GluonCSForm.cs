@@ -18,7 +18,7 @@ using GluonCS.LiveUavLayer;
 using Communication;
 using System.IO.Ports;
 using System.Net;
-using FlightgearCommunication;
+using Simulation;
 using System.Threading;
 using System.Globalization;
 
@@ -217,7 +217,7 @@ namespace GluonCS
 
         private void Form1_Activated(object sender, EventArgs e)
         {
-            if (model.Serial == null && first_time_loading)
+            if (/*model.Serial == null && */first_time_loading)
             {
                 first_time_loading = false;
                 ConnectForm cf = new ConnectForm();

@@ -1,4 +1,4 @@
-﻿namespace FlightgearCommunication
+﻿namespace Simulation
 {
     partial class Form1
     {

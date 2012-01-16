@@ -56,9 +56,10 @@
             this.xPanderPanel3 = new BSE.Windows.Forms.XPanderPanel();
             this.label1 = new System.Windows.Forms.Label();
             this._tbFlightgear = new System.Windows.Forms.TextBox();
-            this._cbSimulation = new System.Windows.Forms.CheckBox();
+            this._cbSimulationFG = new System.Windows.Forms.CheckBox();
             this._btn_connect = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this._cbSimulation = new System.Windows.Forms.CheckBox();
             this.xPanderPanelList1.SuspendLayout();
             this.xPanderPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -71,11 +72,11 @@
             // 
             // xPanderPanelList1
             // 
-            resources.ApplyResources(this.xPanderPanelList1, "xPanderPanelList1");
             this.xPanderPanelList1.CaptionStyle = BSE.Windows.Forms.CaptionStyle.Normal;
             this.xPanderPanelList1.Controls.Add(this.xPanderPanel2);
             this.xPanderPanelList1.Controls.Add(this.xPanderPanel1);
             this.xPanderPanelList1.Controls.Add(this.xPanderPanel3);
+            resources.ApplyResources(this.xPanderPanelList1, "xPanderPanelList1");
             this.xPanderPanelList1.GradientBackground = System.Drawing.Color.Empty;
             this.xPanderPanelList1.Name = "xPanderPanelList1";
             this.xPanderPanelList1.PanelColors = null;
@@ -110,11 +111,11 @@
             this.xPanderPanel2.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.xPanderPanel2.CustomColors.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.xPanderPanel2.Expand = true;
-            resources.ApplyResources(this.xPanderPanel2, "xPanderPanel2");
             this.xPanderPanel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel2.Image = null;
             this.xPanderPanel2.Name = "xPanderPanel2";
             this.xPanderPanel2.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
+            resources.ApplyResources(this.xPanderPanel2, "xPanderPanel2");
             this.xPanderPanel2.ToolTipTextCloseIcon = null;
             this.xPanderPanel2.ToolTipTextExpandIconPanelCollapsed = null;
             this.xPanderPanel2.ToolTipTextExpandIconPanelExpanded = null;
@@ -142,10 +143,10 @@
             // 
             // groupBox2
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this._btnBrowseLoggedFile);
             this.groupBox2.Controls.Add(this._tbLoggedFilename);
             this.groupBox2.Controls.Add(this.label3);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
@@ -168,19 +169,19 @@
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this._btn_portrefresh);
             this.groupBox1.Controls.Add(this._cbBaudrate);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this._cb_portnames);
             this.groupBox1.Controls.Add(this.label5);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
             // _btn_portrefresh
             // 
-            resources.ApplyResources(this._btn_portrefresh, "_btn_portrefresh");
             this._btn_portrefresh.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this._btn_portrefresh, "_btn_portrefresh");
             this._btn_portrefresh.ForeColor = System.Drawing.Color.Transparent;
             this._btn_portrefresh.Name = "_btn_portrefresh";
             this._btn_portrefresh.UseVisualStyleBackColor = true;
@@ -188,7 +189,6 @@
             // 
             // _cbBaudrate
             // 
-            resources.ApplyResources(this._cbBaudrate, "_cbBaudrate");
             this._cbBaudrate.FormattingEnabled = true;
             this._cbBaudrate.Items.AddRange(new object[] {
             resources.GetString("_cbBaudrate.Items"),
@@ -199,6 +199,7 @@
             resources.GetString("_cbBaudrate.Items5"),
             resources.GetString("_cbBaudrate.Items6"),
             resources.GetString("_cbBaudrate.Items7")});
+            resources.ApplyResources(this._cbBaudrate, "_cbBaudrate");
             this._cbBaudrate.Name = "_cbBaudrate";
             // 
             // label6
@@ -208,8 +209,8 @@
             // 
             // _cb_portnames
             // 
-            resources.ApplyResources(this._cb_portnames, "_cb_portnames");
             this._cb_portnames.FormattingEnabled = true;
+            resources.ApplyResources(this._cb_portnames, "_cb_portnames");
             this._cb_portnames.Name = "_cb_portnames";
             // 
             // label5
@@ -247,11 +248,11 @@
             this.xPanderPanel1.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(225)))), ((int)(((byte)(252)))));
             this.xPanderPanel1.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.xPanderPanel1.CustomColors.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            resources.ApplyResources(this.xPanderPanel1, "xPanderPanel1");
             this.xPanderPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel1.Image = null;
             this.xPanderPanel1.Name = "xPanderPanel1";
             this.xPanderPanel1.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
+            resources.ApplyResources(this.xPanderPanel1, "xPanderPanel1");
             this.xPanderPanel1.ToolTipTextCloseIcon = null;
             this.xPanderPanel1.ToolTipTextExpandIconPanelCollapsed = null;
             this.xPanderPanel1.ToolTipTextExpandIconPanelExpanded = null;
@@ -312,6 +313,7 @@
             this.xPanderPanel3.Controls.Add(this.label1);
             this.xPanderPanel3.Controls.Add(this._tbFlightgear);
             this.xPanderPanel3.Controls.Add(this._cbSimulation);
+            this.xPanderPanel3.Controls.Add(this._cbSimulationFG);
             this.xPanderPanel3.CustomColors.BackColor = System.Drawing.SystemColors.Control;
             this.xPanderPanel3.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(65)))), ((int)(((byte)(118)))));
             this.xPanderPanel3.CustomColors.CaptionCheckedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(223)))), ((int)(((byte)(154)))));
@@ -333,11 +335,11 @@
             this.xPanderPanel3.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(225)))), ((int)(((byte)(252)))));
             this.xPanderPanel3.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.xPanderPanel3.CustomColors.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            resources.ApplyResources(this.xPanderPanel3, "xPanderPanel3");
             this.xPanderPanel3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel3.Image = null;
             this.xPanderPanel3.Name = "xPanderPanel3";
             this.xPanderPanel3.PanelStyle = BSE.Windows.Forms.PanelStyle.Default;
+            resources.ApplyResources(this.xPanderPanel3, "xPanderPanel3");
             this.xPanderPanel3.ToolTipTextCloseIcon = null;
             this.xPanderPanel3.ToolTipTextExpandIconPanelCollapsed = null;
             this.xPanderPanel3.ToolTipTextExpandIconPanelExpanded = null;
@@ -352,11 +354,11 @@
             resources.ApplyResources(this._tbFlightgear, "_tbFlightgear");
             this._tbFlightgear.Name = "_tbFlightgear";
             // 
-            // _cbSimulation
+            // _cbSimulationFG
             // 
-            resources.ApplyResources(this._cbSimulation, "_cbSimulation");
-            this._cbSimulation.Name = "_cbSimulation";
-            this._cbSimulation.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this._cbSimulationFG, "_cbSimulationFG");
+            this._cbSimulationFG.Name = "_cbSimulationFG";
+            this._cbSimulationFG.UseVisualStyleBackColor = true;
             // 
             // _btn_connect
             // 
@@ -367,9 +369,15 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this._btn_connect);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            // 
+            // _cbSimulation
+            // 
+            resources.ApplyResources(this._cbSimulation, "_cbSimulation");
+            this._cbSimulation.Name = "_cbSimulation";
+            this._cbSimulation.UseVisualStyleBackColor = true;
             // 
             // ConnectForm
             // 
@@ -426,11 +434,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
         private BSE.Windows.Forms.XPanderPanel xPanderPanel3;
-        private System.Windows.Forms.CheckBox _cbSimulation;
+        private System.Windows.Forms.CheckBox _cbSimulationFG;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox _tbFlightgear;
         private System.Windows.Forms.Button _btnBrowseLoggedFile;
         private System.Windows.Forms.Button _btn_portrefresh;
         private System.Windows.Forms.RadioButton _rbOffline;
+        private System.Windows.Forms.CheckBox _cbSimulation;
     }
 }
