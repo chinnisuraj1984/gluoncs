@@ -1,25 +1,25 @@
 <?xml version="1.0"?>
 <ArrayOfNavigationInstruction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <NavigationInstruction>
-    <x>25698</x>
-    <y>30986</y>
-    <a>21364</a>
-    <b>24942</b>
+    <x>0</x>
+    <y>0</y>
+    <a>0</a>
+    <b>0</b>
     <line>0</line>
     <opcode>EMPTY</opcode>
   </NavigationInstruction>
   <NavigationInstruction>
-    <x>20</x>
-    <y>20</y>
-    <a>100</a>
-    <b>100</b>
+    <x>0</x>
+    <y>0</y>
+    <a>0</a>
+    <b>0</b>
     <line>1</line>
     <opcode>EMPTY</opcode>
   </NavigationInstruction>
   <NavigationInstruction>
     <x>0</x>
     <y>0</y>
-    <a>1</a>
+    <a>0</a>
     <b>0</b>
     <line>2</line>
     <opcode>EMPTY</opcode>

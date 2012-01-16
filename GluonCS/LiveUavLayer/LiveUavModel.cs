@@ -9,7 +9,8 @@ using System.IO.Ports;
 using Communication;
 using Amib.Threading;
 using System.Threading;
-using FlightgearCommunication;
+using Simulation;
+using Common;
 
 namespace GluonCS.LiveUavLayer
 {
@@ -32,7 +33,7 @@ namespace GluonCS.LiveUavLayer
         public double Pitch = 0, Roll = 0, Yaw = 0;
         public PointLatLng UavPosition = new PointLatLng();
         public double Heading = 0, AltitudeGps = 0, SpeedMS = 0, AltitudeAglM = 0;
-        public int NumberOfGpsSatellites = 0;
+        public int NumberOfGpsSatellites = -1;
         public double BatteryVoltage = 0;
         public ControlInfo.FlightModes FlightMode = ControlInfo.FlightModes.AUTOPILOT;
         public bool CommunicationAlive = false;
@@ -52,6 +53,7 @@ namespace GluonCS.LiveUavLayer
         private List<NavigationInstruction> navigation_remote = new List<NavigationInstruction>(36);
 
         private UavNavigationSynchronize uavSynchronizer;
+        private SimpleSim ss;
 
         private PointLatLng home;
         public PointLatLng Home { get { return home; } }
@@ -205,7 +207,8 @@ namespace GluonCS.LiveUavLayer
 
             if (flightgearpath != "")
             {
-                FlightgearThread fgt = new FlightgearThread(Serial, flightgearpath);
+                //FlightgearThread fgt = new FlightgearThread(Serial, flightgearpath);
+                ss = new SimpleSim(Serial, "", new LatLng(Properties.Settings.Default.HomeLatitude, Properties.Settings.Default.HomeLongitude));
             }
         }
 
@@ -225,6 +228,7 @@ namespace GluonCS.LiveUavLayer
             if (uavSynchronizer != null)
                 uavSynchronizer.Pause();
             NavigationModel.Stop();
+            ss.Stop();
             Properties.Settings.Default.HomeLatitude = Home.Lat;
             Properties.Settings.Default.HomeLongitude = Home.Lng;
             Properties.Settings.Default.Save();

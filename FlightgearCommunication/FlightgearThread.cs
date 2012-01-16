@@ -8,7 +8,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Globalization;
 
-namespace FlightgearCommunication
+namespace Simulation
 {
     public class FlightgearThread
     {
@@ -27,7 +27,7 @@ namespace FlightgearCommunication
 
             System.Diagnostics.Process proc = new System.Diagnostics.Process();
             proc.StartInfo.FileName = path + "\\bin\\Win32\\fgfs.exe";
-            proc.StartInfo.Arguments = "--fg-root=\"D:\\Program Files\\FlightGear\\data\" --fg-scenery=\"D:\\Program Files\\FlightGear\\data\\Scenery;D:\\Program Files\\FlightGear\\scenery;D:\\Program Files\\FlightGear\\terrasync\"  --generic=socket,out,200,localhost,5000,udp,Gluonpilot --generic=socket,in,200,localhost,5001,udp,Gluonpilot  --geometry=400x300 --disable-random-objects --prop:/sim/rendering/random-vegetation=false --disable-ai-models --timeofday=noon --in-air --vc=18 --altitude=2000 --glideslope=0 --aircraft=Rascal110-JSBSim --lon=3.67064 --lat=50.85204";
+            proc.StartInfo.Arguments = "--fg-root=\"" + path + "\\data\" --fg-scenery=\"" + path + "\\data\\Scenery;" + path + "\\scenery;" + path + "\\terrasync\"  --generic=socket,out,200,localhost,5000,udp,Gluonpilot --generic=socket,in,200,localhost,5001,udp,Gluonpilot  --geometry=400x300 --disable-random-objects --prop:/sim/rendering/random-vegetation=false --disable-ai-models --timeofday=noon --in-air --vc=18 --altitude=2000 --glideslope=0 --aircraft=Rascal110-JSBSim --lon=3.67064 --lat=50.85204";
             proc.StartInfo.UseShellExecute = false;
             proc.StartInfo.RedirectStandardOutput = false;
             proc.StartInfo.WorkingDirectory = path + "\\bin\\";

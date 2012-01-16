@@ -331,6 +331,12 @@
     <None Include="NavigationBlocks\auto-land.gnf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="NavigationBlocks\defaultcircle.gnf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="NavigationBlocks\empty.gnf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="NavigationBlocks\loiter.gnf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -380,9 +386,9 @@
       <Project>{2B1A398D-6E4F-4E71-87CF-7FBA8E4AAFB6}</Project>
       <Name>Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FlightgearCommunication\FlightgearCommunication.csproj">
+    <ProjectReference Include="..\FlightgearCommunication\Simulation.csproj">
       <Project>{47A74C61-DCDE-4035-9984-6D8070EFC5D2}</Project>
-      <Name>FlightgearCommunication</Name>
+      <Name>Simulation</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gluonpilot\Gluonpilot.csproj">
       <Project>{3D63D252-43DB-4076-8788-EEA5665D9DAC}</Project>

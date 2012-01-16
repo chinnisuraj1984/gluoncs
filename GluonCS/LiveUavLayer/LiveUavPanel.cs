@@ -108,20 +108,22 @@ namespace GluonCS
         {
             this.model = model;
 
-            for (int i = 1; i < model.MaxNumberOfNavigationInstructions(); i++)
-            {
-                ListViewItem lvi = new ListViewItem("" + i);
-                lvi.Tag = model.GetNavigationInstructionLocal(i);
-                lvi.SubItems.Add(new ListViewItem.ListViewSubItem());
-                lvi.SubItems.Add(new ListViewItem.ListViewSubItem());
-                _lv_navigation.Items.Add(lvi);
-            }
-
             model.NavigationLocalListChanged += new LiveUavModel.ChangedEventHandler(model_NavigationLocalListChanged);
             model.NavigationRemoteListChanged += new LiveUavModel.ChangedEventHandler(model_NavigationRemoteListChanged);
             model.UavAttitudeChanged += new LiveUavModel.ChangedEventHandler(model_UavAttitudeChanged);
             model.UavPositionChanged += new LiveUavModel.ChangedEventHandler(model_UavPositionChanged);
             model.HomeChanged += new LiveUavModel.ChangedEventHandler(model_HomeChanged);
+
+            for (int i = 1; i < model.MaxNumberOfNavigationInstructions(); i++)
+            {
+                ListViewItem lvi = new ListViewItem("" + i);
+                lvi.Tag = model.GetNavigationInstructionLocal(i);
+                lvi.SubItems.Add(new ListViewItem.ListViewSubItem(lvi, "Empty"));
+                lvi.SubItems.Add(new ListViewItem.ListViewSubItem(lvi, "" + i));
+                _lv_navigation.Items.Add(lvi);
+            }
+            
+
             updatePanel = new System.Windows.Forms.Timer();
             updatePanel.Interval = 200;
             updatePanel.Tick += new EventHandler(updatePanel_Tick);

@@ -12,7 +12,7 @@ using System.Diagnostics;
 using System.Net;
 using System.Globalization;
 
-namespace FlightgearCommunication
+namespace Simulation
 {
     public partial class Form1 : Form
     {

@@ -20,6 +20,7 @@ namespace GluonCS.LiveUavLayer
         public SerialPort SerialPort;
         private string Filename = DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".log";
         public bool Simulation = false;
+
         public string FlightgearPath;
 
         public string LogPath { get { return _cbLogToFile.Checked ? _lblFilename.Text : ""; } }
@@ -136,17 +137,17 @@ namespace GluonCS.LiveUavLayer
                 Properties.Settings.Default.Save();
                 this.DialogResult = System.Windows.Forms.DialogResult.Yes;
             }
-            else if (_cbSimulation.Checked)
-            {
-                this.Simulation = true;
-                this.FlightgearPath = _tbFlightgear.Text;
-                this.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            }
             else if (_rbReplay.Checked)
                 DialogResult = System.Windows.Forms.DialogResult.Yes;
             else
                 DialogResult = System.Windows.Forms.DialogResult.Cancel;
 
+            if (_cbSimulation.Checked)
+            {
+                this.Simulation = true;
+                this.FlightgearPath = _tbFlightgear.Text;
+                this.DialogResult = System.Windows.Forms.DialogResult.Yes;
+            }
 
             this.Close();
         }

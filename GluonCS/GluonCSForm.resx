@@ -228,7 +228,7 @@
 </value>
   </data>
   <data name="_gMapControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>495, 595</value>
+    <value>900, 533</value>
   </data>
   <data name="_gMapControl.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -248,11 +248,14 @@
   <data name="splitter3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
+  <data name="splitter3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="splitter3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 595</value>
+    <value>0, 533</value>
   </data>
   <data name="splitter3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>495, 3</value>
+    <value>900, 3</value>
   </data>
   <data name="splitter3.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -282,7 +285,7 @@
     <value>Vertical</value>
   </data>
   <data name="_tbLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>493, 71</value>
+    <value>898, 71</value>
   </data>
   <data name="_tbLog.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -324,10 +327,10 @@
     <value>Bottom</value>
   </data>
   <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 598</value>
+    <value>0, 536</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>495, 100</value>
+    <value>900, 100</value>
   </data>
   <data name="panel4.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -350,11 +353,14 @@
   <data name="splitter2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
+  <data name="splitter2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="splitter2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>495, 0</value>
+    <value>900, 0</value>
   </data>
   <data name="splitter2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>3, 698</value>
+    <value>3, 636</value>
   </data>
   <data name="splitter2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -381,7 +387,7 @@
     <value>1, 28</value>
   </data>
   <data name="liveUavPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>349, 669</value>
+    <value>359, 607</value>
   </data>
   <data name="liveUavPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -402,10 +408,10 @@
     <value>Right</value>
   </data>
   <data name="_layersPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>498, 0</value>
+    <value>903, 0</value>
   </data>
   <data name="_layersPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 698</value>
+    <value>361, 636</value>
   </data>
   <data name="_layersPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -426,7 +432,7 @@
     <value>5</value>
   </data>
   <data name="toolStripContainer1.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>849, 698</value>
+    <value>1264, 636</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.ContentPanel.Name" xml:space="preserve">
     <value>toolStripContainer1.ContentPanel</value>
@@ -471,7 +477,7 @@
     <value>2</value>
   </data>
   <data name="toolStripContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>849, 722</value>
+    <value>1264, 660</value>
   </data>
   <data name="toolStripContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -501,7 +507,7 @@
     <value>0, 0</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>849, 24</value>
+    <value>1264, 24</value>
   </data>
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -549,10 +555,10 @@
     <value>17, 17</value>
   </metadata>
   <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 722</value>
+    <value>0, 660</value>
   </data>
   <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>849, 22</value>
+    <value>1264, 22</value>
   </data>
   <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -576,22 +582,22 @@
     <value>236, 17</value>
   </metadata>
   <data name="zoomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>127, 22</value>
   </data>
   <data name="zoomToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Zoom</value>
   </data>
   <data name="zoomoutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>127, 22</value>
   </data>
   <data name="zoomoutToolStripMenuItem.Text" xml:space="preserve">
     <value>Zoom &amp;out</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 6</value>
+    <value>124, 6</value>
   </data>
   <data name="_gmapContextStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 54</value>
+    <value>128, 54</value>
   </data>
   <data name="&gt;&gt;_gmapContextStrip.Name" xml:space="preserve">
     <value>_gmapContextStrip</value>
@@ -609,7 +615,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>849, 744</value>
+    <value>1264, 682</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3252,6 +3258,9 @@
         AACAAAAAgAAAAIAAAAGAAAABgAAAAYAAAAGAAAABgAAAAYAAAAGAAAABwAAAAcAAAAHAAAADwAAAA8AA
         AAPAAAADwAAAA8AAAAPAAAAD/AAPA//wD///8A////gf////////////MTU4MjYy
 </value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Gluon Control Station</value>

@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCS", "GCS\GCS.csproj", "{0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GluonCS", "GluonCS\GluonCS.csproj", "{48807878-239B-483A-BDA8-39D3D6B2C18C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightgearCommunication", "FlightgearCommunication\FlightgearCommunication.csproj", "{47A74C61-DCDE-4035-9984-6D8070EFC5D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simulation", "FlightgearCommunication\Simulation.csproj", "{47A74C61-DCDE-4035-9984-6D8070EFC5D2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{F1A4A04A-9A2D-4F0D-B79D-3B033AF2CEF2}"
 EndProject

@@ -475,7 +475,7 @@ namespace Communication
                     // TS: Servos (simulation)
                     else if (lines[0].EndsWith("TS") && lines.Length >= 3)
                     {
-                        Console.WriteLine(line);
+                        //Console.WriteLine(line);
 
                         Servos s = 
                             new Servos(
@@ -895,20 +895,20 @@ namespace Communication
 
         public override void SendSimulationUpdate(double lat_rad, double lng_rad, double roll_rad, double pitch_rad, double altitude_m, double speed_ms, double heading_rad)
         {
-            _serialPort.WriteLine("\nSW;" + lng_rad.ToString("#.######", CultureInfo.InvariantCulture) + ";" +
-                                          lat_rad.ToString("#.######", CultureInfo.InvariantCulture) + ";" +
+            WriteChecksumLine("SW;" + lng_rad.ToString("#.#######", CultureInfo.InvariantCulture) + ";" +
+                                          lat_rad.ToString("#.#######", CultureInfo.InvariantCulture) + ";" +
                                           heading_rad.ToString("#.####", CultureInfo.InvariantCulture) + ";" +
                                           speed_ms.ToString("#.###", CultureInfo.InvariantCulture) + ";" +
                                           ((int)altitude_m).ToString() + ";" +
                                           roll_rad.ToString("#.###", CultureInfo.InvariantCulture) + ";" +
-                                          pitch_rad.ToString("#.###", CultureInfo.InvariantCulture) + "\n");
-            Console.WriteLine("\nSW;" + lng_rad.ToString("#.######", CultureInfo.InvariantCulture) + ";" +
+                                          pitch_rad.ToString("#.###", CultureInfo.InvariantCulture) + "");
+            /*Console.WriteLine("\nSW;" + lng_rad.ToString("#.######", CultureInfo.InvariantCulture) + ";" +
                                           lat_rad.ToString("#.######", CultureInfo.InvariantCulture) + ";" +
                                           heading_rad.ToString("#.####", CultureInfo.InvariantCulture) + ";" +
                                           speed_ms.ToString("#.###", CultureInfo.InvariantCulture) + ";" +
                                           ((int)altitude_m).ToString() + ";" +
                                           roll_rad.ToString("#.####", CultureInfo.InvariantCulture) + ";" +
-                                          pitch_rad.ToString("#.###", CultureInfo.InvariantCulture) + "\n");
+                                          pitch_rad.ToString("#.###", CultureInfo.InvariantCulture) + "\n");*/
         }
 
 

@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+
+<!-- Example usage: <dash><dash>generic=file,out,50,fgfs.truth,insgns-truth -->
+
+<PropertyList>
+
+ <generic>
+
+  <output>
+   <line_separator>newline</line_separator>
+   <var_separator>tab</var_separator>
+
+   <chunk>
+    <name>time (sec)</name>
+    <type>float</type>
+    <format>%.4f</format>
+    <node>/sim/time/elapsed-sec</node>
+   </chunk>
+
+   <chunk>
+    <name>latitude (rad)</name>
+    <type>double</type>
+    <format>%.12f</format>
+    <node>/position/latitude-deg</node>
+    <factor>0.01745329251994329576</factor>  <!-- degrees to radians -->
+   </chunk>
+
+   <chunk>
+    <name>longitude (rad)</name>
+    <type>double</type>
+    <format>%.12f</format>
+    <node>/position/longitude-deg</node>
+    <factor>0.01745329251994329576</factor>  <!-- degrees to radians -->
+   </chunk>
+
+   <chunk>
+    <name>altitude-m</name>
+    <type>double</type>
+    <format>%.3f</format>
+    <node>/position/altitude-ft</node>
+    <factor>0.3048</factor>                  <!-- feet to meter -->
+   </chunk>
+
+   <chunk>
+    <name>yaw angle</name>
+    <type>float</type>
+    <format>%.5f</format>
+    <node>/orientation/heading-deg</node>
+    <factor>0.01745329251994329576</factor>  <!-- degrees to radians -->
+   </chunk>
+
+   <chunk>
+    <name>pitch angle (rad)</name>
+    <type>float</type>
+    <format>%.5f</format>
+    <node>/orientation/pitch-deg</node>
+    <factor>0.01745329251994329576</factor>  <!-- degrees to radians -->
+   </chunk>
+
+   <chunk>
+    <name>roll angle</name>
+    <type>float</type>
+    <format>%.5f</format>
+    <node>/orientation/roll-deg</node>
+    <factor>0.01745329251994329576</factor>  <!-- degrees to radians -->
+   </chunk>
+
+   
+   <chunk>
+    <name>heading</name>
+    <type>float</type>
+    <format>%.5f</format>
+    <node>/orientation/heading-deg</node>
+   </chunk>
+
+  </output>
+
+  <input>
+   <line_separator>newline</line_separator>
+   <var_separator>tab</var_separator>
+
+
+   <chunk>
+     <name>/controls/flight/aileron</name>
+     <node>/controls/flight/aileron</node>
+     <type>float</type>
+     <format>%f</format>
+   </chunk>
+   <chunk>
+     <name>/controls/flight/elevator</name>
+     <node>/controls/flight/elevator</node>
+     <type>float</type>
+     <format>%f</format>
+   </chunk>
+
+  </input>
+
+ </generic>
+
+</PropertyList>
