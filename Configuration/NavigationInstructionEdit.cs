@@ -171,9 +171,15 @@ namespace Configuration
                 c = new NavigationCommands.Climb(ni);
             }
             else if (_cb_opcode.Text.StartsWith("SERVO_SET"))
+            {
+                webBrowser.Navigate(directoryname + "\\servoset.html");
                 c = new NavigationCommands.ServoSet(ni);
+            }
             else if (_cb_opcode.Text.StartsWith("SERVO_TRIGGER"))
+            {
+                webBrowser.Navigate(directoryname + "\\servotrigger.html");
                 c = new NavigationCommands.ServoTrigger(ni);
+            }
             else if (_cb_opcode.Text.StartsWith("FLY_TO"))
             {
                 webBrowser.Navigate(directoryname + "\\flyto.html");

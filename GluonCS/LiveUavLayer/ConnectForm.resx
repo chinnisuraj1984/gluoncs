@@ -203,6 +203,18 @@
   <data name="&gt;&gt;_rbViaComPort.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="_btnBrowseLoggedFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>209, 16</value>
+  </data>
+  <data name="_btnBrowseLoggedFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 21</value>
+  </data>
+  <data name="_btnBrowseLoggedFile.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="_btnBrowseLoggedFile.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
   <data name="&gt;&gt;_btnBrowseLoggedFile.Name" xml:space="preserve">
     <value>_btnBrowseLoggedFile</value>
   </data>
@@ -215,6 +227,15 @@
   <data name="&gt;&gt;_btnBrowseLoggedFile.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="_tbLoggedFilename.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 17</value>
+  </data>
+  <data name="_tbLoggedFilename.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 20</value>
+  </data>
+  <data name="_tbLoggedFilename.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;_tbLoggedFilename.Name" xml:space="preserve">
     <value>_tbLoggedFilename</value>
   </data>
@@ -226,6 +247,21 @@
   </data>
   <data name="&gt;&gt;_tbLoggedFilename.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 20</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 13</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>File:</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -263,6 +299,33 @@
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="_btn_portrefresh.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="_btn_portrefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAaJJREFUOE9j+P//
+        PwMlmKDm3H1JqzJ3xjHjsoSgARk7Yi+lbI46QJQBJcczHIqOpB3IP5D8P3tPwv/07bH/mw5V/q/bV/o/
+        clnATmyGwF1QfCzDofBw6pk5l6b833Rr9f/1N1f8X3tj6f9V1xb9X351/v+SLTn//aa73UE3BG5AwaHU
+        mdPP9/3feHPV/+bDVf8T14f/j1kZ9L9ie/7/ks3Z/32muu7G64KcvYkPgP79D/Tv//i1YYdgigNmeVzy
+        nuJ8yK3Xnsmx3YoTpwuQJYD+hYe61ySnNa49tqTHAtC/a4hJHyjRGL7IjzNojicT0L+H3PsdLsEMsKg2
+        OmRcqvtfL1/zv1aW6gNkgzHSAdC/u7NWJv1PXRL737rB9L9ZleH/iOmB/3tPNP1PXhj9XzVFcSZOA4D+
+        fZmxPOH/9LO9/6ec7vo/8VT7/76TLf97TjT+B4mrJCucUYyXdcDrArtmi51xc8P+R80M/q9fqPVfO1vt
+        v3qa8n/lJIUDCnGomkEGYU3KQP8eAPoXHgb4AhOrAbp5GsyamaqrSI4FYjSgqwEANau2t7LOwZQAAAAA
+        SUVORK5CYII=
+</value>
+  </data>
+  <data name="_btn_portrefresh.Location" type="System.Drawing.Point, System.Drawing">
+    <value>231, 18</value>
+  </data>
+  <data name="_btn_portrefresh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 18</value>
+  </data>
+  <data name="_btn_portrefresh.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
   <data name="&gt;&gt;_btn_portrefresh.Name" xml:space="preserve">
     <value>_btn_portrefresh</value>
   </data>
@@ -274,6 +337,39 @@
   </data>
   <data name="&gt;&gt;_btn_portrefresh.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="_cbBaudrate.Items" xml:space="preserve">
+    <value>2400</value>
+  </data>
+  <data name="_cbBaudrate.Items1" xml:space="preserve">
+    <value>4800</value>
+  </data>
+  <data name="_cbBaudrate.Items2" xml:space="preserve">
+    <value>9600</value>
+  </data>
+  <data name="_cbBaudrate.Items3" xml:space="preserve">
+    <value>19200</value>
+  </data>
+  <data name="_cbBaudrate.Items4" xml:space="preserve">
+    <value>38400</value>
+  </data>
+  <data name="_cbBaudrate.Items5" xml:space="preserve">
+    <value>57600</value>
+  </data>
+  <data name="_cbBaudrate.Items6" xml:space="preserve">
+    <value>115200</value>
+  </data>
+  <data name="_cbBaudrate.Items7" xml:space="preserve">
+    <value>230400</value>
+  </data>
+  <data name="_cbBaudrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 43</value>
+  </data>
+  <data name="_cbBaudrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 21</value>
+  </data>
+  <data name="_cbBaudrate.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;_cbBaudrate.Name" xml:space="preserve">
     <value>_cbBaudrate</value>
@@ -287,6 +383,21 @@
   <data name="&gt;&gt;_cbBaudrate.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 46</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 13</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Baudrate:</value>
+  </data>
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
   </data>
@@ -299,6 +410,15 @@
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="_cb_portnames.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 17</value>
+  </data>
+  <data name="_cb_portnames.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 21</value>
+  </data>
+  <data name="_cb_portnames.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;_cb_portnames.Name" xml:space="preserve">
     <value>_cb_portnames</value>
   </data>
@@ -310,6 +430,21 @@
   </data>
   <data name="&gt;&gt;_cb_portnames.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 20</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Port:</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -551,6 +686,33 @@
   <data name="&gt;&gt;xPanderPanel1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 67</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 13</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Make sure the module is already on</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>xPanderPanel3</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -579,7 +741,7 @@
     <value>xPanderPanel3</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="_tbFlightgear.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -606,12 +768,11 @@
     <value>xPanderPanel3</value>
   </data>
   <data name="&gt;&gt;_tbFlightgear.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="_cbSimulation.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="_cbSimulation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -638,7 +799,7 @@
     <value>xPanderPanel3</value>
   </data>
   <data name="&gt;&gt;_cbSimulation.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="_cbSimulationFG.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -669,7 +830,7 @@ and launch Flightgear</value>
     <value>xPanderPanel3</value>
   </data>
   <data name="&gt;&gt;_cbSimulationFG.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="xPanderPanel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>275, 25</value>
@@ -718,236 +879,6 @@ and launch Flightgear</value>
   </data>
   <data name="&gt;&gt;xPanderPanelList1.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="_btnBrowseLoggedFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>209, 16</value>
-  </data>
-  <data name="_btnBrowseLoggedFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 21</value>
-  </data>
-  <data name="_btnBrowseLoggedFile.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="_btnBrowseLoggedFile.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="&gt;&gt;_btnBrowseLoggedFile.Name" xml:space="preserve">
-    <value>_btnBrowseLoggedFile</value>
-  </data>
-  <data name="&gt;&gt;_btnBrowseLoggedFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_btnBrowseLoggedFile.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;_btnBrowseLoggedFile.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="_tbLoggedFilename.Location" type="System.Drawing.Point, System.Drawing">
-    <value>63, 17</value>
-  </data>
-  <data name="_tbLoggedFilename.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 20</value>
-  </data>
-  <data name="_tbLoggedFilename.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;_tbLoggedFilename.Name" xml:space="preserve">
-    <value>_tbLoggedFilename</value>
-  </data>
-  <data name="&gt;&gt;_tbLoggedFilename.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_tbLoggedFilename.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;_tbLoggedFilename.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 20</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 13</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>File:</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="_btn_portrefresh.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="_btn_portrefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAaJJREFUOE9j+P//
-        PwMlmKDm3H1JqzJ3xjHjsoSgARk7Yi+lbI46QJQBJcczHIqOpB3IP5D8P3tPwv/07bH/mw5V/q/bV/o/
-        clnATmyGwF1QfCzDofBw6pk5l6b833Rr9f/1N1f8X3tj6f9V1xb9X351/v+SLTn//aa73UE3BG5AwaHU
-        mdPP9/3feHPV/+bDVf8T14f/j1kZ9L9ie/7/ks3Z/32muu7G64KcvYkPgP79D/Tv//i1YYdgigNmeVzy
-        nuJ8yK3Xnsmx3YoTpwuQJYD+hYe61ySnNa49tqTHAtC/a4hJHyjRGL7IjzNojicT0L+H3PsdLsEMsKg2
-        OmRcqvtfL1/zv1aW6gNkgzHSAdC/u7NWJv1PXRL737rB9L9ZleH/iOmB/3tPNP1PXhj9XzVFcSZOA4D+
-        fZmxPOH/9LO9/6ec7vo/8VT7/76TLf97TjT+B4mrJCucUYyXdcDrArtmi51xc8P+R80M/q9fqPVfO1vt
-        v3qa8n/lJIUDCnGomkEGYU3KQP8eAPoXHgb4AhOrAbp5GsyamaqrSI4FYjSgqwEANau2t7LOwZQAAAAA
-        SUVORK5CYII=
-</value>
-  </data>
-  <data name="_btn_portrefresh.Location" type="System.Drawing.Point, System.Drawing">
-    <value>231, 18</value>
-  </data>
-  <data name="_btn_portrefresh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 18</value>
-  </data>
-  <data name="_btn_portrefresh.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;_btn_portrefresh.Name" xml:space="preserve">
-    <value>_btn_portrefresh</value>
-  </data>
-  <data name="&gt;&gt;_btn_portrefresh.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_btn_portrefresh.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;_btn_portrefresh.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="_cbBaudrate.Items" xml:space="preserve">
-    <value>2400</value>
-  </data>
-  <data name="_cbBaudrate.Items1" xml:space="preserve">
-    <value>4800</value>
-  </data>
-  <data name="_cbBaudrate.Items2" xml:space="preserve">
-    <value>9600</value>
-  </data>
-  <data name="_cbBaudrate.Items3" xml:space="preserve">
-    <value>19200</value>
-  </data>
-  <data name="_cbBaudrate.Items4" xml:space="preserve">
-    <value>38400</value>
-  </data>
-  <data name="_cbBaudrate.Items5" xml:space="preserve">
-    <value>57600</value>
-  </data>
-  <data name="_cbBaudrate.Items6" xml:space="preserve">
-    <value>115200</value>
-  </data>
-  <data name="_cbBaudrate.Items7" xml:space="preserve">
-    <value>230400</value>
-  </data>
-  <data name="_cbBaudrate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 43</value>
-  </data>
-  <data name="_cbBaudrate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 21</value>
-  </data>
-  <data name="_cbBaudrate.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;_cbBaudrate.Name" xml:space="preserve">
-    <value>_cbBaudrate</value>
-  </data>
-  <data name="&gt;&gt;_cbBaudrate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_cbBaudrate.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;_cbBaudrate.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 46</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 13</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Baudrate:</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="_cb_portnames.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 17</value>
-  </data>
-  <data name="_cb_portnames.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 21</value>
-  </data>
-  <data name="_cb_portnames.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;_cb_portnames.Name" xml:space="preserve">
-    <value>_cb_portnames</value>
-  </data>
-  <data name="&gt;&gt;_cb_portnames.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_cb_portnames.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;_cb_portnames.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 20</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 13</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Port:</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="_btn_connect.Location" type="System.Drawing.Point, System.Drawing">
     <value>73, 5</value>

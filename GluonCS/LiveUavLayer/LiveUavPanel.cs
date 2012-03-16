@@ -101,6 +101,10 @@ namespace GluonCS
             styles |= ListViewExtendedStyles.DoubleBuffer | ListViewExtendedStyles.BorderSelect;
             // write new style
             SendMessage(_panelStrip.Handle, (int)ListViewMessages.SetExtendedStyle, 0, (int)styles);
+
+            _btnBuildSurvey.Enabled = true;
+            _btnNewSurvey.Enabled = true;
+            _btnSurveySettings.Enabled = true;
         }
 
 
@@ -131,21 +135,36 @@ namespace GluonCS
 
         }
 
-        protected override void Dispose(bool disposing)
+        public void Stop()
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
+            updatePanel.Stop();
+            redrawNavigationTable.Stop();
             if (model != null)
             {
-                model.NavigationLocalListChanged -= new LiveUavModel.ChangedEventHandler(model_NavigationLocalListChanged);
-                model.NavigationRemoteListChanged -= new LiveUavModel.ChangedEventHandler(model_NavigationRemoteListChanged);
-                model.UavAttitudeChanged -= new LiveUavModel.ChangedEventHandler(model_UavAttitudeChanged);
-                model.UavPositionChanged -= new LiveUavModel.ChangedEventHandler(model_UavPositionChanged);
+                try
+                {
+                    model.NavigationLocalListChanged -= new LiveUavModel.ChangedEventHandler(model_NavigationLocalListChanged);
+                    model.NavigationRemoteListChanged -= new LiveUavModel.ChangedEventHandler(model_NavigationRemoteListChanged);
+                    model.UavAttitudeChanged -= new LiveUavModel.ChangedEventHandler(model_UavAttitudeChanged);
+                    model.UavPositionChanged -= new LiveUavModel.ChangedEventHandler(model_UavPositionChanged);
+                }
+                catch (Exception ex)
+                {
+                }
             }
         }
+
+        //protected override void Dispose(bool disposing)
+        //{
+        //    Stop();
+
+        //    if (disposing && (components != null))
+        //    {
+        //        components.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+
+        //}
 
 
         // Update the panel's labels. Not based on the events.
@@ -255,8 +274,8 @@ namespace GluonCS
                 _lblHomeDistance.Text = resources.GetString("Home") + ": " + model.DistanceHome().ToString("F0") + " m";
 
                 _lblBlockname.Text = model.NavigationModel.Commands[model.CurrentNavigationLine].BlockName;
-                _lblFlightTime.Text = resources.GetString("Flight_time") + ": " + (int)(model.FlightTime.TotalMinutes) + ":" + model.FlightTime.Seconds;
-                _lblTimeInBlock.Text = resources.GetString("Time_in_block") + ": " + (int)(model.BlockTime.TotalMinutes) + ":" + model.BlockTime.Seconds;
+                _lblFlightTime.Text = resources.GetString("Flight_time") + ": " + (int)(model.FlightTime.TotalMinutes) + ":" + model.FlightTime.Seconds.ToString("00");
+                _lblTimeInBlock.Text = resources.GetString("Time_in_block") + ": " + (int)(model.BlockTime.TotalMinutes) + ":" + model.BlockTime.Seconds.ToString("00");
 
                 // update listview with current navigation line selection
                 foreach (ListViewItem lvi in _lv_navigation.Items)
@@ -797,11 +816,12 @@ namespace GluonCS
 
         private void _tbn_fullconfig_Click(object sender, EventArgs e)
         {
-            if (model.Serial != null && model.Serial.IsOpen)
+            //if (model.Serial != null && model.Serial.IsOpen)
             {
                 Gluonpilot.GluonConfig gc = new Gluonpilot.GluonConfig(model.Serial);
                 gc.Show();
-                model.Serial.ReadAllConfig();
+                if (model.Serial != null && model.Serial.IsOpen)
+                    model.Serial.ReadAllConfig();
             }
         }
 

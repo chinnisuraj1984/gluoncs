@@ -16,6 +16,7 @@ using Communication.Frames.Configuration;
 using Communication.Frames.Incoming;
 using System.Threading;
 using System.Globalization;
+using Common;
 
 namespace Communication
 {
@@ -96,8 +97,8 @@ namespace Communication
             _serialPort = new SerialPort();
             last_throughput_calculation = DateTime.Now;
 
-            _smartThreadPool = new SmartThreadPool();
-            _smartThreadPool.Name = "ReceiveThreadedData";
+            _smartThreadPool = SmartThreadPoolSingleton.GetInstance();
+            //_smartThreadPool.Name = "ReceiveThreadedData";
 
             IWorkItemResult wir =
                         _smartThreadPool.QueueWorkItem(
@@ -108,8 +109,8 @@ namespace Communication
         {
             try
             {
-                if (_smartThreadPool != null)
-                    _smartThreadPool.Shutdown(false, 100);
+                //if (_smartThreadPool != null)
+                //    _smartThreadPool.Shutdown(false, 100);
             }
             catch (Exception ex)  // threadpool already shut down
             {
@@ -117,13 +118,13 @@ namespace Communication
 
             try
             {
-                if (logfile != null)
-                    logfile.Close();
+                //if (logfile != null)
+                //    logfile.Close();
             }
             catch (Exception ex) // logfile already closed
             {
             }
-            _serialPort.Dispose();
+            //_serialPort.Dispose();
         }
 
         public double ThroughputKbS()
@@ -160,8 +161,19 @@ namespace Communication
         public override void Close()
         {
             if (_serialPort != null)
-                _serialPort.Close();
-
+            {
+                _serialPort.DiscardInBuffer();
+                _serialPort.DiscardOutBuffer();
+                try
+                {
+                    _serialPort.Close();
+                }
+                catch (Exception ex)
+                {
+                }
+            }
+            if (logfile != null)
+                logfile.Close();
         }
 
         /*!
@@ -175,14 +187,19 @@ namespace Communication
             bool recognised_frame = true;
             string line = string.Empty;
 
-            while (true)//_serialPort.IsOpen)
+            while (!SmartThreadPool.IsWorkItemCanceled)//_serialPort.IsOpen)
             {
                 try
                 {
+                    if (_serialPort == null || !_serialPort.IsOpen)
+                    {
+                        Thread.Sleep(100);
+                        continue;
+                    }
                     line = "";
                     recognised_frame = false;
                     // A bit extra logic to set communication lost after 1 second of no data 
-                    while (/*_serialPort == null || !_serialPort.IsOpen ||*/ _serialPort.BytesToRead < 3)
+                    while (_serialPort.BytesToRead < 3)
                     {
                         if (CommunicationAlive && SecondsConnectionLost() > 1.0)
                         {
@@ -890,18 +907,19 @@ namespace Communication
 
         public override void SetSimulationOn()
         {
-            _serialPort.WriteLine("\nSE;\n");
+            _serialPort.WriteLine("\nSE;" + DateTime.Now.ToString("ddMMyy") + ";" + DateTime.Now.ToString("HHmmss") + "\n");
         }
 
         public override void SendSimulationUpdate(double lat_rad, double lng_rad, double roll_rad, double pitch_rad, double altitude_m, double speed_ms, double heading_rad)
         {
-            WriteChecksumLine("SW;" + lng_rad.ToString("#.#######", CultureInfo.InvariantCulture) + ";" +
-                                          lat_rad.ToString("#.#######", CultureInfo.InvariantCulture) + ";" +
-                                          heading_rad.ToString("#.####", CultureInfo.InvariantCulture) + ";" +
-                                          speed_ms.ToString("#.###", CultureInfo.InvariantCulture) + ";" +
+            
+            WriteChecksumLine("SW;" + lng_rad.ToString("0.#######", CultureInfo.InvariantCulture) + ";" +
+                                          lat_rad.ToString("0.#######", CultureInfo.InvariantCulture) + ";" +
+                                          heading_rad.ToString("0.####", CultureInfo.InvariantCulture) + ";" +
+                                          speed_ms.ToString("0.###", CultureInfo.InvariantCulture) + ";" +
                                           ((int)altitude_m).ToString() + ";" +
-                                          roll_rad.ToString("#.###", CultureInfo.InvariantCulture) + ";" +
-                                          pitch_rad.ToString("#.###", CultureInfo.InvariantCulture) + "");
+                                          roll_rad.ToString("0.###", CultureInfo.InvariantCulture) + ";" +
+                                          pitch_rad.ToString("0.###", CultureInfo.InvariantCulture) + "");
             /*Console.WriteLine("\nSW;" + lng_rad.ToString("#.######", CultureInfo.InvariantCulture) + ";" +
                                           lat_rad.ToString("#.######", CultureInfo.InvariantCulture) + ";" +
                                           heading_rad.ToString("#.####", CultureInfo.InvariantCulture) + ";" +

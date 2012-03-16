@@ -56,10 +56,11 @@
             this.xPanderPanel3 = new BSE.Windows.Forms.XPanderPanel();
             this.label1 = new System.Windows.Forms.Label();
             this._tbFlightgear = new System.Windows.Forms.TextBox();
+            this._cbSimulation = new System.Windows.Forms.CheckBox();
             this._cbSimulationFG = new System.Windows.Forms.CheckBox();
             this._btn_connect = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this._cbSimulation = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.xPanderPanelList1.SuspendLayout();
             this.xPanderPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -310,6 +311,7 @@
             // xPanderPanel3
             // 
             this.xPanderPanel3.CaptionFont = new System.Drawing.Font("Trebuchet MS", 8.75F, System.Drawing.FontStyle.Bold);
+            this.xPanderPanel3.Controls.Add(this.label4);
             this.xPanderPanel3.Controls.Add(this.label1);
             this.xPanderPanel3.Controls.Add(this._tbFlightgear);
             this.xPanderPanel3.Controls.Add(this._cbSimulation);
@@ -354,6 +356,12 @@
             resources.ApplyResources(this._tbFlightgear, "_tbFlightgear");
             this._tbFlightgear.Name = "_tbFlightgear";
             // 
+            // _cbSimulation
+            // 
+            resources.ApplyResources(this._cbSimulation, "_cbSimulation");
+            this._cbSimulation.Name = "_cbSimulation";
+            this._cbSimulation.UseVisualStyleBackColor = true;
+            // 
             // _cbSimulationFG
             // 
             resources.ApplyResources(this._cbSimulationFG, "_cbSimulationFG");
@@ -373,11 +381,10 @@
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // _cbSimulation
+            // label4
             // 
-            resources.ApplyResources(this._cbSimulation, "_cbSimulation");
-            this._cbSimulation.Name = "_cbSimulation";
-            this._cbSimulation.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
             // 
             // ConnectForm
             // 
@@ -441,5 +448,6 @@
         private System.Windows.Forms.Button _btn_portrefresh;
         private System.Windows.Forms.RadioButton _rbOffline;
         private System.Windows.Forms.CheckBox _cbSimulation;
+        private System.Windows.Forms.Label label4;
     }
 }

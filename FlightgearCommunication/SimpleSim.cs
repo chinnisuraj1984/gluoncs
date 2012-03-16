@@ -29,7 +29,7 @@ namespace Simulation
             model = new AirplaneModel(home);
 
             this.serial = serial;
-            smartThreadPool = new SmartThreadPool();
+            smartThreadPool = SmartThreadPoolSingleton.GetInstance();
             IWorkItemResult wir =
                 smartThreadPool.QueueWorkItem(new WorkItemCallback(PassCommands), null);
 
@@ -58,7 +58,7 @@ namespace Simulation
         {
             elevator = 0;// -((double)s.Elevator - 1500.0) / 500.0 * 1;
             aileron = ((double)s.Aileron - 1500.0) / 500.0;
-            Console.WriteLine("->" + aileron);
+            //Console.WriteLine("->" + aileron);
             motor = ((double)s.Motor - 1000.0);
         }
 
@@ -68,15 +68,13 @@ namespace Simulation
         private object PassCommands(object x)
         {
 
-            while (true)
+            while (serial != null && serial.IsOpen)
             {
-                System.Threading.Thread.Sleep(100);
-
                 try
                 {
                     model.ElevatorAngle = elevator;
                     model.AileronAngle = aileron;
-                    model.Step(0.1);
+                    model.Step(0.2);
 
                     serial.SendSimulationUpdate(model.Position.Lat / 180.0 * Math.PI,
                                                 model.Position.Lng / 180.0 * Math.PI,
@@ -85,9 +83,10 @@ namespace Simulation
                 catch (FormatException e)
                 {
                 }
+                System.Threading.Thread.Sleep(200);
 
                 //string uit = motor.ToString(CultureInfo.InvariantCulture) + "\t" + aileron.ToString(CultureInfo.InvariantCulture) + "\t" + elevator.ToString(CultureInfo.InvariantCulture) + "\n";
-                string uit = aileron.ToString(CultureInfo.InvariantCulture) + "\t" + elevator.ToString(CultureInfo.InvariantCulture) + "\n";
+                //string uit = aileron.ToString(CultureInfo.InvariantCulture) + "\t" + elevator.ToString(CultureInfo.InvariantCulture) + "\n";
             }
 
             return null;

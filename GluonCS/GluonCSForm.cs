@@ -21,6 +21,7 @@ using System.Net;
 using Simulation;
 using System.Threading;
 using System.Globalization;
+using Common;
 
 namespace GluonCS
 {
@@ -142,19 +143,26 @@ namespace GluonCS
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            uavspeech.Stop();
             Console.WriteLine("Closing serial...");
-            if (model.Serial != null)
+            if (model.Serial != null && model.Serial.IsOpen)
                 model.Serial.Close();
             Console.WriteLine("done...");
+
+
+            uavspeech.Stop();
+
             Properties.Settings.Default.MapPositionLatitude = _gMapControl.Position.Lat;
             Properties.Settings.Default.MapPositionLongitude = _gMapControl.Position.Lng;
             Properties.Settings.Default.MapZoomLevel = _gMapControl.Zoom;
             Properties.Settings.Default.Save();
 
             controller.Stop();
+            liveUavPanel1.Stop();
             model.InformationMessageReceived -= new LiveUavModel.TextReceivedEventHandler(model_InformationMessageReceived);
             model.Stop();
+
+
+            SmartThreadPoolSingleton.Stop();
         }
 
         private void m_cboToolStripRenderer_SelectedIndexChanged(object sender, EventArgs e)
@@ -325,6 +333,13 @@ namespace GluonCS
         {
             SurveyProperties sp = new SurveyProperties();
             sp.ShowDialog(this);
+        }
+
+
+        private void _btnGoto_Click(object sender, EventArgs e)
+        {
+            string input = Microsoft.VisualBasic.Interaction.InputBox("Goto this location:", "Goto", "Enter street, city and country", _gMapControl.Location.X + _gMapControl.Width / 2, _gMapControl.Location.Y + _gMapControl.Height / 2);
+            _gMapControl.SetCurrentPositionByKeywords(input);
         }
     }
 }

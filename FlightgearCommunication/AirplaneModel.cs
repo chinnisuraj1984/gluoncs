@@ -26,7 +26,7 @@ namespace Simulation
         private double _aileronAngle;
         private double _elevatorAngle;
 
-        private double _rollResponseFactor = 1.5;
+        private double _rollResponseFactor = 2.5;
         private double _pitchResponseFactor = 0.6;
         private double _yawResponseFactor = -0.7;
 
