@@ -124,13 +124,22 @@ namespace GluonCS.LiveUavLayer
 
         public void Stop()
         {
-            model.NavigationLocalListChanged -= new LiveUavModel.ChangedEventHandler(model_NavigationLocalListChanged);
-            model.HomeChanged -= new LiveUavModel.ChangedEventHandler(model_HomeChanged);
-            model.UavPositionChanged -= new LiveUavModel.ChangedEventHandler(model_UavPositionChanged);
-            model.UavAttitudeChanged -= new LiveUavModel.ChangedEventHandler(model_UavAttitudeChanged);
-            model.CommunicationLost -= new LiveUavModel.ChangedEventHandler(model_CommunicationLost);
-            model.CommunicationEstablished -= new LiveUavModel.ChangedEventHandler(model_CommunicationEstablished);
-            model.CenterOnUav -= new LiveUavModel.ChangedEventHandler(model_CenterUav);
+            try
+            {
+
+                model.NavigationLocalListChanged -= new LiveUavModel.ChangedEventHandler(model_NavigationLocalListChanged);
+                model.HomeChanged -= new LiveUavModel.ChangedEventHandler(model_HomeChanged);
+                model.UavPositionChanged -= new LiveUavModel.ChangedEventHandler(model_UavPositionChanged);
+                model.UavAttitudeChanged -= new LiveUavModel.ChangedEventHandler(model_UavAttitudeChanged);
+                model.CommunicationLost -= new LiveUavModel.ChangedEventHandler(model_CommunicationLost);
+                model.CommunicationEstablished -= new LiveUavModel.ChangedEventHandler(model_CommunicationEstablished);
+                model.CenterOnUav -= new LiveUavModel.ChangedEventHandler(model_CenterUav);
+            }
+            catch (Exception ex)
+            {
+            }
+            guiUpdateTimer.Stop();
+            zoomtowaypoints.Stop();
             gmap.Dispose();
         }
 
@@ -248,7 +257,7 @@ namespace GluonCS.LiveUavLayer
                     bool containedUav = gmap.CurrentViewArea.Contains(uavMarker.Position);
 
                     uavRoute.Points.Add(new PointLatLng(model.UavPosition.Lat, model.UavPosition.Lng));
-                    if (uavRoute.Points.Count > 500) // time to delete some old point on the pad (can become annoying after a while)
+                    if (uavRoute.Points.Count > 800) // time to delete some old point on the pad (can become annoying after a while)
                         uavRoute.Points.RemoveRange(0, 100);
 
                     gmap.UpdateRouteLocalPosition(uavRoute);

@@ -52,8 +52,11 @@ namespace GluonCS.LiveUavLayer
 
         public void Stop()
         {
-            reSync.Elapsed -= new ElapsedEventHandler(reSync_Elapsed);
-            reSync.Stop();
+            if (reSync != null)
+            {
+                reSync.Elapsed -= new ElapsedEventHandler(reSync_Elapsed);
+                reSync.Stop();
+            }
         }
 
         void reSync_Elapsed(object sender, ElapsedEventArgs e)

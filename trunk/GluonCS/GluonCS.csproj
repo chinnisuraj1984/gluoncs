@@ -463,8 +463,16 @@
       <Link>Documentation\en\block.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="..\Documentation\en\call.html">
+      <Link>Documentation\en\call.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\Documentation\en\circle.html">
       <Link>Documentation\en\circle.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\en\circleto.html">
+      <Link>Documentation\en\circleto.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\Documentation\en\climb.html">
@@ -507,8 +515,29 @@
       <Link>Documentation\en\if.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="..\Documentation\en\loitercircle.html">
+      <Link>Documentation\en\loitercircle.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\en\return.html">
+      <Link>Documentation\en\return.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\en\servoset.html">
+      <Link>Documentation\en\servoset.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\en\servotrigger.html">
+      <Link>Documentation\en\servotrigger.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\Documentation\en\setbatteryalarm.html">
       <Link>Documentation\en\setbatteryalarm.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="..\Documentation\en\setloiterposition.html">
+      <Link>Documentation\en\setloiterposition.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\Documentation\en\until.html">

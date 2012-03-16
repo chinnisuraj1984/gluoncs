@@ -35,12 +35,14 @@ namespace GluonCS
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this._btnZoomin = new System.Windows.Forms.ToolStripButton();
             this._btnZoomout = new System.Windows.Forms.ToolStripButton();
+            this._gMapControl = new GluonCS.LiveUavLayer.WindGMapControl();
             this.splitter3 = new BSE.Windows.Forms.Splitter();
             this.panel4 = new BSE.Windows.Forms.Panel();
             this._tbLog = new System.Windows.Forms.TextBox();
             this.m_cboToolStripRenderer = new System.Windows.Forms.ComboBox();
             this.splitter2 = new BSE.Windows.Forms.Splitter();
             this._layersPanel = new BSE.Windows.Forms.Panel();
+            this.liveUavPanel1 = new GluonCS.LiveUavPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._btnOptions = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,8 +51,7 @@ namespace GluonCS
             this.zoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zoomoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this._gMapControl = new GluonCS.LiveUavLayer.WindGMapControl();
-            this.liveUavPanel1 = new GluonCS.LiveUavPanel();
+            this._btnGoto = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -85,7 +86,8 @@ namespace GluonCS
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._btnZoomin,
-            this._btnZoomout});
+            this._btnZoomout,
+            this._btnGoto});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.toolStrip1.Name = "toolStrip1";
             // 
@@ -102,6 +104,26 @@ namespace GluonCS
             resources.ApplyResources(this._btnZoomout, "_btnZoomout");
             this._btnZoomout.Name = "_btnZoomout";
             this._btnZoomout.Click += new System.EventHandler(this._btnZoomout_Click);
+            // 
+            // _gMapControl
+            // 
+            this._gMapControl.Bearing = 0F;
+            this._gMapControl.CanDragMap = true;
+            resources.ApplyResources(this._gMapControl, "_gMapControl");
+            this._gMapControl.GrayScaleMode = false;
+            this._gMapControl.LevelsKeepInMemmory = 5;
+            this._gMapControl.MapType = GMap.NET.MapType.GoogleHybrid;
+            this._gMapControl.MarkersEnabled = true;
+            this._gMapControl.MaxZoom = 20;
+            this._gMapControl.MinZoom = 1;
+            this._gMapControl.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionWithoutCenter;
+            this._gMapControl.Name = "_gMapControl";
+            this._gMapControl.PolygonsEnabled = true;
+            this._gMapControl.Position = ((GMap.NET.PointLatLng)(resources.GetObject("_gMapControl.Position")));
+            this._gMapControl.RetryLoadTile = 0;
+            this._gMapControl.RoutesEnabled = true;
+            this._gMapControl.ShowTileGridLines = false;
+            this._gMapControl.Zoom = 5D;
             // 
             // splitter3
             // 
@@ -194,6 +216,11 @@ namespace GluonCS
             this._layersPanel.ToolTipTextExpandIconPanelCollapsed = null;
             this._layersPanel.ToolTipTextExpandIconPanelExpanded = null;
             // 
+            // liveUavPanel1
+            // 
+            resources.ApplyResources(this.liveUavPanel1, "liveUavPanel1");
+            this.liveUavPanel1.Name = "liveUavPanel1";
+            // 
             // menuStrip1
             // 
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
@@ -243,30 +270,12 @@ namespace GluonCS
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
-            // _gMapControl
+            // _btnGoto
             // 
-            this._gMapControl.Bearing = 0F;
-            this._gMapControl.CanDragMap = true;
-            resources.ApplyResources(this._gMapControl, "_gMapControl");
-            this._gMapControl.GrayScaleMode = false;
-            this._gMapControl.LevelsKeepInMemmory = 5;
-            this._gMapControl.MapType = GMap.NET.MapType.GoogleHybrid;
-            this._gMapControl.MarkersEnabled = true;
-            this._gMapControl.MaxZoom = 20;
-            this._gMapControl.MinZoom = 1;
-            this._gMapControl.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionWithoutCenter;
-            this._gMapControl.Name = "_gMapControl";
-            this._gMapControl.PolygonsEnabled = true;
-            this._gMapControl.Position = ((GMap.NET.PointLatLng)(resources.GetObject("_gMapControl.Position")));
-            this._gMapControl.RetryLoadTile = 0;
-            this._gMapControl.RoutesEnabled = true;
-            this._gMapControl.ShowTileGridLines = false;
-            this._gMapControl.Zoom = 5D;
-            // 
-            // liveUavPanel1
-            // 
-            resources.ApplyResources(this.liveUavPanel1, "liveUavPanel1");
-            this.liveUavPanel1.Name = "liveUavPanel1";
+            this._btnGoto.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this._btnGoto, "_btnGoto");
+            this._btnGoto.Name = "_btnGoto";
+            this._btnGoto.Click += new System.EventHandler(this._btnGoto_Click);
             // 
             // GluonCSForm
             // 
@@ -319,6 +328,7 @@ namespace GluonCS
         private System.Windows.Forms.ToolStripButton _btnZoomout;
         private System.Windows.Forms.ToolStripMenuItem _btnOptions;
         private System.Windows.Forms.TextBox _tbLog;
+        private System.Windows.Forms.ToolStripButton _btnGoto;
     }
 }
 

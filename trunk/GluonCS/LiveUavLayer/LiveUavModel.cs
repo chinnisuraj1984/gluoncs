@@ -225,10 +225,11 @@ namespace GluonCS.LiveUavLayer
                 Serial.CommunicationLost -= new SerialCommunication.LostCommunication(connection_CommunicationLost);
                 Serial.NonParsedCommunicationReceived -= new SerialCommunication.ReceiveNonParsedCommunication(connection_NonParsedCommunicationReceived);
             }
-            if (uavSynchronizer != null)
-                uavSynchronizer.Pause();
+            //if (uavSynchronizer != null)
+            //    uavSynchronizer.Pause();
             NavigationModel.Stop();
-            ss.Stop();
+            if (ss != null)
+                ss.Stop();
             Properties.Settings.Default.HomeLatitude = Home.Lat;
             Properties.Settings.Default.HomeLongitude = Home.Lng;
             Properties.Settings.Default.Save();
@@ -263,8 +264,8 @@ namespace GluonCS.LiveUavLayer
         {
             try
             {
-                if (uavSynchronizer != null)
-                    uavSynchronizer.Pause();
+                //if (uavSynchronizer != null)
+                //    uavSynchronizer.Pause();
             }
             finally
             {
@@ -679,7 +680,7 @@ namespace GluonCS.LiveUavLayer
                 Thread.Sleep(1000);
             }
 
-            while (/*!SmartThreadPool.IsWorkItemCanceled*/model.Serial.IsOpen && model.AutoSync)
+            while (model.Serial.IsOpen && model.AutoSync)
             {
                 for (int i = 0; i < model.MaxNumberOfNavigationInstructions() && i < model.maxLineNumberReceived; i++)
                 {

@@ -16,6 +16,7 @@ using Communication.Frames.Configuration;
 using Communication.Frames.Incoming;
 using System.Threading;
 using System.Globalization;
+using Common;
 
 namespace Communication
 {
@@ -153,7 +154,7 @@ namespace Communication
             //_serialPort.PortName = portName;
             //_serialPort.BaudRate = baudrate;
             //_serialPort.Open();
-            _smartThreadPool = new SmartThreadPool();
+            _smartThreadPool = SmartThreadPoolSingleton.GetInstance();
             _smartThreadPool.Name = "ReceiveThreadedData";
 
             IWorkItemResult wir =
@@ -164,7 +165,7 @@ namespace Communication
         public override void Close()
         {
             //_serialPort.Close();
-            _smartThreadPool.Shutdown(false, 100);
+            //_smartThreadPool.Shutdown(false, 100);
             if (logfile != null)
                 logfile.Close();
             if (file_to_replay != null)
