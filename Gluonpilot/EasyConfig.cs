@@ -185,6 +185,7 @@ namespace Gluonpilot
 
                 _cbAutothrottle.Checked = config.auto_throttle_enabled;
                 _hsbCruiseThrottle.Value = Math.Max(0, config.auto_throttle_cruise_pct);
+                _hsbCruiseThrottle_Scroll(null, new ScrollEventArgs(ScrollEventType.EndScroll, _hsbCruiseThrottle.Value));
             };
 
             try
@@ -193,6 +194,7 @@ namespace Gluonpilot
             }
             catch
             {
+                ;
             } 
         }
 
@@ -360,8 +362,8 @@ namespace Gluonpilot
             if (!guiUpdateBusy)
             {
                 serial.SendAutoThrottleConfig(config.auto_throttle_min_pct, config.auto_throttle_max_pct, _hsbCruiseThrottle.Value, config.auto_throttle_p_gain_10, _cbAutothrottle.Checked);
-                _lblCruiseThrottle.Text = "(" + _hsbCruiseThrottle.Value.ToString() + "%)";
             }
+            _lblCruiseThrottle.Text = "(" + _hsbCruiseThrottle.Value.ToString() + "%)";
         }
 
         private void _cbAutothrottle_CheckedChanged(object sender, EventArgs e)

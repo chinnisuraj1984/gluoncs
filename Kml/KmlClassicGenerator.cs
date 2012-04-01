@@ -128,7 +128,8 @@ namespace Kml
                         sb.Append("</coordinates><altitudeMode>relativeToGround</altitudeMode></Point><styleUrl>#dataStyle_" + heading + "</styleUrl>\r\n");
                         if (dr.Table.Columns.Contains("Pitch") && dr.Table.Columns.Contains("HeightGPS"))
                         {
-                            sb.Append("<description>" + (int)time + " - Roll: " + dr["Roll"].ToString() + ", Desired: " + dr["DesiredRoll"].ToString() + " - Pitch: " + dr["Pitch"].ToString() + ", Desired: " + dr["DesiredPitch"].ToString() + " - Height: " + dr["HeightGPS"].ToString() + "</description>");
+                            //sb.Append("<description>" + (int)time + " - Roll: " + dr["Roll"].ToString() + ", Desired: " + dr["DesiredRoll"].ToString() + " - Pitch: " + dr["Pitch"].ToString() + ", Desired: " + dr["DesiredPitch"].ToString() + " - Height: " + dr["HeightGPS"].ToString() + "</description>");
+                            sb.Append("<description>" + (int)time + " - Roll: " + dr["Roll"].ToString() + " - Pitch: " + dr["Pitch"].ToString() + " - Height: " + dr["HeightGPS"].ToString() + "</description>");
                         }
                         else if (dr.Table.Columns.Contains("Time"))
                         {

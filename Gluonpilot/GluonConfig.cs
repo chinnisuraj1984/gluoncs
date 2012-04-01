@@ -186,7 +186,7 @@ namespace Gluonpilot
             if (fd.ShowDialog() != DialogResult.OK)
                 return;
 
-            if (connected)  // Close the current connection if it's open
+            if (_serial.IsOpen)  // Close the current connection if it's open
                 _serial.Close(); //_btn_connect_Click(null, null);
 
             string c = " -k=" + _serial.PortName + " -f=\"" + fd.FileName + "\"  -p -d=dsPIC33FJ256MC710 -u=" + _serial.BaudRate + " -q=0a;5a;5a;3b;31;31;32;33;0a -r=115200 -b=1200 -o";

@@ -32,7 +32,7 @@ namespace GluonCS.LiveUavLayer
         {
             if (Properties.Settings.Default.UseSpeech && !stop)
             {
-                if (!s.Contains('+') && !s.Contains(';'))
+                if (!s.Contains('+') && !s.Contains(';') && !s.Contains('?'))
                 {
                     s = s.Replace(".", " ");
                     speech.SpeakAsyncCancelAll();

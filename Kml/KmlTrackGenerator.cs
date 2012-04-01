@@ -110,14 +110,14 @@ namespace Kml
                    "</gx:value>\r\n");
            }
            // generate <desiredheading>
-           StringBuilder sb_desiredheading = new StringBuilder();
-           for (int i = 0; i < s.Tables[0].Rows.Count; i += stepsize)
-           {
-               sb_desiredheading.Append(
-                   "<gx:value>" +
-                    s.Tables[0].Rows[i].ItemArray[columns["DesiredHeading"]].ToString() +
-                   "</gx:value>\r\n");
-           }
+           //StringBuilder sb_desiredheading = new StringBuilder();
+           //for (int i = 0; i < s.Tables[0].Rows.Count; i += stepsize)
+           //{
+           //    sb_desiredheading.Append(
+           //        "<gx:value>" +
+           //         s.Tables[0].Rows[i].ItemArray[columns["DesiredHeading"]].ToString() +
+           //        "</gx:value>\r\n");
+           //}
 
            // generate <heading>
            StringBuilder sb_heading = new StringBuilder();
@@ -131,14 +131,14 @@ namespace Kml
 
 
            // generate <desiredroll>
-           StringBuilder sb_desiredroll = new StringBuilder();
-           for (int i = 0; i < s.Tables[0].Rows.Count; i += stepsize)
-           {
-               sb_desiredroll.Append(
-                   "<gx:value>" +
-                    s.Tables[0].Rows[i].ItemArray[columns["DesiredRoll"]].ToString() +
-                   "</gx:value>\r\n");
-           }
+           //StringBuilder sb_desiredroll = new StringBuilder();
+           //for (int i = 0; i < s.Tables[0].Rows.Count; i += stepsize)
+           //{
+           //    sb_desiredroll.Append(
+           //        "<gx:value>" +
+           //         s.Tables[0].Rows[i].ItemArray[columns["DesiredRoll"]].ToString() +
+           //        "</gx:value>\r\n");
+           //}
            // generate <roll>
            StringBuilder sb_roll = new StringBuilder();
            for (int i = 0; i < s.Tables[0].Rows.Count; i += stepsize)
@@ -169,13 +169,13 @@ namespace Kml
                              sb_speed.ToString() +
                      "   </gx:SimpleArrayData>" +
                      "   <gx:SimpleArrayData name=\"desiredheading\">" +
-                             sb_desiredheading.ToString() +
+                             //sb_desiredheading.ToString() +
                      "   </gx:SimpleArrayData>" +
                      "   <gx:SimpleArrayData name=\"heading\">" +
                              sb_heading.ToString() +
                      "   </gx:SimpleArrayData>" +
                      "   <gx:SimpleArrayData name=\"desiredroll\">" +
-                             sb_desiredroll.ToString() +
+                             //sb_desiredroll.ToString() +
                      "   </gx:SimpleArrayData>" +
                      "   <gx:SimpleArrayData name=\"roll\">" +
                              sb_roll.ToString() +
