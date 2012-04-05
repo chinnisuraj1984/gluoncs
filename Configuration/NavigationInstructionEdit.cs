@@ -80,6 +80,10 @@ namespace Configuration
                 _cb_opcode.SelectedIndex = GetIndexFor("RETURN");
             else if (ni.opcode == NavigationInstruction.navigation_command.SERVO_SET)
                 _cb_opcode.SelectedIndex = GetIndexFor("SERVO_SET");
+            else if (ni.opcode == NavigationInstruction.navigation_command.SERVO_TRIGGER_START)
+                _cb_opcode.SelectedIndex = GetIndexFor("SERVO_TRIGGER_START");
+            else if (ni.opcode == NavigationInstruction.navigation_command.SERVO_TRIGGER_STOP)
+                _cb_opcode.SelectedIndex = GetIndexFor("SERVO_TRIGGER_STOP");
             else if (ni.opcode == NavigationInstruction.navigation_command.SERVO_TRIGGER)
                 _cb_opcode.SelectedIndex = GetIndexFor("SERVO_TRIGGER");
             else if (ni.opcode == NavigationInstruction.navigation_command.IF_EQ ||
@@ -174,6 +178,16 @@ namespace Configuration
             {
                 webBrowser.Navigate(directoryname + "\\servoset.html");
                 c = new NavigationCommands.ServoSet(ni);
+            }
+            else if (_cb_opcode.Text.StartsWith("SERVO_TRIGGER_START"))
+            {
+                //webBrowser.Navigate(directoryname + "\\servotrigger.html");
+                c = new NavigationCommands.ServoStartTrigger(ni);
+            }
+            else if (_cb_opcode.Text.StartsWith("SERVO_TRIGGER_STOP"))
+            {
+                //webBrowser.Navigate(directoryname + "\\servotrigger.html");
+                c = new NavigationCommands.ServoStopTrigger(ni);
             }
             else if (_cb_opcode.Text.StartsWith("SERVO_TRIGGER"))
             {
