@@ -306,6 +306,18 @@
     <Compile Include="NavigationCommands\ServoSet.Designer.cs">
       <DependentUpon>ServoSet.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationCommands\ServoStartTrigger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationCommands\ServoStartTrigger.Designer.cs">
+      <DependentUpon>ServoStartTrigger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationCommands\ServoStopTrigger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationCommands\ServoStopTrigger.Designer.cs">
+      <DependentUpon>ServoStopTrigger.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationCommands\ServoTrigger.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -511,6 +523,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationCommands\ServoSet.resx">
       <DependentUpon>ServoSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationCommands\ServoStartTrigger.resx">
+      <DependentUpon>ServoStartTrigger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationCommands\ServoStopTrigger.resx">
+      <DependentUpon>ServoStopTrigger.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationCommands\ServoTrigger.resx">
       <DependentUpon>ServoTrigger.cs</DependentUpon>

@@ -87,6 +87,8 @@
             "- Servo -",
             "SERVO_SET",
             "SERVO_TRIGGER",
+            "SERVO_TRIGGER_START",
+            "SERVO_TRIGGER_STOP",
             "",
             "- Loiter -",
             "SET_LOITER_POSITION",

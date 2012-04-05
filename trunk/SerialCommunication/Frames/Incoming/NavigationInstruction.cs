@@ -45,7 +45,9 @@ namespace Communication.Frames.Incoming
             CIRCLE_TO_REL = 27,
             SET_BATTERY_ALARM = 28,
             CALL = 29,
-            RETURN = 30
+            RETURN = 30,
+            SERVO_TRIGGER_START = 31,
+            SERVO_TRIGGER_STOP = 32
         };
 
         public navigation_command opcode;
@@ -215,6 +217,15 @@ namespace Communication.Frames.Incoming
                 break;
             case navigation_command.SET_BATTERY_ALARM:
                 s += "SetBatteryAlarm(Warning < " + X + "V, Panic < " + Y + "V -> " + a + ")";
+                break;
+            case navigation_command.SERVO_TRIGGER_STOP:
+                s += "ServoTriggerStop()";
+                break;
+            case navigation_command.SERVO_TRIGGER_START:
+                if (Math.Round(y) == 1)
+                    s += "ServoTriggerStart(channel: " + (a + 1) + ", CHDK mode)";
+                else
+                    s += "ServoTriggerStart(channel: " + (a + 1) + ", position: " + b + "us, delay: " + x + "s)";
                 break;
             default:
                 s += "Unknown/Unsupported (" + (int)opcode + " : " +  X + ", " + Y + ", " + a + ", " + b + ")";
