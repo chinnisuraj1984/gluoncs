@@ -93,7 +93,7 @@ namespace GluonCS.LiveUavLayer
                 for (int i = 0; i < model.MaxNumberOfNavigationInstructions(); i++)
                 {
                     NavigationInstruction ni = model.GetNavigationInstructionLocal(i);
-                    if (ni.opcode == NavigationInstruction.navigation_command.BLOCK)
+                    if (ni != null  && ni.opcode == NavigationInstruction.navigation_command.BLOCK)
                     {
                         blockname = ni.GetStringArgument();
                         if (!Blocks.ContainsKey(ni.GetStringArgument()))

@@ -49,7 +49,7 @@ namespace GluonCS.LiveUavLayer
         private bool hasTakenOff = false;
         public int maxLineNumberReceived = -1;
 
-        private List<NavigationInstruction> navigation_local = new List<NavigationInstruction>(36);
+        private List<NavigationInstruction> navigation_local = new List<NavigationInstruction>(72);
         private List<NavigationInstruction> navigation_remote = new List<NavigationInstruction>(36);
 
         private UavNavigationSynchronize uavSynchronizer;
@@ -76,7 +76,7 @@ namespace GluonCS.LiveUavLayer
             }
         }
 
-        private SerialCommunication serial = null;
+        private SerialCommunication serial;
         public SerialCommunication Serial
         {
             set
@@ -198,12 +198,21 @@ namespace GluonCS.LiveUavLayer
 
         public void Connect(string port, int baudrate, string logpath, string flightgearpath)
         {
-            SerialCommunication_CSV s = new SerialCommunication_CSV();
-            Serial = s;
+            SerialCommunication_CSV s = Serial as SerialCommunication_CSV;
+            if (s == null)
+            {
+                Serial = new SerialCommunication_CSV();
+                s = Serial as SerialCommunication_CSV;
+                SubscribeSerial(logpath);
+                s.Open(port, baudrate);
+            }
+            else
+            {
+                s.Open(port, baudrate);
+                if (logpath != "")
+                    Serial.LogToFilename = logpath;
+            }  
 
-            SubscribeSerial(logpath);
-
-            s.Open(port, baudrate);
 
             if (flightgearpath != "")
             {
@@ -258,6 +267,9 @@ namespace GluonCS.LiveUavLayer
             NavigationModel = new LiveUavNavigationModel(this);
             home = new PointLatLng(Properties.Settings.Default.HomeLatitude, Properties.Settings.Default.HomeLongitude);
             UavPosition = new PointLatLng(Properties.Settings.Default.HomeLatitude, Properties.Settings.Default.HomeLongitude);
+
+            serial = new SerialCommunication_CSV();
+            SubscribeSerial("");
         }
 
         ~LiveUavModel()
@@ -380,10 +392,10 @@ namespace GluonCS.LiveUavLayer
                         navigation_local[ni2.line] = ni2;
                 }
 
+                
                 if (NavigationLocalListChanged != null)
                     NavigationLocalListChanged(this, EventArgs.Empty);
             }
-            //Console.WriteLine("connection_NavigationInstructionCommunicationReceived LEAVE");
         }
 
         void connection_GpsBasicCommunicationReceived(GpsBasic gpsbasic)
@@ -469,7 +481,7 @@ namespace GluonCS.LiveUavLayer
                     polygon.Add(new PointLatLng(ni.x / Math.PI * 180.0, ni.y / Math.PI * 180.0));
             }
 
-            List<PointLatLng> corners = Survey.GenerateSurvey(polygon);
+            List<PointLatLng> corners = Survey.GenerateSurvey(polygon, Properties.Settings.Default.SurveyAngleDeg, Properties.Settings.Default.SurveyDistanceM);
 
             int line = NavigationModel.Blocks["Survey"] + 1;
             for (int i = 0; i < corners.Count; i++)
@@ -624,6 +636,15 @@ namespace GluonCS.LiveUavLayer
             if (NavigationLocalListChanged != null)
                 NavigationLocalListChanged(this, EventArgs.Empty);
         }
+
+        public void CreateFakeRemoteList()
+        {
+            // create fake remote list to make sure every line is sent to the module
+            for (int i = 0; i < MaxNumberOfNavigationInstructions(); i++)
+                navigation_remote[i] = new NavigationInstruction(i, NavigationInstruction.navigation_command.EMPTY, -1, -1, -1, -1);
+
+            maxLineNumberReceived = MaxNumberOfNavigationInstructions();
+        }
     }
 
 
@@ -680,30 +701,37 @@ namespace GluonCS.LiveUavLayer
                 Thread.Sleep(1000);
             }
 
-            while (model.Serial.IsOpen && model.AutoSync)
+            while (true)
             {
-                for (int i = 0; i < model.MaxNumberOfNavigationInstructions() && i < model.maxLineNumberReceived; i++)
+                if (model.Serial != null)
                 {
-                    if (!model.IsNavigationSynchronized(i))
+                    while (model.Serial.IsOpen && model.AutoSync)
                     {
-                        if (serial != null)
+                        for (int i = 0; i < model.MaxNumberOfNavigationInstructions() && i < model.maxLineNumberReceived; i++)
                         {
-                            Console.WriteLine("Sync " + i);
-                            NavigationInstruction ni = new NavigationInstruction(model.GetNavigationInstructionLocal(i));
-                            ni.line++;
-                            if (serial != null && serial.IsOpen)
+                            if (!model.IsNavigationSynchronized(i))
                             {
-                                lock (serial)
+                                if (serial != null)
                                 {
-                                    serial.SendNavigationInstruction(ni);
+                                    Console.WriteLine("Sync " + i);
+                                    NavigationInstruction ni = new NavigationInstruction(model.GetNavigationInstructionLocal(i));
+                                    ni.line++;
+                                    if (serial != null && serial.IsOpen)
+                                    {
+                                        lock (serial)
+                                        {
+                                            serial.SendNavigationInstruction(ni);
+                                        }
+                                    }
+                                    Thread.Sleep(170);
                                 }
                             }
-                            Thread.Sleep(170);
                         }
+                        Thread.Sleep(350);
+                        //Console.WriteLine("Waiting for NI...");
                     }
                 }
                 Thread.Sleep(350);
-                //Console.WriteLine("Waiting for NI...");
             }
             return null;
         }

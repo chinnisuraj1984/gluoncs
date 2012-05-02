@@ -80,24 +80,32 @@ namespace Kml
                    "</gx:angles>\r\n");
            }
 
-           // generate <satellites>
            StringBuilder sb_sat = new StringBuilder();
-           for (int i = 0; i < s.Tables[0].Rows.Count; i += stepsize)
-           {
-               sb_sat.Append(
-                   "<gx:value>" +
-                    s.Tables[0].Rows[i].ItemArray[columns["SatellitesGPS"]].ToString() +
-                   "</gx:value>\r\n");
-           }
-
-           // generate <temp>
            StringBuilder sb_temp = new StringBuilder();
-           for (int i = 0; i < s.Tables[0].Rows.Count; i += stepsize)
+           try
            {
-               sb_temp.Append(
-                   "<gx:value>" +
-                    s.Tables[0].Rows[i].ItemArray[columns["TempC"]].ToString() +
-                   "</gx:value>\r\n");
+               // generate <satellites>
+
+               for (int i = 0; i < s.Tables[0].Rows.Count; i += stepsize)
+               {
+                   sb_sat.Append(
+                       "<gx:value>" +
+                        s.Tables[0].Rows[i].ItemArray[columns["SatellitesGPS"]].ToString() +
+                       "</gx:value>\r\n");
+               }
+
+               // generate <temp>
+
+               for (int i = 0; i < s.Tables[0].Rows.Count; i += stepsize)
+               {
+                   sb_temp.Append(
+                       "<gx:value>" +
+                        s.Tables[0].Rows[i].ItemArray[columns["TempC"]].ToString() +
+                       "</gx:value>\r\n");
+               }
+           }
+           catch (Exception ex)
+           {
            }
 
            // generate <speed>

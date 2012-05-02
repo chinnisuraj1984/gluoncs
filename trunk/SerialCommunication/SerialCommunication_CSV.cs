@@ -29,8 +29,8 @@ namespace Communication
             {
                 try
                 {
-                    filename = value;
-                    logfile = new System.IO.StreamWriter(filename);
+                        filename = value;
+                        logfile = new System.IO.StreamWriter(filename);
                 }
                 catch (Exception e)
                 {
@@ -167,6 +167,7 @@ namespace Communication
                 try
                 {
                     _serialPort.Close();
+                    _serialPort = new SerialPort();
                 }
                 catch (Exception ex)
                 {
@@ -174,6 +175,7 @@ namespace Communication
             }
             if (logfile != null)
                 logfile.Close();
+            logfile = null;
         }
 
         /*!
@@ -382,6 +384,10 @@ namespace Communication
                         {
                             ac.manual_trim = int.Parse(lines[78]) == 0 ? false : true;
                             Console.WriteLine("receive: " + lines[78]);
+                        }
+                        if (lines.Length > 79)
+                        {
+                            ac.control_altitude_mode = int.Parse(lines[79]);
                         }
                         else
                             Console.WriteLine("FOUT");
@@ -678,7 +684,7 @@ namespace Communication
                 (auto_throttle_enabled ? "1" : "0"));*/
         }
 
-        public override void SendControlSettings(int mixing, double max_pitch, double min_pitch, double max_roll, int aileron_differential, double waypoint_radius, double cruising_speed, bool stabilization_with_altitude_hold)
+        public override void SendControlSettings(int mixing, double max_pitch, double min_pitch, double max_roll, int aileron_differential, double waypoint_radius, double cruising_speed, bool stabilization_with_altitude_hold, int altitude_mode)
         {
             WriteChecksumLine("SC;" +
                 mixing.ToString() + ";" +
@@ -688,7 +694,8 @@ namespace Communication
                 waypoint_radius.ToString(CultureInfo.InvariantCulture) + ";" +
                 cruising_speed.ToString(CultureInfo.InvariantCulture) + ";" +
                 (stabilization_with_altitude_hold == false ? 0 : 1).ToString() + ";"+
-                min_pitch.ToString(CultureInfo.InvariantCulture));
+                min_pitch.ToString(CultureInfo.InvariantCulture) + ";" +
+                altitude_mode.ToString());
 
 
             /*Console.WriteLine("\nSC;" +
@@ -813,7 +820,8 @@ namespace Communication
                                 ac.control_aileron_differential,
                                 ac.control_waypoint_radius,
                                 ac.control_cruising_speed,
-                                ac.control_stabilization_with_altitude_hold);
+                                ac.control_stabilization_with_altitude_hold,
+                                ac.control_altitude_mode);
 
             Thread.Sleep(200);
 
@@ -958,14 +966,24 @@ namespace Communication
             if (chk < 16)
             {
                 if (_serialPort.BytesToWrite > 0)
-                    Thread.Sleep(200); ;
+                    Thread.Sleep(200);
+                if (_serialPort.BytesToWrite > 0)
+                    Thread.Sleep(200);
+                if (_serialPort.BytesToWrite > 0)
+                    Thread.Sleep(200);
+                if (_serialPort.BytesToWrite > 0)
+                    Thread.Sleep(200);
                 _serialPort.WriteLine("\n$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
+                if (logfile != null)
+                    logfile.WriteLine("-> \r\n$" + s + "*0" + Convert.ToString(chk, 16) + "\r\n");
                 //Console.WriteLine("\n$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
             }
             else
             {
+                Console.WriteLine("\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
                 _serialPort.WriteLine("\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
-                //Console.WriteLine("\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
+                if (logfile != null)
+                    logfile.WriteLine("-> \r\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
             }
         }
     }
