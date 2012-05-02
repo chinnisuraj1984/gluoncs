@@ -81,6 +81,7 @@
             this._btnSurveySettings = new System.Windows.Forms.ToolStripMenuItem();
             this._btnNewSurvey = new System.Windows.Forms.ToolStripMenuItem();
             this._btnBuildSurvey = new System.Windows.Forms.ToolStripMenuItem();
+            this.emptyScriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this._nav_open = new System.Windows.Forms.ToolStripMenuItem();
@@ -597,6 +598,7 @@
             // 
             this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addBlockToolStripMenuItem,
+            this.emptyScriptToolStripMenuItem,
             this.generateSurveyToolStripMenuItem});
             resources.ApplyResources(this.toolStripSplitButton1, "toolStripSplitButton1");
             this.toolStripSplitButton1.Name = "toolStripSplitButton1";
@@ -610,9 +612,9 @@
             // generateSurveyToolStripMenuItem
             // 
             this.generateSurveyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._btnSurveySettings,
             this._btnNewSurvey,
-            this._btnBuildSurvey});
+            this._btnBuildSurvey,
+            this._btnSurveySettings});
             resources.ApplyResources(this.generateSurveyToolStripMenuItem, "generateSurveyToolStripMenuItem");
             this.generateSurveyToolStripMenuItem.Name = "generateSurveyToolStripMenuItem";
             // 
@@ -633,6 +635,12 @@
             resources.ApplyResources(this._btnBuildSurvey, "_btnBuildSurvey");
             this._btnBuildSurvey.Name = "_btnBuildSurvey";
             this._btnBuildSurvey.Click += new System.EventHandler(this._btnBuildSurvey_Click);
+            // 
+            // emptyScriptToolStripMenuItem
+            // 
+            resources.ApplyResources(this.emptyScriptToolStripMenuItem, "emptyScriptToolStripMenuItem");
+            this.emptyScriptToolStripMenuItem.Name = "emptyScriptToolStripMenuItem";
+            this.emptyScriptToolStripMenuItem.Click += new System.EventHandler(this.emptyScriptToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -854,5 +862,6 @@
         private System.Windows.Forms.ToolStripMenuItem _btnNewSurvey;
         private System.Windows.Forms.ToolStripMenuItem _btnBuildSurvey;
         private System.Windows.Forms.ToolStripMenuItem _btnSurveySettings;
+        private System.Windows.Forms.ToolStripMenuItem emptyScriptToolStripMenuItem;
     }
 }

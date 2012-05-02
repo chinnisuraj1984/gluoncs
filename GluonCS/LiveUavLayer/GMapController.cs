@@ -305,6 +305,38 @@ namespace GluonCS.LiveUavLayer
             //Overlay.Markers.Add(um);
         }
 
+
+        private PointLatLng prevprevPoint(int i)
+        {
+            if (i < 2)
+                return new PointLatLng();
+
+            NavigationInstruction next = model.GetNavigationInstructionLocal(i - 2);
+            if (next.HasAbsoluteCoordinates())
+                return new PointLatLng(next.x / Math.PI * 180.0, next.y / Math.PI * 180.0);
+            else if (next.HasRelativeCoordinates())
+                return new PointLatLng(home.Position.Lat + next.x / LatLng.LatitudeMeterPerDegree,
+                                       home.Position.Lng + next.y / LatLng.LongitudeMeterPerDegree(gmap.Position.Lat));
+            else
+                return new PointLatLng();
+        }
+
+
+        private PointLatLng nextPoint(int i)
+        {
+            //if (i >= model.)
+            //    return new PointLatLng();
+
+            NavigationInstruction next = model.GetNavigationInstructionLocal(i + 1);
+            if (next.HasAbsoluteCoordinates())
+                return new PointLatLng(next.x / Math.PI * 180.0, next.y / Math.PI * 180.0);
+            else if (next.HasRelativeCoordinates())
+                return new PointLatLng(home.Position.Lat + next.x / LatLng.LatitudeMeterPerDegree,
+                                       home.Position.Lng + next.y / LatLng.LongitudeMeterPerDegree(gmap.Position.Lat));
+            else
+                return new PointLatLng();
+        }
+
         // remove routes and markers for navigation and recreate them
         // according to the model
         void model_NavigationLocalListChanged(object sender, EventArgs e)
@@ -370,9 +402,63 @@ namespace GluonCS.LiveUavLayer
                         }
                     }
 
+                    // circle to
+                    if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_TO_ABS)
+                    {
+                        if (NavigationOverlay.Markers.Count >= 2)
+                        {
+                            l.RemoveAt(l.Count - 1);  // remove previously added point; to be replaced with a circle segment!
+                            GMapMarker thisone = NavigationOverlay.Markers[NavigationOverlay.Markers.Count - 1];
+                            GMapMarker previous = NavigationOverlay.Markers[NavigationOverlay.Markers.Count - 2];
+                            double angle = Math.Atan2(-(thisone.Position.Lat - previous.Position.Lat) * LatLng.LatitudeMeterPerDegree,
+                                                      (thisone.Position.Lng - previous.Position.Lng) * LatLng.LongitudeMeterPerDegree(gmap.Position.Lat)) + Math.PI / 2.0;
+                            PointLatLng center = new PointLatLng((thisone.Position.Lat + previous.Position.Lat) / 2.0, (thisone.Position.Lng + previous.Position.Lng) / 2.0);
+                            
+                            PointLatLng prev_or_next = nextPoint(i);
+                            if (prev_or_next.Lat == 0) // there is no next point, use previous
+                                prev_or_next = prevprevPoint(i);
+
+                            double angle2 = Math.Atan2(-(previous.Position.Lat - prev_or_next.Lat) * LatLng.LatitudeMeterPerDegree,
+                                                      (previous.Position.Lng - prev_or_next.Lng) * LatLng.LongitudeMeterPerDegree(gmap.Position.Lat)) +  Math.PI / 2.0;
+                            double diffheading = angle - angle2;
+                            if (diffheading > Math.PI)
+                                diffheading -= 2*Math.PI;
+                            if (diffheading < -Math.PI)
+                                diffheading += 2*Math.PI;
+
+                            double radius = Math.Sqrt(Math.Pow((thisone.Position.Lat - previous.Position.Lat) * LatLng.LatitudeMeterPerDegree, 2) +
+                                            Math.Pow((thisone.Position.Lng - previous.Position.Lng) * LatLng.LongitudeMeterPerDegree(gmap.Position.Lat), 2)) / 2.0;
+
+                            List<PointLatLng> circleto = new List<PointLatLng>();
+                            if (diffheading > 0)
+                            {
+                                for (double a = angle; a < angle + Math.PI + (Math.PI * 2.0 / 20.0); a += Math.PI * 2.0 / 20.0)
+                                {
+                                    double clon = center.Lng + Math.Sin(a - Math.PI) * radius / LatLng.LongitudeMeterPerDegree(gmap.Position.Lat);
+                                    double clat = center.Lat + Math.Cos(a - Math.PI) * radius / LatLng.LatitudeMeterPerDegree;
+                                    circleto.Add(new PointLatLng(clat, clon));
+                                }
+                            }
+                            else
+                            {
+                                for (double a = angle; a > angle - Math.PI - (Math.PI * 2.0 / 20.0); a -= Math.PI * 2.0 / 20.0)
+                                {
+                                    double clon = center.Lng + Math.Sin(a - Math.PI) * radius / LatLng.LongitudeMeterPerDegree(gmap.Position.Lat);
+                                    double clat = center.Lat + Math.Cos(a - Math.PI) * radius / LatLng.LatitudeMeterPerDegree;
+                                    circleto.Add(new PointLatLng(clat, clon));
+                                }
+                            }
+                            //circleto.Reverse();
+                            GMapRoute cr = new GMapRoute(circleto, "circleto");
+                            cr.Stroke.Color = Color.FromArgb(100, Color.Red);
+                            NavigationOverlay.Routes.Add(cr);
+                            l.AddRange(circleto);
+                        }
+                    }
+
                     // draw circle path
-                    if (ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.CIRCLE_ABS ||
-                        ni.opcode == Communication.Frames.Incoming.NavigationInstruction.navigation_command.CIRCLE_REL)
+                    if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_ABS ||
+                        ni.opcode == NavigationInstruction.navigation_command.CIRCLE_REL)
                     {
                         List<PointLatLng> c = new List<PointLatLng>();
                         for (double j = 0.0; j <= Math.PI * 2.00001; j += Math.PI * 2.0 / 30.0)
@@ -386,6 +472,7 @@ namespace GluonCS.LiveUavLayer
                         cr.Stroke.Color = Color.FromArgb(150, Color.Red);
                         l.Add(mm.Position);
                     }
+
 
                     // determine current dragged marker
                     NavigationMarker current_dragging_marker = current_marker as NavigationMarker;
@@ -423,7 +510,7 @@ namespace GluonCS.LiveUavLayer
                 //gp.Fill = new SolidBrush(Color.Blue);
                 NavigationOverlay.Polygons.Add(gp);
 
-                List<PointLatLng> points = Survey.GenerateSurvey(l);
+                List<PointLatLng> points = Survey.GenerateSurvey(l, Properties.Settings.Default.SurveyAngleDeg, Properties.Settings.Default.SurveyDistanceM);
                 foreach (PointLatLng pll in points)
                 {
                     //NavigationOverlay.Markers.Add(new AbsoluteMarker(pll, 0));

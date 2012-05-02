@@ -39,7 +39,7 @@ namespace GluonCS.LiveUavLayer
             return c;
         }
 
-        public static List<PointLatLng> GenerateSurvey(List<PointLatLng> poly)
+        public static List<PointLatLng> GenerateSurvey(List<PointLatLng> poly, double survey_angle_deg, double survey_distance_m)
         {
             if (poly.Count < 3)
                 return new List<PointLatLng>();
@@ -54,7 +54,7 @@ namespace GluonCS.LiveUavLayer
                 poly[i] = new PointLatLng(rel.Lat, rel.Lng);
             }
 
-            poly = RotateList(poly, Properties.Settings.Default.SurveyAngleDeg / 180.0 * Math.PI);
+            poly = RotateList(poly, survey_angle_deg / 180.0 * Math.PI);
             double maxLat = double.NegativeInfinity;
             double maxLng = double.NegativeInfinity;
             double minLng = double.PositiveInfinity;
@@ -62,8 +62,8 @@ namespace GluonCS.LiveUavLayer
             List<PointLatLng> route = new List<PointLatLng>();
 
 
-            double dst_lat = Properties.Settings.Default.SurveyDistanceM;// / LatLng.LatitudeMeterPerDegree;
-            double dst_lng = Properties.Settings.Default.SurveyDistanceM;// / LatLng.LongitudeMeterPerDegree(poly[0].Lat);
+            double dst_lat = survey_distance_m;// / LatLng.LatitudeMeterPerDegree;
+            double dst_lng = survey_distance_m;// / LatLng.LongitudeMeterPerDegree(poly[0].Lat);
             // calculate boundingbox
             foreach (PointLatLng ll in poly)
             {
@@ -113,14 +113,7 @@ namespace GluonCS.LiveUavLayer
                 //route.Add(new PointLatLng(lat, lng));
 
                 // turn right
-                lat -= dst_lat / 2;
-                /*for (double j = Math.PI / 2.0; j >= -Math.PI / 2.0; j -= Math.PI * 2.0 / 30.0)
-                {
-                    double clon = lng + Math.Cos(j) * dst_lng / 2.0;
-                    double clat = lat + Math.Sin(j) * dst_lat / 2.0;
-                    route.Add(new PointLatLng(clat, clon));
-                }*/
-                lat -= dst_lat / 2;
+                lat -= dst_lat;
 
                 //route.Add(new PointLatLng(lat, lng));
                 lng = maxLng;
@@ -156,17 +149,11 @@ namespace GluonCS.LiveUavLayer
                     break;
                 else
                 {
-                    lat -= dst_lat / 2;
-                    /*for (double j = Math.PI / 2.0; j <= 3.0*Math.PI/2.0; j += Math.PI * 2.0 / 30.0)
-                    {
-                        double clon = lng + Math.Cos(j) * dst_lng / 2.0;
-                        double clat = lat + Math.Sin(j) * dst_lat / 2.0;
-                        route.Add(new PointLatLng(clat, clon));
-                    }*/
-                    lat -= dst_lat / 2;
+                    lat -= dst_lat;
                 }
             }
-            route = RotateList(route, -Properties.Settings.Default.SurveyAngleDeg / 180.0 * Math.PI);
+
+            route = RotateList(route, -survey_angle_deg / 180.0 * Math.PI);
             // to relative
             for (int i = 0; i < route.Count; i++)
             {

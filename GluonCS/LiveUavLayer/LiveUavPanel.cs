@@ -243,7 +243,7 @@ namespace GluonCS
 
                 //_pbBattery.Value = (int)(model.BatteryVoltage * 10.0);
                 _pbBattery.Text = model.BatteryVoltage.ToString() + " V";
-                if (model.SecondsConnectionLost() > 0.3)
+                if (model.SecondsConnectionLost() > 0.7)
                 {
                     _pbLink.Text = model.SecondsConnectionLost().ToString("F0") + " " + resources.GetString("s lost");
                     _pbLink.Value = (int)Math.Max(0.0, Math.Min(100.0, 110.0 - model.SecondsConnectionLost() * 20.0));  // 5 seconds without connection = 0%
@@ -433,132 +433,137 @@ namespace GluonCS
 
         private void RedrawNavigationtable()   // from GUI thread
         {
-            Console.WriteLine("Redraw list");
-            ListViewItem lvi;
-            ListViewGroup lvg = new ListViewGroup("EMPTY");
-            string lvg_name = "";
-            int topitem = 0;
-            for (int i = 0; i < _lv_navigation.Items.Count; i++)
-            {
-                //if (_lv_navigation.ClientRectangle.Contains(_lv_navigation.Items[i].Bounds))
-                if (_lv_navigation.Items[i].Bounds.Top >= 15)
+
+                Console.WriteLine("Redraw list: " + model.NavigationModel.Commands.Count);
+                ListViewItem lvi;
+                ListViewGroup lvg = new ListViewGroup("EMPTY");
+                string lvg_name = "";
+                int topitem = 0;
+                for (int i = 0; i < _lv_navigation.Items.Count; i++)
                 {
-                    topitem = i;
-                    break;
+                    //if (_lv_navigation.ClientRectangle.Contains(_lv_navigation.Items[i].Bounds))
+                    if (_lv_navigation.Items[i].Bounds.Top >= 15)
+                    {
+                        topitem = i;
+                        break;
+                    }
                 }
-            }
 
-            _lv_navigation.Groups.Clear();
-            lock (model.NavigationModel.Commands)
-            {
-                for (int i = 0; i < model.MaxNumberOfNavigationInstructions(); i++)
+                _lv_navigation.Groups.Clear();
+                lock (model.NavigationModel.Commands)
                 {
-                    // Create groups(blocks)
-                    if (lvg_name != model.NavigationModel.Commands[i].BlockName)
+                    for (int i = 0; i < model.MaxNumberOfNavigationInstructions(); i++)
                     {
-                        lvg_name = model.NavigationModel.Commands[i].BlockName;
-                        lvg = new ListViewGroup(lvg_name);
-                        _lv_navigation.Groups.Add(lvg);
-                        //Console.WriteLine("Added group " + lvg_name + "(" + model.NavigationModel.Commands[i].BlockName + ")");
-                    }
-
-                    // Add items to list if there are not enough
-                    while (_lv_navigation.Items.Count <= i)
-                        _lv_navigation.Items.Add("" + (i)).SubItems.Add("");
-
-                    if (model.GetNavigationInstructionLocal(i) != model.GetNavigationInstructionRemote(i))
-                        _lv_navigation.Items[i].SubItems[1].Text = "* ";
-                    else
-                        _lv_navigation.Items[i].SubItems[1].Text = "";
-
-                    lvi = _lv_navigation.Items[i];
-
-                    if (i > 0)   // add indent
-                    {
-                        NavigationInstruction ni = model.GetNavigationInstructionRemote(i - 1);
-                        if (ni.opcode == NavigationInstruction.navigation_command.IF_EQ ||
-                            ni.opcode == NavigationInstruction.navigation_command.IF_GR ||
-                            ni.opcode == NavigationInstruction.navigation_command.IF_NE ||
-                            ni.opcode == NavigationInstruction.navigation_command.IF_SM)
-                            lvi.SubItems[1].Text += "   ";
-                    }
-                    if (i+1 < model.MaxNumberOfNavigationInstructions())   // add indent
-                    {
-                        NavigationInstruction ni = model.GetNavigationInstructionRemote(i + 1);
-                        if (ni.opcode == NavigationInstruction.navigation_command.UNTIL_EQ ||
-                            ni.opcode == NavigationInstruction.navigation_command.UNTIL_GR ||
-                            ni.opcode == NavigationInstruction.navigation_command.UNTIL_NE ||
-                            ni.opcode == NavigationInstruction.navigation_command.UNTIL_SM)
-                            lvi.SubItems[1].Text += "   ";
-                    }
-
-                    lvi.SubItems[1].Text +=
-                        model.GetNavigationInstructionLocal(i).ToString();
-
-                    lvi.Group = lvg;
-                }
-            }
-
-            _lv_navigation.TopItem = _lv_navigation.Items[topitem];
-            //_lv_navigation.EnsureVisible(topitem);
-            _lv_navigation.Items[topitem].EnsureVisible();
-            Console.WriteLine("Ensure visible " + topitem);
-
-            _panelStrip.Controls.Clear();
-            int totalwidth = 0;
-            List<string> takenHotkeys = new List<string> { "i", "o", "c" };
-            lock (model.NavigationModel.Commands)  // see navigationmodel
-            {
-                foreach (KeyValuePair<string, int> block in model.NavigationModel.Blocks)
-                {
-                    if (block.Key != "")
-                    {
-                        Button b = new Button();
-
-                        // add hotkey to this block (fired from main form)
-                        if (block.Key != "" && !takenHotkeys.Contains(block.Key.Substring(0, 1)))
+                        // Create groups(blocks)
+                        if (i < model.NavigationModel.Commands.Count && lvg_name != model.NavigationModel.Commands[i].BlockName)
                         {
-                            b.Text = "&" + block.Key;
-                            takenHotkeys.Add(block.Key.Substring(0, 1));
+                            lvg_name = model.NavigationModel.Commands[i].BlockName;
+                            lvg = new ListViewGroup(lvg_name);
+                            _lv_navigation.Groups.Add(lvg);
+                            //Console.WriteLine("Added group " + lvg_name + "(" + model.NavigationModel.Commands[i].BlockName + ")");
                         }
-                        else
-                            b.Text = block.Key;
-                        b.Tag = block.Key;
-                        b.Click += new EventHandler(CommandButton_Click);
 
-                        // Add image to button
-                        //if (File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "\\Resources\\" + block.Key + ".png"))
-                        //{
-                        //    b.ImageAlign = ContentAlignment.MiddleLeft;
-                        //    b.TextAlign = ContentAlignment.MiddleCenter;
-                        //    b.Image = Image.FromFile(Path.GetDirectoryName(Application.ExecutablePath) + "\\Resources\\" + block.Key + ".png");
-                        //    b.Text = "    " + b.Text;
-                        //}
-                        b.Height = 25;
-                        totalwidth += b.Width;
-                        _panelStrip.Controls.Add(b);
+                        // Add items to list if there are not enough
+                        while (_lv_navigation.Items.Count <= i)
+                            _lv_navigation.Items.Add("" + (i)).SubItems.Add("");
+
+                        if (model.GetNavigationInstructionLocal(i) != model.GetNavigationInstructionRemote(i))
+                            _lv_navigation.Items[i].SubItems[1].Text = "* ";
+                        else
+                            _lv_navigation.Items[i].SubItems[1].Text = "";
+
+                        lvi = _lv_navigation.Items[i];
+
+                        if (i > 0)   // add indent
+                        {
+                            NavigationInstruction ni = model.GetNavigationInstructionRemote(i - 1);
+                            if (ni.opcode == NavigationInstruction.navigation_command.IF_EQ ||
+                                ni.opcode == NavigationInstruction.navigation_command.IF_GR ||
+                                ni.opcode == NavigationInstruction.navigation_command.IF_NE ||
+                                ni.opcode == NavigationInstruction.navigation_command.IF_SM)
+                                lvi.SubItems[1].Text += "   ";
+                        }
+                        if (i+1 < model.MaxNumberOfNavigationInstructions())   // add indent
+                        {
+                            NavigationInstruction ni = model.GetNavigationInstructionRemote(i + 1);
+                            if (ni.opcode == NavigationInstruction.navigation_command.UNTIL_EQ ||
+                                ni.opcode == NavigationInstruction.navigation_command.UNTIL_GR ||
+                                ni.opcode == NavigationInstruction.navigation_command.UNTIL_NE ||
+                                ni.opcode == NavigationInstruction.navigation_command.UNTIL_SM)
+                                lvi.SubItems[1].Text += "   ";
+                        }
+
+                        lvi.SubItems[1].Text +=
+                            model.GetNavigationInstructionLocal(i).ToString();
+
+                        lvi.Group = lvg;
                     }
                 }
-            }
-            if (_panelStrip.Controls.Count == 0)
-            {
-                System.Windows.Forms.Label l = new System.Windows.Forms.Label();
-                l.Dock = System.Windows.Forms.DockStyle.Top;
-                l.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                l.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-                l.Location = new System.Drawing.Point(3, 0);
-                l.Name = "label2";
-                l.Size = new System.Drawing.Size(333, 35);
-                l.TabIndex = 0;
-                l.Text = "Block commands created in the Navigation list will be automatically \r\nadded as bu" +
-                    "ttons to this strip.";
-                l.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
-                _panelStrip.Controls.Add(l);
-                _panelStrip.Height = l.Height;
-            } 
-            else
-                _panelStrip.Height = (int)(Math.Ceiling((double)totalwidth / _panelStrip.Width)) * 33;
+                if (!_lv_navigation.IsDisposed)
+                {
+                    _lv_navigation.TopItem = _lv_navigation.Items[topitem];
+                    //_lv_navigation.EnsureVisible(topitem);
+                    _lv_navigation.Items[topitem].EnsureVisible();
+                    Console.WriteLine("Ensure visible " + topitem);
+                }
+
+                _panelStrip.Controls.Clear();
+                int totalwidth = 0;
+                List<string> takenHotkeys = new List<string> { "i", "o", "c" };
+                lock (model.NavigationModel.Commands)  // see navigationmodel
+                {
+                    foreach (KeyValuePair<string, int> block in model.NavigationModel.Blocks)
+                    {
+                        if (block.Key != "")
+                        {
+                            Button b = new Button();
+
+                            // add hotkey to this block (fired from main form)
+                            if (block.Key != "" && !takenHotkeys.Contains(block.Key.Substring(0, 1)))
+                            {
+                                b.Text = "&" + block.Key;
+                                takenHotkeys.Add(block.Key.Substring(0, 1));
+                            }
+                            else
+                                b.Text = block.Key;
+                            b.Tag = block.Key;
+                            b.Click += new EventHandler(CommandButton_Click);
+
+                            // Add image to button
+                            //if (File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "\\Resources\\" + block.Key + ".png"))
+                            //{
+                            //    b.ImageAlign = ContentAlignment.MiddleLeft;
+                            //    b.TextAlign = ContentAlignment.MiddleCenter;
+                            //    b.Image = Image.FromFile(Path.GetDirectoryName(Application.ExecutablePath) + "\\Resources\\" + block.Key + ".png");
+                            //    b.Text = "    " + b.Text;
+                            //}
+                            b.Height = 25;
+                            totalwidth += b.Width;
+                            _panelStrip.Controls.Add(b);
+                        }
+                    }
+                }
+                if (_panelStrip.Controls.Count == 0)
+                {
+                    System.Windows.Forms.Label l = new System.Windows.Forms.Label();
+                    l.Dock = System.Windows.Forms.DockStyle.Top;
+                    l.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    l.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+                    l.Location = new System.Drawing.Point(3, 0);
+                    l.Name = "label2";
+                    l.Size = new System.Drawing.Size(333, 35);
+                    l.TabIndex = 0;
+                    l.Text = "Block commands created in the Navigation list will be automatically \r\nadded as bu" +
+                        "ttons to this strip.";
+                    l.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
+                    _panelStrip.Controls.Add(l);
+                    _panelStrip.Height = l.Height;
+                } 
+                else
+                    _panelStrip.Height = (int)(Math.Ceiling((double)totalwidth / _panelStrip.Width)) * 33;
+
         }
 
         void CommandButton_Click(object sender, EventArgs e)
@@ -705,12 +710,14 @@ namespace GluonCS
 
         private void _btnNaviWrite_Click(object sender, EventArgs e)
         {
-            bool ret = model.WriteLocalNavigation();
+            /*bool ret = model.WriteLocalNavigation();
 
             if (ret == false)
             {
                 MessageBox.Show(this, resources.GetString("There_was_an_error_when_writing_the_navigation"), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
+            WriteNavigationCommandsWindow w = new WriteNavigationCommandsWindow(model);
+            w.ShowDialog(this);
         }
 
         private void _btnConfig_Click(object sender, EventArgs e)
@@ -725,7 +732,9 @@ namespace GluonCS
                 if (model.Serial != null && model.Serial.IsOpen)
                 {
                     if (MessageBox.Show(resources.GetString("Are_you_sure_you_want_to_close_the_connection"), resources.GetString("Are_you_sure"), MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
+                    {
                         model.Serial.Close();
+                    }
                 }
                 else
                     MessageBox.Show(resources.GetString("Please_first_connect_to_the_gluonpilot"), resources.GetString("Configuration_not_possible"), MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -868,14 +877,14 @@ namespace GluonCS
             int line;
             if (model.NavigationModel.Blocks.ContainsKey("Survey"))
             {
-                if (MessageBox.Show(resources.GetString("There_already_is_a_Survey_block_It_will_be_cleared"), resources.GetString("New_survey_block"), MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show(resources.GetString("There_already_is_a_Survey_block_It_will_be_cleared"), resources.GetString("New_survey_block"), MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     line = model.NavigationModel.Blocks["Survey"];
                 else
                     return;
             }
             else if (model.NavigationModel.Blocks.ContainsKey("DoSurvey"))
             {
-                if (MessageBox.Show(resources.GetString("There_already_is_a_Survey_block_It_will_be_cleared"), resources.GetString("New_survey_block"), MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show(resources.GetString("There_already_is_a_Survey_block_It_will_be_cleared"), resources.GetString("New_survey_block"), MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     line = model.NavigationModel.Blocks["DoSurvey"];
                 else
                     return;
@@ -904,7 +913,7 @@ namespace GluonCS
         {
             int selected_index = _lv_navigation.SelectedIndices.Count == 0 ? 0 : _lv_navigation.SelectedIndices[0];
 
-            DialogResult r = MessageBox.Show(resources.GetString("Do_you_want_me_to_insert_the_block_at_the_first_empty_line"), resources.GetString("Add_new_block"), MessageBoxButtons.YesNoCancel);
+            DialogResult r = MessageBox.Show(resources.GetString("Do_you_want_me_to_insert_the_block_at_the_first_empty_line"), resources.GetString("Add_new_block"), MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (r == DialogResult.Yes)
             {
                 for (int i = 0; i < _lv_navigation.Items.Count; i++)
@@ -912,11 +921,11 @@ namespace GluonCS
                     if (model.GetNavigationInstructionLocal(i).opcode == NavigationInstruction.navigation_command.EMPTY)
                         return i;
                 }
-                MessageBox.Show(resources.GetString("Sorry_no_empty_position_detected"), resources.GetString("Add_new_block"));
+                MessageBox.Show(this, resources.GetString("Sorry_no_empty_position_detected"), resources.GetString("Add_new_block"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (r == DialogResult.No)
             {
-                if (MessageBox.Show(resources.GetString("Inserting the new block at the selected position") + " " + (selected_index + 1).ToString() + "", resources.GetString("Add_new_block"), MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show(this, resources.GetString("Inserting the new block at the selected position") + " " + (selected_index + 1).ToString() + "", resources.GetString("Add_new_block"), MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                 {
                     return selected_index;
                 }
@@ -1037,6 +1046,15 @@ namespace GluonCS
             First = 0x1000,
             SetExtendedStyle = (First + 54),
             GetExtendedStyle = (First + 55),
+        }
+
+        private void emptyScriptToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(this, resources.GetString("This will delete all local waypoints & script commands"), resources.GetString("Are you sure?"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                for (int i=0; i < model.MaxNumberOfNavigationInstructions(); i++)
+                    model.UpdateLocalNavigationInstruction(new NavigationInstruction(i, NavigationInstruction.navigation_command.EMPTY, 0, 0, 0, 0));
+            }
         }
     }
 }

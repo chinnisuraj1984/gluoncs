@@ -88,6 +88,7 @@ namespace GluonCS.LiveUavLayer
                                 friendlyName = friendlyPortName.ToString();
                             if (friendlyName.Contains(portName.ToString()) == false)
                                 friendlyName = string.Format("{0} ({1})", friendlyName, portName);
+
                             targetMap[portName.ToString()] = friendlyName;
                         }
                         else
@@ -110,7 +111,17 @@ namespace GluonCS.LiveUavLayer
             if (_rbViaComPort.Checked)
             {
                 if (comPortNames.ContainsValue(_cb_portnames.Text))
-                    SerialPort.PortName = SerialPort.GetPortNames()[_cb_portnames.SelectedIndex].ToString();
+                {
+                    foreach (string port in comPortNames.Keys)
+                    {
+                        if (comPortNames[port] == _cb_portnames.Text)
+                        {
+                            SerialPort.PortName = port;
+                            MessageBox.Show("Connecting to port \"" + port + "\" with description \"" + comPortNames[port] + "\"");
+                        }
+                    }
+                    //SerialPort.PortName = SerialPort.GetPortNames()[_cb_portnames.SelectedIndex].ToString();
+                }
                 else
                 {
                     MessageBox.Show("Error connecting: invalid COM port", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);

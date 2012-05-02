@@ -247,7 +247,7 @@ namespace GluonCS
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error connecting", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                        MessageBox.Show("Error connecting\r\n" + ex.ToString() + "\r\n" + ex.InnerException, "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
                     }
                 }
                 else if (r == System.Windows.Forms.DialogResult.Cancel)

@@ -248,7 +248,7 @@ namespace Gluonpilot
                 mixing = 4;
             }
             if (config != null)
-                serial.SendControlSettings(mixing, config.control_max_pitch, config.control_min_pitch, config.control_max_roll, config.control_aileron_differential, config.control_waypoint_radius, config.control_cruising_speed, config.control_stabilization_with_altitude_hold);
+                serial.SendControlSettings(mixing, config.control_max_pitch, config.control_min_pitch, config.control_max_roll, config.control_aileron_differential, config.control_waypoint_radius, config.control_cruising_speed, config.control_stabilization_with_altitude_hold, config.control_altitude_mode);
             else
                 MessageBox.Show("No configuration has been received from the gluonpilot module, please retry", "Error");
         }

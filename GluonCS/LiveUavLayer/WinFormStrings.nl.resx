@@ -204,4 +204,10 @@ RC mode</value>
   <data name="Time_to_WP" xml:space="preserve">
     <value>Tijd tot WP</value>
   </data>
+  <data name="Are you sure?" xml:space="preserve">
+    <value>Bent u zeker?</value>
+  </data>
+  <data name="This will delete all local waypoints &amp; script commands." xml:space="preserve">
+    <value>Dit zal alle waypoints en commandos verwijderen.</value>
+  </data>
 </root>
