@@ -14,7 +14,7 @@ namespace GluonCS.Markers
     {
         public Pen Pen;
 
-        public GMapMarkerGoogleGreen InnerMarker;
+        //public GMapMarkerGoogleGreen InnerMarker;
 
         public GluonHomeMarker(PointLatLng p)
             : base(p)

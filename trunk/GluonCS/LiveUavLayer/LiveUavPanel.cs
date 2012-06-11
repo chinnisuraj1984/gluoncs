@@ -682,7 +682,9 @@ namespace GluonCS
 
         private void _btnNaviRead_Click(object sender, EventArgs e)
         {
-            model.ReadNavigation();
+            //model.ReadNavigation();
+            ReadNavigationCommandsWindow rnw = new ReadNavigationCommandsWindow(model);
+            rnw.ShowDialog();
         }
 
         private void _btnNaviBurn_Click(object sender, EventArgs e)
@@ -718,6 +720,9 @@ namespace GluonCS
             }*/
             WriteNavigationCommandsWindow w = new WriteNavigationCommandsWindow(model);
             w.ShowDialog(this);
+
+            if (MessageBox.Show("Would you like to burn the changes to the flash memory of the module?\n\nThis will make sure the data is still available after a reboot.", "Save changes?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+                _btnNaviBurn_Click(this, EventArgs.Empty);
         }
 
         private void _btnConfig_Click(object sender, EventArgs e)
@@ -940,7 +945,17 @@ namespace GluonCS
                 model.GenerateSurveyLines();
         }
 
+        private void emptyScriptToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(this, resources.GetString("This will delete all local waypoints & script commands"), resources.GetString("Are you sure?"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                for (int i=0; i < model.MaxNumberOfNavigationInstructions(); i++)
+                    model.UpdateLocalNavigationInstruction(new NavigationInstruction(i, NavigationInstruction.navigation_command.EMPTY, 0, 0, 0, 0));
+            }
 
+            if (MessageBox.Show("Would you like to save the changes to the module?", "Save changes?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+                _btnNaviWrite_Click(this, EventArgs.Empty);
+        }
 
         private void _lv_navigation_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1048,13 +1063,6 @@ namespace GluonCS
             GetExtendedStyle = (First + 55),
         }
 
-        private void emptyScriptToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show(this, resources.GetString("This will delete all local waypoints & script commands"), resources.GetString("Are you sure?"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                for (int i=0; i < model.MaxNumberOfNavigationInstructions(); i++)
-                    model.UpdateLocalNavigationInstruction(new NavigationInstruction(i, NavigationInstruction.navigation_command.EMPTY, 0, 0, 0, 0));
-            }
-        }
+
     }
 }

@@ -222,7 +222,7 @@ namespace Communication
 
                     if (line.StartsWith("$")) // line with checksum
                     {
-                        string[] frame = line.Substring(1, line.Length-1).Split('*');
+                        string[] frame = line.Substring(1, line.Length - 1).Split('*');
                         //line = frame[0];
                         if (calculateChecksum(frame[0]) == Int32.Parse(frame[1], System.Globalization.NumberStyles.HexNumber))
                             line = frame[0];
@@ -435,7 +435,7 @@ namespace Communication
                             double.Parse(lines[1], CultureInfo.InvariantCulture) / 1000.0 / 3.14 * 180.0,
                             double.Parse(lines[2], CultureInfo.InvariantCulture) / 1000.0 / 3.14 * 180.0,
                             /*double.Parse(lines[3], CultureInfo.InvariantCulture) / 1000.0 / 3.14 * 180.0,
-                            double.Parse(lines[4], CultureInfo.InvariantCulture) / 1000.0 / 3.14 * 180.0,*/0,0,
+                            double.Parse(lines[4], CultureInfo.InvariantCulture) / 1000.0 / 3.14 * 180.0,*/0, 0,
                             double.Parse(lines[3], CultureInfo.InvariantCulture) / 1000.0 / 3.14 * 180.0
                             );
                         if (AttitudeCommunicationReceived != null)
@@ -484,14 +484,14 @@ namespace Communication
                         lines[5] = lines[5].Replace("nan", "0");
                         lines[6] = lines[6].Replace("nan", "0");
 
-                        NavigationInstruction ni = 
+                        NavigationInstruction ni =
                             new NavigationInstruction(
                                 int.Parse(lines[1]),
                                 (NavigationInstruction.navigation_command)int.Parse(lines[2]),
                                 double.Parse(lines[3], CultureInfo.InvariantCulture),
                                 double.Parse(lines[4], CultureInfo.InvariantCulture),
                                 int.Parse(lines[5]),
-                                int.Parse(lines[6]) );
+                                int.Parse(lines[6]));
                         if (NavigationInstructionCommunicationReceived != null)
                             NavigationInstructionCommunicationReceived(ni);
                     }
@@ -500,7 +500,7 @@ namespace Communication
                     {
                         //Console.WriteLine(line);
 
-                        Servos s = 
+                        Servos s =
                             new Servos(
                                 int.Parse(lines[1]),
                                 int.Parse(lines[2]),
@@ -555,9 +555,8 @@ namespace Communication
                 }
                 catch (Exception e)
                 {
-                    ;
+                    Console.WriteLine("error in Serial");
                 }
-
                 try
                 {
                     if (recognised_frame)
@@ -577,7 +576,7 @@ namespace Communication
                 }
                 catch (Exception e)
                 {
-                    ;
+                    System.Diagnostics.Debug.WriteLine("unknown serial error") ;
                 }
             }
 

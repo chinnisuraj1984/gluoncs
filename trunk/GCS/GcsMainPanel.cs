@@ -179,8 +179,21 @@ namespace GCS
 
         void serial_AttitudeCommunicationReceived(Communication.Frames.Incoming.Attitude attitude)
         {
-            artificialHorizon.pitch_angle = attitude.PitchDeg;
-            artificialHorizon.roll_angle = -attitude.RollDeg;
+            MethodInvoker m = delegate()
+            {
+                artificialHorizon.pitch_angle = attitude.PitchDeg;
+                artificialHorizon.roll_angle = -attitude.RollDeg;
+                _lblPitch.Text = "Pitch: " + ((int)attitude.PitchDeg).ToString();
+                _lblRoll.Text = "Roll: " + ((int)attitude.RollDeg).ToString();
+            };
+
+            try
+            {
+                BeginInvoke(m);
+            }
+            catch
+            {
+            } 
         }
 
         private void _btn_ge_server_Click(object sender, EventArgs e)
