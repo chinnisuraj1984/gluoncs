@@ -19,6 +19,7 @@ namespace GluonCS
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new GluonCSForm());
+                //Application.Run(new SplashScreen());
 
             }
             catch (Exception e)

@@ -26,7 +26,7 @@ namespace GluonCS.LiveUavLayer
         public string LogPath { get { return _cbLogToFile.Checked ? _lblFilename.Text : ""; } }
         public string ReplayFilename { get { return _rbReplay.Checked ? _tbLoggedFilename.Text : ""; } }
 
-        public ConnectForm()
+        public ConnectForm(bool simple = false)
         {
             InitializeComponent();
 
@@ -39,6 +39,11 @@ namespace GluonCS.LiveUavLayer
 
             _cbLogToFile.Checked = Properties.Settings.Default.AutomaticLogging;
             _cbLogToFile_CheckedChanged(this, EventArgs.Empty);
+
+            if (simple)
+            {
+                this.Size = new Size(this.Width, 173);
+            }
         }
 
         /// <summary>
@@ -117,7 +122,7 @@ namespace GluonCS.LiveUavLayer
                         if (comPortNames[port] == _cb_portnames.Text)
                         {
                             SerialPort.PortName = port;
-                            MessageBox.Show("Connecting to port \"" + port + "\" with description \"" + comPortNames[port] + "\"");
+                            //MessageBox.Show("Connecting to port \"" + port + "\" with description \"" + comPortNames[port] + "\"");
                         }
                     }
                     //SerialPort.PortName = SerialPort.GetPortNames()[_cb_portnames.SelectedIndex].ToString();

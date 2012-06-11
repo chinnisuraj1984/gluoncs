@@ -157,7 +157,7 @@
     <value>Magenta</value>
   </data>
   <data name="_btnZoomin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 20</value>
+    <value>22, 20</value>
   </data>
   <data name="_btnZoomin.Text" xml:space="preserve">
     <value>Zoom in</value>
@@ -181,7 +181,7 @@
     <value>Magenta</value>
   </data>
   <data name="_btnZoomout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 20</value>
+    <value>22, 20</value>
   </data>
   <data name="_btnZoomout.Text" xml:space="preserve">
     <value>Zoom out</value>
@@ -192,23 +192,23 @@
   <data name="_btnGoto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIRSURBVDhPY2DAA+JbX2uktL2em9z6+j4Q/wLRID5IHJ8+
-        sFxE1f3A6JqH95vmPz2x5eTbXXeefT5x5MrHA73LXp4CiYPkcRrilnNGwzv30v2pGx/sOHz99aFHb76d
-        ffzm2zkQBrHnb3u8ywcoD1KH1RCrmP1zC3ovnth98cWBK48+HYdphtHXnnw6UTzh4mmQOqwGaPtuuj9n
-        650dIANw4aW77+8BqcNqgLLb6l87zj+Ha0Z3weO3384euvrqGEgdVgOUnNfcn7/j3m6Q7SDF2AxYue/B
-        IZA6rAaoeW6fm9V+7uzey68O33/x+TS6AY9efz1X3HXhEkgdVgMsHTOtDIMOvZi/+f7Zm08/oRjw7P23
-        S+v3vTxlHHzyvk7QUcxYsLS0lLe2ti7umLznv2XkhVcN059eOnHl0+nn775fP3Xl85n2eS+vWcfeum8a
-        cQ0zHdjY2Gi5urrX7Nix57+oqGizqmWznUPys7mOyc/uOyY9+wWiQXz7+KeYNgNttQgMDG47cuTMfwUF
-        pR42NjZVgskVpgBos098fPKEixfv/tfT05/KyspqTLRmkEIzM7OSW7de/bezc57HzMzsQpJmoGIOMTEx
-        F2Fh4RYWFpZsIF8fiHWAGORPFSCWB2JpIBYDYkEg5gHpAWJWIGYCWcYCxOJALAXEkkAsAeWLAmlhIBYA
-        Yj4g5gZiTiBmh2pmBtKMALMyWOy7l29qAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIOSURBVDhPY2DAA+JbX2uktL2em9z8+r5P/dNfIBrEB4nj
+        0weWi6i6Hxhd/fB+0/ynJzaffLvrztPPJ45c+XCgd+nLUyBxkDxOQ9xyzmh4Z1+6P3Xjgx2Hrr8+9OjN
+        t7NAfA6Kz87f9ngXSB6kDqshVjH75xb0Xjyx+8KLA5cffjqOpBlsyLUnn04UT7hwGqQOqwHa3pvuz9l6
+        ZwfIAFx46e57e0DqsBog6bb6147zz+Ga0V3w6O23s4euvDoGUofVACXn1ffn77i3G2Q7SDE2A1buu38I
+        pA6rAaqe2+dmtJ87u/fSq8P3X3w6jWHA66/nirvOXQKpw2qApWOmlWHQoRfzN989e/MJqgFP33+7tH7f
+        y1PGwSfv6wQdxYwFS0tLeWtr6+KOyXv+m0VeeFU/7emlY1c+nX7+7uv1U1c+nWmd9/KadfSt+6YR1zDT
+        gY2NjZarq3vNjh17/ouKijarWjbb2Sc/m+uY/Pi+o8/TXyAaxLePf4ppM9BWi8DA4LYjR878V1BQ6mFj
+        Y1MlmFxhCoA2+8THJ0+4ePHufz09vamsrKzGRGsGKTQzMyu5devVf1tb53nMzMwuJGkGKuYQExNzERYW
+        bmFhYckG8vWBWAeIQf5UAWJ5IJYGYjEgFgRiHpAeIGYFYiaQZSxALA7EUkAsCcQSUL4okBYGYgEg5gNi
+        biDmBGJ2qGZmIM0IAOM1WDoxo0fzAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="_btnGoto.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="_btnGoto.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 20</value>
+    <value>22, 20</value>
   </data>
   <data name="_btnGoto.Text" xml:space="preserve">
     <value>Goto</value>
@@ -217,7 +217,7 @@
     <value>0, 0</value>
   </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 99</value>
+    <value>24, 80</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
@@ -3287,7 +3287,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Gluon Control Station</value>
+    <value>Ground Control Station</value>
   </data>
   <data name="&gt;&gt;_btnZoomin.Name" xml:space="preserve">
     <value>_btnZoomin</value>
@@ -3299,6 +3299,12 @@
     <value>_btnZoomout</value>
   </data>
   <data name="&gt;&gt;_btnZoomout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_btnGoto.Name" xml:space="preserve">
+    <value>_btnGoto</value>
+  </data>
+  <data name="&gt;&gt;_btnGoto.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
@@ -3330,12 +3336,6 @@
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_btnGoto.Name" xml:space="preserve">
-    <value>_btnGoto</value>
-  </data>
-  <data name="&gt;&gt;_btnGoto.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>GluonCSForm</value>

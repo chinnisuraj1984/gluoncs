@@ -54,13 +54,13 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this._cbLogToFile = new System.Windows.Forms.CheckBox();
             this.xPanderPanel3 = new BSE.Windows.Forms.XPanderPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this._tbFlightgear = new System.Windows.Forms.TextBox();
             this._cbSimulation = new System.Windows.Forms.CheckBox();
             this._cbSimulationFG = new System.Windows.Forms.CheckBox();
             this._btn_connect = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.xPanderPanelList1.SuspendLayout();
             this.xPanderPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -346,6 +346,11 @@
             this.xPanderPanel3.ToolTipTextExpandIconPanelCollapsed = null;
             this.xPanderPanel3.ToolTipTextExpandIconPanelExpanded = null;
             // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
@@ -380,11 +385,6 @@
             this.panel1.Controls.Add(this._btn_connect);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
             // 
             // ConnectForm
             // 

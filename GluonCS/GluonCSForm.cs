@@ -44,6 +44,9 @@ namespace GluonCS
 
         public GluonCSForm()
         {
+            //SplashScreen splash = new SplashScreen();
+            //splash.Show();
+
             Console.WriteLine("-> " + Properties.Settings.Default.Language);
             if (Properties.Settings.Default.Language == "Nederlands")
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("nl-NL");
@@ -105,6 +108,12 @@ namespace GluonCS
 
             if (Enum.IsDefined(typeof(MapType), Properties.Settings.Default.MapType))
                 _gMapControl.MapType = (MapType)Enum.Parse(typeof(MapType), Properties.Settings.Default.MapType, true);
+
+
+            //MessageBox.Show("Welcome to the evaluation version of the autopilot ground control station!", "Welcome!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+            
+            //splash.fade();
+            //splash.Close();
         }
 
         void model_InformationMessageReceived(string s)
