@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+	<!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,104 +59,104 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="_btnChangeFilename.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 23</value>
-  </data>
-  <data name="_cbBaudrate.Items3" xml:space="preserve">
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+	<data name="_btnChangeFilename.Size" type="System.Drawing.Size, System.Drawing">
+		<value>25, 23</value>
+	</data>
+	<data name="_cbBaudrate.Items3" xml:space="preserve">
     <value>19200</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="_rbOffline.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;xPanderPanel3.ZOrder" xml:space="preserve">
+	<assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+	<data name="_rbOffline.AutoSize" type="System.Boolean, mscorlib">
+		<value>True</value>
+	</data>
+	<data name="&gt;&gt;xPanderPanel3.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+	<data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
+	<data name="label1.Text" xml:space="preserve">
     <value>FlightGear Pfad:</value>
   </data>
-  <data name="_rbOffline.Text" xml:space="preserve">
+	<data name="_rbOffline.Text" xml:space="preserve">
     <value>nicht verbinden - offline Flugplan editor</value>
   </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+	<data name="label6.AutoSize" type="System.Boolean, mscorlib">
+		<value>True</value>
+	</data>
+	<data name="&gt;&gt;label5.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="_rbReplay.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;_btn_portrefresh.Name" xml:space="preserve">
+	<data name="_rbReplay.TabIndex" type="System.Int32, mscorlib">
+		<value>3</value>
+	</data>
+	<data name="&gt;&gt;_btn_portrefresh.Name" xml:space="preserve">
     <value>_btn_portrefresh</value>
   </data>
-  <data name="checkBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 90</value>
-  </data>
-  <data name="_btn_portrefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="checkBox2.Location" type="System.Drawing.Point, System.Drawing">
+		<value>12, 90</value>
+	</data>
+	<data name="_btn_portrefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAadJREFUOE9j/P//
         PwNFAGQAPpy7L2lV5s44Zlxq8GoGacrYEXspZXPUAaIMKDme4VB0JO1A/oHk/9l7Ev6nb4/933So8n/d
@@ -168,726 +168,726 @@
         +q+drfZfPU35v3KSwgGFOFTNGGEAMxno3wNA/8LDAF9gYs0LunkazJqZqqtIjgViNKCrAQAKQYnl55pI
         nAAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="&gt;&gt;_cbLogToFile.Parent" xml:space="preserve">
+	</data>
+	<data name="&gt;&gt;_cbLogToFile.Parent" xml:space="preserve">
     <value>xPanderPanel1</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 13</value>
-  </data>
-  <data name="_cbBaudrate.Items2" xml:space="preserve">
+	<data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+		<value>26, 13</value>
+	</data>
+	<data name="_cbBaudrate.Items2" xml:space="preserve">
     <value>9600</value>
   </data>
-  <data name="&gt;&gt;xPanderPanel3.Name" xml:space="preserve">
+	<data name="&gt;&gt;xPanderPanel3.Name" xml:space="preserve">
     <value>xPanderPanel3</value>
   </data>
-  <data name="&gt;&gt;_lblFilename.Type" xml:space="preserve">
+	<data name="&gt;&gt;_lblFilename.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="_tbLoggedFilename.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
+	<data name="_tbLoggedFilename.TabIndex" type="System.Int32, mscorlib">
+		<value>1</value>
+	</data>
+	<data name="label6.Text" xml:space="preserve">
     <value>Baudrate:</value>
   </data>
-  <data name="_tbFlightgear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 88</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 20</value>
-  </data>
-  <data name="_rbViaComPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 33</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+	<data name="_tbFlightgear.Location" type="System.Drawing.Point, System.Drawing">
+		<value>10, 88</value>
+	</data>
+	<data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+		<value>10, 20</value>
+	</data>
+	<data name="_rbViaComPort.Location" type="System.Drawing.Point, System.Drawing">
+		<value>20, 33</value>
+	</data>
+	<data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="numericUpDown1.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+	<data name="numericUpDown1.Enabled" type="System.Boolean, mscorlib">
+		<value>False</value>
+	</data>
+	<data name="&gt;&gt;label6.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="_rbViaComPort.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;checkBox2.ZOrder" xml:space="preserve">
+	<data name="_rbViaComPort.AutoSize" type="System.Boolean, mscorlib">
+		<value>True</value>
+	</data>
+	<data name="&gt;&gt;checkBox2.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;_rbReplay.Name" xml:space="preserve">
+	<data name="&gt;&gt;_rbReplay.Name" xml:space="preserve">
     <value>_rbReplay</value>
   </data>
-  <data name="&gt;&gt;_rbOffline.Parent" xml:space="preserve">
+	<data name="&gt;&gt;_rbOffline.Parent" xml:space="preserve">
     <value>xPanderPanel2</value>
   </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+	<data name="&gt;&gt;label3.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
-  <data name="_cbBaudrate.Items5" xml:space="preserve">
+	<data name="_cbBaudrate.Items5" xml:space="preserve">
     <value>57600</value>
   </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;_btnChangeFilename.Type" xml:space="preserve">
+	<data name="&gt;&gt;_btnChangeFilename.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_btn_connect.Name" xml:space="preserve">
+	<data name="&gt;&gt;_btn_connect.Name" xml:space="preserve">
     <value>_btn_connect</value>
   </data>
-  <data name="&gt;&gt;_rbViaComPort.Parent" xml:space="preserve">
+	<data name="&gt;&gt;_rbViaComPort.Parent" xml:space="preserve">
     <value>xPanderPanel2</value>
   </data>
-  <data name="&gt;&gt;_cbBaudrate.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;_cbBaudrate.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+	<data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
     <value>xPanderPanel2</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 71</value>
-  </data>
-  <data name="numericUpDown1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 113</value>
-  </data>
-  <data name="_lblFilename.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 13</value>
-  </data>
-  <data name="_btn_connect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 5</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="xPanderPanelList1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="_cbBaudrate.Items4" xml:space="preserve">
+	<data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+		<value>254, 71</value>
+	</data>
+	<data name="numericUpDown1.Location" type="System.Drawing.Point, System.Drawing">
+		<value>99, 113</value>
+	</data>
+	<data name="_lblFilename.Size" type="System.Drawing.Size, System.Drawing">
+		<value>16, 13</value>
+	</data>
+	<data name="_btn_connect.Location" type="System.Drawing.Point, System.Drawing">
+		<value>73, 5</value>
+	</data>
+	<assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+	<data name="xPanderPanelList1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+		<value>Top</value>
+	</data>
+	<data name="_cbBaudrate.Items4" xml:space="preserve">
     <value>38400</value>
   </data>
-  <data name="&gt;&gt;_cbSimulation.Type" xml:space="preserve">
+	<data name="&gt;&gt;_cbSimulation.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="_btnChangeFilename.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+	<data name="_btnChangeFilename.Enabled" type="System.Boolean, mscorlib">
+		<value>False</value>
+	</data>
+	<data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="_cbBaudrate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 43</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+	<data name="_cbBaudrate.Location" type="System.Drawing.Point, System.Drawing">
+		<value>72, 43</value>
+	</data>
+	<data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
-  <data name="_btn_connect.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;xPanderPanelList1.Name" xml:space="preserve">
+	<data name="_btn_connect.TabIndex" type="System.Int32, mscorlib">
+		<value>5</value>
+	</data>
+	<data name="&gt;&gt;xPanderPanelList1.Name" xml:space="preserve">
     <value>xPanderPanelList1</value>
   </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="_cbSimulation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 30</value>
-  </data>
-  <data name="&gt;&gt;_tbLoggedFilename.Name" xml:space="preserve">
+	<data name="label3.TabIndex" type="System.Int32, mscorlib">
+		<value>0</value>
+	</data>
+	<data name="_cbSimulation.Size" type="System.Drawing.Size, System.Drawing">
+		<value>233, 30</value>
+	</data>
+	<data name="&gt;&gt;_tbLoggedFilename.Name" xml:space="preserve">
     <value>_tbLoggedFilename</value>
   </data>
-  <data name="&gt;&gt;_btn_portrefresh.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;_btn_portrefresh.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+	<data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="_cbBaudrate.Items7" xml:space="preserve">
+	<data name="_cbBaudrate.Items7" xml:space="preserve">
     <value>230400</value>
   </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 13</value>
-  </data>
-  <data name="&gt;&gt;xPanderPanel2.ZOrder" xml:space="preserve">
+	<data name="panel1.TabIndex" type="System.Int32, mscorlib">
+		<value>1</value>
+	</data>
+	<data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+		<value>29, 13</value>
+	</data>
+	<data name="&gt;&gt;xPanderPanel2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;_lblFilename.Parent" xml:space="preserve">
+	<data name="&gt;&gt;_lblFilename.Parent" xml:space="preserve">
     <value>xPanderPanel1</value>
   </data>
-  <data name="&gt;&gt;xPanderPanel3.Parent" xml:space="preserve">
+	<data name="&gt;&gt;xPanderPanel3.Parent" xml:space="preserve">
     <value>xPanderPanelList1</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 35</value>
-  </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
+	<data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+		<value>275, 35</value>
+	</data>
+	<data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+		<value>Bottom</value>
+	</data>
+	<data name="label5.Text" xml:space="preserve">
     <value>Port:</value>
   </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;xPanderPanel3.Type" xml:space="preserve">
+	<data name="label5.TabIndex" type="System.Int32, mscorlib">
+		<value>0</value>
+	</data>
+	<data name="&gt;&gt;xPanderPanel3.Type" xml:space="preserve">
     <value>BSE.Windows.Forms.XPanderPanel, BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef</value>
   </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+	<data name="label2.AutoSize" type="System.Boolean, mscorlib">
+		<value>True</value>
+	</data>
+	<data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="_btnBrowseLoggedFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>209, 16</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="_cbBaudrate.Items6" xml:space="preserve">
+	<data name="_btnBrowseLoggedFile.Location" type="System.Drawing.Point, System.Drawing">
+		<value>209, 16</value>
+	</data>
+	<data name="label3.AutoSize" type="System.Boolean, mscorlib">
+		<value>True</value>
+	</data>
+	<data name="_cbBaudrate.Items6" xml:space="preserve">
     <value>115200</value>
   </data>
-  <data name="numericUpDown1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 20</value>
-  </data>
-  <data name="checkBox2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;_btnBrowseLoggedFile.Name" xml:space="preserve">
+	<data name="numericUpDown1.Size" type="System.Drawing.Size, System.Drawing">
+		<value>51, 20</value>
+	</data>
+	<data name="checkBox2.AutoSize" type="System.Boolean, mscorlib">
+		<value>True</value>
+	</data>
+	<data name="&gt;&gt;_btnBrowseLoggedFile.Name" xml:space="preserve">
     <value>_btnBrowseLoggedFile</value>
   </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="_cbSimulation.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+	<data name="label6.TabIndex" type="System.Int32, mscorlib">
+		<value>2</value>
+	</data>
+	<data name="_cbSimulation.AutoSize" type="System.Boolean, mscorlib">
+		<value>True</value>
+	</data>
+	<data name="&gt;&gt;label5.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="xPanderPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 203</value>
-  </data>
-  <data name="xPanderPanel2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;xPanderPanel1.Parent" xml:space="preserve">
+	<data name="xPanderPanel2.Size" type="System.Drawing.Size, System.Drawing">
+		<value>275, 203</value>
+	</data>
+	<data name="xPanderPanel2.TabIndex" type="System.Int32, mscorlib">
+		<value>1</value>
+	</data>
+	<data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+		<value>1</value>
+	</data>
+	<data name="&gt;&gt;xPanderPanel1.Parent" xml:space="preserve">
     <value>xPanderPanelList1</value>
   </data>
-  <data name="&gt;&gt;_tbFlightgear.Name" xml:space="preserve">
+	<data name="&gt;&gt;_tbFlightgear.Name" xml:space="preserve">
     <value>_tbFlightgear</value>
   </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="_btnBrowseLoggedFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 21</value>
-  </data>
-  <data name="&gt;&gt;_cb_portnames.Type" xml:space="preserve">
+	<data name="_btnBrowseLoggedFile.Size" type="System.Drawing.Size, System.Drawing">
+		<value>26, 21</value>
+	</data>
+	<data name="&gt;&gt;_cb_portnames.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
+	<data name="groupBox2.Text" xml:space="preserve">
     <value>   </value>
   </data>
-  <data name="&gt;&gt;_btnBrowseLoggedFile.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;_btnBrowseLoggedFile.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+	<data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="xPanderPanel3.Text" xml:space="preserve">
+	<data name="xPanderPanel3.Text" xml:space="preserve">
     <value>Simulation</value>
   </data>
-  <data name="_tbFlightgear.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;_cbBaudrate.Type" xml:space="preserve">
+	<data name="_tbFlightgear.TabIndex" type="System.Int32, mscorlib">
+		<value>1</value>
+	</data>
+	<data name="&gt;&gt;_cbBaudrate.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_rbViaComPort.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;_rbViaComPort.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;xPanderPanelList1.Type" xml:space="preserve">
+	<data name="&gt;&gt;xPanderPanelList1.Type" xml:space="preserve">
     <value>BSE.Windows.Forms.XPanderPanelList, BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef</value>
   </data>
-  <data name="_cb_portnames.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 21</value>
-  </data>
-  <data name="_cbLogToFile.Text" xml:space="preserve">
+	<data name="_cb_portnames.Size" type="System.Drawing.Size, System.Drawing">
+		<value>156, 21</value>
+	</data>
+	<data name="_cbLogToFile.Text" xml:space="preserve">
     <value>Logdatei zu Datei</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 72</value>
-  </data>
-  <data name="&gt;&gt;_btn_portrefresh.Type" xml:space="preserve">
+	<data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+		<value>10, 72</value>
+	</data>
+	<data name="&gt;&gt;_btn_portrefresh.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+	<data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
   </data>
-  <data name="&gt;&gt;_rbOffline.Type" xml:space="preserve">
+	<data name="&gt;&gt;_rbOffline.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+	<data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ConnectForm</value>
   </data>
-  <data name="&gt;&gt;_btnChangeFilename.Parent" xml:space="preserve">
+	<data name="&gt;&gt;_btnChangeFilename.Parent" xml:space="preserve">
     <value>xPanderPanel1</value>
   </data>
-  <data name="&gt;&gt;xPanderPanel1.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;xPanderPanel1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="xPanderPanelList1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+	<data name="xPanderPanelList1.Location" type="System.Drawing.Point, System.Drawing">
+		<value>0, 0</value>
+	</data>
+	<data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
     <value>groupBox2</value>
   </data>
-  <data name="_rbReplay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 17</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+	<data name="_rbReplay.Size" type="System.Drawing.Size, System.Drawing">
+		<value>88, 17</value>
+	</data>
+	<data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="_btn_portrefresh.Location" type="System.Drawing.Point, System.Drawing">
-    <value>231, 18</value>
-  </data>
-  <data name="&gt;&gt;serialPort1.Name" xml:space="preserve">
+	<data name="_btn_portrefresh.Location" type="System.Drawing.Point, System.Drawing">
+		<value>231, 18</value>
+	</data>
+	<data name="&gt;&gt;serialPort1.Name" xml:space="preserve">
     <value>serialPort1</value>
   </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;_cbSimulation.Parent" xml:space="preserve">
+	<data name="&gt;&gt;_cbSimulation.Parent" xml:space="preserve">
     <value>xPanderPanel3</value>
   </data>
-  <data name="checkBox2.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+	<data name="checkBox2.Enabled" type="System.Boolean, mscorlib">
+		<value>False</value>
+	</data>
+	<data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
     <value>xPanderPanel2</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 13</value>
-  </data>
-  <data name="&gt;&gt;_btnChangeFilename.Name" xml:space="preserve">
+	<data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+		<value>64, 13</value>
+	</data>
+	<data name="&gt;&gt;_btnChangeFilename.Name" xml:space="preserve">
     <value>_btnChangeFilename</value>
   </data>
-  <data name="&gt;&gt;_rbReplay.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;_rbReplay.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="_rbReplay.Text" xml:space="preserve">
+	<data name="_rbReplay.Text" xml:space="preserve">
     <value>Logdatei wiedergeben</value>
   </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+	<data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;_btn_portrefresh.Parent" xml:space="preserve">
+	<data name="&gt;&gt;_btn_portrefresh.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 20</value>
-  </data>
-  <data name="xPanderPanel1.Text" xml:space="preserve">
+	<data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+		<value>13, 20</value>
+	</data>
+	<data name="xPanderPanel1.Text" xml:space="preserve">
     <value>Erweiterte</value>
   </data>
-  <data name="_lblFilename.Text" xml:space="preserve">
+	<data name="_lblFilename.Text" xml:space="preserve">
     <value>...</value>
   </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+	<data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>xPanderPanel1</value>
   </data>
-  <data name="_tbLoggedFilename.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 20</value>
-  </data>
-  <data name="_btn_connect.Text" xml:space="preserve">
+	<data name="_tbLoggedFilename.Size" type="System.Drawing.Size, System.Drawing">
+		<value>139, 20</value>
+	</data>
+	<data name="_btn_connect.Text" xml:space="preserve">
     <value>&amp; Ok</value>
   </data>
-  <data name="&gt;&gt;numericUpDown1.Type" xml:space="preserve">
+	<data name="&gt;&gt;numericUpDown1.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="_btnChangeFilename.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 61</value>
-  </data>
-  <data name="_rbReplay.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="_rbOffline.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;_cbLogToFile.Type" xml:space="preserve">
+	<data name="_btnChangeFilename.Location" type="System.Drawing.Point, System.Drawing">
+		<value>32, 61</value>
+	</data>
+	<data name="_rbReplay.AutoSize" type="System.Boolean, mscorlib">
+		<value>True</value>
+	</data>
+	<data name="_rbOffline.TabIndex" type="System.Int32, mscorlib">
+		<value>4</value>
+	</data>
+	<data name="&gt;&gt;_cbLogToFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 37</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="&gt;&gt;_rbViaComPort.Type" xml:space="preserve">
+	<data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+		<value>10, 37</value>
+	</data>
+	<data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+		<value>6, 13</value>
+	</data>
+	<data name="&gt;&gt;_rbViaComPort.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="_tbFlightgear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 20</value>
-  </data>
-  <data name="&gt;&gt;_lblFilename.Name" xml:space="preserve">
+	<data name="_tbFlightgear.Size" type="System.Drawing.Size, System.Drawing">
+		<value>256, 20</value>
+	</data>
+	<data name="&gt;&gt;_lblFilename.Name" xml:space="preserve">
     <value>_lblFilename</value>
   </data>
-  <data name="&gt;&gt;_cbSimulation.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;_cbSimulation.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="_btnBrowseLoggedFile.Text" xml:space="preserve">
+	<data name="_btnBrowseLoggedFile.Text" xml:space="preserve">
     <value>...</value>
   </data>
-  <data name="&gt;&gt;_btn_connect.Type" xml:space="preserve">
+	<data name="&gt;&gt;_btn_connect.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="_btnChangeFilename.Text" xml:space="preserve">
+	<data name="_btnChangeFilename.Text" xml:space="preserve">
     <value>...</value>
   </data>
-  <data name="_lblFilename.Location" type="System.Drawing.Point, System.Drawing">
-    <value>63, 66</value>
-  </data>
-  <data name="checkBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="_rbOffline.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 174</value>
-  </data>
-  <data name="&gt;&gt;_cbSimulation.Name" xml:space="preserve">
+	<data name="_lblFilename.Location" type="System.Drawing.Point, System.Drawing">
+		<value>63, 66</value>
+	</data>
+	<data name="checkBox2.TabIndex" type="System.Int32, mscorlib">
+		<value>1</value>
+	</data>
+	<data name="_rbOffline.Location" type="System.Drawing.Point, System.Drawing">
+		<value>20, 174</value>
+	</data>
+	<data name="&gt;&gt;_cbSimulation.Name" xml:space="preserve">
     <value>_cbSimulation</value>
   </data>
-  <data name="&gt;&gt;numericUpDown1.Name" xml:space="preserve">
+	<data name="&gt;&gt;numericUpDown1.Name" xml:space="preserve">
     <value>numericUpDown1</value>
   </data>
-  <data name="_btnBrowseLoggedFile.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;_tbLoggedFilename.Type" xml:space="preserve">
+	<data name="_btnBrowseLoggedFile.TabIndex" type="System.Int32, mscorlib">
+		<value>2</value>
+	</data>
+	<data name="&gt;&gt;_tbLoggedFilename.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="_rbViaComPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 17</value>
-  </data>
-  <data name="&gt;&gt;checkBox2.Name" xml:space="preserve">
+	<data name="label2.TabIndex" type="System.Int32, mscorlib">
+		<value>5</value>
+	</data>
+	<data name="_rbViaComPort.Size" type="System.Drawing.Size, System.Drawing">
+		<value>125, 17</value>
+	</data>
+	<data name="&gt;&gt;checkBox2.Name" xml:space="preserve">
     <value>checkBox2</value>
   </data>
-  <data name="&gt;&gt;_btn_connect.Parent" xml:space="preserve">
+	<data name="&gt;&gt;_btn_connect.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="_rbReplay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 116</value>
-  </data>
-  <data name="&gt;&gt;_cbLogToFile.Name" xml:space="preserve">
+	<data name="_rbReplay.Location" type="System.Drawing.Point, System.Drawing">
+		<value>20, 116</value>
+	</data>
+	<data name="&gt;&gt;_cbLogToFile.Name" xml:space="preserve">
     <value>_cbLogToFile</value>
   </data>
-  <data name="&gt;&gt;checkBox2.Type" xml:space="preserve">
+	<data name="&gt;&gt;checkBox2.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;xPanderPanel2.Name" xml:space="preserve">
+	<data name="&gt;&gt;xPanderPanel2.Name" xml:space="preserve">
     <value>xPanderPanel2</value>
   </data>
-  <data name="xPanderPanelList1.Text" xml:space="preserve">
+	<data name="xPanderPanelList1.Text" xml:space="preserve">
     <value>xPanderPanelList1</value>
   </data>
-  <data name="&gt;&gt;_tbFlightgear.Type" xml:space="preserve">
+	<data name="&gt;&gt;_tbFlightgear.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+	<data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;checkBox2.Parent" xml:space="preserve">
+	<data name="&gt;&gt;checkBox2.Parent" xml:space="preserve">
     <value>xPanderPanel1</value>
   </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;xPanderPanelList1.ZOrder" xml:space="preserve">
+	<data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+		<value>2</value>
+	</data>
+	<data name="&gt;&gt;xPanderPanelList1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;_cb_portnames.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;_cb_portnames.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="_cbLogToFile.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;_btnChangeFilename.ZOrder" xml:space="preserve">
+	<data name="_cbLogToFile.TabIndex" type="System.Int32, mscorlib">
+		<value>0</value>
+	</data>
+	<data name="&gt;&gt;_btnChangeFilename.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;numericUpDown1.Parent" xml:space="preserve">
+	<data name="&gt;&gt;numericUpDown1.Parent" xml:space="preserve">
     <value>xPanderPanel1</value>
   </data>
-  <data name="_cbBaudrate.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;_rbOffline.Name" xml:space="preserve">
+	<data name="_cbBaudrate.TabIndex" type="System.Int32, mscorlib">
+		<value>3</value>
+	</data>
+	<data name="&gt;&gt;_rbOffline.Name" xml:space="preserve">
     <value>_rbOffline</value>
   </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+	<data name="&gt;&gt;label6.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+	<data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>xPanderPanel3</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+	<data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+	<data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
+	<data name="label2.Text" xml:space="preserve">
     <value>Port-Nummer</value>
   </data>
-  <data name="&gt;&gt;xPanderPanelList1.Parent" xml:space="preserve">
+	<data name="&gt;&gt;xPanderPanelList1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="xPanderPanelList1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 253</value>
-  </data>
-  <data name="_btn_connect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 23</value>
-  </data>
-  <data name="&gt;&gt;xPanderPanel1.Name" xml:space="preserve">
+	<data name="xPanderPanelList1.Size" type="System.Drawing.Size, System.Drawing">
+		<value>275, 253</value>
+	</data>
+	<data name="_btn_connect.Size" type="System.Drawing.Size, System.Drawing">
+		<value>127, 23</value>
+	</data>
+	<data name="&gt;&gt;xPanderPanel1.Name" xml:space="preserve">
     <value>xPanderPanel1</value>
   </data>
-  <data name="_btn_portrefresh.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="_lblFilename.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="checkBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 17</value>
-  </data>
-  <data name="_cbLogToFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 38</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
+	<data name="_btn_portrefresh.TabIndex" type="System.Int32, mscorlib">
+		<value>4</value>
+	</data>
+	<data name="_lblFilename.TabIndex" type="System.Int32, mscorlib">
+		<value>3</value>
+	</data>
+	<data name="checkBox2.Size" type="System.Drawing.Size, System.Drawing">
+		<value>226, 17</value>
+	</data>
+	<data name="_cbLogToFile.Location" type="System.Drawing.Point, System.Drawing">
+		<value>13, 38</value>
+	</data>
+	<data name="label3.Text" xml:space="preserve">
     <value>Datei:</value>
   </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="xPanderPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 25</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 13</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 119</value>
-  </data>
-  <data name="&gt;&gt;xPanderPanel2.Type" xml:space="preserve">
+	<data name="xPanderPanel3.Size" type="System.Drawing.Size, System.Drawing">
+		<value>275, 25</value>
+	</data>
+	<data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+		<value>80, 13</value>
+	</data>
+	<data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+		<value>10, 119</value>
+	</data>
+	<data name="&gt;&gt;xPanderPanel2.Type" xml:space="preserve">
     <value>BSE.Windows.Forms.XPanderPanel, BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef</value>
   </data>
-  <data name="&gt;&gt;_tbFlightgear.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;_tbFlightgear.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="_rbViaComPort.Text" xml:space="preserve">
+	<data name="_rbViaComPort.Text" xml:space="preserve">
     <value>Verbinden mit COM-port</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>275, 294</value>
-  </data>
-  <data name="_rbViaComPort.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="xPanderPanel3.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;_cbBaudrate.Name" xml:space="preserve">
+	<data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+		<value>275, 294</value>
+	</data>
+	<data name="_rbViaComPort.TabIndex" type="System.Int32, mscorlib">
+		<value>0</value>
+	</data>
+	<data name="xPanderPanel3.TabIndex" type="System.Int32, mscorlib">
+		<value>2</value>
+	</data>
+	<data name="&gt;&gt;_cbBaudrate.Name" xml:space="preserve">
     <value>_cbBaudrate</value>
   </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;_lblFilename.ZOrder" xml:space="preserve">
+	<data name="label5.AutoSize" type="System.Boolean, mscorlib">
+		<value>True</value>
+	</data>
+	<data name="&gt;&gt;_lblFilename.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="_cbLogToFile.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="_lblFilename.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;_rbReplay.Type" xml:space="preserve">
+	<data name="_cbLogToFile.AutoSize" type="System.Boolean, mscorlib">
+		<value>True</value>
+	</data>
+	<data name="_lblFilename.AutoSize" type="System.Boolean, mscorlib">
+		<value>True</value>
+	</data>
+	<data name="&gt;&gt;_rbReplay.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_tbFlightgear.Parent" xml:space="preserve">
+	<data name="&gt;&gt;_tbFlightgear.Parent" xml:space="preserve">
     <value>xPanderPanel3</value>
   </data>
-  <data name="&gt;&gt;_rbReplay.Parent" xml:space="preserve">
+	<data name="&gt;&gt;_rbReplay.Parent" xml:space="preserve">
     <value>xPanderPanel2</value>
   </data>
-  <data name="&gt;&gt;xPanderPanel2.Parent" xml:space="preserve">
+	<data name="&gt;&gt;xPanderPanel2.Parent" xml:space="preserve">
     <value>xPanderPanelList1</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="_cbBaudrate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 21</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 13</value>
-  </data>
-  <data name="_btn_portrefresh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 18</value>
-  </data>
-  <data name="&gt;&gt;_rbOffline.ZOrder" xml:space="preserve">
+	<data name="label1.TabIndex" type="System.Int32, mscorlib">
+		<value>2</value>
+	</data>
+	<data name="_cbBaudrate.Size" type="System.Drawing.Size, System.Drawing">
+		<value>156, 21</value>
+	</data>
+	<data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+		<value>53, 13</value>
+	</data>
+	<data name="_btn_portrefresh.Size" type="System.Drawing.Size, System.Drawing">
+		<value>15, 18</value>
+	</data>
+	<data name="&gt;&gt;_rbOffline.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+	<data name="&gt;&gt;label3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="_cbLogToFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 17</value>
-  </data>
-  <data name="_cbBaudrate.Items" xml:space="preserve">
+	<data name="_cbLogToFile.Size" type="System.Drawing.Size, System.Drawing">
+		<value>96, 17</value>
+	</data>
+	<data name="_cbBaudrate.Items" xml:space="preserve">
     <value>2400</value>
   </data>
-  <data name="&gt;&gt;_btnBrowseLoggedFile.Type" xml:space="preserve">
+	<data name="&gt;&gt;_btnBrowseLoggedFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="xPanderPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+	<data name="xPanderPanel1.TabIndex" type="System.Int32, mscorlib">
+		<value>0</value>
+	</data>
+	<data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
   </data>
-  <data name="_cb_portnames.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="&gt;&gt;_tbLoggedFilename.Parent" xml:space="preserve">
+	<data name="_cb_portnames.TabIndex" type="System.Int32, mscorlib">
+		<value>1</value>
+	</data>
+	<data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+		<value>CenterParent</value>
+	</data>
+	<data name="&gt;&gt;_tbLoggedFilename.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 115</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
+	<data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+		<value>29, 115</value>
+	</data>
+	<data name="groupBox1.Text" xml:space="preserve">
     <value>      </value>
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 259</value>
-  </data>
-  <data name="numericUpDown1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
+	<data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+		<value>0, 259</value>
+	</data>
+	<data name="numericUpDown1.TabIndex" type="System.Int32, mscorlib">
+		<value>4</value>
+	</data>
+	<data name="$this.Text" xml:space="preserve">
     <value>  Connect to your UAV...</value>
   </data>
-  <data name="&gt;&gt;_cb_portnames.Name" xml:space="preserve">
+	<data name="&gt;&gt;_cb_portnames.Name" xml:space="preserve">
     <value>_cb_portnames</value>
   </data>
-  <data name="xPanderPanel2.Text" xml:space="preserve">
+	<data name="xPanderPanel2.Text" xml:space="preserve">
     <value>Grundeinstellungen</value>
   </data>
-  <data name="&gt;&gt;_tbLoggedFilename.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;_tbLoggedFilename.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;numericUpDown1.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;numericUpDown1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;_cb_portnames.Parent" xml:space="preserve">
+	<data name="&gt;&gt;_cb_portnames.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="_cbBaudrate.Items1" xml:space="preserve">
+	<data name="_cbBaudrate.Items1" xml:space="preserve">
     <value>4800</value>
   </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="_cbSimulation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 34</value>
-  </data>
-  <data name="&gt;&gt;_btnBrowseLoggedFile.Parent" xml:space="preserve">
+	<data name="_cbSimulation.Location" type="System.Drawing.Point, System.Drawing">
+		<value>13, 34</value>
+	</data>
+	<data name="&gt;&gt;_btnBrowseLoggedFile.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
-  <data name="xPanderPanelList1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+	<data name="xPanderPanelList1.TabIndex" type="System.Int32, mscorlib">
+		<value>0</value>
+	</data>
+	<data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="checkBox2.Text" xml:space="preserve">
+	<data name="checkBox2.Text" xml:space="preserve">
     <value>Proxy nur-Lese-Verbindung mit TCP/IP port</value>
   </data>
-  <data name="xPanderPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 25</value>
-  </data>
-  <data name="_cbSimulation.TabIndex" type="System.Int32, mscorlib">
+	<data name="xPanderPanel1.Size" type="System.Drawing.Size, System.Drawing">
+		<value>275, 25</value>
+	</data>
+	<data name="_cbSimulation.TabIndex" type="System.Int32, mscorlib">
+		<value>0</value>
+	</data>
+	<data name="_rbOffline.Size" type="System.Drawing.Size, System.Drawing">
+		<value>203, 17</value>
+	</data>
+	<data name="&gt;&gt;_btn_connect.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="_rbOffline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 17</value>
-  </data>
-  <data name="&gt;&gt;_btn_connect.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;serialPort1.Type" xml:space="preserve">
+	<data name="&gt;&gt;serialPort1.Type" xml:space="preserve">
     <value>System.IO.Ports.SerialPort, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="_tbFlightgear.Text" xml:space="preserve">
+	<data name="_tbFlightgear.Text" xml:space="preserve">
     <value>D:\Program Files\FlightGear\</value>
   </data>
-  <data name="&gt;&gt;_rbViaComPort.Name" xml:space="preserve">
+	<data name="&gt;&gt;_rbViaComPort.Name" xml:space="preserve">
     <value>_rbViaComPort</value>
   </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+	<data name="&gt;&gt;panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="_btnChangeFilename.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;xPanderPanel1.Type" xml:space="preserve">
+	<data name="_btnChangeFilename.TabIndex" type="System.Int32, mscorlib">
+		<value>2</value>
+	</data>
+	<data name="&gt;&gt;xPanderPanel1.Type" xml:space="preserve">
     <value>BSE.Windows.Forms.XPanderPanel, BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef</value>
   </data>
-  <data name="_btn_portrefresh.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 49</value>
-  </data>
-  <data name="&gt;&gt;_cbLogToFile.ZOrder" xml:space="preserve">
+	<data name="_btn_portrefresh.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+		<value>Flat</value>
+	</data>
+	<data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+		<value>254, 49</value>
+	</data>
+	<data name="&gt;&gt;_cbLogToFile.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="_cbSimulation.Text" xml:space="preserve">
+	<data name="_cbSimulation.Text" xml:space="preserve">
     <value>Gluonpilot im Simulationsmodus Flightgear setzen und Flightgear starten</value>
   </data>
-  <data name="_tbLoggedFilename.Location" type="System.Drawing.Point, System.Drawing">
-    <value>63, 17</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 46</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;_cbBaudrate.Parent" xml:space="preserve">
+	<data name="_tbLoggedFilename.Location" type="System.Drawing.Point, System.Drawing">
+		<value>63, 17</value>
+	</data>
+	<data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+		<value>13, 46</value>
+	</data>
+	<data name="label1.AutoSize" type="System.Boolean, mscorlib">
+		<value>True</value>
+	</data>
+	<data name="&gt;&gt;_cbBaudrate.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+	<data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="_cb_portnames.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 17</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>38</value>
-  </metadata>
-  <metadata name="serialPort1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+	<data name="_cb_portnames.Location" type="System.Drawing.Point, System.Drawing">
+		<value>72, 17</value>
+	</data>
+	<metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+		<value>True</value>
+	</metadata>
+	<metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+		<value>38</value>
+	</metadata>
+	<metadata name="serialPort1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+		<value>17, 17</value>
+	</metadata>
 </root>

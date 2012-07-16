@@ -148,7 +148,7 @@
 		<value>0</value>
 	</data>
 	<data name="_btnCancel.Text" xml:space="preserve">
-    <value>     Cancel &amp;&amp; reload original settings</value>
+    <value>   Hủy &amp;&amp; đọc lại cấu hình chuẩn</value>
   </data>
 	<data name="&gt;&gt;_btnCancel.Name" xml:space="preserve">
     <value>_btnCancel</value>
@@ -189,7 +189,7 @@
 		<value>1</value>
 	</data>
 	<data name="_btnSaveAndClose.Text" xml:space="preserve">
-    <value>Close &amp;&amp; burn settings</value>
+    <value>Đóng &amp;&amp; nạp cài đặt</value>
   </data>
 	<data name="&gt;&gt;_btnSaveAndClose.Name" xml:space="preserve">
     <value>_btnSaveAndClose</value>
@@ -216,7 +216,7 @@
 		<value>2</value>
 	</data>
 	<data name="label1.Text" xml:space="preserve">
-    <value>Calibratie</value>
+    <value>Calibration</value>
   </data>
 	<data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -246,7 +246,7 @@
 		<value>3</value>
 	</data>
 	<data name="label2.Text" xml:space="preserve">
-    <value>Input</value>
+    <value>Tham số vào</value>
   </data>
 	<data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
@@ -276,7 +276,7 @@
 		<value>4</value>
 	</data>
 	<data name="label3.Text" xml:space="preserve">
-    <value>Output</value>
+    <value>Tham số ra</value>
   </data>
 	<data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -303,7 +303,7 @@
 		<value>5</value>
 	</data>
 	<data name="label4.Text" xml:space="preserve">
-    <value>Mixing</value>
+    <value>Phối hợp</value>
   </data>
 	<data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
@@ -369,7 +369,7 @@
 		<value>7</value>
 	</data>
 	<data name="label5.Text" xml:space="preserve">
-    <value>Tuning</value>
+    <value>Hiệu chỉnh</value>
   </data>
 	<data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -417,7 +417,7 @@
 		<value>9</value>
 	</data>
 	<data name="label6.Text" xml:space="preserve">
-    <value>Roll sensitivity</value>
+    <value>Độ nhạy Roll</value>
   </data>
 	<data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
@@ -444,7 +444,7 @@
 		<value>9</value>
 	</data>
 	<data name="label7.Text" xml:space="preserve">
-    <value>Pitch sensitivity</value>
+    <value>Độ nhạy Pitch</value>
   </data>
 	<data name="&gt;&gt;label7.Name" xml:space="preserve">
     <value>label7</value>
@@ -831,7 +831,7 @@
 		<value>24</value>
 	</data>
 	<data name="_lblFunctionOut4.Text" xml:space="preserve">
-    <value>Motor</value>
+    <value>Động cơ</value>
   </data>
 	<data name="&gt;&gt;_lblFunctionOut4.Name" xml:space="preserve">
     <value>_lblFunctionOut4</value>
@@ -912,7 +912,7 @@
 		<value>27</value>
 	</data>
 	<data name="label20.Text" xml:space="preserve">
-    <value>Functie</value>
+    <value>Function</value>
   </data>
 	<data name="&gt;&gt;label20.Name" xml:space="preserve">
     <value>label20</value>
@@ -942,8 +942,8 @@
 		<value>28</value>
 	</data>
 	<data name="label21.Text" xml:space="preserve">
-    <value>U moet uw zender-input hier kunnen zien.
-Als de "interpretatie" fout is, gelieve uw zender-instellingen aan te passen
+    <value>You should be able to see your transmitter stick changes here.
+If "interpretation" is incorrect, please change this in your RC-transmitter setttings.
 </value>
   </data>
 	<data name="&gt;&gt;label21.Name" xml:space="preserve">
@@ -971,8 +971,7 @@ Als de "interpretatie" fout is, gelieve uw zender-instellingen aan te passen
 		<value>29</value>
 	</data>
 	<data name="label22.Text" xml:space="preserve">
-    <value>Verzeker u ervan dat de module gecalibreerd is, 
-en zich normaal gedraagd na installatie in het vliegtuig</value>
+    <value>Make sure you calibrate the module properly and verify it behaves correctly when in the aircraft</value>
   </data>
 	<data name="&gt;&gt;label22.Name" xml:space="preserve">
     <value>label22</value>
@@ -1002,7 +1001,7 @@ en zich normaal gedraagd na installatie in het vliegtuig</value>
 		<value>30</value>
 	</data>
 	<data name="label23.Text" xml:space="preserve">
-    <value>Adjust pitch or roll sensitivity when it behaves too fast (oscillating!) or too sloppy in stabilized or navigation mode</value>
+    <value>Hiệu chỉnh độ nhạy hệ tự cân bằng</value>
   </data>
 	<data name="&gt;&gt;label23.Name" xml:space="preserve">
     <value>label23</value>
@@ -1272,7 +1271,7 @@ en zich normaal gedraagd na installatie in het vliegtuig</value>
 		<value>40</value>
 	</data>
 	<data name="label33.Text" xml:space="preserve">
-    <value>Huidige waarde</value>
+    <value>Current value</value>
   </data>
 	<data name="&gt;&gt;label33.Name" xml:space="preserve">
     <value>label33</value>
@@ -1413,16 +1412,16 @@ en zich normaal gedraagd na installatie in het vliegtuig</value>
     <value>29</value>
   </data>
 	<data name="_cbInputFunction1.Items" xml:space="preserve">
-    <value>Pitch</value>
+    <value>Lên xuống</value>
   </data>
 	<data name="_cbInputFunction1.Items1" xml:space="preserve">
-    <value>Roll</value>
+    <value>Nghiêng</value>
   </data>
 	<data name="_cbInputFunction1.Items2" xml:space="preserve">
     <value>Yaw</value>
   </data>
 	<data name="_cbInputFunction1.Items3" xml:space="preserve">
-    <value>Motor</value>
+    <value>Động cơ</value>
   </data>
 	<data name="_cbInputFunction1.Items4" xml:space="preserve">
     <value>Mode</value>
@@ -1452,16 +1451,16 @@ en zich normaal gedraagd na installatie in het vliegtuig</value>
     <value>28</value>
   </data>
 	<data name="_cbInputFunction2.Items" xml:space="preserve">
-    <value>Pitch</value>
+    <value>Lên xuống</value>
   </data>
 	<data name="_cbInputFunction2.Items1" xml:space="preserve">
-    <value>Roll</value>
+    <value>Nghiêng</value>
   </data>
 	<data name="_cbInputFunction2.Items2" xml:space="preserve">
     <value>Yaw</value>
   </data>
 	<data name="_cbInputFunction2.Items3" xml:space="preserve">
-    <value>Motor</value>
+    <value>Động cơ</value>
   </data>
 	<data name="_cbInputFunction2.Items4" xml:space="preserve">
     <value>Mode</value>
@@ -1491,16 +1490,16 @@ en zich normaal gedraagd na installatie in het vliegtuig</value>
     <value>27</value>
   </data>
 	<data name="_cbInputFunction3.Items" xml:space="preserve">
-    <value>Pitch</value>
+    <value>Lên xuống</value>
   </data>
 	<data name="_cbInputFunction3.Items1" xml:space="preserve">
-    <value>Roll</value>
+    <value>Nghiêng</value>
   </data>
 	<data name="_cbInputFunction3.Items2" xml:space="preserve">
     <value>Yaw</value>
   </data>
 	<data name="_cbInputFunction3.Items3" xml:space="preserve">
-    <value>Motor</value>
+    <value>Động cơ</value>
   </data>
 	<data name="_cbInputFunction3.Items4" xml:space="preserve">
     <value>Mode</value>
@@ -1530,16 +1529,16 @@ en zich normaal gedraagd na installatie in het vliegtuig</value>
     <value>26</value>
   </data>
 	<data name="_cbInputFunction4.Items" xml:space="preserve">
-    <value>Pitch</value>
+    <value>Lên xuống</value>
   </data>
 	<data name="_cbInputFunction4.Items1" xml:space="preserve">
-    <value>Roll</value>
+    <value>Nghiêng</value>
   </data>
 	<data name="_cbInputFunction4.Items2" xml:space="preserve">
     <value>Yaw</value>
   </data>
 	<data name="_cbInputFunction4.Items3" xml:space="preserve">
-    <value>Motor</value>
+    <value>Động cơ</value>
   </data>
 	<data name="_cbInputFunction4.Items4" xml:space="preserve">
     <value>Mode</value>
@@ -1569,16 +1568,16 @@ en zich normaal gedraagd na installatie in het vliegtuig</value>
     <value>25</value>
   </data>
 	<data name="_cbInputFunction5.Items" xml:space="preserve">
-    <value>Pitch</value>
+    <value>Lên xuống</value>
   </data>
 	<data name="_cbInputFunction5.Items1" xml:space="preserve">
-    <value>Roll</value>
+    <value>Nghiêng</value>
   </data>
 	<data name="_cbInputFunction5.Items2" xml:space="preserve">
     <value>Yaw</value>
   </data>
 	<data name="_cbInputFunction5.Items3" xml:space="preserve">
-    <value>Motor</value>
+    <value>Động cơ</value>
   </data>
 	<data name="_cbInputFunction5.Items4" xml:space="preserve">
     <value>Mode</value>
@@ -1608,16 +1607,16 @@ en zich normaal gedraagd na installatie in het vliegtuig</value>
     <value>24</value>
   </data>
 	<data name="_cbInputFunction6.Items" xml:space="preserve">
-    <value>Pitch</value>
+    <value>Lên xuống</value>
   </data>
 	<data name="_cbInputFunction6.Items1" xml:space="preserve">
-    <value>Roll</value>
+    <value>Nghiêng</value>
   </data>
 	<data name="_cbInputFunction6.Items2" xml:space="preserve">
     <value>Yaw</value>
   </data>
 	<data name="_cbInputFunction6.Items3" xml:space="preserve">
-    <value>Motor</value>
+    <value>Động cơ</value>
   </data>
 	<data name="_cbInputFunction6.Items4" xml:space="preserve">
     <value>Mode</value>
@@ -1659,7 +1658,7 @@ en zich normaal gedraagd na installatie in het vliegtuig</value>
 		<value>53</value>
 	</data>
 	<data name="label34.Text" xml:space="preserve">
-    <value>Functie</value>
+    <value>Function</value>
   </data>
 	<data name="&gt;&gt;label34.Name" xml:space="preserve">
     <value>label34</value>
@@ -1686,7 +1685,7 @@ en zich normaal gedraagd na installatie in het vliegtuig</value>
 		<value>54</value>
 	</data>
 	<data name="label35.Text" xml:space="preserve">
-    <value>Interpretatie</value>
+    <value>Interpretation</value>
   </data>
 	<data name="&gt;&gt;label35.Name" xml:space="preserve">
     <value>label35</value>
@@ -1995,7 +1994,7 @@ en zich normaal gedraagd na installatie in het vliegtuig</value>
 		<value>68</value>
 	</data>
 	<data name="_lblFunctionOut5.Text" xml:space="preserve">
-    <value>Motor</value>
+    <value>Động cơ</value>
   </data>
 	<data name="&gt;&gt;_lblFunctionOut5.Name" xml:space="preserve">
     <value>_lblFunctionOut5</value>
@@ -2022,7 +2021,7 @@ en zich normaal gedraagd na installatie in het vliegtuig</value>
 		<value>69</value>
 	</data>
 	<data name="_lblFunctionOut6.Text" xml:space="preserve">
-    <value>Motor</value>
+    <value>Động cơ</value>
   </data>
 	<data name="&gt;&gt;_lblFunctionOut6.Name" xml:space="preserve">
     <value>_lblFunctionOut6</value>
@@ -2046,7 +2045,7 @@ en zich normaal gedraagd na installatie in het vliegtuig</value>
 		<value>70</value>
 	</data>
 	<data name="_btnCalibrateGyroscopes.Text" xml:space="preserve">
-    <value>Calibreer gyroscopen</value>
+    <value>Calibrate gyroscopes</value>
   </data>
 	<data name="&gt;&gt;_btnCalibrateGyroscopes.Name" xml:space="preserve">
     <value>_btnCalibrateGyroscopes</value>
@@ -2070,7 +2069,7 @@ en zich normaal gedraagd na installatie in het vliegtuig</value>
 		<value>71</value>
 	</data>
 	<data name="_btnCalibrateAccelerometers.Text" xml:space="preserve">
-    <value>Calibreer versnellingsmeters</value>
+    <value>Calibrate accelerometers</value>
   </data>
 	<data name="&gt;&gt;_btnCalibrateAccelerometers.Name" xml:space="preserve">
     <value>_btnCalibrateAccelerometers</value>
@@ -2124,7 +2123,7 @@ en zich normaal gedraagd na installatie in het vliegtuig</value>
 		<value>73</value>
 	</data>
 	<data name="label8.Text" xml:space="preserve">
-    <value>All changes are immediate!</value>
+    <value>Mọi thay đổi sẽ có hiệu lực tức thời</value>
   </data>
 	<data name="&gt;&gt;label8.Name" xml:space="preserve">
     <value>label8</value>
@@ -2226,7 +2225,7 @@ en zich normaal gedraagd na installatie in het vliegtuig</value>
 		<value>77</value>
 	</data>
 	<data name="_cbAutothrottle.Text" xml:space="preserve">
-    <value>Enable auto throttle</value>
+    <value>Mở điều tốc t.động</value>
   </data>
 	<data name="&gt;&gt;_cbAutothrottle.Name" xml:space="preserve">
     <value>_cbAutothrottle</value>
@@ -2250,7 +2249,7 @@ en zich normaal gedraagd na installatie in het vliegtuig</value>
 		<value>78</value>
 	</data>
 	<data name="_btnReloadFactorySettings.Text" xml:space="preserve">
-    <value>Reload factory settings</value>
+    <value>Nạp c.độ mặc định</value>
   </data>
 	<data name="&gt;&gt;_btnReloadFactorySettings.Name" xml:space="preserve">
     <value>_btnReloadFactorySettings</value>
@@ -2277,7 +2276,7 @@ en zich normaal gedraagd na installatie in het vliegtuig</value>
 		<value>698, 602</value>
 	</data>
 	<data name="$this.Text" xml:space="preserve">
-    <value>EasyConfig</value>
+    <value>Hiệu chỉnh nhanh</value>
   </data>
 	<data name="&gt;&gt;_tmrGuiUpdateBusy.Name" xml:space="preserve">
     <value>_tmrGuiUpdateBusy</value>

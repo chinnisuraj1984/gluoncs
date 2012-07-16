@@ -114,6 +114,9 @@
       <DependentUpon>EasyConfig.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="EasyConfig.vi.resx">
+      <DependentUpon>EasyConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GluonConfig.de.resx">
       <DependentUpon>GluonConfig.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +124,9 @@
       <DependentUpon>GluonConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GluonConfig.resx">
+      <DependentUpon>GluonConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GluonConfig.vi.resx">
       <DependentUpon>GluonConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+	<!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,70 +59,70 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="toolStrip2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 25</value>
-  </data>
-  <data name="_btnConnect.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+	<data name="toolStrip2.Size" type="System.Drawing.Size, System.Drawing">
+		<value>271, 25</value>
+	</data>
+	<data name="_btnConnect.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAo1JREFUOE+Vk+tP
         kmEYxmv5xb+gL42+tUVbm5sVtIportIVmWuZlmOZmbSIYYbOQ2+eSBSFiW8iCpowoUA5GGmiYXlIg1Dn
@@ -138,9 +138,9 @@
         /V8lqaiPMj2ITAk1J9+M0+lt7H190EtPrYfP84xgcps34m+po7/tPYh/Adi3jz3vxhhrAAAAAElFTkSu
         QmCC
 </value>
-  </data>
-  <data name="_btnCenterUav.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	</data>
+	<data name="_btnCenterUav.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAA5lJREFUOE9tk21M
         0wcQxv9ExJjNbFmyZUuYJG4xGwkhjWM6BLOEjGxEUWfQAPJSGa3DtoggRhy2ApsdrNpuDBGo0NYCgtqW
@@ -160,15 +160,15 @@
         r5ejbVgN/ogGsnEp3mO/gAJBGt48t2kpofLt2P/9yPXkrrqkg++zdgzsqCbNbT+1fXndE04nPHyjesPK
         1nMbQDCJ6P+K/wHXVU+zCo6d4QAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="_btnCenterUav.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 22</value>
-  </data>
-  <data name="_btnCenterUav.Text" xml:space="preserve">
+	</data>
+	<data name="_btnCenterUav.Size" type="System.Drawing.Size, System.Drawing">
+		<value>97, 22</value>
+	</data>
+	<data name="_btnCenterUav.Text" xml:space="preserve">
     <value>&amp; Zentriere UAV</value>
   </data>
-  <data name="toolStripDropDownButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="toolStripDropDownButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAApZJREFUOE91U0tL
         alEU9vYDnPsT+hVBiIijHhBCd1IWJJQ2NEU0MwjNSYNAyjK6afhIEjTSysqyfJykh1JoDrI4KOjIkeBZ
@@ -184,129 +184,129 @@
         y78/5U8jtFptP1YT0+DgXyfK4XAYMJkNE67ioaGh34fp54TNzs6qsGJieHg4gXRVvUb5P1P7HnuTmeP9
         AAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="toolStripDropDownButton3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 22</value>
-  </data>
-  <data name="toolStripDropDownButton3.Text" xml:space="preserve">
+	</data>
+	<data name="toolStripDropDownButton3.Size" type="System.Drawing.Size, System.Drawing">
+		<value>127, 22</value>
+	</data>
+	<data name="toolStripDropDownButton3.Text" xml:space="preserve">
     <value>Modulkonfiguration</value>
   </data>
-  <data name="toolStripDropDownButton3.ToolTipText" xml:space="preserve">
+	<data name="toolStripDropDownButton3.ToolTipText" xml:space="preserve">
     <value>Modulkonfiguration</value>
   </data>
-  <data name="_ts_basicconfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 22</value>
-  </data>
-  <data name="_ts_basicconfig.Text" xml:space="preserve">
+	<data name="_ts_basicconfig.Size" type="System.Drawing.Size, System.Drawing">
+		<value>157, 22</value>
+	</data>
+	<data name="_ts_basicconfig.Text" xml:space="preserve">
     <value>Grundlegendes</value>
   </data>
-  <data name="_tbn_fullconfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 22</value>
-  </data>
-  <data name="_tbn_fullconfig.Text" xml:space="preserve">
+	<data name="_tbn_fullconfig.Size" type="System.Drawing.Size, System.Drawing">
+		<value>157, 22</value>
+	</data>
+	<data name="_tbn_fullconfig.Text" xml:space="preserve">
     <value>Volle</value>
   </data>
-  <data name="_lblFlightMode.Text" xml:space="preserve">
+	<data name="_lblFlightMode.Text" xml:space="preserve">
     <value>Flugmodus</value>
   </data>
-  <data name="_lblAltitudeAgl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 209</value>
-  </data>
-  <data name="_lblAltitudeAgl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 16</value>
-  </data>
-  <data name="_lblAltitudeAgl.Text" xml:space="preserve">
+	<data name="_lblAltitudeAgl.Location" type="System.Drawing.Point, System.Drawing">
+		<value>223, 209</value>
+	</data>
+	<data name="_lblAltitudeAgl.Size" type="System.Drawing.Size, System.Drawing">
+		<value>61, 16</value>
+	</data>
+	<data name="_lblAltitudeAgl.Text" xml:space="preserve">
     <value>0 m/0 m</value>
   </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>141, 209</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 16</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
+	<data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+		<value>141, 209</value>
+	</data>
+	<data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+		<value>73, 16</value>
+	</data>
+	<data name="label9.Text" xml:space="preserve">
     <value>Höhe AGL:</value>
   </data>
-  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>140, 188</value>
-  </data>
-  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 16</value>
-  </data>
-  <data name="label14.Text" xml:space="preserve">
+	<data name="label14.Location" type="System.Drawing.Point, System.Drawing">
+		<value>140, 188</value>
+	</data>
+	<data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+		<value>178, 16</value>
+	</data>
+	<data name="label14.Text" xml:space="preserve">
     <value>Geschwindigkeit über Grund:</value>
   </data>
-  <data name="_lblSpeed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>314, 183</value>
-  </data>
-  <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 48</value>
-  </data>
-  <data name="_ts2dah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 22</value>
-  </data>
-  <data name="_ts2dah.Text" xml:space="preserve">
+	<data name="_lblSpeed.Location" type="System.Drawing.Point, System.Drawing">
+		<value>314, 183</value>
+	</data>
+	<data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+		<value>196, 48</value>
+	</data>
+	<data name="_ts2dah.Size" type="System.Drawing.Size, System.Drawing">
+		<value>195, 22</value>
+	</data>
+	<data name="_ts2dah.Text" xml:space="preserve">
     <value>künstlicher Horizont 2D</value>
   </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 22</value>
-  </data>
-  <data name="toolStripMenuItem1.Text" xml:space="preserve">
+	<data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+		<value>195, 22</value>
+	</data>
+	<data name="toolStripMenuItem1.Text" xml:space="preserve">
     <value>künstlicher Horizont 3D</value>
   </data>
-  <data name="_lblBlockname.Text" xml:space="preserve">
+	<data name="_lblBlockname.Text" xml:space="preserve">
     <value>Block Name</value>
   </data>
-  <data name="_lblDistNextWp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 86</value>
-  </data>
-  <data name="_lblDistNextWp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 12</value>
-  </data>
-  <data name="_lblDistNextWp.Text" xml:space="preserve">
+	<data name="_lblDistNextWp.Location" type="System.Drawing.Point, System.Drawing">
+		<value>3, 86</value>
+	</data>
+	<data name="_lblDistNextWp.Size" type="System.Drawing.Size, System.Drawing">
+		<value>118, 12</value>
+	</data>
+	<data name="_lblDistNextWp.Text" xml:space="preserve">
     <value>Nächsten WP: 0 m</value>
   </data>
-  <data name="_lblHomeDistance.Text" xml:space="preserve">
+	<data name="_lblHomeDistance.Text" xml:space="preserve">
     <value>Startseite: 0 m</value>
   </data>
-  <data name="_lblTimeToWp.Text" xml:space="preserve">
+	<data name="_lblTimeToWp.Text" xml:space="preserve">
     <value>Zeit, um WP: 0 s</value>
   </data>
-  <data name="_lblTimeInBlock.Text" xml:space="preserve">
+	<data name="_lblTimeInBlock.Text" xml:space="preserve">
     <value>Zeit in Block: 0 s</value>
   </data>
-  <data name="_lblFlightTime.Text" xml:space="preserve">
+	<data name="_lblFlightTime.Text" xml:space="preserve">
     <value>Flugzeit: 0 s</value>
   </data>
-  <data name="_lblGpsSat.ImageKey" xml:space="preserve">
-    <value>FEHLER</value>
+	<data name="_lblGpsSat.ImageKey" xml:space="preserve">
+    <value>Fehler</value>
   </data>
-  <data name="_lblGpsSat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 15</value>
-  </data>
-  <data name="_lblGpsSat.Text" xml:space="preserve">
+	<data name="_lblGpsSat.Size" type="System.Drawing.Size, System.Drawing">
+		<value>35, 15</value>
+	</data>
+	<data name="_lblGpsSat.Text" xml:space="preserve">
     <value>GPS</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 13</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
+	<data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+		<value>29, 13</value>
+	</data>
+	<data name="label1.Text" xml:space="preserve">
     <value>Gas</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
+	<data name="label2.Text" xml:space="preserve">
     <value>Block Befehle, die in der Navigationsliste erstellt sind, werden automatisch als Schaltflächen hier hinzugefügt.</value>
   </data>
-  <data name="tabPage1.Text" xml:space="preserve">
+	<data name="tabPage1.Text" xml:space="preserve">
     <value>Höhe</value>
   </data>
-  <data name="tabPage2.Text" xml:space="preserve">
+	<data name="tabPage2.Text" xml:space="preserve">
     <value>Geschwindigkeit</value>
   </data>
-  <data name="tabPage3.Text" xml:space="preserve">
+	<data name="tabPage3.Text" xml:space="preserve">
     <value>Batteriespannung</value>
   </data>
-  <data name="_btn_up.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="_btn_up.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYBJREFUOE+1kE8o
         w3EYxpE/xVK0Jg7kQChNTYmYixyUg4Om/CSRy3JykO22izgwYjZ/LlbWrLVGDAcXbS5fB5Ly5zeboUnb
@@ -317,12 +317,12 @@
         t6IgLwqQq1pjst0YMpwxFLpiIC8KkNW1wmT7gGQHKNgFyP8FkCOUqgQp0ptG1zM6jexT5GkvqFZQ3m+w
         TCGQCipJoiIhy44HfAAec/HnXKFSNwAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="_btn_up.Text" xml:space="preserve">
+	</data>
+	<data name="_btn_up.Text" xml:space="preserve">
     <value>Nach oben</value>
   </data>
-  <data name="_btn_down.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="_btn_down.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYVJREFUOE9jYKAF
         sJ/3cqbd3BdnYBjEJ8ke2xmPz0x58P9//+1//yff//8fxCfJAMtpD890Xv3zv/r4j/8dV/78B/FJMsCk
@@ -333,12 +333,12 @@
         //1X2vPvP4gPEieoGaaAyaY8hjVwzhmp3f//g2gQnxjNrEBFskBsBMTGTEZJJUy+M86AaBAfipWANAcu
         w5iBEvxALAnEUjiwIFCcBdkAAMKv6uTVK0SIAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="_btn_down.Text" xml:space="preserve">
+	</data>
+	<data name="_btn_down.Text" xml:space="preserve">
     <value>Nach unten</value>
   </data>
-  <data name="toolStripSplitButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="toolStripSplitButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAehJREFUOE+Vkj1o
         E2Ecxv+TKKgg5ZJmOXGQihVKKCEnSJLmgwhJLrqFuBsjioviZCUkY7YSOgs6pNBqYuopNeSLCgltIwYV
@@ -351,15 +351,15 @@
         AJlMBi6XCx6P50+zpb8tnU6j3+/D6XQiFAodDTYbTEG73UahUNj7YJZa94eCweA9c7bdbj86PBL9AjRp
         Cw2ehSDEAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="toolStripSplitButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 22</value>
-  </data>
-  <data name="toolStripSplitButton1.Text" xml:space="preserve">
+	</data>
+	<data name="toolStripSplitButton1.Size" type="System.Drawing.Size, System.Drawing">
+		<value>65, 22</value>
+	</data>
+	<data name="toolStripSplitButton1.Text" xml:space="preserve">
     <value>Helfer</value>
   </data>
-  <data name="addBlockToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="addBlockToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAolJREFUOE9lU19o
         0lEU/vXSq/gyaC+9BtFDEPSSr2MPgx566CEaK9qCgh6ipwZBD82NWUak25x/UFFyOsFsQbrJ/IcP6tZ0
@@ -374,15 +374,15 @@
         Gr+J75vaLmW/JlQE0P0O6FZqtdrrTF8Lk+gv3Y2VlRXceXEV057HkHtGOIj8x8hFBr2PhHV4YGZmxqdW
         q0NDr27Z7imu4b3nCagyzfTPGCi6XmIvSOc/C55kViXa5/Mk7f8DzV/7KCxbm8EAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="addBlockToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 22</value>
-  </data>
-  <data name="addBlockToolStripMenuItem.Text" xml:space="preserve">
+	</data>
+	<data name="addBlockToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+		<value>168, 22</value>
+	</data>
+	<data name="addBlockToolStripMenuItem.Text" xml:space="preserve">
     <value>Block hinzufügen</value>
   </data>
-  <data name="generateSurveyToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="generateSurveyToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAdFJREFUOE+lk9sr
         g2Ecxx//Ay64c0gOOZYkVy7dyCUKV85zHiIp18JEkijZ0AyZ5TBtyTTHJGajHGabmOOG1+lmvr/V+/YS
@@ -394,15 +394,15 @@
         jnQg7ktAWLGKEsuMR7dqmHrlgKoYWiNwJ8ukBfHCBBgjHbQ1K3YUetP15F8gZAX6FvKQlwXnj7TTJVEF
         df9E8LDAnKGMgOzBHv+sjkz8VEH/gbTkIS+jv9EXfDLTxp9yWhjucHqyjQAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="generateSurveyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 22</value>
-  </data>
-  <data name="generateSurveyToolStripMenuItem.Text" xml:space="preserve">
+	</data>
+	<data name="generateSurveyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+		<value>168, 22</value>
+	</data>
+	<data name="generateSurveyToolStripMenuItem.Text" xml:space="preserve">
     <value>Umfrage-polygon</value>
   </data>
-  <data name="_btnSurveySettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="_btnSurveySettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAk9JREFUOE+lk+9L
         U1EYx5/1pnoVGDSKXkgWQQVRYgUjpjGRKH1RlIXZkrUoJF8UtIpACKI/ICgqIqOs7n6pydrclDltV92P
@@ -417,15 +417,15 @@
         coC7ooNETgdNfYKZ1kJeqe7I75L3p/k81ZXj9MuuRq1DbfhLybF/zVf7WeMAx1Jn9gAAAABJRU5ErkJg
         gg==
 </value>
-  </data>
-  <data name="_btnSurveySettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 22</value>
-  </data>
-  <data name="_btnSurveySettings.Text" xml:space="preserve">
+	</data>
+	<data name="_btnSurveySettings.Size" type="System.Drawing.Size, System.Drawing">
+		<value>158, 22</value>
+	</data>
+	<data name="_btnSurveySettings.Text" xml:space="preserve">
     <value>Einstellungen</value>
   </data>
-  <data name="_btnNewSurvey.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="_btnNewSurvey.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAZ9JREFUOE+l09sr
         g2EcB/DfjKURcj5kk5y3mREhtsIFEXNI40IWyaE5b1wquaHcKFfcuCE55DDnK4cLSy6JUv4LuZjX9/fm
@@ -437,15 +437,15 @@
         EAphEAFREA2xEA+JkJTctbbI/52vKv5UAQXENC82xdpWluM6VuvFN+Dbf3wCtN1Bdpd2t0MAAAAASUVO
         RK5CYII=
 </value>
-  </data>
-  <data name="_btnNewSurvey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 22</value>
-  </data>
-  <data name="_btnNewSurvey.Text" xml:space="preserve">
+	</data>
+	<data name="_btnNewSurvey.Size" type="System.Drawing.Size, System.Drawing">
+		<value>158, 22</value>
+	</data>
+	<data name="_btnNewSurvey.Text" xml:space="preserve">
     <value>Neu erstellen</value>
   </data>
-  <data name="_btnBuildSurvey.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="_btnBuildSurvey.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAARVJREFUOE+ljclK
         A0EURa9ZuBAXgoHurooJ4hSnOH2CfoBLMUSjEmKMxjFx5Z8ILgwBMc6zflx7X6cRd77CgsM7VdS9rysM
@@ -454,15 +454,15 @@
         MVK5sbxUiHH0TgGpEjtUvrZal0UEYAiDpSukN1spzhqxGk8VmxCi4+Uv0nb9ss6HARdnJson+hYbhd7c
         cqbbyyK5cn6mdclGBaSH9JOAmD+QP8k4k/gGNGc9VeSFvxwAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="_btnBuildSurvey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 22</value>
-  </data>
-  <data name="_btnBuildSurvey.Text" xml:space="preserve">
+	</data>
+	<data name="_btnBuildSurvey.Size" type="System.Drawing.Size, System.Drawing">
+		<value>158, 22</value>
+	</data>
+	<data name="_btnBuildSurvey.Text" xml:space="preserve">
     <value>Route erstellen</value>
   </data>
-  <data name="toolStripDropDownButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="toolStripDropDownButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAddJREFUOE+Nkr1L
         glEUxq2paGsoGg0cgqBBCImmgmwoiIpoaHDpQ8pCEQW1oZb+gKb2WqKlJYoiwohIFBPsi4xI0CKk8vvb
@@ -475,15 +475,15 @@
         YFivAwSEC5kgWIyEJ8aeFPkOLXq40Ktp5epu0mptLV1dG/8paNGD3m+SmzmoaozA8QAAAABJRU5ErkJg
         gg==
 </value>
-  </data>
-  <data name="toolStripDropDownButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 22</value>
-  </data>
-  <data name="toolStripDropDownButton1.Text" xml:space="preserve">
+	</data>
+	<data name="toolStripDropDownButton1.Size" type="System.Drawing.Size, System.Drawing">
+		<value>64, 22</value>
+	</data>
+	<data name="toolStripDropDownButton1.Text" xml:space="preserve">
     <value>&amp; Datei</value>
   </data>
-  <data name="_nav_open.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="_nav_open.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAphJREFUOE+F011I
         U2EYwPFnV9HXhV1mUGC7MiOC6MKKIhOFQBGpXWQfoxLFLCsqa7WarpnaEmfOoSnVNC1Dk9CVhjUITFkJ
@@ -499,15 +499,15 @@
         ueWjoTlr+nr2Gss6oVC1ITGxfGNSkuJv6xMS8nkBcjOoxADKk7Cr8gRISkXwmGzYSmz+h7hfaetvRiJD
         uLkAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="_nav_open.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 22</value>
-  </data>
-  <data name="_nav_open.Text" xml:space="preserve">
+	</data>
+	<data name="_nav_open.Size" type="System.Drawing.Size, System.Drawing">
+		<value>135, 22</value>
+	</data>
+	<data name="_nav_open.Text" xml:space="preserve">
     <value>&amp; Öffnen</value>
   </data>
-  <data name="_nav_save.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="_nav_save.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAcVJREFUOE+lzk9I
         k3Ecx/Hvnmd3Dx2EiC7du0jgVbxUeAhkiaL5L6VDdAo8KDqIms6tTdiYKJpKtZkITQjdpji3aCPoUJqo
@@ -519,15 +519,15 @@
         /RnMu1bAhq1csFySUktl2U3Lg6j9+uD+xEQE/S1hQzD4xlA44wOCD+OYcy6De7Z8XVauXpFrzeXS8s5q
         tTrPwrvflUjF8GkrRepLsXLxH7Ep+gW/zj478IOLjQAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="_nav_save.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 22</value>
-  </data>
-  <data name="_nav_save.Text" xml:space="preserve">
+	</data>
+	<data name="_nav_save.Size" type="System.Drawing.Size, System.Drawing">
+		<value>135, 22</value>
+	</data>
+	<data name="_nav_save.Text" xml:space="preserve">
     <value>&amp; Speichern</value>
   </data>
-  <data name="toolStripDropDownButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="toolStripDropDownButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAeRJREFUOE9jYBhy
         IC0tjTW8ulo5pLbWNbS+Po0oDyBrSmpry+hbs2bhgt27N4XV17vgNABFU2dnxrzt2xdeuH37wpUrV/7c
@@ -540,15 +540,15 @@
         CzLw8yswycqGc2pqdjBoafFgM4AZKCgExKpAbMTAxeXJwMJiBWRrA7EiEIsBMSjUQeoGGQAASZAThCRn
         c6wAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="toolStripDropDownButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 22</value>
-  </data>
-  <data name="toolStripDropDownButton2.Text" xml:space="preserve">
+	</data>
+	<data name="toolStripDropDownButton2.Size" type="System.Drawing.Size, System.Drawing">
+		<value>58, 22</value>
+	</data>
+	<data name="toolStripDropDownButton2.Text" xml:space="preserve">
     <value>&amp; Uav</value>
   </data>
-  <data name="_btnNaviRead.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="_btnNaviRead.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAbpJREFUOE+Vk0tL
         AlEYhmdq0U8IIqFViwqSvGyyTdgmaN26dlmEYgsjI7OwMAIFNWbVvjYuWhRIYFgQQUH/oBaKNxzv13w7
@@ -560,15 +560,15 @@
         aH3FtwTX8ymcT3Ysn+uh0I+tt98FNRtSngX2vUz6swWcPB7C/mDF3M4MzUDVDlCwBXXjdNER7ZLOpgEr
         GUrTNKY2JwmgIMA3squfsD93HBEAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="_btnNaviRead.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 22</value>
-  </data>
-  <data name="_btnNaviRead.Text" xml:space="preserve">
+	</data>
+	<data name="_btnNaviRead.Size" type="System.Drawing.Size, System.Drawing">
+		<value>182, 22</value>
+	</data>
+	<data name="_btnNaviRead.Text" xml:space="preserve">
     <value>&amp; Lesen</value>
   </data>
-  <data name="_btnNaviWrite.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="_btnNaviWrite.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAhpJREFUOE+Nk8tL
         VFEcx891FhG6cNXLBxYE1W5ynFB8LJQh2hRBCBWKimYK2UJoMUKmiI5SzcCMOgTaNE2kIgViSLRR6EGi
@@ -582,15 +582,15 @@
         AUdepvKRfDRb6qHWFWHzz4ZIF1AOKOEfVOl/S0c0Rxf7WLRUq8Dp6+wOmblKCLALRsB4zpWyy94AAAAA
         SUVORK5CYII=
 </value>
-  </data>
-  <data name="_btnNaviWrite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 22</value>
-  </data>
-  <data name="_btnNaviWrite.Text" xml:space="preserve">
+	</data>
+	<data name="_btnNaviWrite.Size" type="System.Drawing.Size, System.Drawing">
+		<value>182, 22</value>
+	</data>
+	<data name="_btnNaviWrite.Text" xml:space="preserve">
     <value>&amp; Schreiben</value>
   </data>
-  <data name="_btnNaviReload.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="_btnNaviReload.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAA0hJREFUOE9Fk/tT
         TGEYx09+wS/+AzMMMUKYMAZDY+R+mVCjQda2u9auQci1KEKMyyDSuEyGKblmpai2prRbUWSyu6XLlgi1
@@ -609,15 +609,15 @@
         URRaAkOcqyvWz1YXlczRFDtna4pIAHURmUUJVReS6dooIVT1nlB6ZygLjaHKwrhhwX8yw9/wNRIVXQAA
         AABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="_btnNaviReload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 22</value>
-  </data>
-  <data name="_btnNaviReload.Text" xml:space="preserve">
+	</data>
+	<data name="_btnNaviReload.Size" type="System.Drawing.Size, System.Drawing">
+		<value>182, 22</value>
+	</data>
+	<data name="_btnNaviReload.Text" xml:space="preserve">
     <value>Neu Laden aus flash</value>
   </data>
-  <data name="_btnNaviBurn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="_btnNaviBurn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAzZJREFUOE9Fk+lP
         E0EchkET0S/+DcaPxot4RlQUrxiNByRG44VIESXqBxE1WuOB8YgmRPGIV4xGoyQeKSCVttwFqkChxR5Q
@@ -635,15 +635,15 @@
         hfJYL8m3Mjmv+EssncGio3oqEOUZOsglqfEEqEACrn+MxwTIyMnHOAnkf0smU6nInMKG72nB4mO6soWq
         Rn12iS60sKSRS6Nq5BYQ5qu+/KVYITy3qMEwv6jh8B8ijgYGRhVHIQAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="_btnNaviBurn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 22</value>
-  </data>
-  <data name="_btnNaviBurn.Text" xml:space="preserve">
+	</data>
+	<data name="_btnNaviBurn.Size" type="System.Drawing.Size, System.Drawing">
+		<value>182, 22</value>
+	</data>
+	<data name="_btnNaviBurn.Text" xml:space="preserve">
     <value>in Flash brennen</value>
   </data>
-  <data name="_btnAutoSync.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="_btnAutoSync.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAtNJREFUOE9jYKA2
         sJ//XsBu3nNf+3kve+znvThoN/fFGYd5L5cB+TlWc15Lgeyzn/siBsifiWG3zdwXSi7zn1ck7fi4rOHM
@@ -660,15 +660,15 @@
         VzP5TjvL5DvjEKPnhIlMJhlJDILKVkA1WkAsCsTMMIP4gAxhIBYHYlBuI4RBmrmBmAlkAACZYn+i0yjw
         zwAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="_btnAutoSync.ToolTipText" xml:space="preserve">
+	</data>
+	<data name="_btnAutoSync.ToolTipText" xml:space="preserve">
     <value>Auto-Sync mit gluonpilot</value>
   </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
+	<data name="columnHeader2.Text" xml:space="preserve">
     <value>Befehl</value>
   </data>
-  <data name="_imageListGps.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
+	<data name="_imageListGps.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+		<value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAo
@@ -717,5 +717,14 @@
         AfgBHwH4AR8B+AEBAgABGAEcARgBHAEYAwABBAEgAQQBIAEEKwAGgQIAAYABAQGAAQEBgAEBAgAB4AEH
         AeABBwHgAQcCAAHwAQ8B8AEPAfABDwIACw==
 </value>
-  </data>
+	</data>
+	<data name="toolStripContainer1.Text" xml:space="preserve">
+		<value>toolStripContainer1</value>
+	</data>
+	<data name="toolStrip1.Text" xml:space="preserve">
+		<value>toolStrip1</value>
+	</data>
+	<data name="_navigationPanel.Text" xml:space="preserve">
+		<value>Navigation</value>
+	</data>
 </root>

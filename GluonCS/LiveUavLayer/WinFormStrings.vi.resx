@@ -117,109 +117,97 @@
 	<resheader name="writer">
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
-	<data name="tabPage2.Text" xml:space="preserve">
-    <value>Algemeen</value>
+	<data name="Acquiring" xml:space="preserve">
+    <value>Acquiring</value>
   </data>
-	<assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-	<data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-		<value>112, 13</value>
-	</data>
-	<data name="label10.Text" xml:space="preserve">
-    <value>Standaard cirkel straal</value>
+	<data name="Add_new_block" xml:space="preserve">
+    <value>Add new block</value>
   </data>
-	<data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-		<value>92, 13</value>
-	</data>
-	<data name="label9.Text" xml:space="preserve">
-    <value>Standaard hoogte</value>
+	<data name="Are_you_sure" xml:space="preserve">
+    <value>Are you sure?</value>
   </data>
-	<data name="label8.Text" xml:space="preserve">
-    <value>Uav naam</value>
+	<data name="Are_you_sure_you_want_to_close_the_connection" xml:space="preserve">
+    <value>Are you sure you want to close the connection?</value>
   </data>
-	<data name="_cbUavAltSpeed.Size" type="System.Drawing.Size, System.Drawing">
-		<value>199, 17</value>
-	</data>
-	<data name="_cbUavAltSpeed.Text" xml:space="preserve">
-    <value>Toon snelheid en hoogte onder UAV</value>
+	<data name="Autopilot_OFF" xml:space="preserve">
+    <value>Autopilot OFF
+Manual mode</value>
   </data>
-	<data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-		<value>104, 13</value>
-	</data>
-	<data name="label4.Text" xml:space="preserve">
-    <value>Gebruikte eenheden</value>
+	<data name="Autopilot_ON" xml:space="preserve">
+    <value>Autopilot ON</value>
   </data>
-	<data name="_btnOk.Text" xml:space="preserve">
-    <value>Bewaren</value>
+	<data name="cantsynchronize" xml:space="preserve">
+    <value>Can't synchronize with data that has not yet been received. 
+Please read the navigation data from the module first or perform a Write operation.</value>
   </data>
-	<data name="_btnCancel.Text" xml:space="preserve">
-    <value>Afbreken</value>
+	<data name="Configuration_not_possible" xml:space="preserve">
+    <value>Configuration not possible</value>
   </data>
-	<assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-	<data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-		<value>Inherit</value>
-	</data>
-	<data name="$this.Text" xml:space="preserve">
-    <value>Instellingen</value>
+	<data name="ConnectionLost" xml:space="preserve">
+    <value>! ConnectionLost !</value>
   </data>
-	<data name="_cbLanguage.Items" xml:space="preserve">
-		<value>English</value>
-	</data>
-	<data name="_cbLanguage.Items1" xml:space="preserve">
-		<value>Nederlands</value>
-	</data>
-	<data name="_cbLanguage.Items2" xml:space="preserve">
-		<value>Deutsch</value>
-	</data>
-	<data name="label11.Text" xml:space="preserve">
-		<value>Language</value>
-	</data>
-	<data name="_cbUseSpeech.Text" xml:space="preserve">
-		<value>Use speech</value>
-	</data>
-	<data name="_cbMeasurementUnit.Items" xml:space="preserve">
-		<value>km/h</value>
-	</data>
-	<data name="_cbMeasurementUnit.Items1" xml:space="preserve">
-		<value>mph</value>
-	</data>
-	<data name="label7.Text" xml:space="preserve">
-		<value>Passwd:</value>
-	</data>
-	<data name="label6.Text" xml:space="preserve">
-		<value>Login:</value>
-	</data>
-	<data name="label5.Text" xml:space="preserve">
-		<value>Address:</value>
-	</data>
-	<data name="_cbUseProxy.Text" xml:space="preserve">
-		<value>Use proxy</value>
-	</data>
-	<data name="label3.Text" xml:space="preserve">
-		<value>Cache size:</value>
-	</data>
-	<data name="_btnClearCache.Text" xml:space="preserve">
-		<value>Clear cache</value>
-	</data>
-	<data name="label2.Text" xml:space="preserve">
-		<value>Cache mode:</value>
-	</data>
-	<data name="label1.Text" xml:space="preserve">
-		<value>Map type:</value>
-	</data>
-	<data name="tabPage1.Text" xml:space="preserve">
-		<value>Map</value>
-	</data>
-	<data name="_cbLogging.Text" xml:space="preserve">
-		<value>Automatically start logging on 
-application startup</value>
-	</data>
-	<data name="_btnBrowseLogmap.Text" xml:space="preserve">
-		<value>...</value>
-	</data>
-	<data name="label12.Text" xml:space="preserve">
-		<value>Log location:</value>
-	</data>
-	<data name="tabPage3.Text" xml:space="preserve">
-		<value>Logging</value>
-	</data>
+	<data name="Do_you_want_me_to_insert_the_block_at_the_first_empty_line" xml:space="preserve">
+    <value>Do you want me to insert the block at the first empty line?</value>
+  </data>
+	<data name="Error" xml:space="preserve">
+    <value>LỖI</value>
+  </data>
+	<data name="Error_synchronizing" xml:space="preserve">
+    <value>Error synchronizing</value>
+  </data>
+	<data name="Flight_time" xml:space="preserve">
+    <value>Flight time</value>
+  </data>
+	<data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+	<data name="Inserting_the_new_block_at_the_selected_position" xml:space="preserve">
+    <value>Inserting the new block at the selected position</value>
+  </data>
+	<data name="Locked" xml:space="preserve">
+    <value>Đã khóa</value>
+  </data>
+	<data name="New_survey_block" xml:space="preserve">
+    <value>New survey block</value>
+  </data>
+	<data name="Next_WP" xml:space="preserve">
+    <value>Next WP</value>
+  </data>
+	<data name="Not_found" xml:space="preserve">
+    <value>Không tìm thấy</value>
+  </data>
+	<data name="open_the_gluon_navigationblock" xml:space="preserve">
+    <value>Please open the gluon navigation/block file you wish to insert</value>
+  </data>
+	<data name="Please_first_connect_to_the_gluonpilot" xml:space="preserve">
+    <value>Please first connect to the gluonpilot</value>
+  </data>
+	<data name="Sorry_no_empty_position_detected" xml:space="preserve">
+    <value>Sorry, no empty position detected. Please select the line where you want the block to be inserted and try again.</value>
+  </data>
+	<data name="Stabilized_manual" xml:space="preserve">
+    <value>Stabilized manual
+RC mode</value>
+  </data>
+	<data name="There_already_is_a_Survey_block_It_will_be_cleared" xml:space="preserve">
+    <value>There already is a Survey block. It will be cleared.</value>
+  </data>
+	<data name="There_was_an_error_when_writing_the_navigation" xml:space="preserve">
+    <value>There was an error when writing the navigation</value>
+  </data>
+	<data name="The_block_will_be_inserted_at_line_nr" xml:space="preserve">
+    <value>The block will be inserted at line nr</value>
+  </data>
+	<data name="Time_in_block" xml:space="preserve">
+    <value>Time in block</value>
+  </data>
+	<data name="Time_to_WP" xml:space="preserve">
+    <value>Time to WP</value>
+  </data>
+	<data name="Are you sure?" xml:space="preserve">
+    <value>Are you sure?</value>
+  </data>
+	<data name="This will delete all local waypoints &amp; script commands" xml:space="preserve">
+    <value>Sẽ xóa mọi thông tin WP và lệnh bay</value>
+  </data>
 </root>

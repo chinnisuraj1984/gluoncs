@@ -184,7 +184,7 @@
 		<value>0</value>
 	</data>
 	<data name="config.Text" xml:space="preserve">
-    <value>Configuratie</value>
+    <value>Configuration</value>
   </data>
 	<data name="&gt;&gt;config.Name" xml:space="preserve">
     <value>config</value>
@@ -346,7 +346,7 @@
 		<value>1</value>
 	</data>
 	<data name="Navigation.Text" xml:space="preserve">
-    <value>Navigatie</value>
+    <value>Navigation (depricated)</value>
   </data>
 	<data name="&gt;&gt;Navigation.Name" xml:space="preserve">
     <value>Navigation</value>
@@ -484,7 +484,7 @@
 		<value>96, 17</value>
 	</data>
 	<data name="toolStripStatusLabel1.Text" xml:space="preserve">
-    <value>Time connected:</value>
+    <value>T.gian kết nối:</value>
   </data>
 	<data name="toolStripStatusLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
 		<value>MiddleLeft</value>
@@ -502,7 +502,7 @@
 		<value>98, 17</value>
 	</data>
 	<data name="toolStripStatusLabel2.Text" xml:space="preserve">
-    <value>Download speed:</value>
+    <value>Tốc độ truyền:</value>
   </data>
 	<data name="_tssl_downloadspeed.AutoSize" type="System.Boolean, mscorlib">
 		<value>False</value>
@@ -583,7 +583,7 @@
 		<value>5</value>
 	</data>
 	<data name="_cb_print_timestamp.Text" xml:space="preserve">
-    <value>Print timestamp</value>
+    <value>Hiển thị giờ</value>
   </data>
 	<data name="&gt;&gt;_cb_print_timestamp.Name" xml:space="preserve">
     <value>_cb_print_timestamp</value>
@@ -610,7 +610,7 @@
 		<value>4</value>
 	</data>
 	<data name="_cb_hide_parsed.Text" xml:space="preserve">
-    <value>Hide parsed lines</value>
+    <value>Giấu số liệu phụ</value>
   </data>
 	<data name="&gt;&gt;_cb_hide_parsed.Name" xml:space="preserve">
     <value>_cb_hide_parsed</value>
@@ -741,7 +741,7 @@
 		<value>72, 22</value>
 	</data>
 	<data name="_btn_connect.Text" xml:space="preserve">
-    <value>Verbinden</value>
+    <value>Connect</value>
   </data>
 	<data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
 		<value>6, 25</value>
@@ -767,7 +767,7 @@
 		<value>71, 22</value>
 	</data>
 	<data name="_btn_showlogging.Text" xml:space="preserve">
-    <value>Logging</value>
+    <value>Lưu trữ</value>
   </data>
 	<data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
 		<value>6, 25</value>
@@ -799,7 +799,7 @@
 		<value>109, 22</value>
 	</data>
 	<data name="_btn_reboot.Text" xml:space="preserve">
-    <value>Reboot module</value>
+    <value>Khởi động lại module</value>
   </data>
 	<data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
 		<value>6, 25</value>
@@ -829,7 +829,7 @@
 		<value>123, 22</value>
 	</data>
 	<data name="_btn_firmware_upgrade.Text" xml:space="preserve">
-    <value>Firmware upgrade</value>
+    <value>Nạp p.mềm mới</value>
   </data>
 	<data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
 		<value>6, 25</value>
@@ -858,7 +858,7 @@
 		<value>129, 22</value>
 	</data>
 	<data name="_btnBasicConfiguration.Text" xml:space="preserve">
-    <value>Basic configuration</value>
+    <value>Hiệu chỉnh căn bản</value>
   </data>
 	<data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
 		<value>3, 0</value>
