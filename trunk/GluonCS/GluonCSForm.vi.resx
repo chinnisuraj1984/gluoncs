@@ -160,7 +160,7 @@
 		<value>22, 20</value>
 	</data>
 	<data name="_btnZoomin.Text" xml:space="preserve">
-    <value>Zoom in</value>
+    <value>Phóng to</value>
   </data>
 	<data name="_btnZoomout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
 		<value>
@@ -184,10 +184,10 @@
 		<value>22, 20</value>
 	</data>
 	<data name="_btnZoomout.Text" xml:space="preserve">
-    <value>Zoom out</value>
+    <value>Thu nhỏ</value>
   </data>
 	<data name="_btnZoomout.ToolTipText" xml:space="preserve">
-    <value>Zoom out</value>
+    <value>Thu nhỏ</value>
   </data>
 	<data name="_btnGoto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
 		<value>
@@ -360,7 +360,7 @@
 		<value>2</value>
 	</data>
 	<data name="panel4.Text" xml:space="preserve">
-    <value>Logging</value>
+    <value>Lưu trữ</value>
   </data>
 	<data name="&gt;&gt;panel4.Name" xml:space="preserve">
     <value>panel4</value>
@@ -441,7 +441,7 @@
 		<value>0</value>
 	</data>
 	<data name="_layersPanel.Text" xml:space="preserve">
-    <value>Uav information</value>
+    <value>Thông tin UAV</value>
   </data>
 	<data name="&gt;&gt;_layersPanel.Name" xml:space="preserve">
     <value>_layersPanel</value>
@@ -519,13 +519,13 @@
 		<value>157, 22</value>
 	</data>
 	<data name="_btnOptions.Text" xml:space="preserve">
-    <value>Algemene opties</value>
+    <value>General options</value>
   </data>
 	<data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
 		<value>37, 20</value>
 	</data>
 	<data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Bestand</value>
+    <value>File</value>
   </data>
 	<data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
 		<value>0, 0</value>

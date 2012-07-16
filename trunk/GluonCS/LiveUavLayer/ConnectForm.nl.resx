@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+	<!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,100 +59,100 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <data name="xPanderPanel2.Text" xml:space="preserve">
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="xPanderPanel2.Text" xml:space="preserve">
     <value>Basis</value>
   </data>
-  <data name="xPanderPanel1.Text" xml:space="preserve">
+	<data name="xPanderPanel1.Text" xml:space="preserve">
     <value>Geavanceerd</value>
   </data>
-  <data name="xPanderPanel3.Text" xml:space="preserve">
+	<data name="xPanderPanel3.Text" xml:space="preserve">
     <value>Simulatie</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="_rbOffline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 17</value>
-  </data>
-  <data name="_rbOffline.Text" xml:space="preserve">
+	<assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+	<data name="_rbOffline.Size" type="System.Drawing.Size, System.Drawing">
+		<value>215, 17</value>
+	</data>
+	<data name="_rbOffline.Text" xml:space="preserve">
     <value>Niet verbinden - enkel vliegplan editeren</value>
   </data>
-  <data name="_rbReplay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 17</value>
-  </data>
-  <data name="_rbReplay.Text" xml:space="preserve">
+	<data name="_rbReplay.Size" type="System.Drawing.Size, System.Drawing">
+		<value>129, 17</value>
+	</data>
+	<data name="_rbReplay.Text" xml:space="preserve">
     <value>Log opnieuw afspelen</value>
   </data>
-  <data name="_rbViaComPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 17</value>
-  </data>
-  <data name="_rbViaComPort.Text" xml:space="preserve">
+	<data name="_rbViaComPort.Size" type="System.Drawing.Size, System.Drawing">
+		<value>141, 17</value>
+	</data>
+	<data name="_rbViaComPort.Text" xml:space="preserve">
     <value>Verbinden met COM-port</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 13</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
+	<data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+		<value>49, 13</value>
+	</data>
+	<data name="label3.Text" xml:space="preserve">
     <value>Bestand:</value>
   </data>
-  <data name="_btn_portrefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	<data name="_btn_portrefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAadJREFUOE9j/P//
         PwNFAGQAPpy7L2lV5s44Zlxq8GoGacrYEXspZXPUAaIMKDme4VB0JO1A/oHk/9l7Ev6nb4/933So8n/d
@@ -164,20 +164,85 @@
         +q+drfZfPU35v3KSwgGFOFTNGGEAMxno3wNA/8LDAF9gYs0LunkazJqZqqtIjgViNKCrAQAKQYnl55pI
         nAAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
+	</data>
+	<data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+		<value>35, 13</value>
+	</data>
+	<data name="label5.Text" xml:space="preserve">
     <value>Poort:</value>
   </data>
-  <data name="_cbLogToFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 17</value>
-  </data>
-  <data name="_cbLogToFile.Text" xml:space="preserve">
+	<data name="_cbLogToFile.Size" type="System.Drawing.Size, System.Drawing">
+		<value>159, 17</value>
+	</data>
+	<data name="_cbLogToFile.Text" xml:space="preserve">
     <value>Log gegevens naar bestand</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
+	<data name="$this.Text" xml:space="preserve">
     <value> Verbinden met je UAV...</value>
   </data>
+	<data name="xPanderPanelList1.Text" xml:space="preserve">
+		<value>xPanderPanelList1</value>
+	</data>
+	<data name="_btnBrowseLoggedFile.Text" xml:space="preserve">
+		<value>...</value>
+	</data>
+	<data name="_cbBaudrate.Items" xml:space="preserve">
+		<value>2400</value>
+	</data>
+	<data name="_cbBaudrate.Items1" xml:space="preserve">
+		<value>4800</value>
+	</data>
+	<data name="_cbBaudrate.Items2" xml:space="preserve">
+		<value>9600</value>
+	</data>
+	<data name="_cbBaudrate.Items3" xml:space="preserve">
+		<value>19200</value>
+	</data>
+	<data name="_cbBaudrate.Items4" xml:space="preserve">
+		<value>38400</value>
+	</data>
+	<data name="_cbBaudrate.Items5" xml:space="preserve">
+		<value>57600</value>
+	</data>
+	<data name="_cbBaudrate.Items6" xml:space="preserve">
+		<value>115200</value>
+	</data>
+	<data name="_cbBaudrate.Items7" xml:space="preserve">
+		<value>230400</value>
+	</data>
+	<data name="label6.Text" xml:space="preserve">
+		<value>Baudrate:</value>
+	</data>
+	<data name="label2.Text" xml:space="preserve">
+		<value>Port number</value>
+	</data>
+	<data name="_lblFilename.Text" xml:space="preserve">
+		<value>...</value>
+	</data>
+	<data name="_btnChangeFilename.Text" xml:space="preserve">
+		<value>...</value>
+	</data>
+	<data name="checkBox2.Text" xml:space="preserve">
+		<value>Proxy read-only connection to TCP/IP port</value>
+	</data>
+	<data name="label4.Text" xml:space="preserve">
+		<value>Make sure the module is already on</value>
+	</data>
+	<data name="label1.Text" xml:space="preserve">
+		<value>Flightgear path:</value>
+	</data>
+	<data name="_tbFlightgear.Text" xml:space="preserve">
+		<value>D:\Program Files\FlightGear\</value>
+	</data>
+	<data name="_cbSimulation.Text" xml:space="preserve">
+		<value>Put module in simulation mode 
+(Hardware In the Loop)</value>
+	</data>
+	<data name="_cbSimulationFG.Text" xml:space="preserve">
+		<value>Set Gluonpilot in Flightgear simulation mode 
+and launch Flightgear</value>
+	</data>
+	<data name="_btn_connect.Text" xml:space="preserve">
+		<value>&amp;Ok</value>
+	</data>
 </root>

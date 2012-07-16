@@ -52,6 +52,8 @@ namespace GluonCS
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("nl-NL");
             else if (Properties.Settings.Default.Language == "Deutsch")
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("de-DE");
+            else if (Properties.Settings.Default.Language == "Vietnamese")
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("vi-VN");
             else
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
 

@@ -259,6 +259,9 @@
       <DependentUpon>GluonCSForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="GluonCSForm.vi.resx">
+      <DependentUpon>GluonCSForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gluonlaunch.resx">
       <DependentUpon>Gluonlaunch.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +277,9 @@
     <EmbeddedResource Include="LiveUavLayer\ConnectForm.resx">
       <DependentUpon>ConnectForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\ConnectForm.vi.resx">
+      <DependentUpon>ConnectForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\LiveUavPanel.de.resx">
       <DependentUpon>LiveUavPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,6 +293,9 @@
       <DependentUpon>LiveUavPanel.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\LiveUavPanel.vi.resx">
+      <DependentUpon>LiveUavPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\NavigationOverview.resx">
       <DependentUpon>NavigationOverview.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,6 +306,9 @@
       <DependentUpon>SurveyProperties.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\SurveyProperties.nl.resx">
+      <DependentUpon>SurveyProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\SurveyProperties.vi.resx">
       <DependentUpon>SurveyProperties.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\WinFormStrings.de.resx" />
@@ -314,6 +326,7 @@
     <EmbeddedResource Include="LiveUavLayer\UavPropertiesControl.resx">
       <DependentUpon>UavPropertiesControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\WinFormStrings.vi.resx" />
     <EmbeddedResource Include="LiveUavLayer\WriteNavigationCommandsWindow.resx">
       <DependentUpon>WriteNavigationCommandsWindow.cs</DependentUpon>
     </EmbeddedResource>

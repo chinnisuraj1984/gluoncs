@@ -431,6 +431,9 @@
     <EmbeddedResource Include="ConfigurationControl.resx">
       <DependentUpon>ConfigurationControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConfigurationControl.vi.resx">
+      <DependentUpon>ConfigurationControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConfigurationTabpage.de.resx">
       <DependentUpon>ConfigurationTabpage.cs</DependentUpon>
     </EmbeddedResource>
@@ -438,6 +441,9 @@
       <DependentUpon>ConfigurationTabpage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConfigurationTabpage.resx">
+      <DependentUpon>ConfigurationTabpage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigurationTabpage.vi.resx">
       <DependentUpon>ConfigurationTabpage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CoordinateEdit.resx">

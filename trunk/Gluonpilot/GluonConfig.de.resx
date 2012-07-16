@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+	<!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,66 +59,66 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <data name="imageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="imageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+		<value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAM
@@ -188,10 +188,10 @@
         AYABAQH/AwAB+AEAAYABAQH/AQgBgAEBAfgBAAHAAQMB/wEHAYABAQH4AQAB4AEHAf8BBwHAAQMB+AEA
         AfwBPwH/AYcB8AEPAfgBAAs=
 </value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="_btn_connect.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	</data>
+	<assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+	<data name="_btn_connect.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAo1JREFUOE+Vk+tP
         kmEYxmv5xb+gL42+tUVbm5sVtIportIVmWuZlmOZmbSIYYbOQ2+eSBSFiW8iCpowoUA5GGmiYXlIg1Dn
@@ -207,9 +207,9 @@
         /V8lqaiPMj2ITAk1J9+M0+lt7H190EtPrYfP84xgcps34m+po7/tPYh/Adi3jz3vxhhrAAAAAElFTkSu
         QmCC
 </value>
-  </data>
-  <data name="_btn_showlogging.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	</data>
+	<data name="_btn_showlogging.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAbpJREFUOE/Fkv9L
         U1EYxv0XR1IjxArDBMU5xwbbQogYCqKEiFFURI6NmxoVSlikgv6gFoaStLVZGwTKXG5t9/vZ3dP7njNl
@@ -221,9 +221,9 @@
         58lcBpJ5PqwroZcKMDSzfQG4zMI3qimAL5jWBqY3wX/W7Yk13Ep8wI37qzTlZTkof/wNrkVf4WpkiWIv
         UGcNviA7rUnAf9dfyWufJ79SsDQAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="_btn_reboot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	</data>
+	<data name="_btn_reboot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAo5JREFUOE9tU0tP
         E1EUnrI2ceVG/4YujQubmHRhIjtXJgaNSWNiXKjsmJCYaAxBmGlJLEqAoKQB4oNQE+RhGW2FRkFaOrRA
@@ -239,9 +239,9 @@
         S+yyD0iCICjdPYLyuMshtT8fF2/Ygv9/TI0vC3Whsegw5lwzC/PVa24A/AayOqJBLliwSAAAAABJRU5E
         rkJggg==
 </value>
-  </data>
-  <data name="_btn_firmware_upgrade.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	</data>
+	<data name="_btn_firmware_upgrade.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAqFJREFUOE+tUm0s
         1GEA/7c+9MXmk2lampmuXMQknDunRPLF1npbWi2VlA0zfSjaiVpcEcu8teK6XRMVG5mVRre4y3GUQ17q
@@ -257,9 +257,9 @@
         kCyOAwFqt16n/DfY//qCNTxSz6LXif693FmwyXpOFIMdOdSsVy7Fcpp97JlfmKtmfbIoq3fOZnjmUD5/
         vvkFk5St6IvhF5AAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="_btnBasicConfiguration.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
+	</data>
+	<data name="_btnBasicConfiguration.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAeZJREFUOE+Vkj1o
         E2Ecxv+TKKgg5ZJmOXGQihVKKCEnSJLmgwhJLrqFuBsjioviZCUkYzYJnQUdUmg1MfXQGvJFhYS2EYOK
@@ -272,56 +272,56 @@
         ZDJwuVzweDx/my39bel0Gv1+H06nE6FQ6Giw2WAK2u02CoXC7gez1Lo/FAwG75mz7Xb70eGx6DdcBQsh
         Arjc3AAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="_tssl_downloadspeed.Text" xml:space="preserve">
+	</data>
+	<data name="_tssl_downloadspeed.Text" xml:space="preserve">
     <value>0 kB/s</value>
   </data>
-  <data name="_btnBasicConfiguration.Text" xml:space="preserve">
+	<data name="_btnBasicConfiguration.Text" xml:space="preserve">
     <value>Basiskonfiguration</value>
   </data>
-  <data name="_statusStrip.Text" xml:space="preserve">
+	<data name="_statusStrip.Text" xml:space="preserve">
     <value>statusStrip1</value>
   </data>
-  <data name="_btn_reboot.Text" xml:space="preserve">
+	<data name="_btn_reboot.Text" xml:space="preserve">
     <value>Modul Neustart</value>
   </data>
-  <data name="_cb_print_timestamp.Text" xml:space="preserve">
+	<data name="_cb_print_timestamp.Text" xml:space="preserve">
     <value>Zeit Stempel anzeigen</value>
   </data>
-  <data name="_btn_firmware_upgrade.Text" xml:space="preserve">
+	<data name="_btn_firmware_upgrade.Text" xml:space="preserve">
     <value>Firmware Update</value>
   </data>
-  <data name="gcs.Text" xml:space="preserve">
+	<data name="gcs.Text" xml:space="preserve">
     <value>Amaturen</value>
   </data>
-  <data name="_cb_hide_parsed.Text" xml:space="preserve">
+	<data name="_cb_hide_parsed.Text" xml:space="preserve">
     <value>Analysierte Zeilen ausblenden</value>
   </data>
-  <data name="config.Text" xml:space="preserve">
+	<data name="config.Text" xml:space="preserve">
     <value>Konfiguration</value>
   </data>
-  <data name="toolStripStatusLabel2.Text" xml:space="preserve">
+	<data name="toolStripStatusLabel2.Text" xml:space="preserve">
     <value>Download Geschwindigkeit:</value>
   </data>
-  <data name="_btn_connect.Text" xml:space="preserve">
+	<data name="_btn_connect.Text" xml:space="preserve">
     <value>Verbinden</value>
   </data>
-  <data name="_btn_showlogging.Text" xml:space="preserve">
-    <value>Protokollierung</value>
+	<data name="_btn_showlogging.Text" xml:space="preserve">
+    <value>Logging</value>
   </data>
-  <data name="toolStripStatusLabel1.Text" xml:space="preserve">
+	<data name="toolStripStatusLabel1.Text" xml:space="preserve">
     <value>Zeit verbunden:</value>
   </data>
-  <data name="toolStripContainer1.Text" xml:space="preserve">
+	<data name="toolStripContainer1.Text" xml:space="preserve">
     <value>toolStripContainer1</value>
   </data>
-  <data name="Navigation.Text" xml:space="preserve">
+	<data name="Navigation.Text" xml:space="preserve">
     <value>Navigation</value>
   </data>
-  <data name="datalog.Text" xml:space="preserve">
+	<data name="datalog.Text" xml:space="preserve">
     <value>Datalogging</value>
   </data>
-  <data name="_tssl_time.Text" xml:space="preserve">
+	<data name="_tssl_time.Text" xml:space="preserve">
     <value>00:00:00</value>
   </data>
 </root>

@@ -136,9 +136,7 @@
 		<value>24</value>
 	</data>
 	<data name="_btn_telemetry_inflight.Text" xml:space="preserve">
-    <value>Set for in-flight
-(wireless XBee connection)
-</value>
+    <value>Cài tham số truyền khi bay ( kết nối Radio modem)</value>
   </data>
 	<data name="&gt;&gt;_btn_telemetry_inflight.Name" xml:space="preserve">
     <value>_btn_telemetry_inflight</value>
@@ -165,9 +163,7 @@
 		<value>23</value>
 	</data>
 	<data name="_btn_telemetry_configuration.Text" xml:space="preserve">
-    <value>Set for configuration
-(serial FTDI connection)
-</value>
+    <value>Cài tham số truyền khi nối trực tiếp FTDI</value>
   </data>
 	<data name="&gt;&gt;_btn_telemetry_configuration.Name" xml:space="preserve">
     <value>_btn_telemetry_configuration</value>
@@ -416,7 +412,7 @@
 		<value>14</value>
 	</data>
 	<data name="label87.Text" xml:space="preserve">
-    <value>Control information</value>
+    <value>Thông tin điều khiển</value>
   </data>
 	<data name="&gt;&gt;label87.Name" xml:space="preserve">
     <value>label87</value>
@@ -467,7 +463,7 @@
 		<value>12</value>
 	</data>
 	<data name="label84.Text" xml:space="preserve">
-    <value>Attitude</value>
+    <value>Cao độ</value>
   </data>
 	<data name="&gt;&gt;label84.Name" xml:space="preserve">
     <value>label84</value>
@@ -518,7 +514,7 @@
 		<value>10</value>
 	</data>
 	<data name="label59.Text" xml:space="preserve">
-    <value>IMU processed sensors output</value>
+    <value>Số liệu ra của IMU</value>
   </data>
 	<data name="&gt;&gt;label59.Name" xml:space="preserve">
     <value>label59</value>
@@ -578,8 +574,7 @@
 		<value>8</value>
 	</data>
 	<data name="label49.Text" xml:space="preserve">
-    <value>Output telemetry every "x/10" seconds.
-Set to "0" to disable.</value>
+    <value>Số liệu ra mỗi "x/10" giây. Cài số "0" để hủy truyền</value>
   </data>
 	<data name="&gt;&gt;label49.Name" xml:space="preserve">
     <value>label49</value>
@@ -693,7 +688,7 @@ Set to "0" to disable.</value>
 		<value>3</value>
 	</data>
 	<data name="label48.Text" xml:space="preserve">
-    <value>Basic GPS</value>
+    <value>Tham số GPS cơ bản</value>
   </data>
 	<data name="&gt;&gt;label48.Name" xml:space="preserve">
     <value>label48</value>
@@ -723,7 +718,7 @@ Set to "0" to disable.</value>
 		<value>2</value>
 	</data>
 	<data name="label47.Text" xml:space="preserve">
-    <value>Pressure &amp;&amp; temperature</value>
+    <value>Áp suất &amp;&amp; Nhiệt độ</value>
   </data>
 	<data name="&gt;&gt;label47.Name" xml:space="preserve">
     <value>label47</value>
@@ -753,7 +748,7 @@ Set to "0" to disable.</value>
 		<value>1</value>
 	</data>
 	<data name="label46.Text" xml:space="preserve">
-    <value>RC transmitter</value>
+    <value>Số liệu điều khiển tay</value>
   </data>
 	<data name="&gt;&gt;label46.Name" xml:space="preserve">
     <value>label46</value>
@@ -783,7 +778,7 @@ Set to "0" to disable.</value>
 		<value>0</value>
 	</data>
 	<data name="label45.Text" xml:space="preserve">
-    <value>IMU raw sensors output</value>
+    <value>Số liệu IMU thuần</value>
   </data>
 	<data name="&gt;&gt;label45.Name" xml:space="preserve">
     <value>label45</value>
@@ -807,7 +802,7 @@ Set to "0" to disable.</value>
 		<value>3</value>
 	</data>
 	<data name="_tpTelemetry.Text" xml:space="preserve">
-    <value>Telemetrie</value>
+    <value>Telemetry</value>
   </data>
 	<data name="&gt;&gt;_tpTelemetry.Name" xml:space="preserve">
     <value>_tpTelemetry</value>
@@ -834,7 +829,7 @@ Set to "0" to disable.</value>
 		<value>38</value>
 	</data>
 	<data name="_btn_use_current_gyro.Text" xml:space="preserve">
-    <value>Use current</value>
+    <value>Sử dụng thông số hiện tại</value>
   </data>
 	<data name="&gt;&gt;_btn_use_current_gyro.Name" xml:space="preserve">
     <value>_btn_use_current_gyro</value>
@@ -912,7 +907,7 @@ Set to "0" to disable.</value>
 		<value>35</value>
 	</data>
 	<data name="label74.Text" xml:space="preserve">
-    <value>Processed:</value>
+    <value>Đã xử lý:</value>
   </data>
 	<data name="&gt;&gt;label74.Name" xml:space="preserve">
     <value>label74</value>
@@ -966,7 +961,7 @@ Set to "0" to disable.</value>
 		<value>33</value>
 	</data>
 	<data name="label73.Text" xml:space="preserve">
-    <value>Raw:</value>
+    <value>Thuần:</value>
   </data>
 	<data name="&gt;&gt;label73.Name" xml:space="preserve">
     <value>label73</value>
@@ -996,7 +991,7 @@ Set to "0" to disable.</value>
 		<value>32</value>
 	</data>
 	<data name="label72.Text" xml:space="preserve">
-    <value>Neutral:</value>
+    <value>Điểm cân bằng:</value>
   </data>
 	<data name="&gt;&gt;label72.Name" xml:space="preserve">
     <value>label72</value>
@@ -1137,7 +1132,7 @@ Set to "0" to disable.</value>
 		<value>26</value>
 	</data>
 	<data name="_btn_sensors_current_to_neutral.Text" xml:space="preserve">
-    <value>Use current</value>
+    <value>Sử dụng thông số hiện tại</value>
   </data>
 	<data name="&gt;&gt;_btn_sensors_current_to_neutral.Name" xml:space="preserve">
     <value>_btn_sensors_current_to_neutral</value>
@@ -1440,7 +1435,7 @@ Set to "0" to disable.</value>
 		<value>16</value>
 	</data>
 	<data name="label14.Text" xml:space="preserve">
-    <value>Gyroscopes:</value>
+    <value>Cảm biến con quay</value>
   </data>
 	<data name="&gt;&gt;label14.Name" xml:space="preserve">
     <value>label14</value>
@@ -1533,7 +1528,7 @@ Set to "0" to disable.</value>
 		<value>12</value>
 	</data>
 	<data name="label13.Text" xml:space="preserve">
-    <value>Processed:</value>
+    <value>Đã xử lý:</value>
   </data>
 	<data name="&gt;&gt;label13.Name" xml:space="preserve">
     <value>label13</value>
@@ -1635,7 +1630,7 @@ Set to "0" to disable.</value>
 		<value>8</value>
 	</data>
 	<data name="label12.Text" xml:space="preserve">
-    <value>Neutral:</value>
+    <value>Điểm cân bằng:</value>
   </data>
 	<data name="&gt;&gt;label12.Name" xml:space="preserve">
     <value>label12</value>
@@ -1665,7 +1660,7 @@ Set to "0" to disable.</value>
 		<value>7</value>
 	</data>
 	<data name="label11.Text" xml:space="preserve">
-    <value>Raw:</value>
+    <value>Thuần:</value>
   </data>
 	<data name="&gt;&gt;label11.Name" xml:space="preserve">
     <value>label11</value>
@@ -1848,7 +1843,7 @@ Set to "0" to disable.</value>
 		<value>0</value>
 	</data>
 	<data name="label7.Text" xml:space="preserve">
-    <value>Accelerometer:</value>
+    <value>Cảm biến gia tốc</value>
   </data>
 	<data name="&gt;&gt;label7.Name" xml:space="preserve">
     <value>label7</value>
@@ -1872,7 +1867,7 @@ Set to "0" to disable.</value>
 		<value>1</value>
 	</data>
 	<data name="groupBox2.Text" xml:space="preserve">
-    <value>6DOF: accelerometers &amp;&amp; gyroscopes</value>
+    <value>6DOF: Gia tốc &amp;&amp; Con quay</value>
   </data>
 	<data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
     <value>groupBox2</value>
@@ -1953,7 +1948,7 @@ Set to "0" to disable.</value>
 		<value>7</value>
 	</data>
 	<data name="label5.Text" xml:space="preserve">
-    <value>Temperature:</value>
+    <value>Nhiệt độ:</value>
   </data>
 	<data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -2034,7 +2029,7 @@ Set to "0" to disable.</value>
 		<value>4</value>
 	</data>
 	<data name="label3.Text" xml:space="preserve">
-    <value>Height:</value>
+    <value>Chiều cao:</value>
   </data>
 	<data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -2115,7 +2110,7 @@ Set to "0" to disable.</value>
 		<value>1</value>
 	</data>
 	<data name="label1.Text" xml:space="preserve">
-    <value>Pressure:</value>
+    <value>Áp suất:</value>
   </data>
 	<data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -2139,7 +2134,7 @@ Set to "0" to disable.</value>
 		<value>0</value>
 	</data>
 	<data name="groupBox1.Text" xml:space="preserve">
-    <value>SCP1000 pressure sensor</value>
+    <value>Cảm biến áp suất</value>
   </data>
 	<data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
     <value>groupBox1</value>
@@ -2166,7 +2161,7 @@ Set to "0" to disable.</value>
 		<value>0</value>
 	</data>
 	<data name="_tpSensors.Text" xml:space="preserve">
-    <value>Sensoren</value>
+    <value>Sensors</value>
   </data>
 	<data name="&gt;&gt;_tpSensors.Name" xml:space="preserve">
     <value>_tpSensors</value>
@@ -2199,7 +2194,7 @@ Set to "0" to disable.</value>
 		<value>23</value>
 	</data>
 	<data name="_rb_gps_notfound.Text" xml:space="preserve">
-    <value>Not found</value>
+    <value>Không tìm thấy</value>
   </data>
 	<data name="&gt;&gt;_rb_gps_notfound.Name" xml:space="preserve">
     <value>_rb_gps_notfound</value>
@@ -2259,7 +2254,7 @@ Set to "0" to disable.</value>
 		<value>21</value>
 	</data>
 	<data name="_llGoogleMaps.Text" xml:space="preserve">
-    <value>Goto google maps</value>
+    <value>Đến bản đồ của Google</value>
   </data>
 	<data name="&gt;&gt;_llGoogleMaps.Name" xml:space="preserve">
     <value>_llGoogleMaps</value>
@@ -2415,7 +2410,7 @@ Set to "0" to disable.</value>
 		<value>13</value>
 	</data>
 	<data name="label57.Text" xml:space="preserve">
-    <value>Number of satellites:</value>
+    <value>Số vệ tinh:</value>
   </data>
 	<data name="&gt;&gt;label57.Name" xml:space="preserve">
     <value>label57</value>
@@ -2445,7 +2440,7 @@ Set to "0" to disable.</value>
 		<value>12</value>
 	</data>
 	<data name="label56.Text" xml:space="preserve">
-    <value>Heading:</value>
+    <value>Hướng:</value>
   </data>
 	<data name="&gt;&gt;label56.Name" xml:space="preserve">
     <value>label56</value>
@@ -2475,7 +2470,7 @@ Set to "0" to disable.</value>
 		<value>11</value>
 	</data>
 	<data name="label55.Text" xml:space="preserve">
-    <value>Speed:</value>
+    <value>Tốc độ:</value>
   </data>
 	<data name="&gt;&gt;label55.Name" xml:space="preserve">
     <value>label55</value>
@@ -2505,7 +2500,7 @@ Set to "0" to disable.</value>
 		<value>10</value>
 	</data>
 	<data name="label54.Text" xml:space="preserve">
-    <value>Height:</value>
+    <value>Chiều cao:</value>
   </data>
 	<data name="&gt;&gt;label54.Name" xml:space="preserve">
     <value>label54</value>
@@ -2535,7 +2530,7 @@ Set to "0" to disable.</value>
 		<value>9</value>
 	</data>
 	<data name="label53.Text" xml:space="preserve">
-    <value>Longitude:</value>
+    <value>Kinh độ:</value>
   </data>
 	<data name="&gt;&gt;label53.Name" xml:space="preserve">
     <value>label53</value>
@@ -2565,7 +2560,7 @@ Set to "0" to disable.</value>
 		<value>8</value>
 	</data>
 	<data name="label52.Text" xml:space="preserve">
-    <value>Latitude: </value>
+    <value>Vĩ độ</value>
   </data>
 	<data name="&gt;&gt;label52.Name" xml:space="preserve">
     <value>label52</value>
@@ -2595,7 +2590,7 @@ Set to "0" to disable.</value>
 		<value>7</value>
 	</data>
 	<data name="label51.Text" xml:space="preserve">
-    <value>Status:</value>
+    <value>Tình trạng:</value>
   </data>
 	<data name="&gt;&gt;label51.Name" xml:space="preserve">
     <value>label51</value>
@@ -2628,7 +2623,7 @@ Set to "0" to disable.</value>
 		<value>6</value>
 	</data>
 	<data name="_rb_gps_status_active.Text" xml:space="preserve">
-    <value>Locked</value>
+    <value>Đã khóa</value>
   </data>
 	<data name="&gt;&gt;_rb_gps_status_active.Name" xml:space="preserve">
     <value>_rb_gps_status_active</value>
@@ -2661,7 +2656,7 @@ Set to "0" to disable.</value>
 		<value>5</value>
 	</data>
 	<data name="_rb_gps_status_void.Text" xml:space="preserve">
-    <value>Acquiring lock</value>
+    <value>Chờ vệ tinh</value>
   </data>
 	<data name="&gt;&gt;_rb_gps_status_void.Name" xml:space="preserve">
     <value>_rb_gps_status_void</value>
@@ -2691,7 +2686,7 @@ Set to "0" to disable.</value>
 		<value>2</value>
 	</data>
 	<data name="label456.Text" xml:space="preserve">
-    <value>Operational baudrate:</value>
+    <value>Tốc độ hoạt động:</value>
   </data>
 	<data name="&gt;&gt;label456.Name" xml:space="preserve">
     <value>label456</value>
@@ -2721,7 +2716,7 @@ Set to "0" to disable.</value>
 		<value>0</value>
 	</data>
 	<data name="label50.Text" xml:space="preserve">
-    <value>Start-up baudrate:</value>
+    <value>Tốc độ khởi động:</value>
   </data>
 	<data name="&gt;&gt;label50.Name" xml:space="preserve">
     <value>label50</value>
@@ -2826,7 +2821,7 @@ Set to "0" to disable.</value>
 		<value>26</value>
 	</data>
 	<data name="label78.Text" xml:space="preserve">
-    <value>Stabilized</value>
+    <value>Cân bằng</value>
   </data>
 	<data name="&gt;&gt;label78.Name" xml:space="preserve">
     <value>label78</value>
@@ -2886,7 +2881,7 @@ Set to "0" to disable.</value>
 		<value>24</value>
 	</data>
 	<data name="label75.Text" xml:space="preserve">
-    <value>(Burn to flash &amp;&amp; Reset required!)</value>
+    <value>(Nạp vào flash &amp;&amp; Yêu cầu khởi động lại!!)</value>
   </data>
 	<data name="&gt;&gt;label75.Name" xml:space="preserve">
     <value>label75</value>
@@ -2916,7 +2911,7 @@ Set to "0" to disable.</value>
 		<value>36</value>
 	</data>
 	<data name="label77.Text" xml:space="preserve">
-    <value>Up/Right/Full throttle/Manual</value>
+    <value>Lên/Phải/Mở hết van/Bay tay</value>
   </data>
 	<data name="&gt;&gt;label77.Name" xml:space="preserve">
     <value>label77</value>
@@ -2946,7 +2941,7 @@ Set to "0" to disable.</value>
 		<value>35</value>
 	</data>
 	<data name="label76.Text" xml:space="preserve">
-    <value>Down/Left/Idle/Autopilot</value>
+    <value>Xuống/Trái/Đóng hết van/Autopilot</value>
   </data>
 	<data name="&gt;&gt;label76.Name" xml:space="preserve">
     <value>label76</value>
@@ -3276,7 +3271,7 @@ Set to "0" to disable.</value>
 		<value>31</value>
 	</data>
 	<data name="label37.Text" xml:space="preserve">
-    <value>Motor</value>
+    <value>Động cơ</value>
   </data>
 	<data name="&gt;&gt;label37.Name" xml:space="preserve">
     <value>label37</value>
@@ -3516,7 +3511,7 @@ Set to "0" to disable.</value>
 		<value>29</value>
 	</data>
 	<data name="label36.Text" xml:space="preserve">
-    <value>(Yaw)</value>
+    <value>Lái hướng</value>
   </data>
 	<data name="label36.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
 		<value>TopCenter</value>
@@ -3759,7 +3754,7 @@ Set to "0" to disable.</value>
 		<value>27</value>
 	</data>
 	<data name="label35.Text" xml:space="preserve">
-    <value>Pitch</value>
+    <value>Lên xuống</value>
   </data>
 	<data name="&gt;&gt;label35.Name" xml:space="preserve">
     <value>label35</value>
@@ -3999,7 +3994,7 @@ Set to "0" to disable.</value>
 		<value>25</value>
 	</data>
 	<data name="label34.Text" xml:space="preserve">
-    <value>Roll</value>
+    <value>Nghiêng</value>
   </data>
 	<data name="&gt;&gt;label34.Name" xml:space="preserve">
     <value>label34</value>
@@ -4269,7 +4264,7 @@ Set to "0" to disable.</value>
 		<value>21</value>
 	</data>
 	<data name="label33.Text" xml:space="preserve">
-    <value>Channel 7</value>
+    <value>Kênh 7</value>
   </data>
 	<data name="&gt;&gt;label33.Name" xml:space="preserve">
     <value>label33</value>
@@ -4353,7 +4348,7 @@ Set to "0" to disable.</value>
 		<value>18</value>
 	</data>
 	<data name="label31.Text" xml:space="preserve">
-    <value>Channel 6</value>
+    <value>Kênh 6</value>
   </data>
 	<data name="&gt;&gt;label31.Name" xml:space="preserve">
     <value>label31</value>
@@ -4437,7 +4432,7 @@ Set to "0" to disable.</value>
 		<value>15</value>
 	</data>
 	<data name="label29.Text" xml:space="preserve">
-    <value>Channel 5</value>
+    <value>Kênh 5</value>
   </data>
 	<data name="&gt;&gt;label29.Name" xml:space="preserve">
     <value>label29</value>
@@ -4521,7 +4516,7 @@ Set to "0" to disable.</value>
 		<value>12</value>
 	</data>
 	<data name="label27.Text" xml:space="preserve">
-    <value>Channel 4</value>
+    <value>Kênh 4</value>
   </data>
 	<data name="&gt;&gt;label27.Name" xml:space="preserve">
     <value>label27</value>
@@ -4605,7 +4600,7 @@ Set to "0" to disable.</value>
 		<value>9</value>
 	</data>
 	<data name="label25.Text" xml:space="preserve">
-    <value>Channel 3</value>
+    <value>Kênh 3</value>
   </data>
 	<data name="&gt;&gt;label25.Name" xml:space="preserve">
     <value>label25</value>
@@ -4689,7 +4684,7 @@ Set to "0" to disable.</value>
 		<value>6</value>
 	</data>
 	<data name="label23.Text" xml:space="preserve">
-    <value>Channel 2</value>
+    <value>Kênh 2</value>
   </data>
 	<data name="&gt;&gt;label23.Name" xml:space="preserve">
     <value>label23</value>
@@ -4773,7 +4768,7 @@ Set to "0" to disable.</value>
 		<value>3</value>
 	</data>
 	<data name="label21.Text" xml:space="preserve">
-    <value>Channel 1</value>
+    <value>Kênh 1</value>
   </data>
 	<data name="&gt;&gt;label21.Name" xml:space="preserve">
     <value>label21</value>
@@ -4821,7 +4816,7 @@ Set to "0" to disable.</value>
 		<value>23</value>
 	</data>
 	<data name="groupBox3.Text" xml:space="preserve">
-    <value>Channel configuration</value>
+    <value>Cấu hình kênh lái</value>
   </data>
 	<data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
     <value>groupBox3</value>
@@ -4851,7 +4846,7 @@ Set to "0" to disable.</value>
 		<value>1</value>
 	</data>
 	<data name="_rbPwm.Text" xml:space="preserve">
-    <value>Separate PWM inputs</value>
+    <value>Từng xung PWM vào</value>
   </data>
 	<data name="&gt;&gt;_rbPwm.Name" xml:space="preserve">
     <value>_rbPwm</value>
@@ -4881,7 +4876,7 @@ Set to "0" to disable.</value>
 		<value>0</value>
 	</data>
 	<data name="_rbPpm.Text" xml:space="preserve">
-    <value>PPM pulse train</value>
+    <value>Dãy xung PPM vào</value>
   </data>
 	<data name="&gt;&gt;_rbPpm.Name" xml:space="preserve">
     <value>_rbPpm</value>
@@ -4905,7 +4900,7 @@ Set to "0" to disable.</value>
 		<value>2</value>
 	</data>
 	<data name="_tpRc.Text" xml:space="preserve">
-    <value>RC input</value>
+    <value>R/C vào</value>
   </data>
 	<data name="&gt;&gt;_tpRc.Name" xml:space="preserve">
     <value>_tpRc</value>
@@ -5382,7 +5377,7 @@ Set to "0" to disable.</value>
 		<value>41</value>
 	</data>
 	<data name="label71.Text" xml:space="preserve">
-    <value>Function (depending on mix)</value>
+    <value>Chức năng (Tùy thuộc kiểu phối hợp)</value>
   </data>
 	<data name="&gt;&gt;label71.Name" xml:space="preserve">
     <value>label71</value>
@@ -5412,7 +5407,7 @@ Set to "0" to disable.</value>
 		<value>40</value>
 	</data>
 	<data name="label70.Text" xml:space="preserve">
-    <value>Motor</value>
+    <value>Động cơ</value>
   </data>
 	<data name="&gt;&gt;label70.Name" xml:space="preserve">
     <value>label70</value>
@@ -5562,7 +5557,7 @@ Set to "0" to disable.</value>
 		<value>35</value>
 	</data>
 	<data name="_rb_serovs_neutral_auto.Text" xml:space="preserve">
-    <value>Servo neutral value is taken from manual mode trim settings</value>
+    <value>Điểm giữa Servo lấy từ bộ lái cầm tay</value>
   </data>
 	<data name="&gt;&gt;_rb_serovs_neutral_auto.Name" xml:space="preserve">
     <value>_rb_serovs_neutral_auto</value>
@@ -5592,7 +5587,7 @@ Set to "0" to disable.</value>
 		<value>34</value>
 	</data>
 	<data name="_rb_servos_neutral_configurable.Text" xml:space="preserve">
-    <value>Servo neutral value is set here</value>
+    <value>Cài giá trị Servo ở đây</value>
   </data>
 	<data name="&gt;&gt;_rb_servos_neutral_configurable.Name" xml:space="preserve">
     <value>_rb_servos_neutral_configurable</value>
@@ -5784,7 +5779,7 @@ Set to "0" to disable.</value>
 		<value>27</value>
 	</data>
 	<data name="label44.Text" xml:space="preserve">
-    <value>Reverse</value>
+    <value>Đảo chiều</value>
   </data>
 	<data name="&gt;&gt;label44.Name" xml:space="preserve">
     <value>label44</value>
@@ -6135,7 +6130,7 @@ Set to "0" to disable.</value>
 		<value>13</value>
 	</data>
 	<data name="label92.Text" xml:space="preserve">
-    <value>Throttle P-gain (%/m)</value>
+    <value>Độ nhạy điều tốc  (%/m)</value>
   </data>
 	<data name="&gt;&gt;label92.Name" xml:space="preserve">
     <value>label92</value>
@@ -6369,7 +6364,7 @@ Set to "0" to disable.</value>
 		<value>3</value>
 	</data>
 	<data name="label86.Text" xml:space="preserve">
-    <value>Waypoint radius</value>
+    <value>Đường kính tọa độ điểm bay</value>
   </data>
 	<data name="&gt;&gt;label86.Name" xml:space="preserve">
     <value>label86</value>
@@ -6399,7 +6394,7 @@ Set to "0" to disable.</value>
 		<value>2</value>
 	</data>
 	<data name="label85.Text" xml:space="preserve">
-    <value>Motor</value>
+    <value>Động cơ</value>
   </data>
 	<data name="&gt;&gt;label85.Name" xml:space="preserve">
     <value>label85</value>
@@ -6450,7 +6445,7 @@ Set to "0" to disable.</value>
 		<value>19</value>
 	</data>
 	<data name="groupBox7.Text" xml:space="preserve">
-    <value>Navigation</value>
+    <value>Dẫn đường</value>
   </data>
 	<data name="&gt;&gt;groupBox7.Name" xml:space="preserve">
     <value>groupBox7</value>
@@ -6480,7 +6475,7 @@ Set to "0" to disable.</value>
 		<value>17</value>
 	</data>
 	<data name="label82.Text" xml:space="preserve">
-    <value>Minimum circle radius</value>
+    <value>Đường kính vòng tròn nhỏ nhất</value>
   </data>
 	<data name="&gt;&gt;label82.Name" xml:space="preserve">
     <value>label82</value>
@@ -6510,8 +6505,7 @@ Set to "0" to disable.</value>
 		<value>15</value>
 	</data>
 	<data name="label81.Text" xml:space="preserve">
-    <value>Default speed
-(in case of GPS loss)</value>
+    <value>Tốc độ mặc định ( khi mất GPS)</value>
   </data>
 	<data name="&gt;&gt;label81.Name" xml:space="preserve">
     <value>label81</value>
@@ -6526,13 +6520,13 @@ Set to "0" to disable.</value>
     <value>2</value>
   </data>
 	<data name="_cbAltitudeMode.Items" xml:space="preserve">
-    <value>Pressure relative to home</value>
+    <value>Áp suất tương đối từ vị trí home</value>
   </data>
 	<data name="_cbAltitudeMode.Items1" xml:space="preserve">
-    <value>GPS altitude (absolute!)</value>
+    <value>Cao độ GPS ( Tuyệt đối)</value>
   </data>
 	<data name="_cbAltitudeMode.Items2" xml:space="preserve">
-    <value>GPS altitude relative to home</value>
+    <value>Cao độ GPS tương đối từ v.trí home</value>
   </data>
 	<data name="_cbAltitudeMode.Location" type="System.Drawing.Point, System.Drawing">
 		<value>83, 63</value>
@@ -6571,7 +6565,7 @@ Set to "0" to disable.</value>
 		<value>1</value>
 	</data>
 	<data name="label93.Text" xml:space="preserve">
-    <value>Altitude mode</value>
+    <value>Kiểu giữ cao độ</value>
   </data>
 	<data name="&gt;&gt;label93.Name" xml:space="preserve">
     <value>label93</value>
@@ -6601,8 +6595,8 @@ Set to "0" to disable.</value>
 		<value>0</value>
 	</data>
 	<data name="cb_altitudehold.Text" xml:space="preserve">
-    <value>Stabilized: Elevator stick: altitude instead of pitch
-Navigation: Altitude: manual instead of WP</value>
+    <value>Stabilized: Elevator stick: Cao độ từ cần lái
+Navigation: Altitude: nhận cao độ từ điểm bay</value>
   </data>
 	<data name="&gt;&gt;cb_altitudehold.Name" xml:space="preserve">
     <value>cb_altitudehold</value>
@@ -6626,7 +6620,7 @@ Navigation: Altitude: manual instead of WP</value>
 		<value>14</value>
 	</data>
 	<data name="groupBox6.Text" xml:space="preserve">
-    <value>Altitude control</value>
+    <value>Điều khiển cao độ</value>
   </data>
 	<data name="&gt;&gt;groupBox6.Name" xml:space="preserve">
     <value>groupBox6</value>
@@ -6767,7 +6761,7 @@ Navigation: Altitude: manual instead of WP</value>
 		<value>9</value>
 	</data>
 	<data name="label65.Text" xml:space="preserve">
-    <value>degrees</value>
+    <value>độ</value>
   </data>
 	<data name="&gt;&gt;label65.Name" xml:space="preserve">
     <value>label65</value>
@@ -6899,7 +6893,7 @@ Navigation: Altitude: manual instead of WP</value>
 		<value>5</value>
 	</data>
 	<data name="label62.Text" xml:space="preserve">
-    <value>degrees</value>
+    <value>độ</value>
   </data>
 	<data name="&gt;&gt;label62.Name" xml:space="preserve">
     <value>label62</value>
@@ -7046,7 +7040,7 @@ Navigation: Altitude: manual instead of WP</value>
 		<value>0</value>
 	</data>
 	<data name="label58.Text" xml:space="preserve">
-    <value>Output mix:</value>
+    <value>Kiểu phối hợp lái:</value>
   </data>
 	<data name="&gt;&gt;label58.Name" xml:space="preserve">
     <value>label58</value>
@@ -7115,7 +7109,7 @@ Navigation: Altitude: manual instead of WP</value>
 		<value>6</value>
 	</data>
 	<data name="_tbControl.Text" xml:space="preserve">
-    <value>Controle</value>
+    <value>Control</value>
   </data>
 	<data name="&gt;&gt;_tbControl.Name" xml:space="preserve">
     <value>_tbControl</value>
@@ -7160,7 +7154,7 @@ Navigation: Altitude: manual instead of WP</value>
 		<value>4</value>
 	</data>
 	<data name="groupBox8.Text" xml:space="preserve">
-    <value>Altitude error -&gt; Pitch</value>
+    <value>Lỗi cao độ -&gt; Pitch</value>
   </data>
 	<data name="&gt;&gt;groupBox8.Name" xml:space="preserve">
     <value>groupBox8</value>
@@ -7205,7 +7199,7 @@ Navigation: Altitude: manual instead of WP</value>
 		<value>3</value>
 	</data>
 	<data name="groupBox5.Text" xml:space="preserve">
-    <value>Heading error -&gt; roll/yaw</value>
+    <value>Lỗi hướng -&gt; roll/yaw</value>
   </data>
 	<data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
     <value>groupBox5</value>
@@ -7232,7 +7226,7 @@ Navigation: Altitude: manual instead of WP</value>
 		<value>1</value>
 	</data>
 	<data name="_btnWriteRollPid.Text" xml:space="preserve">
-    <value>Schrijven</value>
+    <value>Write</value>
   </data>
 	<data name="&gt;&gt;_btnWriteRollPid.Name" xml:space="preserve">
     <value>_btnWriteRollPid</value>
@@ -7277,7 +7271,7 @@ Navigation: Altitude: manual instead of WP</value>
 		<value>2</value>
 	</data>
 	<data name="_pid_roll2aileron.Text" xml:space="preserve">
-    <value>Roll error -&gt; Aileron</value>
+    <value>Lỗi nghiêng -&gt; Aileron</value>
   </data>
 	<data name="&gt;&gt;_pid_roll2aileron.Name" xml:space="preserve">
     <value>_pid_roll2aileron</value>
@@ -7304,7 +7298,7 @@ Navigation: Altitude: manual instead of WP</value>
 		<value>1</value>
 	</data>
 	<data name="_btnWritePitchPid.Text" xml:space="preserve">
-    <value>Schrijven</value>
+    <value>Write</value>
   </data>
 	<data name="&gt;&gt;_btnWritePitchPid.Name" xml:space="preserve">
     <value>_btnWritePitchPid</value>
@@ -7349,7 +7343,7 @@ Navigation: Altitude: manual instead of WP</value>
 		<value>1</value>
 	</data>
 	<data name="groupBox4.Text" xml:space="preserve">
-    <value>Pitch error -&gt; Elevator</value>
+    <value>Lỗi lên xuống -&gt; Elevator</value>
   </data>
 	<data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
     <value>groupBox4</value>

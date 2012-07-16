@@ -134,7 +134,7 @@
 		<value>429, 25</value>
 	</data>
 	<data name="_btn_save.Text" xml:space="preserve">
-    <value>Bewaren</value>
+    <value>Save</value>
   </data>
 	<data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -163,7 +163,7 @@
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 	<data name="_btn_load.Text" xml:space="preserve">
-    <value>Openen</value>
+    <value>Open</value>
   </data>
 	<data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ConfigurationControl</value>
@@ -181,7 +181,7 @@
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 	<data name="_btn_burn.Text" xml:space="preserve">
-    <value>Branden</value>
+    <value>Burn</value>
   </data>
 	<data name="toolStripContainer1.Location" type="System.Drawing.Point, System.Drawing">
 		<value>0, 0</value>
@@ -208,7 +208,7 @@
 		<value>60, 22</value>
 	</data>
 	<data name="_btn_reload.Text" xml:space="preserve">
-    <value>Herladen</value>
+    <value>Reload</value>
   </data>
 	<data name="&gt;&gt;toolStripContainer1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -220,7 +220,7 @@
     <value>3</value>
   </data>
 	<data name="_btn_write.Text" xml:space="preserve">
-    <value>Schrijven</value>
+    <value>Write</value>
   </data>
 	<data name="_btn_save.Size" type="System.Drawing.Size, System.Drawing">
 		<value>51, 22</value>
@@ -255,7 +255,7 @@
     <value>toolStripContainer1</value>
   </data>
 	<data name="_btn_write.ToolTipText" xml:space="preserve">
-    <value>Write to module volatile memory</value>
+    <value>Ghi vào bộ nhớ tạm</value>
   </data>
 	<data name="_btn_load.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
 		<value>Magenta</value>
@@ -286,7 +286,7 @@
 		<value>5, 10, 5, 5</value>
 	</data>
 	<data name="_btn_reload.ToolTipText" xml:space="preserve">
-    <value>Reload from flash to module volatile memory</value>
+    <value>Nạp lại từ bộ nhớ Flash vào bộ nhớ tạm</value>
   </data>
 	<data name="&gt;&gt;configurationTabpage1.Parent" xml:space="preserve">
     <value>toolStripContainer1.ContentPanel</value>
@@ -296,7 +296,7 @@
 		<value>0</value>
 	</data>
 	<data name="_btn_default.ToolTipText" xml:space="preserve">
-    <value>Load default configuration to module volatile memory</value>
+    <value>Nạp cấu hình mặc định vào bộ nhớ tạm</value>
   </data>
 	<data name="&gt;&gt;_btn_load.Name" xml:space="preserve">
     <value>_btn_load</value>
@@ -326,7 +326,7 @@
 		<value>0</value>
 	</data>
 	<data name="_btn_burn.ToolTipText" xml:space="preserve">
-    <value>Burn configuration in module memory to flash</value>
+    <value>Nạp cấu hình từ bộ nhớ tạm vào Flash</value>
   </data>
 	<data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
 		<value>6, 25</value>
@@ -341,7 +341,7 @@
     <value>2</value>
   </data>
 	<data name="_btn_default.Text" xml:space="preserve">
-    <value>Laden standaard</value>
+    <value>Load default</value>
   </data>
 	<data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -350,7 +350,7 @@
 		<value>Fill</value>
 	</data>
 	<data name="_btn_load.ToolTipText" xml:space="preserve">
-    <value>Load from file...</value>
+    <value>Nạp từ tập tin</value>
   </data>
 	<data name="&gt;&gt;_btn_burn.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -434,7 +434,7 @@
     <value>1</value>
   </data>
 	<data name="_btn_read.Text" xml:space="preserve">
-    <value>Lezen</value>
+    <value>Read</value>
   </data>
 	<data name="toolStripContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
 		<value>Fill</value>
@@ -470,7 +470,7 @@
 		<value>3, 0</value>
 	</data>
 	<data name="_btn_save.ToolTipText" xml:space="preserve">
-    <value>Save to file...</value>
+    <value>Lưu vào tập tin</value>
   </data>
 	<data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.Parent" xml:space="preserve">
     <value>toolStripContainer1</value>
@@ -530,7 +530,7 @@
 		<value>Magenta</value>
 	</data>
 	<data name="_btn_read.ToolTipText" xml:space="preserve">
-    <value>Read from module volatile memory</value>
+    <value>Đọc từ bộ nhớ tạm</value>
   </data>
 	<data name="&gt;&gt;configurationTabpage1.Name" xml:space="preserve">
     <value>configurationTabpage1</value>

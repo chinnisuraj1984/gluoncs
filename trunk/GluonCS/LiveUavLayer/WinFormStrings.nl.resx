@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+	<!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,155 +59,158 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <data name="Acquiring" xml:space="preserve">
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="Acquiring" xml:space="preserve">
     <value>Zoeken</value>
   </data>
-  <data name="Add_new_block" xml:space="preserve">
+	<data name="Add_new_block" xml:space="preserve">
     <value>Voeg blok toe</value>
   </data>
-  <data name="Are_you_sure" xml:space="preserve">
+	<data name="Are_you_sure" xml:space="preserve">
     <value>Bent u zeker?</value>
   </data>
-  <data name="Are_you_sure_you_want_to_close_the_connection" xml:space="preserve">
+	<data name="Are_you_sure_you_want_to_close_the_connection" xml:space="preserve">
     <value>Wilt u de verbinding sluiten?</value>
   </data>
-  <data name="Autopilot_OFF" xml:space="preserve">
+	<data name="Autopilot_OFF" xml:space="preserve">
     <value>Autopiloot UIT
 Manuele mode</value>
   </data>
-  <data name="Autopilot_ON" xml:space="preserve">
+	<data name="Autopilot_ON" xml:space="preserve">
     <value>Autopiloot AAN</value>
   </data>
-  <data name="cantsynchronize" xml:space="preserve">
+	<data name="cantsynchronize" xml:space="preserve">
     <value>Kan niet synchroniseren als er nog geen data ontvangen is.
 Gelieve eerst de navigatiedata uit te lezen.</value>
   </data>
-  <data name="Configuration_not_possible" xml:space="preserve">
+	<data name="Configuration_not_possible" xml:space="preserve">
     <value>Configuratie niet mogelijk</value>
   </data>
-  <data name="ConnectionLost" xml:space="preserve">
+	<data name="ConnectionLost" xml:space="preserve">
     <value>! Verbinding kwijt !</value>
   </data>
-  <data name="Do_you_want_me_to_insert_the_block_at_the_first_empty_line" xml:space="preserve">
+	<data name="Do_you_want_me_to_insert_the_block_at_the_first_empty_line" xml:space="preserve">
     <value>Wilt u het blok op de eerste lijn toevoegen?</value>
   </data>
-  <data name="Error" xml:space="preserve">
+	<data name="Error" xml:space="preserve">
     <value>Fout</value>
   </data>
-  <data name="Error_synchronizing" xml:space="preserve">
+	<data name="Error_synchronizing" xml:space="preserve">
     <value>Fout bij synchronisatie</value>
   </data>
-  <data name="Flight_time" xml:space="preserve">
+	<data name="Flight_time" xml:space="preserve">
     <value>Vliegtijd</value>
   </data>
-  <data name="Home" xml:space="preserve">
+	<data name="Home" xml:space="preserve">
     <value>Thuis</value>
   </data>
-  <data name="Inserting_the_new_block_at_the_selected_position" xml:space="preserve">
+	<data name="Inserting_the_new_block_at_the_selected_position" xml:space="preserve">
     <value>Blok toevoegen op de geselecteerde positie</value>
   </data>
-  <data name="Locked" xml:space="preserve">
+	<data name="Locked" xml:space="preserve">
     <value>Locked</value>
   </data>
-  <data name="New_survey_block" xml:space="preserve">
+	<data name="New_survey_block" xml:space="preserve">
     <value>Nieuwe survey blok</value>
   </data>
-  <data name="Next_WP" xml:space="preserve">
+	<data name="Next_WP" xml:space="preserve">
     <value>Volgend WP</value>
   </data>
-  <data name="Not_found" xml:space="preserve">
-    <value>Niet gevonden</value>
+	<data name="Not_found" xml:space="preserve">
+    <value>Not found</value>
   </data>
-  <data name="open_the_gluon_navigationblock" xml:space="preserve">
+	<data name="open_the_gluon_navigationblock" xml:space="preserve">
     <value>Gelieve het navigatie of blok bestand te openen dat u wilt toeoegen</value>
   </data>
-  <data name="Please_first_connect_to_the_gluonpilot" xml:space="preserve">
+	<data name="Please_first_connect_to_the_gluonpilot" xml:space="preserve">
     <value>Gelieve eerst te connecteren met de gluonpilot</value>
   </data>
-  <data name="Sorry_no_empty_position_detected" xml:space="preserve">
+	<data name="Sorry_no_empty_position_detected" xml:space="preserve">
     <value>Sorry, geen lege positie gevonden. Gelieve de lijn te selecteren waar u wilt invoegen, en dan opnieuw te proberen.</value>
   </data>
-  <data name="Stabilized_manual" xml:space="preserve">
+	<data name="Stabilized_manual" xml:space="preserve">
     <value>Gestabiliseerd
 RC mode</value>
   </data>
-  <data name="There_already_is_a_Survey_block_It_will_be_cleared" xml:space="preserve">
+	<data name="There_already_is_a_Survey_block_It_will_be_cleared" xml:space="preserve">
     <value>Er is al een Survey blok, het zal overschreven worden.</value>
   </data>
-  <data name="There_was_an_error_when_writing_the_navigation" xml:space="preserve">
+	<data name="There_was_an_error_when_writing_the_navigation" xml:space="preserve">
     <value>Er was een fout bij het schrijven van de navigatie</value>
   </data>
-  <data name="The_block_will_be_inserted_at_line_nr" xml:space="preserve">
+	<data name="The_block_will_be_inserted_at_line_nr" xml:space="preserve">
     <value>Het blok zal toegevoegd worden op lijn</value>
   </data>
-  <data name="Time_in_block" xml:space="preserve">
+	<data name="Time_in_block" xml:space="preserve">
     <value>Tijd in blok</value>
   </data>
-  <data name="Time_to_WP" xml:space="preserve">
+	<data name="Time_to_WP" xml:space="preserve">
     <value>Tijd tot WP</value>
   </data>
-  <data name="Are you sure?" xml:space="preserve">
+	<data name="Are you sure?" xml:space="preserve">
     <value>Bent u zeker?</value>
   </data>
-  <data name="This will delete all local waypoints &amp; script commands." xml:space="preserve">
+	<data name="This will delete all local waypoints &amp; script commands." xml:space="preserve">
     <value>Dit zal alle waypoints en commandos verwijderen.</value>
   </data>
+	<data name="This will delete all local waypoints &amp; script commands" xml:space="preserve">
+		<value>This will delete all local waypoints &amp; script commands</value>
+	</data>
 </root>

@@ -259,13 +259,13 @@
 		<value>101, 22</value>
 	</data>
 	<data name="_ts_basicconfig.Text" xml:space="preserve">
-    <value>Basic</value>
+    <value>Hiệu chỉnh c.bản</value>
   </data>
 	<data name="_tbn_fullconfig.Size" type="System.Drawing.Size, System.Drawing">
 		<value>101, 22</value>
 	</data>
 	<data name="_tbn_fullconfig.Text" xml:space="preserve">
-    <value>Full</value>
+    <value>Hiệu chỉnh</value>
   </data>
 	<data name="toolStripDropDownButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
 		<value>
@@ -291,10 +291,10 @@
 		<value>152, 22</value>
 	</data>
 	<data name="toolStripDropDownButton3.Text" xml:space="preserve">
-    <value>Module configuration</value>
+    <value>Cài đặt module</value>
   </data>
 	<data name="toolStripDropDownButton3.ToolTipText" xml:space="preserve">
-    <value>Module configuration</value>
+    <value>Cài đặt module</value>
   </data>
 	<data name="toolStrip2.Location" type="System.Drawing.Point, System.Drawing">
 		<value>3, 0</value>
@@ -486,7 +486,7 @@
 		<value>36</value>
 	</data>
 	<data name="_lblBlockname.Text" xml:space="preserve">
-    <value>Block name</value>
+    <value>Khối lệnh:</value>
   </data>
 	<data name="&gt;&gt;_lblBlockname.Name" xml:space="preserve">
     <value>_lblBlockname</value>
@@ -510,7 +510,7 @@
 		<value>4</value>
 	</data>
 	<data name="_lblDistNextWp.Text" xml:space="preserve">
-    <value>Next WP: 0 m</value>
+    <value>WP kế tiếp: 0m</value>
   </data>
 	<data name="&gt;&gt;_lblDistNextWp.Name" xml:space="preserve">
     <value>_lblDistNextWp</value>
@@ -558,7 +558,7 @@
 		<value>27</value>
 	</data>
 	<data name="_lblTimeToWp.Text" xml:space="preserve">
-    <value>Time to WP: 0s</value>
+    <value>T.gian đến WP: 0s</value>
   </data>
 	<data name="&gt;&gt;_lblTimeToWp.Name" xml:space="preserve">
     <value>_lblTimeToWp</value>
@@ -582,7 +582,7 @@
 		<value>28</value>
 	</data>
 	<data name="_lblTimeInBlock.Text" xml:space="preserve">
-    <value>Time in block: 0s</value>
+    <value>T.gian trong khối lệnh</value>
   </data>
 	<data name="&gt;&gt;_lblTimeInBlock.Name" xml:space="preserve">
     <value>_lblTimeInBlock</value>
@@ -606,7 +606,7 @@
 		<value>29</value>
 	</data>
 	<data name="_lblFlightTime.Text" xml:space="preserve">
-    <value>Flight time: 0s</value>
+    <value>Thời gian bay: 0s</value>
   </data>
 	<data name="&gt;&gt;_lblFlightTime.Name" xml:space="preserve">
     <value>_lblFlightTime</value>
@@ -660,7 +660,7 @@
 		<value>3</value>
 	</data>
 	<data name="_lblVoltage.Text" xml:space="preserve">
-    <value>Bat</value>
+    <value>Điện áp</value>
   </data>
 	<data name="&gt;&gt;_lblVoltage.Name" xml:space="preserve">
     <value>_lblVoltage</value>
@@ -681,7 +681,7 @@
 		<value>Microsoft Sans Serif, 9pt, style=Bold</value>
 	</data>
 	<data name="_lblGpsSat.ImageKey" xml:space="preserve">
-    <value>Error</value>
+    <value>Lỗi</value>
   </data>
 	<data name="_lblGpsSat.Location" type="System.Drawing.Point, System.Drawing">
 		<value>3, 23</value>
@@ -903,7 +903,7 @@
 		<value>43</value>
 	</data>
 	<data name="_lblLink.Text" xml:space="preserve">
-    <value>Link</value>
+    <value>Kết nối</value>
   </data>
 	<data name="&gt;&gt;_lblLink.Name" xml:space="preserve">
     <value>_lblLink</value>
@@ -981,7 +981,7 @@
 		<value>48</value>
 	</data>
 	<data name="_lblFlightMode.Text" xml:space="preserve">
-    <value>Flight mode</value>
+    <value>Kiểu bay</value>
   </data>
 	<data name="_lblFlightMode.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
 		<value>MiddleCenter</value>
@@ -1114,7 +1114,7 @@ added as buttons to this strip.</value>
 		<value>0</value>
 	</data>
 	<data name="tabPage1.Text" xml:space="preserve">
-    <value>Altitude</value>
+    <value>Cao độ</value>
   </data>
 	<data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
     <value>tabPage1</value>
@@ -1174,7 +1174,7 @@ added as buttons to this strip.</value>
 		<value>1</value>
 	</data>
 	<data name="tabPage2.Text" xml:space="preserve">
-    <value>Speed</value>
+    <value>Tốc độ</value>
   </data>
 	<data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
     <value>tabPage2</value>
@@ -1469,7 +1469,7 @@ added as buttons to this strip.</value>
 		<value>23, 22</value>
 	</data>
 	<data name="_btn_up.Text" xml:space="preserve">
-    <value>Move up</value>
+    <value>Di chuyển lên</value>
   </data>
 	<data name="_btn_down.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
 		<value>
@@ -1491,7 +1491,7 @@ added as buttons to this strip.</value>
 		<value>23, 22</value>
 	</data>
 	<data name="_btn_down.Text" xml:space="preserve">
-    <value>Move down</value>
+    <value>Di chuyển xuống</value>
   </data>
 	<data name="addBlockToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
 		<value>
@@ -1514,7 +1514,7 @@ added as buttons to this strip.</value>
 		<value>156, 22</value>
 	</data>
 	<data name="addBlockToolStripMenuItem.Text" xml:space="preserve">
-    <value>Add block</value>
+    <value>Thêm khối lệnh</value>
   </data>
 	<data name="emptyScriptToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
 		<value>
@@ -1534,7 +1534,7 @@ added as buttons to this strip.</value>
 		<value>156, 22</value>
 	</data>
 	<data name="emptyScriptToolStripMenuItem.Text" xml:space="preserve">
-    <value>Empty script</value>
+    <value>Trống Script</value>
   </data>
 	<data name="_btnNewSurvey.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
 		<value>
@@ -1553,7 +1553,7 @@ added as buttons to this strip.</value>
 		<value>152, 22</value>
 	</data>
 	<data name="_btnNewSurvey.Text" xml:space="preserve">
-    <value>Create new</value>
+    <value>Tạo mới</value>
   </data>
 	<data name="_btnBuildSurvey.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
 		<value>
@@ -1570,7 +1570,7 @@ added as buttons to this strip.</value>
 		<value>152, 22</value>
 	</data>
 	<data name="_btnBuildSurvey.Text" xml:space="preserve">
-    <value>Build route</value>
+    <value>Tạo tuyến bay</value>
   </data>
 	<data name="_btnSurveySettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
 		<value>
@@ -1592,7 +1592,7 @@ added as buttons to this strip.</value>
 		<value>152, 22</value>
 	</data>
 	<data name="_btnSurveySettings.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Cài đặt</value>
   </data>
 	<data name="generateSurveyToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
 		<value>
@@ -1612,7 +1612,7 @@ added as buttons to this strip.</value>
 		<value>156, 22</value>
 	</data>
 	<data name="generateSurveyToolStripMenuItem.Text" xml:space="preserve">
-    <value>Survey polygon</value>
+    <value>Thiết lập đường bay chụp ảnh</value>
   </data>
 	<data name="toolStripSplitButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
 		<value>
@@ -1635,7 +1635,7 @@ added as buttons to this strip.</value>
 		<value>76, 22</value>
 	</data>
 	<data name="toolStripSplitButton1.Text" xml:space="preserve">
-    <value>Helpers</value>
+    <value>Giúp đỡ</value>
   </data>
 	<data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
 		<value>6, 25</value>
@@ -1888,7 +1888,7 @@ added as buttons to this strip.</value>
 		<value>40</value>
 	</data>
 	<data name="columnHeader2.Text" xml:space="preserve">
-    <value>Command</value>
+    <value>Lệnh</value>
   </data>
 	<data name="columnHeader2.Width" type="System.Int32, mscorlib">
 		<value>294</value>
@@ -1927,7 +1927,7 @@ added as buttons to this strip.</value>
 		<value>2</value>
 	</data>
 	<data name="_navigationPanel.Text" xml:space="preserve">
-    <value>Navigation</value>
+    <value>Dẫn đường</value>
   </data>
 	<data name="&gt;&gt;_navigationPanel.Name" xml:space="preserve">
     <value>_navigationPanel</value>

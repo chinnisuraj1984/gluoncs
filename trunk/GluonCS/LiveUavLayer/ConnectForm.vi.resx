@@ -253,7 +253,7 @@
 		<value>1</value>
 	</data>
 	<data name="xPanderPanel2.Text" xml:space="preserve">
-    <value>Basis</value>
+    <value>Basic settings</value>
   </data>
 	<data name="&gt;&gt;xPanderPanel2.Name" xml:space="preserve">
     <value>xPanderPanel2</value>
@@ -280,7 +280,7 @@
 		<value>4</value>
 	</data>
 	<data name="_rbOffline.Text" xml:space="preserve">
-    <value>Niet verbinden - enkel vliegplan editeren</value>
+    <value>Don't connect - offline flightplan editor</value>
   </data>
 	<data name="&gt;&gt;_rbOffline.Name" xml:space="preserve">
     <value>_rbOffline</value>
@@ -307,7 +307,7 @@
 		<value>3</value>
 	</data>
 	<data name="_rbReplay.Text" xml:space="preserve">
-    <value>Log opnieuw afspelen</value>
+    <value>Replay logfile</value>
   </data>
 	<data name="&gt;&gt;_rbReplay.Name" xml:space="preserve">
     <value>_rbReplay</value>
@@ -334,7 +334,7 @@
 		<value>0</value>
 	</data>
 	<data name="_rbViaComPort.Text" xml:space="preserve">
-    <value>Verbinden met COM-port</value>
+    <value>Connect to COM-port</value>
   </data>
 	<data name="&gt;&gt;_rbViaComPort.Name" xml:space="preserve">
     <value>_rbViaComPort</value>
@@ -466,7 +466,7 @@
 		<value>0</value>
 	</data>
 	<data name="label3.Text" xml:space="preserve">
-    <value>Bestand:</value>
+    <value>File:</value>
   </data>
 	<data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -660,7 +660,7 @@
 		<value>2</value>
 	</data>
 	<data name="label6.Text" xml:space="preserve">
-    <value>Baudrate:</value>
+    <value>Tốc độ</value>
   </data>
 	<data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
@@ -708,7 +708,7 @@
 		<value>0</value>
 	</data>
 	<data name="label5.Text" xml:space="preserve">
-    <value>Poort:</value>
+    <value>Port:</value>
   </data>
 	<data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -801,7 +801,7 @@
 		<value>0</value>
 	</data>
 	<data name="xPanderPanel1.Text" xml:space="preserve">
-    <value>Geavanceerd</value>
+    <value>Advanced</value>
   </data>
 	<data name="&gt;&gt;xPanderPanel1.Name" xml:space="preserve">
     <value>xPanderPanel1</value>
@@ -828,7 +828,7 @@
 		<value>5</value>
 	</data>
 	<data name="label2.Text" xml:space="preserve">
-    <value>Port number</value>
+    <value>Cổng số</value>
   </data>
 	<data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
@@ -936,7 +936,7 @@
 		<value>1</value>
 	</data>
 	<data name="checkBox2.Text" xml:space="preserve">
-    <value>Proxy read-only connection to TCP/IP port</value>
+    <value>Kết nối TCP/IP</value>
   </data>
 	<data name="&gt;&gt;checkBox2.Name" xml:space="preserve">
     <value>checkBox2</value>
@@ -963,7 +963,7 @@
 		<value>0</value>
 	</data>
 	<data name="_cbLogToFile.Text" xml:space="preserve">
-    <value>Log gegevens naar bestand</value>
+    <value>Log data to file</value>
   </data>
 	<data name="&gt;&gt;_cbLogToFile.Name" xml:space="preserve">
     <value>_cbLogToFile</value>
@@ -1044,7 +1044,7 @@
 		<value>2</value>
 	</data>
 	<data name="xPanderPanel3.Text" xml:space="preserve">
-    <value>Simulatie</value>
+    <value>Simulation</value>
   </data>
 	<data name="&gt;&gt;xPanderPanel3.Name" xml:space="preserve">
     <value>xPanderPanel3</value>
@@ -1071,7 +1071,7 @@
 		<value>3</value>
 	</data>
 	<data name="label4.Text" xml:space="preserve">
-    <value>Make sure the module is already on</value>
+    <value>Chắc chắn hệ thống đã hoạt động</value>
   </data>
 	<data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
@@ -1101,7 +1101,7 @@
 		<value>2</value>
 	</data>
 	<data name="label1.Text" xml:space="preserve">
-    <value>Flightgear path:</value>
+    <value>Đường dẫn Flightgear:</value>
   </data>
 	<data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -1158,8 +1158,7 @@
 		<value>0</value>
 	</data>
 	<data name="_cbSimulation.Text" xml:space="preserve">
-    <value>Put module in simulation mode 
-(Hardware In the Loop)</value>
+    <value>Đưa module vào chế độ giả lập (Hardware in the Loop)</value>
   </data>
 	<data name="&gt;&gt;_cbSimulation.Name" xml:space="preserve">
     <value>_cbSimulation</value>
@@ -1189,8 +1188,7 @@
 		<value>0</value>
 	</data>
 	<data name="_cbSimulationFG.Text" xml:space="preserve">
-    <value>Set Gluonpilot in Flightgear simulation mode 
-and launch Flightgear</value>
+    <value>Cài GluonPilot cho Flightgear và khởi động Flightgear</value>
   </data>
 	<data name="&gt;&gt;_cbSimulationFG.Name" xml:space="preserve">
     <value>_cbSimulationFG</value>
@@ -1271,7 +1269,7 @@ and launch Flightgear</value>
 		<value>CenterParent</value>
 	</data>
 	<data name="$this.Text" xml:space="preserve">
-    <value> Verbinden met je UAV...</value>
+    <value>  Connect to your UAV...</value>
   </data>
 	<data name="&gt;&gt;serialPort1.Name" xml:space="preserve">
     <value>serialPort1</value>
