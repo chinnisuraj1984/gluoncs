@@ -38,7 +38,9 @@
             this._btnBuild = new System.Windows.Forms.Button();
             this._dtbAltitudeM = new Configuration.DistanceTextBox();
             this._dtbDistanceM = new Configuration.DistanceTextBox();
+            this._cbTriggerCommands = new System.Windows.Forms.CheckBox();
             this.surveyAngle1 = new GluonCS.LiveUavLayer.SurveyAngle();
+            this._cbCross = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this._nudFlightPath)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,48 +77,62 @@
             // 
             // button1
             // 
-            resources.ApplyResources(this.button1, "button1");
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // _btnBuild
             // 
-            resources.ApplyResources(this._btnBuild, "_btnBuild");
             this._btnBuild.DialogResult = System.Windows.Forms.DialogResult.OK;
+            resources.ApplyResources(this._btnBuild, "_btnBuild");
             this._btnBuild.Name = "_btnBuild";
             this._btnBuild.UseVisualStyleBackColor = true;
             this._btnBuild.Click += new System.EventHandler(this.button2_Click);
             // 
             // _dtbAltitudeM
             // 
-            resources.ApplyResources(this._dtbAltitudeM, "_dtbAltitudeM");
             this._dtbAltitudeM.Color = System.Drawing.SystemColors.Window;
             this._dtbAltitudeM.DistanceM = 0D;
+            resources.ApplyResources(this._dtbAltitudeM, "_dtbAltitudeM");
             this._dtbAltitudeM.Name = "_dtbAltitudeM";
             this._dtbAltitudeM.ReadOnly = false;
             this._dtbAltitudeM.UseAltitudeColoring = false;
             // 
             // _dtbDistanceM
             // 
-            resources.ApplyResources(this._dtbDistanceM, "_dtbDistanceM");
             this._dtbDistanceM.Color = System.Drawing.SystemColors.Window;
             this._dtbDistanceM.DistanceM = 0D;
+            resources.ApplyResources(this._dtbDistanceM, "_dtbDistanceM");
             this._dtbDistanceM.Name = "_dtbDistanceM";
             this._dtbDistanceM.ReadOnly = false;
             this._dtbDistanceM.UseAltitudeColoring = false;
             // 
+            // _cbTriggerCommands
+            // 
+            resources.ApplyResources(this._cbTriggerCommands, "_cbTriggerCommands");
+            this._cbTriggerCommands.Name = "_cbTriggerCommands";
+            this._cbTriggerCommands.UseVisualStyleBackColor = true;
+            // 
             // surveyAngle1
             // 
-            resources.ApplyResources(this.surveyAngle1, "surveyAngle1");
             this.surveyAngle1.Angle = 0D;
             this.surveyAngle1.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.surveyAngle1, "surveyAngle1");
             this.surveyAngle1.Name = "surveyAngle1";
+            // 
+            // _cbCross
+            // 
+            resources.ApplyResources(this._cbCross, "_cbCross");
+            this._cbCross.Name = "_cbCross";
+            this._cbCross.UseVisualStyleBackColor = true;
             // 
             // SurveyProperties
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this._cbCross);
+            this.Controls.Add(this._cbTriggerCommands);
             this.Controls.Add(this.surveyAngle1);
             this.Controls.Add(this._btnBuild);
             this.Controls.Add(this.button1);
@@ -146,5 +162,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button _btnBuild;
         private SurveyAngle surveyAngle1;
+        private System.Windows.Forms.CheckBox _cbTriggerCommands;
+        private System.Windows.Forms.CheckBox _cbCross;
     }
 }

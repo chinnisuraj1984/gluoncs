@@ -13,6 +13,7 @@ using Configuration.NavigationCommands;
 using Configuration;
 using Common;
 using System.IO;
+using System.Reflection;
 
 
 namespace GluonCS.LiveUavLayer
@@ -58,6 +59,7 @@ namespace GluonCS.LiveUavLayer
             }
 
             this.gmap = gmap;
+            gmap.CacheLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\MapsCache\\";
             this.model = model;
             Overlay = new GMapOverlay(gmap, "LiveUav1");
             NavigationOverlay = new GMapOverlay(gmap, "NavigationOverlay");
@@ -510,7 +512,7 @@ namespace GluonCS.LiveUavLayer
                 //gp.Fill = new SolidBrush(Color.Blue);
                 NavigationOverlay.Polygons.Add(gp);
 
-                List<PointLatLng> points = Survey.GenerateSurvey(l, Properties.Settings.Default.SurveyAngleDeg, Properties.Settings.Default.SurveyDistanceM);
+                List<PointLatLng> points = Survey.GenerateSurvey(l, Properties.Settings.Default.SurveyAngleDeg, Properties.Settings.Default.SurveyDistanceM, false);
                 foreach (PointLatLng pll in points)
                 {
                     //NavigationOverlay.Markers.Add(new AbsoluteMarker(pll, 0));

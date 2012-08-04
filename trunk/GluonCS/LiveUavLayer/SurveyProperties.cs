@@ -14,6 +14,8 @@ namespace GluonCS.LiveUavLayer
         public double DistanceM = 75;
         public double AngleDeg = 0;
         public double AltitudeM = 100;
+        public bool IncludeTriggerCommands = false;
+        public bool DoCross = false;
 
         public SurveyProperties()
         {
@@ -21,6 +23,8 @@ namespace GluonCS.LiveUavLayer
             _dtbAltitudeM.DistanceM = Properties.Settings.Default.SurveyAltitudeM;
             _dtbDistanceM.DistanceM = Properties.Settings.Default.SurveyDistanceM;
             _nudFlightPath.Value = (decimal)Properties.Settings.Default.SurveyAngleDeg;
+            _cbTriggerCommands.Checked = Properties.Settings.Default.SurveyIncludeTriggerCommands;
+            _cbCross.Checked = Properties.Settings.Default.SurveyDoCross;
             surveyAngle1.AngleChanged += new SurveyAngle.AngleChangedDelegate(surveyAngle1_AngleChanged);
         }
 
@@ -35,10 +39,14 @@ namespace GluonCS.LiveUavLayer
             DistanceM = _dtbDistanceM.DistanceM;
             AngleDeg = (int)_nudFlightPath.Value;
             AltitudeM = _dtbAltitudeM.DistanceM;
+            IncludeTriggerCommands = _cbTriggerCommands.Checked;
+            DoCross = _cbCross.Checked;
 
             Properties.Settings.Default.SurveyAltitudeM = AltitudeM;
             Properties.Settings.Default.SurveyAngleDeg = AngleDeg;
             Properties.Settings.Default.SurveyDistanceM = DistanceM;
+            Properties.Settings.Default.SurveyIncludeTriggerCommands = IncludeTriggerCommands;
+            Properties.Settings.Default.SurveyDoCross = DoCross;
             Properties.Settings.Default.Save();
         }
 
