@@ -5546,9 +5546,6 @@ Set to "0" to disable.</value>
   <data name="&gt;&gt;_llServos.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="_rb_serovs_neutral_auto.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="_rb_serovs_neutral_auto.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -5562,7 +5559,8 @@ Set to "0" to disable.</value>
     <value>35</value>
   </data>
   <data name="_rb_serovs_neutral_auto.Text" xml:space="preserve">
-    <value>The neutral value of the servos and RC-transmitter sticks are determiend at startup (manual mode positions)</value>
+    <value>The neutral value of the servos and RC-transmitter sticks are determine
+d at startup (manual mode positions)</value>
   </data>
   <data name="&gt;&gt;_rb_serovs_neutral_auto.Name" xml:space="preserve">
     <value>_rb_serovs_neutral_auto</value>
