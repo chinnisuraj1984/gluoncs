@@ -39,13 +39,19 @@ namespace GluonCS.LiveUavLayer
             return c;
         }
 
-        public static List<PointLatLng> GenerateSurvey(List<PointLatLng> poly, double survey_angle_deg, double survey_distance_m)
+        public static List<PointLatLng> GenerateSurvey(List<PointLatLng> poly, double survey_angle_deg, double survey_distance_m, bool cross_survey)
         {
             if (poly.Count < 3)
                 return new List<PointLatLng>();
 
             double lat_deg_reference = poly[0].Lat;
             double lng_deg_reference = poly[0].Lng;
+
+            List<PointLatLng> cross_route = new List<PointLatLng>();
+            if (cross_survey)
+            {
+                cross_route = GenerateSurvey(new List<PointLatLng>(poly), (survey_angle_deg + 90)>360?survey_angle_deg-270:survey_angle_deg+90, survey_distance_m, false);
+            }
 
             // to relative
             for (int i = 0; i < poly.Count; i++)
@@ -160,6 +166,14 @@ namespace GluonCS.LiveUavLayer
                 LatLng abs = LatLng.ToAbsolute(lat_deg_reference, lng_deg_reference, route[i].Lat, route[i].Lng);
                 route[i] = new PointLatLng(abs.Lat, abs.Lng);
             }
+
+            if (cross_survey)
+            {
+                // add intermediate point
+                route.Add(route[route.Count - 1]);
+                route.AddRange(cross_route);
+            }
+
             return route;
         }
     }

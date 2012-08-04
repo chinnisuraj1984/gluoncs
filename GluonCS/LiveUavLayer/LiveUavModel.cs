@@ -32,7 +32,7 @@ namespace GluonCS.LiveUavLayer
 
         public double Pitch = 0, Roll = 0, Yaw = 0;
         public PointLatLng UavPosition = new PointLatLng();
-        public double Heading = 0, AltitudeGps = 0, SpeedMS = 0, AltitudeAglM = 0;
+        public double Heading = 0, AltitudeGps = 0, SpeedMS = 0, AltitudeAglM = 0, TargetAltitudeAglM = 0;
         public int NumberOfGpsSatellites = -1;
         public double BatteryVoltage = 0;
         public ControlInfo.FlightModes FlightMode = ControlInfo.FlightModes.AUTOPILOT;
@@ -314,20 +314,19 @@ namespace GluonCS.LiveUavLayer
             }
         }
 
-        public double TargetAltitudeAglM()  // taken from next waypoint
-        {
-            if (!NavigationModel.Commands.ContainsKey(NavigationModel.Commands[CurrentNavigationLine].TargetWp))
-                return 0.0;
-            NavigationInstruction ni = NavigationModel.Commands[NavigationModel.Commands[CurrentNavigationLine].TargetWp].Instruction;
-            if (ni.opcode == NavigationInstruction.navigation_command.CLIMB)
-                return ni.x;
-            else if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_ABS ||
-                     ni.opcode == NavigationInstruction.navigation_command.CIRCLE_REL)
-                return (double)ni.b;
-            else
-                return (double)ni.a;
-
-        }
+        //public double TargetAltitudeAglM()  // taken from next waypoint
+        //{
+        //    if (!NavigationModel.Commands.ContainsKey(NavigationModel.Commands[CurrentNavigationLine].TargetWp))
+        //        return 0.0;
+        //    NavigationInstruction ni = NavigationModel.Commands[NavigationModel.Commands[CurrentNavigationLine].TargetWp].Instruction;
+        //    if (ni.opcode == NavigationInstruction.navigation_command.CLIMB)
+        //        return ni.x;
+        //    else if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_ABS ||
+        //             ni.opcode == NavigationInstruction.navigation_command.CIRCLE_REL)
+        //        return (double)ni.b;
+        //    else
+        //        return (double)ni.a;
+        //}
 
         public double DistanceHome()
         {
@@ -448,7 +447,8 @@ namespace GluonCS.LiveUavLayer
 
         void connection_ControlInfoCommunicationReceived(ControlInfo ci)
         {
-            AltitudeAglM = ci.HeightAboveStartGround;
+            TargetAltitudeAglM = ci.TargetAltitude;
+            AltitudeAglM = ci.Altitude;
             BatteryVoltage = ci.BattVoltage;
             FlightMode = ci.FlightMode;
             CurrentNavigationLine = ci.CurrentNavigationLine;
@@ -481,9 +481,13 @@ namespace GluonCS.LiveUavLayer
                     polygon.Add(new PointLatLng(ni.x / Math.PI * 180.0, ni.y / Math.PI * 180.0));
             }
 
-            List<PointLatLng> corners = Survey.GenerateSurvey(polygon, Properties.Settings.Default.SurveyAngleDeg, Properties.Settings.Default.SurveyDistanceM);
+            List<PointLatLng> corners = Survey.GenerateSurvey(polygon, Properties.Settings.Default.SurveyAngleDeg, Properties.Settings.Default.SurveyDistanceM, Properties.Settings.Default.SurveyDoCross);
 
-            int line = NavigationModel.Blocks["Survey"] + 1;
+            int line = NavigationModel.Blocks["Survey"] + 2;
+
+            if (Properties.Settings.Default.SurveyIncludeTriggerCommands)
+                UpdateLocalNavigationInstruction(new NavigationInstruction(line-1, NavigationInstruction.navigation_command.SERVO_TRIGGER_START, 0, 1, 5, 0));
+
             for (int i = 0; i < corners.Count; i++)
             {
                 PointLatLng c = corners[i];
@@ -492,12 +496,12 @@ namespace GluonCS.LiveUavLayer
                 if (is_turningpoint)
                 {
                     ni.opcode = NavigationInstruction.navigation_command.CIRCLE_TO_ABS;
-                    ni.b = (int)Properties.Settings.Default.DefaultAltitudeM;
+                    ni.b = (int)Properties.Settings.Default.SurveyAltitudeM;
                 }
                 else
                 {
                     ni.opcode = NavigationInstruction.navigation_command.FROM_TO_ABS;
-                    ni.a = (int)Properties.Settings.Default.DefaultAltitudeM;
+                    ni.a = (int)Properties.Settings.Default.SurveyAltitudeM;
                 }
                 ni.x = c.Lat/180.0*Math.PI;
                 ni.y = c.Lng/180.0*Math.PI;
@@ -510,6 +514,19 @@ namespace GluonCS.LiveUavLayer
             NavigationInstruction blockdef = GetNavigationInstructionLocal(NavigationModel.Blocks["Survey"]);
             blockdef.StringToArgument("DoSurvey");
             UpdateLocalNavigationInstruction(blockdef);
+
+            if (Properties.Settings.Default.SurveyIncludeTriggerCommands)
+            {
+                UpdateLocalNavigationInstruction(new NavigationInstruction(line, NavigationInstruction.navigation_command.SERVO_TRIGGER_STOP, 0, 1, 0, 5));
+
+                // swap first 2
+                NavigationInstruction ni1 = GetNavigationInstructionLocal(NavigationModel.Blocks["DoSurvey"] + 1);
+                NavigationInstruction ni2 = GetNavigationInstructionLocal(NavigationModel.Blocks["DoSurvey"] + 2);
+                ni2.line--;
+                ni1.line++;
+                UpdateLocalNavigationInstruction(ni1);
+                UpdateLocalNavigationInstruction(ni2);
+            }
         }
 
 

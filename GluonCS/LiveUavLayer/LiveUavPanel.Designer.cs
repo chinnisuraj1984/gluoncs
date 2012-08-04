@@ -77,11 +77,11 @@
             this._btn_down = new System.Windows.Forms.ToolStripButton();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.addBlockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.emptyScriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateSurveyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._btnSurveySettings = new System.Windows.Forms.ToolStripMenuItem();
             this._btnNewSurvey = new System.Windows.Forms.ToolStripMenuItem();
             this._btnBuildSurvey = new System.Windows.Forms.ToolStripMenuItem();
-            this.emptyScriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._btnSurveySettings = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this._nav_open = new System.Windows.Forms.ToolStripMenuItem();
@@ -609,6 +609,12 @@
             this.addBlockToolStripMenuItem.Name = "addBlockToolStripMenuItem";
             this.addBlockToolStripMenuItem.Click += new System.EventHandler(this._btnAddBlock_Click);
             // 
+            // emptyScriptToolStripMenuItem
+            // 
+            resources.ApplyResources(this.emptyScriptToolStripMenuItem, "emptyScriptToolStripMenuItem");
+            this.emptyScriptToolStripMenuItem.Name = "emptyScriptToolStripMenuItem";
+            this.emptyScriptToolStripMenuItem.Click += new System.EventHandler(this.emptyScriptToolStripMenuItem_Click);
+            // 
             // generateSurveyToolStripMenuItem
             // 
             this.generateSurveyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -617,12 +623,6 @@
             this._btnSurveySettings});
             resources.ApplyResources(this.generateSurveyToolStripMenuItem, "generateSurveyToolStripMenuItem");
             this.generateSurveyToolStripMenuItem.Name = "generateSurveyToolStripMenuItem";
-            // 
-            // _btnSurveySettings
-            // 
-            resources.ApplyResources(this._btnSurveySettings, "_btnSurveySettings");
-            this._btnSurveySettings.Name = "_btnSurveySettings";
-            this._btnSurveySettings.Click += new System.EventHandler(this._btnSurveySettings_Click);
             // 
             // _btnNewSurvey
             // 
@@ -636,11 +636,11 @@
             this._btnBuildSurvey.Name = "_btnBuildSurvey";
             this._btnBuildSurvey.Click += new System.EventHandler(this._btnBuildSurvey_Click);
             // 
-            // emptyScriptToolStripMenuItem
+            // _btnSurveySettings
             // 
-            resources.ApplyResources(this.emptyScriptToolStripMenuItem, "emptyScriptToolStripMenuItem");
-            this.emptyScriptToolStripMenuItem.Name = "emptyScriptToolStripMenuItem";
-            this.emptyScriptToolStripMenuItem.Click += new System.EventHandler(this.emptyScriptToolStripMenuItem_Click);
+            resources.ApplyResources(this._btnSurveySettings, "_btnSurveySettings");
+            this._btnSurveySettings.Name = "_btnSurveySettings";
+            this._btnSurveySettings.Click += new System.EventHandler(this._btnSurveySettings_Click);
             // 
             // toolStripSeparator1
             // 

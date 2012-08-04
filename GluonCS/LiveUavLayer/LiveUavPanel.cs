@@ -269,7 +269,7 @@ namespace GluonCS
                 _pbRcLink.Value = model.RcLink;
                 _pbThrottle.Value = model.ThrottlePct;
 
-                _lblAltitudeAgl.Text = model.AltitudeAglM + " m / " + model.TargetAltitudeAglM() + " m";
+                _lblAltitudeAgl.Text = model.AltitudeAglM + " m / " + model.TargetAltitudeAglM/*()*/ + " m";
                 _lblDistNextWp.Text = resources.GetString("Next_WP") + ": " + model.DistanceNextWaypoint().ToString("F0") + " m";
                 _lblHomeDistance.Text = resources.GetString("Home") + ": " + model.DistanceHome().ToString("F0") + " m";
 

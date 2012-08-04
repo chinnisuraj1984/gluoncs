@@ -11,6 +11,7 @@ using System.IO.Ports;
 using Microsoft.Win32;
 using System.IO;
 using System.Reflection;
+using System.Threading;
 
 namespace GluonCS.LiveUavLayer
 {
@@ -28,6 +29,8 @@ namespace GluonCS.LiveUavLayer
 
         public ConnectForm(bool simple = false)
         {
+            Console.WriteLine("CF -> " + Thread.CurrentThread.CurrentUICulture);
+                
             InitializeComponent();
 
             _btn_portrefresh_Click(null, EventArgs.Empty);
