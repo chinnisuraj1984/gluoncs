@@ -482,7 +482,7 @@ namespace Communication
                             new ControlInfo();
                         ci.FlightMode = (ControlInfo.FlightModes)int.Parse(lines[1]);
                         ci.CurrentNavigationLine = int.Parse(lines[2]);
-                        ci.HeightAboveStartGround = int.Parse(lines[3]);
+                        ci.Altitude = int.Parse(lines[3]);
                         if (lines.Length >= 5)
                         {
                             ci.BattVoltage = double.Parse(lines[4]) / 10.0;
@@ -492,6 +492,10 @@ namespace Communication
                                 ci.BlockTime = int.Parse(lines[6]);
                                 ci.RcLink = int.Parse(lines[7]);
                                 ci.Throttle = int.Parse(lines[8]);
+                            }
+                            if (lines.Length >= 10)
+                            {
+                                ci.TargetAltitude = int.Parse(lines[9]);
                             }
                         }
                         if (ControlInfoCommunicationReceived != null)
