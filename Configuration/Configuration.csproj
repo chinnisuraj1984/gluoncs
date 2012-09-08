@@ -204,6 +204,12 @@
     <Compile Include="NavigationCommands\FlareToRel.designer.cs">
       <DependentUpon>FlareToRel.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationCommands\FlightplanSwitch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationCommands\FlightplanSwitch.Designer.cs">
+      <DependentUpon>FlightplanSwitch.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationCommands\GlideTo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -490,6 +496,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationCommands\FlareToAbs.resx" />
     <EmbeddedResource Include="NavigationCommands\FlareToRel.resx" />
+    <EmbeddedResource Include="NavigationCommands\FlightplanSwitch.resx">
+      <DependentUpon>FlightplanSwitch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NavigationCommands\FlyTo.resx">
       <DependentUpon>FlyTo.cs</DependentUpon>
     </EmbeddedResource>

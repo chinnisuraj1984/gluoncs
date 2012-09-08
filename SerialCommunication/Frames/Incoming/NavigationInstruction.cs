@@ -47,7 +47,8 @@ namespace Communication.Frames.Incoming
             CALL = 29,
             RETURN = 30,
             SERVO_TRIGGER_START = 31,
-            SERVO_TRIGGER_STOP = 32
+            SERVO_TRIGGER_STOP = 32,
+            SET_FLIGHTPLAN_SWITCH = 33
         };
 
         public navigation_command opcode;
@@ -217,6 +218,9 @@ namespace Communication.Frames.Incoming
                 break;
             case navigation_command.SET_BATTERY_ALARM:
                 s += "SetBatteryAlarm(Warning < " + X + "V, Panic < " + Y + "V -> " + a + ")";
+                break;
+            case navigation_command.SET_FLIGHTPLAN_SWITCH:
+                s += "SetFlightplanSwitch(Ch " + (a+1) + ", < 1.4ms -> " + b + ", < 1.6ms -> " + (int)x + ", > 1.6ms -> " + (int)y + ")";
                 break;
             case navigation_command.SERVO_TRIGGER_STOP:
                 s += "ServoTriggerStop()";
