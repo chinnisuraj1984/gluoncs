@@ -91,6 +91,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Read waypoints";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReadNavigationCommandsWindow_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 

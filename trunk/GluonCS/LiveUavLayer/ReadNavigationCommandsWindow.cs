@@ -99,5 +99,11 @@ namespace GluonCS.LiveUavLayer
                 UpdateLabel();
             }
         }
+
+        private void ReadNavigationCommandsWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer.Stop();
+            timer.Dispose();
+        }
     }
 }
