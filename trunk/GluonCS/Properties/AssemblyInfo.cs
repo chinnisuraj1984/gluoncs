@@ -9,8 +9,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("P Engineering")]
-[assembly: AssemblyProduct("GluonCS")]
-[assembly: AssemblyCopyright("Copyright © P Engineering 2011")]
+[assembly: AssemblyProduct("Gluon Control Station")]
+[assembly: AssemblyCopyright("Copyright © P Engineering 2011-2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

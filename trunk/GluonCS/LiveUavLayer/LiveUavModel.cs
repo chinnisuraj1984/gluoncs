@@ -127,6 +127,8 @@ namespace GluonCS.LiveUavLayer
 
         public double WindX=0, WindY = 0;
         int c = 0;
+        double old_windspeed = 0;
+        double old_windheading = 0;
         private void CalcWind()
         {
             if (c++ % 4 == 0)
@@ -149,37 +151,44 @@ namespace GluonCS.LiveUavLayer
                 //double DirectionDiff = Math.Sqrt(Math.Sin(roll_rad) * q * Math.Sin(roll_rad) * q + Math.Cos(roll_rad) * r * Math.Cos(roll_rad) * r) / 180.0 * Math.PI;
                 double DirectionDiff = Math.Sqrt(FDiff[0] * FDiff[0] + FDiff[1] * FDiff[1] + FDiff[2] * FDiff[2]);
                 double w = Math.Sqrt(VelocityDiff[0] * VelocityDiff[0] + VelocityDiff[1] * VelocityDiff[1] + VelocityDiff[2] * VelocityDiff[2]) / DirectionDiff;
+                
                 if (Math.Abs(DirectionDiff) > 5.0 / 180 * Math.PI && SpeedMS > 2.0 && Math.Abs(Heading - lastheading) > 5.0)
                 {
-                    //w -= SpeedMS;
                     Console.WriteLine("Velocity = " + (w*3.6));
 
-                    //double theta = (Heading - Yaw) / 180.0 * Math.PI;// -DirectionDiff;
-                    double theta = (Math.Atan2(VelocityDiff[1], VelocityDiff[0]) - Math.Atan2(FDiff[1], FDiff[0])) / 180.0 * Math.PI;
-
+                    double theta = (Math.Atan2(VelocityDiff[1], VelocityDiff[0]) - Math.Atan2(FDiff[1], FDiff[0]));
                     if (theta > Math.PI)
                         theta -= 2.0 * Math.PI;
                     else if (theta < -Math.PI)
                         theta += 2.0 * Math.PI;
 
+
                     double Wx = (Gps[0] + old_Gps[0] - w * (Math.Cos(theta) * (F[0] + old_F[0]) - Math.Sin(theta) * (F[1] + old_F[1]))) / 2;
                     double Wy = (Gps[1] + old_Gps[1] - w * (Math.Sin(theta) * (F[0] + old_F[0]) + Math.Cos(theta) * (F[1] + old_F[1]))) / 2;
 
-                    /*double old_heading = Math.Atan2(WindY, WindX);
-                    double old_windspeed = Math.Sqrt(WindX * WindX + WindY * WindY);
-                    double heading = Math.Atan2(Wy, Wx);
-                    double windspeed = Math.Sqrt(Wx * Wx + Wy * Wy);
-                    heading = old_heading * 0.9 + heading * 0.1;
-                    windspeed = old_windspeed * 0.9 + windspeed * 0.1;
-                    WindX = windspeed * Math.Cos(heading);
-                    WindY = windspeed * Math.Sin(heading);*/
                     if (Math.Abs(Wx) + Math.Abs(Wy) < 20)
                     {
-                        WindX = WindX + (Wx - WindX) / 32;
-                        WindY = WindY + (Wy - WindY) / 32;
+                        double heading = Math.Atan2(Wy, Wx);
+                        if (heading > Math.PI)
+                            heading -= 2.0 * Math.PI;
+                        else if (heading < -Math.PI)
+                            heading += 2.0 * Math.PI;
+
+                        old_windspeed = old_windspeed + (Math.Sqrt(Wx * Wx + Wy * Wy) - old_windspeed) / 32;
+                        old_windheading = old_windheading + (heading - old_windheading) / 32;
+                        if (old_windheading > Math.PI)
+                            old_windheading -= 2.0 * Math.PI;
+                        else if (old_windheading < -Math.PI)
+                            old_windheading += 2.0 * Math.PI;
+
+                        WindX = Math.Cos(old_windheading) * old_windspeed;
+                        WindY = Math.Sin(old_windheading) * old_windspeed;
+                        /*WindX = WindX + (Wx - WindX) / 16;
+                        WindY = WindY + (Wy - WindY) / 16;*/
                     }
                     
-                    Console.WriteLine("Wind: " + Math.Atan2(WindY, WindX) / Math.PI * 180 + "°; " + (Math.Sqrt(WindX * WindX + WindY * WindY) * 3.6) + "km/h");
+                    
+                    //Console.WriteLine("Wind: " + Math.Atan2(WindY, WindX) / Math.PI * 180 + "°; " + (Math.Sqrt(WindX * WindX + WindY * WindY) * 3.6) + "km/h");
                 }
 
 
