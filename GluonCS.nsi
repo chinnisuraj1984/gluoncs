@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "Gluon Control Station"
-!define PRODUCT_VERSION "0.8 BETA 4"
+!define PRODUCT_VERSION "0.8 BETA 5"
 !define PRODUCT_PUBLISHER "Gluonpilot"
 !define PRODUCT_WEB_SITE "http://www.gluonpilot.com"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\GluonCS.exe"
@@ -37,7 +37,7 @@
 
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
 OutFile "Setup.exe"
-InstallDir "$PROGRAMFILES\Gluon Control Station"
+InstallDir "$PROGRAMFILES\Gluon Control Station ${PRODUCT_VERSION}"
 InstallDirRegKey HKLM "${PRODUCT_DIR_REGKEY}" ""
 ShowInstDetails show
 ShowUnInstDetails show
@@ -85,6 +85,7 @@ Section "MainSection" SEC01
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Release\Documentation\en\goto.html"
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Release\Documentation\en\if.html"
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Release\Documentation\en\setbatteryalarm.html"
+  File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Release\Documentation\en\setflightplanswitch.html"
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Release\Documentation\en\loitercircle.html"
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Release\Documentation\en\until.html"
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Release\Documentation\en\servoset.html"
@@ -157,16 +158,16 @@ Section "MainSection" SEC01
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Release\Artificial3DHorizon.dll"
 
 
-  CreateDirectory "$SMPROGRAMS\Gluon Control Station"
-  CreateShortCut "$SMPROGRAMS\Gluon Control Station\Gluon Control Station.lnk" "$INSTDIR\GluonCS.exe"
-  CreateShortCut "$DESKTOP\Gluon Control Station.lnk" "$INSTDIR\GluonCS.exe"
+  CreateDirectory "$SMPROGRAMS\Gluon Control Station ${PRODUCT_VERSION}"
+  CreateShortCut "$SMPROGRAMS\Gluon Control Station ${PRODUCT_VERSION}\Gluon Control Station ${PRODUCT_VERSION}.lnk" "$INSTDIR\GluonCS.exe"
+  CreateShortCut "$DESKTOP\Gluon Control Station ${PRODUCT_VERSION}.lnk" "$INSTDIR\GluonCS.exe"
 
 SectionEnd
 
 Section -AdditionalIcons
   WriteIniStr "$INSTDIR\${PRODUCT_NAME}.url" "InternetShortcut" "URL" "${PRODUCT_WEB_SITE}"
-  CreateShortCut "$SMPROGRAMS\Gluon Control Station\Website.lnk" "$INSTDIR\${PRODUCT_NAME}.url"
-  CreateShortCut "$SMPROGRAMS\Gluon Control Station\Uninstall.lnk" "$INSTDIR\uninst.exe"
+  CreateShortCut "$SMPROGRAMS\Gluon Control Station ${PRODUCT_VERSION}\Website.lnk" "$INSTDIR\${PRODUCT_NAME}.url"
+  CreateShortCut "$SMPROGRAMS\Gluon Control Station ${PRODUCT_VERSION}\Uninstall.lnk" "$INSTDIR\uninst.exe"
 SectionEnd
 
 Section -Post
@@ -250,6 +251,7 @@ Section Uninstall
   Delete "$INSTDIR\devices.xml"
   Delete "$INSTDIR\en\until.html"
   Delete "$INSTDIR\en\setbatteryalarm.html"
+  Delete "$INSTDIR\en\setflightplanswitch.html"
   Delete "$INSTDIR\en\if.html"
   Delete "$INSTDIR\en\goto.html"
   Delete "$INSTDIR\en\glideto.html"
@@ -292,10 +294,10 @@ Section Uninstall
   Delete "$INSTDIR\GluonCS.resources.dll"
   Delete "$INSTDIR\Configuration.resources.dll"
 
-  Delete "$SMPROGRAMS\Gluon Control Station\Uninstall.lnk"
-  Delete "$SMPROGRAMS\Gluon Control Station\Website.lnk"
-  Delete "$DESKTOP\Gluon Control Station.lnk"
-  Delete "$SMPROGRAMS\Gluon Control Station\Gluon Control Station.lnk"
+  Delete "$SMPROGRAMS\Gluon Control Station ${PRODUCT_VERSION}\Uninstall.lnk"
+  Delete "$SMPROGRAMS\Gluon Control Station ${PRODUCT_VERSION}\Website.lnk"
+  Delete "$DESKTOP\Gluon Control Station ${PRODUCT_VERSION}.lnk"
+  Delete "$SMPROGRAMS\Gluon Control Station ${PRODUCT_VERSION}\Gluon Control Station ${PRODUCT_VERSION}.lnk"
 
   RMDir "$SMPROGRAMS\Gluon Control Station"
   RMDir "$INSTDIR\Reaper"
