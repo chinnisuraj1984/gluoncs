@@ -140,12 +140,6 @@
       <DependentUpon>GluonCSForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GcsLayer.cs" />
-    <Compile Include="Gluonlaunch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Gluonlaunch.Designer.cs">
-      <DependentUpon>Gluonlaunch.cs</DependentUpon>
-    </Compile>
     <Compile Include="IGcsLogger.cs" />
     <Compile Include="LayerPropertiesPanel.cs">
       <SubType>UserControl</SubType>
@@ -261,9 +255,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GluonCSForm.vi.resx">
       <DependentUpon>GluonCSForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Gluonlaunch.resx">
-      <DependentUpon>Gluonlaunch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LayerPropertiesPanel.resx">
       <DependentUpon>LayerPropertiesPanel.cs</DependentUpon>
