@@ -152,7 +152,7 @@ namespace GluonCS.LiveUavLayer
                 double DirectionDiff = Math.Sqrt(FDiff[0] * FDiff[0] + FDiff[1] * FDiff[1] + FDiff[2] * FDiff[2]);
                 double w = Math.Sqrt(VelocityDiff[0] * VelocityDiff[0] + VelocityDiff[1] * VelocityDiff[1] + VelocityDiff[2] * VelocityDiff[2]) / DirectionDiff;
                 
-                if (Math.Abs(DirectionDiff) > 5.0 / 180 * Math.PI && SpeedMS > 2.0 && Math.Abs(Heading - lastheading) > 5.0)
+                if (Math.Abs(DirectionDiff) > 4.0 / 180 * Math.PI && SpeedMS > 2.0 && Math.Abs(Heading - lastheading) > 4.0)
                 {
                     Console.WriteLine("Velocity = " + (w*3.6));
 
@@ -174,8 +174,8 @@ namespace GluonCS.LiveUavLayer
                         else if (heading < -Math.PI)
                             heading += 2.0 * Math.PI;
 
-                        old_windspeed = old_windspeed + (Math.Sqrt(Wx * Wx + Wy * Wy) - old_windspeed) / 32;
-                        old_windheading = old_windheading + (heading - old_windheading) / 32;
+                        old_windspeed = old_windspeed + (Math.Sqrt(Wx * Wx + Wy * Wy) - old_windspeed) / 16;
+                        old_windheading = old_windheading + (heading - old_windheading) / 16;
                         if (old_windheading > Math.PI)
                             old_windheading -= 2.0 * Math.PI;
                         else if (old_windheading < -Math.PI)
