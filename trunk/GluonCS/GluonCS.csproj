@@ -565,6 +565,14 @@
       <Link>Documentation\en\servotrigger.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="..\Documentation\en\servotriggerstart.html">
+      <Link>Documentation\en\servotriggerstart.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Documentation\en\servotriggerstop.html">
+      <Link>Documentation\en\servotriggerstop.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\Documentation\en\setbatteryalarm.html">
       <Link>Documentation\en\setbatteryalarm.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

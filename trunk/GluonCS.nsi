@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "Gluon Control Station"
-!define PRODUCT_VERSION "0.8 BETA 5"
+!define PRODUCT_VERSION "0.8"
 !define PRODUCT_PUBLISHER "Gluonpilot"
 !define PRODUCT_WEB_SITE "http://www.gluonpilot.com"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\GluonCS.exe"
@@ -90,6 +90,8 @@ Section "MainSection" SEC01
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Release\Documentation\en\until.html"
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Release\Documentation\en\servoset.html"
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Release\Documentation\en\servotrigger.html"
+  File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Release\Documentation\en\servotriggerstart.html"
+  File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Release\Documentation\en\servotriggerstop.html"
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Release\Documentation\en\setloiterposition.html"
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Release\Documentation\en\call.html"
   File "C:\Users\Tom\Documents\Gluonpilot\SVN gluoncs\GluonCS\bin\Release\Documentation\en\return.html"
@@ -267,6 +269,8 @@ Section Uninstall
   Delete "$INSTDIR\en\loitercircle.html"
   Delete "$INSTDIR\en\servoset.html"
   Delete "$INSTDIR\en\servotrigger.html"
+  Delete "$INSTDIR\en\servotriggerstart.html"
+  Delete "$INSTDIR\en\servotriggerstop.html"
   Delete "$INSTDIR\en\setloiterposition.html"
   Delete "$INSTDIR\de\until.html"
   Delete "$INSTDIR\de\if.html"

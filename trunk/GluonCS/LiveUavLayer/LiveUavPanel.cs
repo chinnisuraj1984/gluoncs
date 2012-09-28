@@ -834,8 +834,12 @@ namespace GluonCS
             {
                 Gluonpilot.GluonConfig gc = new Gluonpilot.GluonConfig(model.Serial);
                 gc.Show();
-                if (model.Serial != null && model.Serial.IsOpen)
-                    model.Serial.ReadAllConfig();
+                //if (model.Serial != null && model.Serial.IsOpen)
+                //{
+                //    //model.Serial.ReadAllConfig();
+                //    ReadConfiguration rc = new ReadConfiguration(model.Serial);
+                //    rc.ShowDialog();
+                //}
             }
         }
 
