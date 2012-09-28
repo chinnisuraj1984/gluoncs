@@ -183,12 +183,12 @@ namespace Configuration
             }
             else if (_cb_opcode.Text.StartsWith("SERVO_TRIGGER_START"))
             {
-                //webBrowser.Navigate(directoryname + "\\servotrigger.html");
+                webBrowser.Navigate(directoryname + "\\servotriggerstart.html");
                 c = new NavigationCommands.ServoStartTrigger(ni);
             }
             else if (_cb_opcode.Text.StartsWith("SERVO_TRIGGER_STOP"))
             {
-                //webBrowser.Navigate(directoryname + "\\servotrigger.html");
+                webBrowser.Navigate(directoryname + "\\servotriggerstop.html");
                 c = new NavigationCommands.ServoStopTrigger(ni);
             }
             else if (_cb_opcode.Text.StartsWith("SERVO_TRIGGER"))

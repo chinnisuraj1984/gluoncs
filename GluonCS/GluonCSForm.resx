@@ -516,16 +516,16 @@
 		<value>None</value>
 	</data>
 	<data name="_btnOptions.Size" type="System.Drawing.Size, System.Drawing">
-		<value>157, 22</value>
+		<value>163, 22</value>
 	</data>
 	<data name="_btnOptions.Text" xml:space="preserve">
-    <value>Algemene opties</value>
+    <value>General options</value>
   </data>
 	<data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-		<value>37, 20</value>
+		<value>61, 20</value>
 	</data>
 	<data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Bestand</value>
+    <value>File</value>
   </data>
 	<data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
 		<value>0, 0</value>
@@ -3287,7 +3287,7 @@
 		<value>CenterScreen</value>
 	</data>
 	<data name="$this.Text" xml:space="preserve">
-    <value>Ground Control Station</value>
+    <value>Ground Control Station - 0.8</value>
   </data>
 	<data name="&gt;&gt;_btnZoomin.Name" xml:space="preserve">
     <value>_btnZoomin</value>
