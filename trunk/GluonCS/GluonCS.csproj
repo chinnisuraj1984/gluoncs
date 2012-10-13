@@ -262,6 +262,9 @@
     <EmbeddedResource Include="LiveUavLayer\ConnectForm.de.resx">
       <DependentUpon>ConnectForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\ConnectForm.en.resx">
+      <DependentUpon>ConnectForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\ConnectForm.nl.resx">
       <DependentUpon>ConnectForm.cs</DependentUpon>
     </EmbeddedResource>
