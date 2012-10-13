@@ -485,7 +485,7 @@ namespace Communication
                         ci.Altitude = int.Parse(lines[3]);
                         if (lines.Length >= 5)
                         {
-                            ci.BattVoltage = double.Parse(lines[4]) / 10.0;
+                            ci.Batt1Voltage = double.Parse(lines[4]) / 10.0;
                             if (lines.Length >= 6)
                             {
                                 ci.FlightTime = int.Parse(lines[5]);
@@ -496,6 +496,11 @@ namespace Communication
                             if (lines.Length >= 10)
                             {
                                 ci.TargetAltitude = int.Parse(lines[9]);
+                            }
+                            if (lines.Length >= 11)
+                            {
+                                ci.Batt1Voltage = double.Parse(lines[10]) / 10.0;
+                                ci.Batt_mAh = double.Parse(lines[10]) * 10.0;
                             }
                         }
                         if (ControlInfoCommunicationReceived != null)
