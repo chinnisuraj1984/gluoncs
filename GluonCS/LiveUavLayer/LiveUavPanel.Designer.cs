@@ -24,9 +24,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this._btnCenterUav = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
-            this._ts_basicconfig = new System.Windows.Forms.ToolStripMenuItem();
-            this._tbn_fullconfig = new System.Windows.Forms.ToolStripMenuItem();
+            this._btn_configuration = new System.Windows.Forms.ToolStripButton();
             this._cockpitPanel = new BSE.Windows.Forms.Panel();
             this.splitter1 = new BSE.Windows.Forms.Splitter();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -46,16 +44,19 @@
             this._lblTimeInBlock = new System.Windows.Forms.Label();
             this._lblFlightTime = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this._lblVoltage = new System.Windows.Forms.Label();
+            this._pbBattery2 = new ProgressBarColored();
+            this.label4 = new System.Windows.Forms.Label();
+            this._pb_mAh = new ProgressBarColored();
             this._lblGpsSat = new System.Windows.Forms.Label();
             this._pbThrottle = new ProgressBarColored();
             this._pbRcLink = new ProgressBarColored();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this._pbBattery = new ProgressBarColored();
+            this._pbBattery1 = new ProgressBarColored();
             this._pbLink = new ProgressBarColored();
             this._pbGps = new ProgressBarColored();
             this._lblLink = new System.Windows.Forms.Label();
+            this._lblVoltage = new System.Windows.Forms.Label();
             this._lblFlightMode = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this._panelStrip = new System.Windows.Forms.FlowLayoutPanel();
@@ -65,8 +66,6 @@
             this._zgAlt = new ZedGraph.ZedGraphControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this._zgVel = new ZedGraph.ZedGraphControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this._zgBatV = new ZedGraph.ZedGraphControl();
             this._lblAltitudeAgl = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -111,22 +110,34 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this._navigationPanel.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripContainer1
             // 
+            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
+            // 
+            // toolStripContainer1.BottomToolStripPanel
+            // 
+            resources.ApplyResources(this.toolStripContainer1.BottomToolStripPanel, "toolStripContainer1.BottomToolStripPanel");
             // 
             // toolStripContainer1.ContentPanel
             // 
             resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
-            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
+            // 
+            // toolStripContainer1.LeftToolStripPanel
+            // 
+            resources.ApplyResources(this.toolStripContainer1.LeftToolStripPanel, "toolStripContainer1.LeftToolStripPanel");
             this.toolStripContainer1.Name = "toolStripContainer1";
+            // 
+            // toolStripContainer1.RightToolStripPanel
+            // 
+            resources.ApplyResources(this.toolStripContainer1.RightToolStripPanel, "toolStripContainer1.RightToolStripPanel");
             // 
             // toolStripContainer1.TopToolStripPanel
             // 
+            resources.ApplyResources(this.toolStripContainer1.TopToolStripPanel, "toolStripContainer1.TopToolStripPanel");
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip2);
             // 
             // toolStrip2
@@ -137,20 +148,19 @@
             this.toolStripSeparator2,
             this._btnCenterUav,
             this.toolStripSeparator3,
-            this.toolStripDropDownButton3});
+            this._btn_configuration});
             this.toolStrip2.Name = "toolStrip2";
             // 
             // _btnConnect
             // 
-            this._btnConnect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this._btnConnect, "_btnConnect");
             this._btnConnect.Name = "_btnConnect";
             this._btnConnect.Click += new System.EventHandler(this._btnConnect_Click);
             // 
             // toolStripSeparator2
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
             resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
             // 
             // _btnCenterUav
             // 
@@ -160,34 +170,20 @@
             // 
             // toolStripSeparator3
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
             resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
             // 
-            // toolStripDropDownButton3
+            // _btn_configuration
             // 
-            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._ts_basicconfig,
-            this._tbn_fullconfig});
-            resources.ApplyResources(this.toolStripDropDownButton3, "toolStripDropDownButton3");
-            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
-            // 
-            // _ts_basicconfig
-            // 
-            this._ts_basicconfig.Name = "_ts_basicconfig";
-            resources.ApplyResources(this._ts_basicconfig, "_ts_basicconfig");
-            this._ts_basicconfig.Click += new System.EventHandler(this._ts_basicconfig_Click);
-            // 
-            // _tbn_fullconfig
-            // 
-            this._tbn_fullconfig.Name = "_tbn_fullconfig";
-            resources.ApplyResources(this._tbn_fullconfig, "_tbn_fullconfig");
-            this._tbn_fullconfig.Click += new System.EventHandler(this._tbn_fullconfig_Click);
+            resources.ApplyResources(this._btn_configuration, "_btn_configuration");
+            this._btn_configuration.Name = "_btn_configuration";
+            this._btn_configuration.Click += new System.EventHandler(this._btn_configuration_Click);
             // 
             // _cockpitPanel
             // 
+            resources.ApplyResources(this._cockpitPanel, "_cockpitPanel");
             this._cockpitPanel.AssociatedSplitter = this.splitter1;
             this._cockpitPanel.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this._cockpitPanel, "_cockpitPanel");
             this._cockpitPanel.CaptionFont = new System.Drawing.Font("Trebuchet MS", 8.75F, System.Drawing.FontStyle.Bold);
             this._cockpitPanel.CaptionHeight = 20;
             this._cockpitPanel.Controls.Add(this.tableLayoutPanel1);
@@ -225,8 +221,8 @@
             // 
             // splitter1
             // 
-            this.splitter1.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.splitter1, "splitter1");
+            this.splitter1.BackColor = System.Drawing.Color.Transparent;
             this.splitter1.Name = "splitter1";
             this.splitter1.TabStop = false;
             // 
@@ -240,50 +236,50 @@
             // 
             // _ahPanel
             // 
+            resources.ApplyResources(this._ahPanel, "_ahPanel");
             this._ahPanel.ContextMenuStrip = this.contextMenuStrip1;
             this._ahPanel.Controls.Add(this._artificialHorizon);
-            resources.ApplyResources(this._ahPanel, "_ahPanel");
             this._ahPanel.Name = "_ahPanel";
             // 
             // contextMenuStrip1
             // 
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._ts2dah,
             this.toolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             // 
             // _ts2dah
             // 
-            this._ts2dah.Name = "_ts2dah";
             resources.ApplyResources(this._ts2dah, "_ts2dah");
+            this._ts2dah.Name = "_ts2dah";
             this._ts2dah.Click += new System.EventHandler(this._ts2dah_Click);
             // 
             // toolStripMenuItem1
             // 
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._tsFunjet,
             this._tsEasystar,
             this._tsPredator});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             // 
             // _tsFunjet
             // 
-            this._tsFunjet.Name = "_tsFunjet";
             resources.ApplyResources(this._tsFunjet, "_tsFunjet");
+            this._tsFunjet.Name = "_tsFunjet";
             this._tsFunjet.Click += new System.EventHandler(this._tsFunjet_Click);
             // 
             // _tsEasystar
             // 
-            this._tsEasystar.Name = "_tsEasystar";
             resources.ApplyResources(this._tsEasystar, "_tsEasystar");
+            this._tsEasystar.Name = "_tsEasystar";
             this._tsEasystar.Click += new System.EventHandler(this._tsEasystar_Click);
             // 
             // _tsPredator
             // 
-            this._tsPredator.Name = "_tsPredator";
             resources.ApplyResources(this._tsPredator, "_tsPredator");
+            this._tsPredator.Name = "_tsPredator";
             this._tsPredator.Click += new System.EventHandler(this._tsPredator_Click);
             // 
             // _artificialHorizon
@@ -297,13 +293,13 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this._lblBlockname);
             this.panel1.Controls.Add(this._lblDistNextWp);
             this.panel1.Controls.Add(this._lblHomeDistance);
             this.panel1.Controls.Add(this._lblTimeToWp);
             this.panel1.Controls.Add(this._lblTimeInBlock);
             this.panel1.Controls.Add(this._lblFlightTime);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // _lblBlockname
@@ -338,23 +334,44 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this._lblVoltage);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Controls.Add(this._pbBattery2);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this._pb_mAh);
             this.panel2.Controls.Add(this._lblGpsSat);
             this.panel2.Controls.Add(this._pbThrottle);
             this.panel2.Controls.Add(this._pbRcLink);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this._pbBattery);
+            this.panel2.Controls.Add(this._pbBattery1);
             this.panel2.Controls.Add(this._pbLink);
             this.panel2.Controls.Add(this._pbGps);
             this.panel2.Controls.Add(this._lblLink);
-            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Controls.Add(this._lblVoltage);
             this.panel2.Name = "panel2";
             // 
-            // _lblVoltage
+            // _pbBattery2
             // 
-            resources.ApplyResources(this._lblVoltage, "_lblVoltage");
-            this._lblVoltage.Name = "_lblVoltage";
+            resources.ApplyResources(this._pbBattery2, "_pbBattery2");
+            this._pbBattery2.ForeColor = System.Drawing.Color.LimeGreen;
+            this._pbBattery2.Name = "_pbBattery2";
+            this._pbBattery2.Step = 1;
+            this._pbBattery2.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
+            // _pb_mAh
+            // 
+            resources.ApplyResources(this._pb_mAh, "_pb_mAh");
+            this._pb_mAh.ForeColor = System.Drawing.Color.LimeGreen;
+            this._pb_mAh.Maximum = 9999;
+            this._pb_mAh.Name = "_pb_mAh";
+            this._pb_mAh.Step = 1;
+            this._pb_mAh.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this._pb_mAh.Value = 1234;
             // 
             // _lblGpsSat
             // 
@@ -387,13 +404,13 @@
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
             // 
-            // _pbBattery
+            // _pbBattery1
             // 
-            resources.ApplyResources(this._pbBattery, "_pbBattery");
-            this._pbBattery.ForeColor = System.Drawing.Color.LimeGreen;
-            this._pbBattery.Name = "_pbBattery";
-            this._pbBattery.Step = 1;
-            this._pbBattery.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            resources.ApplyResources(this._pbBattery1, "_pbBattery1");
+            this._pbBattery1.ForeColor = System.Drawing.Color.LimeGreen;
+            this._pbBattery1.Name = "_pbBattery1";
+            this._pbBattery1.Step = 1;
+            this._pbBattery1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
             // _pbLink
             // 
@@ -420,10 +437,15 @@
             resources.ApplyResources(this._lblLink, "_lblLink");
             this._lblLink.Name = "_lblLink";
             // 
+            // _lblVoltage
+            // 
+            resources.ApplyResources(this._lblVoltage, "_lblVoltage");
+            this._lblVoltage.Name = "_lblVoltage";
+            // 
             // _lblFlightMode
             // 
-            this._lblFlightMode.BackColor = System.Drawing.Color.LightGray;
             resources.ApplyResources(this._lblFlightMode, "_lblFlightMode");
+            this._lblFlightMode.BackColor = System.Drawing.Color.LightGray;
             this._lblFlightMode.Name = "_lblFlightMode";
             // 
             // tableLayoutPanel3
@@ -447,17 +469,17 @@
             // 
             // tabControl1
             // 
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            resources.ApplyResources(this.tabControl1, "tabControl1");
+            this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this._zgAlt);
             resources.ApplyResources(this.tabPage1, "tabPage1");
+            this.tabPage1.Controls.Add(this._zgAlt);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -476,8 +498,8 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this._zgVel);
             resources.ApplyResources(this.tabPage2, "tabPage2");
+            this.tabPage2.Controls.Add(this._zgVel);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -493,26 +515,6 @@
             this._zgVel.ScrollMinX = 0D;
             this._zgVel.ScrollMinY = 0D;
             this._zgVel.ScrollMinY2 = 0D;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this._zgBatV);
-            resources.ApplyResources(this.tabPage3, "tabPage3");
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // _zgBatV
-            // 
-            resources.ApplyResources(this._zgBatV, "_zgBatV");
-            this._zgBatV.IsAntiAlias = true;
-            this._zgBatV.Name = "_zgBatV";
-            this._zgBatV.ScrollGrace = 0D;
-            this._zgBatV.ScrollMaxX = 0D;
-            this._zgBatV.ScrollMaxY = 0D;
-            this._zgBatV.ScrollMaxY2 = 0D;
-            this._zgBatV.ScrollMinX = 0D;
-            this._zgBatV.ScrollMinY = 0D;
-            this._zgBatV.ScrollMinY2 = 0D;
             // 
             // _lblAltitudeAgl
             // 
@@ -536,6 +538,7 @@
             // 
             // _navigationPanel
             // 
+            resources.ApplyResources(this._navigationPanel, "_navigationPanel");
             this._navigationPanel.AssociatedSplitter = this.splitter1;
             this._navigationPanel.BackColor = System.Drawing.Color.Transparent;
             this._navigationPanel.CaptionFont = new System.Drawing.Font("Trebuchet MS", 8.75F, System.Drawing.FontStyle.Bold);
@@ -555,7 +558,6 @@
             this._navigationPanel.CustomColors.ContentGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(190)))), ((int)(((byte)(245)))));
             this._navigationPanel.CustomColors.ContentGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(218)))), ((int)(((byte)(250)))));
             this._navigationPanel.CustomColors.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            resources.ApplyResources(this._navigationPanel, "_navigationPanel");
             this._navigationPanel.ForeColor = System.Drawing.SystemColors.ControlText;
             this._navigationPanel.Image = null;
             this._navigationPanel.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
@@ -569,6 +571,7 @@
             // 
             // toolStrip1
             // 
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._btn_up,
             this._btn_down,
@@ -577,30 +580,29 @@
             this.toolStripDropDownButton1,
             this.toolStripDropDownButton2,
             this._btnAutoSync});
-            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
             // 
             // _btn_up
             // 
-            this._btn_up.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this._btn_up, "_btn_up");
+            this._btn_up.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this._btn_up.Name = "_btn_up";
             this._btn_up.Click += new System.EventHandler(this._btn_up_Click);
             // 
             // _btn_down
             // 
-            this._btn_down.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this._btn_down, "_btn_down");
+            this._btn_down.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this._btn_down.Name = "_btn_down";
             this._btn_down.Click += new System.EventHandler(this._btn_down_Click);
             // 
             // toolStripSplitButton1
             // 
+            resources.ApplyResources(this.toolStripSplitButton1, "toolStripSplitButton1");
             this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addBlockToolStripMenuItem,
             this.emptyScriptToolStripMenuItem,
             this.generateSurveyToolStripMenuItem});
-            resources.ApplyResources(this.toolStripSplitButton1, "toolStripSplitButton1");
             this.toolStripSplitButton1.Name = "toolStripSplitButton1";
             // 
             // addBlockToolStripMenuItem
@@ -617,11 +619,11 @@
             // 
             // generateSurveyToolStripMenuItem
             // 
+            resources.ApplyResources(this.generateSurveyToolStripMenuItem, "generateSurveyToolStripMenuItem");
             this.generateSurveyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._btnNewSurvey,
             this._btnBuildSurvey,
             this._btnSurveySettings});
-            resources.ApplyResources(this.generateSurveyToolStripMenuItem, "generateSurveyToolStripMenuItem");
             this.generateSurveyToolStripMenuItem.Name = "generateSurveyToolStripMenuItem";
             // 
             // _btnNewSurvey
@@ -644,15 +646,15 @@
             // 
             // toolStripSeparator1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
             // 
             // toolStripDropDownButton1
             // 
+            resources.ApplyResources(this.toolStripDropDownButton1, "toolStripDropDownButton1");
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._nav_open,
             this._nav_save});
-            resources.ApplyResources(this.toolStripDropDownButton1, "toolStripDropDownButton1");
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             // 
             // _nav_open
@@ -669,12 +671,12 @@
             // 
             // toolStripDropDownButton2
             // 
+            resources.ApplyResources(this.toolStripDropDownButton2, "toolStripDropDownButton2");
             this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._btnNaviRead,
             this._btnNaviWrite,
             this._btnNaviReload,
             this._btnNaviBurn});
-            resources.ApplyResources(this.toolStripDropDownButton2, "toolStripDropDownButton2");
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
             // 
             // _btnNaviRead
@@ -703,15 +705,15 @@
             // 
             // _btnAutoSync
             // 
-            this._btnAutoSync.CheckOnClick = true;
             resources.ApplyResources(this._btnAutoSync, "_btnAutoSync");
+            this._btnAutoSync.CheckOnClick = true;
             this._btnAutoSync.Name = "_btnAutoSync";
             this._btnAutoSync.CheckedChanged += new System.EventHandler(this._btnAutoSync_CheckedChanged);
             // 
             // _lv_navigation
             // 
-            this._lv_navigation.Activation = System.Windows.Forms.ItemActivation.TwoClick;
             resources.ApplyResources(this._lv_navigation, "_lv_navigation");
+            this._lv_navigation.Activation = System.Windows.Forms.ItemActivation.TwoClick;
             this._lv_navigation.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
@@ -743,8 +745,8 @@
             // 
             // _gmapContextMenuStrip
             // 
-            this._gmapContextMenuStrip.Name = "_gmapContextMenuStrip";
             resources.ApplyResources(this._gmapContextMenuStrip, "_gmapContextMenuStrip");
+            this._gmapContextMenuStrip.Name = "_gmapContextMenuStrip";
             // 
             // LiveUavPanel
             // 
@@ -764,6 +766,7 @@
             this._cockpitPanel.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this._ahPanel.ResumeLayout(false);
+            this._ahPanel.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -773,7 +776,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
             this._navigationPanel.ResumeLayout(false);
             this._navigationPanel.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -821,15 +823,13 @@
         private System.Windows.Forms.FlowLayoutPanel _panelStrip;
         private System.Windows.Forms.Label _lblAltitudeAgl;
         private ZedGraph.ZedGraphControl _zgVel;
-        private System.Windows.Forms.TabPage tabPage3;
-        private ZedGraph.ZedGraphControl _zgBatV;
         private BSE.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label _lblBlockname;
         private System.Windows.Forms.Label label1;
         private ProgressBarColored _pbThrottle;
         private ProgressBarColored _pbGps;
-        private ProgressBarColored _pbBattery;
+        private ProgressBarColored _pbBattery1;
         private System.Windows.Forms.Label _lblLink;
         private ProgressBarColored _pbLink;
         private System.Windows.Forms.Label label2;
@@ -849,9 +849,6 @@
         private System.Windows.Forms.ToolStripMenuItem _tsFunjet;
         private System.Windows.Forms.ToolStripMenuItem _tsEasystar;
         private System.Windows.Forms.ToolStripMenuItem _tsPredator;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
-        private System.Windows.Forms.ToolStripMenuItem _ts_basicconfig;
-        private System.Windows.Forms.ToolStripMenuItem _tbn_fullconfig;
         private System.Windows.Forms.ToolStripMenuItem _btnNaviBurn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
@@ -863,5 +860,9 @@
         private System.Windows.Forms.ToolStripMenuItem _btnBuildSurvey;
         private System.Windows.Forms.ToolStripMenuItem _btnSurveySettings;
         private System.Windows.Forms.ToolStripMenuItem emptyScriptToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton _btn_configuration;
+        private ProgressBarColored _pb_mAh;
+        private System.Windows.Forms.Label label4;
+        private ProgressBarColored _pbBattery2;
     }
 }

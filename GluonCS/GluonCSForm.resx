@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
+  <!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,86 +59,86 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="metadata">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" />
-							</xsd:sequence>
-							<xsd:attribute name="name" use="required" type="xsd:string" />
-							<xsd:attribute name="type" type="xsd:string" />
-							<xsd:attribute name="mimetype" type="xsd:string" />
-							<xsd:attribute ref="xml:space" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="assembly">
-						<xsd:complexType>
-							<xsd:attribute name="alias" type="xsd:string" />
-							<xsd:attribute name="name" type="xsd:string" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-							<xsd:attribute ref="xml:space" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>2.0</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.Name" xml:space="preserve">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.Name" xml:space="preserve">
     <value>toolStripContainer1.BottomToolStripPanel</value>
   </data>
-	<data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.Parent" xml:space="preserve">
     <value>toolStripContainer1</value>
   </data>
-	<data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-	<metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-		<value>383, 17</value>
-	</metadata>
-	<assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-	<data name="toolStrip1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-		<value>None</value>
-	</data>
-	<assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-	<data name="_btnZoomin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-		<value>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>383, 17</value>
+  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="toolStrip1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="_btnZoomin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJJSURBVDhPY2DAA+JbX2uktL2em9z8+r5P/dNfIBrEB4nj
         0weWi6i6Hxhd/fB+0/ynJzaffLvrztPPJ45c+XCgd+nLUyBxkDxOQ9xyzmh4Z1+8P3Xjgx2Hrr8+9Ozt
@@ -152,18 +152,18 @@
         WLiFhYUlG8jXB2IdIAb5UwWI5YFYGojFgFgQiHlAeoCYFYiZQJaxQCWlgLQkEEtA+SJAWgiIBYCYD4i5
         gZgTiNmgepiBNCMAtKVRg28FOm8AAAAASUVORK5CYII=
 </value>
-	</data>
-	<data name="_btnZoomin.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-		<value>Magenta</value>
-	</data>
-	<data name="_btnZoomin.Size" type="System.Drawing.Size, System.Drawing">
-		<value>22, 20</value>
-	</data>
-	<data name="_btnZoomin.Text" xml:space="preserve">
+  </data>
+  <data name="_btnZoomin.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="_btnZoomin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 20</value>
+  </data>
+  <data name="_btnZoomin.Text" xml:space="preserve">
     <value>Zoom in</value>
   </data>
-	<data name="_btnZoomout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-		<value>
+  <data name="_btnZoomout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIeSURBVDhPY2DAA+JbX2uktL2em9z8+r5P/dNfIBrEB4nj
         0weWi6i6Hxhd/fB+0/ynJzaffLvrztPPJ45c+XCgd+nLUyBxkDxOQ9xyzmh4Z1+8P3Xjgx2Hrr8+9OjN
@@ -176,21 +176,21 @@
         8zxmZmYXkjQDFXOIiYm5CAsLt7CwsGQD+fpArAPEIH+qALE8EEsDsRgQCwIxD0gPELMCMRPIMhaopBSQ
         lgRiCShfBEgLAbEAEPMBMTcQcwIxG1QPM5BmBAAlPFUsTQs9WwAAAABJRU5ErkJggg==
 </value>
-	</data>
-	<data name="_btnZoomout.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-		<value>Magenta</value>
-	</data>
-	<data name="_btnZoomout.Size" type="System.Drawing.Size, System.Drawing">
-		<value>22, 20</value>
-	</data>
-	<data name="_btnZoomout.Text" xml:space="preserve">
+  </data>
+  <data name="_btnZoomout.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="_btnZoomout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 20</value>
+  </data>
+  <data name="_btnZoomout.Text" xml:space="preserve">
     <value>Zoom out</value>
   </data>
-	<data name="_btnZoomout.ToolTipText" xml:space="preserve">
+  <data name="_btnZoomout.ToolTipText" xml:space="preserve">
     <value>Zoom out</value>
   </data>
-	<data name="_btnGoto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-		<value>
+  <data name="_btnGoto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIOSURBVDhPY2DAA+JbX2uktL2em9z8+r5P/dNfIBrEB4nj
         0weWi6i6Hxhd/fB+0/ynJzaffLvrztPPJ45c+XCgd+nLUyBxkDxOQ9xyzmh4Z1+6P3Xjgx2Hrr8+9OjN
@@ -203,446 +203,446 @@
         bmFhYckG8vWBWAeIQf5UAWJ5IJYGYjEgFgRiHpAeIGYFYiaQZSxALA7EUkAsCcQSUL4okBYGYgEg5gNi
         biDmBGJ2qGZmIM0IAOM1WDoxo0fzAAAAAElFTkSuQmCC
 </value>
-	</data>
-	<data name="_btnGoto.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-		<value>Magenta</value>
-	</data>
-	<data name="_btnGoto.Size" type="System.Drawing.Size, System.Drawing">
-		<value>22, 20</value>
-	</data>
-	<data name="_btnGoto.Text" xml:space="preserve">
+  </data>
+  <data name="_btnGoto.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="_btnGoto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 20</value>
+  </data>
+  <data name="_btnGoto.Text" xml:space="preserve">
     <value>Goto</value>
   </data>
-	<data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
-		<value>0, 0</value>
-	</data>
-	<data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-		<value>24, 80</value>
-	</data>
-	<assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-	<data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
-		<value>7</value>
-	</data>
-	<data name="toolStrip1.Text" xml:space="preserve">
+  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 80</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="toolStrip1.Text" xml:space="preserve">
     <value>toolStrip1</value>
   </data>
-	<data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
+  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
     <value>toolStrip1</value>
   </data>
-	<data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
     <value>toolStripContainer1.ContentPanel</value>
   </data>
-	<data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-	<data name="_gMapControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-		<value>Fill</value>
-	</data>
-	<data name="_gMapControl.Location" type="System.Drawing.Point, System.Drawing">
-		<value>0, 0</value>
-	</data>
-	<data name="_gMapControl.Position" mimetype="application/x-microsoft.net.object.binary.base64">
-		<value>
+  <data name="_gMapControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="_gMapControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="_gMapControl.Position" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFBHTWFwLk5FVC5Db3JlLCBWZXJzaW9uPTEuNS40LjMsIEN1bHR1
         cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg1YjkwMjdiNjE0YWZlZgUBAAAAFEdNYXAuTkVULlBv
         aW50TGF0TG5nAgAAAANsYXQDbG5nAAAGBgIAAAAAAAAAAAAAAAAAAAAAAAAACw==
 </value>
-	</data>
-	<data name="_gMapControl.Size" type="System.Drawing.Size, System.Drawing">
-		<value>900, 533</value>
-	</data>
-	<data name="_gMapControl.TabIndex" type="System.Int32, mscorlib">
-		<value>4</value>
-	</data>
-	<data name="&gt;&gt;_gMapControl.Name" xml:space="preserve">
-    <value>_gMapControl</value>
   </data>
-	<data name="&gt;&gt;_gMapControl.Type" xml:space="preserve">
-    <value>GluonCS.LiveUavLayer.WindGMapControl, GluonCS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="_gMapControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>891, 533</value>
   </data>
-	<data name="&gt;&gt;_gMapControl.Parent" xml:space="preserve">
-    <value>toolStripContainer1.ContentPanel</value>
-  </data>
-	<data name="&gt;&gt;_gMapControl.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-	<data name="splitter3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-		<value>Bottom</value>
-	</data>
-	<data name="splitter3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-		<value>NoControl</value>
-	</data>
-	<data name="splitter3.Location" type="System.Drawing.Point, System.Drawing">
-		<value>0, 533</value>
-	</data>
-	<data name="splitter3.Size" type="System.Drawing.Size, System.Drawing">
-		<value>900, 3</value>
-	</data>
-	<data name="splitter3.TabIndex" type="System.Int32, mscorlib">
-		<value>3</value>
-	</data>
-	<data name="&gt;&gt;splitter3.Name" xml:space="preserve">
-    <value>splitter3</value>
-  </data>
-	<data name="&gt;&gt;splitter3.Type" xml:space="preserve">
-    <value>BSE.Windows.Forms.Splitter, BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef</value>
-  </data>
-	<data name="&gt;&gt;splitter3.Parent" xml:space="preserve">
-    <value>toolStripContainer1.ContentPanel</value>
-  </data>
-	<data name="&gt;&gt;splitter3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-	<data name="_tbLog.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-		<value>Fill</value>
-	</data>
-	<data name="_tbLog.Location" type="System.Drawing.Point, System.Drawing">
-		<value>1, 28</value>
-	</data>
-	<data name="_tbLog.Multiline" type="System.Boolean, mscorlib">
-		<value>True</value>
-	</data>
-	<data name="_tbLog.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-		<value>Vertical</value>
-	</data>
-	<data name="_tbLog.Size" type="System.Drawing.Size, System.Drawing">
-		<value>898, 71</value>
-	</data>
-	<data name="_tbLog.TabIndex" type="System.Int32, mscorlib">
-		<value>1</value>
-	</data>
-	<data name="&gt;&gt;_tbLog.Name" xml:space="preserve">
-    <value>_tbLog</value>
-  </data>
-	<data name="&gt;&gt;_tbLog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-	<data name="&gt;&gt;_tbLog.Parent" xml:space="preserve">
-    <value>panel4</value>
-  </data>
-	<data name="&gt;&gt;_tbLog.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-	<data name="m_cboToolStripRenderer.Location" type="System.Drawing.Point, System.Drawing">
-		<value>229, 31</value>
-	</data>
-	<data name="m_cboToolStripRenderer.Size" type="System.Drawing.Size, System.Drawing">
-		<value>121, 21</value>
-	</data>
-	<data name="m_cboToolStripRenderer.TabIndex" type="System.Int32, mscorlib">
-		<value>0</value>
-	</data>
-	<data name="&gt;&gt;m_cboToolStripRenderer.Name" xml:space="preserve">
-    <value>m_cboToolStripRenderer</value>
-  </data>
-	<data name="&gt;&gt;m_cboToolStripRenderer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-	<data name="&gt;&gt;m_cboToolStripRenderer.Parent" xml:space="preserve">
-    <value>panel4</value>
-  </data>
-	<data name="&gt;&gt;m_cboToolStripRenderer.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-	<data name="panel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-		<value>Bottom</value>
-	</data>
-	<data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
-		<value>0, 536</value>
-	</data>
-	<data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-		<value>900, 100</value>
-	</data>
-	<data name="panel4.TabIndex" type="System.Int32, mscorlib">
-		<value>2</value>
-	</data>
-	<data name="panel4.Text" xml:space="preserve">
-    <value>Logging</value>
-  </data>
-	<data name="&gt;&gt;panel4.Name" xml:space="preserve">
-    <value>panel4</value>
-  </data>
-	<data name="&gt;&gt;panel4.Type" xml:space="preserve">
-    <value>BSE.Windows.Forms.Panel, BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef</value>
-  </data>
-	<data name="&gt;&gt;panel4.Parent" xml:space="preserve">
-    <value>toolStripContainer1.ContentPanel</value>
-  </data>
-	<data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-	<data name="splitter2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-		<value>Right</value>
-	</data>
-	<data name="splitter2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-		<value>NoControl</value>
-	</data>
-	<data name="splitter2.Location" type="System.Drawing.Point, System.Drawing">
-		<value>900, 0</value>
-	</data>
-	<data name="splitter2.Size" type="System.Drawing.Size, System.Drawing">
-		<value>3, 636</value>
-	</data>
-	<data name="splitter2.TabIndex" type="System.Int32, mscorlib">
-		<value>1</value>
-	</data>
-	<data name="&gt;&gt;splitter2.Name" xml:space="preserve">
-    <value>splitter2</value>
-  </data>
-	<data name="&gt;&gt;splitter2.Type" xml:space="preserve">
-    <value>BSE.Windows.Forms.Splitter, BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef</value>
-  </data>
-	<data name="&gt;&gt;splitter2.Parent" xml:space="preserve">
-    <value>toolStripContainer1.ContentPanel</value>
-  </data>
-	<data name="&gt;&gt;splitter2.ZOrder" xml:space="preserve">
+  <data name="_gMapControl.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-	<data name="liveUavPanel1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-		<value>GrowAndShrink</value>
-	</data>
-	<data name="liveUavPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-		<value>Fill</value>
-	</data>
-	<data name="liveUavPanel1.Location" type="System.Drawing.Point, System.Drawing">
-		<value>1, 28</value>
-	</data>
-	<data name="liveUavPanel1.Size" type="System.Drawing.Size, System.Drawing">
-		<value>359, 607</value>
-	</data>
-	<data name="liveUavPanel1.TabIndex" type="System.Int32, mscorlib">
-		<value>0</value>
-	</data>
-	<data name="&gt;&gt;liveUavPanel1.Name" xml:space="preserve">
-    <value>liveUavPanel1</value>
+  <data name="&gt;&gt;_gMapControl.Name" xml:space="preserve">
+    <value>_gMapControl</value>
   </data>
-	<data name="&gt;&gt;liveUavPanel1.Type" xml:space="preserve">
-    <value>GluonCS.LiveUavPanel, GluonCS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;_gMapControl.Type" xml:space="preserve">
+    <value>GluonCS.LiveUavLayer.WindGMapControl, GluonCS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-	<data name="&gt;&gt;liveUavPanel1.Parent" xml:space="preserve">
-    <value>_layersPanel</value>
-  </data>
-	<data name="&gt;&gt;liveUavPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-	<data name="_layersPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-		<value>Right</value>
-	</data>
-	<data name="_layersPanel.Location" type="System.Drawing.Point, System.Drawing">
-		<value>903, 0</value>
-	</data>
-	<data name="_layersPanel.Size" type="System.Drawing.Size, System.Drawing">
-		<value>361, 636</value>
-	</data>
-	<data name="_layersPanel.TabIndex" type="System.Int32, mscorlib">
-		<value>0</value>
-	</data>
-	<data name="_layersPanel.Text" xml:space="preserve">
-    <value>Uav information</value>
-  </data>
-	<data name="&gt;&gt;_layersPanel.Name" xml:space="preserve">
-    <value>_layersPanel</value>
-  </data>
-	<data name="&gt;&gt;_layersPanel.Type" xml:space="preserve">
-    <value>BSE.Windows.Forms.Panel, BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef</value>
-  </data>
-	<data name="&gt;&gt;_layersPanel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;_gMapControl.Parent" xml:space="preserve">
     <value>toolStripContainer1.ContentPanel</value>
   </data>
-	<data name="&gt;&gt;_layersPanel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-	<data name="toolStripContainer1.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-		<value>1264, 636</value>
-	</data>
-	<data name="&gt;&gt;toolStripContainer1.ContentPanel.Name" xml:space="preserve">
-    <value>toolStripContainer1.ContentPanel</value>
-  </data>
-	<data name="&gt;&gt;toolStripContainer1.ContentPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripContentPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-	<data name="&gt;&gt;toolStripContainer1.ContentPanel.Parent" xml:space="preserve">
-    <value>toolStripContainer1</value>
-  </data>
-	<data name="&gt;&gt;toolStripContainer1.ContentPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-	<data name="toolStripContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-		<value>Fill</value>
-	</data>
-	<data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.Name" xml:space="preserve">
-    <value>toolStripContainer1.LeftToolStripPanel</value>
-  </data>
-	<data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-	<data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.Parent" xml:space="preserve">
-    <value>toolStripContainer1</value>
-  </data>
-	<data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;_gMapControl.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-	<data name="toolStripContainer1.Location" type="System.Drawing.Point, System.Drawing">
-		<value>0, 0</value>
-	</data>
-	<data name="&gt;&gt;toolStripContainer1.RightToolStripPanel.Name" xml:space="preserve">
-    <value>toolStripContainer1.RightToolStripPanel</value>
+  <data name="splitter3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
   </data>
-	<data name="&gt;&gt;toolStripContainer1.RightToolStripPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="splitter3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-	<data name="&gt;&gt;toolStripContainer1.RightToolStripPanel.Parent" xml:space="preserve">
-    <value>toolStripContainer1</value>
+  <data name="splitter3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 533</value>
   </data>
-	<data name="&gt;&gt;toolStripContainer1.RightToolStripPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="splitter3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>891, 3</value>
   </data>
-	<data name="toolStripContainer1.Size" type="System.Drawing.Size, System.Drawing">
-		<value>1264, 660</value>
-	</data>
-	<data name="toolStripContainer1.TabIndex" type="System.Int32, mscorlib">
-		<value>1</value>
-	</data>
-	<data name="toolStripContainer1.Text" xml:space="preserve">
-    <value>toolStripContainer1</value>
-  </data>
-	<metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-		<value>127, 17</value>
-	</metadata>
-	<data name="menuStrip1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-		<value>None</value>
-	</data>
-	<data name="_btnOptions.Size" type="System.Drawing.Size, System.Drawing">
-		<value>163, 22</value>
-	</data>
-	<data name="_btnOptions.Text" xml:space="preserve">
-    <value>General options</value>
-  </data>
-	<data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-		<value>61, 20</value>
-	</data>
-	<data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>File</value>
-  </data>
-	<data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-		<value>0, 0</value>
-	</data>
-	<data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-		<value>1264, 24</value>
-	</data>
-	<data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
-		<value>0</value>
-	</data>
-	<data name="menuStrip1.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-	<data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-	<data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-	<data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
-    <value>toolStripContainer1.TopToolStripPanel</value>
-  </data>
-	<data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-	<data name="&gt;&gt;toolStripContainer1.TopToolStripPanel.Name" xml:space="preserve">
-    <value>toolStripContainer1.TopToolStripPanel</value>
-  </data>
-	<data name="&gt;&gt;toolStripContainer1.TopToolStripPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-	<data name="&gt;&gt;toolStripContainer1.TopToolStripPanel.Parent" xml:space="preserve">
-    <value>toolStripContainer1</value>
-  </data>
-	<data name="&gt;&gt;toolStripContainer1.TopToolStripPanel.ZOrder" xml:space="preserve">
+  <data name="splitter3.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-	<data name="&gt;&gt;toolStripContainer1.Name" xml:space="preserve">
-    <value>toolStripContainer1</value>
+  <data name="&gt;&gt;splitter3.Name" xml:space="preserve">
+    <value>splitter3</value>
   </data>
-	<data name="&gt;&gt;toolStripContainer1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;splitter3.Type" xml:space="preserve">
+    <value>BSE.Windows.Forms.Splitter, BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef</value>
   </data>
-	<data name="&gt;&gt;toolStripContainer1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;splitter3.Parent" xml:space="preserve">
+    <value>toolStripContainer1.ContentPanel</value>
   </data>
-	<data name="&gt;&gt;toolStripContainer1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-	<metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-		<value>17, 17</value>
-	</metadata>
-	<data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
-		<value>0, 660</value>
-	</data>
-	<data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-		<value>1264, 22</value>
-	</data>
-	<data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
-		<value>0</value>
-	</data>
-	<data name="statusStrip1.Text" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-	<data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-	<data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-	<data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-	<data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;splitter3.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-	<metadata name="_gmapContextStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-		<value>236, 17</value>
-	</metadata>
-	<data name="zoomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-		<value>127, 22</value>
-	</data>
-	<data name="zoomToolStripMenuItem.Text" xml:space="preserve">
+  <data name="_tbLog.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="_tbLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 28</value>
+  </data>
+  <data name="_tbLog.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="_tbLog.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="_tbLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>889, 71</value>
+  </data>
+  <data name="_tbLog.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;_tbLog.Name" xml:space="preserve">
+    <value>_tbLog</value>
+  </data>
+  <data name="&gt;&gt;_tbLog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_tbLog.Parent" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;_tbLog.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="m_cboToolStripRenderer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>229, 31</value>
+  </data>
+  <data name="m_cboToolStripRenderer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <data name="m_cboToolStripRenderer.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_cboToolStripRenderer.Name" xml:space="preserve">
+    <value>m_cboToolStripRenderer</value>
+  </data>
+  <data name="&gt;&gt;m_cboToolStripRenderer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_cboToolStripRenderer.Parent" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;m_cboToolStripRenderer.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 536</value>
+  </data>
+  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>891, 100</value>
+  </data>
+  <data name="panel4.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="panel4.Text" xml:space="preserve">
+    <value>Logging</value>
+  </data>
+  <data name="&gt;&gt;panel4.Name" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;panel4.Type" xml:space="preserve">
+    <value>BSE.Windows.Forms.Panel, BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef</value>
+  </data>
+  <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
+    <value>toolStripContainer1.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="splitter2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="splitter2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="splitter2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>891, 0</value>
+  </data>
+  <data name="splitter2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>3, 636</value>
+  </data>
+  <data name="splitter2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;splitter2.Name" xml:space="preserve">
+    <value>splitter2</value>
+  </data>
+  <data name="&gt;&gt;splitter2.Type" xml:space="preserve">
+    <value>BSE.Windows.Forms.Splitter, BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef</value>
+  </data>
+  <data name="&gt;&gt;splitter2.Parent" xml:space="preserve">
+    <value>toolStripContainer1.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;splitter2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="liveUavPanel1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="liveUavPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="liveUavPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 28</value>
+  </data>
+  <data name="liveUavPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 607</value>
+  </data>
+  <data name="liveUavPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;liveUavPanel1.Name" xml:space="preserve">
+    <value>liveUavPanel1</value>
+  </data>
+  <data name="&gt;&gt;liveUavPanel1.Type" xml:space="preserve">
+    <value>GluonCS.LiveUavPanel, GluonCS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;liveUavPanel1.Parent" xml:space="preserve">
+    <value>_layersPanel</value>
+  </data>
+  <data name="&gt;&gt;liveUavPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="_layersPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="_layersPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>894, 0</value>
+  </data>
+  <data name="_layersPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 636</value>
+  </data>
+  <data name="_layersPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="_layersPanel.Text" xml:space="preserve">
+    <value>Uav information</value>
+  </data>
+  <data name="&gt;&gt;_layersPanel.Name" xml:space="preserve">
+    <value>_layersPanel</value>
+  </data>
+  <data name="&gt;&gt;_layersPanel.Type" xml:space="preserve">
+    <value>BSE.Windows.Forms.Panel, BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef</value>
+  </data>
+  <data name="&gt;&gt;_layersPanel.Parent" xml:space="preserve">
+    <value>toolStripContainer1.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;_layersPanel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="toolStripContainer1.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1264, 636</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.ContentPanel.Name" xml:space="preserve">
+    <value>toolStripContainer1.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.ContentPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContentPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.ContentPanel.Parent" xml:space="preserve">
+    <value>toolStripContainer1</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.ContentPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="toolStripContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.Name" xml:space="preserve">
+    <value>toolStripContainer1.LeftToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.Parent" xml:space="preserve">
+    <value>toolStripContainer1</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="toolStripContainer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.RightToolStripPanel.Name" xml:space="preserve">
+    <value>toolStripContainer1.RightToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.RightToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.RightToolStripPanel.Parent" xml:space="preserve">
+    <value>toolStripContainer1</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.RightToolStripPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="toolStripContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1264, 660</value>
+  </data>
+  <data name="toolStripContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="toolStripContainer1.Text" xml:space="preserve">
+    <value>toolStripContainer1</value>
+  </data>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>127, 17</value>
+  </metadata>
+  <data name="menuStrip1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="_btnOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 22</value>
+  </data>
+  <data name="_btnOptions.Text" xml:space="preserve">
+    <value>General options</value>
+  </data>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1264, 24</value>
+  </data>
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>toolStripContainer1.TopToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.TopToolStripPanel.Name" xml:space="preserve">
+    <value>toolStripContainer1.TopToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.TopToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.TopToolStripPanel.Parent" xml:space="preserve">
+    <value>toolStripContainer1</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.TopToolStripPanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.Name" xml:space="preserve">
+    <value>toolStripContainer1</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolStripContainer1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 660</value>
+  </data>
+  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1264, 22</value>
+  </data>
+  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="statusStrip1.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="_gmapContextStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>236, 17</value>
+  </metadata>
+  <data name="zoomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 22</value>
+  </data>
+  <data name="zoomToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Zoom</value>
   </data>
-	<data name="zoomoutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-		<value>127, 22</value>
-	</data>
-	<data name="zoomoutToolStripMenuItem.Text" xml:space="preserve">
+  <data name="zoomoutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 22</value>
+  </data>
+  <data name="zoomoutToolStripMenuItem.Text" xml:space="preserve">
     <value>Zoom &amp;out</value>
   </data>
-	<data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-		<value>124, 6</value>
-	</data>
-	<data name="_gmapContextStrip.Size" type="System.Drawing.Size, System.Drawing">
-		<value>128, 54</value>
-	</data>
-	<data name="&gt;&gt;_gmapContextStrip.Name" xml:space="preserve">
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 6</value>
+  </data>
+  <data name="_gmapContextStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 54</value>
+  </data>
+  <data name="&gt;&gt;_gmapContextStrip.Name" xml:space="preserve">
     <value>_gmapContextStrip</value>
   </data>
-	<data name="&gt;&gt;_gmapContextStrip.Type" xml:space="preserve">
+  <data name="&gt;&gt;_gmapContextStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-		<value>True</value>
-	</metadata>
-	<metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-		<value>39</value>
-	</metadata>
-	<data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-		<value>6, 13</value>
-	</data>
-	<data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-		<value>1264, 682</value>
-	</data>
-	<data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-		<value>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>39</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1264, 682</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
         AAABAAYAgIAAAAEAIAAoCAEAZgAAAGBgAAABACAAqJQAAI4IAQBISAAAAQAgAIhUAAA2nQEAQEAAAAEA
         IAAoQgAAvvEBADAwAAABACAAqCUAAOYzAgAgIAAAAQAgAKgQAACOWQIAKAAAAIAAAAAAAQAAAQAgAAAA
         AAAACAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -3282,65 +3282,65 @@
         AACAAAAAgAAAAIAAAAGAAAABgAAAAYAAAAGAAAABgAAAAYAAAAGAAAABwAAAAcAAAAHAAAADwAAAA8AA
         AAPAAAADwAAAA8AAAAPAAAAD/AAPA//wD///8A////gf////////////MTU4MjYy
 </value>
-	</data>
-	<data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-		<value>CenterScreen</value>
-	</data>
-	<data name="$this.Text" xml:space="preserve">
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
     <value>Ground Control Station - 0.8</value>
   </data>
-	<data name="&gt;&gt;_btnZoomin.Name" xml:space="preserve">
+  <data name="&gt;&gt;_btnZoomin.Name" xml:space="preserve">
     <value>_btnZoomin</value>
   </data>
-	<data name="&gt;&gt;_btnZoomin.Type" xml:space="preserve">
+  <data name="&gt;&gt;_btnZoomin.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;_btnZoomout.Name" xml:space="preserve">
+  <data name="&gt;&gt;_btnZoomout.Name" xml:space="preserve">
     <value>_btnZoomout</value>
   </data>
-	<data name="&gt;&gt;_btnZoomout.Type" xml:space="preserve">
+  <data name="&gt;&gt;_btnZoomout.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;_btnGoto.Name" xml:space="preserve">
+  <data name="&gt;&gt;_btnGoto.Name" xml:space="preserve">
     <value>_btnGoto</value>
   </data>
-	<data name="&gt;&gt;_btnGoto.Type" xml:space="preserve">
+  <data name="&gt;&gt;_btnGoto.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
+  <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
     <value>fileToolStripMenuItem</value>
   </data>
-	<data name="&gt;&gt;fileToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;fileToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;_btnOptions.Name" xml:space="preserve">
+  <data name="&gt;&gt;_btnOptions.Name" xml:space="preserve">
     <value>_btnOptions</value>
   </data>
-	<data name="&gt;&gt;_btnOptions.Type" xml:space="preserve">
+  <data name="&gt;&gt;_btnOptions.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;zoomToolStripMenuItem.Name" xml:space="preserve">
+  <data name="&gt;&gt;zoomToolStripMenuItem.Name" xml:space="preserve">
     <value>zoomToolStripMenuItem</value>
   </data>
-	<data name="&gt;&gt;zoomToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;zoomToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;zoomoutToolStripMenuItem.Name" xml:space="preserve">
+  <data name="&gt;&gt;zoomoutToolStripMenuItem.Name" xml:space="preserve">
     <value>zoomoutToolStripMenuItem</value>
   </data>
-	<data name="&gt;&gt;zoomoutToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;zoomoutToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
     <value>toolStripSeparator1</value>
   </data>
-	<data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;$this.Name" xml:space="preserve">
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>GluonCSForm</value>
   </data>
-	<data name="&gt;&gt;$this.Type" xml:space="preserve">
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

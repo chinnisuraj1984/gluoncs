@@ -263,10 +263,11 @@ namespace GluonCS.LiveUavLayer
                         uavRoute.Points.RemoveRange(0, 100);
 
                     gmap.UpdateRouteLocalPosition(uavRoute);
-                    uavMarker.Yaw = model.Yaw;
+
                     uavMarker.AltitudeAglM = model.AltitudeAglM;
                     uavMarker.SpeedMS = model.SpeedMS;
                     uavMarker.Position = new PointLatLng(model.UavPosition.Lat, model.UavPosition.Lng);
+                    uavMarker.Yaw = model.Yaw;
                     gmap.UpdateMarkerLocalPosition(uavMarker);
                     if (Properties.Settings.Default.FollowUav)
                         gmap.Position = uavMarker.Position;
@@ -282,6 +283,13 @@ namespace GluonCS.LiveUavLayer
                     // if the uav is flying out of the screen, move the map
                     if (!gmap.CurrentViewArea.Contains(uavMarker.Position) && containedUav)
                         gmap.Position = new PointLatLng(model.UavPosition.Lat, model.UavPosition.Lng);
+                }
+                else
+                {
+                    // update the yaw during non-flight. only usefull to test yaw (magnetometer/gyro)
+                    uavMarker.Yaw = model.Yaw;
+                    gmap.UpdateMarkerLocalPosition(uavMarker);
+                    gmap.Refresh();
                 }
             };
 

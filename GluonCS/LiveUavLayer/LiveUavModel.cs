@@ -34,7 +34,9 @@ namespace GluonCS.LiveUavLayer
         public PointLatLng UavPosition = new PointLatLng();
         public double Heading = 0, AltitudeGps = 0, SpeedMS = 0, AltitudeAglM = 0, TargetAltitudeAglM = 0;
         public int NumberOfGpsSatellites = -1;
-        public double BatteryVoltage = 0;
+        public double Battery1Voltage = 0;
+        public double Battery2Voltage = 0;
+        public double Battery_mAh = 0;
         public ControlInfo.FlightModes FlightMode = ControlInfo.FlightModes.AUTOPILOT;
         public bool CommunicationAlive = false;
         public int CurrentNavigationLine = 0;
@@ -458,7 +460,9 @@ namespace GluonCS.LiveUavLayer
         {
             TargetAltitudeAglM = ci.TargetAltitude;
             AltitudeAglM = ci.Altitude;
-            BatteryVoltage = ci.BattVoltage;
+            Battery1Voltage = ci.Batt1Voltage;
+            Battery2Voltage = ci.Batt2Voltage;
+            Battery_mAh = ci.Batt_mAh;
             FlightMode = ci.FlightMode;
             CurrentNavigationLine = ci.CurrentNavigationLine;
 

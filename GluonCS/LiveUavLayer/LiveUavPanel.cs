@@ -27,7 +27,6 @@ namespace GluonCS
         private LiveUavModel model;
         private LineItem altitudeLineItem;
         private LineItem speedLineItem;
-        private LineItem batteryVLineItem;
         private DateTime startDateTime = DateTime.Now;
 
         private System.Windows.Forms.Timer redrawNavigationTable;
@@ -60,6 +59,7 @@ namespace GluonCS
             _zgAlt.GraphPane.XAxis.IsVisible = false;
             _zgAlt.GraphPane.YAxis.Title.Text = "AGL [m]";
             altitudeLineItem = _zgAlt.GraphPane.AddCurve("AGL", new PointPairList(), Color.Blue, SymbolType.None);
+            _zgAlt.GraphPane.YAxis.Scale.Max = 100;
 
             _zgVel.GraphPane.Title.IsVisible = false;
             _zgVel.GraphPane.YAxis.MajorGrid.IsVisible = true;
@@ -71,15 +71,15 @@ namespace GluonCS
             _zgVel.GraphPane.YAxis.Title.Text = "GS [km/h]";
             speedLineItem = _zgVel.GraphPane.AddCurve("GS", new PointPairList(), Color.Blue, SymbolType.None);
 
-            _zgBatV.GraphPane.Title.IsVisible = false;
-            _zgBatV.GraphPane.YAxis.MajorGrid.IsVisible = true;
-            _zgBatV.GraphPane.XAxis.Title.IsVisible = false;
-            _zgBatV.AxisChange();
-            _zgBatV.GraphPane.Legend.IsVisible = false;
-            _zgBatV.GraphPane.IsFontsScaled = false;
-            _zgBatV.GraphPane.XAxis.IsVisible = false;
-            _zgBatV.GraphPane.YAxis.Title.Text = "Bat [V]";
-            batteryVLineItem = _zgBatV.GraphPane.AddCurve("Bat", new PointPairList(), Color.Blue, SymbolType.None);
+            //_zgBatV.GraphPane.Title.IsVisible = false;
+            //_zgBatV.GraphPane.YAxis.MajorGrid.IsVisible = true;
+            //_zgBatV.GraphPane.XAxis.Title.IsVisible = false;
+            //_zgBatV.AxisChange();
+            //_zgBatV.GraphPane.Legend.IsVisible = false;
+            //_zgBatV.GraphPane.IsFontsScaled = false;
+            //_zgBatV.GraphPane.XAxis.IsVisible = false;
+            //_zgBatV.GraphPane.YAxis.Title.Text = "Bat [V]";
+            //batteryVLineItem = _zgBatV.GraphPane.AddCurve("Bat", new PointPairList(), Color.Blue, SymbolType.None);
 
 
             redrawNavigationTable = new System.Windows.Forms.Timer();
@@ -242,7 +242,9 @@ namespace GluonCS
 
 
                 //_pbBattery.Value = (int)(model.BatteryVoltage * 10.0);
-                _pbBattery.Text = model.BatteryVoltage.ToString() + " V";
+                _pbBattery1.Text = model.Battery1Voltage.ToString() + "V";
+                _pbBattery2.Text = model.Battery2Voltage.ToString() + "V";
+                _pb_mAh.Text = model.Battery_mAh + "\r\nmAh";
                 if (model.SecondsConnectionLost() > 0.7)
                 {
                     _pbLink.Text = model.SecondsConnectionLost().ToString("F0") + " " + resources.GetString("s lost");
@@ -330,7 +332,7 @@ namespace GluonCS
                 _zgVel.AxisChange();
                 _zgVel.Invalidate();
 
-                batteryVLineItem.AddPoint(time, model.BatteryVoltage);
+                //batteryVLineItem.AddPoint(time, model.BatteryVoltage);
                 //xScale = _zgBatV.GraphPane.XAxis.Scale;
                 //if (time > xScale.Max - xScale.MajorStep)
                 //{
@@ -338,7 +340,8 @@ namespace GluonCS
                 //    xScale.Min = xScale.Max - 180; // 180 seconden
                 //}
                 //_zgBatV.AxisChange();
-                _zgBatV.Invalidate();
+                
+                //_zgBatV.Invalidate();
             }
             catch (Exception ex)
             {
@@ -1065,6 +1068,22 @@ namespace GluonCS
             First = 0x1000,
             SetExtendedStyle = (First + 54),
             GetExtendedStyle = (First + 55),
+        }
+
+
+        private void _btn_configuration_Click(object sender, EventArgs e)
+        {
+            //if (model.Serial != null && model.Serial.IsOpen)
+            {
+                Gluonpilot.GluonConfig gc = new Gluonpilot.GluonConfig(model.Serial);
+                gc.Show();
+                //if (model.Serial != null && model.Serial.IsOpen)
+                //{
+                //    //model.Serial.ReadAllConfig();
+                //    ReadConfiguration rc = new ReadConfiguration(model.Serial);
+                //    rc.ShowDialog();
+                //}
+            }
         }
 
 
