@@ -392,6 +392,12 @@ namespace Communication
                         else
                             Console.WriteLine("FOUT");
 
+                        if (lines.Length > 80)
+                        {
+                            ac.gps_enable_waas = int.Parse(lines[80]);
+                        }
+                        else
+                            Console.WriteLine("FOUT");
 
                         if (AllConfigCommunicationReceived != null)
                             AllConfigCommunicationReceived(ac);
@@ -759,7 +765,7 @@ namespace Communication
 
             Thread.Sleep(200);
             // gps config
-            WriteChecksumLine("SG;" + (ac.gps_initial_baudrate / 10).ToString() + "");
+            WriteChecksumLine("SG;" + (ac.gps_initial_baudrate / 10).ToString() + ";" + ac.gps_enable_waas);
             //Console.WriteLine("\nSG;" + (ac.gps_initial_baudrate / 10).ToString() + "\n");
 
             Thread.Sleep(200);

@@ -28,6 +28,7 @@ namespace Communication.Frames.Configuration
         // gps
         public int gps_initial_baudrate;
         public int gps_operational_baudrate;
+        public int gps_enable_waas;
 
         // channels 1 - 8
         public int channel_roll;

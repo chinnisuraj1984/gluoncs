@@ -97,6 +97,7 @@
             this._tbPressure = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this._tbGps = new System.Windows.Forms.TabPage();
+            this._cbWaas = new System.Windows.Forms.CheckBox();
             this._rb_gps_notfound = new System.Windows.Forms.RadioButton();
             this._llConfigGps = new System.Windows.Forms.LinkLabel();
             this._llGoogleMaps = new System.Windows.Forms.LinkLabel();
@@ -928,6 +929,7 @@
             // 
             // _tbGps
             // 
+            this._tbGps.Controls.Add(this._cbWaas);
             this._tbGps.Controls.Add(this._rb_gps_notfound);
             this._tbGps.Controls.Add(this._llConfigGps);
             this._tbGps.Controls.Add(this._llGoogleMaps);
@@ -953,6 +955,13 @@
             resources.ApplyResources(this._tbGps, "_tbGps");
             this._tbGps.Name = "_tbGps";
             this._tbGps.UseVisualStyleBackColor = true;
+            // 
+            // _cbWaas
+            // 
+            resources.ApplyResources(this._cbWaas, "_cbWaas");
+            this._cbWaas.Name = "_cbWaas";
+            this._cbWaas.UseVisualStyleBackColor = true;
+            this._cbWaas.CheckedChanged += new System.EventHandler(this._cbWaas_CheckedChanged);
             // 
             // _rb_gps_notfound
             // 
@@ -2828,5 +2837,6 @@
         private System.Windows.Forms.Button _btnWritePitchPid;
         private System.Windows.Forms.ComboBox _cbAltitudeMode;
         private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.CheckBox _cbWaas;
     }
 }
