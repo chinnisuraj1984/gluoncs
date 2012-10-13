@@ -360,6 +360,26 @@ namespace Communication
                         }
                         if (lines.Length > 77)
                             ac.control_min_pitch = int.Parse(lines[77]);
+
+                        if (lines.Length > 78)
+                        {
+                            ac.manual_trim = int.Parse(lines[78]) == 0 ? false : true;
+                            Console.WriteLine("receive: " + lines[78]);
+                        }
+                        if (lines.Length > 79)
+                        {
+                            ac.control_altitude_mode = int.Parse(lines[79]);
+                        }
+                        else
+                            Console.WriteLine("FOUT");
+
+                        if (lines.Length > 80)
+                        {
+                            ac.gps_enable_waas = int.Parse(lines[80]);
+                        }
+                        else
+                            Console.WriteLine("FOUT");
+
                         if (AllConfigCommunicationReceived != null)
                             AllConfigCommunicationReceived(ac);
                     }

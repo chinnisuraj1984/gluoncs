@@ -29,6 +29,7 @@ namespace Gluonpilot
 
         public int GpsInitialBaudrate;
         public int GpsOperationalBaudrate;
+        public int GpsEnableWaas;
 
         public int TelemetryGyroAccRaw;
         public int TelemetryGyroAccProc;
@@ -112,6 +113,7 @@ namespace Gluonpilot
             ac.telemetry_control = _model.TelemetryControl;
 
             ac.gps_initial_baudrate = _model.GpsInitialBaudrate;
+            ac.gps_enable_waas = _model.GpsEnableWaas;
 
             ac.pid_pitch2elevator_p = _model.Pitch2ElevatorPidModel.P;
             ac.pid_pitch2elevator_i = _model.Pitch2ElevatorPidModel.I;
@@ -217,6 +219,7 @@ namespace Gluonpilot
 
             _model.GpsInitialBaudrate = ac.gps_initial_baudrate;
             _model.GpsOperationalBaudrate = ac.gps_operational_baudrate;
+            _model.GpsEnableWaas = ac.gps_enable_waas;
 
             _model.Pitch2ElevatorPidModel = new PidModel(ac.pid_pitch2elevator_p,
                                                          ac.pid_pitch2elevator_i,

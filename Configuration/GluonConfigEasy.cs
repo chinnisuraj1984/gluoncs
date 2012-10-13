@@ -86,7 +86,7 @@ namespace Configuration
                 //    cbn[config.channel_yaw - 1].SelectedIndex = 2;
 
                 if (config.control_mixing < _cbMixing.Items.Count)
-                    _cbMixing.SelectedIndex = config.control_mixing;
+                    _cbMixing.SelectedIndex = Math.Max(0, Math.Min(10, config.control_mixing));
 
                 _hsPitchSensitivity.Value = Math.Max(0, (int)(config.pid_pitch2elevator_p * 10.0));
                 _hsRollSensitivity.Value = Math.Max(0, (int)(config.pid_roll2aileron_p * 10.0));

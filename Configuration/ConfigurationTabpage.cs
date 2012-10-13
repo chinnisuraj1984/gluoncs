@@ -99,6 +99,7 @@ namespace Gluonpilot
 
                 _tb_initial_baudrate.Text = _model.GpsInitialBaudrate.ToString();
                 _tb_operational_baudrate.Text = _model.GpsOperationalBaudrate.ToString();
+                _cbWaas.Checked = _model.GpsEnableWaas == 1 ? true : false;
 
                 _pid_pitch_to_elevator.SetModel(_model.Pitch2ElevatorPidModel);
                 _pid_roll_to_aileron.SetModel(_model.Roll2AileronPidModel);
@@ -709,7 +710,6 @@ namespace Gluonpilot
             else
                 _rb_gps_notfound.Checked = true;
 
-
             _tb_gps_numsat.Text = gb.NumberOfSatellites.ToString();
             _tb_gps_latitude.Text = gb.Latitude.ToString();
             _tb_gps_longitude.Text = gb.Longitude.ToString();
@@ -742,6 +742,10 @@ namespace Gluonpilot
             System.Diagnostics.Process.Start("http://www.gluonpilot.com/wiki/Config_Gps");
         }
 
+        private void _cbWaas_CheckedChanged(object sender, EventArgs e)
+        {
+            _model.GpsEnableWaas = _cbWaas.Checked ? 1 : 0;
+        }
 #endregion
 
 #region Control tab page
@@ -865,13 +869,13 @@ namespace Gluonpilot
             _serial.SendPidPitch2Elevator(_pid_pitch_to_elevator.P, _pid_pitch_to_elevator.I, _pid_pitch_to_elevator.D, _pid_pitch_to_elevator.Imin,
                 _pid_pitch_to_elevator.Imax, _pid_pitch_to_elevator.Dmin);
         }
-#endregion
 
         private void _btnWriteRollPid_Click(object sender, EventArgs e)
         {
             _serial.SendPidRoll2Aileron(_pid_roll_to_aileron.P, _pid_roll_to_aileron.I, _pid_roll_to_aileron.D, _pid_roll_to_aileron.Imin,
                 _pid_roll_to_aileron.Imax, _pid_roll_to_aileron.Dmin);
         }
+#endregion  
 
     }
 }

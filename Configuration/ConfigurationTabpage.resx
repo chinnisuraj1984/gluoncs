@@ -2180,6 +2180,33 @@ Set to "0" to disable.</value>
   <data name="&gt;&gt;_tpSensors.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="_cbWaas.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="_cbWaas.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 71</value>
+  </data>
+  <data name="_cbWaas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 17</value>
+  </data>
+  <data name="_cbWaas.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="_cbWaas.Text" xml:space="preserve">
+    <value>Enable EGNOS/WAAS</value>
+  </data>
+  <data name="&gt;&gt;_cbWaas.Name" xml:space="preserve">
+    <value>_cbWaas</value>
+  </data>
+  <data name="&gt;&gt;_cbWaas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_cbWaas.Parent" xml:space="preserve">
+    <value>_tbGps</value>
+  </data>
+  <data name="&gt;&gt;_cbWaas.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="_rb_gps_notfound.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2211,7 +2238,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;_rb_gps_notfound.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="_llConfigGps.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2241,7 +2268,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;_llConfigGps.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="_llGoogleMaps.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2271,7 +2298,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;_llGoogleMaps.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="_tb_gps_numsat.Location" type="System.Drawing.Point, System.Drawing">
     <value>122, 186</value>
@@ -2292,7 +2319,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;_tb_gps_numsat.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="_tb_gps_heading.Location" type="System.Drawing.Point, System.Drawing">
     <value>518, 153</value>
@@ -2313,7 +2340,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;_tb_gps_heading.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="_tb_gps_speed.Location" type="System.Drawing.Point, System.Drawing">
     <value>414, 153</value>
@@ -2334,7 +2361,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;_tb_gps_speed.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="_tb_gps_height.Location" type="System.Drawing.Point, System.Drawing">
     <value>319, 153</value>
@@ -2355,7 +2382,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;_tb_gps_height.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="_tb_gps_longitude.Location" type="System.Drawing.Point, System.Drawing">
     <value>203, 153</value>
@@ -2376,7 +2403,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;_tb_gps_longitude.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="_tb_gps_latitude.Location" type="System.Drawing.Point, System.Drawing">
     <value>71, 153</value>
@@ -2397,7 +2424,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;_tb_gps_latitude.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="label57.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2427,7 +2454,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;label57.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="label56.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2457,7 +2484,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;label56.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="label55.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2487,7 +2514,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;label55.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="label54.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2517,7 +2544,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;label54.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="label53.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2547,7 +2574,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;label53.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="label52.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2577,7 +2604,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;label52.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="label51.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2607,7 +2634,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;label51.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="_rb_gps_status_active.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2640,7 +2667,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;_rb_gps_status_active.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="_rb_gps_status_void.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2673,7 +2700,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;_rb_gps_status_void.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="label456.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2703,7 +2730,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;label456.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="label50.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2733,7 +2760,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;label50.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="_tb_initial_baudrate.Location" type="System.Drawing.Point, System.Drawing">
     <value>129, 13</value>
@@ -2757,7 +2784,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;_tb_initial_baudrate.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="_tb_operational_baudrate.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2784,7 +2811,7 @@ Set to "0" to disable.</value>
     <value>_tbGps</value>
   </data>
   <data name="&gt;&gt;_tb_operational_baudrate.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="_tbGps.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
