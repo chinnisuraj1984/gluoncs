@@ -367,5 +367,15 @@ namespace Configuration
         {
 
         }
+
+        private void _btnBurn_Click(object sender, EventArgs e)
+        {
+            serial.SendFlashConfiguration();
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

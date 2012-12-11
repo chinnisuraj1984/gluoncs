@@ -46,6 +46,9 @@ namespace Gluonpilot
         public int NeutralGyroY;
         public int NeutralGyroZ;
 
+        public int ImuRotated;
+        public int NeutralPitch;
+
         public int ChannelRoll;
         public int ChannelPitch;
         public int ChannelYaw;
@@ -71,6 +74,8 @@ namespace Gluonpilot
 
         public int AltitudeMode;
 
+        public int OsdBitmask;
+
 
         /*!
          *    Converts to _model to AllConfig communication frame.
@@ -86,6 +91,9 @@ namespace Gluonpilot
             ac.gyro_x_neutral = _model.NeutralGyroX;
             ac.gyro_y_neutral = _model.NeutralGyroY;
             ac.gyro_z_neutral = _model.NeutralGyroZ;
+
+            ac.imu_rotated = _model.ImuRotated;
+            ac.neutral_pitch = _model.NeutralPitch;
 
             ac.channel_pitch = _model.ChannelPitch;
             ac.channel_roll = _model.ChannelRoll;
@@ -175,6 +183,8 @@ namespace Gluonpilot
             ac.auto_throttle_cruise_pct = _model.AutoThrottleCruisePct;
             ac.auto_throttle_p_gain_10 = (int)(_model.AutoThrottlePGain * 10);
 
+            ac.osd_bitmask = _model.OsdBitmask;
+
             return ac;
         }
 
@@ -190,6 +200,9 @@ namespace Gluonpilot
             _model.NeutralGyroX = ac.gyro_x_neutral;
             _model.NeutralGyroY = ac.gyro_y_neutral;
             _model.NeutralGyroZ = ac.gyro_z_neutral;
+
+            _model.NeutralPitch = ac.neutral_pitch;
+            _model.ImuRotated = ac.imu_rotated;
 
             _model.TelemetryGpsBasic = ac.telemetry_basicgps;
             _model.TelemetryGyroAccRaw = ac.telemetry_gyroaccraw;
@@ -270,6 +283,8 @@ namespace Gluonpilot
             _model.AutoThrottleMaxPct = ac.auto_throttle_max_pct;
             _model.AutoThrottleCruisePct = ac.auto_throttle_cruise_pct;
             _model.AutoThrottlePGain = (double)ac.auto_throttle_p_gain_10 / 10;
+
+            _model.OsdBitmask = ac.osd_bitmask;
         }
     }
 }

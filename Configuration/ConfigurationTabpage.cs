@@ -63,6 +63,11 @@ namespace Gluonpilot
             }
         }
 
+        void _serial_AttitudeCommunicationReceived(Attitude attitude)
+        {
+            _nud_neutral_pitch.Tag = attitude.PitchDeg;
+        }
+
         public ConfigurationModel GetModel()
         {
             _tbHeight.Focus(); // hack to trigger is_changed on other controls.
@@ -88,6 +93,10 @@ namespace Gluonpilot
                 _tbGyroXNeutral.Text = _model.NeutralGyroX.ToString();
                 _tbGyroYNeutral.Text = _model.NeutralGyroY.ToString();
                 _tbGyroZNeutral.Text = _model.NeutralGyroZ.ToString();
+
+                _nud_neutral_pitch.Value = _model.NeutralPitch;
+                if (_model.ImuRotated >= 0 && _model.ImuRotated < _cb_imu_rotation.Items.Count)
+                    _cb_imu_rotation.SelectedIndex = _model.ImuRotated;
 
                 _nud_gpsbasic_telemetry.Value = Math.Min(100, _model.TelemetryGpsBasic);
                 _nud_gyroaccraw_telemetry.Value = Math.Min(100, _model.TelemetryGyroAccRaw);
@@ -223,24 +232,32 @@ namespace Gluonpilot
         /*!
          *    Use serial as SerialCommunication and register our methods at the events
          */
+        private bool connected = false;
         public void Connect(SerialCommunication serial)
         {
             _serial = serial;
+            if (connected)
+                Disconnect();
             _serial.GyroAccRawCommunicationReceived += new SerialCommunication_CSV.ReceiveGyroAccRawCommunicationFrame(ReceiveGyroAccRaw);
             _serial.GyroAccProcCommunicationReceived += new SerialCommunication_CSV.ReceiveGyroAccProcCommunicationFrame(ReceiveGyroAccProc);
             _serial.PressureTempCommunicationReceived += new SerialCommunication_CSV.ReceivePressureTempCommunicationFrame(ReceivePressureTemp);
             _serial.AllConfigCommunicationReceived += new SerialCommunication_CSV.ReceiveAllConfigCommunicationFrame(ReceiveAllConfig);
             _serial.RcInputCommunicationReceived += new SerialCommunication_CSV.ReceiveRcInputCommunicationFrame(ReceiveRcInput);
             _serial.GpsBasicCommunicationReceived += new SerialCommunication.ReceiveGpsBasicCommunicationFrame(ReceiveGpsBasic);
+            _serial.AttitudeCommunicationReceived += new SerialCommunication.ReceiveAttitudeCommunicationFrame(_serial_AttitudeCommunicationReceived);
+            connected = true;
         }
         public void Disconnect()
         {
+            if (!connected)
+                return;
             _serial.GyroAccRawCommunicationReceived -= new SerialCommunication_CSV.ReceiveGyroAccRawCommunicationFrame(ReceiveGyroAccRaw);
             _serial.GyroAccProcCommunicationReceived -= new SerialCommunication_CSV.ReceiveGyroAccProcCommunicationFrame(ReceiveGyroAccProc);
             _serial.PressureTempCommunicationReceived -= new SerialCommunication_CSV.ReceivePressureTempCommunicationFrame(ReceivePressureTemp);
             _serial.AllConfigCommunicationReceived -= new SerialCommunication_CSV.ReceiveAllConfigCommunicationFrame(ReceiveAllConfig);
             _serial.RcInputCommunicationReceived -= new SerialCommunication_CSV.ReceiveRcInputCommunicationFrame(ReceiveRcInput);
             _serial.GpsBasicCommunicationReceived -= new SerialCommunication.ReceiveGpsBasicCommunicationFrame(ReceiveGpsBasic);
+            connected = false;
         }
 
 
@@ -346,6 +363,15 @@ namespace Gluonpilot
         {
             System.Diagnostics.Process.Start("http://www.gluonpilot.com/wiki/Config_sensors");
         }
+
+
+        private void _btn_read_pitch_Click(object sender, EventArgs e)
+        {
+            double p = (double)_nud_neutral_pitch.Tag;
+            if (p < 25 && p > -25)
+                _nud_neutral_pitch.Value = (decimal)p;
+        }
+
 #endregion
 
 #region RcInput tab page
@@ -478,6 +504,16 @@ namespace Gluonpilot
                 _model.RcTransmitterFromPpm = 1;
             else
                 _model.RcTransmitterFromPpm = 0;
+        }
+
+        private void _nud_neutral_pitch_ValueChanged(object sender, EventArgs e)
+        {
+            _model.NeutralPitch = (int)_nud_neutral_pitch.Value;
+        }
+
+        private void _cb_imu_rotation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _model.ImuRotated = _cb_imu_rotation.SelectedIndex;
         }
 
 #endregion
@@ -876,6 +912,21 @@ namespace Gluonpilot
                 _pid_roll_to_aileron.Imax, _pid_roll_to_aileron.Dmin);
         }
 #endregion  
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
 
     }
 }

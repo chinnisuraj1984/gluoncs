@@ -140,9 +140,6 @@
   <data name="splitContainer1.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
-  <data name="_tc_main.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
   <data name="gluonConfigEasy.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -150,7 +147,7 @@
     <value>3, 3</value>
   </data>
   <data name="gluonConfigEasy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>607, 343</value>
+    <value>611, 344</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="gluonConfigEasy.TabIndex" type="System.Int32, mscorlib">
@@ -178,7 +175,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="easyconfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>613, 349</value>
+    <value>617, 350</value>
   </data>
   <data name="easyconfig.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -198,6 +195,30 @@
   <data name="&gt;&gt;easyconfig.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="osdConfig1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="osdConfig1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="osdConfig1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 74</value>
+  </data>
+  <data name="osdConfig1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;osdConfig1.Name" xml:space="preserve">
+    <value>osdConfig1</value>
+  </data>
+  <data name="&gt;&gt;osdConfig1.Type" xml:space="preserve">
+    <value>Configuration.OsdConfig, Configuration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;osdConfig1.Parent" xml:space="preserve">
+    <value>osd</value>
+  </data>
+  <data name="&gt;&gt;osdConfig1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="osd.ImageIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
@@ -205,7 +226,7 @@
     <value>4, 29</value>
   </data>
   <data name="osd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>613, 349</value>
+    <value>617, 350</value>
   </data>
   <data name="osd.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -232,7 +253,7 @@
     <value>3, 3</value>
   </data>
   <data name="configurationControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>607, 343</value>
+    <value>186, 68</value>
   </data>
   <data name="configurationControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -259,7 +280,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="config.Size" type="System.Drawing.Size, System.Drawing">
-    <value>613, 349</value>
+    <value>617, 350</value>
   </data>
   <data name="config.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -289,7 +310,7 @@
     <value>3, 3</value>
   </data>
   <data name="datalogging.Size" type="System.Drawing.Size, System.Drawing">
-    <value>607, 343</value>
+    <value>186, 68</value>
   </data>
   <data name="datalogging.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -316,7 +337,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="datalog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>613, 349</value>
+    <value>617, 350</value>
   </data>
   <data name="datalog.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -336,6 +357,60 @@
   <data name="&gt;&gt;datalog.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="gcsMainPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="gcsMainPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="gcsMainPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 68</value>
+  </data>
+  <data name="gcsMainPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;gcsMainPanel1.Name" xml:space="preserve">
+    <value>gcsMainPanel1</value>
+  </data>
+  <data name="&gt;&gt;gcsMainPanel1.Type" xml:space="preserve">
+    <value>GCS.GcsMainPanel, GCS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;gcsMainPanel1.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;gcsMainPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
+  </data>
+  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>617, 350</value>
+  </data>
+  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>_tc_main</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="_tc_main.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
   <metadata name="imageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>116, 17</value>
   </metadata>
@@ -344,7 +419,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADU
-        EQAAAk1TRnQBSQFMAgEBCAEAAaQBAQGkAQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        EQAAAk1TRnQBSQFMAgEBCAEAAZABAgGQAQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAATADAAEBAQABCAYAAQwYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -427,13 +502,13 @@
     <value>100, 25</value>
   </data>
   <data name="_tc_main.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 8</value>
+    <value>10, 10</value>
   </data>
   <data name="_tc_main.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 3</value>
+    <value>15, 5, 15, 3</value>
   </data>
   <data name="_tc_main.Size" type="System.Drawing.Size, System.Drawing">
-    <value>621, 382</value>
+    <value>625, 383</value>
   </data>
   <data name="_tc_main.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -450,8 +525,11 @@
   <data name="&gt;&gt;_tc_main.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="splitContainer1.Panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>15, 0, 15, 0</value>
+  </data>
   <data name="splitContainer1.Panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 5, 0, 0</value>
+    <value>10, 10, 10, 0</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -804,18 +882,18 @@
   <data name="_btn_firmware_upgrade.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKhSURBVDhPrVJtLNRhAP+3PvTF5pNpWpqZrlzEJJw7p0Ty
-        xdZ6W1otlZQNM30o2olaXBHLvLXiul0Tio3MSiOLk+NYDnmpu/N2/nfk3v75n+V+PfSlcvet5+vz/N4f
-        ivqfZ1EZ+dzQL4ReEQH6Ex+0PBwLH3nQdYVivvMg5t4HY/ZdELSt/lqHuh0dwrXVpSrYDJWwLZSDnSvF
-        ynQJfqiLwEw+gEF+CuqWQItDsKE/Is80fhmrhipYv8TCMnwEJqUQxl4emKmHWFIkQtXm+9NpYrpDYLPR
-        j7GizYBFFQ2z8hCMJAYzJcbyUDqxLiDWud4OCehe/ollVQJs+kpYR4/CPHQYRoUAlpFUWMZE0HXGQd0c
-        EOdcvTvMymhzwM4XwfI5CqYBIZblYRvW9T1noGnxz3QK1sn5IYsD8bDRFUQxDqbBaBj7IvGdNG8dL0CZ
-        yN+uke5j06UhuFIdiF4ph52U+rCjUm96g3Shg0ebJ24QdZJ/hjSuKdzIzUyKYR3Lh3n4LiEV4ZrkAO40
-        n8Xpij0YkXozEzU7f/cx1xVqJBuzZGOWbMzOtAWy09L9bJpMgFSimiwJQuLTAGQ3nkSdogSZ9fEQPnJf
-        E5a6uTiNpWny60wh4CZlGV4NlG4AaxXFKG7PhEQuRrIsBsH3t60F5VOuDknUjVxcInnXwUVv01DQloJ7
-        rUnIab6I3DdXUdGVh3M1fPiIqM3/YqqBO6hrj0fCk7142VcMWW8hJD1iPOvOJyTXUd6ViyRZLDxvU3qP
-        W1TAXw5Udb4u6td++FbPxfFyLxwT7bBHidzs4SJX+/lqHso+5CBRGgMC1G2/Sflusv+1gTMyWsuh14n+
-        vdydt4W5IInCrixq1iOb4jjMPv7CJ8RZs14ZFOOZtRXuWZTXn29+AbCurYrHViDBAAAAAElFTkSuQmCC
+        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
 </value>
   </data>
   <data name="_btn_firmware_upgrade.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -912,7 +990,7 @@
 </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Gluonpilot configuration v0.8</value>
+    <value>Gluonpilot config 0.9 BETA</value>
   </data>
   <data name="&gt;&gt;imageList.Name" xml:space="preserve">
     <value>imageList</value>

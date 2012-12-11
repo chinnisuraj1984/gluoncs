@@ -74,6 +74,9 @@
   <PropertyGroup>
     <ApplicationIcon>Mobile-Maps.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Artificial3DHorizon">
       <HintPath>..\Libs\Artificial3DHorizon.dll</HintPath>
@@ -139,10 +142,17 @@
     <Compile Include="GluonCSForm.Designer.cs">
       <DependentUpon>GluonCSForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GcsLayer.cs" />
-    <Compile Include="IGcsLogger.cs" />
-    <Compile Include="LayerPropertiesPanel.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="GluonCSFormSwallow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GluonCSFormSwallow.designer.cs">
+      <DependentUpon>GluonCSFormSwallow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inputbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inputbox.Designer.cs">
+      <DependentUpon>Inputbox.cs</DependentUpon>
     </Compile>
     <Compile Include="LiveUavLayer\ConnectForm.cs">
       <SubType>Form</SubType>
@@ -161,6 +171,12 @@
     </Compile>
     <Compile Include="LiveUavLayer\LiveUavPanel.Designer.cs">
       <DependentUpon>LiveUavPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiveUavLayer\LiveUavPanelSwallow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LiveUavLayer\LiveUavPanelSwallow.designer.cs">
+      <DependentUpon>LiveUavPanelSwallow.cs</DependentUpon>
     </Compile>
     <Compile Include="LiveUavLayer\NavigationOverview.cs">
       <SubType>UserControl</SubType>
@@ -256,8 +272,11 @@
     <EmbeddedResource Include="GluonCSForm.vi.resx">
       <DependentUpon>GluonCSForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LayerPropertiesPanel.resx">
-      <DependentUpon>LayerPropertiesPanel.cs</DependentUpon>
+    <EmbeddedResource Include="GluonCSFormSwallow.resx">
+      <DependentUpon>GluonCSFormSwallow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inputbox.resx">
+      <DependentUpon>Inputbox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\ConnectForm.de.resx">
       <DependentUpon>ConnectForm.cs</DependentUpon>
@@ -289,6 +308,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\LiveUavPanel.vi.resx">
       <DependentUpon>LiveUavPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\LiveUavPanelSwallow.en.resx">
+      <DependentUpon>LiveUavPanelSwallow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiveUavLayer\LiveUavPanelSwallow.resx">
+      <DependentUpon>LiveUavPanelSwallow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LiveUavLayer\NavigationOverview.resx">
       <DependentUpon>NavigationOverview.cs</DependentUpon>
@@ -366,6 +391,9 @@
     </None>
     <None Include="app.config" />
     <None Include="NavigationBlocks\auto-land.gnf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="NavigationBlocks\default.gnf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="NavigationBlocks\defaultcircle.gnf">

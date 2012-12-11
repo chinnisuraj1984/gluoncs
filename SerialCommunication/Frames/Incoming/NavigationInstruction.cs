@@ -48,7 +48,8 @@ namespace Communication.Frames.Incoming
             RETURN = 30,
             SERVO_TRIGGER_START = 31,
             SERVO_TRIGGER_STOP = 32,
-            SET_FLIGHTPLAN_SWITCH = 33
+            SET_FLIGHTPLAN_SWITCH = 33,
+            SET_MAXIMUM_RANGE = 34
         };
 
         public navigation_command opcode;
@@ -230,6 +231,9 @@ namespace Communication.Frames.Incoming
                     s += "ServoTriggerStart(channel: " + (a + 1) + ", CHDK mode)";
                 else
                     s += "ServoTriggerStart(channel: " + (a + 1) + ", position: " + b + "us, delay: " + x + "s)";
+                break;
+            case navigation_command.SET_MAXIMUM_RANGE:
+                s += "SetMaximumRange(distance > " + (x) + "m -> " + a + ")";
                 break;
             default:
                 s += "Unknown/Unsupported (" + (int)opcode + " : " +  X + ", " + Y + ", " + a + ", " + b + ")";

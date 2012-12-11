@@ -83,6 +83,8 @@ namespace Communication
         // Communication status
         public override event LostCommunication CommunicationLost;
         public override event EstablishedCommunication CommunicationEstablished;
+        // Home position
+        public override event HomePositionFrame HomePositionReceived;
 
         public override double SecondsConnectionLost()
         {
@@ -256,6 +258,14 @@ namespace Communication
                         if (GyroAccRawCommunicationReceived != null)
                             GyroAccRawCommunicationReceived(ga);
                     }
+                    // Home psoition
+                    else if (lines[0].EndsWith("HP") && lines.Length >= 2)
+                    {
+                        double lat = double.Parse(lines[1], System.Globalization.CultureInfo.InvariantCulture);
+                        double lng = double.Parse(lines[2], System.Globalization.CultureInfo.InvariantCulture);
+                        if (HomePositionReceived != null)
+                            HomePositionReceived(lat, lng);
+                    }
 
                     // TP: Processed gyro & acc
                     else if (lines[0].EndsWith("TP") && lines.Length >= 6)
@@ -398,6 +408,19 @@ namespace Communication
                         }
                         else
                             Console.WriteLine("FOUT");
+
+                        if (lines.Length > 81)
+                        {
+                            ac.osd_bitmask = int.Parse(lines[81]);
+                            ac.osd_RssiMode = int.Parse(lines[82]);
+                            ac.osd_voltage_low = ((double)int.Parse(lines[83])) / 50.0;
+                            ac.osd_voltage_high = ((double)int.Parse(lines[84])) / 50.0;
+                        }
+                        if (lines.Length > 85)
+                        {
+                            ac.imu_rotated = int.Parse(lines[85]);
+                            ac.neutral_pitch = int.Parse(lines[86]);
+                        }
 
                         if (AllConfigCommunicationReceived != null)
                             AllConfigCommunicationReceived(ac);
@@ -963,6 +986,11 @@ namespace Communication
             WriteChecksumLine("CA;");
         }
 
+        public override void SendImuSettings(int neutral_pitch, int imu_rotated)
+        {
+            WriteChecksumLine("S6;" + imu_rotated + ";" + neutral_pitch);
+        }
+
         public int calculateChecksum(string s)
         {
             int c = 0;
@@ -999,6 +1027,13 @@ namespace Communication
                 if (logfile != null)
                     logfile.WriteLine("-> \r\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
             }
+        }
+
+        public override void SendOsdConfiguration(int bitmask, int rssi_mode, double voltage_low, double voltage_high)
+        {
+            int v_l = (int)(voltage_low * 50.0);
+            int v_h = (int)(voltage_high * 50.0);
+            WriteChecksumLine("SO;" + bitmask + ";" + rssi_mode + ";" + v_l + ";" + v_h);
         }
     }
 }
