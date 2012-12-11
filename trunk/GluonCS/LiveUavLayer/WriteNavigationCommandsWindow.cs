@@ -27,13 +27,15 @@ namespace GluonCS.LiveUavLayer
 
             was_synchronizing = model.AutoSync;
 
-            UpdateNotSynchronized();
-            original_synchronized = are_synchronized;
+            
 
             //System.Threading.Thread.Sleep(2000);  // ugly hack
 
             if (model.maxLineNumberReceived < 36)
                 model.CreateFakeRemoteList();
+
+            UpdateNotSynchronized();
+            original_synchronized = are_synchronized;
 
             model.AutoSync = true;
         }

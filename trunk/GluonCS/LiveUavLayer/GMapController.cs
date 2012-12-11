@@ -412,6 +412,41 @@ namespace GluonCS.LiveUavLayer
                         }
                     }
 
+                    // set maximum range
+                    if (ni.opcode == NavigationInstruction.navigation_command.SET_MAXIMUM_RANGE)
+                    {
+                        // circle 1.1
+                        List<PointLatLng> c = new List<PointLatLng>();
+                        for (double j = 0.0; j <= Math.PI * 2.00001; j += Math.PI * 2.0 / 50.0)
+                        {
+                            double clon = home.Position.Lng + Math.Cos(j) * ni.x / LatLng.LongitudeMeterPerDegree(gmap.Position.Lat);
+                            double clat = home.Position.Lat + Math.Sin(j) * ni.x / LatLng.LatitudeMeterPerDegree;
+                            c.Add(new PointLatLng(clat, clon));
+                        }
+                        GMapRoute cr = new GMapRoute(c, "maximum_range1.1");
+                        cr.Stroke.Width = 10;
+                        cr.Stroke.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+                        NavigationOverlay.Routes.Add(cr);
+                        cr.Stroke.Color = Color.FromArgb(250, Color.Black);
+                        l.Add(mm.Position);
+                        // circle 1.2
+                        c = new List<PointLatLng>();
+                        for (double j = 0.0; j <= Math.PI * 2.00001; j += Math.PI * 2.0 / 50.0)
+                        {
+                            double clon = home.Position.Lng + Math.Cos(j) * ni.x / LatLng.LongitudeMeterPerDegree(gmap.Position.Lat);
+                            double clat = home.Position.Lat + Math.Sin(j) * ni.x / LatLng.LatitudeMeterPerDegree;
+                            c.Add(new PointLatLng(clat, clon));
+                        }
+                        cr = new GMapRoute(c, "maximum_range1.2");
+                        cr.Stroke.Width = 10;
+                        cr.Stroke.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+                        NavigationOverlay.Routes.Add(cr);
+                        cr.Stroke.Color = Color.FromArgb(250, Color.Yellow);
+                        l.Add(mm.Position);
+
+                    }
+
+
                     // circle to
                     if (ni.opcode == NavigationInstruction.navigation_command.CIRCLE_TO_ABS)
                     {

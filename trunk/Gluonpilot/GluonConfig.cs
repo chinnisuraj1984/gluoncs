@@ -25,7 +25,6 @@ namespace Gluonpilot
             InitializeComponent();
             logging_height = splitContainer1.Panel2.Height;
             timer.Start();
-            _tc_main.SelectedTab = _tc_main.TabPages["gcs"];
         }
 
         public GluonConfig(SerialCommunication serial)
@@ -38,7 +37,6 @@ namespace Gluonpilot
                     _btn_connect.Checked = true;
                 ConnectPanels();
             }
-
         }
 
 
@@ -121,8 +119,9 @@ namespace Gluonpilot
             configurationControl.Connect(_serial);
             datalogging.Connect(_serial);
             gluonConfigEasy.Connect(_serial);
+            osdConfig1.Connect(_serial);
             //navigationListView1.Connect(_serial);
-            //_gcsMainPanel.Connect(_serial);
+            gcsMainPanel1.Connect(_serial);
 
             //_btnBasicConfiguration.Enabled = true;
             _btn_reboot.Enabled = true;
@@ -136,8 +135,9 @@ namespace Gluonpilot
             configurationControl.Disconnect();
             datalogging.Disconnect();
             gluonConfigEasy.Disconnect();
+            osdConfig1.Disconnect();
             //navigationListView1.Disconnect();
-            //_gcsMainPanel.Disconnnect();
+            gcsMainPanel1.Disconnnect();
 
             //_btnBasicConfiguration.Enabled = false;
             _btn_reboot.Enabled = false;
@@ -272,6 +272,7 @@ namespace Gluonpilot
 
         private void GluonConfig_FormClosing(object sender, FormClosingEventArgs e)
         {
+            timer.Stop();
             DisconnectPanels();
             //if (_btn_connect.Checked)
             //    _btn_connect_Click(this, EventArgs.Empty);
@@ -283,7 +284,7 @@ namespace Gluonpilot
 
         private void _tc_main_Selected(object sender, TabControlEventArgs e)
         {
-            if (_tc_main.SelectedIndex == 1)
+            if (_tc_main.SelectedIndex == 2)
             {
                 if (Properties.Settings.Default.ShowAdvancedWiredWarning)
                 {
@@ -303,9 +304,9 @@ namespace Gluonpilot
             {
                 if (Properties.Settings.Default.ShowEasyConfigInfo)
                 {
-                    PSTaskDialog.cTaskDialog.ShowTaskDialogBox("Easy configuration",
-                         "How easy configuration works",
-                         "The easy configuration tab allows you to edit the basic settings to get your UAV flying.\nAll changes are immediate and you should only burn the settings to the flash memory when you're done.",
+                    PSTaskDialog.cTaskDialog.ShowTaskDialogBox("Basic configuration",
+                         "How basic configuration works",
+                         "The basic configuration tab allows you to edit the basic settings to get your UAV flying.\nAll changes are immediate and you should only burn the settings to the flash memory when you're done.",
                          "\n - It is recommended to start with the factory settings and calibrate the sensors.\n - After that you should program your RC-transmitter to make sure the \"interpretations\" are correct.\n - Choose the mixing type that suits your UAV and invert the servos that don't turn the right way.\n - Test manual & stabilized mode on the ground and make sure it is behaving normally to your input.\n - Fly your UAV in stabilized mode and adapt the rate settings if needed.", "", "Don't show this message again", "", "", PSTaskDialog.eTaskDialogButtons.OK, PSTaskDialog.eSysIcons.Information, PSTaskDialog.eSysIcons.Information);
                     if (PSTaskDialog.cTaskDialog.VerificationChecked)
                     {
@@ -319,13 +320,15 @@ namespace Gluonpilot
 
         private void GluonConfig_Shown(object sender, EventArgs e)
         {
-
-            ReadConfiguration rc = new ReadConfiguration(_serial);
-            if (rc.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
-                PSTaskDialog.cTaskDialog.ShowTaskDialogBox("Error", "Error reading configuration",
-                    "Reading the configuration failed. This configuration tool won't work.",
-                    "Please make sure there is an active connection before opening this window and retry. It may not work as expected.",
-                    "", "", "", "", PSTaskDialog.eTaskDialogButtons.OK, PSTaskDialog.eSysIcons.Error, PSTaskDialog.eSysIcons.Error);
+            if (_serial != null && _serial.IsOpen)
+            {
+                ReadConfiguration rc = new ReadConfiguration(_serial);
+                if (rc.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+                    PSTaskDialog.cTaskDialog.ShowTaskDialogBox("Error", "Error reading configuration",
+                        "Reading the configuration failed. This configuration tool won't work.",
+                        "Please make sure there is an active connection before opening this window and retry. It may not work as expected.",
+                        "", "", "", "", PSTaskDialog.eTaskDialogButtons.OK, PSTaskDialog.eSysIcons.Error, PSTaskDialog.eSysIcons.Error);
+            }
         }
     }
 }

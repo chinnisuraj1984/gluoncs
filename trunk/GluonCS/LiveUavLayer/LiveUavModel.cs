@@ -52,7 +52,7 @@ namespace GluonCS.LiveUavLayer
         public int maxLineNumberReceived = -1;
 
         private List<NavigationInstruction> navigation_local = new List<NavigationInstruction>(72);
-        private List<NavigationInstruction> navigation_remote = new List<NavigationInstruction>(36);
+        private List<NavigationInstruction> navigation_remote = new List<NavigationInstruction>(72);
 
         private UavNavigationSynchronize uavSynchronizer;
         private SimpleSim ss;
@@ -111,8 +111,15 @@ namespace GluonCS.LiveUavLayer
             Serial.CommunicationLost += new SerialCommunication.LostCommunication(connection_CommunicationLost);
             Serial.NonParsedCommunicationReceived += new SerialCommunication.ReceiveNonParsedCommunication(connection_NonParsedCommunicationReceived);
             Serial.GyroAccProcCommunicationReceived += new SerialCommunication.ReceiveGyroAccProcCommunicationFrame(connection_GyroAccProcCommunicationReceived);
+            Serial.HomePositionReceived += new SerialCommunication.HomePositionFrame(Serial_HomePositionReceived);
             uavSynchronizer = new UavNavigationSynchronize(this, serial);
             uavSynchronizer.StartThread();
+        }
+
+        void Serial_HomePositionReceived(double lat, double lon)
+        {
+            home = new PointLatLng(lat / Math.PI * 180.0, lon / Math.PI * 180.0);
+            HomeChanged(this, EventArgs.Empty);
         }
 
 
@@ -669,6 +676,7 @@ namespace GluonCS.LiveUavLayer
 
         public void CreateFakeRemoteList()
         {
+
             // create fake remote list to make sure every line is sent to the module
             for (int i = 0; i < MaxNumberOfNavigationInstructions(); i++)
                 navigation_remote[i] = new NavigationInstruction(i, NavigationInstruction.navigation_command.EMPTY, -1, -1, -1, -1);

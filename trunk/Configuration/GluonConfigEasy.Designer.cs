@@ -35,7 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this._btnBurn = new System.Windows.Forms.ToolStripButton();
             this._btnReloadFactorySettings = new System.Windows.Forms.ToolStripButton();
             this._btnReadConfig = new System.Windows.Forms.ToolStripButton();
             this.label5 = new System.Windows.Forms.Label();
@@ -143,7 +143,7 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton2,
+            this._btnBurn,
             this._btnReloadFactorySettings,
             this._btnReadConfig});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -151,14 +151,16 @@
             this.toolStrip1.Size = new System.Drawing.Size(618, 25);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
-            // toolStripButton2
+            // _btnBurn
             // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(142, 22);
-            this.toolStripButton2.Text = "Burn to flash memory";
+            this._btnBurn.Image = ((System.Drawing.Image)(resources.GetObject("_btnBurn.Image")));
+            this._btnBurn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this._btnBurn.Name = "_btnBurn";
+            this._btnBurn.Size = new System.Drawing.Size(142, 22);
+            this._btnBurn.Text = "Burn to flash memory";
+            this._btnBurn.Click += new System.EventHandler(this._btnBurn_Click);
             // 
             // _btnReloadFactorySettings
             // 
@@ -785,7 +787,7 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.ToolStripButton _btnReloadFactorySettings;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton _btnBurn;
         private System.Windows.Forms.CheckBox _cbAutothrottle;
         private System.Windows.Forms.Label _lblCruiseThrottle;
         private System.Windows.Forms.HScrollBar _hsbCruiseThrottle;

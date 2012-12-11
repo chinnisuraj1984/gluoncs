@@ -69,7 +69,7 @@
             // 
             // _tmr_roll
             // 
-            this._tmr_roll.Interval = 500;
+            this._tmr_roll.Interval = 200;
             this._tmr_roll.Tick += new System.EventHandler(this._tmr_roll_Tick);
             // 
             // _lbl_info

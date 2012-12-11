@@ -172,18 +172,18 @@
   <data name="_btn_configuration.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        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
+        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
 </value>
   </data>
   <data name="_btn_configuration.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -194,6 +194,9 @@
   </data>
   <data name="toolStrip2.Size" type="System.Drawing.Size, System.Drawing">
     <value>344, 25</value>
+  </data>
+  <data name="splitter1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 420</value>
   </data>
   <data name="splitter1.Size" type="System.Drawing.Size, System.Drawing">
     <value>370, 3</value>
@@ -348,16 +351,16 @@
     <value>Left</value>
   </data>
   <data name="_zgAlt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>331, 121</value>
+    <value>331, 133</value>
   </data>
   <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 4</value>
   </data>
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 127</value>
+    <value>337, 139</value>
   </data>
   <data name="_zgVel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>346, 121</value>
+    <value>331, 121</value>
   </data>
   <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 4</value>
@@ -366,13 +369,13 @@
     <value>337, 127</value>
   </data>
   <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 135</value>
+    <value>364, 147</value>
   </data>
   <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 179</value>
+    <value>370, 191</value>
   </data>
   <data name="_cockpitPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 408</value>
+    <value>370, 420</value>
   </data>
   <data name="_btn_up.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -489,14 +492,14 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHnSURBVDhPlZI9aBNhHMb/k1hQQcolzXLiIIoVSighJ0iS
-        5oMISS66hbgbI4qL4mQlJGM2CZ0FHSLUNjH1lBryRYWEthGDBqFmd7DeXe5rKHnMFfyANnp9p5eX5/d7
+        5oMISS66hbgbI4qL4mQlJGM2CZ0FHSLUNjH1lBryRYWEthGDEaFmd7DeXe5rKHnMFfyANnp9p5eX5/d7
         Ho4jsnBG77kpdWPupoXon4jWmmfV1vwd80XZuBRRG7Nd86432LNynbUmU1tzH9XWrKDWz1f07WtQGuyD
-        Yc0hDqvTSUtrlOaFRf1DEkb/LoydR9C2IhDfnNK+1ZgTEwVK++LMuLWqNs5B3+ZhfM2i+YxHt3QDO7Vb
-        0DoLkN4dh/SWlv65Qqmzi1r3OprP4zAMA6PRCFurSeifb+OHQJ92K3RmokBuzjBy1S5Eo1F0Oh3ouo5e
+        Yc0hDqvTSUtrlOaFRf1DEsbnuzB2HkHbikB8c0r7VmNOTBQo7Ysz49aq2jgHfZuH8TWL5jMe3dIN7NRu
+        QessQHp3HNJbWvrnCqXOLmrd62g+j8MwDIxGI2ytJqH3b+OHQJ92K3RmokBuzjBy1S5Eo1F0Oh3ouo5e
         r4fa0wiML/chVWgovSbuUIG27mCH66dL8XgcqVQK+XwexWIRlaWFMfwQ/TXak9ZoUyzT44kLeJ7fhzmO
         g9/vRywWg7oZgVx1QBZOYrdM7H9ht9sNn88Hm81mTn7SfzVuLtNlqURd8SWlDxUkEgnkcjmYsNfrBcMw
         MINyma5IKySYd7ygY9+X6eoBQTgcRjabPQD/CorLFJo4OxAIIJPJwOVywePx/G629Lel02kMBgM4nU6E
-        QqGjwWaDKWi32ygUCvsfzFLr36FgMHjPnG23248Oj0U/AQB1CvGv8RU0AAAAAElFTkSuQmCC
+        QqGjwWaDKWi32ygUCvsfzFLr36FgMHjPnG23248Oj0U/AfywCu/W6QB6AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="_nav_open.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -651,17 +654,20 @@
     <value>368, 25</value>
   </data>
   <data name="_lv_navigation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 174</value>
+    <value>368, 162</value>
+  </data>
+  <data name="_navigationPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 420</value>
   </data>
   <data name="_navigationPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 228</value>
+    <value>370, 216</value>
   </data>
   <data name="_imageListGps.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAo
-        CgAAAk1TRnQBSQFMAgEBAwEAAQwBBAEMAQQBEAEAARABAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        CgAAAk1TRnQBSQFMAgEBAwEAARQBBAEUAQQBEAEAARABAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABEAMAAQEBAAEQBgABCBgAAdYBWgEYAWMMAAHWAVoB1gJaAWsKAAEYAWMBGAFjDAAB1gFaAdYCWgFr
         CgABGAFjARgBYwxmAYYBZQGGAWUBhgFlAYYBZQJmJgABOQFnAdYBWgHWAVoIAAFzAU4BEAFCAdYBWgwA
         ATkBZwHWAVoBGAFjCAABlAFSARABQgHWAVoMAAE5AWcB1gFaAmYBmgFzAfkBfwHzAX8B8wF/AfMBfwHz

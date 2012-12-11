@@ -36,10 +36,13 @@
             this.easyconfig = new System.Windows.Forms.TabPage();
             this.gluonConfigEasy = new Configuration.GluonConfigEasy();
             this.osd = new System.Windows.Forms.TabPage();
+            this.osdConfig1 = new Configuration.OsdConfig();
             this.config = new System.Windows.Forms.TabPage();
             this.configurationControl = new Configuration.ConfigurationControl();
             this.datalog = new System.Windows.Forms.TabPage();
             this.datalogging = new Configuration.Datalogging();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.gcsMainPanel1 = new GCS.GcsMainPanel();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this._statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -67,8 +70,10 @@
             this.splitContainer1.SuspendLayout();
             this._tc_main.SuspendLayout();
             this.easyconfig.SuspendLayout();
+            this.osd.SuspendLayout();
             this.config.SuspendLayout();
             this.datalog.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this._statusStrip.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -109,11 +114,12 @@
             // 
             // _tc_main
             // 
-            resources.ApplyResources(this._tc_main, "_tc_main");
             this._tc_main.Controls.Add(this.easyconfig);
             this._tc_main.Controls.Add(this.osd);
             this._tc_main.Controls.Add(this.config);
             this._tc_main.Controls.Add(this.datalog);
+            this._tc_main.Controls.Add(this.tabPage1);
+            resources.ApplyResources(this._tc_main, "_tc_main");
             this._tc_main.ImageList = this.imageList;
             this._tc_main.Name = "_tc_main";
             this._tc_main.SelectedIndex = 0;
@@ -134,9 +140,15 @@
             // 
             // osd
             // 
+            this.osd.Controls.Add(this.osdConfig1);
             resources.ApplyResources(this.osd, "osd");
             this.osd.Name = "osd";
             this.osd.UseVisualStyleBackColor = true;
+            // 
+            // osdConfig1
+            // 
+            resources.ApplyResources(this.osdConfig1, "osdConfig1");
+            this.osdConfig1.Name = "osdConfig1";
             // 
             // config
             // 
@@ -161,6 +173,18 @@
             // 
             resources.ApplyResources(this.datalogging, "datalogging");
             this.datalogging.Name = "datalogging";
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.gcsMainPanel1);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // gcsMainPanel1
+            // 
+            resources.ApplyResources(this.gcsMainPanel1, "gcsMainPanel1");
+            this.gcsMainPanel1.Name = "gcsMainPanel1";
             // 
             // imageList
             // 
@@ -308,8 +332,10 @@
             this.splitContainer1.ResumeLayout(false);
             this._tc_main.ResumeLayout(false);
             this.easyconfig.ResumeLayout(false);
+            this.osd.ResumeLayout(false);
             this.config.ResumeLayout(false);
             this.datalog.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this._statusStrip.ResumeLayout(false);
             this._statusStrip.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -348,6 +374,9 @@
         private System.Windows.Forms.TabPage easyconfig;
         private System.Windows.Forms.TabPage osd;
         private Configuration.GluonConfigEasy gluonConfigEasy;
+        private Configuration.OsdConfig osdConfig1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private GCS.GcsMainPanel gcsMainPanel1;
 
 
 

@@ -22,7 +22,7 @@ using System.Runtime.InteropServices;
 
 namespace GluonCS
 {
-    public partial class LiveUavPanel : LayerPropertiesPanel
+    public partial class LiveUavPanel : System.Windows.Forms.UserControl //: LayerPropertiesPanel
     {
         private LiveUavModel model;
         private LineItem altitudeLineItem;
@@ -318,6 +318,8 @@ namespace GluonCS
                     xScale.Max = time + xScale.MajorStep;
                     xScale.Min = xScale.Max - 180; // 180 seconden
                 }
+                if (_zgAlt.GraphPane.YAxis.Scale.Max < model.AltitudeAglM * 1.1)
+                    _zgAlt.GraphPane.YAxis.Scale.Max = (model.AltitudeAglM * 1.1) + 50;
                 _zgAlt.AxisChange();
                 _zgAlt.Invalidate();
 
@@ -571,12 +573,18 @@ namespace GluonCS
 
         void CommandButton_Click(object sender, EventArgs e)
         {
-            Button b = (Button)sender;
-            if (model.NavigationModel.Blocks.ContainsKey((string)b.Tag))
+            if (model.Serial != null & model.Serial.IsOpen)
             {
-                model.SendToNavigationLine(model.NavigationModel.Blocks[(string)b.Tag]);
+                Button b = (Button)sender;
+                if (model.NavigationModel.Blocks.ContainsKey((string)b.Tag))
+                {
+                    model.SendToNavigationLine(model.NavigationModel.Blocks[(string)b.Tag]);
+                }
             }
-            //throw new NotImplementedException();
+            else
+            {
+                MessageBox.Show(this, "Obviously not working when there's no connection.", "Not working", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 #endregion
 

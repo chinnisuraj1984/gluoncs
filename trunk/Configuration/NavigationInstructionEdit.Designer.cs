@@ -98,7 +98,8 @@
             "",
             "- Settings -",
             "SET_BATTERY_ALARM",
-            "SET_FLIGHTPLAN_SWITCH"});
+            "SET_FLIGHTPLAN_SWITCH",
+            "SET_MAXIMUM_RANGE"});
             this._cb_opcode.Location = new System.Drawing.Point(72, 12);
             this._cb_opcode.MaxDropDownItems = 20;
             this._cb_opcode.Name = "_cb_opcode";

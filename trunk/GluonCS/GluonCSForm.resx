@@ -3287,7 +3287,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Ground Control Station - 0.8</value>
+    <value>Ground Control Station - 0.9 BETA</value>
   </data>
   <data name="&gt;&gt;_btnZoomin.Name" xml:space="preserve">
     <value>_btnZoomin</value>

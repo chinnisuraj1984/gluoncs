@@ -87,7 +87,8 @@ namespace Communication
         // Communication status
         public override event LostCommunication CommunicationLost;
         public override event EstablishedCommunication CommunicationEstablished;
-
+        // Home position
+        public override event HomePositionFrame HomePositionReceived;
 
         private string[] DatalogHeader;
         private System.IO.StreamReader file_to_replay;
@@ -380,6 +381,20 @@ namespace Communication
                         else
                             Console.WriteLine("FOUT");
 
+                        if (lines.Length > 81)
+                        {
+                            ac.osd_bitmask = int.Parse(lines[81]);
+                            ac.osd_RssiMode = int.Parse(lines[82]);
+                            ac.osd_voltage_low = ((double)int.Parse(lines[83])) / 50.0;
+                            ac.osd_voltage_high = ((double)int.Parse(lines[84])) / 50.0;
+                        }
+
+                        if (lines.Length > 84)
+                        {
+                            ac.imu_rotated = int.Parse(lines[85]);
+                            ac.neutral_pitch = int.Parse(lines[86]);
+                        }
+
                         if (AllConfigCommunicationReceived != null)
                             AllConfigCommunicationReceived(ac);
                     }
@@ -519,8 +534,8 @@ namespace Communication
                             }
                             if (lines.Length >= 11)
                             {
-                                ci.Batt1Voltage = double.Parse(lines[10]) / 10.0;
-                                ci.Batt_mAh = double.Parse(lines[10]) * 10.0;
+                                ci.Batt2Voltage = double.Parse(lines[10]) / 10.0;
+                                ci.Batt_mAh = double.Parse(lines[11]) * 10.0;
                             }
                         }
                         if (ControlInfoCommunicationReceived != null)
@@ -714,6 +729,14 @@ namespace Communication
                 c ^= (int)(h);
             }
             return c;
+        }
+
+        public override void SendOsdConfiguration(int bitmask, int rssi_mode, double voltage_low, double voltage_high)
+        {
+        }
+
+        public override void SendImuSettings(int neutral_pitch, int imu_rotated)
+        {
         }
     }
 }
