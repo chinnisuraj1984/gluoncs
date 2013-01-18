@@ -41,5 +41,10 @@ namespace Common
         {
             return LatitudeMeterPerDegree * Math.Cos(LatDeg / 180.0 * Math.PI);
         }
+
+        public double DistanceMTo(LatLng l)
+        {
+            return Math.Sqrt((l.Lat - this.Lat) * (l.Lat - this.Lat) * LatitudeMeterPerDegree * LatitudeMeterPerDegree + (l.Lng - this.Lng) * (l.Lng - this.Lng) * LongitudeMeterPerDegree(l.Lat) * LongitudeMeterPerDegree(l.Lat));
+        }
     }
 }

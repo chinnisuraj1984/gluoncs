@@ -44,6 +44,7 @@ namespace GluonCS.LiveUavLayer
         private ContextMenuStrip navigationmarker_menustrip = new ContextMenuStrip();
         private ContextMenuStrip current_contextmenu = new ContextMenuStrip();  // contains the merged menus
 
+        private double _maximumRange = 9999999999.0;
 
         public GMapController(WindGMapControl gmap,
                               LiveUavModel model)
@@ -176,7 +177,8 @@ namespace GluonCS.LiveUavLayer
                 LatLng rel = LatLng.ToRelative(home.Position.Lat, home.Position.Lng, p.Lat, p.Lng);
                 ni.x = rel.Lat;
                 ni.y = rel.Lng;
-                model.UpdateLocalNavigationInstruction(ni);  // not good way to go
+                if (WithinMaxRange(new LatLng(p.Lat, p.Lng)))
+                    model.UpdateLocalNavigationInstruction(ni);  // not good way to go
             }
             if (current_marker is AbsoluteMarker)
             {
@@ -184,7 +186,8 @@ namespace GluonCS.LiveUavLayer
                 NavigationInstruction ni = model.GetNavigationInstructionLocal(((AbsoluteMarker)current_marker).Number);
                 ni.x = p.Lat / 180.0 * Math.PI;
                 ni.y = p.Lng / 180.0 * Math.PI; ;
-                model.UpdateLocalNavigationInstruction(ni);  // not good way to go
+                if (WithinMaxRange(new LatLng(p.Lat, p.Lng)))
+                    model.UpdateLocalNavigationInstruction(ni);  // not good way to go
             }
             if (current_marker is IconMarker && ((IconMarker)current_marker).IsAbsolute)
             {
@@ -192,7 +195,8 @@ namespace GluonCS.LiveUavLayer
                 NavigationInstruction ni = model.GetNavigationInstructionLocal(((IconMarker)current_marker).Number);
                 ni.x = p.Lat / 180.0 * Math.PI;
                 ni.y = p.Lng / 180.0 * Math.PI; ;
-                model.UpdateLocalNavigationInstruction(ni);  // not good way to go
+                if (WithinMaxRange(new LatLng(p.Lat, p.Lng)))
+                    model.UpdateLocalNavigationInstruction(ni);  // not good way to go
             }
         }
 
@@ -361,10 +365,12 @@ namespace GluonCS.LiveUavLayer
                 //current_waypointline = -1;
 
                 string lastblockname = "Start";
+                _maximumRange = 9999999999.0;
                 for (int i = 0; i < model.MaxNumberOfNavigationInstructions(); i++)
                 {
                     MoveableMarker mm = new MoveableMarker(gmap.Position);
                     NavigationInstruction ni = model.GetNavigationInstructionLocal(i);
+
 
                     // if new block name -> don't connect blocks with a path!
                     if (model.NavigationModel.Commands[i].BlockName != lastblockname)
@@ -415,6 +421,8 @@ namespace GluonCS.LiveUavLayer
                     // set maximum range
                     if (ni.opcode == NavigationInstruction.navigation_command.SET_MAXIMUM_RANGE)
                     {
+                        _maximumRange = ni.x;
+
                         // circle 1.1
                         List<PointLatLng> c = new List<PointLatLng>();
                         for (double j = 0.0; j <= Math.PI * 2.00001; j += Math.PI * 2.0 / 50.0)
@@ -428,7 +436,7 @@ namespace GluonCS.LiveUavLayer
                         cr.Stroke.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
                         NavigationOverlay.Routes.Add(cr);
                         cr.Stroke.Color = Color.FromArgb(250, Color.Black);
-                        l.Add(mm.Position);
+                        //l.Add(mm.Position);
                         // circle 1.2
                         c = new List<PointLatLng>();
                         for (double j = 0.0; j <= Math.PI * 2.00001; j += Math.PI * 2.0 / 50.0)
@@ -442,8 +450,7 @@ namespace GluonCS.LiveUavLayer
                         cr.Stroke.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
                         NavigationOverlay.Routes.Add(cr);
                         cr.Stroke.Color = Color.FromArgb(250, Color.Yellow);
-                        l.Add(mm.Position);
-
+                        //l.Add(mm.Position);
                     }
 
 
@@ -698,6 +705,15 @@ namespace GluonCS.LiveUavLayer
             model.UpdateHome((PointLatLng)current_contextmenu.Tag);
         }
 
+        private bool WithinMaxRange(LatLng p)
+        {
+            if (p.DistanceMTo(new Common.LatLng(home.Position.Lat, home.Position.Lng)) < _maximumRange)
+            {
+                return true;
+            }
+            return false;
+        }
+
         void AddRelative_Click(object sender, EventArgs e)
         {
             PointLatLng p = (PointLatLng)current_contextmenu.Tag;
@@ -711,7 +727,9 @@ namespace GluonCS.LiveUavLayer
                     ni.x = abs.Lat;
                     ni.y = abs.Lng;
                     ni.a = (int)Properties.Settings.Default.DefaultAltitudeM;
-                    model.UpdateLocalNavigationInstruction(ni);
+
+                    if (WithinMaxRange(new LatLng(p.Lat, p.Lng)))
+                        model.UpdateLocalNavigationInstruction(ni);
                     break;
                 }
             }
@@ -729,7 +747,8 @@ namespace GluonCS.LiveUavLayer
                     ni.x = p.Lat / 180.0 * Math.PI;
                     ni.y = p.Lng / 180.0 * Math.PI;
                     ni.a = (int)Properties.Settings.Default.DefaultAltitudeM;
-                    model.UpdateLocalNavigationInstruction(ni);
+                    if (WithinMaxRange(new LatLng(p.Lat, p.Lng)))
+                        model.UpdateLocalNavigationInstruction(ni);
                     break;
                 }
             }

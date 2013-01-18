@@ -217,7 +217,7 @@ namespace Gluonpilot
             if (_serial.IsOpen)  // Close the current connection if it's open
                 _serial.Close(); //_btn_connect_Click(null, null);
 
-            string c = " -k=" + port + " -f=\"" + fd.FileName + "\"  -p -d=dsPIC33FJ256MC710 -u=" + baudrate + " -q=0a;5a;5a;3b;31;31;32;33;0a -r=115200 -b=1200 -o";
+            string c = " -k=" + port + " -f=\"" + fd.FileName + "\"  -p -d=dsPIC33FJ256MC710 -u=" + baudrate + " -q=0a;24;5a;5a;3b;31;31;32;33;2a;33;61;0a -r=115200 -b=1200 -o";
             Process p = System.Diagnostics.Process.Start(Application.StartupPath + "\\ds30loader\\ds30LoaderConsole.exe", c);
             p.WaitForExit();
 

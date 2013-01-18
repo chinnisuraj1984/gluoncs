@@ -2097,16 +2097,19 @@ Set to "0" to disable.</value>
     <value>3</value>
   </data>
   <data name="_cb_imu_rotation.Items" xml:space="preserve">
-    <value>0°</value>
+    <value>0° (around Z)</value>
   </data>
   <data name="_cb_imu_rotation.Items1" xml:space="preserve">
-    <value>90°</value>
+    <value>90° (around Z)</value>
   </data>
   <data name="_cb_imu_rotation.Items2" xml:space="preserve">
-    <value>180°</value>
+    <value>180° (around Z)</value>
   </data>
   <data name="_cb_imu_rotation.Items3" xml:space="preserve">
-    <value>270°</value>
+    <value>270° (around Z)</value>
+  </data>
+  <data name="_cb_imu_rotation.Items4" xml:space="preserve">
+    <value>90° (around X = sideways)</value>
   </data>
   <data name="_cb_imu_rotation.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 38</value>

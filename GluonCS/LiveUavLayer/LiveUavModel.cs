@@ -565,7 +565,10 @@ namespace GluonCS.LiveUavLayer
 
         public int MaxNumberOfNavigationInstructions()
         {
-            return navigation_remote.Count;
+            if (navigation_remote != null && navigation_remote.Count > 0)
+                return navigation_remote.Count;
+            else
+                return 72;
         }
         public NavigationInstruction GetNavigationInstructionLocal(int i)
         {

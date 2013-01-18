@@ -101,10 +101,10 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this._btn_send = new System.Windows.Forms.ToolStripButton();
             this._btn_receive = new System.Windows.Forms.ToolStripButton();
-            this._imageListGps = new System.Windows.Forms.ImageList(this.components);
-            this._gmapContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this._btn_build_survey = new System.Windows.Forms.ToolStripButton();
+            this._imageListGps = new System.Windows.Forms.ImageList(this.components);
+            this._gmapContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this._pbBattery2 = new ProgressBarColored();
             this._pb_mAh = new ProgressBarColored();
             this._pbThrottle = new ProgressBarColored();
@@ -789,6 +789,17 @@
             this._btn_receive.Name = "_btn_receive";
             this._btn_receive.Click += new System.EventHandler(this._btn_receive_Click);
             // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
+            // 
+            // _btn_build_survey
+            // 
+            resources.ApplyResources(this._btn_build_survey, "_btn_build_survey");
+            this._btn_build_survey.Name = "_btn_build_survey";
+            this._btn_build_survey.Click += new System.EventHandler(this._btn_build_survey_Click);
+            // 
             // _imageListGps
             // 
             this._imageListGps.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("_imageListGps.ImageStream")));
@@ -801,17 +812,6 @@
             // 
             this._gmapContextMenuStrip.Name = "_gmapContextMenuStrip";
             resources.ApplyResources(this._gmapContextMenuStrip, "_gmapContextMenuStrip");
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
-            // 
-            // _btn_build_survey
-            // 
-            resources.ApplyResources(this._btn_build_survey, "_btn_build_survey");
-            this._btn_build_survey.Name = "_btn_build_survey";
-            this._btn_build_survey.Click += new System.EventHandler(this._btn_build_survey_Click);
             // 
             // _pbBattery2
             // 

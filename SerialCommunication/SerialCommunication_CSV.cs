@@ -213,8 +213,9 @@ namespace Communication
                                 CommunicationLost();
                             }
                         }
+                        Console.Write("Waiting for communication... " + +_serialPort.BytesToRead);
                         Thread.Sleep(50);
-                        //Console.WriteLine("Waiting for communication...");
+                        Console.WriteLine("-> " + _serialPort.BytesToRead);
                     }
 
                     line = _serialPort.ReadLine().Replace("\r", "").Replace("\n", "");
@@ -659,7 +660,7 @@ namespace Communication
             if (f)
                 s += 32;
             WriteChecksumLine("SR;" + s.ToString() + ";" + ((manual_trim==true)?"1":"0"));
-            Console.WriteLine("send: " + manual_trim);
+            //Console.WriteLine("send: " + manual_trim);
         }
 
         public override void SendServoMinNeutralMax(int nr, int min, int neutral, int max)
@@ -905,12 +906,12 @@ namespace Communication
 
         public override void SendDatalogTableRequest()
         {
-            _serialPort.WriteLine("\nFI;\n");
+            WriteChecksumLine("FI;");
         }
 
         public override void SendDatalogTableRead(int i)
         {
-            _serialPort.WriteLine("\nDR;" + i.ToString() + "\n");
+            WriteChecksumLine("DR;" + i.ToString());
         }
 
         public override void SendNavigationInstruction(NavigationInstruction ni)
@@ -927,7 +928,7 @@ namespace Communication
         {
             //_serialPort.WriteLine("\nJN;" + line + "\n");
             WriteChecksumLine("JN;" + line);
-            Console.WriteLine("\nJN;" + line + "\n");
+            //Console.WriteLine("\nJN;" + line + "\n");
         }
 
         public override void SendNavigationBurn()
@@ -947,12 +948,12 @@ namespace Communication
 
         public override void SendReboot()
         {
-            _serialPort.WriteLine("\nZZ;1123\n");
+            WriteChecksumLine("ZZ;1123");
         }
 
         public override void SetSimulationOn()
         {
-            _serialPort.WriteLine("\nSE;" + DateTime.Now.ToString("ddMMyy") + ";" + DateTime.Now.ToString("HHmmss") + "\n");
+            WriteChecksumLine("SE;" + DateTime.Now.ToString("ddMMyy") + ";" + DateTime.Now.ToString("HHmmss"));
         }
 
         public override void SendSimulationUpdate(double lat_rad, double lng_rad, double roll_rad, double pitch_rad, double altitude_m, double speed_ms, double heading_rad)
@@ -1005,27 +1006,42 @@ namespace Communication
         private void WriteChecksumLine(string s)
         {
             int chk = calculateChecksum(s);
-            if (chk < 16)
+
+            if (Monitor.TryEnter(this._serialPort, 100))
             {
-                if (_serialPort.BytesToWrite > 0)
-                    Thread.Sleep(200);
-                if (_serialPort.BytesToWrite > 0)
-                    Thread.Sleep(200);
-                if (_serialPort.BytesToWrite > 0)
-                    Thread.Sleep(200);
-                if (_serialPort.BytesToWrite > 0)
-                    Thread.Sleep(200);
-                _serialPort.WriteLine("\n$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
-                if (logfile != null)
-                    logfile.WriteLine("-> \r\n$" + s + "*0" + Convert.ToString(chk, 16) + "\r\n");
-                //Console.WriteLine("\n$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
+                try
+                {
+                    if (chk < 16)
+                    {
+                        if (_serialPort.BytesToWrite > 0)
+                            Thread.Sleep(200);
+                        if (_serialPort.BytesToWrite > 0)
+                            Thread.Sleep(200);
+                        if (_serialPort.BytesToWrite > 0)
+                            Thread.Sleep(200);
+                        if (_serialPort.BytesToWrite > 0)
+                            Thread.Sleep(200);
+                        _serialPort.WriteLine("\n$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
+                        if (logfile != null)
+                            logfile.WriteLine("-> \r\n$" + s + "*0" + Convert.ToString(chk, 16) + "\r\n");
+                        Console.WriteLine("\n$" + s + "*0" + Convert.ToString(chk, 16) + "\n");
+                    }
+                    else
+                    {
+                        Console.WriteLine("\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
+                        _serialPort.WriteLine("\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
+                        if (logfile != null)
+                            logfile.WriteLine("-> \r\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
+                    }
+                }
+                finally
+                {
+                    Monitor.Exit(this._serialPort);
+                }
             }
             else
             {
-                Console.WriteLine("\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
-                _serialPort.WriteLine("\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
-                if (logfile != null)
-                    logfile.WriteLine("-> \r\n$" + s + "*" + Convert.ToString(chk, 16) + "\n");
+                Console.WriteLine("!!! ERROR entering serial output !!!");
             }
         }
 

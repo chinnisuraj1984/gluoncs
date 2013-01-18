@@ -86,7 +86,7 @@
             // 
             // _nud_channel
             // 
-            this._nud_channel.Location = new System.Drawing.Point(141, 1);
+            this._nud_channel.Location = new System.Drawing.Point(150, 1);
             this._nud_channel.Maximum = new decimal(new int[] {
             8,
             0,
@@ -113,7 +113,7 @@
             0,
             0,
             0});
-            this._nud_us.Location = new System.Drawing.Point(141, 27);
+            this._nud_us.Location = new System.Drawing.Point(150, 27);
             this._nud_us.Maximum = new decimal(new int[] {
             2500,
             0,
@@ -153,7 +153,7 @@
             0,
             0,
             0});
-            this._nud_time_between_triggers_ms.Location = new System.Drawing.Point(141, 53);
+            this._nud_time_between_triggers_ms.Location = new System.Drawing.Point(150, 53);
             this._nud_time_between_triggers_ms.Maximum = new decimal(new int[] {
             30000,
             0,
@@ -181,12 +181,14 @@
             // 
             this._cb_trigger_mode.FormattingEnabled = true;
             this._cb_trigger_mode.Items.AddRange(new object[] {
-            "PWM",
-            "CHDK"});
-            this._cb_trigger_mode.Location = new System.Drawing.Point(133, 79);
+            "Interval - PWM",
+            "CHDK",
+            "Distance - PWM"});
+            this._cb_trigger_mode.Location = new System.Drawing.Point(114, 79);
             this._cb_trigger_mode.Name = "_cb_trigger_mode";
-            this._cb_trigger_mode.Size = new System.Drawing.Size(70, 21);
+            this._cb_trigger_mode.Size = new System.Drawing.Size(98, 21);
             this._cb_trigger_mode.TabIndex = 19;
+            this._cb_trigger_mode.SelectedIndexChanged += new System.EventHandler(this._cb_trigger_mode_SelectedIndexChanged);
             // 
             // ServoStartTrigger
             // 
@@ -203,7 +205,7 @@
             this.Controls.Add(this._nud_us);
             this.Controls.Add(this.label1);
             this.Name = "ServoStartTrigger";
-            this.Size = new System.Drawing.Size(210, 105);
+            this.Size = new System.Drawing.Size(216, 105);
             ((System.ComponentModel.ISupportInitialize)(this._nud_position_hold)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._nud_channel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._nud_us)).EndInit();
