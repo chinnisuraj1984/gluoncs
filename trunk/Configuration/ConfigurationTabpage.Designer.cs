@@ -976,7 +976,8 @@
             resources.GetString("_cb_imu_rotation.Items"),
             resources.GetString("_cb_imu_rotation.Items1"),
             resources.GetString("_cb_imu_rotation.Items2"),
-            resources.GetString("_cb_imu_rotation.Items3")});
+            resources.GetString("_cb_imu_rotation.Items3"),
+            resources.GetString("_cb_imu_rotation.Items4")});
             resources.ApplyResources(this._cb_imu_rotation, "_cb_imu_rotation");
             this._cb_imu_rotation.Name = "_cb_imu_rotation";
             this._cb_imu_rotation.SelectedIndexChanged += new System.EventHandler(this._cb_imu_rotation_SelectedIndexChanged);

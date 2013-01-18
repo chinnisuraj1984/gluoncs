@@ -75,7 +75,7 @@
     <ApplicationIcon>Mobile-Maps.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject />
+    <StartupObject>GluonCS.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Artificial3DHorizon">
@@ -617,6 +617,10 @@
       <Link>Documentation\en\setloiterposition.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="..\Documentation\en\setmaximumrange.html">
+      <Link>Documentation\en\setmaximumrange.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\Documentation\en\until.html">
       <Link>Documentation\en\until.html</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -653,6 +657,7 @@
       <Link>Models\Reaper\Texture.jpg</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="das.ico" />
     <Content Include="Mobile-Maps.ico" />
     <Content Include="Resources\marker.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -112,6 +112,7 @@ namespace GluonCS
             updatePanel.Tick += new EventHandler(updatePanel_Tick);
             updatePanel.Enabled = true;
 
+            _btn_reset_route_Click(null, EventArgs.Empty);
         }
 
         public void Stop()
@@ -129,6 +130,7 @@ namespace GluonCS
                 }
                 catch (Exception ex)
                 {
+
                 }
             }
         }
@@ -572,24 +574,29 @@ namespace GluonCS
             file.Filter = "Gluon navigation file (*.gnf)|*.gnf|All files (*.*)|*.*";
             if (file.ShowDialog() == DialogResult.OK)
             {
-                Stream stream = File.OpenRead(file.FileName);
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(NavigationInstruction[]));
-
-                Console.WriteLine("Reading model information");
-
-                NavigationInstruction[] list = (NavigationInstruction[])xmlSerializer.Deserialize(stream);
-                for (int i = 0; i < model.MaxNumberOfNavigationInstructions(); i++)
-                {
-                    if (i < list.Length)
-                    {
-                        model.UpdateLocalNavigationInstruction(list[i]);
-                    }
-                }
-                stream.Close();
+                LoadNaviFile(file.FileName);
             }
 
             // update edit control
             //_lv_navigation_SelectedIndexChanged(null, null);
+        }
+
+        private void LoadNaviFile(string path)
+        {
+            Stream stream = File.OpenRead(path);
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(NavigationInstruction[]));
+
+            Console.WriteLine("Reading model information");
+
+            NavigationInstruction[] list = (NavigationInstruction[])xmlSerializer.Deserialize(stream);
+            for (int i = 0; i < model.MaxNumberOfNavigationInstructions(); i++)
+            {
+                if (i < list.Length)
+                {
+                    model.UpdateLocalNavigationInstruction(list[i]);
+                }
+            }
+            stream.Close();
         }
 
         private void _btn_up_Click(object sender, EventArgs e)
@@ -1146,42 +1153,16 @@ namespace GluonCS
         private void _btn_reset_route_Click(object sender, EventArgs e)
         {
             string source = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-            Stream stream = File.OpenRead(source + "\\NavigationBlocks\\default.gnf");
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(NavigationInstruction[]));
 
-            Console.WriteLine("Reading model information");
-
-            NavigationInstruction[] list = (NavigationInstruction[])xmlSerializer.Deserialize(stream);
-            for (int i = 0; i < model.MaxNumberOfNavigationInstructions(); i++)
-            {
-                if (i < list.Length)
-                {
-                    model.UpdateLocalNavigationInstruction(list[i]);
-                }
-            }
-            stream.Close();
-
-            //_btn_send_Click(this, EventArgs.Empty);
+            LoadNaviFile(source + "\\NavigationBlocks\\default.gnf");
         }
 
 
         private void _btn_reset_survey_Click(object sender, EventArgs e)
         {
             string source = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-            Stream stream = File.OpenRead(source + "\\NavigationBlocks\\default.gnf");
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(NavigationInstruction[]));
 
-            Console.WriteLine("Reading model information");
-
-            NavigationInstruction[] list = (NavigationInstruction[])xmlSerializer.Deserialize(stream);
-            for (int i = 0; i < model.MaxNumberOfNavigationInstructions(); i++)
-            {
-                if (i < list.Length)
-                {
-                    model.UpdateLocalNavigationInstruction(list[i]);
-                }
-            }
-            stream.Close();
+            LoadNaviFile(source + "\\NavigationBlocks\\default.gnf");
 
             NavigationInstruction ni = new NavigationInstruction(model.NavigationModel.Blocks["Route"] + 1, NavigationInstruction.navigation_command.BLOCK, 0, 0, 0, 0);
             ni.StringToArgument("Survey");

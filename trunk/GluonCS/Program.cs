@@ -18,8 +18,8 @@ namespace GluonCS
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                //Application.Run(new GluonCSForm());
-                Application.Run(new GluonCSFormSwallow());
+                Application.Run(new GluonCSForm());
+                //Application.Run(new GluonCSFormSwallow());
                 //Application.Run(new SplashScreen());
 
             }
